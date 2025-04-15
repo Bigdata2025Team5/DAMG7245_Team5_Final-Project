@@ -49,14 +49,7 @@ def clean_hotel_data():
         # Clean numeric-like fields
         df["Rating"] = pd.to_numeric(df["Rating"], errors="coerce")
         
-        # Clean and standardize review count
-        df["Reviews"] = (
-            df["Reviews"]
-            .str.replace(" reviews", "", case=False)
-            .str.replace(",", "")
-            .astype(str)
-        )
-        df["Reviews"] = pd.to_numeric(df["Reviews"], errors="coerce")
+        
         
         # Format price field (make consistent)
         df["Price (per night)"] = (
@@ -91,4 +84,3 @@ if __name__ == "__main__":
                              "Rating", "Reviews", "Price (per night)", "Room Fees", 
                              "Exclusions", "Certified", "Latitude", "Longitude"]).to_csv(CLEANED_DATA_PATH, index=False)
         print(f"Created empty output file at {CLEANED_DATA_PATH} to prevent pipeline failure")
-

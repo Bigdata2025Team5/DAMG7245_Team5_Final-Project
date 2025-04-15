@@ -91,3 +91,4 @@ if __name__ == "__main__":
                              "Rating", "Reviews", "Price (per night)", "Room Fees", 
                              "Exclusions", "Certified", "Latitude", "Longitude"]).to_csv(CLEANED_DATA_PATH, index=False)
         print(f"Created empty output file at {CLEANED_DATA_PATH} to prevent pipeline failure")
+

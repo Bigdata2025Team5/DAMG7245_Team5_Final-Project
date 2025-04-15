@@ -4,9 +4,6 @@ on:
   schedule:
     # Run daily at 7:00 AM Eastern Time (12:00 PM UTC during standard time)
     - cron: '0 12 * * *'
-  push:
-    branches:
-      - main  # Change this to your default branch name if different (e.g., 'master')
   workflow_dispatch:
     # Allow manual triggering of the workflow
 
@@ -24,7 +21,7 @@ jobs:
           cache: 'pip'
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
 

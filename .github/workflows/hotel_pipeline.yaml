@@ -2,9 +2,13 @@ name: IHG Hotels Data Pipeline
 
 on:
   schedule:
-    # Run daily at 12:00 PM UTC
+    # Run daily at 7:00 AM Eastern Time (12:00 PM UTC during standard time)
     - cron: '0 12 * * *'
+  push:
+    branches:
+      - main  # Change this to your default branch name if different (e.g., 'master')
   workflow_dispatch:
+    # Allow manual triggering of the workflow
 
 jobs:
   hotel-data-pipeline:
@@ -19,28 +23,56 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Playwright dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0-dev \
+              build-essential \
+              libssl-dev \
+              libffi-dev \
+              python3-dev \
+              libgbm-dev \
+              libnotify-dev \
+              libgconf-2-4 \
+              libnss3 \
+              libxss1 \
+              libasound2 \
+              libxtst6 \
+              xauth \
+              xvfb
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas beautifulsoup4 playwright snowflake-connector-python dotenv boto3
-          # ✅ Install Chromium and all system deps (this is the key fix)
-          playwright install --with-deps
+          pip install pandas beautifulsoup4 playwright snowflake-connector-python boto3 dotenv
+          playwright install chromium
+          playwright install-deps chromium
 
       - name: Run hotel scraper
         run: python scripts/scrape_hotel.py
-
+        
+      - name: Upload debug screenshots
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: debug-screenshots
+          path: data/debug/
+          retention-days: 3
+      
       - name: Clean hotel data
         run: python scripts/clean_hotels.py
-
+      
       - name: Add geocoding data
         run: python scripts/geocode_hotels.py
-
+      
       - name: Upload to Snowflake
         run: python scripts/upload_to_snowflake.py
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
@@ -48,3 +80,6 @@ jobs:
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}

@@ -22,8 +22,32 @@ CITY_URLS = {
 async def scrape_city_hotels(page, city, url):
     hotels = []
     print(f"  Navigating to {url}...")
-    await page.goto(url, timeout=60000)
-    await page.wait_for_timeout(3000)
+    
+    # Add retry logic for page navigation
+    max_retries = 3
+    for retry in range(max_retries):
+        try:
+            await page.goto(url, timeout=90000)
+            break
+        except Exception as e:
+            if retry == max_retries - 1:
+                print(f"Failed to navigate to {url} after {max_retries} attempts: {e}")
+                return []
+            print(f"Retry {retry+1}/{max_retries} navigating to {url}: {e}")
+            await page.wait_for_timeout(5000)
+    
+    await page.wait_for_timeout(5000)
+    
+    # Take debug screenshot
+    is_github_actions = os.environ.get('GITHUB_ACTIONS') == 'true'
+    if is_github_actions:
+        try:
+            debug_dir = os.path.join(OUTPUT_DIR, "debug")
+            os.makedirs(debug_dir, exist_ok=True)
+            await page.screenshot(path=os.path.join(debug_dir, f"{city}_initial.png"))
+            print(f"Saved initial debug screenshot for {city}")
+        except Exception as e:
+            print(f"Could not save debug screenshot: {e}")
 
     # Click "View more hotels" to load all listings
     view_more_count = 0
@@ -31,18 +55,44 @@ async def scrape_city_hotels(page, city, url):
         try:
             view_more_button = await page.query_selector("a.cmp-button--view-more")
             if not view_more_button:
+                print("  No more 'View more' buttons found")
                 break
                 
-            await view_more_button.click(timeout=3000)
+            # Take screenshot before clicking
+            if is_github_actions and view_more_count == 0:
+                try:
+                    await page.screenshot(path=os.path.join(debug_dir, f"{city}_before_viewmore.png"))
+                except Exception:
+                    pass
+                    
+            await view_more_button.click(timeout=10000)
             view_more_count += 1
             print(f"  Clicked 'View more' button ({view_more_count} times)")
-            await page.wait_for_timeout(2000)
+            await page.wait_for_timeout(3000)
         except Exception as e:
             print(f"  No more 'View more' buttons or error: {e}")
             break
 
+    # Take final screenshot
+    if is_github_actions:
+        try:
+            await page.screenshot(path=os.path.join(debug_dir, f"{city}_final.png"))
+            print(f"Saved final debug screenshot for {city}")
+        except Exception:
+            pass
+            
     print(f"  Extracting hotel data from page...")
     html = await page.content()
+    
+    # Debug HTML output in GitHub actions
+    if is_github_actions:
+        try:
+            with open(os.path.join(debug_dir, f"{city}_page.html"), "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"Saved debug HTML for {city}")
+        except Exception as e:
+            print(f"Could not save debug HTML: {e}")
+            
     soup = BeautifulSoup(html, "html.parser")
     cards = soup.select("div[data-component-hotelcard]")
     print(f"  Found {len(cards)} hotel cards on page")
@@ -129,16 +179,53 @@ async def scrape_all_cities():
             print(f"Running in {'GitHub Actions' if is_github_actions else 'local'} environment")
             print(f"Using headless mode: {headless_mode}")
             
-            # Launch browser 
+            # Launch browser with appropriate settings for CI environment
             print("Launching browser...")
-            browser = await p.chromium.launch(headless=headless_mode)
+            browser_args = []
+            if is_github_actions:
+                browser_args = [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-accelerated-2d-canvas',
+                    '--no-first-run',
+                    '--no-zygote',
+                    '--single-process',
+                    '--disable-gpu'
+                ]
+                
+            browser = await p.chromium.launch(
+                headless=headless_mode,
+                args=browser_args
+            )
             
             print("Creating new page...")
-            page = await browser.new_page()
+            page = await browser.new_page(
+                viewport={"width": 1280, "height": 800},
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            )
+            
+            # Set default timeout
+            await page.set_default_timeout(60000)
             
             # Process each city
             print(f"Starting to scrape {len(CITY_URLS)} cities...")
-            for city, url in CITY_URLS.items():
+            
+            # For GitHub Actions, limit to 2 cities to avoid timeouts
+            if is_github_actions:
+                # Just use a subset of cities for GitHub Actions to avoid timeouts
+                limited_urls = {}
+                cities_to_include = ["New York", "Las Vegas"]  # Choose 2 cities that are likely to work well
+                for city in cities_to_include:
+                    if city in CITY_URLS:
+                        limited_urls[city] = CITY_URLS[city]
+                
+                print(f"In GitHub Actions, limiting to {len(limited_urls)} cities: {', '.join(limited_urls.keys())}")
+                cities_to_scrape = limited_urls
+            else:
+                cities_to_scrape = CITY_URLS
+            
+            for city, url in cities_to_scrape.items():
                 print(f"\n🏙️ Scraping {city}...")
                 city_hotels = await scrape_city_hotels(page, city, url)
                 all_hotels.extend(city_hotels)

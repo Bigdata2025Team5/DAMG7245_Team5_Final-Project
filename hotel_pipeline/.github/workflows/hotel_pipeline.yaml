@@ -1,0 +1,48 @@
+name: IHG Hotels Data Pipeline
+
+on:
+  schedule:
+    # Run daily at 7:00 AM UTC
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    # Allow manual triggering of the workflow
+
+jobs:
+  hotel-data-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas beautifulsoup4 playwright snowflake-connector-python
+          playwright install chromium
+
+      - name: Run hotel scraper
+        run: python scripts/scrape_hotels.py
+      
+      - name: Clean hotel data
+        run: python scripts/clean_hotels.py
+      
+      - name: Add geocoding data
+        run: python scripts/geocode_hotels.py
+      
+      - name: Upload to Snowflake
+        run: python scripts/upload_to_snowflake.py
+        env:
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}

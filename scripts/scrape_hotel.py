@@ -6,9 +6,11 @@ from playwright.async_api import async_playwright
 
 # Define output path for data
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
+
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 RAW_DATA_PATH = os.path.join(OUTPUT_DIR, 'multi_city_ihg_hotels.csv')
-
+# Make sure the data directory exists
+os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
 # Define the city URLs for scraping
 CITY_URLS = {
     "New York": "https://www.ihg.com/new-york-city-new-york",

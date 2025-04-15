@@ -27,7 +27,7 @@ jobs:
           playwright install chromium
 
       - name: Run hotel scraper
-        run: python scripts/scrape_hotels.py
+        run: python scripts/scrape_hotel.py
       
       - name: Clean hotel data
         run: python scripts/clean_hotels.py

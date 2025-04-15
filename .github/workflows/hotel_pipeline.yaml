@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas beautifulsoup4 playwright snowflake-connector-python
+          pip install pandas beautifulsoup4 playwright snowflake-connector-python dotenv boto3
           # ✅ Install Chromium and all system deps (this is the key fix)
           playwright install --with-deps
 

@@ -1,0 +1,5 @@
+Add these dependencies to the file:
+pandas
+beautifulsoup4
+playwright
+snowflake-connector-pytho

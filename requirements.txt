@@ -4,3 +4,4 @@ beautifulsoup4
 playwright
 snowflake-connector-python
 boto3
+dotenv

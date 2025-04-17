@@ -269,4 +269,8 @@ def regenerate_itinerary(payload: dict):
         raise HTTPException(status_code=500, detail="Error regenerating itinerary")
     
     
-    
+from fastapi.responses import RedirectResponse
+
+@app.get("/ui")
+def streamlit_ui():
+    return RedirectResponse("http://localhost:8501")

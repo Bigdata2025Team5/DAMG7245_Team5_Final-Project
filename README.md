@@ -34,7 +34,7 @@ video link :
 
 ## Architecture Diagram
 
-![AI-Generated Travel Itinerary](https://github.com/Bigdata2025Team5/)
+![AI-Generated Travel Itinerary](https://github.com/Bigdata2025Team5/DAMG7245_Team5_Final-Project/blob/main/Diagrams/ai_travel_itinerary_system_architecture.png)
 
 ---
 

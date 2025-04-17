@@ -1,17 +1,25 @@
+# Core tools
 pandas
 beautifulsoup4
 playwright
-snowflake-connector-python==3.0.4
 boto3
-litellm
-fastapi==0.100.0  
+
+# Snowflake
+snowflake-connector-python==3.0.4
+
+# Web frameworks
+fastapi==0.100.0
 uvicorn==0.21.1
 streamlit==1.22.0
+
+# Env variables
 python-dotenv==1.0.0
 
-langchain==0.1.16  
-crewai==0.1.32
-langchain-openai==0.0.2
-openai==1.7.2
+# LLM and AI
+openai==1.14.2                  # ✅ supports beta.threads & works with litellm
+litellm==1.31.6                 # ✅ latest as of Apr 2025, tested with openai>=1.12
+langchain==0.1.16               # ✅ stable & compatible with crewai 0.1.32
+langchain-openai==0.0.2         # ✅ matches langchain==0.1.16
+crewai==0.1.32                  # ✅ compatible with above stack
 
-dotenv
+# REMOVE: 'dotenv' (incorrect — use 'python-dotenv')

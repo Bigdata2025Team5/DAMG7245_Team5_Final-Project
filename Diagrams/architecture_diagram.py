@@ -14,7 +14,7 @@ with Diagram("AI Travel Itinerary System Architecture", show=True, direction="LR
     with Cluster("Backend/API Layer"):
         fastapi = Custom("FastAPI", "icons/fastapi.png")  # Placeholder, or use a Python icon
         crewai = Custom("CrewAI Agents", "icons/crewai.png")
-        llm = Custom("LLM (GPT-4o)", "icons/openai.png")
+        llm = Custom("LLM (GPT-4o)", "icons/grok.png")
 
     # Storage
     with Cluster("Storage Layer"):

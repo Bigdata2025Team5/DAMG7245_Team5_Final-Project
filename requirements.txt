@@ -1,7 +1,19 @@
-Add these dependencies to the file:
+
 pandas
 beautifulsoup4
 playwright
 snowflake-connector-python
 boto3
+
+fastapi==0.95.0
+uvicorn==0.21.1
+streamlit==1.22.0
+snowflake-connector-python==3.0.4
+python-dotenv==1.0.0
+crewai==0.1.42
+langchain==0.0.234
+langchain-openai==0.0.2
+openai==1.3.0
+
 dotenv
+

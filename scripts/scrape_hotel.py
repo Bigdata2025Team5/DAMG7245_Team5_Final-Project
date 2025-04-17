@@ -1,5 +1,7 @@
 import asyncio
 import os
+import random
+import time
 import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
@@ -22,27 +24,56 @@ CITY_URLS = {
 async def scrape_city_hotels(page, city, url):
     hotels = []
     print(f"  Navigating to {url}...")
-    await page.goto(url, timeout=60000)
-    await page.wait_for_timeout(3000)
-
+    
+    # Add random delay before navigation to appear more human-like
+    await asyncio.sleep(random.uniform(1, 3))
+    
+    # Navigate to URL
+    await page.goto(url, timeout=90000, wait_until="networkidle")
+    print(f"  Page loaded for {city}")
+    
+    # Wait for content to fully load
+    await page.wait_for_selector("div[data-component-hotelcard]", timeout=30000)
+    print(f"  Hotel cards found for {city}")
+    
+    # Add additional wait to ensure JavaScript is fully loaded
+    await asyncio.sleep(3)
+    
     # Click "View more hotels" to load all listings
     view_more_count = 0
     while True:
         try:
+            # Check if button exists
             view_more_button = await page.query_selector("a.cmp-button--view-more")
             if not view_more_button:
+                print("  No more 'View more' buttons found")
                 break
-                
-            await view_more_button.click(timeout=3000)
+            
+            # Wait a bit before clicking (human-like behavior)
+            await asyncio.sleep(random.uniform(1, 2))
+            
+            # Scroll button into view and click
+            await view_more_button.scroll_into_view_if_needed()
+            await view_more_button.click()
             view_more_count += 1
             print(f"  Clicked 'View more' button ({view_more_count} times)")
-            await page.wait_for_timeout(2000)
+            
+            # Wait for new content to load
+            await asyncio.sleep(3)
         except Exception as e:
             print(f"  No more 'View more' buttons or error: {e}")
             break
 
     print(f"  Extracting hotel data from page...")
+    
+    # Scroll back to top
+    await page.evaluate("window.scrollTo(0, 0);")
+    await asyncio.sleep(1)
+    
+    # Get HTML content
     html = await page.content()
+    
+    # Parse with BeautifulSoup
     soup = BeautifulSoup(html, "html.parser")
     cards = soup.select("div[data-component-hotelcard]")
     print(f"  Found {len(cards)} hotel cards on page")
@@ -102,58 +133,6 @@ async def scrape_city_hotels(page, city, url):
 
     return hotels
 
-async def scrape_all_cities():
-    all_hotels = []
-    
-    try:
-        print("Initializing Playwright...")
-        async with async_playwright() as p:
-            # Install browsers if needed
-            try:
-                print("Checking Chromium installation...")
-                browser_test = await p.chromium.launch(headless=True)
-                await browser_test.close()
-                print("Chromium is properly installed")
-            except Exception as e:
-                print(f"Need to install Chromium: {e}")
-                import subprocess
-                print("Installing Chromium via Playwright...")
-                result = subprocess.run(['playwright', 'install', 'chromium'], capture_output=True, text=True)
-                print(f"Installation output: {result.stdout}")
-                if result.stderr:
-                    print(f"Installation errors: {result.stderr}")
-            
-            # Detect environment (GitHub Actions vs local)
-            is_github_actions = os.environ.get('GITHUB_ACTIONS') == 'true'
-            headless_mode = True if is_github_actions else False
-            print(f"Running in {'GitHub Actions' if is_github_actions else 'local'} environment")
-            print(f"Using headless mode: {headless_mode}")
-            
-            # Launch browser 
-            print("Launching browser...")
-            browser = await p.chromium.launch(headless=headless_mode)
-            
-            print("Creating new page...")
-            page = await browser.new_page()
-            
-            # Process each city
-            print(f"Starting to scrape {len(CITY_URLS)} cities...")
-            for city, url in CITY_URLS.items():
-                print(f"\n🏙️ Scraping {city}...")
-                city_hotels = await scrape_city_hotels(page, city, url)
-                all_hotels.extend(city_hotels)
-                print(f"  ✓ Found {len(city_hotels)} hotels in {city}")
-
-            print("Closing browser...")
-            await browser.close()
-                
-    except Exception as e:
-        print(f"❌ Error during scraping process: {e}")
-        import traceback
-        traceback.print_exc()
-        
-    return all_hotels
-
 async def main():
     print("=" * 50)
     print("IHG HOTELS DATA SCRAPING")
@@ -161,39 +140,104 @@ async def main():
     print("Starting hotel data scraping process...")
     print(f"Will save data to: {RAW_DATA_PATH}")
     
+    all_hotels = []
+    
     try:
-        # Run the scraper
-        hotels = await scrape_all_cities()
+        # Set to True for headless operation in GitHub Actions
+        # Set to False for local debugging
+        HEADLESS_MODE = True  # Change to False for local development if needed
         
-        if not hotels or len(hotels) == 0:
-            print("❌ No hotel data was retrieved. Creating empty DataFrame.")
-            df = pd.DataFrame(columns=["City", "Name", "Link", "Image", "Address", "Distance", 
-                                      "Rating", "Reviews", "Price (per night)", "Room Fees", 
-                                      "Exclusions", "Certified"])
-        else:
-            # Create DataFrame with the scraped data
-            df = pd.DataFrame(hotels)
+        print(f"Browser mode: {'Headless' if HEADLESS_MODE else 'Visible'}")
+        
+        async with async_playwright() as p:
+            # Launch browser with settings to help avoid detection
+            browser = await p.chromium.launch(
+                headless=HEADLESS_MODE,
+                args=[
+                    '--disable-blink-features=AutomationControlled',
+                    '--no-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-accelerated-2d-canvas',
+                    '--no-first-run',
+                    '--disable-extensions',
+                    '--window-size=1920,1080'
+                ]
+            )
+            
+            # Create context with specific user agent and viewport
+            context = await browser.new_context(
+                viewport={"width": 1920, "height": 1080},
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            )
+            
+            # Add additional headers to appear more like a regular browser
+            await context.set_extra_http_headers({
+                'Accept-Language': 'en-US,en;q=0.9',
+                'sec-ch-ua': '"Not A(Brand";v="99", "Google Chrome";v="123", "Chromium";v="123"',
+                'sec-ch-ua-mobile': '?0',
+                'sec-ch-ua-platform': '"Windows"',
+            })
+            
+            # Create page from context
+            page = await context.new_page()
+            
+            # Emulate human-like behavior by adding a short delay
+            await asyncio.sleep(random.uniform(1, 3))
+            
+            # Set longer timeouts
+            page.set_default_timeout(60000)
+            
+            # Process limited cities for faster testing
+            # In production, use all cities
+            cities_to_scrape = CITY_URLS
+            
+            # For debugging, you can limit to just a few cities
+            # cities_to_scrape = {k: CITY_URLS[k] for k in ["Las Vegas", "New York"]}
+            
+            for city, url in cities_to_scrape.items():
+                print(f"\n🏙️ Scraping {city}...")
+                try:
+                    city_hotels = await scrape_city_hotels(page, city, url)
+                    all_hotels.extend(city_hotels)
+                    print(f"  ✓ Found {len(city_hotels)} hotels in {city}")
+                except Exception as e:
+                    print(f"  ❌ Error scraping {city}: {str(e)}")
+                    continue
+            
+            await browser.close()
+            
+        # Create DataFrame with the scraped data
+        if all_hotels:
+            df = pd.DataFrame(all_hotels)
             print(f"Successfully created DataFrame with {len(df)} hotels")
-        
-        # Ensure output directory exists
-        os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
-        
-        # Save to CSV
-        df.to_csv(RAW_DATA_PATH, index=False)
-        print(f"\n✅ Raw data saved to {RAW_DATA_PATH}")
-        print(f"  Total hotels scraped: {len(df)}")
-        
+            
+            # Save to CSV
+            os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
+            df.to_csv(RAW_DATA_PATH, index=False)
+            print(f"✅ Raw data saved to {RAW_DATA_PATH}")
+            print(f"  Total hotels scraped: {len(df)}")
+        else:
+            print("❌ No hotels were scraped")
+            # Create empty dataframe with expected columns
+            df = pd.DataFrame(columns=["City", "Name", "Link", "Image", "Address", "Distance", 
+                                     "Rating", "Reviews", "Price (per night)", "Room Fees", 
+                                     "Exclusions", "Certified"])
+            os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
+            df.to_csv(RAW_DATA_PATH, index=False)
+            print(f"Created empty file at {RAW_DATA_PATH}")
+            
     except Exception as e:
         print(f"❌ Error running the scraper: {e}")
         import traceback
         traceback.print_exc()
         
-        # Create an empty file so the pipeline can continue
+        # Create empty file in case of errors
+        df = pd.DataFrame(columns=["City", "Name", "Link", "Image", "Address", "Distance", 
+                                 "Rating", "Reviews", "Price (per night)", "Room Fees", 
+                                 "Exclusions", "Certified"])
         os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
-        pd.DataFrame(columns=["City", "Name", "Link", "Image", "Address", "Distance", 
-                             "Rating", "Reviews", "Price (per night)", "Room Fees", 
-                             "Exclusions", "Certified"]).to_csv(RAW_DATA_PATH, index=False)
-        print(f"Created empty output file at {RAW_DATA_PATH} to prevent pipeline failure")
+        df.to_csv(RAW_DATA_PATH, index=False)
+        print(f"Created empty file at {RAW_DATA_PATH} after error")
 
 if __name__ == "__main__":
     asyncio.run(main())

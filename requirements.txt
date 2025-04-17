@@ -3,7 +3,7 @@ beautifulsoup4
 playwright
 snowflake-connector-python==3.0.4
 boto3
-
+litellm
 fastapi==0.100.0  
 uvicorn==0.21.1
 streamlit==1.22.0

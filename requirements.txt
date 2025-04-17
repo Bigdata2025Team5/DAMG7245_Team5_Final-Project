@@ -10,9 +10,10 @@ uvicorn==0.21.1
 streamlit==1.22.0
 snowflake-connector-python==3.0.4
 python-dotenv==1.0.0
-langchain  
-crewai
-langchain-openai
-openai
+langchain==0.1.16  
+crewai==0.1.32
+langchain-openai==0.0.2
+openai==1.3.0
+
 dotenv
 

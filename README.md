@@ -9,7 +9,7 @@ The unique characteristic of the system is the orchestration of various technolo
 ---
 
 ## Links 
-Codelabs : 
+Codelabs : https://codelabs-preview.appspot.com/?file_id=1Ivaei3z5WiFeuO5PGgW__qULga5uAJL4WloMry3UyXQ#0
 
 Streamlit + FastApi: 
 

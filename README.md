@@ -73,12 +73,20 @@ video link :
 │   └── Dockerfile
 |   ├── main.py
 |   ├── requirements.txt
-├── Diagrams
-│   ├── architecture_diagrams.pmg
-├── Documentation
 ├── Frontend
 │   ├── app.py
 │   ├── requirements.txt
+├── airflow-docker
+│   └── Dockerfile
+|   ├── docker-compose.yaml
+|   ├── requirements.txt
+|   ├── dags
+|       └── hotel_scrape_dag.py
+|       └── youtube_dag.py
+|       └── Dockerfile
+├── Diagrams
+│   ├── ai_travel_itinerary_system_architecture.png
+├── Documentation
 ├── POC  
 ├── AiDisclosure.md
 ├── README.md

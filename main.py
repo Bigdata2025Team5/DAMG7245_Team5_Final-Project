@@ -271,6 +271,3 @@ def regenerate_itinerary(payload: dict):
     
 from fastapi.responses import RedirectResponse
 
-@app.get("/ui")
-def streamlit_ui():
-    return RedirectResponse("http://localhost:8501")

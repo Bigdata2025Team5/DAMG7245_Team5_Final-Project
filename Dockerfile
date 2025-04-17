@@ -14,10 +14,11 @@ COPY . .
 
 # Expose ports for FastAPI and Streamlit
 EXPOSE 8000
-EXPOSE 8501
+
 
 # Create a script to run both applications
 RUN echo '#!/bin/bash\n\
+streamlit run app.py --server.port=8501 --server.address=0.0.0.0 &\n\
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 \n\
 
 wait\n' > /app/start.sh

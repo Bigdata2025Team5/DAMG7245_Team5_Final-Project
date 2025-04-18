@@ -17,6 +17,8 @@ FastApi: https://travel-planner-app-577642034601.us-central1.run.app/docs
 
 Airflow: http://34.132.144.105:8080/home
 
+YouTube Link: https://drive.google.com/drive/u/1/folders/1u-t3VV2rjLgXD71rCuQnB1LO6OAI_A1C
+
 ---
 
 ## Technologies Used
@@ -67,35 +69,6 @@ Airflow: http://34.132.144.105:8080/home
    streamlit run streamlit_app.py
    ```
    
----
-
-## 📂 Project Structure
-```
-├── Backend
-│   └── Dockerfile
-|   ├── main.py
-|   ├── requirements.txt
-├── Frontend
-│   ├── app.py
-│   ├── requirements.txt
-├── airflow-docker
-│   └── Dockerfile
-|   ├── docker-compose.yaml
-|   ├── requirements.txt
-|   ├── dags
-|       └── hotel_scrape_dag.py
-|       └── youtube_dag.py
-|       └── Dockerfile
-├── Diagrams
-│   ├── ai_travel_itinerary_system_architecture.png
-├── Documentation
-├── POC  
-├── AiDisclosure.md
-├── README.md
-
-```
-
-
 ---
 
 ## Team Information

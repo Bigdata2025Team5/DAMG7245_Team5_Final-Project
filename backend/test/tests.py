@@ -49,7 +49,8 @@ with patch('snowflake_fetch.fetch_hotels', mock_fetch_hotels), \
     # Import the app after all mocks are set up
     from main import app
 
-client = TestClient(app)
+# Create test client correctly
+client = TestClient(app=app)  # Change to match the expected signature
 
 @pytest.fixture(scope="module", autouse=True)
 def set_env():
@@ -100,7 +101,3 @@ def test_ask_question_valid():
     response = client.post("/ask", json=payload)
     assert response.status_code == 200
     assert response.json() == {"answer": "Mock Answer"}
-
-
-
-

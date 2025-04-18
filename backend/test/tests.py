@@ -23,13 +23,11 @@ mock_chat = MagicMock(return_value="Mock Answer")
 mock_pdf = MagicMock(return_value=BytesIO(b"%PDF-1.4\n%Mock PDF"))
 
 # Patch external dependencies and import app
-with patch('agents.run_crew_with_data', mock_run_crew), \
-     patch('snowflake_fetch.fetch_hotels', mock_fetch_hotels), \
+with patch('snowflake_fetch.fetch_hotels', mock_fetch_hotels), \
      patch('snowflake_fetch.fetch_tours', mock_fetch_tours), \
      patch('snowflake_fetch.fetch_attractions', mock_fetch_attractions), \
      patch('pinecone_fetch.fetch_hidden_gems', mock_fetch_hidden_gems), \
      patch('llm_formating.convert_itinerary_to_text', mock_convert_text), \
-     patch('agents.run_chat_with_agent', mock_chat), \
      patch('generate_pdf.create_itinerary_pdf', mock_pdf):
     
     from main import app

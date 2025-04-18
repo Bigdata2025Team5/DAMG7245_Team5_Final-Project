@@ -62,6 +62,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks 
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
@@ -69,8 +70,7 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas pinecone spacy}
-    # The following line can be used to set a custom config file, stored in the local config folder
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas pinecone google-api-python-client youtube-transcript-api spacy openai}    
     # If you want to use it, outcomment it and replace airflow.cfg with the name of your config file
     # AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
   volumes:
@@ -156,6 +156,7 @@ services:
     environment:
       <<: *airflow-common-env
       _PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
+      AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
 
   airflow-worker:
     <<: *airflow-common
@@ -173,6 +174,7 @@ services:
     environment:
       <<: *airflow-common-env
       _PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
+      AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
@@ -198,7 +200,10 @@ services:
       airflow-init:
         condition: service_completed_successfully
     environment:
-      - PYTHONASYNCIODEBUG=1
+      <<: *airflow-common-env
+      AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
+      PYTHONASYNCIODEBUG: "1"
+      
 
 
 

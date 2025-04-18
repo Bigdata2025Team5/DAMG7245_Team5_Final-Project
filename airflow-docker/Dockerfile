@@ -25,21 +25,19 @@ RUN apt-get update && apt-get install -y \
     libxkbcommon0 \
     libxrandr2 \
     xdg-utils \
+    build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-USER airflow
+# Create a requirements.txt file
+COPY requirements.txt /tmp/requirements.txt
 
-# Install Python dependencies
-RUN pip install --no-cache-dir \
-    playwright \
-    playwright-stealth \
-    snowflake-connector-python \
-    beautifulsoup4 \
-    requests \
-    boto3 \
-    python-dotenv \
-    pandas
+# Switch to airflow user and install dependencies using Airflow's recommended method
+USER airflow
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Install Playwright browsers
 RUN python -m playwright install chromium
+
+# Download spaCy model
+RUN python -m spacy download en_core_web_sm

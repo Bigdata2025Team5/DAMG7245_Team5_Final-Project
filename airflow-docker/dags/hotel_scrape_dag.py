@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 import json
 import time
 import random
+import csv
+import math
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,7 +21,11 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-OUTPUT = "multi_city_ihg_hotels.csv"
+# File paths
+DATA_DIR = "/tmp/ihg_data"
+os.makedirs(DATA_DIR, exist_ok=True)
+RAW_HOTELS_PATH = f"{DATA_DIR}/multi_city_ihg_hotels.csv"
+GEOCODED_HOTELS_PATH = f"{DATA_DIR}/hotels_with_coordinates.csv"
 
 CITIES = {
     "New York": "NY",
@@ -28,6 +34,15 @@ CITIES = {
     "Seattle": "WA",
     "Las Vegas": "NV",
     "Los Angeles": "CA"
+}
+
+CITY_CENTERS = {
+    'New York': {'lat': 40.7128, 'lng': -73.9856},
+    'Chicago': {'lat': 41.8781, 'lng': -87.6298},
+    'San Francisco': {'lat': 37.7749, 'lng': -122.4194},
+    'Seattle': {'lat': 47.6062, 'lng': -122.3321},
+    'Las Vegas': {'lat': 36.1699, 'lng': -115.1398},
+    'Los Angeles': {'lat': 34.0522, 'lng': -118.2437}
 }
 
 KNOWN_HOTELS = {
@@ -61,20 +76,6 @@ KNOWN_HOTELS = {
         {"hotel_code": "laxdt", "brand": "intercontinental", "name": "InterContinental Los Angeles Downtown"}
     ]
 }
-
-default_args = {
-    "owner": "airflow",
-    "start_date": datetime(2023, 1, 1),
-    "retries": 1,
-}
-
-dag = DAG(
-    "ihg_hotels_dag",
-    default_args=default_args,
-    description="Scrape IHG hotels, upload to S3, and load into Snowflake",
-    schedule_interval=None,
-    catchup=False
-)
 
 def scrape_hotels():
     logger.info("Starting hotel scraping process")
@@ -130,8 +131,8 @@ def scrape_hotels():
     
     logger.info(f"Total hotels found: {len(all_hotels)}")
     df = pd.DataFrame(all_hotels)
-    df.to_csv(OUTPUT, index=False)
-    logger.info(f"Scraped {len(all_hotels)} hotels across all cities. Data saved to {OUTPUT}")
+    df.to_csv(RAW_HOTELS_PATH, index=False)
+    logger.info(f"Scraped {len(all_hotels)} hotels across all cities. Data saved to {RAW_HOTELS_PATH}")
     
     return len(all_hotels)
 
@@ -445,6 +446,7 @@ def generate_hotels_from_patterns(patterns_by_city, count):
                 address = f"{random.randint(100, 999)} {street}, {city}, {state} {random.randint(10000, 99999)}"
                 
                 reviews = random.randint(50, 2000)
+                distance = f"{round(random.uniform(0.1, 15.0), 1)} miles from center ({round(random.uniform(0.1, 25.0), 1)} km)"
               
                 hotel = {
                     "City": city,
@@ -452,7 +454,7 @@ def generate_hotels_from_patterns(patterns_by_city, count):
                     "Link": url,
                     "Image": f"https://ihg.com/images/{brand_url.lower()}/{city.lower().replace(' ', '')}-{area.lower().replace(' ', '')}.jpg",
                     "Address": address,
-                    "Distance": f"{round(random.uniform(0.1, 15.0), 1)} miles from center",
+                    "Distance": distance,
                     "Rating": str(rating),
                     "Reviews": f"{reviews} reviews",
                     "Price (per night)": f"${price}",
@@ -476,17 +478,95 @@ def run_scraping():
         logger.error(f"Error in run_scraping: {e}")
         fallback_hotels = generate_hotels_from_patterns({city: ["Holiday Inn"] for city in CITIES.keys()}, 220)
         df = pd.DataFrame(fallback_hotels)
-        df.to_csv(OUTPUT, index=False)
-        logger.info(f"Used fallback data: {len(fallback_hotels)} hotels saved to {OUTPUT}")
+        df.to_csv(RAW_HOTELS_PATH, index=False)
+        logger.info(f"Used fallback data: {len(fallback_hotels)} hotels saved to {RAW_HOTELS_PATH}")
         return len(fallback_hotels)
+
+def add_geocoding_data():
+    """Add coordinates to the hotels data"""
+    logger.info("Starting geocoding process")
+    
+    try:
+        with open(RAW_HOTELS_PATH, 'r', encoding='utf-8', errors='replace') as input_file:
+            reader = csv.DictReader(input_file)
+            all_rows = list(reader)
+
+        total_rows = len(all_rows)
+        logger.info(f"Total hotels to process: {total_rows}")
+
+        fieldnames = list(all_rows[0].keys()) + ['Latitude', 'Longitude', 'CalculationMethod']
+        results = []
+
+        for idx, row in enumerate(all_rows):
+            hotel_name = row['Name'].strip()
+            city = row['City'].strip()
+            distance_str = row['Distance'].strip()
+
+            logger.info(f"({idx+1}/{total_rows}) Processing: {hotel_name}")
+
+            updated_row = row.copy()
+
+            if city in CITY_CENTERS:
+                city_center = CITY_CENTERS[city]
+                
+                try:
+                    # Try to parse distance in km from the distance string
+                    if "km" in distance_str:
+                        km_part = distance_str.split('(')[-1].split(')')[0] if '(' in distance_str else distance_str
+                        distance_km = float(km_part.split(' ')[0])
+                    else:
+                        # If no km, generate a random distance
+                        distance_km = random.uniform(0.5, 7.0)
+                
+                    # Use the hotel name to create a consistent angle for the hotel
+                    name_hash = sum(ord(c) for c in hotel_name)
+                    angle = name_hash % 360
+                    
+                    # Calculate the coordinates
+                    lat1 = city_center['lat']
+                    lng1 = city_center['lng']
+                    
+                    # Simple approximation for coordinate calculation
+                    # Each km is roughly 0.01 degrees of latitude/longitude (very approximate)
+                    radians_angle = math.radians(angle)
+                    lat_change = distance_km * 0.009 * math.cos(radians_angle)
+                    lng_change = distance_km * 0.009 * math.sin(radians_angle)
+                    
+                    updated_row['Latitude'] = round(lat1 + lat_change, 6)
+                    updated_row['Longitude'] = round(lng1 + lng_change, 6)
+                    updated_row['CalculationMethod'] = f"Distance-based ({distance_km} km, angle {angle}°)"
+                
+                except (ValueError, IndexError):
+                    # If we can't parse distance, just add a small random offset from city center
+                    updated_row['Latitude'] = round(city_center['lat'] + random.uniform(-0.03, 0.03), 6)
+                    updated_row['Longitude'] = round(city_center['lng'] + random.uniform(-0.03, 0.03), 6)
+                    updated_row['CalculationMethod'] = "City center + random offset"
+            else:
+                # For unknown cities, leave blank
+                updated_row['Latitude'] = ''
+                updated_row['Longitude'] = ''
+                updated_row['CalculationMethod'] = "Unknown city"
+
+            results.append(updated_row)
+
+        with open(GEOCODED_HOTELS_PATH, 'w', encoding='utf-8', newline='') as output_file:
+            writer = csv.DictWriter(output_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(results)
+
+        logger.info(f"Successfully processed all {total_rows} hotels")
+        logger.info(f"Output saved to: {GEOCODED_HOTELS_PATH}")
+        
+        return total_rows
+    
+    except Exception as e:
+        logger.error(f"Error in geocoding process: {e}", exc_info=True)
+        raise
 
 def upload_to_s3():
     try:
         bucket = os.getenv("S3_BUCKET")
         key = os.getenv("S3_KEY")
-
-        ##bucket = "bigdatafinal2025"
-        ##key = "hotels/multi_city_ihg_hotels.csv"
 
         if not bucket or not key:
             raise ValueError("Missing S3_BUCKET or S3_KEY in environment variables")
@@ -497,12 +577,12 @@ def upload_to_s3():
             aws_secret_access_key=os.getenv("AWS_SECRET_KEY")
         )
 
-        s3.upload_file(OUTPUT, bucket, key)
-        logger.info(f"Uploaded to s3://{bucket}/{key}")
+        # Upload the geocoded file instead of the raw file
+        s3.upload_file(GEOCODED_HOTELS_PATH, bucket, key)
+        logger.info(f"Uploaded geocoded data to s3://{bucket}/{key}")
     except Exception as e:
         logger.exception("S3 upload failed")
         raise
-
 
 def load_into_snowflake():
     conn = None
@@ -525,8 +605,11 @@ def load_into_snowflake():
             schema=snow_schema
         )
         cursor = conn.cursor()
+
+        logger.info("Setting role to ACCOUNTADMIN...")
+        cursor.execute("USE ROLE ACCOUNTADMIN")
         
-        table = "hotels"
+        table = "HOTEL_DATA"
         s3_bucket = os.getenv("S3_BUCKET")
         s3_key = os.getenv("S3_KEY")
         stage_name = "ihg_hotels_stage"
@@ -543,6 +626,7 @@ def load_into_snowflake():
             FILE_FORMAT=(TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY='"' SKIP_HEADER = 1)
         """)
 
+        # Update the table creation to include the new geocoding columns
         cursor.execute(f"""
             CREATE OR REPLACE TABLE {table} (
                 City STRING,
@@ -556,7 +640,10 @@ def load_into_snowflake():
                 "Price (per night)" STRING,
                 "Room Fees" STRING,
                 Exclusions STRING,
-                Certified STRING
+                Certified STRING,
+                Latitude FLOAT,
+                Longitude FLOAT,
+                CalculationMethod STRING
             )
         """)
 
@@ -583,23 +670,42 @@ def load_into_snowflake():
         if conn:
             conn.close()
 
-# Airflow Tasks
-scrape_task = PythonOperator(
-    task_id="scrape_hotels",
-    python_callable=run_scraping,
-    dag=dag
-)
+# Create the DAG
+with DAG(
+    dag_id="ihg_hotels_dag",
+    description="Scrape IHG hotels, add geocoding, upload to S3, and load into Snowflake",
+    start_date=datetime(2024, 1, 1),
+    # Schedule to run at 7:30 AM daily
+    schedule="45 21 * * *",
+    catchup=False,
+    tags=["ihg", "hotels", "tourism", "etl"]
+) as dag:
 
-upload_task = PythonOperator(
-    task_id="upload_to_s3",
-    python_callable=upload_to_s3,
-    dag=dag
-)
+    # Airflow Tasks
+    scrape_task = PythonOperator(
+        task_id="scrape_hotels",
+        python_callable=run_scraping,
+        dag=dag
+    )
+    
+    # New geocoding task
+    geocode_task = PythonOperator(
+        task_id="geocode_hotels",
+        python_callable=add_geocoding_data,
+        dag=dag
+    )
 
-snowflake_task = PythonOperator(
-    task_id="load_to_snowflake",
-    python_callable=load_into_snowflake,
-    dag=dag
-)
+    upload_task = PythonOperator(
+        task_id="upload_to_s3",
+        python_callable=upload_to_s3,
+        dag=dag
+    )
 
-scrape_task >> upload_task >> snowflake_task
+    snowflake_task = PythonOperator(
+        task_id="load_to_snowflake",
+        python_callable=load_into_snowflake,
+        dag=dag
+    )
+
+    # Set task dependencies with the new geocoding step
+    scrape_task >> geocode_task >> upload_task >> snowflake_task

@@ -16,10 +16,10 @@ streamlit==1.22.0
 python-dotenv==1.0.0
 
 # LLM and AI
-openai==1.14.2                  
+openai>=1.14.2                  
 litellm==1.31.6               
 langchain==0.1.16               
-langchain-openai==0.0.2         
-crewai==0.1.32                
+langchain-openai>=0.1.6         
+crewai>=0.1.32                
 
 # REMOVE: 'dotenv' (incorrect — use 'python-dotenv')

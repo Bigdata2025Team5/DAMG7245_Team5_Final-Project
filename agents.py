@@ -1,22 +1,23 @@
+# agents.py
 from crewai import Agent
 from dotenv import load_dotenv
-from litellm import completion
-from datetime import datetime, timedelta
 import os
-import json
 import math
+from datetime import datetime, timedelta
 from random import shuffle
+from litellm import completion
 
 load_dotenv()
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
 
-# Explicitly set the LLM model and provider using LiteLLM config
+# ✅ Define LLM config for Grok
 llm_config = {
     "model": "xai/grok-2-1212",
     "api_key": os.getenv("XAI_API_KEY"),
     "provider": "grok"
 }
 
+# ✅ Crew Agent for itinerary generation
 crew_agent = Agent(
     role="Travel Planner",
     goal="Generate an HTML-based multi-day travel itinerary",
@@ -25,14 +26,14 @@ crew_agent = Agent(
     llm_config=llm_config
 )
 
+# ✅ Agent for Chat with Grok
 chat_agent = Agent(
     role="Itinerary Q&A Expert",
     goal="Answer questions about a generated travel itinerary",
-    backstory="You are a specialized AI that helps travelers understand their itinerary and answer follow-up questions based solely on the trip details provided.",
+    backstory="You help users understand their travel plans in detail.",
     verbose=True,
     llm_config=llm_config
 )
-
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     if None in (lat1, lon1, lat2, lon2):
@@ -48,16 +49,12 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     except:
         return float('inf')
 
-def get_coordinates(item):
-    return item.get("LATITUDE"), item.get("LONGITUDE")
-
 def find_closest_hotel(hotels, attractions):
     if not hotels or not attractions:
         return hotels[0] if hotels else None
     avg_lat = sum(float(a.get("LATITUDE", 0)) for a in attractions) / len(attractions)
     avg_lon = sum(float(a.get("LONGITUDE", 0)) for a in attractions) / len(attractions)
-    closest_hotel = min(hotels, key=lambda h: calculate_distance(avg_lat, avg_lon, h.get("LATITUDE"), h.get("LONGITUDE")))
-    return closest_hotel
+    return min(hotels, key=lambda h: calculate_distance(avg_lat, avg_lon, h.get("LATITUDE"), h.get("LONGITUDE")))
 
 def run_crew_with_data(data):
     try:
@@ -75,8 +72,8 @@ def run_crew_with_data(data):
 
         used_tours = set()
         used_attractions = set()
-
         days = []
+
         for i in range(num_days):
             today_tours = []
             today_attractions = []
@@ -144,33 +141,35 @@ Fallback if missing: https://placehold.co/400x300
         '''
 
         response = completion(
-            model="xai/grok-2-1212",
+            model=llm_config["model"],
             messages=[{"role": "user", "content": prompt}],
-            provider="grok",
-            api_key=os.getenv("XAI_API_KEY")
+            provider=llm_config["provider"],
+            api_key=llm_config["api_key"]
         )
 
-        return response['choices'][0]['message']['content']
+        html = response['choices'][0]['message']['content']
+        return html, reduced_data
 
     except Exception as e:
         print("Grok call error:", e)
-        raise RuntimeError(f"Failed to generate itinerary from Grok: {str(e)}")
+        raise RuntimeError(f"Failed to generate itinerary: {str(e)}")
+
 
 def run_chat_with_agent(itinerary_text: str, question: str):
     try:
         prompt = f"""You are a helpful travel assistant. Here is the travel itinerary:\n{itinerary_text}\n\nNow answer this question based on the itinerary only:\n{question}"""
 
         response = completion(
-            model="xai/grok-2-1212",
+            model=llm_config["model"],
             messages=[
                 {"role": "system", "content": "Only answer based on the given itinerary."},
                 {"role": "user", "content": prompt}
             ],
-            provider="grok",
-            api_key=os.getenv("XAI_API_KEY")
+            provider=llm_config["provider"],
+            api_key=llm_config["api_key"]
         )
 
         return response['choices'][0]['message']['content']
     except Exception as e:
         print("Chat Grok call error:", e)
-        raise RuntimeError(f"Failed to get chat response from Grok: {str(e)}")
+        raise RuntimeError(f"Failed to get chat response: {str(e)}")

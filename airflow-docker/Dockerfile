@@ -1,6 +1,9 @@
 FROM apache/airflow:2.10.4
 USER root
 
+# Set PIP_USER to false to avoid permission issues
+ENV PIP_USER=false
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     wget \
@@ -46,8 +49,11 @@ RUN python -m playwright install chromium
 RUN python -m spacy download en_core_web_sm
 
 # Fix permissions in the Python site-packages directory
-RUN chown -R airflow:root /home/airflow/.local \
+RUN mkdir -p /home/airflow/.local \
+    && chown -R airflow:root /home/airflow/.local \
     && chmod -R 777 /home/airflow/.local
 
 # Switch back to airflow user for security
 USER airflow
+# Reset PIP_USER for the airflow user
+ENV PIP_USER=true

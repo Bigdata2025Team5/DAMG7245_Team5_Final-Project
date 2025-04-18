@@ -116,7 +116,7 @@ You are a travel itinerary expert.
 Generate a professional {num_days}-day HTML travel itinerary for {data['city']} from {data['start_date']} to {data['end_date']} for {data['adults']} adults and {data['kids']} kids.
 
 🎯 For each day include:
-- 🏨 Hotel with NAME, IMAGE, ADDRESS, DISTANCE, RATING, REVIEWS, Price, CERTIFIED.
+- 🏨 Hotel with NAME, ADDRESS, DISTANCE, RATING, REVIEWS, Price, CERTIFIED.
 - 🚌 2 Tours with: TITLE, RATING, REVIEW COUNT, PRICE, Know More, IMAGE.
 - 📍 2 Attractions with: PLACENAME, Ticket Details, HOURS, How to Reach, IMAGE, DESCRIPTION.
 

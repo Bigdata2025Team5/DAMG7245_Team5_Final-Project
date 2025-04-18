@@ -6,72 +6,36 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 def initialize_pinecone():
-    """Initialize Pinecone connection using the updated SDK"""
     try:
         api_key = os.getenv("PINECONE_API_KEY")
-        
-        # Initialize Pinecone with the new pattern
         pc = Pinecone(api_key=api_key)
-        
-        # Get the index name from environment or use default
-        # Update this to match your actual index name from the error message
         index_name = os.getenv("PINECONE_INDEX", "bigdatafinal")
-        
-        # Connect to the index
         index = pc.Index(index_name)
-        
         return index
     except Exception as e:
         print(f"Error initializing Pinecone: {e}")
-        # Return None to indicate failure, handled by the calling function
         return None
 
 def fetch_hidden_gems(city: str, limit: int = 5) -> List[Dict[Any, Any]]:
-    """
-    Fetch hidden gems for a specific city from Pinecone
-    
-    Args:
-        city: Name of the city to fetch hidden gems for
-        limit: Maximum number of hidden gems to fetch
-        
-    Returns:
-        List of hidden gems with their details
-    """
     try:
-        # Format city name to match how it's stored in Pinecone
-        # Your ETL script uses specific formats like "SanFrancisco" without spaces
         formatted_city = format_city_name(city)
-        
         index = initialize_pinecone()
-        
         if not index:
             print(f"Failed to initialize Pinecone index, using fallback data")
-            # Provide some hardcoded fallback data for common cities
             fallback_data = get_fallback_hidden_gems(city)
             if fallback_data:
                 return fallback_data
             return []
-            
-        # Query for hidden gems
-        # We're looking for records matching the city with metadata filters
-        # Updated for new Pinecone SDK
-        
         try:
-            # Execute the query with the new API pattern
             results = index.query(
-                vector=[0] * 1536,  # Placeholder vector - updated to match your 1536 dimension
+                vector=[0] * 1536,
                 filter={"city": {"$eq": formatted_city}},
                 top_k=limit,
                 include_metadata=True
             )
-            
-            # Process the results
             hidden_gems = []
             for match in results.matches:
-                # Extract the relevant metadata
                 metadata = match.metadata
-                
-                # Format the hidden gem data to match your structure
                 gem = {
                     "title": metadata.get("title", "Hidden Gem"),
                     "description": metadata.get("text_sample", ""),
@@ -81,31 +45,21 @@ def fetch_hidden_gems(city: str, limit: int = 5) -> List[Dict[Any, Any]]:
                     "url": metadata.get("url", ""),
                     "source": metadata.get("channel", "Local Guide")
                 }
-                
-                # Add time references if available
                 if metadata.get("time_references"):
                     gem["time_references"] = metadata.get("time_references", [])
-                
-                # Add additional fields from your ETL structure
                 if metadata.get("landmarks"):
                     gem["landmarks"] = metadata.get("landmarks", [])
-                
                 if metadata.get("transport"):
                     gem["transport"] = metadata.get("transport", [])
-                
                 hidden_gems.append(gem)
-                
             print(f"Found {len(hidden_gems)} hidden gems for {city}")
             return hidden_gems
-            
         except Exception as query_error:
             print(f"Error querying Pinecone: {query_error}")
             fallback_data = get_fallback_hidden_gems(city)
             return fallback_data
-            
     except Exception as e:
         print(f"Error fetching hidden gems from Pinecone: {e}")
-        # Try fallback if Pinecone query fails
         fallback_data = get_fallback_hidden_gems(city)
         if fallback_data:
             print(f"Using fallback data for {city}")
@@ -113,16 +67,6 @@ def fetch_hidden_gems(city: str, limit: int = 5) -> List[Dict[Any, Any]]:
         return []
 
 def format_city_name(city: str) -> str:
-    """
-    Format city name to match how it's stored in Pinecone
-    
-    Args:
-        city: City name to format
-        
-    Returns:
-        Formatted city name
-    """
-    # Remove spaces and special characters
     city_map = {
         "New York": "NewYork",
         "San Francisco": "SanFrancisco",
@@ -131,20 +75,9 @@ def format_city_name(city: str) -> str:
         "Chicago": "Chicago",
         "Seattle": "Seattle"
     }
-    
-    # Return mapped value if exists, otherwise remove spaces
     return city_map.get(city, city.replace(" ", ""))
 
 def get_fallback_hidden_gems(city: str) -> List[Dict[Any, Any]]:
-    """
-    Provide fallback hidden gems data when Pinecone is unavailable
-    
-    Args:
-        city: City name to get fallback data for
-        
-    Returns:
-        List of hardcoded hidden gems for the specified city
-    """
     fallback_data = {
         "New York": [
             {
@@ -344,16 +277,11 @@ def get_fallback_hidden_gems(city: str) -> List[Dict[Any, Any]]:
             }
         ]
     }
-    
-    # Return fallback data if available for the requested city
     return fallback_data.get(city, [])
 
-# For testing
 if __name__ == "__main__":
-    # Test with a city
     test_city = "San Francisco"
     hidden_gems = fetch_hidden_gems(test_city)
-    
     print(f"Found {len(hidden_gems)} hidden gems for {test_city}")
     for i, gem in enumerate(hidden_gems):
         print(f"Gem {i+1}: {gem.get('title')}")

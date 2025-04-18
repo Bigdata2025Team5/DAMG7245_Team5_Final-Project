@@ -1,5 +1,6 @@
 import os
 import traceback
+import logging
 import uvicorn
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -7,19 +8,22 @@ from pydantic import BaseModel, field_validator
 from datetime import date
 from typing import Literal
 from dotenv import load_dotenv
-from agents import run_crew_with_data, run_chat_with_agent
-from snowflake_fetch import (
+from backend.agents import run_crew_with_data, run_chat_with_agent
+from backend.snowflake_fetch import (
     fetch_attractions,
     fetch_hotels,
     fetch_tours,
     convert_decimal_to_float
 )
-from pinecone_fetch import fetch_hidden_gems
-from llm_formating import convert_itinerary_to_text
-from generate_pdf import create_itinerary_pdf
+from backend.pinecone_fetch import fetch_hidden_gems
+from backend.llm_formating import convert_itinerary_to_text
+from backend.generate_pdf import create_itinerary_pdf
 
 load_dotenv(override=True)
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 app.add_middleware(
@@ -29,7 +33,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-
 
 class ItineraryInput(BaseModel):
     city: str
@@ -70,22 +73,19 @@ class RawDataRequest(BaseModel):
     include_tours: bool = True
     include_things: bool = True
 
-
 def fetch_itinerary_data(city, start_date, end_date, travel_type, adults, kids, budget,
                          include_tours=True, include_accommodation=True, include_things=True):
-    print("--- FETCHING ITINERARY DATA ---")
-    print(f"City: {city}, Budget: {budget}, Start: {start_date}, End: {end_date}")
-    print(f"Include Tours: {include_tours}, Include Accommodations: {include_accommodation}, Include Things to Do: {include_things}")
+    logger.info("FETCHING ITINERARY DATA")
+    logger.info(f"City: {city}, Budget: {budget}, Start: {start_date}, End: {end_date}")
+    logger.info(f"Include Tours: {include_tours}, Include Accommodations: {include_accommodation}, Include Things to Do: {include_things}")
     hotels = convert_decimal_to_float(fetch_hotels(city, budget)) if include_accommodation else []
-    print(f"Fetched {len(hotels)} hotels")
+    logger.info(f"Fetched {len(hotels)} hotels")
     tours = convert_decimal_to_float(fetch_tours(city, budget)) if include_tours else []
-    print(f"Fetched {len(tours)} tours")
+    logger.info(f"Fetched {len(tours)} tours")
     attractions = convert_decimal_to_float(fetch_attractions(city, budget, include_free=True)) if include_things else []
-    print(f"Fetched {len(attractions)} attractions")
-    
-    # Fetch hidden gems from Pinecone
+    logger.info(f"Fetched {len(attractions)} attractions")
     hidden_gems = fetch_hidden_gems(city)
-    print(f"Fetched {len(hidden_gems)} hidden gems")
+    logger.info(f"Fetched {len(hidden_gems)} hidden gems")
 
     return {
         "city": city,
@@ -101,14 +101,15 @@ def fetch_itinerary_data(city, start_date, end_date, travel_type, adults, kids, 
         "hidden_gems": hidden_gems
     }
 
-
 @app.get("/")
 def root():
+    logger.info("Health check endpoint called")
     return {"status": "online"}
 
 @app.post("/generate-itinerary")
 def generate_itinerary(payload: ItineraryInput):
     try:
+        logger.info("Generating itinerary")
         structured_data = fetch_itinerary_data(
             city=payload.city,
             start_date=payload.start_date,
@@ -125,6 +126,7 @@ def generate_itinerary(payload: ItineraryInput):
         html = run_crew_with_data(structured_data)
         text_summary = convert_itinerary_to_text(html)
 
+        logger.info("Itinerary generation successful")
         return {
             "status": "success",
             "data": {
@@ -134,36 +136,39 @@ def generate_itinerary(payload: ItineraryInput):
         }
 
     except Exception as e:
-        traceback.print_exc()
+        logger.error("Error generating itinerary", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error generating itinerary: {str(e)}")
-
 
 @app.post("/generate-pdf")
 def generate_pdf(payload: PDFRequest):
     try:
+        logger.info(f"Generating PDF for city: {payload.city}")
         pdf_bytes = create_itinerary_pdf(payload.city, payload.itinerary, payload.start_date)
 
         if not pdf_bytes or pdf_bytes.getbuffer().nbytes == 0:
             raise ValueError("Generated PDF is empty.")
 
+        logger.info("PDF generation successful")
         return Response(
             content=pdf_bytes.getvalue(),
             media_type="application/pdf"
         )
 
     except Exception as e:
-        traceback.print_exc()
+        logger.error("Error generating PDF", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error generating PDF: {str(e)}")
-
 
 @app.post("/ask")
 def ask_question(req: ChatRequest):
     try:
+        logger.info("Handling chat request")
         answer = run_chat_with_agent(req.itinerary, req.question)
         return {"answer": answer}
     except Exception as e:
+        logger.error("Error during chat handling", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
+    logger.info(f"Starting server on port {port}")
     uvicorn.run(app, host="0.0.0.0", port=port)

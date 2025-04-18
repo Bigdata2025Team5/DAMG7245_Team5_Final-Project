@@ -1,5 +1,3 @@
-##generate_pdf.py:
-
 import re
 from fpdf import FPDF
 from io import BytesIO
@@ -9,12 +7,12 @@ import io
 from datetime import datetime, timedelta
 
 def clean_text(text):
-    text = text.encode("latin-1", "replace").decode("latin-1")  # Replace unsupported chars
+    text = text.encode("latin-1", "replace").decode("latin-1")  
     return re.sub(r'\s+', ' ', text).strip()
 
 class ItineraryPDF(FPDF):
-    def _init_(self):
-        super()._init_()
+    def __init__(self):
+        super().__init__()
         self.set_auto_page_break(auto=True, margin=15)
 
     def header(self):
@@ -96,7 +94,7 @@ def parse_and_structure(itinerary):
         for line in lines[1:]:
             line = line.strip()
             if not line or line in seen_lines:
-                continue  # Skip duplicates or empty lines
+                continue 
             seen_lines.add(line)
 
             if "Hotel:" in line or "Address:" in line:
@@ -118,7 +116,6 @@ def create_itinerary_pdf(city, itinerary_text, start_date_str=""):
     pdf = ItineraryPDF()
     pdf.add_page()
 
-    # Cover Page
     pdf.set_font("Arial", "B", 24)
     pdf.cell(0, 20, f"{clean_text(city)} Travel Itinerary", 0, 1, 'C')
     pdf.line(30, pdf.get_y(), 180, pdf.get_y())
@@ -134,7 +131,6 @@ def create_itinerary_pdf(city, itinerary_text, start_date_str=""):
     except:
         pass
 
-    # Main Content
     days = parse_and_structure(itinerary_text)
     start_date = datetime.strptime(start_date_str, "%Y-%m-%d") if start_date_str else None
 
@@ -149,7 +145,6 @@ def create_itinerary_pdf(city, itinerary_text, start_date_str=""):
                 pdf.subsection(section)
                 pdf.paragraph(day[section])
 
-    # Hidden Gems
     if "HIDDEN GEMS" in itinerary_text:
         pdf.add_page()
         pdf.section_title("Hidden Gems")
@@ -158,12 +153,10 @@ def create_itinerary_pdf(city, itinerary_text, start_date_str=""):
             if line.strip() and not any(x in line.lower() for x in ["tips", "beyond the typical"]):
                 pdf.bullet(line)
 
-    # Output
     output = BytesIO()
     pdf.output(output)
     output.seek(0)
 
-    # Extra validation
     if output.getbuffer().nbytes == 0:
         raise ValueError("Generated PDF is empty.")
 

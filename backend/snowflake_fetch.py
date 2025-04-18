@@ -49,11 +49,7 @@ def fetch_attractions(city, budget="medium", include_free=True):
         conn = get_connection()
         cursor = conn.cursor()
         
-        # Standardize city name for query
         standardized_city = standardize_city_name(city)
-        
-        # Query with proper city name handling to accommodate different city name formats
-        # Using the ATTRACTION table with updated column names
         query = f"""
         SELECT * FROM ATTRACTION 
         WHERE (CITY ILIKE '%{standardized_city}%' 
@@ -66,20 +62,16 @@ def fetch_attractions(city, budget="medium", include_free=True):
         columns = [desc[0] for desc in cursor.description]
         results = [dict(zip(columns, row)) for row in cursor.fetchall()]
         
-        # Convert Decimal values to float for JSON serialization
         results = convert_decimal_to_float(results)
         
         # Process the results to determine if attractions are free and their price range
         processed_results = []
         
         for attraction in results:
-            # Check if this is a free attraction (note the column name change)
             is_free = is_attraction_free(attraction)
             
-            # Extract price value for paid attractions
             price_value = 0
             if not is_free:
-                # Note the column name change from TICKET_DETAILS to "Ticket Details"
                 price_value = extract_price_from_ticket_details(attraction.get('Ticket Details', ''))
             
             # Add flags to the attraction
@@ -100,7 +92,6 @@ def fetch_attractions(city, budget="medium", include_free=True):
                 elif budget == "high" or price_value > 150:
                     processed_results.append(attraction)
         
-        # Sort by rating if available
         sorted_results = sorted(processed_results, 
                               key=lambda x: float(x.get('RATING', 0) or 0), 
                               reverse=True)
@@ -117,24 +108,12 @@ def fetch_attractions(city, budget="medium", include_free=True):
             conn.close()
 
 def fetch_hotels(city, budget="medium", top_n=5):
-    """
-    Fetch hotels data for a specific city with budget filtering
-    
-    Args:
-        city: City name to search for
-        budget: 'low', 'medium', or 'high'
-        top_n: Number of top hotels to return per category
-    """
     conn = None
     try:
         conn = get_connection()
         cursor = conn.cursor()
-        
-        # Standardize city name for query
         standardized_city = standardize_city_name(city)
         
-        # Query with proper city name handling
-        # Using HOTEL_DATA table instead of HOTEL
         query = f"""
         SELECT * FROM HOTEL_DATA 
         WHERE CITY ILIKE '%{standardized_city}%'
@@ -232,13 +211,6 @@ def fetch_hotels(city, budget="medium", top_n=5):
             conn.close()
 
 def fetch_tours(city, budget="medium"):
-    """
-    Fetch tours data for a specific city with budget filtering
-    
-    Args:
-        city: City name to search for
-        budget: 'low', 'medium', or 'high'
-    """
     conn = None
     try:
         conn = get_connection()
@@ -247,8 +219,6 @@ def fetch_tours(city, budget="medium"):
         # Standardize city name for query
         standardized_city = standardize_city_name(city)
         
-        # Query with proper city name handling
-        # Using the TOUR table
         query = f"""
         SELECT * FROM TOUR 
         WHERE (CITY ILIKE '%{standardized_city}%' 
@@ -261,7 +231,6 @@ def fetch_tours(city, budget="medium"):
         columns = [desc[0] for desc in cursor.description]
         results = [dict(zip(columns, row)) for row in cursor.fetchall()]
         
-        # Convert Decimal values to float for JSON serialization
         results = convert_decimal_to_float(results)
         
         # Process tours to extract price values
@@ -314,22 +283,10 @@ def fetch_tours(city, budget="medium"):
             conn.close()
 
 def get_next_closest_places(current_url, all_places, category_type="attraction", max_results=3):
-    """
-    Find the next closest places to the current place based on coordinates
-    
-    Args:
-        current_url: URL of the current place
-        all_places: List of all available places
-        category_type: Type of places ("attraction", "hotel", or "tour")
-        max_results: Maximum number of alternatives to return
-    
-    Returns:
-        List of closest places that aren't the current place
-    """
     # Different field mappings based on category type
     url_field = "URL"
     if category_type == "hotel":
-        url_field = "LINK"  # Use LINK instead of URL for hotels
+        url_field = "LINK"  
         
     lat_field = "LATITUDE"
     lng_field = "LONGITUDE"
@@ -341,7 +298,7 @@ def get_next_closest_places(current_url, all_places, category_type="attraction",
             current_place = place
             break
             
-    # If current place not found, return the top places by rating
+ 
     if not current_place:
         print(f"Current place with URL {current_url} not found")
         sorted_places = sorted(all_places, 
@@ -349,7 +306,7 @@ def get_next_closest_places(current_url, all_places, category_type="attraction",
                              reverse=True)
         return sorted_places[:min(max_results, len(sorted_places))]
     
-    # Check if current place has valid coordinates
+    
     try:
         if not all([current_place.get(lat_field), current_place.get(lng_field)]):
             # No coordinates, return top rated places
@@ -432,11 +389,11 @@ def extract_price_from_ticket_details(ticket_details):
     
     # Look for price patterns
     price_patterns = [
-        r'\$\s*(\d+(?:\.\d+)?)',  # $XX or $XX.XX
-        r'USD\s*(\d+(?:\.\d+)?)',  # USD XX or USD XX.XX
-        r'(\d+(?:\.\d+)?)\s*USD',  # XX USD or XX.XX USD
-        r'Adult(?:[^$])\$\s(\d+(?:\.\d+)?)',  # Adult: $XX
-        r'Price(?:[^$])\$\s(\d+(?:\.\d+)?)'   # Price: $XX
+        r'\$\s*(\d+(?:\.\d+)?)',  
+        r'USD\s*(\d+(?:\.\d+)?)',  
+        r'(\d+(?:\.\d+)?)\s*USD',  
+        r'Adult(?:[^$])\$\s(\d+(?:\.\d+)?)', 
+        r'Price(?:[^$])\$\s(\d+(?:\.\d+)?)'   
     ]
     
     for pattern in price_patterns:
@@ -456,8 +413,8 @@ def extract_price(price_text):
         return 0
     
     # Look for price patterns
-    price_pattern = r'\$\s*(\d+(?:\.\d+)?)'  # $XX or $XX.XX
-    usd_pattern = r'USD\s*(\d+(?:\.\d+)?)'   # USD XX or USD XX.XX
+    price_pattern = r'\$\s*(\d+(?:\.\d+)?)'
+    usd_pattern = r'USD\s*(\d+(?:\.\d+)?)'   
     
     # Try dollar sign pattern
     dollar_matches = re.findall(price_pattern, price_text)
@@ -487,7 +444,6 @@ def extract_price(price_text):
     return 0
 
 def standardize_city_name(city):
-    """Standardize city names for consistent database queries"""
     if not city:
         return ""
     
@@ -511,13 +467,6 @@ def standardize_city_name(city):
     return city
 
 def sort_hotels_by_value(hotels, budget):
-    """
-    Sort hotels by a combination of rating and price-appropriateness for the budget
-    
-    Args:
-        hotels: List of hotel dictionaries
-        budget: 'low', 'medium', or 'high'
-    """
     # Calculate a value score for each hotel
     for hotel in hotels:
         rating = float(hotel.get('RATING', 3) or 3)

@@ -10,11 +10,19 @@ from random import shuffle
 load_dotenv()
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
 
+# Explicitly set the LLM model and provider using LiteLLM config
+llm_config = {
+    "model": "xai/grok-2-1212",
+    "api_key": os.getenv("XAI_API_KEY"),
+    "provider": "grok"
+}
+
 crew_agent = Agent(
     role="Travel Planner",
     goal="Generate an HTML-based multi-day travel itinerary",
     backstory="You are a helpful AI travel assistant who plans perfect trips based on structured data.",
     verbose=True,
+    llm_config=llm_config
 )
 
 chat_agent = Agent(
@@ -22,7 +30,9 @@ chat_agent = Agent(
     goal="Answer questions about a generated travel itinerary",
     backstory="You are a specialized AI that helps travelers understand their itinerary and answer follow-up questions based solely on the trip details provided.",
     verbose=True,
+    llm_config=llm_config
 )
+
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     if None in (lat1, lon1, lat2, lon2):

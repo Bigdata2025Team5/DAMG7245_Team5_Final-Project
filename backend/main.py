@@ -8,16 +8,16 @@ from pydantic import BaseModel, field_validator
 from datetime import date
 from typing import Literal
 from dotenv import load_dotenv
-from backend.agents import run_crew_with_data, run_chat_with_agent
-from backend.snowflake_fetch import (
+from agents import run_crew_with_data, run_chat_with_agent
+from snowflake_fetch import (
     fetch_attractions,
     fetch_hotels,
     fetch_tours,
     convert_decimal_to_float,
     get_next_closest_places
 )
-from backend.pinecone_fetch import fetch_hidden_gems
-from backend.llm_formating import convert_itinerary_to_text
+from pinecone_fetch import fetch_hidden_gems
+from llm_formating import convert_itinerary_to_text
 
 load_dotenv(override=True)
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")

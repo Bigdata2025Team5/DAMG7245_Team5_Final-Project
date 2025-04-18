@@ -56,4 +56,4 @@ jobs:
 
       - name: Run pytest
         run: |
-          pytest backend/tests/test.py --maxfail=1 --disable-warnings -v
+          pytest backend/test/tests.py --maxfail=1 --disable-warnings -v

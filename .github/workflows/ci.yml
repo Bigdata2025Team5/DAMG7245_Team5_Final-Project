@@ -31,7 +31,7 @@ jobs:
       - name: Load environment variables from .env
         run: |
           echo "Loading .env"
-          cat .env >> $GITHUB_ENV
+          cat .env >> $ENV_GITHUB
 
       - name: Run pytest
         run: |

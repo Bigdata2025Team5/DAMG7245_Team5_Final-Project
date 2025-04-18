@@ -1,3 +1,4 @@
+# backend/test/tests.py
 import os
 import sys
 import pytest
@@ -8,19 +9,34 @@ from io import BytesIO
 # Add backend path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Mock ChatOpenAI from langchain_openai before importing app
+# Mock Agent and other imports before importing anything else
+sys.modules['agents'] = MagicMock()
+sys.modules['agents'].Agent = MagicMock()
+sys.modules['agents'].Runner = MagicMock()
+sys.modules['agents'].trace = MagicMock()
+sys.modules['agents'].run_crew_with_data = MagicMock(return_value="<html><body>Mock Itinerary</body></html>")
+sys.modules['agents'].run_chat_with_agent = MagicMock(return_value="Mock Answer")
+
+# Mock other dependencies
 sys.modules['langchain_openai'] = MagicMock()
 sys.modules['langchain_openai'].ChatOpenAI = MagicMock()
 
-# Define mock functions
+# Define mock functions for Snowflake and other services
 mock_fetch_hotels = MagicMock(return_value=[{"name": "Mock Hotel"}])
 mock_fetch_tours = MagicMock(return_value=[{"title": "Mock Tour"}])
 mock_fetch_attractions = MagicMock(return_value=[{"title": "Mock Attraction"}])
 mock_fetch_hidden_gems = MagicMock(return_value=[{"name": "Hidden Gem"}])
-mock_run_crew = MagicMock(return_value="<html><body>Mock Itinerary</body></html>")
 mock_convert_text = MagicMock(return_value="Mock Text Summary")
-mock_chat = MagicMock(return_value="Mock Answer")
 mock_pdf = MagicMock(return_value=BytesIO(b"%PDF-1.4\n%Mock PDF"))
+
+# Mock location intelligence
+sys.modules['location_intelligence'] = MagicMock()
+sys.modules['location_intelligence'].geocode_itinerary = MagicMock(
+    return_value={"all_locations": [], "locations_by_day": {}}
+)
+sys.modules['location_intelligence'].start_location_intelligence = MagicMock(
+    return_value={"locations": [], "attractions": []}
+)
 
 # Patch external dependencies and import app
 with patch('snowflake_fetch.fetch_hotels', mock_fetch_hotels), \
@@ -30,6 +46,7 @@ with patch('snowflake_fetch.fetch_hotels', mock_fetch_hotels), \
      patch('llm_formating.convert_itinerary_to_text', mock_convert_text), \
      patch('generate_pdf.create_itinerary_pdf', mock_pdf):
     
+    # Import the app after all mocks are set up
     from main import app
 
 client = TestClient(app)
@@ -38,6 +55,7 @@ client = TestClient(app)
 def set_env():
     os.environ["OPENAI_API_KEY"] = "test"
     os.environ["XAI_API_KEY"] = "test"
+    os.environ["GOOGLE_MAPS_API_KEY"] = "test"
     yield
 
 # ---------------- Valid and Working Tests ---------------- #
@@ -82,3 +100,7 @@ def test_ask_question_valid():
     response = client.post("/ask", json=payload)
     assert response.status_code == 200
     assert response.json() == {"answer": "Mock Answer"}
+
+
+
+

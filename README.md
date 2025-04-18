@@ -17,8 +17,6 @@ FastApi: https://travel-planner-app-577642034601.us-central1.run.app/docs
 
 Airflow: http://34.132.144.105:8080/home
 
-YouTube Video:
-
 ---
 
 ## Technologies Used

@@ -1,0 +1,273 @@
+[2025-04-17T20:10:36.714+0000] {processor.py:186} INFO - Started process (PID=65) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:10:36.716+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:10:36.718+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:10:36.718+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:10:38.650+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:10:38.748+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:10:38.748+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:10:38.765+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:10:38.765+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:10:38.784+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 2.074 seconds
+[2025-04-17T20:11:09.069+0000] {processor.py:186} INFO - Started process (PID=84) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:09.070+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:11:09.071+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:09.071+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:09.487+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:09.496+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:09.495+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:11:09.504+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:09.504+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:11:09.512+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.448 seconds
+[2025-04-17T20:11:40.150+0000] {processor.py:186} INFO - Started process (PID=98) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:40.151+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:11:40.152+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:40.152+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:40.538+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:11:40.549+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:40.549+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:11:40.557+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:11:40.557+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:11:40.562+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.417 seconds
+[2025-04-17T20:12:11.268+0000] {processor.py:186} INFO - Started process (PID=112) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:11.269+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:12:11.271+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:11.271+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:11.764+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:11.779+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:11.779+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:12:11.788+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:11.788+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:12:11.796+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.534 seconds
+[2025-04-17T20:12:42.523+0000] {processor.py:186} INFO - Started process (PID=126) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:42.525+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:12:42.527+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:42.527+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:42.941+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:12:42.951+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:42.951+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:12:42.960+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:12:42.960+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:12:42.968+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.449 seconds
+[2025-04-17T20:13:13.969+0000] {processor.py:186} INFO - Started process (PID=139) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:13.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:13:13.973+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:13.972+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:14.342+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:14.352+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:14.352+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:13:14.360+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:14.359+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:13:14.371+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.406 seconds
+[2025-04-17T20:13:45.338+0000] {processor.py:186} INFO - Started process (PID=153) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:45.339+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:13:45.341+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:45.341+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:45.696+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:13:45.704+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:45.704+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:13:45.711+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:13:45.711+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:13:45.718+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.384 seconds
+[2025-04-17T20:14:16.447+0000] {processor.py:186} INFO - Started process (PID=167) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:16.448+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:14:16.449+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:16.449+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:16.822+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:16.833+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:16.832+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:14:16.842+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:16.842+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:14:16.852+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.410 seconds
+[2025-04-17T20:14:47.848+0000] {processor.py:186} INFO - Started process (PID=181) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:47.850+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:14:47.851+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:47.851+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:48.204+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:14:48.213+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:48.213+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:14:48.219+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:14:48.219+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:14:48.227+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.383 seconds
+[2025-04-17T20:15:18.959+0000] {processor.py:186} INFO - Started process (PID=195) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:18.959+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:15:18.961+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:18.961+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:19.244+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:19.253+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:19.253+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:15:19.260+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:19.260+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:15:19.267+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.311 seconds
+[2025-04-17T20:15:49.312+0000] {processor.py:186} INFO - Started process (PID=211) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:49.313+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:15:49.314+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:49.314+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:49.693+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:15:49.703+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:49.703+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:15:49.709+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:15:49.709+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:15:49.714+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.407 seconds
+[2025-04-17T20:16:20.396+0000] {processor.py:186} INFO - Started process (PID=226) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:20.396+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:16:20.398+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:20.398+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:20.681+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:20.691+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:20.691+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:16:20.781+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:20.781+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:16:20.789+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.398 seconds
+[2025-04-17T20:16:51.082+0000] {processor.py:186} INFO - Started process (PID=241) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:51.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:16:51.084+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:51.083+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:51.377+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:16:51.491+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:51.490+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:16:51.498+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:16:51.498+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:16:51.507+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.430 seconds
+[2025-04-17T20:17:22.172+0000] {processor.py:186} INFO - Started process (PID=256) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:22.173+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:17:22.175+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:22.174+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:22.554+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:22.563+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:22.563+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:17:22.571+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:22.571+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:17:22.581+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.413 seconds
+[2025-04-17T20:17:53.320+0000] {processor.py:186} INFO - Started process (PID=271) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:53.320+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:17:53.322+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:53.322+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:53.689+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:17:53.699+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:53.698+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:17:53.707+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:17:53.707+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:17:53.713+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.398 seconds
+[2025-04-17T20:18:24.430+0000] {processor.py:186} INFO - Started process (PID=286) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:24.431+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:18:24.433+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:24.433+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:24.791+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:24.799+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:24.799+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:18:24.806+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:24.806+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:18:24.813+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.387 seconds
+[2025-04-17T20:18:55.630+0000] {processor.py:186} INFO - Started process (PID=302) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:55.632+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:18:55.633+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:55.633+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:56.005+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:18:56.015+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:56.015+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:18:56.025+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:18:56.025+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:18:56.029+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.403 seconds
+[2025-04-17T20:19:26.894+0000] {processor.py:186} INFO - Started process (PID=320) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:26.895+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:19:26.897+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:26.897+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:27.256+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:27.265+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:27.265+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:19:27.273+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:27.273+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:19:27.280+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.390 seconds
+[2025-04-17T20:19:58.052+0000] {processor.py:186} INFO - Started process (PID=335) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:58.053+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:19:58.055+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:58.055+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:58.445+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:19:58.458+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:58.458+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:19:58.466+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:19:58.466+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:19:58.475+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.428 seconds
+[2025-04-17T20:20:29.218+0000] {processor.py:186} INFO - Started process (PID=350) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:20:29.218+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:20:29.224+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:20:29.224+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:20:29.604+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:20:29.619+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:20:29.619+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:20:29.627+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:20:29.626+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:20:29.635+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.423 seconds
+[2025-04-17T20:21:00.403+0000] {processor.py:186} INFO - Started process (PID=365) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:00.404+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:21:00.406+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:00.406+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:00.792+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:00.801+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:00.801+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:21:00.811+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:00.811+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:21:00.820+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.421 seconds
+[2025-04-17T20:21:31.587+0000] {processor.py:186} INFO - Started process (PID=381) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:31.588+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:21:31.590+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:31.590+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:31.973+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:21:31.982+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:31.982+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:21:31.992+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:21:31.991+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:21:32.000+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.417 seconds
+[2025-04-17T20:22:02.729+0000] {processor.py:186} INFO - Started process (PID=396) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:02.730+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:22:02.731+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:02.731+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:03.094+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:03.104+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:03.104+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:22:03.111+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:03.111+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:22:03.121+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.396 seconds
+[2025-04-17T20:22:33.878+0000] {processor.py:186} INFO - Started process (PID=411) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:33.879+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:22:33.880+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:33.880+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:34.242+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:22:34.252+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:34.251+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:22:34.258+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:22:34.258+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:22:34.266+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.393 seconds
+[2025-04-17T20:23:05.052+0000] {processor.py:186} INFO - Started process (PID=426) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:05.052+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:23:05.054+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:05.054+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:05.430+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:05.439+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:05.439+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:23:05.446+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:05.446+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:23:05.454+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.407 seconds
+[2025-04-17T20:23:36.206+0000] {processor.py:186} INFO - Started process (PID=441) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:36.208+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:23:36.209+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:36.209+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:36.594+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:23:36.605+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:36.604+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:23:36.614+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:23:36.614+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:23:36.623+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.421 seconds
+[2025-04-17T20:24:07.384+0000] {processor.py:186} INFO - Started process (PID=456) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:07.385+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:24:07.387+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:07.386+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:07.760+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:07.769+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:07.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:24:07.776+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:07.776+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:24:07.783+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.403 seconds
+[2025-04-17T20:24:38.590+0000] {processor.py:186} INFO - Started process (PID=471) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:38.590+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:24:38.593+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:38.592+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:38.958+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:24:38.972+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:38.971+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:24:38.979+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:24:38.979+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:24:38.987+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.402 seconds
+[2025-04-17T20:25:09.695+0000] {processor.py:186} INFO - Started process (PID=492) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:09.696+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:25:09.697+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:09.697+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:10.103+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:10.113+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:10.113+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:25:10.123+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:10.123+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:25:10.131+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.438 seconds
+[2025-04-17T20:25:40.791+0000] {processor.py:186} INFO - Started process (PID=507) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:40.792+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:25:40.795+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:40.794+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:41.158+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:25:41.168+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:41.168+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:25:41.179+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:25:41.179+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:25:41.187+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.399 seconds
+[2025-04-17T20:26:11.887+0000] {processor.py:186} INFO - Started process (PID=522) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:11.888+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:26:11.891+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:11.891+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:12.262+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:12.272+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:12.272+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:26:12.281+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:12.280+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:26:12.291+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.408 seconds
+[2025-04-17T20:26:42.966+0000] {processor.py:186} INFO - Started process (PID=537) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:42.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:26:42.973+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:42.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:43.378+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:26:43.388+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:43.388+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:26:43.395+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:26:43.395+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:26:43.402+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.442 seconds
+[2025-04-17T20:27:14.271+0000] {processor.py:186} INFO - Started process (PID=551) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:14.272+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:27:14.274+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:14.273+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:14.720+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:14.729+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:14.729+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:27:14.737+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:14.737+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:27:14.742+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.477 seconds
+[2025-04-17T20:27:45.376+0000] {processor.py:186} INFO - Started process (PID=565) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:45.376+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:27:45.378+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:45.377+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:45.791+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:27:45.799+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:45.799+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:27:45.807+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:27:45.807+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:27:45.812+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.440 seconds
+[2025-04-17T20:28:16.458+0000] {processor.py:186} INFO - Started process (PID=579) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:16.460+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:28:16.464+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:16.464+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:16.864+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:16.873+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:16.873+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:28:16.882+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:16.882+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:28:16.892+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.437 seconds
+[2025-04-17T20:28:47.595+0000] {processor.py:186} INFO - Started process (PID=593) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:47.596+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:28:47.598+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:47.598+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:47.975+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:28:47.983+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:47.983+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:28:47.990+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:28:47.990+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:28:47.996+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.407 seconds
+[2025-04-17T20:29:18.922+0000] {processor.py:186} INFO - Started process (PID=607) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:18.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:29:18.925+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:18.925+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:19.345+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:19.354+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:19.354+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:29:19.362+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:19.362+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:29:19.372+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.454 seconds
+[2025-04-17T20:29:50.029+0000] {processor.py:186} INFO - Started process (PID=621) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:50.030+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:29:50.031+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:50.031+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:50.385+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:50.394+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:50.394+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:29:50.403+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:50.403+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:29:50.409+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.383 seconds
+[2025-04-17T20:29:56.143+0000] {processor.py:186} INFO - Started process (PID=628) to work on /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:56.143+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/trip_dag.py for tasks to queue
+[2025-04-17T20:29:56.145+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:56.145+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:56.492+0000] {processor.py:925} INFO - DAG(s) 'triphobo_etl_pipeline' retrieved from /opt/airflow/dags/trip_dag.py
+[2025-04-17T20:29:56.499+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:56.499+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-17T20:29:56.506+0000] {logging_mixin.py:190} INFO - [2025-04-17T20:29:56.506+0000] {dag.py:4180} INFO - Setting next_dagrun for triphobo_etl_pipeline to 2025-04-13 00:00:00+00:00, run_after=2025-04-20 00:00:00+00:00
+[2025-04-17T20:29:56.512+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/trip_dag.py took 0.374 seconds

@@ -1,0 +1,195 @@
+[2025-04-13T21:16:16.111+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T21:16:16.117+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:16:14.819924+00:00 [queued]>
+[2025-04-13T21:16:16.120+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:16:14.819924+00:00 [queued]>
+[2025-04-13T21:16:16.120+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-13T21:16:16.124+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-13 21:16:14.819924+00:00
+[2025-04-13T21:16:16.127+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=866) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T21:16:16.128+0000] {standard_task_runner.py:72} INFO - Started process 867 to run task
+[2025-04-13T21:16:16.128+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'manual__2025-04-13T21:16:14.819924+00:00', '--job-id', '191', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpskgmz1ma']
+[2025-04-13T21:16:16.130+0000] {standard_task_runner.py:105} INFO - Job 191: Subtask scrape_hotels
+[2025-04-13T21:16:16.147+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:16:14.819924+00:00 [running]> on host 2af885ea35b8
+[2025-04-13T21:16:16.180+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T21:16:14.819924+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T21:16:14.819924+00:00'
+[2025-04-13T21:16:16.182+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T21:16:16.385+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in New York...
+[2025-04-13T21:16:16.385+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in New York...
+[2025-04-13T21:16:18.863+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for New York
+[2025-04-13T21:16:18.863+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for New York
+[2025-04-13T21:16:33.876+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for New York: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:16:33.879+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for New York
+[2025-04-13T21:16:48.890+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for New York: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:16:48.891+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for New York
+[2025-04-13T21:17:03.899+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for New York: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:17:03.900+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for New York
+[2025-04-13T21:17:18.906+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for New York: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:17:18.908+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for New York
+[2025-04-13T21:17:33.919+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for New York: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:17:33.921+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for New York. Saving HTML for debug.
+[2025-04-13T21:17:38.211+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in San Francisco...
+[2025-04-13T21:17:38.213+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in San Francisco...
+[2025-04-13T21:17:41.094+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for San Francisco
+[2025-04-13T21:17:41.094+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for San Francisco
+[2025-04-13T21:17:56.099+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for San Francisco: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:17:56.100+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for San Francisco
+[2025-04-13T21:18:11.111+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for San Francisco: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:18:11.113+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for San Francisco
+[2025-04-13T21:18:26.122+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for San Francisco: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:18:26.126+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for San Francisco
+[2025-04-13T21:18:41.132+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for San Francisco: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:18:41.132+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for San Francisco
+[2025-04-13T21:18:56.137+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for San Francisco: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:18:56.139+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for San Francisco. Saving HTML for debug.
+[2025-04-13T21:18:58.474+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in Chicago...
+[2025-04-13T21:18:58.476+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Chicago...
+[2025-04-13T21:19:00.813+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Chicago
+[2025-04-13T21:19:00.813+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for Chicago
+[2025-04-13T21:19:15.815+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for Chicago: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:19:15.815+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for Chicago
+[2025-04-13T21:19:30.820+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for Chicago: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:19:30.821+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for Chicago
+[2025-04-13T21:19:45.830+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for Chicago: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:19:45.832+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for Chicago
+[2025-04-13T21:20:00.846+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for Chicago: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:20:00.848+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for Chicago
+[2025-04-13T21:20:15.859+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for Chicago: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:20:15.860+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for Chicago. Saving HTML for debug.
+[2025-04-13T21:20:20.239+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in Seattle...
+[2025-04-13T21:20:20.241+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Seattle...
+[2025-04-13T21:20:21.832+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Seattle
+[2025-04-13T21:20:21.832+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for Seattle
+[2025-04-13T21:20:36.837+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for Seattle: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:20:36.837+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for Seattle
+[2025-04-13T21:20:51.845+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for Seattle: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:20:51.846+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for Seattle
+[2025-04-13T21:21:06.856+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for Seattle: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:21:06.859+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for Seattle
+[2025-04-13T21:21:21.881+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for Seattle: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:21:21.882+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for Seattle
+[2025-04-13T21:21:36.898+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for Seattle: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:21:36.900+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for Seattle. Saving HTML for debug.
+[2025-04-13T21:21:40.753+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in Las Vegas...
+[2025-04-13T21:21:40.755+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Las Vegas...
+[2025-04-13T21:21:41.905+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Las Vegas
+[2025-04-13T21:21:41.906+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for Las Vegas
+[2025-04-13T21:21:56.912+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for Las Vegas: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:21:56.914+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for Las Vegas
+[2025-04-13T21:22:11.930+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for Las Vegas: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:22:11.930+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for Las Vegas
+[2025-04-13T21:22:26.940+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for Las Vegas: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:22:26.941+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for Las Vegas
+[2025-04-13T21:22:41.950+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for Las Vegas: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:22:41.951+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for Las Vegas
+[2025-04-13T21:22:56.966+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for Las Vegas: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:22:56.968+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for Las Vegas. Saving HTML for debug.
+[2025-04-13T21:22:59.282+0000] {hotel_scrape_dag.py:276} INFO - Scraping hotels in Los Angeles...
+[2025-04-13T21:22:59.283+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Los Angeles...
+[2025-04-13T21:23:00.583+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Los Angeles
+[2025-04-13T21:23:00.584+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: div[data-component-hotelcard] for Los Angeles
+[2025-04-13T21:23:15.592+0000] {hotel_scrape_dag.py:83} WARNING - Selector div[data-component-hotelcard] not found for Los Angeles: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:23:15.593+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .hotel-card for Los Angeles
+[2025-04-13T21:23:30.608+0000] {hotel_scrape_dag.py:83} WARNING - Selector .hotel-card not found for Los Angeles: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".hotel-card") to be visible
+
+[2025-04-13T21:23:30.609+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-card__hotel for Los Angeles
+[2025-04-13T21:23:45.617+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-card__hotel not found for Los Angeles: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-card__hotel") to be visible
+
+[2025-04-13T21:23:45.618+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .cmp-listing-card for Los Angeles
+[2025-04-13T21:24:00.621+0000] {hotel_scrape_dag.py:83} WARNING - Selector .cmp-listing-card not found for Los Angeles: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".cmp-listing-card") to be visible
+
+[2025-04-13T21:24:00.622+0000] {hotel_scrape_dag.py:77} INFO - Trying selector: .property-card for Los Angeles
+[2025-04-13T21:24:15.636+0000] {hotel_scrape_dag.py:83} WARNING - Selector .property-card not found for Los Angeles: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".property-card") to be visible
+
+[2025-04-13T21:24:15.638+0000] {hotel_scrape_dag.py:87} ERROR - No matching selector found for Los Angeles. Saving HTML for debug.
+[2025-04-13T21:24:20.155+0000] {hotel_scrape_dag.py:287} INFO - ✅ Saved 0 records to multi_city_ihg_hotels.csv
+[2025-04-13T21:24:20.157+0000] {python.py:240} INFO - Done. Returned value was: 0
+[2025-04-13T21:24:20.189+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T21:24:20.190+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=manual__2025-04-13T21:16:14.819924+00:00, execution_date=20250413T211614, start_date=20250413T211616, end_date=20250413T212420
+[2025-04-13T21:24:20.246+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T21:24:20.264+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T21:24:20.265+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

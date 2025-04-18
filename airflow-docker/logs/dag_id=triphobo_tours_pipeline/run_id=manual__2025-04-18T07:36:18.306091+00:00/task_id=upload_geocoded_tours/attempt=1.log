@@ -1,0 +1,21 @@
+[2025-04-18T07:41:46.540+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T07:41:46.546+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.upload_geocoded_tours manual__2025-04-18T07:36:18.306091+00:00 [queued]>
+[2025-04-18T07:41:46.548+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.upload_geocoded_tours manual__2025-04-18T07:36:18.306091+00:00 [queued]>
+[2025-04-18T07:41:46.548+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T07:41:46.552+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): upload_geocoded_tours> on 2025-04-18 07:36:18.306091+00:00
+[2025-04-18T07:41:46.555+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2174) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T07:41:46.556+0000] {standard_task_runner.py:72} INFO - Started process 2175 to run task
+[2025-04-18T07:41:46.556+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_tours_pipeline', 'upload_geocoded_tours', 'manual__2025-04-18T07:36:18.306091+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/itinerary_tours_dag.py', '--cfg-path', '/tmp/tmpxlba64cy']
+[2025-04-18T07:41:46.557+0000] {standard_task_runner.py:105} INFO - Job 73: Subtask upload_geocoded_tours
+[2025-04-18T07:41:46.572+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_tours_pipeline.upload_geocoded_tours manual__2025-04-18T07:36:18.306091+00:00 [running]> on host 68d96c644388
+[2025-04-18T07:41:46.596+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_tours_pipeline' AIRFLOW_CTX_TASK_ID='upload_geocoded_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T07:36:18.306091+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T07:36:18.306091+00:00'
+[2025-04-18T07:41:46.596+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T07:41:50.392+0000] {itinerary_tours_dag.py:122} INFO - Uploaded /tmp/triphobo_data/tours_with_coords.csv to s3://bigdatafinal2025/clean/tours_with_coords.csv
+[2025-04-18T07:41:50.398+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-18T07:41:50.415+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T07:41:50.415+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_tours_pipeline, task_id=upload_geocoded_tours, run_id=manual__2025-04-18T07:36:18.306091+00:00, execution_date=20250418T073618, start_date=20250418T074146, end_date=20250418T074150
+[2025-04-18T07:41:50.477+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T07:41:50.494+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T07:41:50.495+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

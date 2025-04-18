@@ -1,0 +1,430 @@
+[2025-04-18T03:41:56.335+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T03:41:56.342+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [queued]>
+[2025-04-18T03:41:56.346+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [queued]>
+[2025-04-18T03:41:56.346+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T03:41:56.351+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-06 04:00:00+00:00
+[2025-04-18T03:41:56.355+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1266) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T03:41:56.356+0000] {standard_task_runner.py:72} INFO - Started process 1270 to run task
+[2025-04-18T03:41:56.356+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_pipeline', 'scrape_attractions', 'scheduled__2025-04-06T04:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmporo4j72w']
+[2025-04-18T03:41:56.358+0000] {standard_task_runner.py:105} INFO - Job 14: Subtask scrape_attractions
+[2025-04-18T03:41:56.376+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [running]> on host a8651540ef5d
+[2025-04-18T03:41:56.405+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_pipeline' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T04:00:00+00:00'
+[2025-04-18T03:41:56.406+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T03:41:56.732+0000] {attractions_dag.py:179} INFO - Scraping city: New York City United States
+[2025-04-18T03:41:56.733+0000] {attractions_dag.py:183} INFO - Scraping page 1: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-18T03:42:03.023+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:42:03.024+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-18T03:42:06.705+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-18T03:42:10.376+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-18T03:42:14.037+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-18T03:42:17.745+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-18T03:42:21.701+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-18T03:42:25.438+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-18T03:42:29.262+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-18T03:42:33.204+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-18T03:42:36.970+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/national-9-11-memorial-museum
+[2025-04-18T03:42:40.634+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/intrepid-sea-air-and-space-museum
+[2025-04-18T03:42:44.324+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/solomon-r-guggenheim-museum
+[2025-04-18T03:42:47.956+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/radio-city-music-hall
+[2025-04-18T03:42:51.582+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/fanaberie
+[2025-04-18T03:42:55.313+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/united-nations-headquarters
+[2025-04-18T03:42:58.955+0000] {attractions_dag.py:183} INFO - Scraping page 2: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=2
+[2025-04-18T03:43:04.298+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:43:04.298+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-public-library
+[2025-04-18T03:43:08.018+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/national-museum-of-american-indian
+[2025-04-18T03:43:12.134+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/children-s-museum-of-manhattan
+[2025-04-18T03:43:15.811+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/the-morgan-library-and-museum
+[2025-04-18T03:43:19.735+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/cathedral-church-of-saint-john-the-divine
+[2025-04-18T03:43:23.477+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/gramercy-tavern
+[2025-04-18T03:43:27.166+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge
+[2025-04-18T03:43:30.823+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/bryant-park
+[2025-04-18T03:43:34.502+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-heights-promenade
+[2025-04-18T03:43:38.233+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/65th-street
+[2025-04-18T03:43:41.898+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/chrysler-building
+[2025-04-18T03:43:45.571+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/chinatown
+[2025-04-18T03:43:49.321+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/dead-rabbit
+[2025-04-18T03:43:52.969+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-transit-museum
+[2025-04-18T03:43:56.751+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/frick-collection
+[2025-04-18T03:44:00.481+0000] {attractions_dag.py:183} INFO - Scraping page 3: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=3
+[2025-04-18T03:44:06.105+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:44:06.106+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/yankee-stadium
+[2025-04-18T03:44:09.809+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/harlem
+[2025-04-18T03:44:13.494+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/battery-park
+[2025-04-18T03:44:17.481+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/the-mean-fiddler
+[2025-04-18T03:44:21.539+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/st-paul-s-chapel
+[2025-04-18T03:44:25.206+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/metropolitan-opera-house
+[2025-04-18T03:44:28.955+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/st-patrick-s-cathedral
+[2025-04-18T03:44:32.831+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/little-italy
+[2025-04-18T03:44:36.525+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/central-park-zoo
+[2025-04-18T03:44:40.225+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/lexington-avenue
+[2025-04-18T03:44:43.951+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-botanical-garden
+[2025-04-18T03:44:47.691+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-botanical-garden
+[2025-04-18T03:44:51.402+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/place/adda/51c828b2e705454c13000000
+[2025-04-18T03:44:56.067+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-industries
+[2025-04-18T03:44:59.710+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/bloomingdale-s
+[2025-04-18T03:45:03.377+0000] {attractions_dag.py:183} INFO - Scraping page 4: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=4
+[2025-04-18T03:45:11.422+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:45:11.423+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/one-world-trade-center
+[2025-04-18T03:45:15.085+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/carnegie-hall
+[2025-04-18T03:45:18.766+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/ground-zero
+[2025-04-18T03:45:22.502+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/narcissa
+[2025-04-18T03:45:26.324+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/minton-s
+[2025-04-18T03:45:29.995+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-the-moving-image
+[2025-04-18T03:45:33.634+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/south-street-seaport
+[2025-04-18T03:45:37.454+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/french-roast
+[2025-04-18T03:45:41.188+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/little-owl
+[2025-04-18T03:45:44.991+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/wall-street-new-york
+[2025-04-18T03:45:48.846+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/century-21
+[2025-04-18T03:45:52.492+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-harbor
+[2025-04-18T03:45:56.136+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/flushing-meadows-corona-park
+[2025-04-18T03:45:59.855+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/governor-s-island
+[2025-04-18T03:46:03.612+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/apollo-theater
+[2025-04-18T03:46:07.500+0000] {attractions_dag.py:183} INFO - Scraping page 5: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=5
+[2025-04-18T03:46:13.229+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:46:13.236+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/big-gay-ice-cream
+[2025-04-18T03:46:17.126+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/luna-park-coney-island
+[2025-04-18T03:46:21.015+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge-park
+[2025-04-18T03:46:24.682+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/plaza-hotel
+[2025-04-18T03:46:28.566+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/chelsea-market
+[2025-04-18T03:46:33.049+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/the-strip-house-12th-street
+[2025-04-18T03:46:36.715+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/germania-bank-building
+[2025-04-18T03:46:40.497+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/graffiti-hall-of-fame
+[2025-04-18T03:46:44.207+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/flatiron-building
+[2025-04-18T03:46:47.908+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/hayden-planetarium
+[2025-04-18T03:46:51.596+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/cafe-mogador
+[2025-04-18T03:46:55.251+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/broadway-street
+[2025-04-18T03:46:58.923+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/eataly
+[2025-04-18T03:47:02.667+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/hunts-point
+[2025-04-18T03:47:06.378+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/circle-line-cruise
+[2025-04-18T03:47:10.029+0000] {attractions_dag.py:183} INFO - Scraping page 6: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=6
+[2025-04-18T03:47:17.966+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:47:17.966+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/fifth-avenue
+[2025-04-18T03:47:21.632+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/marea
+[2025-04-18T03:47:25.275+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-jewish-heritage
+[2025-04-18T03:47:29.711+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/church-of-st-paul-the-apostle
+[2025-04-18T03:47:33.557+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/st-vincent-ferrer
+[2025-04-18T03:47:37.277+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/st-francis-xavier
+[2025-04-18T03:47:41.011+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/calvary-episcopal-church
+[2025-04-18T03:47:44.686+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/macy-s-herald-square
+[2025-04-18T03:47:48.329+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-flea
+[2025-04-18T03:47:51.998+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/neue-gallery
+[2025-04-18T03:47:55.741+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/bldg-92
+[2025-04-18T03:47:59.410+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/centre-fuge-public-art-project
+[2025-04-18T03:48:03.067+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/the-lion
+[2025-04-18T03:48:06.789+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/bowery-graffiti-wall
+[2025-04-18T03:48:10.473+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/bronx-hall-of-fame
+[2025-04-18T03:48:14.163+0000] {attractions_dag.py:183} INFO - Scraping page 7: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7
+[2025-04-18T03:48:19.280+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:48:19.281+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/general-grant-national-memorial
+[2025-04-18T03:48:23.024+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/union-square
+[2025-04-18T03:48:26.660+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/brandy-library
+[2025-04-18T03:48:30.364+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/casa-lever
+[2025-04-18T03:48:34.137+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/hudson-river-greenway
+[2025-04-18T03:48:37.928+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-united-states/museum-of-the-city-of-new-york
+[2025-04-18T03:48:42.185+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/union-square-greenmarket
+[2025-04-18T03:48:46.004+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-arts-and-design-store
+[2025-04-18T03:48:49.967+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/welling-court
+[2025-04-18T03:48:53.616+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/stillwell-avenue
+[2025-04-18T03:48:57.266+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/woolworth-building-tour
+[2025-04-18T03:49:01.120+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/tuff-city
+[2025-04-18T03:49:04.928+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/north-6th-street
+[2025-04-18T03:49:08.699+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/cafe-wha
+[2025-04-18T03:49:12.416+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/majestic-theatre
+[2025-04-18T03:49:16.077+0000] {attractions_dag.py:183} INFO - Scraping page 8: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=8
+[2025-04-18T03:49:22.059+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:49:22.060+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/greenwich-village
+[2025-04-18T03:49:25.739+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/ghostbusters-fire-station
+[2025-04-18T03:49:29.386+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/west-village
+[2025-04-18T03:49:33.109+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/bethesda-terrace-and-fountain
+[2025-04-18T03:49:37.017+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/madame-tussauds-wax-museum
+[2025-04-18T03:49:40.715+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/washington-square-park
+[2025-04-18T03:49:44.574+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/broadway-theater
+[2025-04-18T03:49:48.209+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/riverside-park
+[2025-04-18T03:49:51.915+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/the-octagon-roosevelt-island
+[2025-04-18T03:49:55.602+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/long-beach
+[2025-04-18T03:49:59.378+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/42nd-east-street
+[2025-04-18T03:50:03.119+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/conservatory-garden
+[2025-04-18T03:50:06.766+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/trinity-church
+[2025-04-18T03:50:10.436+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/studio-54
+[2025-04-18T03:50:14.210+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/barrymore-theatre
+[2025-04-18T03:50:17.914+0000] {attractions_dag.py:183} INFO - Scraping page 9: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=9
+[2025-04-18T03:50:26.895+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:50:26.896+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/st-thomas-church
+[2025-04-18T03:50:30.645+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/alice-in-wonderland-statue
+[2025-04-18T03:50:34.394+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/upper-east-side
+[2025-04-18T03:50:38.088+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/new-world-stages
+[2025-04-18T03:50:41.826+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/federal-hall
+[2025-04-18T03:50:45.470+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/queensboro-bridge
+[2025-04-18T03:50:49.132+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-film-academy
+[2025-04-18T03:50:52.802+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/herald-square
+[2025-04-18T03:50:56.460+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/pennsylvania-station
+[2025-04-18T03:51:00.351+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-university
+[2025-04-18T03:51:04.009+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/eleven-madison-park
+[2025-04-18T03:51:07.885+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/momofuku-ko
+[2025-04-18T03:51:11.589+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/aldea
+[2025-04-18T03:51:15.349+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/brick-lane-curry-house
+[2025-04-18T03:51:19.069+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/queen-s-zoo
+[2025-04-18T03:51:23.043+0000] {attractions_dag.py:183} INFO - Scraping page 10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=10
+[2025-04-18T03:51:28.850+0000] {attractions_dag.py:186} INFO - Found 13 attraction links
+[2025-04-18T03:51:28.850+0000] {attractions_dag.py:195} INFO - Scraping place 1/13: https://www.triphobo.com/places/new-york-city-united-states/great-new-york-noodle-town
+[2025-04-18T03:51:32.496+0000] {attractions_dag.py:195} INFO - Scraping place 2/13: https://www.triphobo.com/places/new-york-city-united-states/junoon
+[2025-04-18T03:51:36.120+0000] {attractions_dag.py:195} INFO - Scraping place 3/13: https://www.triphobo.com/places/new-york-city-united-states/greenhouse-36
+[2025-04-18T03:51:39.772+0000] {attractions_dag.py:195} INFO - Scraping place 4/13: https://www.triphobo.com/places/new-york-city-united-states/the-press-lounge
+[2025-04-18T03:51:43.650+0000] {attractions_dag.py:195} INFO - Scraping place 5/13: https://www.triphobo.com/places/new-york-city-united-states/penthouse-808
+[2025-04-18T03:51:47.294+0000] {attractions_dag.py:195} INFO - Scraping place 6/13: https://www.triphobo.com/places/new-york-city-united-states/the-slipper-room
+[2025-04-18T03:51:50.953+0000] {attractions_dag.py:195} INFO - Scraping place 7/13: https://www.triphobo.com/places/new-york-city-united-states/northern-theatre
+[2025-04-18T03:51:54.629+0000] {attractions_dag.py:195} INFO - Scraping place 8/13: https://www.triphobo.com/places/new-york-city-united-states/alma
+[2025-04-18T03:51:58.277+0000] {attractions_dag.py:195} INFO - Scraping place 9/13: https://www.triphobo.com/places/new-york-city-united-states/new-york-aquarium
+[2025-04-18T03:52:01.972+0000] {attractions_dag.py:195} INFO - Scraping place 10/13: https://www.triphobo.com/places/new-york-city-united-states/the-box
+[2025-04-18T03:52:05.912+0000] {attractions_dag.py:195} INFO - Scraping place 11/13: https://www.triphobo.com/places/new-york-city-united-states/lit-lounge
+[2025-04-18T03:52:09.836+0000] {attractions_dag.py:195} INFO - Scraping place 12/13: https://www.triphobo.com/places/new-york-city-united-states/white-horse-tavern
+[2025-04-18T03:52:13.866+0000] {attractions_dag.py:195} INFO - Scraping place 13/13: https://www.triphobo.com/places/new-york-city-united-states/kettle-of-fish
+[2025-04-18T03:52:17.828+0000] {attractions_dag.py:209} INFO - Scraped 148 new attractions for New York City United States
+[2025-04-18T03:52:17.828+0000] {attractions_dag.py:179} INFO - Scraping city: San Francisco United States
+[2025-04-18T03:52:17.828+0000] {attractions_dag.py:183} INFO - Scraping page 1: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=1
+[2025-04-18T03:52:23.525+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:52:23.525+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/muir-woods-national-monument
+[2025-04-18T03:52:27.264+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/alcatraz-island
+[2025-04-18T03:52:30.982+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/pier-39
+[2025-04-18T03:52:34.764+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/california-academy-of-sciences
+[2025-04-18T03:52:38.496+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/marin-headlands
+[2025-04-18T03:52:42.269+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/fishermans-wharf
+[2025-04-18T03:52:45.977+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/ghirardelli-square
+[2025-04-18T03:52:49.681+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/at-and-t-park
+[2025-04-18T03:52:53.395+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/north-beach
+[2025-04-18T03:52:57.139+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/lands-end
+[2025-04-18T03:53:00.821+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/the-walt-disney-family-museum
+[2025-04-18T03:53:04.545+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-cable-car-museum
+[2025-04-18T03:53:08.217+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/asian-art-museum-of-san-francisco
+[2025-04-18T03:53:12.096+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/musee-mecanique
+[2025-04-18T03:53:15.752+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/cliff-house
+[2025-04-18T03:53:19.486+0000] {attractions_dag.py:183} INFO - Scraping page 2: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=2
+[2025-04-18T03:53:24.506+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:53:24.506+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/washington-square
+[2025-04-18T03:53:28.142+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/coit-tower
+[2025-04-18T03:53:31.892+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/fort-point-national-historic-site
+[2025-04-18T03:53:35.586+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/grace-cathedral
+[2025-04-18T03:53:39.494+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/bay-bridge
+[2025-04-18T03:53:43.193+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/exploratorium
+[2025-04-18T03:53:46.845+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-maritime-national-historical-park
+[2025-04-18T03:53:50.567+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/city-hall
+[2025-04-18T03:53:54.221+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/de-young-museum
+[2025-04-18T03:53:57.922+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/embarcadero-center
+[2025-04-18T03:54:01.637+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/transamerica-pyramid
+[2025-04-18T03:54:05.332+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/japanese-tea-garden
+[2025-04-18T03:54:09.027+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/ocean-beach
+[2025-04-18T03:54:12.659+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/palace-of-fine-arts
+[2025-04-18T03:54:16.325+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/haight-ashbury
+[2025-04-18T03:54:20.059+0000] {attractions_dag.py:183} INFO - Scraping page 3: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=3
+[2025-04-18T03:54:26.620+0000] {attractions_dag.py:186} INFO - Found 13 attraction links
+[2025-04-18T03:54:26.621+0000] {attractions_dag.py:195} INFO - Scraping place 1/13: https://www.triphobo.com/places/san-francisco-united-states/sutro-baths-ruins
+[2025-04-18T03:54:30.375+0000] {attractions_dag.py:195} INFO - Scraping place 2/13: https://www.triphobo.com/places/san-francisco-united-states/ripley-s-believe-it-or-not
+[2025-04-18T03:54:34.100+0000] {attractions_dag.py:195} INFO - Scraping place 3/13: https://www.triphobo.com/places/san-francisco-united-states/aquarium-of-the-bay
+[2025-04-18T03:54:37.718+0000] {attractions_dag.py:195} INFO - Scraping place 4/13: https://www.triphobo.com/places/san-francisco-united-states/alamo-square
+[2025-04-18T03:54:41.388+0000] {attractions_dag.py:195} INFO - Scraping place 5/13: https://www.triphobo.com/places/san-francisco-united-states/union-square
+[2025-04-18T03:54:45.077+0000] {attractions_dag.py:195} INFO - Scraping place 6/13: https://www.triphobo.com/places/san-francisco-united-states/hollywood-cafe
+[2025-04-18T03:54:48.798+0000] {attractions_dag.py:195} INFO - Scraping place 7/13: https://www.triphobo.com/places/san-francisco-united-states/elbo-room
+[2025-04-18T03:54:52.465+0000] {attractions_dag.py:195} INFO - Scraping place 8/13: https://www.triphobo.com/places/san-francisco-united-states/asiasf
+[2025-04-18T03:54:56.453+0000] {attractions_dag.py:195} INFO - Scraping place 9/13: https://www.triphobo.com/places/san-francisco-united-states/butter
+[2025-04-18T03:55:00.100+0000] {attractions_dag.py:195} INFO - Scraping place 10/13: https://www.triphobo.com/places/san-francisco-united-states/crissy-field
+[2025-04-18T03:55:03.798+0000] {attractions_dag.py:195} INFO - Scraping place 11/13: https://www.triphobo.com/places/san-francisco-united-states/mission-dolores
+[2025-04-18T03:55:08.292+0000] {attractions_dag.py:195} INFO - Scraping place 12/13: https://www.triphobo.com/places/san-francisco-united-states/hyde-street-pier
+[2025-04-18T03:55:11.944+0000] {attractions_dag.py:195} INFO - Scraping place 13/13: https://www.triphobo.com/places/san-francisco-united-states/555-california-street
+[2025-04-18T03:55:15.581+0000] {attractions_dag.py:183} INFO - Scraping page 4: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=4
+[2025-04-18T03:55:20.531+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:55:20.532+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/randall-museum
+[2025-04-18T03:55:24.303+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/california-palace-of-the-legion-of-honor
+[2025-04-18T03:55:28.222+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/beach-blanket-babylon
+[2025-04-18T03:55:32.382+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-zoo
+[2025-04-18T03:55:36.116+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-public-library-main
+[2025-04-18T03:55:39.807+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/marrakech-magic-theatre
+[2025-04-18T03:55:43.515+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/city-lights-booksellers-and-publishers
+[2025-04-18T03:55:47.158+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/boudin-at-the-wharf
+[2025-04-18T03:55:50.841+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-botanical-garden
+[2025-04-18T03:55:54.546+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/powell-and-market-cable-car-turnaround
+[2025-04-18T03:55:58.470+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/filbert-steps-and-grace-marchant-gardens
+[2025-04-18T03:56:02.184+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/s-s-jeremiah-o-brien
+[2025-04-18T03:56:05.906+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/the-san-francisco-dungeon
+[2025-04-18T03:56:09.583+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/japan-town
+[2025-04-18T03:56:13.220+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/golden-gate-promenade
+[2025-04-18T03:56:16.904+0000] {attractions_dag.py:183} INFO - Scraping page 5: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=5
+[2025-04-18T03:56:22.446+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:56:22.447+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/caffe-trieste
+[2025-04-18T03:56:26.103+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/nob-hill
+[2025-04-18T03:56:29.829+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/conservatory-of-flowers
+[2025-04-18T03:56:33.694+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/biscuits-and-blues
+[2025-04-18T03:56:37.415+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/smuggler-s-cove
+[2025-04-18T03:56:41.297+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/vesuvio
+[2025-04-18T03:56:44.964+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/the-saloon
+[2025-04-18T03:56:48.708+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/ferry-building
+[2025-04-18T03:56:52.464+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/ferry-plaza-farmers-market
+[2025-04-18T03:56:56.194+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/telegraph-hill
+[2025-04-18T03:57:00.052+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/civic-center
+[2025-04-18T03:57:03.876+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/yerba-buena-gardens
+[2025-04-18T03:57:07.574+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/treasure-island
+[2025-04-18T03:57:11.242+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/little-italy
+[2025-04-18T03:57:15.211+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/wells-fargo-history-museum
+[2025-04-18T03:57:18.894+0000] {attractions_dag.py:183} INFO - Scraping page 6: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=6
+[2025-04-18T03:57:23.689+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T03:57:23.691+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/saint-mary-s-cathedral
+[2025-04-18T03:57:27.447+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/kabuki-springs-and-spa
+[2025-04-18T03:57:31.099+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/fillmore-street
+[2025-04-18T03:57:34.747+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/union-street
+[2025-04-18T03:57:38.434+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/pier-23-cafe
+[2025-04-18T03:57:42.172+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/balmy-alley-murals
+[2025-04-18T03:57:45.847+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/16th-avenue-tiled-steps
+[2025-04-18T03:57:49.752+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/fort-mason-center-for-arts-and-culture
+[2025-04-18T03:57:53.492+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/sea-lion-center
+[2025-04-18T03:57:57.141+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/nordstrom
+[2025-04-18T03:58:00.835+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/redwood-room
+[2025-04-18T03:58:04.487+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/war-memorial-opera-house
+[2025-04-18T03:58:08.201+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/buena-vista-park
+[2025-04-18T03:58:11.835+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/saints-peter-and-paul-church
+[2025-04-18T03:58:15.540+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/pacific-heights
+[2025-04-18T03:58:19.198+0000] {attractions_dag.py:183} INFO - Scraping page 7: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=7
+[2025-04-18T03:58:24.132+0000] {attractions_dag.py:186} INFO - Found 14 attraction links
+[2025-04-18T03:58:24.133+0000] {attractions_dag.py:195} INFO - Scraping place 1/14: https://www.triphobo.com/places/san-francisco-united-states/maritime-museum
+[2025-04-18T03:58:27.890+0000] {attractions_dag.py:195} INFO - Scraping place 2/14: https://www.triphobo.com/places/san-francisco-united-states/pier-7
+[2025-04-18T03:58:31.577+0000] {attractions_dag.py:195} INFO - Scraping place 3/14: https://www.triphobo.com/places/san-francisco-united-states/greenwich-steps
+[2025-04-18T03:58:35.279+0000] {attractions_dag.py:195} INFO - Scraping place 4/14: https://www.triphobo.com/places/san-francisco-united-states/panhandle-at-golden-gate-park
+[2025-04-18T03:58:38.909+0000] {attractions_dag.py:195} INFO - Scraping place 5/14: https://www.triphobo.com/places/san-francisco-united-states/warfield-theater
+[2025-04-18T03:58:42.629+0000] {attractions_dag.py:195} INFO - Scraping place 6/14: https://www.triphobo.com/places/san-francisco-united-states/american-conservatory-theater
+[2025-04-18T03:58:46.272+0000] {attractions_dag.py:195} INFO - Scraping place 7/14: https://www.triphobo.com/places/san-francisco-united-states/museum-of-the-african-diaspora
+[2025-04-18T03:58:49.946+0000] {attractions_dag.py:195} INFO - Scraping place 8/14: https://www.triphobo.com/places/san-francisco-united-states/noe-valley
+[2025-04-18T03:58:53.614+0000] {attractions_dag.py:195} INFO - Scraping place 9/14: https://www.triphobo.com/places/san-francisco-united-states/angel-island-immigration-station
+[2025-04-18T03:58:57.247+0000] {attractions_dag.py:195} INFO - Scraping place 10/14: https://www.triphobo.com/places/san-francisco-united-states/hayes-valley
+[2025-04-18T03:59:01.225+0000] {attractions_dag.py:195} INFO - Scraping place 11/14: https://www.triphobo.com/places/san-francisco-united-states/heart-of-the-city-farmers-market
+[2025-04-18T03:59:04.858+0000] {attractions_dag.py:195} INFO - Scraping place 12/14: https://www.triphobo.com/places/san-francisco-united-states/sfo-aviation-museum
+[2025-04-18T03:59:08.520+0000] {attractions_dag.py:195} INFO - Scraping place 13/14: https://www.triphobo.com/places/san-francisco-united-states/gump-s
+[2025-04-18T03:59:12.191+0000] {attractions_dag.py:195} INFO - Scraping place 14/14: https://www.triphobo.com/places/san-francisco-united-states/candy-baron
+[2025-04-18T03:59:15.870+0000] {attractions_dag.py:183} INFO - Scraping page 8: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=8
+[2025-04-18T03:59:20.620+0000] {attractions_dag.py:186} INFO - Found 14 attraction links
+[2025-04-18T03:59:20.621+0000] {attractions_dag.py:195} INFO - Scraping place 1/14: https://www.triphobo.com/places/san-francisco-united-states/corona-heights-park
+[2025-04-18T03:59:24.317+0000] {attractions_dag.py:195} INFO - Scraping place 2/14: https://www.triphobo.com/places/san-francisco-united-states/grateful-dead-house
+[2025-04-18T03:59:27.966+0000] {attractions_dag.py:195} INFO - Scraping place 3/14: https://www.triphobo.com/places/san-francisco-united-states/pioneer-monument
+[2025-04-18T03:59:31.677+0000] {attractions_dag.py:195} INFO - Scraping place 4/14: https://www.triphobo.com/places/san-francisco-united-states/speakeasy-ales-and-lagers
+[2025-04-18T03:59:35.299+0000] {attractions_dag.py:195} INFO - Scraping place 5/14: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-national-cemetery
+[2025-04-18T03:59:38.945+0000] {attractions_dag.py:195} INFO - Scraping place 6/14: https://www.triphobo.com/places/san-francisco-united-states/clarion-alley-murals
+[2025-04-18T03:59:42.706+0000] {attractions_dag.py:195} INFO - Scraping place 7/14: https://www.triphobo.com/places/san-francisco-united-states/hendrik-point
+[2025-04-18T03:59:46.359+0000] {attractions_dag.py:195} INFO - Scraping place 8/14: https://www.triphobo.com/places/san-francisco-united-states/don-edwards-san-francisco-bay-wildlife-refuge
+[2025-04-18T03:59:50.037+0000] {attractions_dag.py:195} INFO - Scraping place 9/14: https://www.triphobo.com/places/san-francisco-united-states/women-s-building-mural
+[2025-04-18T03:59:53.694+0000] {attractions_dag.py:195} INFO - Scraping place 10/14: https://www.triphobo.com/places/san-francisco-united-states/yerba-buena-center-for-the-arts-ybca
+[2025-04-18T03:59:57.374+0000] {attractions_dag.py:195} INFO - Scraping place 11/14: https://www.triphobo.com/places/san-francisco-united-states/sutro-heights-park
+[2025-04-18T04:00:01.301+0000] {attractions_dag.py:195} INFO - Scraping place 12/14: https://www.triphobo.com/places/san-francisco-united-states/camera-obscura
+[2025-04-18T04:00:05.398+0000] {attractions_dag.py:195} INFO - Scraping place 13/14: https://www.triphobo.com/places/san-francisco-united-states/chinese-historical-society-of-america-museum
+[2025-04-18T04:00:09.285+0000] {attractions_dag.py:195} INFO - Scraping place 14/14: https://www.triphobo.com/places/san-francisco-united-states/autodesk-gallery
+[2025-04-18T04:00:13.113+0000] {attractions_dag.py:183} INFO - Scraping page 9: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=9
+[2025-04-18T04:00:17.847+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T04:00:17.848+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/national-aids-memorial-grove
+[2025-04-18T04:00:21.558+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/the-national-shrine-of-saint-francis-of-assisi
+[2025-04-18T04:00:25.174+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/cellarmaker-brewing-company
+[2025-04-18T04:00:28.837+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/mount-davidson
+[2025-04-18T04:00:32.465+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/hard-rock-cafe-san-francisco
+[2025-04-18T04:00:36.184+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/potrero-hill
+[2025-04-18T04:00:39.926+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/neptune-society-columbarium
+[2025-04-18T04:00:43.704+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/lotta-s-fountain
+[2025-04-18T04:00:47.387+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/alemany-flea-market
+[2025-04-18T04:00:51.013+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/the-castro
+[2025-04-18T04:00:54.696+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/vermont-street
+[2025-04-18T04:00:58.318+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/anchor-brewing-company
+[2025-04-18T04:01:01.989+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/henry-m-jackson-playground
+[2025-04-18T04:01:05.705+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/christopher-s-books
+[2025-04-18T04:01:09.387+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/masonic-temple
+[2025-04-18T04:01:13.157+0000] {attractions_dag.py:183} INFO - Scraping page 10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=10
+[2025-04-18T04:01:17.461+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T04:01:17.462+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/beach-chalet-brewery-restaurant
+[2025-04-18T04:01:21.265+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/the-magic-theatre
+[2025-04-18T04:01:24.992+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/hidden-garden-steps
+[2025-04-18T04:01:28.672+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-flower-mart
+[2025-04-18T04:01:32.323+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/the-flood-building
+[2025-04-18T04:01:36.060+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/stockton-street
+[2025-04-18T04:01:39.929+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/crocker-galleria
+[2025-04-18T04:01:43.661+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/maiden-lane
+[2025-04-18T04:01:47.376+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/museo-italo-americano
+[2025-04-18T04:01:51.080+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/pier-24-photography-museum
+[2025-04-18T04:01:54.813+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/swedenborgian-church
+[2025-04-18T04:01:58.490+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/sacramento-street
+[2025-04-18T04:02:02.191+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/occidental-cigar-club
+[2025-04-18T04:02:06.114+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/castro-theatre
+[2025-04-18T04:02:09.897+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/uss-pampanito
+[2025-04-18T04:02:13.557+0000] {attractions_dag.py:209} INFO - Scraped 146 new attractions for San Francisco United States
+[2025-04-18T04:02:13.558+0000] {attractions_dag.py:179} INFO - Scraping city: Chicago United States
+[2025-04-18T04:02:13.558+0000] {attractions_dag.py:183} INFO - Scraping page 1: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=1
+[2025-04-18T04:02:19.404+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T04:02:19.405+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/the-art-institute-of-chicago
+[2025-04-18T04:02:23.219+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/millennium-park
+[2025-04-18T04:02:26.970+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/willis-tower
+[2025-04-18T04:02:30.652+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/michigan-avenue
+[2025-04-18T04:02:34.814+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/museum-of-science-and-industry
+[2025-04-18T04:02:38.583+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/360-chicago-observation-deck
+[2025-04-18T04:02:43.026+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/john-hancock-center
+[2025-04-18T04:02:47.139+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/wrigley-field
+[2025-04-18T04:02:50.826+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/field-museum-of-natural-history
+[2025-04-18T04:02:54.713+0000] {attractions_dag.py:195} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/lincoln-park
+[2025-04-18T04:02:58.740+0000] {attractions_dag.py:195} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/chicago-cultural-center
+[2025-04-18T04:03:02.430+0000] {attractions_dag.py:195} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/magnificent-mile
+[2025-04-18T04:03:06.084+0000] {attractions_dag.py:195} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/lakefront-trail
+[2025-04-18T04:03:09.749+0000] {attractions_dag.py:195} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/crown-fountain
+[2025-04-18T04:03:13.414+0000] {attractions_dag.py:195} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/united-center
+[2025-04-18T04:03:17.072+0000] {attractions_dag.py:183} INFO - Scraping page 2: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=2
+[2025-04-18T04:03:22.593+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T04:03:22.594+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/brookfield-zoo
+[2025-04-18T04:03:26.285+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/driehaus-museum
+[2025-04-18T04:03:30.024+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/chicago-riverwalk
+[2025-04-18T04:03:33.687+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/chicago-loop
+[2025-04-18T04:03:36.485+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-18T04:03:36.489+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-18T04:03:36.490+0000] {process_utils.py:132} INFO - Sending 15 to group 1270. PIDs of all processes in the group: [1273, 1294, 1298, 1300, 1336, 1366, 1333, 1270]
+[2025-04-18T04:03:36.490+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1270
+[2025-04-18T04:03:36.491+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-18T04:03:36.629+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1273, status='terminated', started='03:41:55') (1273) terminated with exit code None
+[2025-04-18T04:03:36.630+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1336, status='terminated', started='03:41:56') (1336) terminated with exit code None
+[2025-04-18T04:03:36.630+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1366, status='terminated', started='03:41:56') (1366) terminated with exit code None
+[2025-04-18T04:03:36.630+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1298, status='terminated', started='03:41:56') (1298) terminated with exit code None
+[2025-04-18T04:03:36.630+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1294, status='terminated', started='03:41:56') (1294) terminated with exit code None
+[2025-04-18T04:03:36.631+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1300, status='terminated', started='03:41:56') (1300) terminated with exit code None
+[2025-04-18T04:03:36.631+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1333, status='terminated', started='03:41:56') (1333) terminated with exit code None
+[2025-04-18T04:04:27.276+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T04:04:27.285+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [queued]>
+[2025-04-18T04:04:27.291+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [queued]>
+[2025-04-18T04:04:27.291+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T04:04:27.299+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-06 04:00:00+00:00
+[2025-04-18T04:04:27.302+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T04:04:27.303+0000] {standard_task_runner.py:72} INFO - Started process 80 to run task
+[2025-04-18T04:04:27.303+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_pipeline', 'scrape_attractions', 'scheduled__2025-04-06T04:00:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmp8u1h1mge']
+[2025-04-18T04:04:27.305+0000] {standard_task_runner.py:105} INFO - Job 22: Subtask scrape_attractions
+[2025-04-18T04:04:27.325+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T04:00:00+00:00 [running]> on host f6e0577a83d0
+[2025-04-18T04:04:27.352+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_pipeline' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T04:00:00+00:00'
+[2025-04-18T04:04:27.352+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T04:04:27.799+0000] {attractions_dag.py:179} INFO - Scraping city: New York City United States
+[2025-04-18T04:04:27.799+0000] {attractions_dag.py:183} INFO - Scraping page 1: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-18T04:04:37.785+0000] {attractions_dag.py:186} INFO - Found 15 attraction links
+[2025-04-18T04:04:37.785+0000] {attractions_dag.py:195} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-18T04:04:41.456+0000] {attractions_dag.py:195} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-18T04:04:45.111+0000] {attractions_dag.py:195} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-18T04:04:48.807+0000] {attractions_dag.py:195} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-18T04:04:52.709+0000] {attractions_dag.py:195} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-18T04:04:56.433+0000] {attractions_dag.py:195} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-18T04:05:00.162+0000] {attractions_dag.py:195} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-18T04:05:03.870+0000] {attractions_dag.py:195} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-18T04:05:07.582+0000] {attractions_dag.py:195} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-18T04:05:07.624+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-18T04:05:07.627+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-18T04:05:07.629+0000] {process_utils.py:132} INFO - Sending 15 to group 80. PIDs of all processes in the group: [83, 94, 96, 97, 114, 127, 113, 80]
+[2025-04-18T04:05:07.629+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 80
+[2025-04-18T04:05:07.630+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-18T04:05:07.661+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=83, status='terminated', started='04:04:26') (83) terminated with exit code None
+[2025-04-18T04:05:07.800+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=113, status='terminated', started='04:04:27') (113) terminated with exit code None
+[2025-04-18T04:05:07.800+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=94, status='terminated', started='04:04:27') (94) terminated with exit code None
+[2025-04-18T04:05:07.801+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=127, status='terminated', started='04:04:27') (127) terminated with exit code None
+[2025-04-18T04:05:07.801+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=96, status='terminated', started='04:04:27') (96) terminated with exit code None
+[2025-04-18T04:05:07.801+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=97, status='terminated', started='04:04:27') (97) terminated with exit code None
+[2025-04-18T04:05:07.802+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=114, status='terminated', started='04:04:27') (114) terminated with exit code None
+[2025-04-18T04:06:07.635+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=80, name='airflow task ru', status='sleeping', started='04:04:26') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-18T04:06:07.645+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 80
+[2025-04-18T04:06:07.664+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=80, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='04:04:26') (80) terminated with exit code -9
+[2025-04-18T04:06:07.665+0000] {standard_task_runner.py:190} ERROR - ('Job 22 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

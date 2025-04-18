@@ -1,0 +1,1089 @@
+[2025-04-12T13:54:10.366+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-12T13:54:10.373+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T13:54:09.375391+00:00 [queued]>
+[2025-04-12T13:54:10.376+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T13:54:09.375391+00:00 [queued]>
+[2025-04-12T13:54:10.376+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-12T13:54:10.380+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_tours> on 2025-04-12 13:54:09.375391+00:00
+[2025-04-12T13:54:10.383+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=264) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-12T13:54:10.384+0000] {standard_task_runner.py:72} INFO - Started process 267 to run task
+[2025-04-12T13:54:10.385+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_etl_pipeline', 'scrape_tours', 'manual__2025-04-12T13:54:09.375391+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/trip_dag.py', '--cfg-path', '/tmp/tmpyv8sxwl5']
+[2025-04-12T13:54:10.387+0000] {standard_task_runner.py:105} INFO - Job 157: Subtask scrape_tours
+[2025-04-12T13:54:10.408+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T13:54:09.375391+00:00 [running]> on host cd3ae23bc368
+[2025-04-12T13:54:10.443+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_etl_pipeline' AIRFLOW_CTX_TASK_ID='scrape_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-12T13:54:09.375391+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-12T13:54:09.375391+00:00'
+[2025-04-12T13:54:10.444+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-12T13:54:10.721+0000] {scrape.py:99} INFO - Scraping city: New York City United States
+[2025-04-12T13:54:10.722+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/new-york-city-united-states?page=1
+[2025-04-12T13:54:20.390+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T13:54:20.391+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/big-bus-new-york-hop-on-hop-off-tour
+[2025-04-12T13:54:24.052+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/all-access-9-11-experience-ground-zero-tour-9-11-memorial-and-museum-one-world-observatory
+[2025-04-12T13:54:28.845+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/statue-of-liberty-and-ellis-island-guided-tour
+[2025-04-12T13:54:32.451+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/one-world-observatory-admission
+[2025-04-12T13:54:37.167+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/9-11-memorial-museum-admission
+[2025-04-12T13:54:40.948+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/niagara-falls-in-one-day-from-new-york-city
+[2025-04-12T13:54:44.567+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/9-11-memorial-and-ground-zero-walking-tour-with-optional-9-11-museum-upgrade
+[2025-04-12T13:54:48.273+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/top-of-the-rock-observation-deck-new-york
+[2025-04-12T13:54:51.790+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-tour-of-statue-of-liberty-and-ellis-island
+[2025-04-12T13:55:01.117+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/intrepid-sea-air-and-space-museum
+[2025-04-12T13:55:08.858+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/small-group-early-access-statue-of-liberty-tour-and-ellis-island
+[2025-04-12T13:55:12.444+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/woodbury-common-premium-outlets-shopping-tour
+[2025-04-12T13:55:16.107+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/circle-line-harbor-lights-night-cruise
+[2025-04-12T13:55:19.580+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/madame-tussauds-new-york
+[2025-04-12T13:55:23.108+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/circle-line-complete-manhattan-island-cruise
+[2025-04-12T13:55:26.693+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/harlem-sunday-morning-gospel-tour
+[2025-04-12T13:55:30.133+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/american-museum-of-natural-history
+[2025-04-12T13:55:34.122+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/viator-exclusive-statue-of-liberty-monument-access-and-9-11-memorial
+[2025-04-12T13:55:37.915+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/lower-east-side-food-and-culture-tour
+[2025-04-12T13:55:41.810+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/hamilton-musical-walking-tour
+[2025-04-12T13:55:45.632+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/the-ride-new-york-city
+[2025-04-12T13:55:49.493+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/one-world-observatory-or-911-museum-with-world-trade-center-area-tour
+[2025-04-12T13:55:53.351+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/9-11-memorial-and-ground-zero-walking-tour-with-optional-one-world-observatory-entrance
+[2025-04-12T13:55:57.107+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/central-park-pedicab-tours
+[2025-04-12T13:56:01.053+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/new-york-city-united-states?page=2
+[2025-04-12T13:56:06.168+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T13:56:06.168+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/new-york-in-one-day-guided-sightseeing-tour
+[2025-04-12T13:56:10.890+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/tour-contrastes-harlem-bronx-queens-coney-island-and-brooklyn
+[2025-04-12T13:56:16.165+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/empire-state-building-tickets-observatory-and-optional-skip-the-line-tickets
+[2025-04-12T13:56:20.102+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/bateaux-new-york-dinner-cruise
+[2025-04-12T13:56:23.764+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/manhattan-sky-tour-new-york-helicopter-flight
+[2025-04-12T13:56:27.327+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/gossip-girl-sites-tour
+[2025-04-12T13:56:31.195+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-museum-of-modern-art-admission-with-skip-the-line-access
+[2025-04-12T13:56:34.942+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/small-group-guided-9-11-memorial-tour-with-museum-tickets
+[2025-04-12T13:56:38.843+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/high-line-park-and-greenwich-village-food-tour
+[2025-04-12T13:56:43.120+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/big-apple-helicopter-tour-of-new-york
+[2025-04-12T13:56:46.851+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/sunset-sail-aboard-the-schooner-adirondack
+[2025-04-12T13:56:56.876+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/small-group-tour-of-catacombs-by-candelight-in-new-york
+[2025-04-12T13:57:00.853+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/new-york-city-tour-by-classic-convertible-5ac65a105840d467a20000a0
+[2025-04-12T13:57:04.624+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/sex-and-the-city-hotspots-tour
+[2025-04-12T13:57:09.376+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/new-york-dinner-cruise-with-buffet
+[2025-04-12T13:57:13.077+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/new-york-manhattan-scenic-helicopter-tour
+[2025-04-12T13:57:17.134+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/new-york-city-guided-sightseeing-tour-by-minibus
+[2025-04-12T13:57:20.657+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/harlem-wednesday-morning-gospel-tour
+[2025-04-12T13:57:25.226+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/best-of-brooklyn-half-day-food-and-culture-tour
+[2025-04-12T13:57:29.100+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/small-group-central-park-bike-tour
+[2025-04-12T13:57:32.876+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/manhattan-to-brooklyn-nyc-walking-tour-brooklyn-bridge-and-dumbo
+[2025-04-12T13:57:36.464+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/new-york-helicopter-tour-ultimate-manhattan-sightseeing
+[2025-04-12T13:57:40.170+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/chinatown-and-little-italy-food-fest
+[2025-04-12T13:57:49.604+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/christmas-lights-in-dyker-heights-brooklyn
+[2025-04-12T13:57:53.189+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/new-york-city-united-states?page=3
+[2025-04-12T13:57:57.751+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T13:57:57.751+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/private-custom-new-york-city-tour-by-suv
+[2025-04-12T13:58:01.232+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/new-york-hip-hop-tour
+[2025-04-12T13:58:04.697+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/full-day-nyc-small-group-tour
+[2025-04-12T13:58:08.402+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/metropolitan-museum-of-art-tour-with-skip-the-line-access
+[2025-04-12T13:58:12.096+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/statue-of-liberty-ellis-island-and-9-11-memorial-walking-tour
+[2025-04-12T13:58:15.629+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/big-bus-new-york-night-tour
+[2025-04-12T13:58:19.171+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/manhattan-evening-jazz-cruise
+[2025-04-12T13:58:28.692+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/new-york-city-explorer-pass-5ac65a5b5840d48aa600008b
+[2025-04-12T13:58:32.895+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/new-york-helicopter-flight-grand-island
+[2025-04-12T13:58:36.769+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/private-new-york-walking-tour-with-a-personal-photographer
+[2025-04-12T13:58:40.545+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/new-york-city-airport-private-arrival-transfer
+[2025-04-12T13:58:44.093+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/circle-line-new-york-landmarks-cruise
+[2025-04-12T13:58:48.032+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/private-suv-tour-best-of-nyc
+[2025-04-12T13:58:53.509+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-city-3-day-hop-on-hop-off-bus-tour-and-attractions-pass
+[2025-04-12T13:58:57.271+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/nyc-at-night-sightseeing-cruise-and-bus-tour
+[2025-04-12T13:59:01.117+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/hell-s-kitchen-food-tour-and-central-park-stroll
+[2025-04-12T13:59:05.170+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/world-trade-center-911-and-ground-zero-walking-tour
+[2025-04-12T13:59:10.216+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/manhattan-architecture-yacht-cruise
+[2025-04-12T13:59:14.334+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-statue-of-liberty-and-ellis-island-tour-includes-pedestal-access
+[2025-04-12T13:59:17.994+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/new-york-citypass-5ac65a875840d44aa10000bd
+[2025-04-12T13:59:27.137+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/new-york-city-wall-street-insider-tour
+[2025-04-12T13:59:30.702+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/shared-departure-transfer-hotel-to-new-york-city-airports
+[2025-04-12T13:59:40.304+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/shared-arrival-transfer-new-york-airports-to-hotel
+[2025-04-12T13:59:49.497+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/new-york-city-buffet-lunch-cruise
+[2025-04-12T13:59:53.081+0000] {scrape.py:104} INFO -  Visiting Page 4: https://www.triphobo.com/tours/new-york-city-united-states?page=4
+[2025-04-12T13:59:57.554+0000] {scrape.py:106} INFO -  Found 24 tour links on page 4
+[2025-04-12T13:59:57.555+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/greenwich-village-walking-tour
+[2025-04-12T14:00:01.373+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/flatiron-food-architecture-and-history-tour
+[2025-04-12T14:00:09.887+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/the-sightseeing-pass-nyc
+[2025-04-12T14:00:14.075+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-city-luxury-boat-tour
+[2025-04-12T14:00:17.966+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-city-twilight-sail
+[2025-04-12T14:00:33.059+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/viator-vip-empire-state-building-sunrise-experience
+[2025-04-12T14:00:36.671+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-super-tour-of-nyc-heroes-comics-and-more
+[2025-04-12T14:00:40.254+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/statue-of-liberty-express-cruise
+[2025-04-12T14:00:43.735+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/new-york-city-airport-luxury-arrival-transfer
+[2025-04-12T14:00:47.582+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/the-sopranos-sites-tour
+[2025-04-12T14:00:51.169+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/private-economy-departure-transfer-manhattan-hotels-to-new-york-airports
+[2025-04-12T14:00:55.116+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/new-york-helicopter-tour-manhattan-highlights
+[2025-04-12T14:00:58.649+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/half-day-nyc-small-group-tour
+[2025-04-12T14:01:02.391+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/superheroes-in-new-york-walking-tour
+[2025-04-12T14:01:06.449+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/private-new-york-city-boat-tour
+[2025-04-12T14:01:09.930+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/statue-express-tour-with-statue-of-liberty-pedestal-tickets
+[2025-04-12T14:01:13.582+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/a-slice-of-brooklyn-pizza-tour
+[2025-04-12T14:01:18.220+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/statue-of-liberty-tall-ship-sailing-cruise
+[2025-04-12T14:01:21.653+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/complete-new-york-new-york-helicopter-tour
+[2025-04-12T14:01:25.119+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/new-york-city-original-rock-n-roll-walking-tour
+[2025-04-12T14:01:28.890+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/soho-little-italy-and-chinatown-walking-tour
+[2025-04-12T14:01:33.462+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/hard-rock-cafe-new-york-times-square
+[2025-04-12T14:01:37.187+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/secrets-of-the-statue-of-liberty-and-ellis-island-tour
+[2025-04-12T14:01:41.557+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/metropolitan-museum-of-art-small-group-tour
+[2025-04-12T14:01:45.080+0000] {scrape.py:104} INFO -  Visiting Page 5: https://www.triphobo.com/tours/new-york-city-united-states?page=5
+[2025-04-12T14:01:59.301+0000] {scrape.py:106} INFO -  Found 24 tour links on page 5
+[2025-04-12T14:01:59.301+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/nyc-tv-and-movie-sites-tour
+[2025-04-12T14:02:03.001+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/private-limousine-tour-best-of-nyc
+[2025-04-12T14:02:06.833+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/brooklyn-bridge-bike-tour
+[2025-04-12T14:02:10.754+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/nyc-central-park-bike-rental
+[2025-04-12T14:02:14.737+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-helicopter-tour-manhattan-brooklyn-and-staten-island
+[2025-04-12T14:02:18.256+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/central-park-bike-tour
+[2025-04-12T14:02:21.924+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/iconic-new-york-photography-tour
+[2025-04-12T14:02:25.716+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/williamsburg-bites-brooklyn-food-tour
+[2025-04-12T14:02:29.256+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-bike-tour-of-central-park
+[2025-04-12T14:02:33.092+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/harlem-gospel-and-brunch-tour
+[2025-04-12T14:02:37.032+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/macdougal-street-new-york-city-walking-tour
+[2025-04-12T14:02:41.149+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/central-park-manhattan-waterfront-bike-tour
+[2025-04-12T14:02:45.047+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/cupcake-walking-tour-in-new-york-city
+[2025-04-12T14:02:48.593+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-city-airport-private-departure-transfer
+[2025-04-12T14:02:52.168+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/central-park-tv-and-movie-sites-walking-tour
+[2025-04-12T14:02:55.787+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/new-york-city-shore-excursion-post-cruise-half-day-private-tour
+[2025-04-12T14:03:00.709+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/tcm-classic-film-tour-of-new-york
+[2025-04-12T14:03:04.773+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/disney-s-aladdin-on-broadway
+[2025-04-12T14:03:08.593+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/statue-of-liberty-lunch-cruise
+[2025-04-12T14:03:12.201+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/private-economy-new-york-inter-airport-transfer
+[2025-04-12T14:03:23.412+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/brooklyn-bridge-guided-bike-tour
+[2025-04-12T14:03:27.074+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/central-park-bike-rental
+[2025-04-12T14:03:30.739+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/private-new-york-city-sunset-boat-tour
+[2025-04-12T14:03:34.649+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/panoramic-night-tour-of-new-york-city
+[2025-04-12T14:03:38.744+0000] {scrape.py:104} INFO -  Visiting Page 6: https://www.triphobo.com/tours/new-york-city-united-states?page=6
+[2025-04-12T14:03:51.150+0000] {scrape.py:106} INFO -  Found 24 tour links on page 6
+[2025-04-12T14:03:51.150+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/911-memorial-pools-ground-zero-walking-tour-optional-upgrade-to-911-museum
+[2025-04-12T14:04:03.254+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/circle-line-nyc-liberty-cruise
+[2025-04-12T14:04:06.844+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/pizza-walking-tour-of-manhattan
+[2025-04-12T14:04:11.004+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-city-sightseeing-tour-by-coach
+[2025-04-12T14:04:15.125+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/around-manhattan-brunch-cruise
+[2025-04-12T14:04:19.037+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/statue-of-liberty-tour-with-optional-pedestal-access
+[2025-04-12T14:04:30.828+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/private-tour-of-the-metropolitan-museum-of-art-in-new-york-city
+[2025-04-12T14:04:35.589+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-arrival-transfer-new-york-airports-to-brooklyn
+[2025-04-12T14:04:39.095+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/williamsburg-walking-tour-history-culture-and-art-scene
+[2025-04-12T14:04:42.783+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/central-park-walking-tour-58aed7c68427a5de080005b9
+[2025-04-12T14:04:46.499+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/nyc-private-tour-with-local-guide-by-suv-or-van
+[2025-04-12T14:04:50.019+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/ellis-island-statue-of-liberty-pedestal-and-pre-ferry-tour
+[2025-04-12T14:05:03.768+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/soho-chinatown-little-italy-tour
+[2025-04-12T14:05:08.159+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-to-washington-dc-day-trip-by-rail
+[2025-04-12T14:05:12.266+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/central-park-and-metropolitan-museum-of-art-private-nyc-combo-tour
+[2025-04-12T14:05:15.768+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/the-hamptons-sag-harbor-and-outlet-shopping-day-trip-from-new-york-city
+[2025-04-12T14:05:19.384+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/the-lion-king-on-broadway-5ac65a735840d4de9b0000db
+[2025-04-12T14:05:22.883+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/new-york-city-airport-luxury-departure-transfer
+[2025-04-12T14:05:26.605+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-departure-transfer-brooklyn-to-new-york-airports
+[2025-04-12T14:05:31.322+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/long-island-wine-tour-from-nyc-day-trip-meet-the-winemakers-taste-food-and-wine
+[2025-04-12T14:05:35.284+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/new-york-city-to-the-hamptons-private-day-trip
+[2025-04-12T14:05:39.093+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/nyc-speakeasy-walking-tour
+[2025-04-12T14:05:42.851+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/private-tour-niagara-falls-day-trip-from-new-york-city
+[2025-04-12T14:05:47.783+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/private-new-york-city-transfer-cruise-port-to-airport
+[2025-04-12T14:05:51.192+0000] {scrape.py:104} INFO -  Visiting Page 7: https://www.triphobo.com/tours/new-york-city-united-states?page=7
+[2025-04-12T14:06:20.066+0000] {scrape.py:106} INFO -  Found 24 tour links on page 7
+[2025-04-12T14:06:20.067+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/long-island-wine-tour-from-manhattan-5ac501bb5840d48eae000cec
+[2025-04-12T14:06:23.703+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/dyker-heights-christmas-lights-tour
+[2025-04-12T14:06:27.188+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/nyc-walking-tour-broadway-history-and-culture
+[2025-04-12T14:06:30.883+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-city-slavery-and-underground-railroad-tour
+[2025-04-12T14:06:34.352+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-city-shopping-with-a-personal-stylist
+[2025-04-12T14:06:37.887+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/grand-central-the-open-sesame-bagel-tour
+[2025-04-12T14:06:41.650+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/hell-s-kitchen-food-tour
+[2025-04-12T14:06:54.360+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/holdouts-a-nyc-architecture-walking-tour
+[2025-04-12T14:06:58.095+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/midtown-mix-guided-food-tour-new-york-food-on-foot-tours
+[2025-04-12T14:07:10.800+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/chelsea-architecture-and-art-tour-with-award-winning-nyc-guide
+[2025-04-12T14:07:14.947+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/new-york-city-holiday-lights-and-markets-walking-tour
+[2025-04-12T14:07:18.450+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/brooklyn-graffiti-lesson
+[2025-04-12T14:07:21.938+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/christmas-in-new-york-private-walking-tour
+[2025-04-12T14:07:25.704+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/times-square-hell-s-kitchen-food-tour-and-central-park-stroll
+[2025-04-12T14:07:29.711+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/nyc-comedian-walking-tour
+[2025-04-12T14:07:33.217+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/the-best-of-brooklyn-walking-tour-the-brooklyn-revolution
+[2025-04-12T14:07:37.096+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/hamilton-washington-in-new-york-city-secrets-of-the-past
+[2025-04-12T14:07:40.601+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/secrets-of-hudson-yards-walking-tour-with-high-line-and-vessel
+[2025-04-12T14:07:44.336+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/new-york-city-s-amazing-subway-mosaic-art
+[2025-04-12T14:07:48.243+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/grand-central-photo-tour
+[2025-04-12T14:07:51.873+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/new-york-like-a-local-customized-private-tour
+[2025-04-12T14:07:55.323+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/nyc-secrets-of-grand-central-terminal-private-walking-tour
+[2025-04-12T14:08:10.212+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/new-york-city-gourmet-food-cart-walking-tour
+[2025-04-12T14:08:14.078+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/ground-zero-museum-workshop-tour
+[2025-04-12T14:08:17.660+0000] {scrape.py:104} INFO -  Visiting Page 8: https://www.triphobo.com/tours/new-york-city-united-states?page=8
+[2025-04-12T14:08:22.216+0000] {scrape.py:106} INFO -  Found 24 tour links on page 8
+[2025-04-12T14:08:22.216+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/greenwich-village-literary-pub-crawl
+[2025-04-12T14:08:27.028+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/new-york-city-shore-excursion-pre-cruise-half-day-private-tour
+[2025-04-12T14:08:30.811+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/private-chauffeur-service-from-boston-to-new-york
+[2025-04-12T14:08:34.394+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/street-art-tour-of-bushwick
+[2025-04-12T14:08:38.570+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/private-half-day-tour-of-brooklyn
+[2025-04-12T14:08:42.481+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/greenwich-village-food-tour-5836a24e8427a51f08000003
+[2025-04-12T14:08:46.200+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/midtown-manhattan-art-and-architecture-walking-tour
+[2025-04-12T14:08:49.849+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/hoboken-and-nyc-at-night-walking-tour
+[2025-04-12T14:08:53.681+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/world-trade-center-photo-tour
+[2025-04-12T14:09:00.407+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/nyc-west-village-pub-crawl
+[2025-04-12T14:09:03.890+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/ruins-of-a-forgotten-city-historical-manhattan-walking-tour
+[2025-04-12T14:09:07.409+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/nyc-private-holiday-lights-tour-by-limo
+[2025-04-12T14:09:11.198+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/new-york-city-4th-of-july-fireworks-luxury-boat-tour-5ac4bdb35840d455e9000bec
+[2025-04-12T14:09:14.838+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/central-park-night-time-photo-tour
+[2025-04-12T14:09:19.739+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/city-lights-sail-on-adirondack
+[2025-04-12T14:09:23.647+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/the-gazillion-bubble-show-5ac503ea5840d4fa30000c49
+[2025-04-12T14:09:27.319+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/secrets-of-the-brooklyn-bridge-walking-tour
+[2025-04-12T14:09:31.291+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/high-line-and-hudson-yards
+[2025-04-12T14:09:34.761+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/harlem-gospel-holiday-celebration-5ac51a465840d4e3ac000d87
+[2025-04-12T14:09:38.397+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/underground-tour-of-the-nyc-subway
+[2025-04-12T14:09:42.288+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/manhattan-and-brooklyn-bridge-bicycle-tour
+[2025-04-12T14:09:55.515+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/private-9-11-memorial-and-ground-zero-walking-tour-with-optional-9-11-museum-upgrade
+[2025-04-12T14:09:58.999+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/new-york-city-private-custom-walking-tour-with-local-guide
+[2025-04-12T14:10:02.797+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/new-york-neighborhoods-private-walking-tour
+[2025-04-12T14:10:06.221+0000] {scrape.py:104} INFO -  Visiting Page 9: https://www.triphobo.com/tours/new-york-city-united-states?page=9
+[2025-04-12T14:10:10.636+0000] {scrape.py:106} INFO -  Found 24 tour links on page 9
+[2025-04-12T14:10:10.637+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/greenwich-village-food-tour-5ac622f65840d487dd000051
+[2025-04-12T14:10:14.245+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/music-and-eats-on-macdougal-street-walking-tour
+[2025-04-12T14:10:17.927+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/wall-street-and-financial-district-walking-tour
+[2025-04-12T14:10:22.025+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/statue-of-liberty-pedestal-ellis-island-and-pre-ferry-tour
+[2025-04-12T14:10:26.152+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/guided-tour-of-statue-of-liberty-and-ellis-island-national-immigration-museum
+[2025-04-12T14:10:29.744+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/see-over-30-top-new-york-sights-fun-guide
+[2025-04-12T14:10:33.656+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/new-york-city-lights-sail-with-a-live-jazz-band
+[2025-04-12T14:10:37.401+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/statue-of-liberty-express-optional-pedestal
+[2025-04-12T14:10:41.046+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/central-park-rockefeller-times-square-horse-carriage-ride
+[2025-04-12T14:10:44.599+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/chelsea-market-meatpacking-district-and-high-line-food-tour
+[2025-04-12T14:10:48.275+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/private-brooklyn-walking-tour-with-personal-photographer-brooklyn-bridge-dumbo-and-brooklyn-heights
+[2025-04-12T14:10:51.989+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/fun-statue-of-liberty-and-ellis-island-tour-with-energetic-university-students
+[2025-04-12T14:10:55.577+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/romantic-central-park-horse-drawn-carriage-tour
+[2025-04-12T14:10:59.239+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/exclusive-ellis-island-statue-of-liberty-911-memorial-pools-escorted-tour
+[2025-04-12T14:11:02.729+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/brooklyn-bridge-bike-tour-5de641970a21c76c3a33d929
+[2025-04-12T14:11:07.462+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/horse-carriage-ride-to-the-loeb-boathouse-tavern-on-the-green-at-central-park
+[2025-04-12T14:11:11.207+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/manhattan-adventure-boat-tour
+[2025-04-12T14:11:14.741+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/statue-of-liberty-and-ellis-island-ferry-ticket-with-optional-pedestal-upgrade
+[2025-04-12T14:11:29.985+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/nyc-speakeasy-drinks-and-prohibition-era-nightlife-tour
+[2025-04-12T14:11:33.472+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/nyc-extremes-downtown-photo-tour-with-pro-photographer
+[2025-04-12T14:11:43.267+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/nyc-prohibition-pub-and-history-walk
+[2025-04-12T14:11:46.814+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/underground-donut-tour-new-york-s-only-donut-tour
+[2025-04-12T14:12:06.309+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/skip-the-ticket-line-911-museum-1-world-obs-tickets-w-world-trade-ctr-tour
+[2025-04-12T14:12:10.162+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/tour-noir-a-dame-to-guide-for
+[2025-04-12T14:12:33.451+0000] {scrape.py:104} INFO -  Visiting Page 10: https://www.triphobo.com/tours/new-york-city-united-states?page=10
+[2025-04-12T14:13:06.036+0000] {scrape.py:106} INFO -  Found 24 tour links on page 10
+[2025-04-12T14:13:06.036+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/nyc-secrets-of-grand-central-terminal-tour
+[2025-04-12T14:13:09.557+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/hidden-jewish-history-of-harlem
+[2025-04-12T14:13:13.754+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/speakeasy-historic-bars-night-tour-nyc
+[2025-04-12T14:13:17.431+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-midtown-scavenger-hunt-adventure
+[2025-04-12T14:14:17.440+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/new-york-midtown-scavenger-hunt-adventure: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/new-york-midtown-scavenger-hunt-adventure", waiting until "load"
+
+[2025-04-12T14:14:17.442+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-city-ghost-tour-of-greenwich-village
+[2025-04-12T14:15:17.452+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/new-york-city-ghost-tour-of-greenwich-village: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/new-york-city-ghost-tour-of-greenwich-village", waiting until "load"
+
+[2025-04-12T14:15:17.454+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/harlem-hip-hop-walking-tour
+[2025-04-12T14:15:21.555+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/central-park-photography-tour
+[2025-04-12T14:15:26.714+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/harlem-gospel-experience-walking-tour
+[2025-04-12T14:15:31.135+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-private-underground-new-york-subway-tour
+[2025-04-12T14:15:34.837+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/private-guided-walking-tour-of-the-brooklyn-bridge-and-dumbo
+[2025-04-12T14:15:38.487+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/harlem-walking-tour-of-mount-morris-park-historic-district-with-lunch
+[2025-04-12T14:15:42.169+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/new-york-christmas-holiday-tour
+[2025-04-12T14:16:42.174+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/new-york-christmas-holiday-tour: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/new-york-christmas-holiday-tour", waiting until "load"
+
+[2025-04-12T14:16:42.176+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/nyc-freedom-tower-private-photo-or-video-experience
+[2025-04-12T14:16:47.483+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/central-harlem-african-american-culture-walking-tour
+[2025-04-12T14:16:51.007+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/sugar-hill-to-washington-heights-walking-tour
+[2025-04-12T14:16:54.549+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/harlem-civil-rights-multimedia-walking-tour
+[2025-04-12T14:16:58.209+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/harlem-renaissance-multimedia-walking-tour
+[2025-04-12T14:17:40.822+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/landmarks-of-midtown-walking-tour
+[2025-04-12T14:17:44.774+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/central-park-5k-fun-run
+[2025-04-12T14:17:48.251+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/small-group-new-york-meatpacking-district-chelsea-market-and-the-highline-walking-tour
+[2025-04-12T14:17:51.785+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/new-york-city-prohibition-speakeasy-drinking-tour-midtown
+[2025-04-12T14:17:55.585+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/private-harlem-tour-in-new-york
+[2025-04-12T14:18:34.399+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/new-york-food-tour
+[2025-04-12T14:18:37.878+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/edgar-allan-poe-and-his-ghostly-neighbors-walking-tour
+[2025-04-12T14:18:41.342+0000] {scrape.py:99} INFO - Scraping city: San Francisco United States
+[2025-04-12T14:18:41.342+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/san-francisco-united-states?page=1
+[2025-04-12T14:19:02.931+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T14:19:02.932+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/big-bus-san-francisco-hop-on-hop-off-tour
+[2025-04-12T14:19:08.467+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/napa-and-sonoma-wine-country-tour
+[2025-04-12T14:19:13.624+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/san-francisco-super-saver-muir-woods-and-wine-country-tour
+[2025-04-12T14:19:17.956+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/muir-woods-giant-redwoods-and-sausalito-half-day-trip
+[2025-04-12T14:19:22.361+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/yosemite-national-park-and-giant-sequoias-trip
+[2025-04-12T14:19:27.678+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/yosemite-national-park-day-trip-from-san-francisco
+[2025-04-12T14:19:35.153+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/monterey-carmel-and-17-mile-drive-day-trip-from-san-francisco
+[2025-04-12T14:19:41.152+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-sonoma-and-napa-wine-tour-from-san-francisco
+[2025-04-12T14:19:46.862+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/san-francisco-bay-sunset-cruise
+[2025-04-12T14:19:50.736+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-plus-bay-cruise
+[2025-04-12T14:19:54.562+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-combo-ferry-building-food-tour-and-alcatraz
+[2025-04-12T14:20:02.402+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/san-francisco-bay-sunset-catamaran-cruise
+[2025-04-12T14:20:10.093+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/haunted-sf-ghosts-in-the-city-after-dark
+[2025-04-12T14:20:14.764+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/little-italy-and-north-beach-walking-tour
+[2025-04-12T14:20:22.928+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/muir-woods-tour-of-california-coastal-redwoods
+[2025-04-12T14:20:27.069+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/alcatraz-tour-plus-muir-woods-giant-redwoods-and-sausalito-day-trip
+[2025-04-12T14:20:31.352+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/3-day-yosemite-camping-adventure-from-san-francisco
+[2025-04-12T14:20:36.261+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/2-day-yosemite-national-park-winter-tour-from-san-francisco
+[2025-04-12T14:20:40.291+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/san-francisco-urban-adventure-and-alcatraz-tour
+[2025-04-12T14:20:47.965+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/san-francisco-chinatown-walking-tour
+[2025-04-12T14:20:51.876+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/chinatown-and-north-beach-night-walking-tour
+[2025-04-12T14:20:59.934+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-afternoon-tour
+[2025-04-12T14:21:04.036+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/san-francisco-deluxe-half-day-city-tour
+[2025-04-12T14:21:11.563+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/san-francisco-champagne-brunch-cruise
+[2025-04-12T14:21:15.351+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/san-francisco-united-states?page=2
+[2025-04-12T14:21:19.634+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T14:21:19.634+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/san-francisco-champagne-brunch-cruise
+[2025-04-12T14:21:23.632+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/big-bus-san-francisco-sightseeing-and-alcatraz-combo
+[2025-04-12T14:21:30.361+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/the-ultimate-wine-experience-day-trip-to-napa-and-sonoma
+[2025-04-12T14:21:34.626+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/alcatraz-and-san-francisco-city-tour
+[2025-04-12T14:21:42.602+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/san-francisco-super-saver-city-tour-plus-muir-woods-and-sausalito-day-trip
+[2025-04-12T14:21:46.596+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-bike-tour-and-alcatraz-admission
+[2025-04-12T14:21:53.370+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/san-francisco-love-tour
+[2025-04-12T14:21:59.880+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/golden-gate-bay-cruise
+[2025-04-12T14:22:07.575+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/2-day-yosemite-national-park-tour-from-san-francisco
+[2025-04-12T14:22:11.859+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/san-francisco-bay-sailing-cruise
+[2025-04-12T14:22:16.350+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-fire-engine-tour
+[2025-04-12T14:22:24.280+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-by-hop-on-hop-off-bus
+[2025-04-12T14:22:28.981+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/san-francisco-dinner-dance-cruise
+[2025-04-12T14:22:32.924+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/san-francisco-golden-gate-bridge-bike-tour
+[2025-04-12T14:22:37.491+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/yosemite-in-a-day-tour-from-san-francisco
+[2025-04-12T14:22:41.816+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/exploratorium-general-admission
+[2025-04-12T14:22:45.797+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/skip-the-line-california-academy-of-sciences-general-admission-ticket
+[2025-04-12T14:22:52.991+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/san-francisco-bridge-to-bridge-cruise
+[2025-04-12T14:22:59.551+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/san-francisco-golden-gate-seaplane-tour
+[2025-04-12T14:23:03.335+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/san-francisco-escape-from-the-rock-cruise
+[2025-04-12T14:23:07.437+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/san-francisco-lunch-cruise
+[2025-04-12T14:23:14.786+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/semi-private-small-group-wine-country-tour-from-san-francisco
+[2025-04-12T14:23:18.523+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-morning-tour
+[2025-04-12T14:23:22.483+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/explore-california-s-coastal-redwoods-with-sausalito-ferry-boat-experience
+[2025-04-12T14:23:29.635+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/san-francisco-united-states?page=3
+[2025-04-12T14:23:33.785+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T14:23:33.785+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/san-francisco-citypass-5ac65a6c5840d4d89b0000ed
+[2025-04-12T14:23:42.841+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/san-francisco-gocar-tour
+[2025-04-12T14:23:46.782+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/bike-the-golden-gate-bridge-san-francisco-to-sausalito
+[2025-04-12T14:23:51.687+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/san-francisco-and-muir-woods-city-and-nature-tour
+[2025-04-12T14:24:00.204+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/the-castro-historical-walking-tour-of-san-francisco-s-gay-lesbian-district
+[2025-04-12T14:24:07.715+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-bay-cruise-adventure
+[2025-04-12T14:24:14.106+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/san-francisco-sunset-photography-tour
+[2025-04-12T14:24:18.062+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/muir-woods-expedition-tour
+[2025-04-12T14:24:25.711+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/san-francisco-movie-sights-city-tour
+[2025-04-12T14:24:32.367+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/shore-excursion-napa-and-sonoma-ultimate-wine-tasting-experience-full-day-tour
+[2025-04-12T14:24:36.854+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-bay-rib-boat-cruise
+[2025-04-12T14:24:43.200+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/san-francisco-city-tour-5ac4c9645840d452e9000c64
+[2025-04-12T14:24:51.532+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/best-day-in-san-francisco-with-muir-woods
+[2025-04-12T14:24:58.695+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/private-arrival-transfer-san-francisco-international-airport-to-hotel
+[2025-04-12T14:25:02.809+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/city-and-sea-adventure-hop-on-hop-off-tour-package-including-san-francisco-bay-cruise
+[2025-04-12T14:25:07.601+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/small-group-mission-district-food-tour-san-francisco
+[2025-04-12T14:25:21.659+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/san-francisco-city-tour-57ace4f68427a56e1d00006f
+[2025-04-12T14:25:25.524+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/combo-tour-muir-woods-and-sausalito-and-wine-country
+[2025-04-12T14:25:29.234+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/half-day-sonoma-wine-tour
+[2025-04-12T14:25:33.943+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/6-hour-private-sonoma-or-napa-wine-tasting-tour-sedan-suv-or-limo
+[2025-04-12T14:25:42.391+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/san-francisco-1-hour-seaplane-tour-with-shuttle-transport
+[2025-04-12T14:25:46.384+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/big-bus-san-francisco-night-tour
+[2025-04-12T14:25:50.341+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/go-san-francisco-card-57ab2d758427a56f440000d6
+[2025-04-12T14:25:54.454+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/california-academy-of-sciences-nightlife
+[2025-04-12T14:26:03.154+0000] {scrape.py:104} INFO -  Visiting Page 4: https://www.triphobo.com/tours/san-francisco-united-states?page=4
+[2025-04-12T14:26:07.234+0000] {scrape.py:106} INFO -  Found 24 tour links on page 4
+[2025-04-12T14:26:07.234+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/san-francisco-bay-air-tour
+[2025-04-12T14:26:14.717+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/exploratorium-admission-thursday-evening-happy-hour
+[2025-04-12T14:26:22.141+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/aquarium-of-the-bay-general-admission
+[2025-04-12T14:26:26.401+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/coastal-redwoods-visit-with-san-francisco-hop-on-hop-off-tour
+[2025-04-12T14:26:30.290+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/the-san-francisco-sightseeing-pass-with-3-4-or-5-attractions
+[2025-04-12T14:26:35.083+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/private-departure-transfer-hotel-to-san-francisco-international-airport
+[2025-04-12T14:26:42.064+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/san-francisco-scavenger-hunt-adventure
+[2025-04-12T14:26:45.828+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/san-francisco-explorer-pass-57ac388f8427a54f1a000092
+[2025-04-12T14:26:53.174+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/shore-excursion-coastal-redwoods-of-muir-woods-national-monument-half-day-tour
+[2025-04-12T14:26:56.944+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/private-tour-san-francisco-sightseeing-3-hour
+[2025-04-12T14:27:01.609+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-full-day-hop-on-hop-off-tour
+[2025-04-12T14:27:12.192+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/napa-and-sonoma-wine-tour-from-san-francisco
+[2025-04-12T14:27:16.137+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/8-hour-private-sonoma-or-napa-wine-tasting-tour-sedan-suv-or-limo
+[2025-04-12T14:27:19.815+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/mission-district-food-tasting-and-cultural-walking-tour
+[2025-04-12T14:27:23.670+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-half-day-tour-5ac547605840d408ea0001aa
+[2025-04-12T14:27:27.843+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/self-guided-bike-rentals-from-san-francisco
+[2025-04-12T14:27:32.762+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/small-group-tour-san-francisco-city-and-muir-woods
+[2025-04-12T14:27:36.396+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/3-day-hop-on-hop-off-pass
+[2025-04-12T14:27:41.337+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/san-francisco-night-tour-by-bus
+[2025-04-12T14:27:45.453+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/2-day-narrated-hop-on-hop-off-tour-in-san-francisco
+[2025-04-12T14:27:49.430+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/silicon-valley-tour-private-day-trip-from-san-francisco
+[2025-04-12T14:27:56.832+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/north-beach-culinary-experience-with-alcohol-pairing
+[2025-04-12T14:28:00.685+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/small-group-vintage-wine-country-tour
+[2025-04-12T14:28:04.435+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/the-walt-disney-family-museum-admission-in-san-francisco
+[2025-04-12T14:28:08.513+0000] {scrape.py:104} INFO -  Visiting Page 5: https://www.triphobo.com/tours/san-francisco-united-states?page=5
+[2025-04-12T14:28:12.693+0000] {scrape.py:106} INFO -  Found 24 tour links on page 5
+[2025-04-12T14:28:12.694+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/north-beach-food-tasting-and-cultural-walking-tour
+[2025-04-12T14:28:19.468+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/san-francisco-museum-of-modern-art-general-admission-ticket
+[2025-04-12T14:28:23.273+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/alcatraz-island-tour-package-deal
+[2025-04-12T14:28:27.394+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/alcatraz-with-bay-cruise
+[2025-04-12T14:28:31.232+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/7d-darkride-admission-at-pier-39
+[2025-04-12T14:28:34.984+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-fire-engine-holiday-lights-tour
+[2025-04-12T14:28:41.210+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/bike-brew-golden-gate-bridge-guided-bicycle-tour-with-lunch-at-local-hotspot
+[2025-04-12T14:28:48.511+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/small-group-muir-woods-and-sonoma-wine-tour-plus-sausalito
+[2025-04-12T14:28:52.182+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/60-minute-private-vacation-photography-session-with-local-photographer-in-san-francisco
+[2025-04-12T14:28:55.985+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/private-sonoma-coast-food-and-wine-tour
+[2025-04-12T14:28:59.797+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/the-flyer-san-francisco-admission-ticket
+[2025-04-12T14:29:05.586+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/a-feast-for-foodies-in-san-francisco
+[2025-04-12T14:29:09.469+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/san-francisco-food-tour-ferry-building-and-ferry-plaza-farmers-market
+[2025-04-12T14:29:13.241+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/san-francisco-private-city-tour
+[2025-04-12T14:29:19.565+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/legion-of-honor-museum-admission
+[2025-04-12T14:29:25.641+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/hard-rock-cafe-san-francisco
+[2025-04-12T14:29:31.921+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/san-francisco-urban-adventure-tour
+[2025-04-12T14:29:35.884+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/san-francisco-sunrise-photography-tour
+[2025-04-12T14:29:41.849+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/rides-by-me
+[2025-04-12T14:29:47.908+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/shore-excursion-coastal-redwoods-and-san-francisco-hop-on-hop-off-tour
+[2025-04-12T14:29:51.627+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/sf-ghosts-extended-walking-tour
+[2025-04-12T14:29:55.780+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/walking-tour-of-nob-hill-cable-cars-luxury-hotels-french-gothic-cathedral
+[2025-04-12T14:30:01.559+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/de-young-museum-admission
+[2025-04-12T14:30:06.094+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/san-francisco-mega-pass-pick-3-tours-attractions
+[2025-04-12T14:30:30.778+0000] {scrape.py:104} INFO -  Visiting Page 6: https://www.triphobo.com/tours/san-francisco-united-states?page=6
+[2025-04-12T14:30:37.624+0000] {scrape.py:106} INFO -  Found 24 tour links on page 6
+[2025-04-12T14:30:37.624+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/golden-gate-bay-cruise-tour-around-the-alcatraz-under-the-golden-gate-bridge
+[2025-04-12T14:30:41.310+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/mix-save-muir-woods-and-sausalito-escape-from-the-rock-boat-tour
+[2025-04-12T14:30:45.247+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/alcatraz-with-muir-woods-and-sausalito-tour
+[2025-04-12T14:30:49.291+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/a-full-day-in-san-francisco-with-a-local-private-personalized
+[2025-04-12T14:30:53.391+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/san-francisco-city-game-the-gold-rush-quest
+[2025-04-12T14:30:57.276+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-castro-mission-loop
+[2025-04-12T14:31:06.336+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/san-francisco-deluxe-hop-on-hop-off-tour
+[2025-04-12T14:31:11.364+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/san-francisco-city-bike-rental
+[2025-04-12T14:31:15.224+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/san-francisco-chinatown-food-tour
+[2025-04-12T14:31:22.318+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/arrival-private-transfer-sfo-airport-to-oakland-in-business-car
+[2025-04-12T14:31:26.267+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/cruise-around-the-alcatraz-island-bike-across-the-golden-gate-bridge
+[2025-04-12T14:31:33.700+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/8hr-private-napa-sonoma-wine-tour-custom-built-itineraries
+[2025-04-12T14:31:37.992+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour
+[2025-04-12T14:31:43.131+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/small-group-redwoods-and-wine-country-day-trip-from-san-francisco
+[2025-04-12T14:31:47.006+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/small-group-redwoods-california-coast-sausalito-day-trip-from-san-francisco
+[2025-04-12T14:31:51.050+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/amazing-muir-woods-and-sausalito-tour
+[2025-04-12T14:31:55.050+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/golden-gate-park-bike-tour
+[2025-04-12T14:31:58.982+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/the-best-of-san-francisco-ebike-tour
+[2025-04-12T14:32:07.478+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/mission-district-culinary-experience-with-alcohol-pairing
+[2025-04-12T14:32:11.423+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/san-francisco-food-tour-taste-the-mission
+[2025-04-12T14:32:15.393+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/city-and-sea-adventure-san-francisco-bay-cruise-including-hop-on-hop-off-tour
+[2025-04-12T14:32:41.151+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/2-day-alcatraz-with-aquarium-and-small-group-muir-woods-with-sonoma-wine-tour
+[2025-04-12T14:32:46.137+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/exclusive-napa-valley-wine-tour
+[2025-04-12T14:32:51.918+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/exclusive-napa-valley-wine-tour-5ac4b6445840d4d9ac000c22
+[2025-04-12T14:32:57.675+0000] {scrape.py:104} INFO -  Visiting Page 7: https://www.triphobo.com/tours/san-francisco-united-states?page=7
+[2025-04-12T14:33:06.714+0000] {scrape.py:106} INFO -  Found 24 tour links on page 7
+[2025-04-12T14:33:06.714+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/two-day-los-angeles-san-francisco-private-tour
+[2025-04-12T14:33:15.993+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/painted-ladies-wine-country-tour
+[2025-04-12T14:33:24.183+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/the-classic-san-francisco-bike-tour
+[2025-04-12T14:33:28.304+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/north-beach-pub-tour-best-day-ever
+[2025-04-12T14:33:32.260+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/teas-temples-and-beatniks-best-day-ever
+[2025-04-12T14:33:36.315+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-independent-bike-tour-with-rental
+[2025-04-12T14:33:44.406+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/2-day-alcatraz-muir-woods-and-sonoma-wine-tour-with-aquarium
+[2025-04-12T14:33:48.266+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-napa-sonoma-gourmet-food-and-wine-tour
+[2025-04-12T14:33:52.636+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/san-francisco-embarcadero-scavenger-hunt-adventure-5ac5eb2a5840d40fea000c72
+[2025-04-12T14:33:56.958+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/zombie-scavengers-game-san-francisco-ca
+[2025-04-12T14:34:00.826+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-s-barbary-past-walking-audio-tour-by-voicemap
+[2025-04-12T14:34:04.981+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/fernet-n-paint-night
+[2025-04-12T14:34:09.499+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/san-francisco-parks-and-beaches-bike-tour
+[2025-04-12T14:34:16.807+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/small-group-golden-gate-bridge-sailing-tour
+[2025-04-12T14:34:20.774+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/san-francisco-sunset-champagne-seaplane-tour
+[2025-04-12T14:34:28.279+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/san-francisco-urban-bike-tour
+[2025-04-12T14:34:32.214+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/san-francisco-urban-hike-coit-tower-lombard-street-and-north-beach
+[2025-04-12T14:34:36.116+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/san-francisco-city-adventure-tour
+[2025-04-12T14:34:41.197+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/intro-to-san-francisco-electric-bike-tour
+[2025-04-12T14:34:45.002+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/alcatraz-and-san-francisco-city-tour-5836a92c8427a52108000091
+[2025-04-12T14:34:49.065+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/san-francisco-private-tour
+[2025-04-12T14:34:52.852+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/san-francisco-private-love-tour-5ac56a9d5840d4fb30000e77
+[2025-04-12T14:35:02.003+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/24-hour-bike-rental-in-san-francisco
+[2025-04-12T14:35:06.316+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/skip-the-bus-san-francisco-by-luxury-minivan-tour
+[2025-04-12T14:35:17.185+0000] {scrape.py:104} INFO -  Visiting Page 8: https://www.triphobo.com/tours/san-francisco-united-states?page=8
+[2025-04-12T14:35:21.800+0000] {scrape.py:106} INFO -  Found 24 tour links on page 8
+[2025-04-12T14:35:21.800+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/private-lucky-tuk-tuk-3-hour-ultimate-san-francisco-city-tour-w-your-own-guide
+[2025-04-12T14:35:25.777+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/lucky-tuk-tuk-at-night-san-francisco-lights-tour
+[2025-04-12T14:35:29.452+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/san-francisco-hop-on-hop-off-bus-tour-1-day-pass-unlimited-use-live-guide
+[2025-04-12T14:35:33.134+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/fisherman-s-wharf-walking-tour-and-alcatraz-upgrade-option
+[2025-04-12T14:35:36.900+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/san-francisco-city-insider-s-tour
+[2025-04-12T14:35:41.798+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/private-tour-of-san-francisco
+[2025-04-12T14:35:45.996+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/4-hour-painted-ladies-and-haight-ashbury-gocar-tour
+[2025-04-12T14:35:51.013+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/painted-ladies-san-francisco-city-tour
+[2025-04-12T14:35:54.792+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/holiday-lights-sites-lucky-tuk-tuk-tour-in-san-francisco
+[2025-04-12T14:36:04.175+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/sfo-pick-up-with-city-sightseeing-tour
+[2025-04-12T14:36:14.123+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/2hr-golden-gate-bridge-and-lombard-loop-gocar-tour
+[2025-04-12T14:36:22.098+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/1hr-san-francisco-chinatown-downtown-loop
+[2025-04-12T14:36:26.319+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/3hr-golden-gate-bridge-and-golden-gate-park-gocar-tour
+[2025-04-12T14:36:31.052+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/elite-flight-tour-over-san-francisco
+[2025-04-12T14:36:35.006+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/fisherman-s-wharf-walking-tour
+[2025-04-12T14:36:39.029+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/san-francisco-independent-electric-bike-tour-with-rental
+[2025-04-12T14:36:43.190+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/golden-gate-bridge-bike-tour
+[2025-04-12T14:36:47.900+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/san-francisco-fishermans-wharf-tourist-scavenger-hunt
+[2025-04-12T14:36:51.636+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/san-francisco-hop-on-hop-off-open-top-bus-tour-with-sausalito-tour-live-guide
+[2025-04-12T14:36:57.030+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/mother-s-day-brunch-cruise-on-san-francisco-bay
+[2025-04-12T14:37:00.966+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/nate-s-review-express-product
+[2025-04-12T14:37:04.904+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/bokun-sapi-ec-connected
+[2025-04-12T14:37:10.293+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/bridge-and-the-beach-best-day-ever
+[2025-04-12T14:37:14.214+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/san-francisco-ferry-sausalito-or-tiburon
+[2025-04-12T14:37:25.287+0000] {scrape.py:104} INFO -  Visiting Page 9: https://www.triphobo.com/tours/san-francisco-united-states?page=9
+[2025-04-12T14:37:29.409+0000] {scrape.py:106} INFO -  Found 24 tour links on page 9
+[2025-04-12T14:37:29.409+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/arrival-private-transfer-san-francisco-cruise-port-to-oakland-in-luxury-car
+[2025-04-12T14:37:33.705+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/arrival-private-transfer-san-francisco-cruise-port-to-oakland-in-business-car
+[2025-04-12T14:37:41.414+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/sip-n-shop-livermore-wine-tasting-and-outlet-shopping-from-san-francisco
+[2025-04-12T14:37:45.154+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/san-francisco-explorer-pass
+[2025-04-12T14:37:53.573+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/go-san-francisco-card
+[2025-04-12T14:37:57.348+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/san-francisco-self-guided-audio-tour
+[2025-04-12T14:38:01.046+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-san-francisco-sightseeing-day-pass-save-big-at-30-attractions-tours
+[2025-04-12T14:38:04.985+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-full-day-napa-wine-tour-in-a-luxury-vehicle
+[2025-04-12T14:38:12.757+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/private-6-hour-napa-valley-wine-tour
+[2025-04-12T14:38:20.119+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/napa-and-sonoma-valley-wine-tour-from-san-francisco
+[2025-04-12T14:38:28.274+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/monterey-carmel-and-big-sur-private-day-trip-from-san-francisco
+[2025-04-12T14:38:35.733+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/beginner-surfing-1-day-pacifica
+[2025-04-12T14:38:39.793+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/introduction-to-wilderness-survival-clinic-marin-county
+[2025-04-12T14:38:44.544+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/private-napa-valley-day-trip-from-san-francisco
+[2025-04-12T14:38:48.590+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/yosemite-tour
+[2025-04-12T14:38:56.704+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-alcatraz
+[2025-04-12T14:39:00.875+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/deluxe-sonoma-napa-valley-wine-country-tour
+[2025-04-12T14:39:06.049+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/muir-woods-sausalito-tour
+[2025-04-12T14:39:14.757+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-wine-tour-of-napa-and-sonoma
+[2025-04-12T14:39:18.701+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/8-hour-napa-and-sonoma-private-wine-tour
+[2025-04-12T14:39:27.056+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/private-russian-river-wine-tour-from-san-francisco
+[2025-04-12T14:39:31.411+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/private-muir-woods-and-napa-wine-tour-from-san-francisco
+[2025-04-12T14:39:40.722+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/8-hour-private-limousine-wine-country-tour-of-napa-valley-from-san-francisco
+[2025-04-12T14:39:48.910+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/6-hour-livermore-valley-wine-tasting-tour-from-san-francisco
+[2025-04-12T14:40:26.065+0000] {scrape.py:104} INFO -  Visiting Page 10: https://www.triphobo.com/tours/san-francisco-united-states?page=10
+[2025-04-12T14:40:35.053+0000] {scrape.py:106} INFO -  Found 24 tour links on page 10
+[2025-04-12T14:40:35.053+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/monterey-carmel-the-17-mile-drive-5ab11bb25840d47c1d000a9e
+[2025-04-12T14:40:39.149+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/san-francisco-city-tour-5ab1223c5840d47f1d000a7e
+[2025-04-12T14:40:43.187+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/san-francisco-city-tour-muir-woods-5ab122505840d44a1e000a75
+[2025-04-12T14:40:53.379+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/san-francisco-city-tour-bay-cruise
+[2025-04-12T14:40:57.490+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/aquarium-of-the-bay-5ab114fa5840d4811d000b3a
+[2025-04-12T14:41:02.523+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/sf-city-tour-and-escape-from-the-rock-cruise
+[2025-04-12T14:41:11.971+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/sf-bay-cruise
+[2025-04-12T14:41:22.368+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/escape-from-the-rock
+[2025-04-12T14:41:26.477+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/muir-woods-sausalito-bay-cruise
+[2025-04-12T14:41:30.928+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/san-francisco-city-tour-alcatraz
+[2025-04-12T14:41:34.814+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/san-francisco-bay-indoor-skydiving-experience
+[2025-04-12T14:41:40.590+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/san-francisco-japantown-audio-tour-by-voicemap-food-history-and-resistance
+[2025-04-12T14:41:44.750+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/sfo-intl-executive-transportation
+[2025-04-12T14:41:53.088+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/yosemite-day-tour
+[2025-04-12T14:41:56.917+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/half-day-san-francisco-bike-rental-for-the-golden-gate-bridge-3-hour
+[2025-04-12T14:42:00.873+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/big-sur-monterey-california-pacific-coast-one-day-tour
+[2025-04-12T14:42:04.759+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/napa-valley-wine-country-flight-tour
+[2025-04-12T14:42:13.009+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/wine-country-tour
+[2025-04-12T14:42:21.472+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/chinatown-culinary-walking-tour
+[2025-04-12T14:42:25.372+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/discovering-the-3-days-trip-to-desert
+[2025-04-12T14:42:29.211+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/golden-gate-bridge-to-sausalito-bike-rental
+[2025-04-12T14:42:33.075+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/half-day-private-tour-of-muir-woods-sausalito
+[2025-04-12T14:42:36.845+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/experience-our-napa-valley-sonoma-wine-country-combo-tour
+[2025-04-12T14:42:40.601+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/discover-point-reyes-national-seashore-and-giant-redwoods
+[2025-04-12T14:42:49.630+0000] {scrape.py:99} INFO - Scraping city: Chicago United States
+[2025-04-12T14:42:49.630+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/chicago-united-states?page=1
+[2025-04-12T14:42:54.998+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T14:42:54.998+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T14:42:59.540+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T14:43:04.078+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T14:43:11.624+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T14:43:15.548+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T14:43:19.731+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T14:43:27.456+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T14:43:35.445+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T14:43:44.375+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T14:43:48.560+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T14:43:56.659+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T14:44:06.358+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T14:44:14.224+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/chicago-city-tour-with-optional-river-cruise
+[2025-04-12T14:44:18.455+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/underground-donut-tour-chicago-s-first-donut-tour
+[2025-04-12T14:44:22.780+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/lake-michigan-speedboat-ride
+[2025-04-12T14:44:26.812+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/willis-tower-skydeck-dinner
+[2025-04-12T14:44:30.770+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/small-group-chicago-loop-food-walking-tour
+[2025-04-12T14:44:39.290+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/private-chicago-sunset-sail-on-lake-michigan
+[2025-04-12T14:44:43.096+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/tastes-of-chicago-walking-tour-chicago-style-pizza-beer-brownies-and-italian-beef
+[2025-04-12T14:44:52.264+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/chicago-walking-tour-art-deco-skyscrapers
+[2025-04-12T14:44:56.188+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/haunted-chicago-segway-tour
+[2025-04-12T14:44:59.928+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/chicago-night-crimes-tour
+[2025-04-12T14:45:05.181+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/chicago-brunch-cruise
+[2025-04-12T14:45:13.060+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/electric-bikes-at-night-tour-in-chicago
+[2025-04-12T14:45:23.772+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/chicago-united-states?page=2
+[2025-04-12T14:45:35.262+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T14:45:35.263+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/chicago-lakefront-neighborhoods-bicycle-tour
+[2025-04-12T14:45:44.610+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/chicago-lakefront-and-museum-campus-segway-tour
+[2025-04-12T14:45:56.226+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/chicago-walking-tour-historic-skyscrapers
+[2025-04-12T14:46:05.539+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/chicago-loop-walking-tour
+[2025-04-12T14:46:14.057+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/private-arrival-transfer-chicago-airport-to-downtown-chicago
+[2025-04-12T14:46:18.491+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/chicago-lincoln-park-bike-adventure
+[2025-04-12T14:46:27.489+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/amazing-lakefront-segway-in-chicago
+[2025-04-12T14:46:35.557+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/chicago-walking-tour-modern-architecture
+[2025-04-12T14:46:44.966+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/chicago-holiday-stroll-and-food-tour
+[2025-04-12T14:46:49.147+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/chicago-tastes-of-chinatown-walking-food-tour
+[2025-04-12T14:46:58.167+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/private-departure-transfer-downtown-chicago-to-chicago-airport
+[2025-04-12T14:47:01.967+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/chicago-walking-tour-tiffany-treasures
+[2025-04-12T14:47:10.893+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/museums-and-parks-bicycle-tour-in-chicago
+[2025-04-12T14:47:14.877+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/spirit-of-chicago-lunch-cruise-with-buffet
+[2025-04-12T14:47:18.845+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/private-navy-pier-fireworks-sail-in-chicago
+[2025-04-12T14:47:27.210+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/chicago-craft-brewery-barrel-bus-tour
+[2025-04-12T14:47:35.847+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/chicago-independent-bike-tour-with-full-day-rental
+[2025-04-12T14:47:39.525+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/haunted-evening-chicago-pub-tour
+[2025-04-12T14:47:45.278+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/chicago-scavenger-hunt-adventure
+[2025-04-12T14:47:49.008+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/fright-hike-halloween-edition-chicago-bike-tour
+[2025-04-12T14:47:54.277+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/chicago-architecture-walking-tour-dazzling-interiors-of-the-loop
+[2025-04-12T14:48:02.142+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/chicago-walking-tour-historic-treasures-of-chicago
+[2025-04-12T14:48:10.506+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/chicago-insider-segway-tour
+[2025-04-12T14:48:19.512+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/30-minute-private-vacation-photography-session-with-local-photographer-in-chicago
+[2025-04-12T14:48:24.008+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/chicago-united-states?page=3
+[2025-04-12T14:48:36.040+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T14:48:36.041+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/chicago-fireworks-viewing-by-segway
+[2025-04-12T14:48:40.970+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/chicago-river-experience
+[2025-04-12T14:48:49.514+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/2-hr-lakefront-and-museum-campus-segway-tour
+[2025-04-12T14:48:59.657+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/chicago-sunset-segway-tour
+[2025-04-12T14:49:03.734+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/volo-auto-museum-admission
+[2025-04-12T14:49:13.404+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/american-writers-museum-admission
+[2025-04-12T14:49:17.386+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/chicago-in-a-day-food-history-and-architecture-combo-tour
+[2025-04-12T14:49:26.715+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/chicago-historical-food-tour-of-river-north
+[2025-04-12T14:49:30.594+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/chicago-walking-tour-the-magnificent-mile
+[2025-04-12T14:49:38.487+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/field-museum-of-natural-history-all-access-pass
+[2025-04-12T14:49:42.331+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/hidden-history-in-chicago-s-gold-coast-walking-audio-tour-by-voicemap
+[2025-04-12T14:49:46.418+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/chicago-citypass
+[2025-04-12T14:49:50.328+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/over-31-years-as-chicago-s-original-gangster-tour-focused-on-the-prohibition-era
+[2025-04-12T14:49:58.537+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/nching-product-options-with-start-times
+[2025-04-12T14:50:02.463+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/spirit-of-chicago-fireworks-dinner-cruise-with-buffet
+[2025-04-12T14:50:18.228+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/windy-city-ghost-tour
+[2025-04-12T14:50:22.121+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/odyssey-chicago-river-architectural-lunch-cruise
+[2025-04-12T14:50:27.082+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/chicago-river-architecture-tour
+[2025-04-12T14:50:35.587+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/chicago-lakefront-electric-bike-tour-5de612e10a21c77129300bc0
+[2025-04-12T14:50:45.512+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/45-minute-chicago-helicopter-skyline-tour-experience-for-3-passengers
+[2025-04-12T14:50:49.477+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/chicago-lake-and-river-architecture-tour
+[2025-04-12T14:50:58.167+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/big-bus-chicago-night-tour
+[2025-04-12T14:51:01.963+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/best-of-chicago-history-culture-tour-with-chocolate-and-popcorn
+[2025-04-12T14:51:05.582+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/macy-s-star-shopper-state-street-chicago
+[2025-04-12T14:51:11.427+0000] {scrape.py:104} INFO -  Visiting Page 4: https://www.triphobo.com/tours/chicago-united-states?page=4
+[2025-04-12T14:51:22.430+0000] {scrape.py:106} INFO -  Found 24 tour links on page 4
+[2025-04-12T14:51:22.431+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/shop-and-shuttle-chicago
+[2025-04-12T14:51:26.261+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/2-hours-chicago-sightseeing-tour-luxury-private-stretch-limo-8-passengers
+[2025-04-12T14:51:33.141+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/chicago-explorer-pass
+[2025-04-12T14:51:41.924+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/chicago-mafia-and-blues-night-tour
+[2025-04-12T14:51:45.976+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/chicago-barrel-bus-craft-brewery-tour
+[2025-04-12T14:51:51.265+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/arrival-private-transfer-chicago-o-hare-airport-ord-to-chicago-in-an-suv
+[2025-04-12T14:52:00.357+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/transfer-in-private-vehicle-from-chicago-airport-to-city
+[2025-04-12T14:52:04.356+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/offbeat-street-art-tour-urban-graffiti-art-and-mural-tour
+[2025-04-12T14:52:08.250+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/chicago-arrival-private-transfers-from-o-hare-airport-ord-to-chicago-city
+[2025-04-12T14:52:12.070+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/chicago-airport-transfers-chicago-city-to-o-hare-airport-ord-in-luxury-suv
+[2025-04-12T14:52:15.915+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/chicago-walking-tour-a-walk-through-time
+[2025-04-12T14:52:19.541+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/chicago-naperville-indoor-skydiving-experience
+[2025-04-12T14:52:23.263+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/chicago-lincoln-park-indoor-skydiving-experience
+[2025-04-12T14:52:35.663+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/chicago-rosemont-indoor-skydiving-experience
+[2025-04-12T14:52:39.640+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/all-inclusive-luxury-sedan-transfer-from-o-hare-airport-to-chicago-downtown
+[2025-04-12T14:52:48.440+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/lincoln-park-hauntings-ghost-investigation-tour
+[2025-04-12T14:52:52.171+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/curbside-suv-transfer-from-ord-to-downtown-chicago
+[2025-04-12T14:52:56.414+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/curbside-sedan-transfer-from-o-hare-airport-to-downtown-chicago
+[2025-04-12T14:53:31.612+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-airport-transfer-chicago-airport-arrival-and-departure
+[2025-04-12T14:53:35.714+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/airport-transfer-5d84a1df0a21c71fb30b993d
+[2025-04-12T14:53:39.630+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/odyssey-lake-michigan-thanksgiving-dinner-cruise
+[2025-04-12T14:53:43.247+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/departure-private-transfer-chicago-to-o-hare-airport-ord-in-a-sedan-car
+[2025-04-12T14:53:54.904+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/round-trip-transfer-in-private-vehicle-from-to-airport-in-chicago
+[2025-04-12T14:54:03.990+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/transfer-in-private-vehicle-from-chicago-city-to-airport
+[2025-04-12T14:54:09.111+0000] {scrape.py:104} INFO -  Visiting Page 5: https://www.triphobo.com/tours/chicago-united-states?page=5
+[2025-04-12T14:54:13.139+0000] {scrape.py:106} INFO -  Found 9 tour links on page 5
+[2025-04-12T14:54:13.139+0000] {scrape.py:110} INFO - Scraping 1/9: https://www.triphobo.com/tours/chicago-departure-private-transfers-chicago-to-o-hare-airport-ord-in-luxury-suv
+[2025-04-12T14:54:18.225+0000] {scrape.py:110} INFO - Scraping 2/9: https://www.triphobo.com/tours/chicago-departure-private-transfers-from-chicago-city-to-o-hare-airport-ord
+[2025-04-12T14:54:22.165+0000] {scrape.py:110} INFO - Scraping 3/9: https://www.triphobo.com/tours/chicago-arrival-private-transfers-o-hare-airport-ord-to-chicago-in-luxury-suv
+[2025-04-12T14:54:27.432+0000] {scrape.py:110} INFO - Scraping 4/9: https://www.triphobo.com/tours/chicago-airport-transfers-chicago-city-to-o-hare-airport-ord-in-sedan-car
+[2025-04-12T14:55:10.436+0000] {scrape.py:110} INFO - Scraping 5/9: https://www.triphobo.com/tours/chicago-airport-transfers-o-hare-airport-ord-to-chicago-city-in-luxury-sedan
+[2025-04-12T14:56:10.444+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/chicago-airport-transfers-o-hare-airport-ord-to-chicago-city-in-luxury-sedan: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/chicago-airport-transfers-o-hare-airport-ord-to-chicago-city-in-luxury-sedan", waiting until "load"
+
+[2025-04-12T14:56:10.445+0000] {scrape.py:110} INFO - Scraping 6/9: https://www.triphobo.com/tours/chicago-airport-transfers-o-hare-airport-ord-to-chicago-city-in-luxury-suv
+[2025-04-12T14:56:14.594+0000] {scrape.py:110} INFO - Scraping 7/9: https://www.triphobo.com/tours/chicago-airport-transfers-chicago-city-to-o-hare-airport-ord-in-luxury-sedan
+[2025-04-12T14:57:16.340+0000] {scrape.py:110} INFO - Scraping 8/9: https://www.triphobo.com/tours/private-sedan-transfer-between-ord-and-indianapolis-in
+[2025-04-12T14:57:20.720+0000] {scrape.py:110} INFO - Scraping 9/9: https://www.triphobo.com/tours/chicago-airport-transfer-midway-airport-mdw-to-o-hare-airport-ord-in-luxury-suv
+[2025-04-12T14:58:20.728+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/chicago-airport-transfer-midway-airport-mdw-to-o-hare-airport-ord-in-luxury-suv: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/chicago-airport-transfer-midway-airport-mdw-to-o-hare-airport-ord-in-luxury-suv", waiting until "load"
+
+[2025-04-12T14:58:20.731+0000] {scrape.py:104} INFO -  Visiting Page 6: https://www.triphobo.com/tours/chicago-united-states?page=6
+[2025-04-12T14:58:25.008+0000] {scrape.py:106} INFO -  Found 12 tour links on page 6
+[2025-04-12T14:58:25.009+0000] {scrape.py:110} INFO - Scraping 1/12: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T14:58:28.530+0000] {scrape.py:110} INFO - Scraping 2/12: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T14:58:32.011+0000] {scrape.py:110} INFO - Scraping 3/12: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T14:58:35.866+0000] {scrape.py:110} INFO - Scraping 4/12: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T14:58:59.209+0000] {scrape.py:110} INFO - Scraping 5/12: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T14:59:04.638+0000] {scrape.py:110} INFO - Scraping 6/12: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T14:59:08.442+0000] {scrape.py:110} INFO - Scraping 7/12: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T14:59:12.443+0000] {scrape.py:110} INFO - Scraping 8/12: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T14:59:16.282+0000] {scrape.py:110} INFO - Scraping 9/12: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T14:59:20.778+0000] {scrape.py:110} INFO - Scraping 10/12: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T14:59:25.528+0000] {scrape.py:110} INFO - Scraping 11/12: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T14:59:29.063+0000] {scrape.py:110} INFO - Scraping 12/12: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T14:59:36.666+0000] {scrape.py:104} INFO -  Visiting Page 7: https://www.triphobo.com/tours/chicago-united-states?page=7
+[2025-04-12T14:59:44.401+0000] {scrape.py:106} INFO -  Found 12 tour links on page 7
+[2025-04-12T14:59:44.402+0000] {scrape.py:110} INFO - Scraping 1/12: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T14:59:48.321+0000] {scrape.py:110} INFO - Scraping 2/12: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T14:59:51.961+0000] {scrape.py:110} INFO - Scraping 3/12: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T15:00:00.654+0000] {scrape.py:110} INFO - Scraping 4/12: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T15:00:05.922+0000] {scrape.py:110} INFO - Scraping 5/12: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T15:00:10.443+0000] {scrape.py:110} INFO - Scraping 6/12: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T15:00:14.023+0000] {scrape.py:110} INFO - Scraping 7/12: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T15:00:19.454+0000] {scrape.py:110} INFO - Scraping 8/12: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T15:00:23.135+0000] {scrape.py:110} INFO - Scraping 9/12: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T15:00:27.323+0000] {scrape.py:110} INFO - Scraping 10/12: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T15:00:31.074+0000] {scrape.py:110} INFO - Scraping 11/12: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T15:00:34.741+0000] {scrape.py:110} INFO - Scraping 12/12: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T15:00:38.958+0000] {scrape.py:104} INFO -  Visiting Page 8: https://www.triphobo.com/tours/chicago-united-states?page=8
+[2025-04-12T15:00:43.359+0000] {scrape.py:106} INFO -  Found 12 tour links on page 8
+[2025-04-12T15:00:43.359+0000] {scrape.py:110} INFO - Scraping 1/12: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T15:00:46.970+0000] {scrape.py:110} INFO - Scraping 2/12: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T15:00:50.777+0000] {scrape.py:110} INFO - Scraping 3/12: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T15:00:58.769+0000] {scrape.py:110} INFO - Scraping 4/12: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T15:01:02.221+0000] {scrape.py:110} INFO - Scraping 5/12: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T15:01:15.041+0000] {scrape.py:110} INFO - Scraping 6/12: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T15:01:18.694+0000] {scrape.py:110} INFO - Scraping 7/12: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T15:01:22.460+0000] {scrape.py:110} INFO - Scraping 8/12: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T15:01:26.047+0000] {scrape.py:110} INFO - Scraping 9/12: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T15:01:30.242+0000] {scrape.py:110} INFO - Scraping 10/12: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T15:01:33.644+0000] {scrape.py:110} INFO - Scraping 11/12: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T15:01:37.049+0000] {scrape.py:110} INFO - Scraping 12/12: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T15:01:45.763+0000] {scrape.py:104} INFO -  Visiting Page 9: https://www.triphobo.com/tours/chicago-united-states?page=9
+[2025-04-12T15:01:50.019+0000] {scrape.py:106} INFO -  Found 12 tour links on page 9
+[2025-04-12T15:01:50.020+0000] {scrape.py:110} INFO - Scraping 1/12: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T15:01:53.507+0000] {scrape.py:110} INFO - Scraping 2/12: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T15:01:57.373+0000] {scrape.py:110} INFO - Scraping 3/12: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T15:02:05.278+0000] {scrape.py:110} INFO - Scraping 4/12: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T15:02:08.949+0000] {scrape.py:110} INFO - Scraping 5/12: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T15:02:12.910+0000] {scrape.py:110} INFO - Scraping 6/12: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T15:02:16.463+0000] {scrape.py:110} INFO - Scraping 7/12: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T15:02:25.010+0000] {scrape.py:110} INFO - Scraping 8/12: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T15:02:28.852+0000] {scrape.py:110} INFO - Scraping 9/12: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T15:02:32.636+0000] {scrape.py:110} INFO - Scraping 10/12: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T15:02:36.065+0000] {scrape.py:110} INFO - Scraping 11/12: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T15:02:40.700+0000] {scrape.py:110} INFO - Scraping 12/12: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T15:02:44.584+0000] {scrape.py:104} INFO -  Visiting Page 10: https://www.triphobo.com/tours/chicago-united-states?page=10
+[2025-04-12T15:02:48.446+0000] {scrape.py:106} INFO -  Found 12 tour links on page 10
+[2025-04-12T15:02:48.447+0000] {scrape.py:110} INFO - Scraping 1/12: https://www.triphobo.com/tours/chicago-architecture-river-cruise
+[2025-04-12T15:02:52.408+0000] {scrape.py:110} INFO - Scraping 2/12: https://www.triphobo.com/tours/big-bus-chicago-hop-on-hop-off-tour
+[2025-04-12T15:02:56.457+0000] {scrape.py:110} INFO - Scraping 3/12: https://www.triphobo.com/tours/chicago-crime-and-mob-tour
+[2025-04-12T15:03:00.266+0000] {scrape.py:110} INFO - Scraping 4/12: https://www.triphobo.com/tours/lake-michigan-sightseeing-cruise-58d170088427a53c720003ef
+[2025-04-12T15:03:03.784+0000] {scrape.py:110} INFO - Scraping 5/12: https://www.triphobo.com/tours/skydeck-chicago-admission
+[2025-04-12T15:03:08.018+0000] {scrape.py:110} INFO - Scraping 6/12: https://www.triphobo.com/tours/lake-michigan-and-chicago-river-architecture-cruise-by-speedboat
+[2025-04-12T15:03:11.511+0000] {scrape.py:110} INFO - Scraping 7/12: https://www.triphobo.com/tours/tastes-of-chicago-bike-tour-chicago-style-pizza-beer-cupcakes-and-hot-dogs
+[2025-04-12T15:03:15.334+0000] {scrape.py:110} INFO - Scraping 8/12: https://www.triphobo.com/tours/360-chicago-observation-deck-formerly-john-hancock-observatory-admission
+[2025-04-12T15:03:19.056+0000] {scrape.py:110} INFO - Scraping 9/12: https://www.triphobo.com/tours/chicago-citypass-5ac65a665840d44ac100007a
+[2025-04-12T15:03:22.828+0000] {scrape.py:110} INFO - Scraping 10/12: https://www.triphobo.com/tours/chicago-dinner-cruise
+[2025-04-12T15:03:26.421+0000] {scrape.py:110} INFO - Scraping 11/12: https://www.triphobo.com/tours/chicago-explorer-pass-57ac38868427a53d1a00006b
+[2025-04-12T15:03:31.546+0000] {scrape.py:110} INFO - Scraping 12/12: https://www.triphobo.com/tours/behind-the-scenes-chicago-pizza-tour-by-coach
+[2025-04-12T15:03:36.792+0000] {scrape.py:99} INFO - Scraping city: Las Vegas United States
+[2025-04-12T15:03:36.793+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/las-vegas-united-states?page=1
+[2025-04-12T15:03:48.501+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T15:03:48.501+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/grand-canyon-south-rim-bus-tour-with-optional-upgrades
+[2025-04-12T15:03:52.496+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/deluxe-las-vegas-helicopter-night-flight-with-vip-transportation
+[2025-04-12T15:03:56.720+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/las-vegas-strip-night-flight-by-helicopter-with-transport
+[2025-04-12T15:04:07.174+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/morning-maverick-horseback-ride-with-breakfast
+[2025-04-12T15:04:11.300+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/ultimate-hoover-dam-tour
+[2025-04-12T15:04:15.581+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/grand-canyon-national-park-bus-tour
+[2025-04-12T15:04:19.492+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/grand-canyon-west-rim-ultimate-vip-tour
+[2025-04-12T15:04:24.118+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/death-valley-tour-from-las-vegas
+[2025-04-12T15:04:28.396+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/the-high-roller-at-the-linq
+[2025-04-12T15:04:32.456+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/grand-canyon-west-rim-luxury-helicopter-tour
+[2025-04-12T15:04:44.426+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/grand-canyon-and-hoover-dam-day-trip-from-las-vegas-with-optional-skywalk
+[2025-04-12T15:04:48.848+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/las-vegas-super-saver-romance-package-at-madame-tussauds-with-the-high-roller-and-lunch-or-dinner
+[2025-04-12T15:04:52.696+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/3-day-national-parks-tour-from-las-vegas-grand-canyon-zion-and-bryce-canyon
+[2025-04-12T15:05:02.586+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/las-vegas-combo-tour-grand-canyon-helicopter-flight-and-colorado-river-float-day-trip
+[2025-04-12T15:05:07.150+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/3-day-national-parks-camping-tour-zion-bryce-canyon-monument-valley-and-grand-canyon-from-las-vegas
+[2025-04-12T15:05:11.467+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/o-by-cirque-du-soleil-at-the-bellagio-hotel-and-casino
+[2025-04-12T15:05:15.879+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/valley-of-fire-hiking-tour-from-las-vegas
+[2025-04-12T15:05:19.853+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/deluxe-grand-canyon-west-rim-day-trip-from-las-vegas-with-optional-skywalk
+[2025-04-12T15:05:31.706+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/big-bus-las-vegas-night-tour
+[2025-04-12T15:05:35.601+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/grand-canyon-west-rim-day-trip-by-coach-helicopter-and-boat-with-optional-skywalk
+[2025-04-12T15:05:47.866+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/vegas-the-show-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:05:59.048+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/bryce-canyon-and-zion-national-parks-small-group-tour-from-las-vegas
+[2025-04-12T15:06:03.955+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/scooter-car-tour-of-red-rock-canyon-with-transport-from-las-vegas
+[2025-04-12T15:06:07.829+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/grand-canyon-west-rim-bus-tour-from-las-vegas
+[2025-04-12T15:06:12.190+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/las-vegas-united-states?page=2
+[2025-04-12T15:06:25.420+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T15:06:25.420+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/grand-canyon-west-rim-bus-tour-from-las-vegas
+[2025-04-12T15:06:29.082+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/grand-canyon-west-6-in-1-tour-with-helicopter-and-landing
+[2025-04-12T15:06:33.048+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/zion-national-park-day-tour-from-las-vegas
+[2025-04-12T15:06:36.754+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/blue-man-group-at-the-luxor-hotel-and-casino
+[2025-04-12T15:06:40.857+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/above-and-below-the-rim-grand-canyon-west-rim-helicopter-flight
+[2025-04-12T15:06:45.323+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/half-or-full-day-kayaking-tour-on-the-colorado-river-from-las-vegas
+[2025-04-12T15:06:49.507+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/hoover-dam-tour-from-las-vegas
+[2025-04-12T15:06:53.440+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/small-group-death-valley-national-park-day-trip-from-las-vegas
+[2025-04-12T15:06:58.935+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/red-rock-canyon-hiking-tour
+[2025-04-12T15:07:02.983+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/scooter-tours-of-red-rock-canyon
+[2025-04-12T15:07:07.977+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/black-canyon-kayak-day-trip-from-las-vegas
+[2025-04-12T15:07:13.685+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/las-vegas-night-flight-helicopter-wedding-ceremony
+[2025-04-12T15:07:24.955+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/self-drive-1-day-grand-canyon-whitewater-rafting-tour
+[2025-04-12T15:07:28.844+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/hidden-valley-and-primm-atv-tour
+[2025-04-12T15:07:32.758+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/exotic-car-driving-experience-package-in-las-vegas
+[2025-04-12T15:07:36.596+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/valley-of-fire-and-lost-city-museum-tour-from-las-vegas
+[2025-04-12T15:07:48.599+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/las-vegas-reality-show-vip-tour
+[2025-04-12T15:08:01.296+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/vegas-rock-star-nightclub-tour
+[2025-04-12T15:08:08.943+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/arizona-ghost-towns-and-wild-west-day-trip-from-las-vegas
+[2025-04-12T15:08:13.972+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/atv-tour-of-lake-mead-and-colorado-river-from-las-vegas
+[2025-04-12T15:08:17.758+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/eiffel-tower-experience-at-paris-las-vegas
+[2025-04-12T15:08:27.822+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/las-vegas-car-lovers-vip-tour
+[2025-04-12T15:09:03.715+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/grand-canyon-west-rim-helicopter-tour-from-las-vegas
+[2025-04-12T15:09:07.752+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/grand-canyon-west-rim-day-tour-from-las-vegas
+[2025-04-12T15:10:07.767+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/grand-canyon-west-rim-day-tour-from-las-vegas: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/grand-canyon-west-rim-day-tour-from-las-vegas", waiting until "load"
+
+[2025-04-12T15:10:07.771+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/las-vegas-united-states?page=3
+[2025-04-12T15:10:12.984+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T15:10:12.984+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/grand-canyon-and-hoover-dam-small-group-day-trip-with-optional-skywalk-admission
+[2025-04-12T15:11:12.992+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/grand-canyon-and-hoover-dam-small-group-day-trip-with-optional-skywalk-admission: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/grand-canyon-and-hoover-dam-small-group-day-trip-with-optional-skywalk-admission", waiting until "load"
+
+[2025-04-12T15:11:12.993+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/grand-canyon-deluxe-helicopter-tour-from-las-vegas
+[2025-04-12T15:12:07.970+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/k-by-cirque-du-soleil-at-the-mgm-grand-hotel-and-casino
+[2025-04-12T15:12:21.400+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/hoover-dam-experience-from-las-vegas
+[2025-04-12T15:12:25.871+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/v-the-ultimate-variety-show-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:12:29.984+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/big-bus-las-vegas-hop-on-hop-off-tour
+[2025-04-12T15:12:34.022+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/valley-of-fire-wedding-by-private-limousine
+[2025-04-12T15:12:37.946+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/elvis-wedding-at-graceland-wedding-chapel
+[2025-04-12T15:12:48.269+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/donny-and-marie-at-flamingo-hotel-and-casino-las-vegas
+[2025-04-12T15:12:52.135+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/valley-of-fire-buggy-tour
+[2025-04-12T15:12:56.099+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/fantasy-at-the-luxor-hotel-and-casino
+[2025-04-12T15:13:08.935+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/grand-canyon-helicopter-tour-from-las-vegas-with-champagne-picnic
+[2025-04-12T15:13:19.169+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/marriage-can-be-murder-a-comedy-murder-mystery-dinner-show-at-the-d-las-vegas
+[2025-04-12T15:13:23.204+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/best-of-the-west-rim-grand-canyon-air-tour-with-optional-helicopter-boat-ride-and-skywalk-admission
+[2025-04-12T15:13:34.160+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/antelope-canyon-horseshoe-bend-expedition-from-las-vegas
+[2025-04-12T15:13:37.967+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/viator-exclusive-vip-helicopter-strip-flight-with-eiffel-tower-dinner
+[2025-04-12T15:13:41.814+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/hoover-dam-trike-tour
+[2025-04-12T15:13:53.895+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/machine-gun-experience-with-military-humvee-in-las-vegas
+[2025-04-12T15:13:57.977+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/grand-canyon-west-rim-airplane-tour-57ad23bc8427a54446000173
+[2025-04-12T15:14:08.889+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/mat-franco-magic-reinvented-nightly-at-the-linq-hotel-and-casino
+[2025-04-12T15:14:20.731+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/guided-mountain-bike-tour-of-mustang-trail-in-red-rock-canyon
+[2025-04-12T15:14:31.622+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/madame-tussauds-las-vegas
+[2025-04-12T15:14:35.795+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/x-burlesque-at-the-flamingo-hotel-and-casino
+[2025-04-12T15:14:46.413+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/las-vegas-wedding-at-the-graceland-wedding-chapel
+[2025-04-12T15:14:50.540+0000] {scrape.py:104} INFO -  Visiting Page 4: https://www.triphobo.com/tours/las-vegas-united-states?page=4
+[2025-04-12T15:14:55.220+0000] {scrape.py:106} INFO -  Found 24 tour links on page 4
+[2025-04-12T15:14:55.221+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/zombie-burlesque-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:14:59.413+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/paranormal-the-mindreading-magic-show-at-bally-s-las-vegas
+[2025-04-12T15:15:19.670+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/small-group-hoover-dam-vip-tour-from-las-vegas
+[2025-04-12T15:15:23.534+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/viator-exclusive-las-vegas-strip-by-limo-with-personal-photographer
+[2025-04-12T15:15:36.107+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/hoover-dam-small-group-by-luxury-tour-trekker-am-or-pm
+[2025-04-12T15:15:48.583+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/wild-west-sunset-horseback-ride-with-dinner
+[2025-04-12T15:15:52.921+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/hidden-valley-and-primm-valley-extreme-rzr-tour-from-las-vegas
+[2025-04-12T15:15:56.799+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/the-mentalist-at-planet-hollywood-hotel-and-casino
+[2025-04-12T15:16:00.859+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/haunted-vegas-tour-and-ghost-hunt
+[2025-04-12T15:16:06.395+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/2-day-grand-canyon-tour-from-las-vegas
+[2025-04-12T15:16:10.426+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/las-vegas-fountains-photo-shoot
+[2025-04-12T15:16:16.205+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/dig-this-heavy-equipment-playground
+[2025-04-12T15:16:28.602+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/las-vegas-live-comedy-club-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:16:49.514+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/las-vegas-strip-helicopter-flight-at-twilight
+[2025-04-12T15:16:54.546+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/outdoor-shooting-experience-in-las-vegas
+[2025-04-12T15:16:58.988+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/chippendales-at-the-rio-suite-hotel-and-casino
+[2025-04-12T15:17:58.995+0000] {scrape.py:82} ERROR - Error extracting details from https://www.triphobo.com/tours/chippendales-at-the-rio-suite-hotel-and-casino: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/tours/chippendales-at-the-rio-suite-hotel-and-casino", waiting until "load"
+
+[2025-04-12T15:17:58.997+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/area-51-day-tour-from-las-vegas
+[2025-04-12T15:18:03.799+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/las-vegas-strip-and-downtown-scooter-and-food-tour-5ac59bb35840d455e900176a
+[2025-04-12T15:18:45.749+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/antelope-canyon-and-horseshoe-bend-day-tour-from-las-vegas
+[2025-04-12T15:18:50.168+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/las-vegas-pool-party-tour-5ac659fb5840d4d3c100008c
+[2025-04-12T15:19:03.951+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/las-vegas-51-s-baseball-tickets-5ac659925840d467a2000097
+[2025-04-12T15:19:08.541+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/mini-baja-buggy-half-day-tour-from-las-vegas
+[2025-04-12T15:19:12.830+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/world-famous-drive-up-wedding-in-las-vegas
+[2025-04-12T15:19:16.988+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/stripper-101-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:19:20.896+0000] {scrape.py:104} INFO -  Visiting Page 5: https://www.triphobo.com/tours/las-vegas-united-states?page=5
+[2025-04-12T15:19:24.920+0000] {scrape.py:106} INFO -  Found 24 tour links on page 5
+[2025-04-12T15:19:24.921+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/brad-garrett-s-comedy-club-at-mgm-grand-hotel-and-casino
+[2025-04-12T15:19:35.496+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/piff-the-magic-dragon-at-the-flamingo-las-vegas
+[2025-04-12T15:19:39.761+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/the-australian-bee-gees-show-a-tribute-to-the-bee-gees-at-the-excalibur-hotel-and-casino
+[2025-04-12T15:19:50.618+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/titanic-the-artifact-exhibition-at-the-luxor-hotel-and-casino
+[2025-04-12T15:19:55.048+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/grand-canyon-national-park-vip-tour
+[2025-04-12T15:19:59.541+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/grand-canyon-south-rim-air-and-ground-tour-from-las-vegas
+[2025-04-12T15:20:04.798+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/half-day-mojave-desert-atv-tour-from-las-vegas-with-lunch
+[2025-04-12T15:20:09.637+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-las-vegas-airport-to-hotel-luxury-limousine-transfer
+[2025-04-12T15:20:13.829+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/las-vegas-explorer-pass-57ac388c8427a58f1a000088
+[2025-04-12T15:20:25.805+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/grand-canyon-west-helicopter-tour-with-optional-boat-ride
+[2025-04-12T15:20:29.963+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/small-group-grand-canyon-west-rim-day-trip-from-las-vegas
+[2025-04-12T15:20:34.183+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/2-hour-horseback-riding-through-red-rock-canyon
+[2025-04-12T15:20:44.563+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/downtown-and-fremont-street-history-walking-tour
+[2025-04-12T15:20:57.059+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/david-copperfield-at-the-mgm-grand-hotel-and-casino
+[2025-04-12T15:21:01.835+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/half-day-kayaking-tour-on-the-colorado-river-from-las-vegas
+[2025-04-12T15:21:13.327+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/las-vegas-bite-card
+[2025-04-12T15:21:18.955+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/the-rat-pack-is-back-at-the-tuscany-suites-and-casino
+[2025-04-12T15:21:23.720+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/el-dorado-canyon-and-gold-mine-trip
+[2025-04-12T15:21:35.515+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/las-vegas-wedding-at-a-special-memory-wedding-chapel
+[2025-04-12T15:21:40.787+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/hoot-and-hoover-dam-tour
+[2025-04-12T15:21:45.866+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/hidden-valley-atv-half-day-tour-from-las-vegas
+[2025-04-12T15:21:50.258+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/6-hour-black-canyon-and-colorado-river-by-motorized-raft-tour-from-las-vegas
+[2025-04-12T15:21:56.279+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/menopause-the-musical-at-harrah-s-hotel-and-casino
+[2025-04-12T15:22:07.558+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/las-vegas-private-airport-roundtrip-transfer
+[2025-04-12T15:22:38.447+0000] {scrape.py:104} INFO -  Visiting Page 6: https://www.triphobo.com/tours/las-vegas-united-states?page=6
+[2025-04-12T15:22:42.545+0000] {scrape.py:106} INFO -  Found 24 tour links on page 6
+[2025-04-12T15:22:42.545+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/stratosphere-tower-observation-deck
+[2025-04-12T15:22:46.536+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/2-day-las-vegas-and-hoover-dam-from-los-angeles
+[2025-04-12T15:22:51.762+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/private-las-vegas-hotel-to-airport-luxury-limousine-transfer
+[2025-04-12T15:22:55.844+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/food-walking-tour-of-the-las-vegas-strip
+[2025-04-12T15:22:59.997+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/stratosphere-tower-unlimited-ride-pass
+[2025-04-12T15:23:10.666+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/raiding-the-rock-vault-at-the-hard-rock-hotel-and-casino
+[2025-04-12T15:23:14.757+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-vegas-mob-tour
+[2025-04-12T15:23:18.798+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/las-vegas-strip-food-walking-tour
+[2025-04-12T15:23:22.851+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/the-ultimate-las-vegas-fight-tour
+[2025-04-12T15:23:33.500+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/purple-reign-the-prince-tribute-show-at-the-tropicana-hotel-las-vegas
+[2025-04-12T15:23:44.132+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/rzr-desert-adventure-with-lunch-at-the-historic-pioneer-saloon
+[2025-04-12T15:23:54.307+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/top-gun-and-air-combat-experience
+[2025-04-12T15:24:04.455+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/3-day-national-parks-winter-tour-grand-canyon-monument-valley-and-zion-from-las-vegas
+[2025-04-12T15:24:08.854+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/grand-canyon-national-park-roundtrip-shuttle-from-las-vegas
+[2025-04-12T15:24:13.468+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/desert-off-road-rzr-adventure-from-las-vegas
+[2025-04-12T15:24:18.330+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/carrot-top-at-the-luxor-hotel-and-casino
+[2025-04-12T15:24:22.741+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/downtown-las-vegas-nighttime-walking-tour
+[2025-04-12T15:24:35.608+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/western-ranch-overnight-experience-cabin-or-camp-out
+[2025-04-12T15:24:45.139+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/3-or-4-hour-las-vegas-bar-crawl
+[2025-04-12T15:24:49.503+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/2-hour-downtown-walking-tour-with-professional-photographer
+[2025-04-12T15:25:03.079+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/downtown-delights-food-tour
+[2025-04-12T15:25:09.099+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/half-day-hiking-tour-of-the-valley-of-fire
+[2025-04-12T15:25:14.101+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/fun-group-photo-tour-by-party-bus
+[2025-04-12T15:25:28.279+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/valley-of-fire-state-park-with-brunch
+[2025-04-12T15:25:32.364+0000] {scrape.py:104} INFO -  Visiting Page 7: https://www.triphobo.com/tours/las-vegas-united-states?page=7
+[2025-04-12T15:25:36.435+0000] {scrape.py:106} INFO -  Found 24 tour links on page 7
+[2025-04-12T15:25:36.436+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/valley-of-fire
+[2025-04-12T15:25:40.400+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/secret-food-tours-las-vegas
+[2025-04-12T15:25:44.376+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/red-rock-canyon-trike-tour-with-las-vegas-strip
+[2025-04-12T15:25:54.602+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/valley-of-fire-guided-tour-from-las-vegas
+[2025-04-12T15:26:07.480+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/atv-tour-and-dune-buggy-combo-adventure-from-las-vegas
+[2025-04-12T15:26:12.256+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/valley-of-fire-luxury-tour-trekker-excursion
+[2025-04-12T15:26:16.192+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/valley-of-fire-lost-city-museum-small-group-tour
+[2025-04-12T15:26:20.065+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/mike-hammer-comedy-magic-show
+[2025-04-12T15:26:23.960+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/las-vegas-exotic-car-ride-along
+[2025-04-12T15:26:34.362+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/jabbawockeez-at-the-mgm-grand-hotel-and-casino
+[2025-04-12T15:26:38.271+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/la-comedy-club-at-the-stratosphere-hotel-and-casino
+[2025-04-12T15:26:48.732+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/las-vegas-strip-by-suv-stretch-limo-with-personal-photographer
+[2025-04-12T15:26:53.196+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/downtown-las-vegas-evening-tour-by-segway
+[2025-04-12T15:27:03.128+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/exotic-car-driving-experiences-at-las-vegas-motor-speedway
+[2025-04-12T15:27:13.715+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/personal-travel-and-vacation-photographer-tour-in-las-vegas
+[2025-04-12T15:27:19.527+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/valley-of-fire-1-person-2-seater-utv-tour-free-hotel-pickup-lunch-included
+[2025-04-12T15:27:30.148+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/las-vegas-city-lights-night-tour-by-open-air-jeep-with-optional-night-flight
+[2025-04-12T15:27:42.704+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/las-vegas-outdoor-go-kart-experience
+[2025-04-12T15:27:46.483+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/popovich-comedy-pet-theater-at-planet-hollywood-resort-and-casino
+[2025-04-12T15:27:50.502+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/grand-canyon-flight-and-valley-of-fire-landing-by-helicopter
+[2025-04-12T15:28:02.171+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/las-vegas-segway-tour-fremont-street-experience
+[2025-04-12T15:28:07.323+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/las-vegas-segway-tour-south-fremont-street
+[2025-04-12T15:28:12.720+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/laughternoon-starring-adam-london-at-the-d-las-vegas
+[2025-04-12T15:28:17.055+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/2-hour-las-vegas-strip-walking-tour-with-photographer
+[2025-04-12T15:28:35.076+0000] {scrape.py:104} INFO -  Visiting Page 8: https://www.triphobo.com/tours/las-vegas-united-states?page=8
+[2025-04-12T15:28:39.217+0000] {scrape.py:106} INFO -  Found 24 tour links on page 8
+[2025-04-12T15:28:39.217+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/black-canyon-hike-and-desert-hot-springs-day-trip-from-las-vegas
+[2025-04-12T15:28:50.689+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/thunder-from-down-under-at-the-excalibur-hotel-and-casino
+[2025-04-12T15:28:54.898+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/grand-celebration-helicopter-tour-with-black-canyon-rafting
+[2025-04-12T15:28:58.858+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/full-day-colorado-river-hot-springs-tour-from-las-vegas
+[2025-04-12T15:29:10.411+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/the-weird-wacky-and-wonderful-bar-crawl-of-fremont-street
+[2025-04-12T15:29:14.164+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/feel-freedom-3-hours-you-drive-utv-las-vegas-desert-experience
+[2025-04-12T15:29:18.280+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/deluxe-mini-tour-of-hoover-dam-lake-mead-and-historic-boulder-city
+[2025-04-12T15:29:22.501+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/grand-canyon-hoover-dam-and-route-66-tour-from-las-vegas
+[2025-04-12T15:29:31.788+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/hoover-dam-mini-tour
+[2025-04-12T15:29:41.570+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/red-rock-canyon-and-hoover-dam-small-group-tour
+[2025-04-12T15:29:46.123+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/hidden-valley-and-primm-extreme-dirt-bike-tour
+[2025-04-12T15:29:51.107+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/hoover-dam-mountain-bike-tour
+[2025-04-12T15:29:54.857+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/the-mob-museum-admission
+[2025-04-12T15:29:59.011+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/las-vegas-photo-tour-by-limousine-or-party-bus
+[2025-04-12T15:30:03.861+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/boulder-islands-kayak-sup-or-hydrobike-tour-from-las-vegas
+[2025-04-12T15:30:25.333+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/grand-canyon-west-rim-cabin-and-helicopter-tour-from-las-vegas
+[2025-04-12T15:30:37.813+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/grand-canyon-south-rim-small-group-tour
+[2025-04-12T15:30:42.024+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/hoover-dam-tour-with-optional-grand-canyon-helicopter-flight-from-las-vegas
+[2025-04-12T15:30:52.483+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/grand-canyon-west-rim-evening-vip-tour
+[2025-04-12T15:30:56.524+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/explore-the-best-must-see-spots-las-vegas-strip-walking-tour
+[2025-04-12T15:31:10.114+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/off-road-racing-7-laps
+[2025-04-12T15:31:21.834+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/off-road-racing-10-laps
+[2025-04-12T15:31:28.384+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/hoover-dam-highlights-tour-from-las-vegas
+[2025-04-12T15:31:40.357+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/grand-canyon-national-park-hoover-dam-and-route-66-small-group-from-las-vegas
+[2025-04-12T15:31:44.310+0000] {scrape.py:104} INFO -  Visiting Page 9: https://www.triphobo.com/tours/las-vegas-united-states?page=9
+[2025-04-12T15:31:55.735+0000] {scrape.py:106} INFO -  Found 24 tour links on page 9
+[2025-04-12T15:31:55.736+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/grand-canyon-west-hoover-dam-seven-magic-mountains-small-group-day-tour
+[2025-04-12T15:32:07.285+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/grand-canyon-west-rim-tour-with-options-from-las-vegas
+[2025-04-12T15:32:17.941+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/grand-canyon-helicopter-and-eagle-point-rim-landing-tour
+[2025-04-12T15:32:28.184+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/lake-mead-national-park-atv-tour-to-the-colorado-river-off-road-racing-combo
+[2025-04-12T15:32:33.054+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/king-of-canyons
+[2025-04-12T15:32:37.184+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/x-country-at-harrah-s-hotel-and-casino
+[2025-04-12T15:32:41.521+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/wayne-newton-up-close-and-personal-at-bally-s-las-vegas
+[2025-04-12T15:32:45.595+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/bodies-the-exhibition-at-the-luxor-hotel-and-casino
+[2025-04-12T15:32:49.502+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/viator-exclusive-private-tour-of-las-vegas-and-the-hoover-dam
+[2025-04-12T15:32:53.374+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/viator-exclusive-private-overnight-tour-to-antelope-canyon-horseshoe-bend-lake-powell-and-zion-from-las-vegas
+[2025-04-12T15:32:58.432+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/hard-rock-cafe-las-vegas
+[2025-04-12T15:33:11.649+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/las-vegas-strip-limo-tour-with-day-and-nightclub-access
+[2025-04-12T15:33:15.585+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/red-rock-canyon-electric-bike-tour
+[2025-04-12T15:33:19.631+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/bellagio-gallery-of-fine-art-at-the-bellagio-hotel-and-casino-5ac4b1495840d47faf000bd7
+[2025-04-12T15:33:23.419+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/grand-canyon-west-and-hoover-dam-vip-day-tour-from-las-vegas
+[2025-04-12T15:33:35.585+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/grand-canyon-sunset-helicopter-tour-from-las-vegas
+[2025-04-12T15:33:40.795+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/zombie-scavengers-game-las-vegas-downtown-nv
+[2025-04-12T15:33:46.112+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/lunch-horseback-riding-tour
+[2025-04-12T15:33:50.012+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/grand-canyon-bus-tour-from-las-vegas-optional-skywalk-helicopter-boat
+[2025-04-12T15:33:54.087+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/half-day-canyoneering-tour
+[2025-04-12T15:34:03.055+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/canyoneering-zion-full-day-canyoneering-tour
+[2025-04-12T15:34:06.987+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/grand-canyon-national-park-luxury-private-tour-experience
+[2025-04-12T15:34:15.562+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/zion-and-bryce-canyon-day-tour-from-las-vegas
+[2025-04-12T15:34:19.769+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/the-jets-80-s-90-s-experience
+[2025-04-12T15:34:23.939+0000] {scrape.py:104} INFO -  Visiting Page 10: https://www.triphobo.com/tours/las-vegas-united-states?page=10
+[2025-04-12T15:34:28.126+0000] {scrape.py:106} INFO -  Found 24 tour links on page 10
+[2025-04-12T15:34:28.127+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/zion-and-bryce-canyon-national-parks-small-group-tour-from-las-vegas
+[2025-04-12T15:34:32.365+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/off-road-racing
+[2025-04-12T15:34:41.860+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/hoover-dam-private-limo-luxury-tour-from-las-vegas
+[2025-04-12T15:34:46.925+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/grand-canyon-monument-valley-and-zion-national-park-3-day-tour
+[2025-04-12T15:34:51.022+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/las-vegas-nightclub-crawl-by-party-bus-with-fast-pass-entry
+[2025-04-12T15:34:55.015+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/vegas-chocolate-tour
+[2025-04-12T15:34:59.123+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/off-road-racing-5-laps
+[2025-04-12T15:35:04.542+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/potted-potter-at-bally-s-hotel-and-casino-in-las-vegas
+[2025-04-12T15:35:17.876+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/bachelorette-party-club-crawl
+[2025-04-12T15:35:28.287+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/grand-canyon-west-hoover-dam-bus-tour-w-optional-skywalk-helicopter-boat-ride
+[2025-04-12T15:35:37.601+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/queen-of-sights
+[2025-04-12T15:35:41.405+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/grand-canyon-helicopter-tour-from-las-vegas-with-vip-skywalk-and-pontoon-boat-ride
+[2025-04-12T15:35:45.354+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/day-trip-to-zion-national-park-from-las-vegas
+[2025-04-12T15:35:49.709+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/outdoor-shooting-and-off-road-racing-combo
+[2025-04-12T15:36:01.889+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/off-road-racing-and-outdoor-shooting-package
+[2025-04-12T15:36:10.991+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/grand-canyon-west-skywalk-optional
+[2025-04-12T15:36:21.013+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/grand-canyon-west-admission-ticket
+[2025-04-12T15:36:25.075+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/las-vegas-club-crawl-experience
+[2025-04-12T15:36:33.883+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/full-day-grand-canyon-trip-with-horseback-ride-from-las-vegas
+[2025-04-12T15:36:37.772+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/zion-park-and-bryce-canyon
+[2025-04-12T15:36:41.994+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/go-las-vegas-all-inclusive-pass
+[2025-04-12T15:36:50.453+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/hoover-dam-tour-paddle-boat-cruise-on-lake-mead
+[2025-04-12T15:37:00.077+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/disco-party-bus-photo-tour
+[2025-04-12T15:37:10.956+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/ace-of-adventures
+[2025-04-12T15:37:19.789+0000] {scrape.py:99} INFO - Scraping city: Los Angeles United States
+[2025-04-12T15:37:19.789+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/los-angeles-united-states?page=1
+[2025-04-12T15:37:24.390+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T15:37:24.391+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/hollywood-hills-hiking-tour-in-los-angeles
+[2025-04-12T15:37:28.495+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/los-angeles-and-hollywood-small-group-day-trip-from-las-vegas
+[2025-04-12T15:37:32.450+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/grand-city-tour-of-los-angeles
+[2025-04-12T15:37:36.501+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/los-angeles-dinner-cruise
+[2025-04-12T15:37:45.128+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/amazing-los-angeles-race-small-group-tour-and-scavenger-hunt
+[2025-04-12T15:37:49.542+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/full-day-los-angeles-sightseeing-tour-from-anaheim
+[2025-04-12T15:37:53.924+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/hollywood-sign-and-griffith-park-hiking-tour
+[2025-04-12T15:37:57.781+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/the-ultimate-los-angeles-bike-tour
+[2025-04-12T15:38:07.005+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/hollywood-day-tour-from-las-vegas
+[2025-04-12T15:38:15.151+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/los-angeles-hop-on-hop-off-double-decker-bus-tour
+[2025-04-12T15:38:21.101+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/madame-tussauds-hollywood
+[2025-04-12T15:38:24.855+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/privately-customized-tour-of-los-angeles
+[2025-04-12T15:38:28.788+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/hollywood-and-stars-homes-tour-in-open-bus
+[2025-04-12T15:38:42.404+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/tour-of-los-angeles-hollywood-and-beverly-hills
+[2025-04-12T15:38:46.285+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/small-group-highlights-tour-of-los-angeles
+[2025-04-12T15:38:54.062+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/grand-tour-of-hollywood-los-angeles-and-beaches-from-anaheim
+[2025-04-12T15:38:57.781+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/los-angeles-private-tour-5ac645375840d449a1000042
+[2025-04-12T15:39:01.581+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/afternoon-los-angeles-sightseeing-tour-with-movie-star-homes
+[2025-04-12T15:39:15.978+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/grand-tour-of-los-angeles
+[2025-04-12T15:39:29.969+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/beverly-hills-segway-tour
+[2025-04-12T15:39:33.958+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/small-group-tour-of-los-angeles-from-long-beach
+[2025-04-12T15:39:37.741+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/city-tour-of-los-angeles-from-long-beach-and-san-pedro-cruise-terminals
+[2025-04-12T15:39:41.496+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/los-angeles-champagne-brunch-cruise
+[2025-04-12T15:39:45.470+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/private-sightseeing-tour-of-los-angeles-in-a-luxurious-suv
+[2025-04-12T15:39:54.188+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/los-angeles-united-states?page=2
+[2025-04-12T15:39:58.167+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T15:39:58.168+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/beverly-hills-segway-tour
+[2025-04-12T15:40:01.999+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/small-group-tour-of-los-angeles-from-long-beach
+[2025-04-12T15:40:18.844+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/city-tour-of-los-angeles-from-long-beach-and-san-pedro-cruise-terminals
+[2025-04-12T15:40:23.070+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/los-angeles-champagne-brunch-cruise
+[2025-04-12T15:40:26.685+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/private-sightseeing-tour-of-los-angeles-in-a-luxurious-suv
+[2025-04-12T15:40:30.720+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/whale-watching-day-cruise-santa-monica
+[2025-04-12T15:40:38.393+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/half-day-hollywood-and-beverly-hills-tour
+[2025-04-12T15:40:42.337+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-tour-hollywood-highlights-or-celebrity-homes-of-beverly-hills
+[2025-04-12T15:40:46.819+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/deluxe-los-angeles-private-tour
+[2025-04-12T15:40:50.676+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/movie-stars-homes-tour
+[2025-04-12T15:40:54.583+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/santa-monica-and-venice-beach-tour-from-los-angeles
+[2025-04-12T15:41:03.318+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/hollywood-stars-tour
+[2025-04-12T15:41:07.536+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/hollywood-walking-and-hiking-tour
+[2025-04-12T15:41:14.464+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/dolby-theatre-admission-ticket-and-tour
+[2025-04-12T15:41:18.745+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/universal-studios-hollywood-and-movie-stars-homes-tour
+[2025-04-12T15:41:27.365+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/los-angeles-highlights-tour-santa-monica-venice-beach-hollywood-and-beverly-hills
+[2025-04-12T15:41:31.464+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/sightseeing-tour-of-los-angeles-from-lax-hotels
+[2025-04-12T15:41:35.322+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/los-angeles-combo-hop-on-hop-off-bus-tour-and-self-guided-beverly-hills-bike-tour
+[2025-04-12T15:41:39.208+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-los-angeles-must-see-tour
+[2025-04-12T15:41:43.321+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/natural-history-museum-of-los-angeles-county-museum-admission
+[2025-04-12T15:41:47.111+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/los-angeles-driving-tour-with-private-local-guide-all-must-see-locations
+[2025-04-12T15:41:51.263+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/la-brea-tar-pits-and-museum-general-admission
+[2025-04-12T15:41:56.177+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/hollywood-tours-celebrity-homes-the-original-hollywood-tour-open-air-bus
+[2025-04-12T15:42:00.808+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/santa-monica-and-venice-beach-segway-tour
+[2025-04-12T15:42:07.960+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/los-angeles-united-states?page=3
+[2025-04-12T15:42:15.769+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T15:42:15.769+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/hard-rock-cafe-hollywood
+[2025-04-12T15:42:19.568+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/los-angeles-beginnings-walking-tour
+[2025-04-12T15:42:26.334+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/old-and-new-downtown-los-angeles-tour
+[2025-04-12T15:42:28.243+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to removed. Terminating instance.
+[2025-04-12T15:42:28.247+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-12T15:42:28.248+0000] {process_utils.py:132} INFO - Sending 15 to group 267. PIDs of all processes in the group: [272, 294, 299, 300, 338, 372, 332, 267]
+[2025-04-12T15:42:28.249+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 267
+[2025-04-12T15:42:28.249+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-12T15:42:28.260+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=332, status='terminated', started='13:54:10') (332) terminated with exit code None
+[2025-04-12T15:42:28.359+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=272, status='terminated', started='13:54:10') (272) terminated with exit code None
+[2025-04-12T15:42:28.512+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=300, status='terminated', started='13:54:10') (300) terminated with exit code None
+[2025-04-12T15:42:28.513+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=338, status='terminated', started='13:54:10') (338) terminated with exit code None
+[2025-04-12T15:42:28.514+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=372, status='terminated', started='13:54:10') (372) terminated with exit code None
+[2025-04-12T15:42:28.514+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=299, status='terminated', started='13:54:10') (299) terminated with exit code None
+[2025-04-12T15:42:28.515+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=294, status='terminated', started='13:54:10') (294) terminated with exit code None
+[2025-04-12T15:43:28.295+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=267, name='airflow task ru', status='sleeping', started='13:54:10') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-12T15:43:28.310+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 267
+[2025-04-12T15:43:28.342+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=267, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='13:54:10') (267) terminated with exit code -9
+[2025-04-12T15:43:28.343+0000] {standard_task_runner.py:190} ERROR - ('Job 157 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

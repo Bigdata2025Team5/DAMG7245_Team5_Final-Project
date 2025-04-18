@@ -1,0 +1,244 @@
+[2025-04-18T01:45:44.567+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T01:45:44.578+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.geocode_hotels scheduled__2025-04-17T01:45:00+00:00 [queued]>
+[2025-04-18T01:45:44.582+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.geocode_hotels scheduled__2025-04-17T01:45:00+00:00 [queued]>
+[2025-04-18T01:45:44.582+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T01:45:44.587+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_hotels> on 2025-04-17 01:45:00+00:00
+[2025-04-18T01:45:44.591+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=300) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T01:45:44.593+0000] {standard_task_runner.py:72} INFO - Started process 301 to run task
+[2025-04-18T01:45:44.593+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'geocode_hotels', 'scheduled__2025-04-17T01:45:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmp1vwrn1rv']
+[2025-04-18T01:45:44.594+0000] {standard_task_runner.py:105} INFO - Job 10: Subtask geocode_hotels
+[2025-04-18T01:45:44.618+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.geocode_hotels scheduled__2025-04-17T01:45:00+00:00 [running]> on host a8651540ef5d
+[2025-04-18T01:45:44.645+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='geocode_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T01:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-17T01:45:00+00:00'
+[2025-04-18T01:45:44.646+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T01:45:44.650+0000] {hotel_scrape_dag.py:487} INFO - Starting geocoding process
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:495} INFO - Total hotels to process: 220
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:505} INFO - (1/220) Processing: Hotel Indigo New York Financial District
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:505} INFO - (2/220) Processing: Hotel Indigo New York Manhattan
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:505} INFO - (3/220) Processing: Crowne Plaza New York Midtown
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:505} INFO - (4/220) Processing: Hotel Indigo New York Manhattan
+[2025-04-18T01:45:44.651+0000] {hotel_scrape_dag.py:505} INFO - (5/220) Processing: Hotel Indigo New York Queens
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (6/220) Processing: Hotel Indigo New York Manhattan
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (7/220) Processing: Holiday Inn New York Times Square
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (8/220) Processing: Hotel Indigo New York Downtown
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (9/220) Processing: Holiday Inn New York Chelsea
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (10/220) Processing: Crowne Plaza New York Manhattan
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (11/220) Processing: Staybridge Suites New York Brooklyn
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (12/220) Processing: Holiday Inn New York Brooklyn
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (13/220) Processing: InterContinental New York Brooklyn
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (14/220) Processing: Crowne Plaza New York Downtown
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (15/220) Processing: Staybridge Suites New York Manhattan
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (16/220) Processing: Staybridge Suites New York Chelsea
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (17/220) Processing: Hotel Indigo New York Manhattan
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (18/220) Processing: Holiday Inn New York Harlem
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (19/220) Processing: InterContinental New York Harlem
+[2025-04-18T01:45:44.652+0000] {hotel_scrape_dag.py:505} INFO - (20/220) Processing: InterContinental New York Financial District
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (21/220) Processing: Staybridge Suites New York Harlem
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (22/220) Processing: Staybridge Suites New York Upper East Side
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (23/220) Processing: Hotel Indigo New York Chelsea
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (24/220) Processing: Crowne Plaza New York Times Square
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (25/220) Processing: Crowne Plaza New York Chelsea
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (26/220) Processing: Crowne Plaza New York Manhattan
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (27/220) Processing: Holiday Inn New York Queens
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (28/220) Processing: Staybridge Suites New York Midtown
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (29/220) Processing: Staybridge Suites New York Midtown
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (30/220) Processing: Crowne Plaza New York Manhattan
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (31/220) Processing: Holiday Inn New York Financial District
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (32/220) Processing: Crowne Plaza New York Times Square
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (33/220) Processing: Hotel Indigo New York Brooklyn
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (34/220) Processing: InterContinental New York Brooklyn
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (35/220) Processing: Holiday Inn New York Financial District
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (36/220) Processing: Crowne Plaza New York Upper East Side
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (37/220) Processing: InterContinental New York Brooklyn
+[2025-04-18T01:45:44.653+0000] {hotel_scrape_dag.py:505} INFO - (38/220) Processing: Staybridge Suites New York Times Square
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (39/220) Processing: Crowne Plaza New York Midtown
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (40/220) Processing: InterContinental New York Downtown
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (41/220) Processing: Staybridge Suites San Francisco SOMA
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (42/220) Processing: InterContinental San Francisco Financial District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (43/220) Processing: Crowne Plaza San Francisco Fisherman's Wharf
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (44/220) Processing: Crowne Plaza San Francisco Marina District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (45/220) Processing: Crowne Plaza San Francisco Mission District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (46/220) Processing: Hotel Indigo San Francisco SOMA
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (47/220) Processing: Staybridge Suites San Francisco Mission District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (48/220) Processing: Hotel Indigo San Francisco Embarcadero
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (49/220) Processing: Holiday Inn San Francisco Downtown
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (50/220) Processing: Hotel Indigo San Francisco Embarcadero
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (51/220) Processing: Staybridge Suites San Francisco Fisherman's Wharf
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (52/220) Processing: Staybridge Suites San Francisco Mission District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (53/220) Processing: Hotel Indigo San Francisco Union Square
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (54/220) Processing: Hotel Indigo San Francisco Mission District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (55/220) Processing: InterContinental San Francisco Financial District
+[2025-04-18T01:45:44.654+0000] {hotel_scrape_dag.py:505} INFO - (56/220) Processing: Holiday Inn San Francisco Mission District
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (57/220) Processing: Crowne Plaza San Francisco Union Square
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (58/220) Processing: InterContinental San Francisco Marina District
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (59/220) Processing: Holiday Inn San Francisco Fisherman's Wharf
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (60/220) Processing: Crowne Plaza San Francisco Fisherman's Wharf
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (61/220) Processing: Staybridge Suites San Francisco Union Square
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (62/220) Processing: Staybridge Suites San Francisco SOMA
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (63/220) Processing: Holiday Inn San Francisco Financial District
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (64/220) Processing: Staybridge Suites San Francisco Downtown
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (65/220) Processing: InterContinental San Francisco SFO
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (66/220) Processing: Crowne Plaza San Francisco Union Square
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (67/220) Processing: Holiday Inn San Francisco Embarcadero
+[2025-04-18T01:45:44.655+0000] {hotel_scrape_dag.py:505} INFO - (68/220) Processing: Hotel Indigo San Francisco Embarcadero
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (69/220) Processing: Staybridge Suites San Francisco SOMA
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (70/220) Processing: Hotel Indigo San Francisco SFO
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (71/220) Processing: Holiday Inn San Francisco Downtown
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (72/220) Processing: Staybridge Suites San Francisco Fisherman's Wharf
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (73/220) Processing: Staybridge Suites San Francisco Embarcadero
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (74/220) Processing: Holiday Inn San Francisco Nob Hill
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (75/220) Processing: Hotel Indigo San Francisco Marina District
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (76/220) Processing: InterContinental San Francisco Embarcadero
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (77/220) Processing: Holiday Inn Chicago Magnificent Mile
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (78/220) Processing: Staybridge Suites Chicago Loop
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (79/220) Processing: Holiday Inn Chicago Magnificent Mile
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (80/220) Processing: Crowne Plaza Chicago Loop
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (81/220) Processing: Hotel Indigo Chicago Loop
+[2025-04-18T01:45:44.656+0000] {hotel_scrape_dag.py:505} INFO - (82/220) Processing: InterContinental Chicago Magnificent Mile
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (83/220) Processing: Holiday Inn Chicago O'Hare
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (84/220) Processing: Staybridge Suites Chicago South Loop
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (85/220) Processing: Crowne Plaza Chicago West Loop
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (86/220) Processing: InterContinental Chicago Loop
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (87/220) Processing: Staybridge Suites Chicago River North
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (88/220) Processing: InterContinental Chicago Lincoln Park
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (89/220) Processing: Staybridge Suites Chicago Streeterville
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (90/220) Processing: Holiday Inn Chicago Streeterville
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (91/220) Processing: InterContinental Chicago South Loop
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (92/220) Processing: Hotel Indigo Chicago Downtown
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (93/220) Processing: Crowne Plaza Chicago Streeterville
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (94/220) Processing: InterContinental Chicago Lincoln Park
+[2025-04-18T01:45:44.657+0000] {hotel_scrape_dag.py:505} INFO - (95/220) Processing: Hotel Indigo Chicago Lincoln Park
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (96/220) Processing: InterContinental Chicago Loop
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (97/220) Processing: Crowne Plaza Chicago River North
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (98/220) Processing: Hotel Indigo Chicago Magnificent Mile
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (99/220) Processing: Hotel Indigo Chicago Magnificent Mile
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (100/220) Processing: Crowne Plaza Chicago Gold Coast
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (101/220) Processing: InterContinental Chicago Loop
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (102/220) Processing: Holiday Inn Chicago South Loop
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (103/220) Processing: Staybridge Suites Chicago Loop
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (104/220) Processing: Crowne Plaza Chicago West Loop
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (105/220) Processing: InterContinental Chicago River North
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (106/220) Processing: Staybridge Suites Chicago Magnificent Mile
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (107/220) Processing: Staybridge Suites Chicago River North
+[2025-04-18T01:45:44.658+0000] {hotel_scrape_dag.py:505} INFO - (108/220) Processing: InterContinental Chicago Lincoln Park
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (109/220) Processing: Crowne Plaza Chicago O'Hare
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (110/220) Processing: Hotel Indigo Chicago Downtown
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (111/220) Processing: Staybridge Suites Chicago West Loop
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (112/220) Processing: Staybridge Suites Chicago Loop
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (113/220) Processing: InterContinental Seattle University District
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (114/220) Processing: Crowne Plaza Seattle Queen Anne
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (115/220) Processing: Crowne Plaza Seattle Pioneer Square
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (116/220) Processing: Hotel Indigo Seattle South Lake Union
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (117/220) Processing: Holiday Inn Seattle Seattle Center
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (118/220) Processing: Holiday Inn Seattle Capitol Hill
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (119/220) Processing: InterContinental Seattle Queen Anne
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (120/220) Processing: Crowne Plaza Seattle Belltown
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (121/220) Processing: Holiday Inn Seattle Downtown
+[2025-04-18T01:45:44.659+0000] {hotel_scrape_dag.py:505} INFO - (122/220) Processing: Staybridge Suites Seattle South Lake Union
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (123/220) Processing: InterContinental Seattle South Lake Union
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (124/220) Processing: InterContinental Seattle Pioneer Square
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (125/220) Processing: Hotel Indigo Seattle Seattle Center
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (126/220) Processing: Holiday Inn Seattle Pioneer Square
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (127/220) Processing: Holiday Inn Seattle Capitol Hill
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (128/220) Processing: Hotel Indigo Seattle West Seattle
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (129/220) Processing: Hotel Indigo Seattle Capitol Hill
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (130/220) Processing: Holiday Inn Seattle Pike Place
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (131/220) Processing: Staybridge Suites Seattle University District
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (132/220) Processing: Crowne Plaza Seattle South Lake Union
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (133/220) Processing: Holiday Inn Seattle Pike Place
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (134/220) Processing: Staybridge Suites Seattle South Lake Union
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (135/220) Processing: Hotel Indigo Seattle Downtown
+[2025-04-18T01:45:44.660+0000] {hotel_scrape_dag.py:505} INFO - (136/220) Processing: Hotel Indigo Seattle Belltown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (137/220) Processing: Crowne Plaza Seattle South Lake Union
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (138/220) Processing: Hotel Indigo Seattle Queen Anne
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (139/220) Processing: Staybridge Suites Seattle University District
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (140/220) Processing: Hotel Indigo Seattle University District
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (141/220) Processing: InterContinental Seattle Belltown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (142/220) Processing: Holiday Inn Seattle Downtown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (143/220) Processing: Hotel Indigo Seattle West Seattle
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (144/220) Processing: Staybridge Suites Seattle Belltown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (145/220) Processing: Holiday Inn Seattle Capitol Hill
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (146/220) Processing: Crowne Plaza Seattle University District
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (147/220) Processing: Staybridge Suites Seattle Downtown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (148/220) Processing: Crowne Plaza Seattle Downtown
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (149/220) Processing: Holiday Inn Las Vegas Henderson
+[2025-04-18T01:45:44.661+0000] {hotel_scrape_dag.py:505} INFO - (150/220) Processing: Holiday Inn Las Vegas Henderson
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (151/220) Processing: Hotel Indigo Las Vegas Paradise
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (152/220) Processing: InterContinental Las Vegas Spring Valley
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (153/220) Processing: Crowne Plaza Las Vegas Spring Valley
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (154/220) Processing: Staybridge Suites Las Vegas The Strip
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (155/220) Processing: Crowne Plaza Las Vegas North Las Vegas
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (156/220) Processing: Crowne Plaza Las Vegas Summerlin
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (157/220) Processing: Crowne Plaza Las Vegas Henderson
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (158/220) Processing: InterContinental Las Vegas Henderson
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (159/220) Processing: Hotel Indigo Las Vegas Downtown
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (160/220) Processing: Holiday Inn Las Vegas Henderson
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (161/220) Processing: InterContinental Las Vegas Summerlin
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (162/220) Processing: Crowne Plaza Las Vegas Henderson
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (163/220) Processing: InterContinental Las Vegas Paradise
+[2025-04-18T01:45:44.662+0000] {hotel_scrape_dag.py:505} INFO - (164/220) Processing: Hotel Indigo Las Vegas Paradise
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (165/220) Processing: Crowne Plaza Las Vegas Boulder Highway
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (166/220) Processing: InterContinental Las Vegas Paradise
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (167/220) Processing: Holiday Inn Las Vegas North Las Vegas
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (168/220) Processing: Crowne Plaza Las Vegas The Strip
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (169/220) Processing: Crowne Plaza Las Vegas North Las Vegas
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (170/220) Processing: Staybridge Suites Las Vegas Downtown
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (171/220) Processing: Staybridge Suites Las Vegas Spring Valley
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (172/220) Processing: InterContinental Las Vegas North Las Vegas
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (173/220) Processing: Crowne Plaza Las Vegas Convention Center
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (174/220) Processing: InterContinental Las Vegas The Strip
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (175/220) Processing: InterContinental Las Vegas Airport
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (176/220) Processing: Hotel Indigo Las Vegas Downtown
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (177/220) Processing: Hotel Indigo Las Vegas The Strip
+[2025-04-18T01:45:44.663+0000] {hotel_scrape_dag.py:505} INFO - (178/220) Processing: Hotel Indigo Las Vegas Downtown
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (179/220) Processing: Staybridge Suites Las Vegas North Las Vegas
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (180/220) Processing: Crowne Plaza Las Vegas Convention Center
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (181/220) Processing: Hotel Indigo Las Vegas Boulder Highway
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (182/220) Processing: Crowne Plaza Las Vegas North Las Vegas
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (183/220) Processing: Holiday Inn Las Vegas Convention Center
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (184/220) Processing: Crowne Plaza Las Vegas Airport
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (185/220) Processing: Crowne Plaza Los Angeles Santa Monica
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (186/220) Processing: Crowne Plaza Los Angeles Beverly Hills
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (187/220) Processing: Crowne Plaza Los Angeles Downtown
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (188/220) Processing: Crowne Plaza Los Angeles Beverly Hills
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (189/220) Processing: Holiday Inn Los Angeles Universal City
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (190/220) Processing: Crowne Plaza Los Angeles Beverly Hills
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (191/220) Processing: InterContinental Los Angeles Hollywood
+[2025-04-18T01:45:44.664+0000] {hotel_scrape_dag.py:505} INFO - (192/220) Processing: Crowne Plaza Los Angeles Venice
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (193/220) Processing: Crowne Plaza Los Angeles Long Beach
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (194/220) Processing: InterContinental Los Angeles Venice
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (195/220) Processing: Hotel Indigo Los Angeles Downtown
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (196/220) Processing: Holiday Inn Los Angeles LAX
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (197/220) Processing: Crowne Plaza Los Angeles Burbank
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (198/220) Processing: Crowne Plaza Los Angeles Hollywood
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (199/220) Processing: InterContinental Los Angeles Hollywood
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (200/220) Processing: InterContinental Los Angeles LAX
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (201/220) Processing: Holiday Inn Los Angeles Burbank
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (202/220) Processing: Crowne Plaza Los Angeles Universal City
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (203/220) Processing: Holiday Inn Los Angeles LAX
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (204/220) Processing: Staybridge Suites Los Angeles Pasadena
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (205/220) Processing: Hotel Indigo Los Angeles Hollywood
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (206/220) Processing: InterContinental Los Angeles Long Beach
+[2025-04-18T01:45:44.665+0000] {hotel_scrape_dag.py:505} INFO - (207/220) Processing: Hotel Indigo Los Angeles Long Beach
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (208/220) Processing: Holiday Inn Los Angeles Venice
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (209/220) Processing: Crowne Plaza Los Angeles Universal City
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (210/220) Processing: Crowne Plaza Los Angeles Universal City
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (211/220) Processing: Hotel Indigo Los Angeles Long Beach
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (212/220) Processing: InterContinental Los Angeles Beverly Hills
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (213/220) Processing: Staybridge Suites Los Angeles Hollywood
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (214/220) Processing: InterContinental Los Angeles Long Beach
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (215/220) Processing: Crowne Plaza Los Angeles Burbank
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (216/220) Processing: Crowne Plaza Los Angeles Pasadena
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (217/220) Processing: Holiday Inn Los Angeles Hollywood
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (218/220) Processing: Holiday Inn Los Angeles Pasadena
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (219/220) Processing: Staybridge Suites Los Angeles LAX
+[2025-04-18T01:45:44.666+0000] {hotel_scrape_dag.py:505} INFO - (220/220) Processing: Staybridge Suites Los Angeles LAX
+[2025-04-18T01:45:44.668+0000] {hotel_scrape_dag.py:557} INFO - Successfully processed all 220 hotels
+[2025-04-18T01:45:44.668+0000] {hotel_scrape_dag.py:558} INFO - Output saved to: /tmp/ihg_data/hotels_with_coordinates.csv
+[2025-04-18T01:45:44.668+0000] {python.py:240} INFO - Done. Returned value was: 220
+[2025-04-18T01:45:44.675+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T01:45:44.675+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=geocode_hotels, run_id=scheduled__2025-04-17T01:45:00+00:00, execution_date=20250417T014500, start_date=20250418T014544, end_date=20250418T014544
+[2025-04-18T01:45:44.694+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T01:45:44.702+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T01:45:44.703+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,599 @@
+[2025-04-14T22:55:17.665+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:55:17.679+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.695+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.695+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:55:17.707+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_LasVegas> on 2025-04-14 22:55:13.823884+00:00
+[2025-04-14T22:55:17.713+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=452) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:55:17.715+0000] {standard_task_runner.py:72} INFO - Started process 460 to run task
+[2025-04-14T22:55:17.718+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_LasVegas', 'manual__2025-04-14T22:55:13.823884+00:00', '--job-id', '374', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpgw7_0l1h']
+[2025-04-14T22:55:17.721+0000] {standard_task_runner.py:105} INFO - Job 374: Subtask process_city_LasVegas
+[2025-04-14T22:55:17.768+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:55:13.823884+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:55:17.870+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_LasVegas' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:55:13.823884+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:55:13.823884+00:00'
+[2025-04-14T22:55:17.871+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:55:17.884+0000] {youtube_dag.py:140} INFO - Starting processing for city: LasVegas
+[2025-04-14T22:55:17.885+0000] {youtube_dag.py:155} INFO - Creating directory structure for LasVegas
+[2025-04-14T22:55:17.885+0000] {youtube_dag.py:159} INFO - Created directories: /opt/***/data/city_transcripts/LasVegas, /opt/***/data/city_transcripts/LasVegas/transcripts
+[2025-04-14T22:55:17.886+0000] {youtube_dag.py:170} INFO - Parameters for LasVegas: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:55:17.888+0000] {youtube_dag.py:186} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:55:17.889+0000] {youtube_dag.py:206} INFO - Loading spaCy model for LasVegas
+[2025-04-14T22:55:18.395+0000] {youtube_dag.py:208} INFO - Successfully loaded spaCy model
+[2025-04-14T22:55:18.396+0000] {youtube_dag.py:230} INFO - Downloading transcripts for LasVegas
+[2025-04-14T22:55:18.396+0000] {youtube_dag.py:281} INFO - Starting transcript download for LasVegas
+[2025-04-14T22:55:18.396+0000] {youtube_dag.py:294} INFO - Initializing YouTube client for LasVegas
+[2025-04-14T22:55:18.397+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2025-04-14T22:55:18.565+0000] {youtube_dag.py:301} INFO - YouTube client initialized successfully
+[2025-04-14T22:55:18.569+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 1/6: 'Las Vegas travel vlog'
+[2025-04-14T22:55:19.028+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Las Vegas travel vlog'
+[2025-04-14T22:55:19.029+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:55:19.075+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video R_BV0rxGdnc
+[2025-04-14T22:55:19.715+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video R_BV0rxGdnc (241 words)
+[2025-04-14T22:55:19.718+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford.txt
+[2025-04-14T22:55:19.719+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford_segments.json
+[2025-04-14T22:55:19.719+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video DVwX0u534gw
+[2025-04-14T22:55:20.232+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video DVwX0u534gw (4475 words)
+[2025-04-14T22:55:20.241+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary.txt
+[2025-04-14T22:55:20.243+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary_segments.json
+[2025-04-14T22:55:20.243+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video py4BaCiejBg
+[2025-04-14T22:55:20.742+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video py4BaCiejBg (2351 words)
+[2025-04-14T22:55:20.748+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe.txt
+[2025-04-14T22:55:20.749+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe_segments.json
+[2025-04-14T22:55:20.749+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 4GoO9uJzpfY
+[2025-04-14T22:55:21.168+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 4GoO9uJzpfY (4022 words)
+[2025-04-14T22:55:21.181+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/4GoO9uJzpfY_LAS_VEGAS_TRAVEL_VLOG_exploring_the_iconic_spots_r.txt
+[2025-04-14T22:55:21.182+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/4GoO9uJzpfY_LAS_VEGAS_TRAVEL_VLOG_exploring_the_iconic_spots_r_segments.json
+[2025-04-14T22:55:21.183+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video XVmXFN0gY8c
+[2025-04-14T22:55:21.640+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video XVmXFN0gY8c (174 words)
+[2025-04-14T22:55:21.640+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv.txt
+[2025-04-14T22:55:21.641+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv_segments.json
+[2025-04-14T22:55:22.642+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:55:22.707+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video ra76DpbaToM
+[2025-04-14T22:55:23.226+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video ra76DpbaToM (4954 words)
+[2025-04-14T22:55:23.236+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/ra76DpbaToM_unforgettable_trip_to_las_vegas_with_family_travel.txt
+[2025-04-14T22:55:23.239+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/ra76DpbaToM_unforgettable_trip_to_las_vegas_with_family_travel_segments.json
+[2025-04-14T22:55:23.239+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 6lnwMqbHtTw
+[2025-04-14T22:55:23.752+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 6lnwMqbHtTw (259 words)
+[2025-04-14T22:55:23.754+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip.txt
+[2025-04-14T22:55:23.754+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip_segments.json
+[2025-04-14T22:55:23.755+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 6gRtWVRbfJg
+[2025-04-14T22:55:24.406+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 6gRtWVRbfJg (3682 words)
+[2025-04-14T22:55:24.420+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/6gRtWVRbfJg_ROADTRIP_TO_VEGAS_FT_DOLAN_TWINS_JAMES_CHARLES.txt
+[2025-04-14T22:55:24.422+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/6gRtWVRbfJg_ROADTRIP_TO_VEGAS_FT_DOLAN_TWINS_JAMES_CHARLES_segments.json
+[2025-04-14T22:55:24.423+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video xANVcJldvBE
+[2025-04-14T22:55:25.403+0000] {youtube_dag.py:903} INFO - No English transcript found for xANVcJldvBE, trying en-US
+[2025-04-14T22:55:25.818+0000] {youtube_dag.py:912} INFO - No en-US transcript found for xANVcJldvBE, trying auto-translate
+[2025-04-14T22:55:26.181+0000] {youtube_dag.py:918} INFO - Translating te transcript to English for xANVcJldvBE
+[2025-04-14T22:55:26.653+0000] {youtube_dag.py:928} ERROR - Error translating transcript for xANVcJldvBE: 'FetchedTranscriptSnippet' object has no attribute 'get'
+[2025-04-14T22:55:26.654+0000] {youtube_dag.py:941} WARNING - Could not find any usable transcript for xANVcJldvBE
+[2025-04-14T22:55:26.654+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video xANVcJldvBE
+[2025-04-14T22:55:26.655+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video A08-7jXwIAw
+[2025-04-14T22:55:27.194+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video A08-7jXwIAw (232 words)
+[2025-04-14T22:55:27.195+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/A08-7jXwIAw_VEGAS_TRAVEL_VLOG_.txt
+[2025-04-14T22:55:27.196+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/A08-7jXwIAw_VEGAS_TRAVEL_VLOG__segments.json
+[2025-04-14T22:55:28.200+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:55:28.275+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 4AWVQyvjmYw
+[2025-04-14T22:55:28.964+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 4AWVQyvjmYw (3839 words)
+[2025-04-14T22:55:28.979+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/4AWVQyvjmYw_Las_Vegas_Travel_Vlog_what_I_eat_business_event_fa.txt
+[2025-04-14T22:55:28.982+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/4AWVQyvjmYw_Las_Vegas_Travel_Vlog_what_I_eat_business_event_fa_segments.json
+[2025-04-14T22:55:28.982+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video RZ4ImCrFHAY
+[2025-04-14T22:55:29.569+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video RZ4ImCrFHAY (7752 words)
+[2025-04-14T22:55:29.587+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/RZ4ImCrFHAY_72_Hours_in_LAS_VEGAS_Family_Travel_Vlog_What_to_d.txt
+[2025-04-14T22:55:29.589+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/RZ4ImCrFHAY_72_Hours_in_LAS_VEGAS_Family_Travel_Vlog_What_to_d_segments.json
+[2025-04-14T22:55:29.590+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 55G4j89o4Bw
+[2025-04-14T22:55:30.144+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 55G4j89o4Bw (11938 words)
+[2025-04-14T22:55:30.174+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/55G4j89o4Bw_Getting_BLACKOUT_Drunk_In_Las_Vegas.txt
+[2025-04-14T22:55:30.179+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/55G4j89o4Bw_Getting_BLACKOUT_Drunk_In_Las_Vegas_segments.json
+[2025-04-14T22:55:30.179+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video YQRikarC_Aw
+[2025-04-14T22:55:30.743+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video YQRikarC_Aw (1773 words)
+[2025-04-14T22:55:30.754+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/YQRikarC_Aw_Las_Vegas_Travel_Vlog_2022_Las_Vegas_2022.txt
+[2025-04-14T22:55:30.756+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/YQRikarC_Aw_Las_Vegas_Travel_Vlog_2022_Las_Vegas_2022_segments.json
+[2025-04-14T22:55:30.757+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Lo18ep8ZqQE
+[2025-04-14T22:55:31.441+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Lo18ep8ZqQE (203 words)
+[2025-04-14T22:55:31.442+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Lo18ep8ZqQE_Beginners_guide_to_Las_Vegas.txt
+[2025-04-14T22:55:31.443+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Lo18ep8ZqQE_Beginners_guide_to_Las_Vegas_segments.json
+[2025-04-14T22:55:32.444+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:55:32.506+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video GBS-3lT5nBM
+[2025-04-14T22:55:33.157+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video GBS-3lT5nBM (3758 words)
+[2025-04-14T22:55:33.165+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/GBS-3lT5nBM_I_Tried_the_25_Circus_Circus_Dinner_Buffet_in_Las_.txt
+[2025-04-14T22:55:33.166+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/GBS-3lT5nBM_I_Tried_the_25_Circus_Circus_Dinner_Buffet_in_Las__segments.json
+[2025-04-14T22:55:33.167+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video W-9GzUWy-Ck
+[2025-04-14T22:55:33.696+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video W-9GzUWy-Ck (2415 words)
+[2025-04-14T22:55:33.703+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas_.txt
+[2025-04-14T22:55:33.705+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas__segments.json
+[2025-04-14T22:55:33.705+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video GcL_2Wwodyg
+[2025-04-14T22:55:34.255+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video GcL_2Wwodyg (4763 words)
+[2025-04-14T22:55:34.274+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo.txt
+[2025-04-14T22:55:34.277+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo_segments.json
+[2025-04-14T22:55:34.277+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video wIRts5Qn84U
+[2025-04-14T22:55:34.937+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video wIRts5Qn84U (2336 words)
+[2025-04-14T22:55:34.948+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/wIRts5Qn84U_LAS_VEGAS_TRAVEL_VLOG_Winter_Trip_to_Vegas_Chavi_A.txt
+[2025-04-14T22:55:34.950+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/wIRts5Qn84U_LAS_VEGAS_TRAVEL_VLOG_Winter_Trip_to_Vegas_Chavi_A_segments.json
+[2025-04-14T22:55:34.951+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video HjklndipGGQ
+[2025-04-14T22:55:35.572+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video HjklndipGGQ (4540 words)
+[2025-04-14T22:55:35.585+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K.txt
+[2025-04-14T22:55:35.586+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K_segments.json
+[2025-04-14T22:55:36.588+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 2/6: 'Las Vegas travel guide'
+[2025-04-14T22:55:37.041+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Las Vegas travel guide'
+[2025-04-14T22:55:37.042+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:55:37.092+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video gasI6cyjkvM
+[2025-04-14T22:55:37.620+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video gasI6cyjkvM (480 words)
+[2025-04-14T22:55:37.622+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/gasI6cyjkvM_Las_Vegas_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:37.623+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/gasI6cyjkvM_Las_Vegas_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:37.623+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video GcL_2Wwodyg
+[2025-04-14T22:55:38.530+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video GcL_2Wwodyg (4763 words)
+[2025-04-14T22:55:38.544+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo.txt
+[2025-04-14T22:55:38.546+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo_segments.json
+[2025-04-14T22:55:38.546+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 7R6AcfJOBy0
+[2025-04-14T22:55:39.270+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 7R6AcfJOBy0 (4466 words)
+[2025-04-14T22:55:39.281+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/7R6AcfJOBy0_Las_Vegas_Travel_Guide_4K.txt
+[2025-04-14T22:55:39.283+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/7R6AcfJOBy0_Las_Vegas_Travel_Guide_4K_segments.json
+[2025-04-14T22:55:39.283+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video MpARww7gkS4
+[2025-04-14T22:55:39.801+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video MpARww7gkS4 (2047 words)
+[2025-04-14T22:55:39.808+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/MpARww7gkS4_10_BEST_Things_To_Do_In_Las_Vegas_Las_Vegas_Travel.txt
+[2025-04-14T22:55:39.809+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/MpARww7gkS4_10_BEST_Things_To_Do_In_Las_Vegas_Las_Vegas_Travel_segments.json
+[2025-04-14T22:55:39.810+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video DVwX0u534gw
+[2025-04-14T22:55:40.394+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video DVwX0u534gw (4475 words)
+[2025-04-14T22:55:40.406+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary.txt
+[2025-04-14T22:55:40.409+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary_segments.json
+[2025-04-14T22:55:41.411+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:55:41.461+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video cUQyMwfjemo
+[2025-04-14T22:55:42.395+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video cUQyMwfjemo (1418 words)
+[2025-04-14T22:55:42.404+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/cUQyMwfjemo_Las_Vegas_2024_-_Full_Travel_Guide.txt
+[2025-04-14T22:55:42.410+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/cUQyMwfjemo_Las_Vegas_2024_-_Full_Travel_Guide_segments.json
+[2025-04-14T22:55:42.410+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Lo18ep8ZqQE
+[2025-04-14T22:55:42.913+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Lo18ep8ZqQE (203 words)
+[2025-04-14T22:55:42.915+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Lo18ep8ZqQE_Beginners_guide_to_Las_Vegas.txt
+[2025-04-14T22:55:42.915+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Lo18ep8ZqQE_Beginners_guide_to_Las_Vegas_segments.json
+[2025-04-14T22:55:42.915+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video hPXed7MrhL4
+[2025-04-14T22:55:43.593+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video hPXed7MrhL4 (954 words)
+[2025-04-14T22:55:43.599+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/hPXed7MrhL4_TOP_10_things_to_do_in_LAS_VEGAS_City_Guide.txt
+[2025-04-14T22:55:43.601+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/hPXed7MrhL4_TOP_10_things_to_do_in_LAS_VEGAS_City_Guide_segments.json
+[2025-04-14T22:55:43.601+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video e_NqBBy_dfg
+[2025-04-14T22:55:44.141+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video e_NqBBy_dfg (126 words)
+[2025-04-14T22:55:44.142+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/e_NqBBy_dfg_THE_SHOPSSTRIP_Las_Vegas_Nevada.txt
+[2025-04-14T22:55:44.143+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/e_NqBBy_dfg_THE_SHOPSSTRIP_Las_Vegas_Nevada_segments.json
+[2025-04-14T22:55:44.143+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video upNaWVdaXss
+[2025-04-14T22:55:44.719+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video upNaWVdaXss (2965 words)
+[2025-04-14T22:55:44.727+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K.txt
+[2025-04-14T22:55:44.727+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K_segments.json
+[2025-04-14T22:55:45.733+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:55:45.790+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video XVmXFN0gY8c
+[2025-04-14T22:55:46.224+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video XVmXFN0gY8c (174 words)
+[2025-04-14T22:55:46.225+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv.txt
+[2025-04-14T22:55:46.225+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv_segments.json
+[2025-04-14T22:55:46.225+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video L8mU-8lLhss
+[2025-04-14T22:55:46.885+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video L8mU-8lLhss (2625 words)
+[2025-04-14T22:55:46.889+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas_.txt
+[2025-04-14T22:55:46.890+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas__segments.json
+[2025-04-14T22:55:46.890+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 6lnwMqbHtTw
+[2025-04-14T22:55:47.345+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 6lnwMqbHtTw (259 words)
+[2025-04-14T22:55:47.346+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip.txt
+[2025-04-14T22:55:47.346+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip_segments.json
+[2025-04-14T22:55:47.346+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video xvA7VUfb0aA
+[2025-04-14T22:55:48.089+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video xvA7VUfb0aA (365 words)
+[2025-04-14T22:55:48.090+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/xvA7VUfb0aA_Travel_Guide_-_Las_Vegas_Nevada.txt
+[2025-04-14T22:55:48.090+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/xvA7VUfb0aA_Travel_Guide_-_Las_Vegas_Nevada_segments.json
+[2025-04-14T22:55:48.090+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video gbmEJyFu0JM
+[2025-04-14T22:55:48.631+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video gbmEJyFu0JM (3001 words)
+[2025-04-14T22:55:48.637+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/gbmEJyFu0JM_How_to_Plan_the_PERFECT_Trip_to_Las_Vegas_free_che.txt
+[2025-04-14T22:55:48.638+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/gbmEJyFu0JM_How_to_Plan_the_PERFECT_Trip_to_Las_Vegas_free_che_segments.json
+[2025-04-14T22:55:49.639+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:55:49.704+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video uk7LwRGw_j4
+[2025-04-14T22:55:50.265+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video uk7LwRGw_j4 (3687 words)
+[2025-04-14T22:55:50.273+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/uk7LwRGw_j4_Las_Vegas_First_Timers_GUIDE_30_MUST_Do_Experience.txt
+[2025-04-14T22:55:50.274+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/uk7LwRGw_j4_Las_Vegas_First_Timers_GUIDE_30_MUST_Do_Experience_segments.json
+[2025-04-14T22:55:50.275+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video W-9GzUWy-Ck
+[2025-04-14T22:55:50.776+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video W-9GzUWy-Ck (2415 words)
+[2025-04-14T22:55:50.782+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas_.txt
+[2025-04-14T22:55:50.784+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas__segments.json
+[2025-04-14T22:55:50.784+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video l3TuOeTL2EE
+[2025-04-14T22:55:51.826+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video l3TuOeTL2EE (14644 words)
+[2025-04-14T22:55:51.857+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/l3TuOeTL2EE_Las_Vegas_Travel_Itinerary_Planning_Guide.txt
+[2025-04-14T22:55:51.861+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/l3TuOeTL2EE_Las_Vegas_Travel_Itinerary_Planning_Guide_segments.json
+[2025-04-14T22:55:51.862+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video a3WPxGAnC-E
+[2025-04-14T22:55:52.544+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video a3WPxGAnC-E (119 words)
+[2025-04-14T22:55:52.545+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/a3WPxGAnC-E_Las_Vegas_Nevada_Vacation_Travel_Guide.txt
+[2025-04-14T22:55:52.546+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/a3WPxGAnC-E_Las_Vegas_Nevada_Vacation_Travel_Guide_segments.json
+[2025-04-14T22:55:52.546+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video py4BaCiejBg
+[2025-04-14T22:55:53.060+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video py4BaCiejBg (2351 words)
+[2025-04-14T22:55:53.064+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe.txt
+[2025-04-14T22:55:53.065+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe_segments.json
+[2025-04-14T22:55:54.066+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 3/6: 'Vegas Strip tourism'
+[2025-04-14T22:55:54.491+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Vegas Strip tourism'
+[2025-04-14T22:55:54.491+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:55:54.543+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video UKBm8o_hR6A
+[2025-04-14T22:55:55.235+0000] {youtube_dag.py:935} WARNING - No transcript available for video UKBm8o_hR6A: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=UKBm8o_hR6A! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:55.236+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video UKBm8o_hR6A
+[2025-04-14T22:55:55.236+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video gasI6cyjkvM
+[2025-04-14T22:55:55.755+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video gasI6cyjkvM (480 words)
+[2025-04-14T22:55:55.757+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/gasI6cyjkvM_Las_Vegas_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:55.757+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/gasI6cyjkvM_Las_Vegas_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:55.758+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video L8mU-8lLhss
+[2025-04-14T22:55:56.261+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video L8mU-8lLhss (2625 words)
+[2025-04-14T22:55:56.267+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas_.txt
+[2025-04-14T22:55:56.269+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas__segments.json
+[2025-04-14T22:55:56.269+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video OImKEFPyT7E
+[2025-04-14T22:55:56.999+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video OImKEFPyT7E (1171 words)
+[2025-04-14T22:55:57.006+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/OImKEFPyT7E_Las_Vegas_4K_Walking_Tour_-_165-min_Walk_with_Capt.txt
+[2025-04-14T22:55:57.007+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/OImKEFPyT7E_Las_Vegas_4K_Walking_Tour_-_165-min_Walk_with_Capt_segments.json
+[2025-04-14T22:55:57.008+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video _KEb4P3t9Ec
+[2025-04-14T22:55:57.450+0000] {youtube_dag.py:935} WARNING - No transcript available for video _KEb4P3t9Ec: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=_KEb4P3t9Ec! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:57.450+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video _KEb4P3t9Ec
+[2025-04-14T22:55:58.452+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:55:58.515+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 5TC88MkC0AM
+[2025-04-14T22:55:59.066+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 5TC88MkC0AM (2842 words)
+[2025-04-14T22:55:59.073+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/5TC88MkC0AM_15_Dumb_MISTAKES_Tourists_Make_in_Las_Vegas.txt
+[2025-04-14T22:55:59.074+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/5TC88MkC0AM_15_Dumb_MISTAKES_Tourists_Make_in_Las_Vegas_segments.json
+[2025-04-14T22:55:59.074+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video sGt0JmCyqBY
+[2025-04-14T22:55:59.938+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video sGt0JmCyqBY (3000 words)
+[2025-04-14T22:55:59.949+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/sGt0JmCyqBY_Theres_a_LITTLE_problem_with_this_Las_Vegas_hotel_.txt
+[2025-04-14T22:55:59.951+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/sGt0JmCyqBY_Theres_a_LITTLE_problem_with_this_Las_Vegas_hotel__segments.json
+[2025-04-14T22:55:59.951+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video W-9GzUWy-Ck
+[2025-04-14T22:56:00.447+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video W-9GzUWy-Ck (2415 words)
+[2025-04-14T22:56:00.456+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas_.txt
+[2025-04-14T22:56:00.458+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/W-9GzUWy-Ck_20_Dumb_Rookie_Mistakes_to_AVOID_in_Las_Vegas__segments.json
+[2025-04-14T22:56:00.458+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video e_NqBBy_dfg
+[2025-04-14T22:56:00.958+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video e_NqBBy_dfg (126 words)
+[2025-04-14T22:56:00.960+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/e_NqBBy_dfg_THE_SHOPSSTRIP_Las_Vegas_Nevada.txt
+[2025-04-14T22:56:00.961+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/e_NqBBy_dfg_THE_SHOPSSTRIP_Las_Vegas_Nevada_segments.json
+[2025-04-14T22:56:00.961+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video svd4LZ48i_U
+[2025-04-14T22:56:01.741+0000] {youtube_dag.py:935} WARNING - No transcript available for video svd4LZ48i_U: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=svd4LZ48i_U! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:01.742+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video svd4LZ48i_U
+[2025-04-14T22:56:02.743+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:56:02.831+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video leow5J0iR_0
+[2025-04-14T22:56:03.344+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video leow5J0iR_0 (3223 words)
+[2025-04-14T22:56:03.351+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/leow5J0iR_0_How_to_Get_Around_Las_Vegas_WITHOUT_a_CAR.txt
+[2025-04-14T22:56:03.352+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/leow5J0iR_0_How_to_Get_Around_Las_Vegas_WITHOUT_a_CAR_segments.json
+[2025-04-14T22:56:03.352+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video HjklndipGGQ
+[2025-04-14T22:56:03.983+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video HjklndipGGQ (4540 words)
+[2025-04-14T22:56:03.998+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K.txt
+[2025-04-14T22:56:03.999+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K_segments.json
+[2025-04-14T22:56:04.000+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Wdv1CgfA1qk
+[2025-04-14T22:56:04.572+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Wdv1CgfA1qk (1315 words)
+[2025-04-14T22:56:04.576+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Wdv1CgfA1qk_5_Days_In_Vegas_The_Ultimate_Itinerary_tourism_veg.txt
+[2025-04-14T22:56:04.577+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Wdv1CgfA1qk_5_Days_In_Vegas_The_Ultimate_Itinerary_tourism_veg_segments.json
+[2025-04-14T22:56:04.577+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video SjKM9snX2bo
+[2025-04-14T22:56:05.125+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video SjKM9snX2bo (3462 words)
+[2025-04-14T22:56:05.137+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/SjKM9snX2bo_LAS_VEGAS_SPRING_2025_BELLAGIO_CONSERVATORY_FOUNTA.txt
+[2025-04-14T22:56:05.139+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/SjKM9snX2bo_LAS_VEGAS_SPRING_2025_BELLAGIO_CONSERVATORY_FOUNTA_segments.json
+[2025-04-14T22:56:05.139+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video ueW7ee3hv6E
+[2025-04-14T22:56:05.746+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video ueW7ee3hv6E (124 words)
+[2025-04-14T22:56:05.747+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/ueW7ee3hv6E_Stop_PAYING_for_PARKING_on_the_Las_Vegas_Strip_GO_.txt
+[2025-04-14T22:56:05.748+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/ueW7ee3hv6E_Stop_PAYING_for_PARKING_on_the_Las_Vegas_Strip_GO__segments.json
+[2025-04-14T22:56:06.749+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:56:07.042+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 2n_g-ewIgew
+[2025-04-14T22:56:07.594+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 2n_g-ewIgew (1401 words)
+[2025-04-14T22:56:07.600+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/2n_g-ewIgew_22_Top_Las_Vegas_Attractions_You_Cant_Miss_Best_Th.txt
+[2025-04-14T22:56:07.601+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/2n_g-ewIgew_22_Top_Las_Vegas_Attractions_You_Cant_Miss_Best_Th_segments.json
+[2025-04-14T22:56:07.601+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Dfn-mS-OUcQ
+[2025-04-14T22:56:08.140+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Dfn-mS-OUcQ (1202 words)
+[2025-04-14T22:56:08.144+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Dfn-mS-OUcQ_Vegas_Vacation_Areas_to_Avoid_vegas_tourism_vegasv.txt
+[2025-04-14T22:56:08.145+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Dfn-mS-OUcQ_Vegas_Vacation_Areas_to_Avoid_vegas_tourism_vegasv_segments.json
+[2025-04-14T22:56:08.145+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 68jJCypOdwc
+[2025-04-14T22:56:08.813+0000] {youtube_dag.py:935} WARNING - No transcript available for video 68jJCypOdwc: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=68jJCypOdwc! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:08.814+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video 68jJCypOdwc
+[2025-04-14T22:56:08.815+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 7hnimAM86nM
+[2025-04-14T22:56:09.598+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 7hnimAM86nM (695 words)
+[2025-04-14T22:56:09.601+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/7hnimAM86nM_Report_Las_Vegas_tourism_industry_showing_good_rec.txt
+[2025-04-14T22:56:09.602+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/7hnimAM86nM_Report_Las_Vegas_tourism_industry_showing_good_rec_segments.json
+[2025-04-14T22:56:09.602+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video JvemhQucD8A
+[2025-04-14T22:56:10.382+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video JvemhQucD8A (217 words)
+[2025-04-14T22:56:10.383+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/JvemhQucD8A_Three_best_affordable_cheap_budget_hotel_resorts_L.txt
+[2025-04-14T22:56:10.384+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/JvemhQucD8A_Three_best_affordable_cheap_budget_hotel_resorts_L_segments.json
+[2025-04-14T22:56:11.386+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 4/6: 'Las Vegas must see'
+[2025-04-14T22:56:11.756+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Las Vegas must see'
+[2025-04-14T22:56:11.757+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:56:11.810+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video L8mU-8lLhss
+[2025-04-14T22:56:12.690+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video L8mU-8lLhss (2625 words)
+[2025-04-14T22:56:12.698+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas_.txt
+[2025-04-14T22:56:12.699+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/L8mU-8lLhss_21_Things_Every_First_Timer_MUST_DO_in_Las_Vegas__segments.json
+[2025-04-14T22:56:12.699+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video upNaWVdaXss
+[2025-04-14T22:56:13.280+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video upNaWVdaXss (2965 words)
+[2025-04-14T22:56:13.291+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K.txt
+[2025-04-14T22:56:13.292+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K_segments.json
+[2025-04-14T22:56:13.292+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 6lnwMqbHtTw
+[2025-04-14T22:56:13.821+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 6lnwMqbHtTw (259 words)
+[2025-04-14T22:56:13.822+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip.txt
+[2025-04-14T22:56:13.823+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/6lnwMqbHtTw_Perfect_2-day_itinerary_for_a_Vegas_trip_segments.json
+[2025-04-14T22:56:13.823+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video hPXed7MrhL4
+[2025-04-14T22:56:14.612+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video hPXed7MrhL4 (954 words)
+[2025-04-14T22:56:14.616+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/hPXed7MrhL4_TOP_10_things_to_do_in_LAS_VEGAS_City_Guide.txt
+[2025-04-14T22:56:14.616+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/hPXed7MrhL4_TOP_10_things_to_do_in_LAS_VEGAS_City_Guide_segments.json
+[2025-04-14T22:56:14.617+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video g0EjKMkSRes
+[2025-04-14T22:56:15.392+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video g0EjKMkSRes (80 words)
+[2025-04-14T22:56:15.394+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/g0EjKMkSRes_Las_Vegas_Must-See_Attractions_The_Eiffel_Tower_Vi.txt
+[2025-04-14T22:56:15.394+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/g0EjKMkSRes_Las_Vegas_Must-See_Attractions_The_Eiffel_Tower_Vi_segments.json
+[2025-04-14T22:56:16.395+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:56:16.469+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video GcL_2Wwodyg
+[2025-04-14T22:56:16.998+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video GcL_2Wwodyg (4763 words)
+[2025-04-14T22:56:17.011+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo.txt
+[2025-04-14T22:56:17.014+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/GcL_2Wwodyg_LAS_VEGAS_TRAVEL_GUIDE_13_Things_to_Know_Before_Yo_segments.json
+[2025-04-14T22:56:17.014+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video XVmXFN0gY8c
+[2025-04-14T22:56:17.513+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video XVmXFN0gY8c (174 words)
+[2025-04-14T22:56:17.513+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv.txt
+[2025-04-14T22:56:17.514+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv_segments.json
+[2025-04-14T22:56:17.514+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video DVwX0u534gw
+[2025-04-14T22:56:18.472+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video DVwX0u534gw (4475 words)
+[2025-04-14T22:56:18.483+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary.txt
+[2025-04-14T22:56:18.486+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/DVwX0u534gw_How_to_Spend_5_Days_in_LAS_VEGAS_Travel_Itinerary_segments.json
+[2025-04-14T22:56:18.486+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Ef_ff0gcDfU
+[2025-04-14T22:56:18.906+0000] {youtube_dag.py:935} WARNING - No transcript available for video Ef_ff0gcDfU: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Ef_ff0gcDfU! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:18.906+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video Ef_ff0gcDfU
+[2025-04-14T22:56:18.907+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video e4UPzS3Wo5k
+[2025-04-14T22:56:19.315+0000] {youtube_dag.py:903} INFO - No English transcript found for e4UPzS3Wo5k, trying en-US
+[2025-04-14T22:56:20.110+0000] {youtube_dag.py:912} INFO - No en-US transcript found for e4UPzS3Wo5k, trying auto-translate
+[2025-04-14T22:56:20.836+0000] {youtube_dag.py:918} INFO - Translating ar transcript to English for e4UPzS3Wo5k
+[2025-04-14T22:56:20.895+0000] {youtube_dag.py:928} ERROR - Error translating transcript for e4UPzS3Wo5k: 'FetchedTranscriptSnippet' object has no attribute 'get'
+[2025-04-14T22:56:20.896+0000] {youtube_dag.py:941} WARNING - Could not find any usable transcript for e4UPzS3Wo5k
+[2025-04-14T22:56:20.896+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video e4UPzS3Wo5k
+[2025-04-14T22:56:21.897+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:56:21.953+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video vm_9qjeL6dY
+[2025-04-14T22:56:22.702+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video vm_9qjeL6dY (178 words)
+[2025-04-14T22:56:22.703+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/vm_9qjeL6dY_PART_ONE_Nevada_spicy_ranch_adult_companionship_to.txt
+[2025-04-14T22:56:22.703+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/vm_9qjeL6dY_PART_ONE_Nevada_spicy_ranch_adult_companionship_to_segments.json
+[2025-04-14T22:56:22.704+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video HjklndipGGQ
+[2025-04-14T22:56:24.201+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video HjklndipGGQ (4540 words)
+[2025-04-14T22:56:24.212+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K.txt
+[2025-04-14T22:56:24.213+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/HjklndipGGQ_Best_Things_To_Do_in_Las_Vegas_4K_segments.json
+[2025-04-14T22:56:24.213+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video a3aEcxMLeUM
+[2025-04-14T22:56:24.974+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video a3aEcxMLeUM (5 words)
+[2025-04-14T22:56:24.975+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/a3aEcxMLeUM_20_must-do_activities_in_Vegas_all_under_20.txt
+[2025-04-14T22:56:24.975+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/a3aEcxMLeUM_20_must-do_activities_in_Vegas_all_under_20_segments.json
+[2025-04-14T22:56:24.975+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video MpARww7gkS4
+[2025-04-14T22:56:25.465+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video MpARww7gkS4 (2047 words)
+[2025-04-14T22:56:25.472+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/MpARww7gkS4_10_BEST_Things_To_Do_In_Las_Vegas_Las_Vegas_Travel.txt
+[2025-04-14T22:56:25.474+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/MpARww7gkS4_10_BEST_Things_To_Do_In_Las_Vegas_Las_Vegas_Travel_segments.json
+[2025-04-14T22:56:25.474+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 9Yh5dQUWE2g
+[2025-04-14T22:56:26.055+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 9Yh5dQUWE2g (4174 words)
+[2025-04-14T22:56:26.071+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/9Yh5dQUWE2g_20_Things_YOU_MUST_Do_in_Las_Vegas_for_2025.txt
+[2025-04-14T22:56:26.074+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/9Yh5dQUWE2g_20_Things_YOU_MUST_Do_in_Las_Vegas_for_2025_segments.json
+[2025-04-14T22:56:27.076+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:56:27.146+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video R_BV0rxGdnc
+[2025-04-14T22:56:27.639+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video R_BV0rxGdnc (241 words)
+[2025-04-14T22:56:27.640+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford.txt
+[2025-04-14T22:56:27.640+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford_segments.json
+[2025-04-14T22:56:27.641+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video eWif9_RpxFE
+[2025-04-14T22:56:28.253+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video eWif9_RpxFE (5401 words)
+[2025-04-14T22:56:28.265+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/eWif9_RpxFE_3_DAY_Las_Vegas_ITINERARY_-_Must_Do_Activities.txt
+[2025-04-14T22:56:28.267+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/eWif9_RpxFE_3_DAY_Las_Vegas_ITINERARY_-_Must_Do_Activities_segments.json
+[2025-04-14T22:56:28.267+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video a3gEXaL3NOs
+[2025-04-14T22:56:28.767+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video a3gEXaL3NOs (4 words)
+[2025-04-14T22:56:28.768+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/a3gEXaL3NOs_Must_visit_places_near_Las_Vegas_lasvegas_grandcan.txt
+[2025-04-14T22:56:28.768+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/a3gEXaL3NOs_Must_visit_places_near_Las_Vegas_lasvegas_grandcan_segments.json
+[2025-04-14T22:56:28.768+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video vdoIM_Rp_J4
+[2025-04-14T22:56:29.584+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video vdoIM_Rp_J4 (3120 words)
+[2025-04-14T22:56:29.596+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/vdoIM_Rp_J4_BEST_Free_Things_To_Do_in_Las_Vegas_2025.txt
+[2025-04-14T22:56:29.598+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/vdoIM_Rp_J4_BEST_Free_Things_To_Do_in_Las_Vegas_2025_segments.json
+[2025-04-14T22:56:29.598+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video py4BaCiejBg
+[2025-04-14T22:56:30.194+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video py4BaCiejBg (2351 words)
+[2025-04-14T22:56:30.203+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe.txt
+[2025-04-14T22:56:30.205+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/py4BaCiejBg_The_Perfect_3_Day_Las_Vegas_Itinerary_Must_Do_Expe_segments.json
+[2025-04-14T22:56:31.207+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 5/6: 'Las Vegas hidden gems'
+[2025-04-14T22:56:31.572+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Las Vegas hidden gems'
+[2025-04-14T22:56:31.572+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:56:31.648+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Y3iDH0jTlJY
+[2025-04-14T22:56:32.238+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Y3iDH0jTlJY (1531 words)
+[2025-04-14T22:56:32.243+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Y3iDH0jTlJY_Las_Vegas_Hidden_Gems_Eateries_Attractions_Things_.txt
+[2025-04-14T22:56:32.244+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Y3iDH0jTlJY_Las_Vegas_Hidden_Gems_Eateries_Attractions_Things__segments.json
+[2025-04-14T22:56:32.244+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video NXzNhu3g5Ww
+[2025-04-14T22:56:32.928+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video NXzNhu3g5Ww (1441 words)
+[2025-04-14T22:56:32.934+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/NXzNhu3g5Ww_12_Hidden_Gems_In_LAS_VEGAS_Las_Vegas_Hidden_Gems_.txt
+[2025-04-14T22:56:32.936+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/NXzNhu3g5Ww_12_Hidden_Gems_In_LAS_VEGAS_Las_Vegas_Hidden_Gems__segments.json
+[2025-04-14T22:56:32.936+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video m4qFzqm_yu8
+[2025-04-14T22:56:33.397+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video m4qFzqm_yu8 (268 words)
+[2025-04-14T22:56:33.399+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/m4qFzqm_yu8_Hidden_Gems_in_Las_Vegas_And_How_To_Find_Them_vega.txt
+[2025-04-14T22:56:33.399+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/m4qFzqm_yu8_Hidden_Gems_in_Las_Vegas_And_How_To_Find_Them_vega_segments.json
+[2025-04-14T22:56:33.400+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video aOkM_YYbcCc
+[2025-04-14T22:56:33.970+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video aOkM_YYbcCc (1687 words)
+[2025-04-14T22:56:33.975+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/aOkM_YYbcCc_Las_Vegas_Secrets_Hidden_Gems_Things_to_Do.txt
+[2025-04-14T22:56:33.976+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/aOkM_YYbcCc_Las_Vegas_Secrets_Hidden_Gems_Things_to_Do_segments.json
+[2025-04-14T22:56:33.976+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video dfDjsRD8cgU
+[2025-04-14T22:56:34.516+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video dfDjsRD8cgU (1194 words)
+[2025-04-14T22:56:34.519+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/dfDjsRD8cgU_12_Hidden_Gems_In_LAS_VEGAS_Las_Vegas_Guide_2024.txt
+[2025-04-14T22:56:34.521+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/dfDjsRD8cgU_12_Hidden_Gems_In_LAS_VEGAS_Las_Vegas_Guide_2024_segments.json
+[2025-04-14T22:56:35.523+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:56:35.571+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video rCoLTNUjcbY
+[2025-04-14T22:56:36.455+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video rCoLTNUjcbY (1855 words)
+[2025-04-14T22:56:36.464+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/rCoLTNUjcbY_Uncovering_Las_Vegas_Hidden_Gems_Beyond_the_Casino.txt
+[2025-04-14T22:56:36.465+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/rCoLTNUjcbY_Uncovering_Las_Vegas_Hidden_Gems_Beyond_the_Casino_segments.json
+[2025-04-14T22:56:36.466+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Cz6acFyW0cw
+[2025-04-14T22:56:37.270+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Cz6acFyW0cw (142 words)
+[2025-04-14T22:56:37.272+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Cz6acFyW0cw_Hidden_Gems_in_Las_Vegas.txt
+[2025-04-14T22:56:37.273+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Cz6acFyW0cw_Hidden_Gems_in_Las_Vegas_segments.json
+[2025-04-14T22:56:37.274+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Rm68VxSpn4I
+[2025-04-14T22:56:38.319+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Rm68VxSpn4I (2927 words)
+[2025-04-14T22:56:38.329+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Rm68VxSpn4I_NEW_Las_Vegas_Hidden_Gems_You_NEED_to_Know_in_2025.txt
+[2025-04-14T22:56:38.331+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Rm68VxSpn4I_NEW_Las_Vegas_Hidden_Gems_You_NEED_to_Know_in_2025_segments.json
+[2025-04-14T22:56:38.332+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 6T6AyyvAIKw
+[2025-04-14T22:56:38.831+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 6T6AyyvAIKw (475 words)
+[2025-04-14T22:56:38.832+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/6T6AyyvAIKw_Bullet_Holes_and_a_Hollywood_Tragedy_What_I_Found_.txt
+[2025-04-14T22:56:38.833+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/6T6AyyvAIKw_Bullet_Holes_and_a_Hollywood_Tragedy_What_I_Found__segments.json
+[2025-04-14T22:56:38.833+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 3T6-Hjo5mMI
+[2025-04-14T22:56:39.573+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 3T6-Hjo5mMI (533 words)
+[2025-04-14T22:56:39.577+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/3T6-Hjo5mMI_Top_10_Hidden_Gems_of_Las_Vegas.txt
+[2025-04-14T22:56:39.578+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/3T6-Hjo5mMI_Top_10_Hidden_Gems_of_Las_Vegas_segments.json
+[2025-04-14T22:56:40.580+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:56:40.644+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 1xfZFByV5q4
+[2025-04-14T22:56:41.131+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 1xfZFByV5q4 (213 words)
+[2025-04-14T22:56:41.132+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/1xfZFByV5q4_Las_Vegas_Hidden_Gem_best_Burger_smashburger_on_St.txt
+[2025-04-14T22:56:41.133+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/1xfZFByV5q4_Las_Vegas_Hidden_Gem_best_Burger_smashburger_on_St_segments.json
+[2025-04-14T22:56:41.133+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video BhO3vhSKT78
+[2025-04-14T22:56:41.586+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video BhO3vhSKT78 (242 words)
+[2025-04-14T22:56:41.587+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/BhO3vhSKT78_FREE_Las_Vegas_Show_at_Wynn_Hidden_Gem_Lake_of_Dre.txt
+[2025-04-14T22:56:41.587+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/BhO3vhSKT78_FREE_Las_Vegas_Show_at_Wynn_Hidden_Gem_Lake_of_Dre_segments.json
+[2025-04-14T22:56:41.588+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video ZPgisA_gfbQ
+[2025-04-14T22:56:42.165+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video ZPgisA_gfbQ (1537 words)
+[2025-04-14T22:56:42.169+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/ZPgisA_gfbQ_Las_Vegas_Hidden_Gems_No_One_Talks_About_.txt
+[2025-04-14T22:56:42.171+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/ZPgisA_gfbQ_Las_Vegas_Hidden_Gems_No_One_Talks_About__segments.json
+[2025-04-14T22:56:42.171+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 9QCJgpfMC5g
+[2025-04-14T22:56:42.631+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 9QCJgpfMC5g (303 words)
+[2025-04-14T22:56:42.632+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/9QCJgpfMC5g_Hidden_Gems_in_Las_Vegas_And_How_To_Find_Them_vega.txt
+[2025-04-14T22:56:42.633+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/9QCJgpfMC5g_Hidden_Gems_in_Las_Vegas_And_How_To_Find_Them_vega_segments.json
+[2025-04-14T22:56:42.633+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video yIVPIuXn5TI
+[2025-04-14T22:56:43.203+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video yIVPIuXn5TI (1654 words)
+[2025-04-14T22:56:43.207+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/yIVPIuXn5TI_BEST_Downtown_LAS_VEGAS_Hidden_Gems_.txt
+[2025-04-14T22:56:43.208+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/yIVPIuXn5TI_BEST_Downtown_LAS_VEGAS_Hidden_Gems__segments.json
+[2025-04-14T22:56:44.209+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:56:44.286+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video upNaWVdaXss
+[2025-04-14T22:56:45.087+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video upNaWVdaXss (2965 words)
+[2025-04-14T22:56:45.093+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K.txt
+[2025-04-14T22:56:45.094+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/upNaWVdaXss_Best_Things_To_Do_in_Las_Vegas_2025_4K_segments.json
+[2025-04-14T22:56:45.094+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video XVmXFN0gY8c
+[2025-04-14T22:56:45.745+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video XVmXFN0gY8c (174 words)
+[2025-04-14T22:56:45.746+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv.txt
+[2025-04-14T22:56:45.747+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/XVmXFN0gY8c_Biggest_Mistakes_To_Avoid_In_Las_Vegas_travel_lasv_segments.json
+[2025-04-14T22:56:45.747+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video w0qWtqoom_o
+[2025-04-14T22:56:46.600+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video w0qWtqoom_o (4028 words)
+[2025-04-14T22:56:46.607+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/w0qWtqoom_o_MUST_TRY_Las_Vegas_Hidden_Gem_Restaurants_Outside_.txt
+[2025-04-14T22:56:46.608+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/w0qWtqoom_o_MUST_TRY_Las_Vegas_Hidden_Gem_Restaurants_Outside__segments.json
+[2025-04-14T22:56:46.609+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video IrlmCghbYyg
+[2025-04-14T22:56:47.227+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video IrlmCghbYyg (2962 words)
+[2025-04-14T22:56:47.235+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/IrlmCghbYyg_5_Hidden_FOOD_Gems_in_Las_Vegas_.txt
+[2025-04-14T22:56:47.237+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/IrlmCghbYyg_5_Hidden_FOOD_Gems_in_Las_Vegas__segments.json
+[2025-04-14T22:56:47.237+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video s_aYhlrWqd0
+[2025-04-14T22:56:47.825+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video s_aYhlrWqd0 (36 words)
+[2025-04-14T22:56:47.826+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/s_aYhlrWqd0_Las_Vegas_Hidden_Gems_Graveyard_Special_6_Steak_an.txt
+[2025-04-14T22:56:47.826+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/s_aYhlrWqd0_Las_Vegas_Hidden_Gems_Graveyard_Special_6_Steak_an_segments.json
+[2025-04-14T22:56:48.830+0000] {youtube_dag.py:318} INFO - [LasVegas] Processing query 6/6: 'Las Vegas food guide'
+[2025-04-14T22:56:49.216+0000] {youtube_dag.py:321} INFO - [LasVegas] Found 20 videos for query: 'Las Vegas food guide'
+[2025-04-14T22:56:49.217+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 1/4
+[2025-04-14T22:56:49.273+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video pFaBPpFYE8o
+[2025-04-14T22:56:49.825+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video pFaBPpFYE8o (2279 words)
+[2025-04-14T22:56:49.831+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/pFaBPpFYE8o_The_40_BEST_Cheap_Eats_in_Las_Vegas_Right_Now.txt
+[2025-04-14T22:56:49.832+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/pFaBPpFYE8o_The_40_BEST_Cheap_Eats_in_Las_Vegas_Right_Now_segments.json
+[2025-04-14T22:56:49.832+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Qsv072tozNQ
+[2025-04-14T22:56:50.396+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Qsv072tozNQ (4945 words)
+[2025-04-14T22:56:50.404+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Qsv072tozNQ_Top_10_LAS_VEGAS_Foods_You_MUST_TRY_Before_You_Die.txt
+[2025-04-14T22:56:50.406+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Qsv072tozNQ_Top_10_LAS_VEGAS_Foods_You_MUST_TRY_Before_You_Die_segments.json
+[2025-04-14T22:56:50.406+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video qTt-uBJo774
+[2025-04-14T22:56:50.966+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video qTt-uBJo774 (633 words)
+[2025-04-14T22:56:50.967+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/qTt-uBJo774_3_Unique_and_Fun_Las_Vegas_Eats_-_Vegas_Vacation_F.txt
+[2025-04-14T22:56:50.967+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/qTt-uBJo774_3_Unique_and_Fun_Las_Vegas_Eats_-_Vegas_Vacation_F_segments.json
+[2025-04-14T22:56:50.968+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video zfc1dBeFMzM
+[2025-04-14T22:56:51.362+0000] {youtube_dag.py:903} INFO - No English transcript found for zfc1dBeFMzM, trying en-US
+[2025-04-14T22:56:52.232+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video zfc1dBeFMzM (1908 words)
+[2025-04-14T22:56:52.243+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/zfc1dBeFMzM_The_Munchies_Guide_To_Classic_Vegas_Restaurants.txt
+[2025-04-14T22:56:52.245+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/zfc1dBeFMzM_The_Munchies_Guide_To_Classic_Vegas_Restaurants_segments.json
+[2025-04-14T22:56:52.245+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video R_BV0rxGdnc
+[2025-04-14T22:56:52.726+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video R_BV0rxGdnc (241 words)
+[2025-04-14T22:56:52.727+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford.txt
+[2025-04-14T22:56:52.728+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/R_BV0rxGdnc_Las_Vegas_travel_on_a_budget_a_whole_day_of_afford_segments.json
+[2025-04-14T22:56:53.729+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 2/4
+[2025-04-14T22:56:53.776+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video nrz5HGcFsoY
+[2025-04-14T22:56:54.188+0000] {youtube_dag.py:935} WARNING - No transcript available for video nrz5HGcFsoY: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=nrz5HGcFsoY! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:54.189+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video nrz5HGcFsoY
+[2025-04-14T22:56:54.190+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video gDcP7T2pH8U
+[2025-04-14T22:56:54.593+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video gDcP7T2pH8U (213 words)
+[2025-04-14T22:56:54.594+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/gDcP7T2pH8U_Only_eating_at_viral_food_spots_for_a_full_day_in_.txt
+[2025-04-14T22:56:54.594+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/gDcP7T2pH8U_Only_eating_at_viral_food_spots_for_a_full_day_in__segments.json
+[2025-04-14T22:56:54.595+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video y4FbkW5Sxe4
+[2025-04-14T22:56:54.980+0000] {youtube_dag.py:903} INFO - No English transcript found for y4FbkW5Sxe4, trying en-US
+[2025-04-14T22:56:55.406+0000] {youtube_dag.py:912} INFO - No en-US transcript found for y4FbkW5Sxe4, trying auto-translate
+[2025-04-14T22:56:55.784+0000] {youtube_dag.py:918} INFO - Translating ko transcript to English for y4FbkW5Sxe4
+[2025-04-14T22:56:56.837+0000] {youtube_dag.py:928} ERROR - Error translating transcript for y4FbkW5Sxe4: 'FetchedTranscriptSnippet' object has no attribute 'get'
+[2025-04-14T22:56:56.840+0000] {youtube_dag.py:941} WARNING - Could not find any usable transcript for y4FbkW5Sxe4
+[2025-04-14T22:56:56.840+0000] {youtube_dag.py:339} WARNING - [LasVegas] No transcript available for video y4FbkW5Sxe4
+[2025-04-14T22:56:56.841+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video WzN_NA9O0oQ
+[2025-04-14T22:56:57.776+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video WzN_NA9O0oQ (805 words)
+[2025-04-14T22:56:57.781+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/WzN_NA9O0oQ_4_Must_Try_Eats_Between_LA_and_Vegas.txt
+[2025-04-14T22:56:57.782+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/WzN_NA9O0oQ_4_Must_Try_Eats_Between_LA_and_Vegas_segments.json
+[2025-04-14T22:56:57.783+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video Jjq30R6sgos
+[2025-04-14T22:56:58.836+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video Jjq30R6sgos (3315 words)
+[2025-04-14T22:56:58.842+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/Jjq30R6sgos_The_14_BEST_Buffets_in_Las_Vegas_RANKED.txt
+[2025-04-14T22:56:58.844+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/Jjq30R6sgos_The_14_BEST_Buffets_in_Las_Vegas_RANKED_segments.json
+[2025-04-14T22:56:59.845+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 3/4
+[2025-04-14T22:56:59.893+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video fldWUEzbQT8
+[2025-04-14T22:57:00.854+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video fldWUEzbQT8 (1230 words)
+[2025-04-14T22:57:00.857+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/fldWUEzbQT8_Top_10_Michelin_Star_Restaurants_In_Las_Vegas_Best.txt
+[2025-04-14T22:57:00.858+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/fldWUEzbQT8_Top_10_Michelin_Star_Restaurants_In_Las_Vegas_Best_segments.json
+[2025-04-14T22:57:00.858+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video f6LMS8cnlVI
+[2025-04-14T22:57:01.406+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video f6LMS8cnlVI (2638 words)
+[2025-04-14T22:57:01.414+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/f6LMS8cnlVI_The_10_Best_Restaurants_in_Las_Vegas_for_2024.txt
+[2025-04-14T22:57:01.415+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/f6LMS8cnlVI_The_10_Best_Restaurants_in_Las_Vegas_for_2024_segments.json
+[2025-04-14T22:57:01.415+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video OWNVH1ysZPw
+[2025-04-14T22:57:01.989+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video OWNVH1ysZPw (1778 words)
+[2025-04-14T22:57:01.992+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/OWNVH1ysZPw_LAS_VEGAS_FOOD_GUIDE_Cheap_Eats_Breakfasts_in_Las_.txt
+[2025-04-14T22:57:01.993+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/OWNVH1ysZPw_LAS_VEGAS_FOOD_GUIDE_Cheap_Eats_Breakfasts_in_Las__segments.json
+[2025-04-14T22:57:01.993+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video mAYDe4TZbWs
+[2025-04-14T22:57:02.490+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video mAYDe4TZbWs (580 words)
+[2025-04-14T22:57:02.492+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/mAYDe4TZbWs_VEGAS_FOOD_GUIDE_LOOKBOOK.txt
+[2025-04-14T22:57:02.493+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/mAYDe4TZbWs_VEGAS_FOOD_GUIDE_LOOKBOOK_segments.json
+[2025-04-14T22:57:02.493+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video BPGgyputhpA
+[2025-04-14T22:57:03.241+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video BPGgyputhpA (11257 words)
+[2025-04-14T22:57:03.264+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/BPGgyputhpA_I_Ate_At_Every_Celebrity_Chefs_Restaurant_On_The_V.txt
+[2025-04-14T22:57:03.268+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/BPGgyputhpA_I_Ate_At_Every_Celebrity_Chefs_Restaurant_On_The_V_segments.json
+[2025-04-14T22:57:04.270+0000] {youtube_dag.py:327} INFO - [LasVegas] Processing batch 4/4
+[2025-04-14T22:57:04.335+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 4L9pkNUvk_A
+[2025-04-14T22:57:04.856+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 4L9pkNUvk_A (59 words)
+[2025-04-14T22:57:04.856+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/4L9pkNUvk_A_Best_birria_tacos_in_Vegas_taco_tacos_mexicanfood_.txt
+[2025-04-14T22:57:04.857+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/4L9pkNUvk_A_Best_birria_tacos_in_Vegas_taco_tacos_mexicanfood__segments.json
+[2025-04-14T22:57:04.857+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video KuaNwXtkxXI
+[2025-04-14T22:57:05.557+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video KuaNwXtkxXI (2357 words)
+[2025-04-14T22:57:05.561+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/KuaNwXtkxXI_Eating_My_Way_Through_Las_Vegas_Ultimate_Food_Guid.txt
+[2025-04-14T22:57:05.562+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/KuaNwXtkxXI_Eating_My_Way_Through_Las_Vegas_Ultimate_Food_Guid_segments.json
+[2025-04-14T22:57:05.562+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video UMXtIhD62R4
+[2025-04-14T22:57:06.073+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video UMXtIhD62R4 (275 words)
+[2025-04-14T22:57:06.076+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/UMXtIhD62R4_How_To_Spend_300_In_One_Day_in_Las_Vegas.txt
+[2025-04-14T22:57:06.077+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/UMXtIhD62R4_How_To_Spend_300_In_One_Day_in_Las_Vegas_segments.json
+[2025-04-14T22:57:06.077+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 2jreFt19828
+[2025-04-14T22:57:06.500+0000] {youtube_dag.py:903} INFO - No English transcript found for 2jreFt19828, trying en-US
+[2025-04-14T22:57:07.162+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 2jreFt19828 (2721 words)
+[2025-04-14T22:57:07.175+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/2jreFt19828_Munchies_Guide_to_Exploring_Off_The_Vegas_Strip.txt
+[2025-04-14T22:57:07.177+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/2jreFt19828_Munchies_Guide_to_Exploring_Off_The_Vegas_Strip_segments.json
+[2025-04-14T22:57:07.178+0000] {youtube_dag.py:335} INFO - [LasVegas] Retrieving transcript for video 0tVImuJfdN8
+[2025-04-14T22:57:07.776+0000] {youtube_dag.py:344} INFO - [LasVegas] Retrieved transcript for video 0tVImuJfdN8 (1919 words)
+[2025-04-14T22:57:07.785+0000] {youtube_dag.py:381} INFO - [LasVegas] Saved transcript to /opt/***/data/city_transcripts/LasVegas/transcripts/0tVImuJfdN8_LAS_VEGAS_-_A_COMPLETE_GUIDE_TO_DRINK_FOR_FREE.txt
+[2025-04-14T22:57:07.787+0000] {youtube_dag.py:387} INFO - [LasVegas] Saved transcript segments to /opt/***/data/city_transcripts/LasVegas/transcripts/0tVImuJfdN8_LAS_VEGAS_-_A_COMPLETE_GUIDE_TO_DRINK_FOR_FREE_segments.json
+[2025-04-14T22:57:08.810+0000] {youtube_dag.py:426} INFO - [LasVegas] Saved transcript metadata to /opt/***/data/city_transcripts/LasVegas/lasvegas_vlog_transcripts.csv
+[2025-04-14T22:57:08.810+0000] {youtube_dag.py:430} INFO - [LasVegas] Download summary: 111 successful, 9 failed
+[2025-04-14T22:57:08.811+0000] {youtube_dag.py:244} INFO - Skipping S3 upload phase for LasVegas
+[2025-04-14T22:57:08.811+0000] {youtube_dag.py:248} INFO - Processing and embedding LasVegas transcripts
+[2025-04-14T22:57:08.811+0000] {youtube_dag.py:552} INFO - Starting processing and embedding for LasVegas
+[2025-04-14T22:57:08.812+0000] {youtube_dag.py:576} INFO - Initializing OpenAI client for LasVegas
+[2025-04-14T22:57:08.835+0000] {youtube_dag.py:578} INFO - OpenAI client initialized successfully
+[2025-04-14T22:57:08.835+0000] {youtube_dag.py:590} INFO - Initializing Pinecone for LasVegas
+[2025-04-14T22:57:09.584+0000] {youtube_dag.py:595} INFO - Existing Pinecone indexes: ['bigdatafinal']
+[2025-04-14T22:57:09.585+0000] {youtube_dag.py:598} INFO - Creating Pinecone index: travel-data
+[2025-04-14T22:57:10.234+0000] {youtube_dag.py:616} ERROR - Failed to initialize Pinecone: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'content-type': 'text/plain; charset=utf-8', 'access-control-allow-origin': '*', 'vary': 'origin,access-control-request-method,access-control-request-headers', 'access-control-expose-headers': '*', 'x-pinecone-api-version': '2025-01', 'x-cloud-trace-context': '052c3dc23c6e4371037e4944a1fef39b', 'date': 'Mon, 14 Apr 2025 22:57:10 GMT', 'server': 'Google Frontend', 'Content-Length': '200', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: {"error":{"code":"INVALID_ARGUMENT","message":"Bad request: Your free plan does not support indexes in the us-west-2 region of aws. To create indexes in this region, upgrade your plan."},"status":400}
+
+[2025-04-14T22:57:10.238+0000] {youtube_dag.py:266} INFO - Completed processing for LasVegas: {"city_key": "LasVegas", "transcript_count": 111, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:57:10.253+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'LasVegas', 'transcript_count': 111, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:57:10.286+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:57:10.286+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_LasVegas, run_id=manual__2025-04-14T22:55:13.823884+00:00, execution_date=20250414T225513, start_date=20250414T225517, end_date=20250414T225710
+[2025-04-14T22:57:10.300+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:57:10.312+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:57:10.312+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

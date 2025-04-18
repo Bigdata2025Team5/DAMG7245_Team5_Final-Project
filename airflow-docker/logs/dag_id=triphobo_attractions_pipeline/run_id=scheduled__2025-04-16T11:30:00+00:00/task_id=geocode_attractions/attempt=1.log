@@ -1,0 +1,744 @@
+[2025-04-18T07:38:03.318+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T07:38:03.323+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.geocode_attractions scheduled__2025-04-16T11:30:00+00:00 [queued]>
+[2025-04-18T07:38:03.326+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.geocode_attractions scheduled__2025-04-16T11:30:00+00:00 [queued]>
+[2025-04-18T07:38:03.326+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T07:38:03.329+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_attractions> on 2025-04-16 11:30:00+00:00
+[2025-04-18T07:38:03.333+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2114) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T07:38:03.334+0000] {standard_task_runner.py:72} INFO - Started process 2115 to run task
+[2025-04-18T07:38:03.334+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_pipeline', 'geocode_attractions', 'scheduled__2025-04-16T11:30:00+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmp79unoc2h']
+[2025-04-18T07:38:03.336+0000] {standard_task_runner.py:105} INFO - Job 70: Subtask geocode_attractions
+[2025-04-18T07:38:03.358+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_pipeline.geocode_attractions scheduled__2025-04-16T11:30:00+00:00 [running]> on host 68d96c644388
+[2025-04-18T07:38:03.384+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_pipeline' AIRFLOW_CTX_TASK_ID='geocode_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T11:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T11:30:00+00:00'
+[2025-04-18T07:38:03.385+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T07:38:03.409+0000] {attractions_dag.py:496} INFO - Total attractions to process: 840
+[2025-04-18T07:38:03.412+0000] {attractions_dag.py:501} INFO - Resuming from existing output file with 148 rows
+[2025-04-18T07:38:03.413+0000] {attractions_dag.py:521} INFO - Processing batch 3: rows 149 to 198
+[2025-04-18T07:38:03.413+0000] {attractions_dag.py:528} INFO -   (149/840) Geocoding: Muir Woods National Monument
+[2025-04-18T07:38:03.651+0000] {attractions_dag.py:528} INFO -   (150/840) Geocoding: Alcatraz Island
+[2025-04-18T07:38:03.883+0000] {attractions_dag.py:528} INFO -   (151/840) Geocoding: Pier 39
+[2025-04-18T07:38:04.135+0000] {attractions_dag.py:528} INFO -   (152/840) Geocoding: California Academy Of Sciences
+[2025-04-18T07:38:04.382+0000] {attractions_dag.py:528} INFO -   (153/840) Geocoding: Marin Headlands
+[2025-04-18T07:38:04.636+0000] {attractions_dag.py:528} INFO -   (154/840) Geocoding: Fishermans Wharf
+[2025-04-18T07:38:04.881+0000] {attractions_dag.py:528} INFO -   (155/840) Geocoding: Ghirardelli Square
+[2025-04-18T07:38:05.200+0000] {attractions_dag.py:528} INFO -   (156/840) Geocoding: At And T Park
+[2025-04-18T07:38:05.494+0000] {attractions_dag.py:528} INFO -   (157/840) Geocoding: North Beach
+[2025-04-18T07:38:05.737+0000] {attractions_dag.py:528} INFO -   (158/840) Geocoding: Lands End
+[2025-04-18T07:38:05.995+0000] {attractions_dag.py:528} INFO -   (159/840) Geocoding: The Walt Disney Family Museum
+[2025-04-18T07:38:06.247+0000] {attractions_dag.py:528} INFO -   (160/840) Geocoding: San Francisco Cable Car Museum
+[2025-04-18T07:38:06.498+0000] {attractions_dag.py:528} INFO -   (161/840) Geocoding: Asian Art Museum Of San Francisco
+[2025-04-18T07:38:06.781+0000] {attractions_dag.py:528} INFO -   (162/840) Geocoding: Musee Mecanique
+[2025-04-18T07:38:07.040+0000] {attractions_dag.py:528} INFO -   (163/840) Geocoding: Cliff House
+[2025-04-18T07:38:07.307+0000] {attractions_dag.py:528} INFO -   (164/840) Geocoding: Washington Square
+[2025-04-18T07:38:07.553+0000] {attractions_dag.py:528} INFO -   (165/840) Geocoding: Coit Tower
+[2025-04-18T07:38:07.819+0000] {attractions_dag.py:528} INFO -   (166/840) Geocoding: Fort Point National Historic Site
+[2025-04-18T07:38:08.113+0000] {attractions_dag.py:528} INFO -   (167/840) Geocoding: Grace Cathedral
+[2025-04-18T07:38:08.373+0000] {attractions_dag.py:528} INFO -   (168/840) Geocoding: Bay Bridge
+[2025-04-18T07:38:08.627+0000] {attractions_dag.py:528} INFO -   (169/840) Geocoding: Exploratorium
+[2025-04-18T07:38:08.859+0000] {attractions_dag.py:528} INFO -   (170/840) Geocoding: San Francisco Maritime National Historical Park
+[2025-04-18T07:38:09.117+0000] {attractions_dag.py:528} INFO -   (171/840) Geocoding: City Hall
+[2025-04-18T07:38:09.365+0000] {attractions_dag.py:528} INFO -   (172/840) Geocoding: De Young Museum
+[2025-04-18T07:38:09.597+0000] {attractions_dag.py:528} INFO -   (173/840) Geocoding: Embarcadero Center
+[2025-04-18T07:38:09.836+0000] {attractions_dag.py:528} INFO -   (174/840) Geocoding: Transamerica Pyramid
+[2025-04-18T07:38:10.081+0000] {attractions_dag.py:528} INFO -   (175/840) Geocoding: Japanese Tea Garden
+[2025-04-18T07:38:10.324+0000] {attractions_dag.py:528} INFO -   (176/840) Geocoding: Ocean Beach
+[2025-04-18T07:38:10.563+0000] {attractions_dag.py:528} INFO -   (177/840) Geocoding: Palace Of Fine Arts
+[2025-04-18T07:38:10.858+0000] {attractions_dag.py:528} INFO -   (178/840) Geocoding: Haight Ashbury
+[2025-04-18T07:38:11.109+0000] {attractions_dag.py:528} INFO -   (179/840) Geocoding: Sutro Baths Ruins
+[2025-04-18T07:38:11.361+0000] {attractions_dag.py:528} INFO -   (180/840) Geocoding: Ripley S Believe It Or Not
+[2025-04-18T07:38:11.631+0000] {attractions_dag.py:528} INFO -   (181/840) Geocoding: Aquarium Of The Bay
+[2025-04-18T07:38:11.871+0000] {attractions_dag.py:528} INFO -   (182/840) Geocoding: Alamo Square
+[2025-04-18T07:38:12.111+0000] {attractions_dag.py:528} INFO -   (183/840) Geocoding: Union Square
+[2025-04-18T07:38:12.358+0000] {attractions_dag.py:528} INFO -   (184/840) Geocoding: Hollywood Cafe
+[2025-04-18T07:38:12.761+0000] {attractions_dag.py:528} INFO -   (185/840) Geocoding: Elbo Room
+[2025-04-18T07:38:13.015+0000] {attractions_dag.py:528} INFO -   (186/840) Geocoding: Asiasf
+[2025-04-18T07:38:13.271+0000] {attractions_dag.py:528} INFO -   (187/840) Geocoding: Butter
+[2025-04-18T07:38:13.519+0000] {attractions_dag.py:528} INFO -   (188/840) Geocoding: Crissy Field
+[2025-04-18T07:38:13.838+0000] {attractions_dag.py:528} INFO -   (189/840) Geocoding: Mission Dolores
+[2025-04-18T07:38:14.089+0000] {attractions_dag.py:528} INFO -   (190/840) Geocoding: Hyde Street Pier
+[2025-04-18T07:38:14.345+0000] {attractions_dag.py:528} INFO -   (191/840) Geocoding: 555 California Street
+[2025-04-18T07:38:14.659+0000] {attractions_dag.py:528} INFO -   (192/840) Geocoding: Randall Museum
+[2025-04-18T07:38:14.905+0000] {attractions_dag.py:528} INFO -   (193/840) Geocoding: California Palace Of The Legion Of Honor
+[2025-04-18T07:38:15.206+0000] {attractions_dag.py:528} INFO -   (194/840) Geocoding: Beach Blanket Babylon
+[2025-04-18T07:38:15.454+0000] {attractions_dag.py:528} INFO -   (195/840) Geocoding: San Francisco Zoo
+[2025-04-18T07:38:15.698+0000] {attractions_dag.py:528} INFO -   (196/840) Geocoding: San Francisco Public Library Main
+[2025-04-18T07:38:16.042+0000] {attractions_dag.py:528} INFO -   (197/840) Geocoding: Marrakech Magic Theatre
+[2025-04-18T07:38:16.315+0000] {attractions_dag.py:528} INFO -   (198/840) Geocoding: City Lights Booksellers And Publishers
+[2025-04-18T07:38:16.584+0000] {attractions_dag.py:541} INFO - Completed batch 3. Sleeping before next batch...
+[2025-04-18T07:38:18.587+0000] {attractions_dag.py:521} INFO - Processing batch 4: rows 199 to 248
+[2025-04-18T07:38:18.589+0000] {attractions_dag.py:528} INFO -   (199/840) Geocoding: Boudin At The Wharf
+[2025-04-18T07:38:18.838+0000] {attractions_dag.py:528} INFO -   (200/840) Geocoding: San Francisco Botanical Garden
+[2025-04-18T07:38:19.092+0000] {attractions_dag.py:528} INFO -   (201/840) Geocoding: Powell And Market Cable Car Turnaround
+[2025-04-18T07:38:19.364+0000] {attractions_dag.py:528} INFO -   (202/840) Geocoding: Filbert Steps And Grace Marchant Gardens
+[2025-04-18T07:38:19.641+0000] {attractions_dag.py:528} INFO -   (203/840) Geocoding: S S Jeremiah O Brien
+[2025-04-18T07:38:19.914+0000] {attractions_dag.py:528} INFO -   (204/840) Geocoding: The San Francisco Dungeon
+[2025-04-18T07:38:20.163+0000] {attractions_dag.py:528} INFO -   (205/840) Geocoding: Japan Town
+[2025-04-18T07:38:20.403+0000] {attractions_dag.py:528} INFO -   (206/840) Geocoding: Golden Gate Promenade
+[2025-04-18T07:38:20.654+0000] {attractions_dag.py:528} INFO -   (207/840) Geocoding: Caffe Trieste
+[2025-04-18T07:38:20.918+0000] {attractions_dag.py:528} INFO -   (208/840) Geocoding: Nob Hill
+[2025-04-18T07:38:21.163+0000] {attractions_dag.py:528} INFO -   (209/840) Geocoding: Conservatory Of Flowers
+[2025-04-18T07:38:21.429+0000] {attractions_dag.py:528} INFO -   (210/840) Geocoding: Biscuits And Blues
+[2025-04-18T07:38:21.707+0000] {attractions_dag.py:528} INFO -   (211/840) Geocoding: Smuggler S Cove
+[2025-04-18T07:38:21.969+0000] {attractions_dag.py:528} INFO -   (212/840) Geocoding: Vesuvio
+[2025-04-18T07:38:22.209+0000] {attractions_dag.py:528} INFO -   (213/840) Geocoding: The Saloon
+[2025-04-18T07:38:22.453+0000] {attractions_dag.py:528} INFO -   (214/840) Geocoding: Ferry Building
+[2025-04-18T07:38:22.697+0000] {attractions_dag.py:528} INFO -   (215/840) Geocoding: Ferry Plaza Farmers Market
+[2025-04-18T07:38:22.966+0000] {attractions_dag.py:528} INFO -   (216/840) Geocoding: Telegraph Hill
+[2025-04-18T07:38:23.219+0000] {attractions_dag.py:528} INFO -   (217/840) Geocoding: Civic Center
+[2025-04-18T07:38:23.477+0000] {attractions_dag.py:528} INFO -   (218/840) Geocoding: Yerba Buena Gardens
+[2025-04-18T07:38:23.740+0000] {attractions_dag.py:528} INFO -   (219/840) Geocoding: Treasure Island
+[2025-04-18T07:38:23.983+0000] {attractions_dag.py:528} INFO -   (220/840) Geocoding: Little Italy
+[2025-04-18T07:38:24.217+0000] {attractions_dag.py:528} INFO -   (221/840) Geocoding: Wells Fargo History Museum
+[2025-04-18T07:38:24.468+0000] {attractions_dag.py:528} INFO -   (222/840) Geocoding: Saint Mary S Cathedral
+[2025-04-18T07:38:24.751+0000] {attractions_dag.py:528} INFO -   (223/840) Geocoding: Kabuki Springs And Spa
+[2025-04-18T07:38:25.005+0000] {attractions_dag.py:528} INFO -   (224/840) Geocoding: Fillmore Street
+[2025-04-18T07:38:25.260+0000] {attractions_dag.py:528} INFO -   (225/840) Geocoding: Union Street
+[2025-04-18T07:38:25.527+0000] {attractions_dag.py:528} INFO -   (226/840) Geocoding: Pier 23 Cafe
+[2025-04-18T07:38:25.844+0000] {attractions_dag.py:528} INFO -   (227/840) Geocoding: Balmy Alley Murals
+[2025-04-18T07:38:26.103+0000] {attractions_dag.py:528} INFO -   (228/840) Geocoding: 16th Avenue Tiled Steps
+[2025-04-18T07:38:26.359+0000] {attractions_dag.py:528} INFO -   (229/840) Geocoding: Fort Mason Center For Arts And Culture
+[2025-04-18T07:38:26.715+0000] {attractions_dag.py:528} INFO -   (230/840) Geocoding: Sea Lion Center
+[2025-04-18T07:38:26.993+0000] {attractions_dag.py:528} INFO -   (231/840) Geocoding: Nordstrom
+[2025-04-18T07:38:27.251+0000] {attractions_dag.py:528} INFO -   (232/840) Geocoding: Redwood Room
+[2025-04-18T07:38:27.526+0000] {attractions_dag.py:528} INFO -   (233/840) Geocoding: War Memorial Opera House
+[2025-04-18T07:38:27.791+0000] {attractions_dag.py:528} INFO -   (234/840) Geocoding: Buena Vista Park
+[2025-04-18T07:38:28.054+0000] {attractions_dag.py:528} INFO -   (235/840) Geocoding: Saints Peter And Paul Church
+[2025-04-18T07:38:28.425+0000] {attractions_dag.py:528} INFO -   (236/840) Geocoding: Pacific Heights
+[2025-04-18T07:38:28.735+0000] {attractions_dag.py:528} INFO -   (237/840) Geocoding: Maritime Museum
+[2025-04-18T07:38:28.995+0000] {attractions_dag.py:528} INFO -   (238/840) Geocoding: Pier 7
+[2025-04-18T07:38:29.246+0000] {attractions_dag.py:528} INFO -   (239/840) Geocoding: Greenwich Steps
+[2025-04-18T07:38:29.514+0000] {attractions_dag.py:528} INFO -   (240/840) Geocoding: Panhandle At Golden Gate Park
+[2025-04-18T07:38:29.795+0000] {attractions_dag.py:528} INFO -   (241/840) Geocoding: Warfield Theater
+[2025-04-18T07:38:30.077+0000] {attractions_dag.py:528} INFO -   (242/840) Geocoding: American Conservatory Theater
+[2025-04-18T07:38:30.339+0000] {attractions_dag.py:528} INFO -   (243/840) Geocoding: Museum Of The African Diaspora
+[2025-04-18T07:38:30.593+0000] {attractions_dag.py:528} INFO -   (244/840) Geocoding: Noe Valley
+[2025-04-18T07:38:30.831+0000] {attractions_dag.py:528} INFO -   (245/840) Geocoding: Angel Island Immigration Station
+[2025-04-18T07:38:31.090+0000] {attractions_dag.py:528} INFO -   (246/840) Geocoding: Hayes Valley
+[2025-04-18T07:38:31.326+0000] {attractions_dag.py:528} INFO -   (247/840) Geocoding: Heart Of The City Farmers Market
+[2025-04-18T07:38:31.648+0000] {attractions_dag.py:528} INFO -   (248/840) Geocoding: Sfo Aviation Museum
+[2025-04-18T07:38:31.950+0000] {attractions_dag.py:541} INFO - Completed batch 4. Sleeping before next batch...
+[2025-04-18T07:38:33.953+0000] {attractions_dag.py:521} INFO - Processing batch 5: rows 249 to 298
+[2025-04-18T07:38:33.954+0000] {attractions_dag.py:528} INFO -   (249/840) Geocoding: Gump S
+[2025-04-18T07:38:34.227+0000] {attractions_dag.py:528} INFO -   (250/840) Geocoding: Candy Baron
+[2025-04-18T07:38:34.487+0000] {attractions_dag.py:528} INFO -   (251/840) Geocoding: Corona Heights Park
+[2025-04-18T07:38:34.775+0000] {attractions_dag.py:528} INFO -   (252/840) Geocoding: Grateful Dead House
+[2025-04-18T07:38:35.029+0000] {attractions_dag.py:528} INFO -   (253/840) Geocoding: Pioneer Monument
+[2025-04-18T07:38:35.288+0000] {attractions_dag.py:528} INFO -   (254/840) Geocoding: Speakeasy Ales And Lagers
+[2025-04-18T07:38:35.557+0000] {attractions_dag.py:528} INFO -   (255/840) Geocoding: San Francisco National Cemetery
+[2025-04-18T07:38:35.823+0000] {attractions_dag.py:528} INFO -   (256/840) Geocoding: Clarion Alley Murals
+[2025-04-18T07:38:36.151+0000] {attractions_dag.py:528} INFO -   (257/840) Geocoding: Hendrik Point
+[2025-04-18T07:38:36.414+0000] {attractions_dag.py:528} INFO -   (258/840) Geocoding: Don Edwards San Francisco Bay Wildlife Refuge
+[2025-04-18T07:38:36.698+0000] {attractions_dag.py:528} INFO -   (259/840) Geocoding: Women S Building Mural
+[2025-04-18T07:38:36.968+0000] {attractions_dag.py:528} INFO -   (260/840) Geocoding: Yerba Buena Center For The Arts Ybca
+[2025-04-18T07:38:37.232+0000] {attractions_dag.py:528} INFO -   (261/840) Geocoding: Sutro Heights Park
+[2025-04-18T07:38:37.494+0000] {attractions_dag.py:528} INFO -   (262/840) Geocoding: Camera Obscura
+[2025-04-18T07:38:37.748+0000] {attractions_dag.py:528} INFO -   (263/840) Geocoding: Chinese Historical Society Of America Museum
+[2025-04-18T07:38:38.016+0000] {attractions_dag.py:528} INFO -   (264/840) Geocoding: Autodesk Gallery
+[2025-04-18T07:38:38.262+0000] {attractions_dag.py:528} INFO -   (265/840) Geocoding: National Aids Memorial Grove
+[2025-04-18T07:38:38.585+0000] {attractions_dag.py:528} INFO -   (266/840) Geocoding: The National Shrine Of Saint Francis Of Assisi
+[2025-04-18T07:38:38.859+0000] {attractions_dag.py:528} INFO -   (267/840) Geocoding: Cellarmaker Brewing Company
+[2025-04-18T07:38:39.125+0000] {attractions_dag.py:528} INFO -   (268/840) Geocoding: Mount Davidson
+[2025-04-18T07:38:39.396+0000] {attractions_dag.py:528} INFO -   (269/840) Geocoding: Hard Rock Cafe San Francisco
+[2025-04-18T07:38:39.572+0000] {attractions_dag.py:528} INFO -   (270/840) Geocoding: Potrero Hill
+[2025-04-18T07:38:39.836+0000] {attractions_dag.py:528} INFO -   (271/840) Geocoding: Neptune Society Columbarium
+[2025-04-18T07:38:40.088+0000] {attractions_dag.py:528} INFO -   (272/840) Geocoding: Lotta S Fountain
+[2025-04-18T07:38:40.354+0000] {attractions_dag.py:528} INFO -   (273/840) Geocoding: Alemany Flea Market
+[2025-04-18T07:38:40.614+0000] {attractions_dag.py:528} INFO -   (274/840) Geocoding: The Castro
+[2025-04-18T07:38:40.843+0000] {attractions_dag.py:528} INFO -   (275/840) Geocoding: Vermont Street
+[2025-04-18T07:38:41.150+0000] {attractions_dag.py:528} INFO -   (276/840) Geocoding: Anchor Brewing Company
+[2025-04-18T07:38:41.417+0000] {attractions_dag.py:528} INFO -   (277/840) Geocoding: Henry M Jackson Playground
+[2025-04-18T07:38:41.799+0000] {attractions_dag.py:528} INFO -   (278/840) Geocoding: Christopher S Books
+[2025-04-18T07:38:42.094+0000] {attractions_dag.py:528} INFO -   (279/840) Geocoding: Masonic Temple
+[2025-04-18T07:38:42.356+0000] {attractions_dag.py:528} INFO -   (280/840) Geocoding: Beach Chalet Brewery Restaurant
+[2025-04-18T07:38:42.626+0000] {attractions_dag.py:528} INFO -   (281/840) Geocoding: The Magic Theatre
+[2025-04-18T07:38:42.917+0000] {attractions_dag.py:528} INFO -   (282/840) Geocoding: Hidden Garden Steps
+[2025-04-18T07:38:43.170+0000] {attractions_dag.py:528} INFO -   (283/840) Geocoding: San Francisco Flower Mart
+[2025-04-18T07:38:43.442+0000] {attractions_dag.py:528} INFO -   (284/840) Geocoding: The Flood Building
+[2025-04-18T07:38:43.720+0000] {attractions_dag.py:528} INFO -   (285/840) Geocoding: Stockton Street
+[2025-04-18T07:38:43.962+0000] {attractions_dag.py:528} INFO -   (286/840) Geocoding: Crocker Galleria
+[2025-04-18T07:38:44.227+0000] {attractions_dag.py:528} INFO -   (287/840) Geocoding: Maiden Lane
+[2025-04-18T07:38:44.485+0000] {attractions_dag.py:528} INFO -   (288/840) Geocoding: Museo Italo Americano
+[2025-04-18T07:38:44.756+0000] {attractions_dag.py:528} INFO -   (289/840) Geocoding: Pier 24 Photography Museum
+[2025-04-18T07:38:45.038+0000] {attractions_dag.py:528} INFO -   (290/840) Geocoding: Swedenborgian Church
+[2025-04-18T07:38:45.319+0000] {attractions_dag.py:528} INFO -   (291/840) Geocoding: Sacramento Street
+[2025-04-18T07:38:45.568+0000] {attractions_dag.py:528} INFO -   (292/840) Geocoding: Occidental Cigar Club
+[2025-04-18T07:38:45.887+0000] {attractions_dag.py:528} INFO -   (293/840) Geocoding: Castro Theatre
+[2025-04-18T07:38:46.139+0000] {attractions_dag.py:528} INFO -   (294/840) Geocoding: Uss Pampanito
+[2025-04-18T07:38:46.382+0000] {attractions_dag.py:528} INFO -   (295/840) Geocoding: The Art Institute Of Chicago
+[2025-04-18T07:38:46.619+0000] {attractions_dag.py:528} INFO -   (296/840) Geocoding: Millennium Park
+[2025-04-18T07:38:46.852+0000] {attractions_dag.py:528} INFO -   (297/840) Geocoding: Willis Tower
+[2025-04-18T07:38:47.108+0000] {attractions_dag.py:528} INFO -   (298/840) Geocoding: Michigan Avenue
+[2025-04-18T07:38:47.338+0000] {attractions_dag.py:541} INFO - Completed batch 5. Sleeping before next batch...
+[2025-04-18T07:38:49.340+0000] {attractions_dag.py:521} INFO - Processing batch 6: rows 299 to 348
+[2025-04-18T07:38:49.342+0000] {attractions_dag.py:528} INFO -   (299/840) Geocoding: Museum Of Science And Industry
+[2025-04-18T07:38:49.574+0000] {attractions_dag.py:528} INFO -   (300/840) Geocoding: 360 Chicago Observation Deck
+[2025-04-18T07:38:49.787+0000] {attractions_dag.py:528} INFO -   (301/840) Geocoding: John Hancock Center
+[2025-04-18T07:38:50.009+0000] {attractions_dag.py:528} INFO -   (302/840) Geocoding: Wrigley Field
+[2025-04-18T07:38:50.235+0000] {attractions_dag.py:528} INFO -   (303/840) Geocoding: Field Museum Of Natural History
+[2025-04-18T07:38:50.495+0000] {attractions_dag.py:528} INFO -   (304/840) Geocoding: Lincoln Park
+[2025-04-18T07:38:50.748+0000] {attractions_dag.py:528} INFO -   (305/840) Geocoding: Chicago Cultural Center
+[2025-04-18T07:38:51.061+0000] {attractions_dag.py:528} INFO -   (306/840) Geocoding: Magnificent Mile
+[2025-04-18T07:38:51.351+0000] {attractions_dag.py:528} INFO -   (307/840) Geocoding: Lakefront Trail
+[2025-04-18T07:38:51.608+0000] {attractions_dag.py:528} INFO -   (308/840) Geocoding: Crown Fountain
+[2025-04-18T07:38:51.821+0000] {attractions_dag.py:528} INFO -   (309/840) Geocoding: United Center
+[2025-04-18T07:38:52.054+0000] {attractions_dag.py:528} INFO -   (310/840) Geocoding: Brookfield Zoo
+[2025-04-18T07:38:52.289+0000] {attractions_dag.py:528} INFO -   (311/840) Geocoding: Driehaus Museum
+[2025-04-18T07:38:52.533+0000] {attractions_dag.py:528} INFO -   (312/840) Geocoding: Chicago Riverwalk
+[2025-04-18T07:38:52.759+0000] {attractions_dag.py:528} INFO -   (313/840) Geocoding: Chicago Loop
+[2025-04-18T07:38:52.982+0000] {attractions_dag.py:528} INFO -   (314/840) Geocoding: House Of Blues
+[2025-04-18T07:38:53.210+0000] {attractions_dag.py:528} INFO -   (315/840) Geocoding: Kingston Mines
+[2025-04-18T07:38:53.461+0000] {attractions_dag.py:528} INFO -   (316/840) Geocoding: Lake Michigan
+[2025-04-18T07:38:53.683+0000] {attractions_dag.py:528} INFO -   (317/840) Geocoding: Symphony Center
+[2025-04-18T07:38:53.920+0000] {attractions_dag.py:528} INFO -   (318/840) Geocoding: Macys
+[2025-04-18T07:38:54.170+0000] {attractions_dag.py:528} INFO -   (319/840) Geocoding: Museum Of Contemporary Art Chicago
+[2025-04-18T07:38:54.432+0000] {attractions_dag.py:528} INFO -   (320/840) Geocoding: Buddy Guys Legends
+[2025-04-18T07:38:54.685+0000] {attractions_dag.py:528} INFO -   (321/840) Geocoding: Water Tower Place
+[2025-04-18T07:38:54.929+0000] {attractions_dag.py:528} INFO -   (322/840) Geocoding: Grant Park
+[2025-04-18T07:38:55.168+0000] {attractions_dag.py:528} INFO -   (323/840) Geocoding: Michigan Avenue Bridge
+[2025-04-18T07:38:55.419+0000] {attractions_dag.py:528} INFO -   (324/840) Geocoding: Pritzker Military Museum And Library
+[2025-04-18T07:38:55.682+0000] {attractions_dag.py:528} INFO -   (325/840) Geocoding: Chicago Children S Museum
+[2025-04-18T07:38:55.946+0000] {attractions_dag.py:528} INFO -   (326/840) Geocoding: American Girl Place Chicago
+[2025-04-18T07:38:56.215+0000] {attractions_dag.py:528} INFO -   (327/840) Geocoding: Peggy Notebaert Nature Museum
+[2025-04-18T07:38:56.519+0000] {attractions_dag.py:528} INFO -   (328/840) Geocoding: Harold Washington Library Center Chicago Public Library
+[2025-04-18T07:38:56.776+0000] {attractions_dag.py:528} INFO -   (329/840) Geocoding: Dylan S Candy Bar
+[2025-04-18T07:38:57.047+0000] {attractions_dag.py:528} INFO -   (330/840) Geocoding: Adagio Teas Chicago
+[2025-04-18T07:38:57.295+0000] {attractions_dag.py:528} INFO -   (331/840) Geocoding: Fox In A Box Chicago
+[2025-04-18T07:38:57.533+0000] {attractions_dag.py:528} INFO -   (332/840) Geocoding: Andersonville
+[2025-04-18T07:38:57.768+0000] {attractions_dag.py:528} INFO -   (333/840) Geocoding: Rockefeller Chapel
+[2025-04-18T07:38:58.007+0000] {attractions_dag.py:528} INFO -   (334/840) Geocoding: Flamingo
+[2025-04-18T07:38:58.230+0000] {attractions_dag.py:528} INFO -   (335/840) Geocoding: Lurie Garden
+[2025-04-18T07:38:58.494+0000] {attractions_dag.py:528} INFO -   (336/840) Geocoding: Museum Of Broadcast Communications
+[2025-04-18T07:38:58.738+0000] {attractions_dag.py:528} INFO -   (337/840) Geocoding: Hyde Park
+[2025-04-18T07:38:58.979+0000] {attractions_dag.py:528} INFO -   (338/840) Geocoding: 900 North Michigan
+[2025-04-18T07:38:59.231+0000] {attractions_dag.py:528} INFO -   (339/840) Geocoding: Hull House
+[2025-04-18T07:38:59.483+0000] {attractions_dag.py:528} INFO -   (340/840) Geocoding: Dusable Museum Of African American History
+[2025-04-18T07:38:59.734+0000] {attractions_dag.py:528} INFO -   (341/840) Geocoding: Briar Street Theater
+[2025-04-18T07:38:59.991+0000] {attractions_dag.py:528} INFO -   (342/840) Geocoding: Aqua Tower
+[2025-04-18T07:39:00.243+0000] {attractions_dag.py:528} INFO -   (343/840) Geocoding: Newberry Library
+[2025-04-18T07:39:00.493+0000] {attractions_dag.py:528} INFO -   (344/840) Geocoding: Dana Hotel Spa
+[2025-04-18T07:39:00.758+0000] {attractions_dag.py:528} INFO -   (345/840) Geocoding: Smart Museum Of Art
+[2025-04-18T07:39:01.004+0000] {attractions_dag.py:528} INFO -   (346/840) Geocoding: Chicago Pedway
+[2025-04-18T07:39:01.310+0000] {attractions_dag.py:528} INFO -   (347/840) Geocoding: Chicago Distilling Company
+[2025-04-18T07:39:01.551+0000] {attractions_dag.py:528} INFO -   (348/840) Geocoding: The Moody Church
+[2025-04-18T07:39:01.802+0000] {attractions_dag.py:541} INFO - Completed batch 6. Sleeping before next batch...
+[2025-04-18T07:39:03.805+0000] {attractions_dag.py:521} INFO - Processing batch 7: rows 349 to 398
+[2025-04-18T07:39:03.806+0000] {attractions_dag.py:528} INFO -   (349/840) Geocoding: St James Cathedral
+[2025-04-18T07:39:04.052+0000] {attractions_dag.py:528} INFO -   (350/840) Geocoding: Half Acre Beer Company
+[2025-04-18T07:39:04.286+0000] {attractions_dag.py:528} INFO -   (351/840) Geocoding: Polish Museum Of America
+[2025-04-18T07:39:04.541+0000] {attractions_dag.py:528} INFO -   (352/840) Geocoding: Music Box Theatre
+[2025-04-18T07:39:04.784+0000] {attractions_dag.py:528} INFO -   (353/840) Geocoding: First United Methodist Church Of Chicago
+[2025-04-18T07:39:05.038+0000] {attractions_dag.py:528} INFO -   (354/840) Geocoding: Randolph Street Market
+[2025-04-18T07:39:05.273+0000] {attractions_dag.py:528} INFO -   (355/840) Geocoding: Rosehill Cemetery
+[2025-04-18T07:39:05.529+0000] {attractions_dag.py:528} INFO -   (356/840) Geocoding: Mccormick Tribune Ice Rink
+[2025-04-18T07:39:05.778+0000] {attractions_dag.py:528} INFO -   (357/840) Geocoding: Elks Veterans Memorial
+[2025-04-18T07:39:06.029+0000] {attractions_dag.py:528} INFO -   (358/840) Geocoding: Disney Store
+[2025-04-18T07:39:06.258+0000] {attractions_dag.py:528} INFO -   (359/840) Geocoding: Agora Sculptures
+[2025-04-18T07:39:06.556+0000] {attractions_dag.py:528} INFO -   (360/840) Geocoding: Galos Caves Spa
+[2025-04-18T07:39:06.794+0000] {attractions_dag.py:528} INFO -   (361/840) Geocoding: Fisher Building
+[2025-04-18T07:39:07.115+0000] {attractions_dag.py:528} INFO -   (362/840) Geocoding: Merchandise Mart
+[2025-04-18T07:39:07.356+0000] {attractions_dag.py:528} INFO -   (363/840) Geocoding: Holy Name Cathedral
+[2025-04-18T07:39:07.598+0000] {attractions_dag.py:528} INFO -   (364/840) Geocoding: Marina City
+[2025-04-18T07:39:07.814+0000] {attractions_dag.py:528} INFO -   (365/840) Geocoding: Old Water Tower
+[2025-04-18T07:39:08.065+0000] {attractions_dag.py:528} INFO -   (366/840) Geocoding: Christkindlmarket
+[2025-04-18T07:39:08.308+0000] {attractions_dag.py:528} INFO -   (367/840) Geocoding: Loyola University Museum Of Art
+[2025-04-18T07:39:08.558+0000] {attractions_dag.py:528} INFO -   (368/840) Geocoding: Centennial Wheel
+[2025-04-18T07:39:08.862+0000] {attractions_dag.py:528} INFO -   (369/840) Geocoding: Chicago Burger Company
+[2025-04-18T07:39:09.099+0000] {attractions_dag.py:528} INFO -   (370/840) Geocoding: East Lower Wacker Drive
+[2025-04-18T07:39:09.339+0000] {attractions_dag.py:528} INFO -   (371/840) Geocoding: Five Faces Ice Cream Shop
+[2025-04-18T07:39:09.644+0000] {attractions_dag.py:528} INFO -   (372/840) Geocoding: Taste Of Chicago
+[2025-04-18T07:39:09.888+0000] {attractions_dag.py:528} INFO -   (373/840) Geocoding: The Scout Waterhouse Kitchen
+[2025-04-18T07:39:10.130+0000] {attractions_dag.py:528} INFO -   (374/840) Geocoding: Chicago Rockford International Airport
+[2025-04-18T07:39:10.367+0000] {attractions_dag.py:528} INFO -   (375/840) Geocoding: 59772f505840d440270003ae
+[2025-04-18T07:39:10.572+0000] {attractions_dag.py:528} INFO -   (376/840) Geocoding: Terra Museum Of American Art
+[2025-04-18T07:39:10.787+0000] {attractions_dag.py:528} INFO -   (377/840) Geocoding: University Of Il Library
+[2025-04-18T07:39:11.025+0000] {attractions_dag.py:528} INFO -   (378/840) Geocoding: Garfield Ridge Public Library
+[2025-04-18T07:39:11.265+0000] {attractions_dag.py:528} INFO -   (379/840) Geocoding: Helen Brach Primate House
+[2025-04-18T07:39:11.589+0000] {attractions_dag.py:528} INFO -   (380/840) Geocoding: Chicago City Library
+[2025-04-18T07:39:11.807+0000] {attractions_dag.py:528} INFO -   (381/840) Geocoding: Mobile City Customers With Disabilities
+[2025-04-18T07:39:12.046+0000] {attractions_dag.py:528} INFO -   (382/840) Geocoding: National Jazz Museum
+[2025-04-18T07:39:12.284+0000] {attractions_dag.py:528} INFO -   (383/840) Geocoding: Mccormick Freedom Project
+[2025-04-18T07:39:12.533+0000] {attractions_dag.py:528} INFO -   (384/840) Geocoding: Joseph G Stromberg Library
+[2025-04-18T07:39:12.778+0000] {attractions_dag.py:528} INFO -   (385/840) Geocoding: Driehaus Enterprise Management
+[2025-04-18T07:39:12.989+0000] {attractions_dag.py:528} INFO -   (386/840) Geocoding: Health Science Library
+[2025-04-18T07:39:13.230+0000] {attractions_dag.py:528} INFO -   (387/840) Geocoding: Rogers Park Historical Society
+[2025-04-18T07:39:13.475+0000] {attractions_dag.py:528} INFO -   (388/840) Geocoding: Galewood Mont Clare Library
+[2025-04-18T07:39:13.727+0000] {attractions_dag.py:528} INFO -   (389/840) Geocoding: Chicago Maritime Museum
+[2025-04-18T07:39:13.980+0000] {attractions_dag.py:528} INFO -   (390/840) Geocoding: Vivian G Harsh Society
+[2025-04-18T07:39:14.215+0000] {attractions_dag.py:528} INFO -   (391/840) Geocoding: Sackrider Museum Of Handbags
+[2025-04-18T07:39:14.448+0000] {attractions_dag.py:528} INFO -   (392/840) Geocoding: Inventing Lab Chicago Childrens Museum
+[2025-04-18T07:39:14.705+0000] {attractions_dag.py:528} INFO -   (393/840) Geocoding: James P Fitzgibbons Hstrcl Msm
+[2025-04-18T07:39:14.959+0000] {attractions_dag.py:528} INFO -   (394/840) Geocoding: Chicago Academy Of Sciences
+[2025-04-18T07:39:15.208+0000] {attractions_dag.py:528} INFO -   (395/840) Geocoding: City Of Chicago Board Of Elections Whitney Young L
+[2025-04-18T07:39:15.481+0000] {attractions_dag.py:528} INFO -   (396/840) Geocoding: Museum Africa
+[2025-04-18T07:39:15.701+0000] {attractions_dag.py:528} INFO -   (397/840) Geocoding: Library Media Project
+[2025-04-18T07:39:15.943+0000] {attractions_dag.py:528} INFO -   (398/840) Geocoding: Chinatown Library
+[2025-04-18T07:39:16.192+0000] {attractions_dag.py:541} INFO - Completed batch 7. Sleeping before next batch...
+[2025-04-18T07:39:18.195+0000] {attractions_dag.py:521} INFO - Processing batch 8: rows 399 to 448
+[2025-04-18T07:39:18.196+0000] {attractions_dag.py:528} INFO -   (399/840) Geocoding: Benjamin B Green Field Natl
+[2025-04-18T07:39:18.471+0000] {attractions_dag.py:528} INFO -   (400/840) Geocoding: Nat L Italian Amer Sports Hll Of Fm
+[2025-04-18T07:39:18.753+0000] {attractions_dag.py:528} INFO -   (401/840) Geocoding: Midwest Library
+[2025-04-18T07:39:18.971+0000] {attractions_dag.py:528} INFO -   (402/840) Geocoding: Galeria Gala
+[2025-04-18T07:39:19.215+0000] {attractions_dag.py:528} INFO -   (403/840) Geocoding: Fine Art Portraiture
+[2025-04-18T07:39:19.467+0000] {attractions_dag.py:528} INFO -   (404/840) Geocoding: Joseph Brennemann Library
+[2025-04-18T07:39:19.723+0000] {attractions_dag.py:528} INFO -   (405/840) Geocoding: Lewison Memorial Library
+[2025-04-18T07:39:19.974+0000] {attractions_dag.py:528} INFO -   (406/840) Geocoding: Kovler Sea Lion House
+[2025-04-18T07:39:20.252+0000] {attractions_dag.py:528} INFO -   (407/840) Geocoding: Association For Library Service To Child
+[2025-04-18T07:39:20.494+0000] {attractions_dag.py:528} INFO -   (408/840) Geocoding: Associated Library Service
+[2025-04-18T07:39:20.747+0000] {attractions_dag.py:528} INFO -   (409/840) Geocoding: Museum Campus Bike Park Chicago
+[2025-04-18T07:39:21.067+0000] {attractions_dag.py:528} INFO -   (410/840) Geocoding: The Capo Museum
+[2025-04-18T07:39:21.309+0000] {attractions_dag.py:528} INFO -   (411/840) Geocoding: Ray Cosgrove Library
+[2025-04-18T07:39:21.556+0000] {attractions_dag.py:528} INFO -   (412/840) Geocoding: Chicago Athenaeum Museum Of Architecture And Design
+[2025-04-18T07:39:21.785+0000] {attractions_dag.py:528} INFO -   (413/840) Geocoding: Ravenswood Lake View Hist Asso
+[2025-04-18T07:39:22.086+0000] {attractions_dag.py:528} INFO -   (414/840) Geocoding: Egg
+[2025-04-18T07:39:22.291+0000] {attractions_dag.py:528} INFO -   (415/840) Geocoding: Hands On Children S Art Museum
+[2025-04-18T07:39:22.541+0000] {attractions_dag.py:528} INFO -   (416/840) Geocoding: Volo Auto Museum
+[2025-04-18T07:39:22.764+0000] {attractions_dag.py:528} INFO -   (417/840) Geocoding: Mexican Museum Of Culture
+[2025-04-18T07:39:23.015+0000] {attractions_dag.py:528} INFO -   (418/840) Geocoding: 360 Chicago In Chicago United States
+[2025-04-18T07:39:23.240+0000] {attractions_dag.py:528} INFO -   (419/840) Geocoding: Indo American Heritage Museum
+[2025-04-18T07:39:23.498+0000] {attractions_dag.py:528} INFO -   (420/840) Geocoding: City Chicago Board Elections
+[2025-04-18T07:39:23.761+0000] {attractions_dag.py:528} INFO -   (421/840) Geocoding: West Addison Library
+[2025-04-18T07:39:24.013+0000] {attractions_dag.py:528} INFO -   (422/840) Geocoding: Chicago Baseball Museum
+[2025-04-18T07:39:24.225+0000] {attractions_dag.py:528} INFO -   (423/840) Geocoding: Sulzer Library Security Post
+[2025-04-18T07:39:24.472+0000] {attractions_dag.py:528} INFO -   (424/840) Geocoding: Chicago Maritime Society
+[2025-04-18T07:39:24.699+0000] {attractions_dag.py:528} INFO -   (425/840) Geocoding: City Of Chicago Board Of Elections
+[2025-04-18T07:39:24.913+0000] {attractions_dag.py:528} INFO -   (426/840) Geocoding: Santa S Library
+[2025-04-18T07:39:25.170+0000] {attractions_dag.py:528} INFO -   (427/840) Geocoding: Galleria 773
+[2025-04-18T07:39:25.405+0000] {attractions_dag.py:528} INFO -   (428/840) Geocoding: City Of Chicago Central Library Main Branch Harold Washington Library Center
+[2025-04-18T07:39:25.702+0000] {attractions_dag.py:528} INFO -   (429/840) Geocoding: Chicago Aquarium Consulting
+[2025-04-18T07:39:25.946+0000] {attractions_dag.py:528} INFO -   (430/840) Geocoding: Thomas Hughes Children S Lbrry
+[2025-04-18T07:39:26.213+0000] {attractions_dag.py:528} INFO -   (431/840) Geocoding: Appellate Court Library
+[2025-04-18T07:39:26.464+0000] {attractions_dag.py:528} INFO -   (432/840) Geocoding: Chicago Blues Museum Gallery
+[2025-04-18T07:39:26.782+0000] {attractions_dag.py:528} INFO -   (433/840) Geocoding: Chicago Library For The Blind
+[2025-04-18T07:39:27.020+0000] {attractions_dag.py:528} INFO -   (434/840) Geocoding: Museum Pointe
+[2025-04-18T07:39:27.252+0000] {attractions_dag.py:528} INFO -   (435/840) Geocoding: Chicago Discus
+[2025-04-18T07:39:27.501+0000] {attractions_dag.py:528} INFO -   (436/840) Geocoding: All Moxie
+[2025-04-18T07:39:27.756+0000] {attractions_dag.py:528} INFO -   (437/840) Geocoding: Lincoln Park Zoo West Entrance
+[2025-04-18T07:39:28.049+0000] {attractions_dag.py:528} INFO -   (438/840) Geocoding: Snack Naturally
+[2025-04-18T07:39:28.336+0000] {attractions_dag.py:528} INFO -   (439/840) Geocoding: Continuing Studies
+[2025-04-18T07:39:28.559+0000] {attractions_dag.py:528} INFO -   (440/840) Geocoding: Fremont Street Experience
+[2025-04-18T07:39:28.789+0000] {attractions_dag.py:528} INFO -   (441/840) Geocoding: Fountains Of Bellagio
+[2025-04-18T07:39:29.038+0000] {attractions_dag.py:528} INFO -   (442/840) Geocoding: Fremont Street
+[2025-04-18T07:39:29.277+0000] {attractions_dag.py:528} INFO -   (443/840) Geocoding: Luxor Hotel And Casino
+[2025-04-18T07:39:29.509+0000] {attractions_dag.py:528} INFO -   (444/840) Geocoding: Red Rock Canyon National Conservation Area
+[2025-04-18T07:39:29.800+0000] {attractions_dag.py:528} INFO -   (445/840) Geocoding: Encore
+[2025-04-18T07:39:30.044+0000] {attractions_dag.py:528} INFO -   (446/840) Geocoding: Beatleshow Orchestra
+[2025-04-18T07:39:30.310+0000] {attractions_dag.py:528} INFO -   (447/840) Geocoding: The Venetian
+[2025-04-18T07:39:30.555+0000] {attractions_dag.py:528} INFO -   (448/840) Geocoding: Mount Charleston
+[2025-04-18T07:39:30.798+0000] {attractions_dag.py:541} INFO - Completed batch 8. Sleeping before next batch...
+[2025-04-18T07:39:32.802+0000] {attractions_dag.py:521} INFO - Processing batch 9: rows 449 to 498
+[2025-04-18T07:39:32.802+0000] {attractions_dag.py:528} INFO -   (449/840) Geocoding: The Strip
+[2025-04-18T07:39:33.018+0000] {attractions_dag.py:528} INFO -   (450/840) Geocoding: Atomic Testing Museum
+[2025-04-18T07:39:33.251+0000] {attractions_dag.py:528} INFO -   (451/840) Geocoding: Golden Nugget
+[2025-04-18T07:39:33.483+0000] {attractions_dag.py:528} INFO -   (452/840) Geocoding: Circus Circus Las Vegas Hotel And Casino
+[2025-04-18T07:39:33.786+0000] {attractions_dag.py:528} INFO -   (453/840) Geocoding: Stratosphere Casino Hotel And Tower
+[2025-04-18T07:39:34.103+0000] {attractions_dag.py:528} INFO -   (454/840) Geocoding: High Roller
+[2025-04-18T07:39:34.332+0000] {attractions_dag.py:528} INFO -   (455/840) Geocoding: Eiffel Tower Experience
+[2025-04-18T07:39:34.586+0000] {attractions_dag.py:528} INFO -   (456/840) Geocoding: The Crystals
+[2025-04-18T07:39:34.823+0000] {attractions_dag.py:528} INFO -   (457/840) Geocoding: Las Vegas Premium Outlets North
+[2025-04-18T07:39:35.083+0000] {attractions_dag.py:528} INFO -   (458/840) Geocoding: Battlefield Vegas
+[2025-04-18T07:39:35.338+0000] {attractions_dag.py:528} INFO -   (459/840) Geocoding: Raiding The Rock Vault
+[2025-04-18T07:39:35.601+0000] {attractions_dag.py:528} INFO -   (460/840) Geocoding: Gold And Silver Pawn Shop
+[2025-04-18T07:39:35.921+0000] {attractions_dag.py:528} INFO -   (461/840) Geocoding: Valley Of Fire State Park
+[2025-04-18T07:39:36.193+0000] {attractions_dag.py:528} INFO -   (462/840) Geocoding: Penn And Teller
+[2025-04-18T07:39:36.439+0000] {attractions_dag.py:528} INFO -   (463/840) Geocoding: The Neon Museum
+[2025-04-18T07:39:36.702+0000] {attractions_dag.py:528} INFO -   (464/840) Geocoding: Shark Reef At Mandalay Bay
+[2025-04-18T07:39:36.948+0000] {attractions_dag.py:528} INFO -   (465/840) Geocoding: Chapel Of The Flowers
+[2025-04-18T07:39:37.201+0000] {attractions_dag.py:528} INFO -   (466/840) Geocoding: Dig This Las Vegas
+[2025-04-18T07:39:37.447+0000] {attractions_dag.py:528} INFO -   (467/840) Geocoding: Las Vegas South Premium Outlets
+[2025-04-18T07:39:37.703+0000] {attractions_dag.py:528} INFO -   (468/840) Geocoding: Pinball Hall Of Fame
+[2025-04-18T07:39:37.957+0000] {attractions_dag.py:528} INFO -   (469/840) Geocoding: M And M S World
+[2025-04-18T07:39:38.215+0000] {attractions_dag.py:528} INFO -   (470/840) Geocoding: Paris Las Vegas
+[2025-04-18T07:39:38.450+0000] {attractions_dag.py:528} INFO -   (471/840) Geocoding: Caesars Palace
+[2025-04-18T07:39:38.760+0000] {attractions_dag.py:528} INFO -   (472/840) Geocoding: Rick S Restorations
+[2025-04-18T07:39:39.015+0000] {attractions_dag.py:528} INFO -   (473/840) Geocoding: Adventuredome
+[2025-04-18T07:39:39.272+0000] {attractions_dag.py:528} INFO -   (474/840) Geocoding: Purple Reign The Prince Tribute Show
+[2025-04-18T07:39:39.523+0000] {attractions_dag.py:528} INFO -   (475/840) Geocoding: Marriage Can Be Murder
+[2025-04-18T07:39:39.750+0000] {attractions_dag.py:528} INFO -   (476/840) Geocoding: Count S Kustoms
+[2025-04-18T07:39:40.003+0000] {attractions_dag.py:528} INFO -   (477/840) Geocoding: Mgm Grand
+[2025-04-18T07:39:40.224+0000] {attractions_dag.py:528} INFO -   (478/840) Geocoding: Marquee Nightclub And Dayclub
+[2025-04-18T07:39:40.476+0000] {attractions_dag.py:528} INFO -   (479/840) Geocoding: Planet Hollywood Resort And Casino
+[2025-04-18T07:39:40.707+0000] {attractions_dag.py:528} INFO -   (480/840) Geocoding: Hypnosis Unleashed Starring Kevin Lepine
+[2025-04-18T07:39:40.960+0000] {attractions_dag.py:528} INFO -   (481/840) Geocoding: Sugar Factory
+[2025-04-18T07:39:41.201+0000] {attractions_dag.py:528} INFO -   (482/840) Geocoding: Hershey S Chocolate World
+[2025-04-18T07:39:41.456+0000] {attractions_dag.py:528} INFO -   (483/840) Geocoding: The Mirage
+[2025-04-18T07:39:41.719+0000] {attractions_dag.py:528} INFO -   (484/840) Geocoding: Las Vegas Motor Speedway
+[2025-04-18T07:39:41.969+0000] {attractions_dag.py:528} INFO -   (485/840) Geocoding: Town Square
+[2025-04-18T07:39:42.204+0000] {attractions_dag.py:528} INFO -   (486/840) Geocoding: Springs Preserve
+[2025-04-18T07:39:42.524+0000] {attractions_dag.py:528} INFO -   (487/840) Geocoding: 54730202e70545480b000023
+[2025-04-18T07:39:42.743+0000] {attractions_dag.py:528} INFO -   (488/840) Geocoding: Gregory Popovich S Comedy Pet Theater
+[2025-04-18T07:39:43.003+0000] {attractions_dag.py:528} INFO -   (489/840) Geocoding: Peppermill S Fireside Lounge
+[2025-04-18T07:39:43.275+0000] {attractions_dag.py:528} INFO -   (490/840) Geocoding: Veronic Voices
+[2025-04-18T07:39:43.547+0000] {attractions_dag.py:528} INFO -   (491/840) Geocoding: Las Vegas Paiute Golf Resort
+[2025-04-18T07:39:43.896+0000] {attractions_dag.py:528} INFO -   (492/840) Geocoding: Cbs Television City Research Centre
+[2025-04-18T07:39:44.139+0000] {attractions_dag.py:528} INFO -   (493/840) Geocoding: Discovery Children S Museum
+[2025-04-18T07:39:44.392+0000] {attractions_dag.py:528} INFO -   (494/840) Geocoding: Banger Brewing
+[2025-04-18T07:39:44.637+0000] {attractions_dag.py:528} INFO -   (495/840) Geocoding: Las Vegas Natural History Museum
+[2025-04-18T07:39:44.920+0000] {attractions_dag.py:528} INFO -   (496/840) Geocoding: The Aquarium At Silverton
+[2025-04-18T07:39:45.161+0000] {attractions_dag.py:528} INFO -   (497/840) Geocoding: Lee Canyon Ski And Snowboard Resort
+[2025-04-18T07:39:45.461+0000] {attractions_dag.py:528} INFO -   (498/840) Geocoding: Hollywood Cars Museum
+[2025-04-18T07:39:45.783+0000] {attractions_dag.py:541} INFO - Completed batch 9. Sleeping before next batch...
+[2025-04-18T07:39:47.789+0000] {attractions_dag.py:521} INFO - Processing batch 10: rows 499 to 548
+[2025-04-18T07:39:47.790+0000] {attractions_dag.py:528} INFO -   (499/840) Geocoding: 597740285840d43f540014d1
+[2025-04-18T07:39:48.003+0000] {attractions_dag.py:528} INFO -   (500/840) Geocoding: Jarvis Ritholz Fine Arts
+[2025-04-18T07:39:48.251+0000] {attractions_dag.py:528} INFO -   (501/840) Geocoding: Las Vegas Rail Road Society
+[2025-04-18T07:39:48.482+0000] {attractions_dag.py:528} INFO -   (502/840) Geocoding: Umc Southern Nevada Med Libr
+[2025-04-18T07:39:48.791+0000] {attractions_dag.py:528} INFO -   (503/840) Geocoding: Austine Studio
+[2025-04-18T07:39:49.043+0000] {attractions_dag.py:528} INFO -   (504/840) Geocoding: Seaquest Interactive Aquarium
+[2025-04-18T07:39:49.287+0000] {attractions_dag.py:528} INFO -   (505/840) Geocoding: Las Vegas Clark County Library
+[2025-04-18T07:39:49.647+0000] {attractions_dag.py:528} INFO -   (506/840) Geocoding: Harry Mohney Erotica Museum
+[2025-04-18T07:39:49.912+0000] {attractions_dag.py:528} INFO -   (507/840) Geocoding: Ocean Images
+[2025-04-18T07:39:50.224+0000] {attractions_dag.py:528} INFO -   (508/840) Geocoding: Mt Charleston Public Library
+[2025-04-18T07:39:50.468+0000] {attractions_dag.py:528} INFO -   (509/840) Geocoding: The King S Ransom Museum
+[2025-04-18T07:39:50.741+0000] {attractions_dag.py:528} INFO -   (510/840) Geocoding: Madame Tussaud S Wax Museum
+[2025-04-18T07:39:50.994+0000] {attractions_dag.py:528} INFO -   (511/840) Geocoding: Gambler S Museum Shop
+[2025-04-18T07:39:51.261+0000] {attractions_dag.py:528} INFO -   (512/840) Geocoding: James R Dickinson Library
+[2025-04-18T07:39:51.510+0000] {attractions_dag.py:528} INFO -   (513/840) Geocoding: Metropolitan Museum Of Arts
+[2025-04-18T07:39:51.740+0000] {attractions_dag.py:528} INFO -   (514/840) Geocoding: Guinness World Of Records Museum
+[2025-04-18T07:39:51.996+0000] {attractions_dag.py:528} INFO -   (515/840) Geocoding: Debbie Reynolds Hollywood
+[2025-04-18T07:39:52.246+0000] {attractions_dag.py:528} INFO -   (516/840) Geocoding: Morrow S Maintenance Service
+[2025-04-18T07:39:52.469+0000] {attractions_dag.py:528} INFO -   (517/840) Geocoding: Aquatic Environments
+[2025-04-18T07:39:52.719+0000] {attractions_dag.py:528} INFO -   (518/840) Geocoding: Discovery Childrens Museum
+[2025-04-18T07:39:52.969+0000] {attractions_dag.py:528} INFO -   (519/840) Geocoding: Us Law Library
+[2025-04-18T07:39:53.232+0000] {attractions_dag.py:528} INFO -   (520/840) Geocoding: White Tiger Habitat At The Mirage
+[2025-04-18T07:39:53.472+0000] {attractions_dag.py:528} INFO -   (521/840) Geocoding: Lik Mandalay
+[2025-04-18T07:39:53.721+0000] {attractions_dag.py:528} INFO -   (522/840) Geocoding: Las Vegas Metropolitan Police Museum
+[2025-04-18T07:39:53.979+0000] {attractions_dag.py:528} INFO -   (523/840) Geocoding: Regal Aquarium Maintenance
+[2025-04-18T07:39:54.239+0000] {attractions_dag.py:528} INFO -   (524/840) Geocoding: Mona The Museum Of Natural Art
+[2025-04-18T07:39:54.497+0000] {attractions_dag.py:528} INFO -   (525/840) Geocoding: Jim Rogers Sunbelt Auto
+[2025-04-18T07:39:54.780+0000] {attractions_dag.py:528} INFO -   (526/840) Geocoding: A Magic
+[2025-04-18T07:39:55.015+0000] {attractions_dag.py:528} INFO -   (527/840) Geocoding: Lake Las Vegas
+[2025-04-18T07:39:55.257+0000] {attractions_dag.py:528} INFO -   (528/840) Geocoding: Empire Ballroom
+[2025-04-18T07:39:55.512+0000] {attractions_dag.py:528} INFO -   (529/840) Geocoding: The Steakhouse
+[2025-04-18T07:39:55.773+0000] {attractions_dag.py:528} INFO -   (530/840) Geocoding: Mon Ami Gabi
+[2025-04-18T07:39:56.024+0000] {attractions_dag.py:528} INFO -   (531/840) Geocoding: Mon Ami Gabi Restaurant
+[2025-04-18T07:39:56.257+0000] {attractions_dag.py:528} INFO -   (532/840) Geocoding: Grand Canyon National Park
+[2025-04-18T07:39:56.493+0000] {attractions_dag.py:528} INFO -   (533/840) Geocoding: Fantasy At Luxor
+[2025-04-18T07:39:56.724+0000] {attractions_dag.py:528} INFO -   (534/840) Geocoding: Sugar Factory American Brasserie
+[2025-04-18T07:39:56.984+0000] {attractions_dag.py:528} INFO -   (535/840) Geocoding: Minus 5 Ice Bar
+[2025-04-18T07:39:57.242+0000] {attractions_dag.py:528} INFO -   (536/840) Geocoding: Sprinkles Cupcakes
+[2025-04-18T07:39:57.509+0000] {attractions_dag.py:528} INFO -   (537/840) Geocoding: Mandalay Bay
+[2025-04-18T07:39:57.757+0000] {attractions_dag.py:528} INFO -   (538/840) Geocoding: Border Grill Las Vegas
+[2025-04-18T07:39:58.020+0000] {attractions_dag.py:528} INFO -   (539/840) Geocoding: Dick S Last Resort
+[2025-04-18T07:39:58.282+0000] {attractions_dag.py:528} INFO -   (540/840) Geocoding: Mgm Grand Buffet
+[2025-04-18T07:39:58.556+0000] {attractions_dag.py:528} INFO -   (541/840) Geocoding: Voodoo Steakhouse
+[2025-04-18T07:39:58.810+0000] {attractions_dag.py:528} INFO -   (542/840) Geocoding: House Of Blues
+[2025-04-18T07:39:59.126+0000] {attractions_dag.py:528} INFO -   (543/840) Geocoding: Park On Fremont
+[2025-04-18T07:39:59.381+0000] {attractions_dag.py:528} INFO -   (544/840) Geocoding: Michaels
+[2025-04-18T07:39:59.626+0000] {attractions_dag.py:528} INFO -   (545/840) Geocoding: Jo Ann Fabric And Craft Stores
+[2025-04-18T07:39:59.934+0000] {attractions_dag.py:528} INFO -   (546/840) Geocoding: Voodoo Beach
+[2025-04-18T07:40:00.189+0000] {attractions_dag.py:528} INFO -   (547/840) Geocoding: Bellagio Conservatory Botanical Gardens
+[2025-04-18T07:40:00.443+0000] {attractions_dag.py:528} INFO -   (548/840) Geocoding: Tous Miracle Mile Shops At Planet Hollywood Resorts And Casino
+[2025-04-18T07:40:00.757+0000] {attractions_dag.py:541} INFO - Completed batch 10. Sleeping before next batch...
+[2025-04-18T07:40:02.764+0000] {attractions_dag.py:521} INFO - Processing batch 11: rows 549 to 598
+[2025-04-18T07:40:02.765+0000] {attractions_dag.py:528} INFO -   (549/840) Geocoding: Gold Silver Pawn Shop
+[2025-04-18T07:40:03.003+0000] {attractions_dag.py:528} INFO -   (550/840) Geocoding: Ports O Call Buffet
+[2025-04-18T07:40:03.255+0000] {attractions_dag.py:528} INFO -   (551/840) Geocoding: Ronald S Donuts
+[2025-04-18T07:40:03.513+0000] {attractions_dag.py:528} INFO -   (552/840) Geocoding: Cashman Field
+[2025-04-18T07:40:03.766+0000] {attractions_dag.py:528} INFO -   (553/840) Geocoding: The Buffet Bellagio
+[2025-04-18T07:40:04.019+0000] {attractions_dag.py:528} INFO -   (554/840) Geocoding: Jest Serendipity Improv
+[2025-04-18T07:40:04.267+0000] {attractions_dag.py:528} INFO -   (555/840) Geocoding: Twin Peaks Las Vegas
+[2025-04-18T07:40:04.505+0000] {attractions_dag.py:528} INFO -   (556/840) Geocoding: Tahiti Village Resort And Spa
+[2025-04-18T07:40:04.763+0000] {attractions_dag.py:528} INFO -   (557/840) Geocoding: Gondola Rides
+[2025-04-18T07:40:05.005+0000] {attractions_dag.py:528} INFO -   (558/840) Geocoding: The Linq Las Vegas
+[2025-04-18T07:40:05.319+0000] {attractions_dag.py:528} INFO -   (559/840) Geocoding: Stratosphere Thrill Rides
+[2025-04-18T07:40:05.551+0000] {attractions_dag.py:528} INFO -   (560/840) Geocoding: Neon Boneyard
+[2025-04-18T07:40:05.779+0000] {attractions_dag.py:528} INFO -   (561/840) Geocoding: Everything Coca Cola Las Vegas
+[2025-04-18T07:40:06.034+0000] {attractions_dag.py:528} INFO -   (562/840) Geocoding: La Creperie
+[2025-04-18T07:40:06.286+0000] {attractions_dag.py:528} INFO -   (563/840) Geocoding: Hash House
+[2025-04-18T07:40:06.530+0000] {attractions_dag.py:528} INFO -   (564/840) Geocoding: Shrine Of The Most Holy Redeemer
+[2025-04-18T07:40:06.807+0000] {attractions_dag.py:528} INFO -   (565/840) Geocoding: Lion Habitat
+[2025-04-18T07:40:07.062+0000] {attractions_dag.py:528} INFO -   (566/840) Geocoding: Dragonridge Country Club
+[2025-04-18T07:40:07.323+0000] {attractions_dag.py:528} INFO -   (567/840) Geocoding: Las Vegas Ski Snowboard Resort
+[2025-04-18T07:40:07.583+0000] {attractions_dag.py:528} INFO -   (568/840) Geocoding: Hakkasan Las Vegas Nightclub
+[2025-04-18T07:40:07.844+0000] {attractions_dag.py:528} INFO -   (569/840) Geocoding: The Signature At Mgm Grand Tower B
+[2025-04-18T07:40:08.155+0000] {attractions_dag.py:528} INFO -   (570/840) Geocoding: Bodies The Exhibition
+[2025-04-18T07:40:08.409+0000] {attractions_dag.py:528} INFO -   (571/840) Geocoding: Hard Rock Cafe Las Vegas
+[2025-04-18T07:40:08.769+0000] {attractions_dag.py:528} INFO -   (572/840) Geocoding: Tourneau The Forum Shops At Caesar S
+[2025-04-18T07:40:09.136+0000] {attractions_dag.py:528} INFO -   (573/840) Geocoding: Voodoo Zipline
+[2025-04-18T07:40:09.380+0000] {attractions_dag.py:528} INFO -   (574/840) Geocoding: Jollibee
+[2025-04-18T07:40:09.621+0000] {attractions_dag.py:528} INFO -   (575/840) Geocoding: Wicked Spoon
+[2025-04-18T07:40:09.874+0000] {attractions_dag.py:528} INFO -   (576/840) Geocoding: Red Rock Canyon Visitor Center
+[2025-04-18T07:40:10.129+0000] {attractions_dag.py:528} INFO -   (577/840) Geocoding: Universal Studios
+[2025-04-18T07:40:10.390+0000] {attractions_dag.py:528} INFO -   (578/840) Geocoding: Santa Monica Pier
+[2025-04-18T07:40:10.616+0000] {attractions_dag.py:528} INFO -   (579/840) Geocoding: The Griffith Observatory
+[2025-04-18T07:40:10.860+0000] {attractions_dag.py:528} INFO -   (580/840) Geocoding: Hollywood Bowl
+[2025-04-18T07:40:11.099+0000] {attractions_dag.py:528} INFO -   (581/840) Geocoding: The J Paul Getty Centre
+[2025-04-18T07:40:11.373+0000] {attractions_dag.py:528} INFO -   (582/840) Geocoding: Hollywood Walk Of Fame
+[2025-04-18T07:40:11.632+0000] {attractions_dag.py:528} INFO -   (583/840) Geocoding: The Grammy Museum
+[2025-04-18T07:40:11.890+0000] {attractions_dag.py:528} INFO -   (584/840) Geocoding: Venice Beach Boardwalk
+[2025-04-18T07:40:12.239+0000] {attractions_dag.py:528} INFO -   (585/840) Geocoding: Disneyland
+[2025-04-18T07:40:12.478+0000] {attractions_dag.py:528} INFO -   (586/840) Geocoding: California Science Center
+[2025-04-18T07:40:12.735+0000] {attractions_dag.py:528} INFO -   (587/840) Geocoding: 3rd Street Promenade
+[2025-04-18T07:40:13.012+0000] {attractions_dag.py:528} INFO -   (588/840) Geocoding: Universal City Walk
+[2025-04-18T07:40:13.290+0000] {attractions_dag.py:528} INFO -   (589/840) Geocoding: Hollywood Sign
+[2025-04-18T07:40:13.521+0000] {attractions_dag.py:528} INFO -   (590/840) Geocoding: Santa Monica Bay
+[2025-04-18T07:40:13.774+0000] {attractions_dag.py:528} INFO -   (591/840) Geocoding: Staples Center
+[2025-04-18T07:40:14.012+0000] {attractions_dag.py:528} INFO -   (592/840) Geocoding: Walt Disney Concert Hall
+[2025-04-18T07:40:14.268+0000] {attractions_dag.py:528} INFO -   (593/840) Geocoding: Madame Tussauds Hollywood
+[2025-04-18T07:40:14.514+0000] {attractions_dag.py:528} INFO -   (594/840) Geocoding: Aquarium Of The Pacific
+[2025-04-18T07:40:14.756+0000] {attractions_dag.py:528} INFO -   (595/840) Geocoding: County Museum Of Art
+[2025-04-18T07:40:15.001+0000] {attractions_dag.py:528} INFO -   (596/840) Geocoding: Cathedral Of Our Lady Of The Angels
+[2025-04-18T07:40:15.260+0000] {attractions_dag.py:528} INFO -   (597/840) Geocoding: Beverly Hills
+[2025-04-18T07:40:15.478+0000] {attractions_dag.py:528} INFO -   (598/840) Geocoding: Venice Beach
+[2025-04-18T07:40:15.776+0000] {attractions_dag.py:541} INFO - Completed batch 11. Sleeping before next batch...
+[2025-04-18T07:40:17.778+0000] {attractions_dag.py:521} INFO - Processing batch 12: rows 599 to 648
+[2025-04-18T07:40:17.779+0000] {attractions_dag.py:528} INFO -   (599/840) Geocoding: The Grove Los Angeles United States
+[2025-04-18T07:40:18.036+0000] {attractions_dag.py:528} INFO -   (600/840) Geocoding: Rodeo Drive
+[2025-04-18T07:40:18.356+0000] {attractions_dag.py:528} INFO -   (601/840) Geocoding: Hollywood Blvd
+[2025-04-18T07:40:18.599+0000] {attractions_dag.py:528} INFO -   (602/840) Geocoding: Philippe The Original
+[2025-04-18T07:40:18.849+0000] {attractions_dag.py:528} INFO -   (603/840) Geocoding: Dodger Stadium
+[2025-04-18T07:40:19.079+0000] {attractions_dag.py:528} INFO -   (604/840) Geocoding: Muscle Beach
+[2025-04-18T07:40:19.345+0000] {attractions_dag.py:528} INFO -   (605/840) Geocoding: Venice Canals Walkway
+[2025-04-18T07:40:19.601+0000] {attractions_dag.py:528} INFO -   (606/840) Geocoding: The Griddle Cafe
+[2025-04-18T07:40:19.841+0000] {attractions_dag.py:528} INFO -   (607/840) Geocoding: Norton Simon Museum
+[2025-04-18T07:40:20.084+0000] {attractions_dag.py:528} INFO -   (608/840) Geocoding: Citadel Outlets
+[2025-04-18T07:40:20.387+0000] {attractions_dag.py:528} INFO -   (609/840) Geocoding: Baja Fresh Mexican Grill
+[2025-04-18T07:40:20.616+0000] {attractions_dag.py:528} INFO -   (610/840) Geocoding: Battleship Uss Iowa Bb 61
+[2025-04-18T07:40:20.874+0000] {attractions_dag.py:528} INFO -   (611/840) Geocoding: Pantages Theatre
+[2025-04-18T07:40:21.136+0000] {attractions_dag.py:528} INFO -   (612/840) Geocoding: Olvera Street
+[2025-04-18T07:40:21.452+0000] {attractions_dag.py:528} INFO -   (613/840) Geocoding: Nethercutt Collection
+[2025-04-18T07:40:21.705+0000] {attractions_dag.py:528} INFO -   (614/840) Geocoding: Hollywood Wax Museum
+[2025-04-18T07:40:21.958+0000] {attractions_dag.py:528} INFO -   (615/840) Geocoding: The Magic Castle
+[2025-04-18T07:40:22.212+0000] {attractions_dag.py:528} INFO -   (616/840) Geocoding: Chinatown
+[2025-04-18T07:40:22.444+0000] {attractions_dag.py:528} INFO -   (617/840) Geocoding: Westwood Village Memorial Park Cemetery
+[2025-04-18T07:40:22.744+0000] {attractions_dag.py:528} INFO -   (618/840) Geocoding: Hollywood Hills
+[2025-04-18T07:40:22.991+0000] {attractions_dag.py:528} INFO -   (619/840) Geocoding: Tcl Chinese Theatre
+[2025-04-18T07:40:23.252+0000] {attractions_dag.py:528} INFO -   (620/840) Geocoding: Grand Central Market
+[2025-04-18T07:40:23.577+0000] {attractions_dag.py:528} INFO -   (621/840) Geocoding: Diddy Riese Cookies
+[2025-04-18T07:40:23.831+0000] {attractions_dag.py:528} INFO -   (622/840) Geocoding: Queen Mary
+[2025-04-18T07:40:24.098+0000] {attractions_dag.py:528} INFO -   (623/840) Geocoding: Bradbury Building
+[2025-04-18T07:40:24.343+0000] {attractions_dag.py:528} INFO -   (624/840) Geocoding: Ripleys Believe It Or Not Odditorium
+[2025-04-18T07:40:24.613+0000] {attractions_dag.py:528} INFO -   (625/840) Geocoding: Naples Island
+[2025-04-18T07:40:24.863+0000] {attractions_dag.py:528} INFO -   (626/840) Geocoding: The Last Bookstore
+[2025-04-18T07:40:25.114+0000] {attractions_dag.py:528} INFO -   (627/840) Geocoding: Sunset Boulevard
+[2025-04-18T07:40:25.504+0000] {attractions_dag.py:528} INFO -   (628/840) Geocoding: Little Tokyo
+[2025-04-18T07:40:25.761+0000] {attractions_dag.py:528} INFO -   (629/840) Geocoding: Japanese American National Museum
+[2025-04-18T07:40:26.024+0000] {attractions_dag.py:528} INFO -   (630/840) Geocoding: Museum Of Contemporary Art
+[2025-04-18T07:40:26.280+0000] {attractions_dag.py:528} INFO -   (631/840) Geocoding: Los Angeles Zoo
+[2025-04-18T07:40:26.513+0000] {attractions_dag.py:528} INFO -   (632/840) Geocoding: Angels Flight
+[2025-04-18T07:40:26.775+0000] {attractions_dag.py:528} INFO -   (633/840) Geocoding: Hollywood And Highland Center
+[2025-04-18T07:40:27.033+0000] {attractions_dag.py:528} INFO -   (634/840) Geocoding: La Fashion District
+[2025-04-18T07:40:27.287+0000] {attractions_dag.py:528} INFO -   (635/840) Geocoding: Long Beach
+[2025-04-18T07:40:27.514+0000] {attractions_dag.py:528} INFO -   (636/840) Geocoding: Los Angeles City Hall
+[2025-04-18T07:40:27.778+0000] {attractions_dag.py:528} INFO -   (637/840) Geocoding: Abbot Kinney Boulevard
+[2025-04-18T07:40:28.030+0000] {attractions_dag.py:528} INFO -   (638/840) Geocoding: Westfield Century City
+[2025-04-18T07:40:28.280+0000] {attractions_dag.py:528} INFO -   (639/840) Geocoding: Self Realization Fellowship Lake Shrine
+[2025-04-18T07:40:28.532+0000] {attractions_dag.py:528} INFO -   (640/840) Geocoding: Long Beach Waterfront
+[2025-04-18T07:40:28.775+0000] {attractions_dag.py:528} INFO -   (641/840) Geocoding: Hollywood Forever Cemetery
+[2025-04-18T07:40:29.033+0000] {attractions_dag.py:528} INFO -   (642/840) Geocoding: Beverly Center
+[2025-04-18T07:40:29.296+0000] {attractions_dag.py:528} INFO -   (643/840) Geocoding: Greystone Mansion And Gardens
+[2025-04-18T07:40:29.536+0000] {attractions_dag.py:528} INFO -   (644/840) Geocoding: The Pike At Rainbow Harbor
+[2025-04-18T07:40:29.793+0000] {attractions_dag.py:528} INFO -   (645/840) Geocoding: L A Live
+[2025-04-18T07:40:30.044+0000] {attractions_dag.py:528} INFO -   (646/840) Geocoding: Guinness World Records Museum
+[2025-04-18T07:40:30.307+0000] {attractions_dag.py:528} INFO -   (647/840) Geocoding: Microsoft Theater
+[2025-04-18T07:40:30.562+0000] {attractions_dag.py:528} INFO -   (648/840) Geocoding: Hammer Museum
+[2025-04-18T07:40:30.822+0000] {attractions_dag.py:541} INFO - Completed batch 12. Sleeping before next batch...
+[2025-04-18T07:40:32.825+0000] {attractions_dag.py:521} INFO - Processing batch 13: rows 649 to 698
+[2025-04-18T07:40:32.826+0000] {attractions_dag.py:528} INFO -   (649/840) Geocoding: Museum Of Tolerance
+[2025-04-18T07:40:33.068+0000] {attractions_dag.py:528} INFO -   (650/840) Geocoding: Travel Town Museum
+[2025-04-18T07:40:33.348+0000] {attractions_dag.py:528} INFO -   (651/840) Geocoding: Topanga State Park
+[2025-04-18T07:40:33.606+0000] {attractions_dag.py:528} INFO -   (652/840) Geocoding: Korean Bell Of Friendship
+[2025-04-18T07:40:33.858+0000] {attractions_dag.py:528} INFO -   (653/840) Geocoding: San Gabriel Mountains
+[2025-04-18T07:40:34.104+0000] {attractions_dag.py:528} INFO -   (654/840) Geocoding: American Girl Place
+[2025-04-18T07:40:34.371+0000] {attractions_dag.py:528} INFO -   (655/840) Geocoding: The Japanese Garden
+[2025-04-18T07:40:34.620+0000] {attractions_dag.py:528} INFO -   (656/840) Geocoding: Museum Of Latin American Art
+[2025-04-18T07:40:34.871+0000] {attractions_dag.py:528} INFO -   (657/840) Geocoding: The Santee Alley
+[2025-04-18T07:40:35.112+0000] {attractions_dag.py:528} INFO -   (658/840) Geocoding: Rosies Dog Beach
+[2025-04-18T07:40:35.373+0000] {attractions_dag.py:528} INFO -   (659/840) Geocoding: Exposition Park
+[2025-04-18T07:40:35.607+0000] {attractions_dag.py:528} INFO -   (660/840) Geocoding: Melrose Avenue
+[2025-04-18T07:40:35.889+0000] {attractions_dag.py:528} INFO -   (661/840) Geocoding: Koreatown
+[2025-04-18T07:40:36.140+0000] {attractions_dag.py:528} INFO -   (662/840) Geocoding: Mission San Fernando Rey De Espana
+[2025-04-18T07:40:36.458+0000] {attractions_dag.py:528} INFO -   (663/840) Geocoding: The Los Angeles Music Center
+[2025-04-18T07:40:36.709+0000] {attractions_dag.py:528} INFO -   (664/840) Geocoding: Hollywood Farmers Market
+[2025-04-18T07:40:36.976+0000] {attractions_dag.py:528} INFO -   (665/840) Geocoding: Ahmanson Theatre
+[2025-04-18T07:40:37.214+0000] {attractions_dag.py:528} INFO -   (666/840) Geocoding: Forest Lawn Memorial Park Hollywood Hills
+[2025-04-18T07:40:37.531+0000] {attractions_dag.py:528} INFO -   (667/840) Geocoding: Echo Park
+[2025-04-18T07:40:37.783+0000] {attractions_dag.py:528} INFO -   (668/840) Geocoding: Stahl House
+[2025-04-18T07:40:38.046+0000] {attractions_dag.py:528} INFO -   (669/840) Geocoding: La Opera
+[2025-04-18T07:40:38.363+0000] {attractions_dag.py:528} INFO -   (670/840) Geocoding: Pershing Square
+[2025-04-18T07:40:38.611+0000] {attractions_dag.py:528} INFO -   (671/840) Geocoding: Bronson Canyon
+[2025-04-18T07:40:38.858+0000] {attractions_dag.py:528} INFO -   (672/840) Geocoding: Flight Path Learning Center
+[2025-04-18T07:40:39.125+0000] {attractions_dag.py:528} INFO -   (673/840) Geocoding: Autry Museum Of The American West
+[2025-04-18T07:40:39.392+0000] {attractions_dag.py:528} INFO -   (674/840) Geocoding: Newport Beach
+[2025-04-18T07:40:39.621+0000] {attractions_dag.py:528} INFO -   (675/840) Geocoding: University Of Southern California
+[2025-04-18T07:40:39.918+0000] {attractions_dag.py:528} INFO -   (676/840) Geocoding: University Of California
+[2025-04-18T07:40:40.222+0000] {attractions_dag.py:528} INFO -   (677/840) Geocoding: Park La Brea Apartments
+[2025-04-18T07:40:40.542+0000] {attractions_dag.py:528} INFO -   (678/840) Geocoding: 597740285840d43f540014d4
+[2025-04-18T07:40:40.799+0000] {attractions_dag.py:528} INFO -   (679/840) Geocoding: Los Angeles Nomadic Division
+[2025-04-18T07:40:41.058+0000] {attractions_dag.py:528} INFO -   (680/840) Geocoding: L A Children S Museum
+[2025-04-18T07:40:41.337+0000] {attractions_dag.py:528} INFO -   (681/840) Geocoding: Skirball Cultural Center Museum
+[2025-04-18T07:40:41.591+0000] {attractions_dag.py:528} INFO -   (682/840) Geocoding: Ucla University Library
+[2025-04-18T07:40:41.873+0000] {attractions_dag.py:528} INFO -   (683/840) Geocoding: David Hockney Exhibit At Lacma
+[2025-04-18T07:40:42.101+0000] {attractions_dag.py:528} INFO -   (684/840) Geocoding: Music Beyond
+[2025-04-18T07:40:42.316+0000] {attractions_dag.py:528} INFO -   (685/840) Geocoding: American Southwestern Railway Association
+[2025-04-18T07:40:42.607+0000] {attractions_dag.py:528} INFO -   (686/840) Geocoding: Blue Zoo Aquatics Group
+[2025-04-18T07:40:42.868+0000] {attractions_dag.py:528} INFO -   (687/840) Geocoding: The International Vest Museum
+[2025-04-18T07:40:43.109+0000] {attractions_dag.py:528} INFO -   (688/840) Geocoding: Rudolph East Asian Library
+[2025-04-18T07:40:43.362+0000] {attractions_dag.py:528} INFO -   (689/840) Geocoding: Fire Department Museum
+[2025-04-18T07:40:43.628+0000] {attractions_dag.py:528} INFO -   (690/840) Geocoding: Pretty In Plastic
+[2025-04-18T07:40:43.890+0000] {attractions_dag.py:528} INFO -   (691/840) Geocoding: Living Art Aquatic Design
+[2025-04-18T07:40:44.214+0000] {attractions_dag.py:528} INFO -   (692/840) Geocoding: Leigh H Taylor Law Library
+[2025-04-18T07:40:44.479+0000] {attractions_dag.py:528} INFO -   (693/840) Geocoding: Neutra Institute Gallery Museum
+[2025-04-18T07:40:44.736+0000] {attractions_dag.py:528} INFO -   (694/840) Geocoding: Santa Monica Museum Of Arts
+[2025-04-18T07:40:44.970+0000] {attractions_dag.py:528} INFO -   (695/840) Geocoding: Museum Of Neon Art
+[2025-04-18T07:40:45.216+0000] {attractions_dag.py:528} INFO -   (696/840) Geocoding: Page Museum At The La Brea Tar Pits
+[2025-04-18T07:40:45.480+0000] {attractions_dag.py:528} INFO -   (697/840) Geocoding: Braille Institute
+[2025-04-18T07:40:45.718+0000] {attractions_dag.py:528} INFO -   (698/840) Geocoding: Arts Consulting Group
+[2025-04-18T07:40:45.975+0000] {attractions_dag.py:541} INFO - Completed batch 13. Sleeping before next batch...
+[2025-04-18T07:40:47.981+0000] {attractions_dag.py:521} INFO - Processing batch 14: rows 699 to 748
+[2025-04-18T07:40:47.983+0000] {attractions_dag.py:528} INFO -   (699/840) Geocoding: Alina Szapocznikow Sculpture Undone 1955 1972
+[2025-04-18T07:40:48.223+0000] {attractions_dag.py:528} INFO -   (700/840) Geocoding: Ripley Entertainment
+[2025-04-18T07:40:48.489+0000] {attractions_dag.py:528} INFO -   (701/840) Geocoding: Little Free Library
+[2025-04-18T07:40:48.725+0000] {attractions_dag.py:528} INFO -   (702/840) Geocoding: Dinosaur Museum
+[2025-04-18T07:40:48.960+0000] {attractions_dag.py:528} INFO -   (703/840) Geocoding: Youngjin Corporation
+[2025-04-18T07:40:49.205+0000] {attractions_dag.py:528} INFO -   (704/840) Geocoding: Museum Tamal
+[2025-04-18T07:40:49.458+0000] {attractions_dag.py:528} INFO -   (705/840) Geocoding: Darling Biomedical Library
+[2025-04-18T07:40:49.718+0000] {attractions_dag.py:528} INFO -   (706/840) Geocoding: Traveling Space Museum
+[2025-04-18T07:40:49.944+0000] {attractions_dag.py:528} INFO -   (707/840) Geocoding: William Eggleston Exhibition
+[2025-04-18T07:40:50.185+0000] {attractions_dag.py:528} INFO -   (708/840) Geocoding: Orchestra Library
+[2025-04-18T07:40:50.505+0000] {attractions_dag.py:528} INFO -   (709/840) Geocoding: Water Power Library
+[2025-04-18T07:40:50.754+0000] {attractions_dag.py:528} INFO -   (710/840) Geocoding: Michael Smith Event Music
+[2025-04-18T07:40:51.065+0000] {attractions_dag.py:528} INFO -   (711/840) Geocoding: National Film Museum
+[2025-04-18T07:40:51.313+0000] {attractions_dag.py:528} INFO -   (712/840) Geocoding: Creative Space
+[2025-04-18T07:40:51.554+0000] {attractions_dag.py:528} INFO -   (713/840) Geocoding: Los Angeles City Library Brentwood
+[2025-04-18T07:40:51.793+0000] {attractions_dag.py:528} INFO -   (714/840) Geocoding: Barrister Research Library
+[2025-04-18T07:40:52.044+0000] {attractions_dag.py:528} INFO -   (715/840) Geocoding: Medical Library
+[2025-04-18T07:40:52.294+0000] {attractions_dag.py:528} INFO -   (716/840) Geocoding: Mario The Goose
+[2025-04-18T07:40:52.611+0000] {attractions_dag.py:528} INFO -   (717/840) Geocoding: Libreria Fuente De Agua Viva
+[2025-04-18T07:40:52.868+0000] {attractions_dag.py:528} INFO -   (718/840) Geocoding: Space Needle
+[2025-04-18T07:40:53.101+0000] {attractions_dag.py:528} INFO -   (719/840) Geocoding: Pike Place Market
+[2025-04-18T07:40:53.340+0000] {attractions_dag.py:528} INFO -   (720/840) Geocoding: Sky View Observatory
+[2025-04-18T07:40:53.583+0000] {attractions_dag.py:528} INFO -   (721/840) Geocoding: Chihuly Garden And Glass
+[2025-04-18T07:40:53.829+0000] {attractions_dag.py:528} INFO -   (722/840) Geocoding: Hiram M Chittenden Locks
+[2025-04-18T07:40:54.079+0000] {attractions_dag.py:528} INFO -   (723/840) Geocoding: University Of Washington
+[2025-04-18T07:40:54.311+0000] {attractions_dag.py:528} INFO -   (724/840) Geocoding: Emp Museum
+[2025-04-18T07:40:54.555+0000] {attractions_dag.py:528} INFO -   (725/840) Geocoding: Museum Of History And Industry
+[2025-04-18T07:40:54.796+0000] {attractions_dag.py:528} INFO -   (726/840) Geocoding: Woodland Park Zoo
+[2025-04-18T07:40:55.054+0000] {attractions_dag.py:528} INFO -   (727/840) Geocoding: Seattle Aquarium
+[2025-04-18T07:40:55.297+0000] {attractions_dag.py:528} INFO -   (728/840) Geocoding: The Seattle Waterfront Or Central Waterfront
+[2025-04-18T07:40:55.536+0000] {attractions_dag.py:528} INFO -   (729/840) Geocoding: Pacific Science Center
+[2025-04-18T07:40:55.773+0000] {attractions_dag.py:528} INFO -   (730/840) Geocoding: Wing Luke Museum
+[2025-04-18T07:40:56.009+0000] {attractions_dag.py:528} INFO -   (731/840) Geocoding: Smith Tower
+[2025-04-18T07:40:56.252+0000] {attractions_dag.py:528} INFO -   (732/840) Geocoding: Old Stove Brewing Co
+[2025-04-18T07:40:56.500+0000] {attractions_dag.py:528} INFO -   (733/840) Geocoding: Statue Of Lenin
+[2025-04-18T07:40:56.740+0000] {attractions_dag.py:528} INFO -   (734/840) Geocoding: Seattle Antiques Market
+[2025-04-18T07:40:56.991+0000] {attractions_dag.py:528} INFO -   (735/840) Geocoding: University Village
+[2025-04-18T07:40:57.230+0000] {attractions_dag.py:528} INFO -   (736/840) Geocoding: Seattle Art Museum
+[2025-04-18T07:40:57.449+0000] {attractions_dag.py:528} INFO -   (737/840) Geocoding: Seattle Asian Art Museum
+[2025-04-18T07:40:57.711+0000] {attractions_dag.py:528} INFO -   (738/840) Geocoding: Ballard Farmers Market
+[2025-04-18T07:40:57.961+0000] {attractions_dag.py:528} INFO -   (739/840) Geocoding: Westfield Southcentre
+[2025-04-18T07:40:58.204+0000] {attractions_dag.py:528} INFO -   (740/840) Geocoding: Nordic Heritage Museum
+[2025-04-18T07:40:58.452+0000] {attractions_dag.py:528} INFO -   (741/840) Geocoding: Elliott Bay Waterfront
+[2025-04-18T07:40:58.707+0000] {attractions_dag.py:528} INFO -   (742/840) Geocoding: Burke Museum Of Natural History And Culture
+[2025-04-18T07:40:58.956+0000] {attractions_dag.py:528} INFO -   (743/840) Geocoding: Copperworks Distilling Company
+[2025-04-18T07:40:59.205+0000] {attractions_dag.py:528} INFO -   (744/840) Geocoding: Gas Works Park
+[2025-04-18T07:40:59.454+0000] {attractions_dag.py:528} INFO -   (745/840) Geocoding: Chinatown International District
+[2025-04-18T07:40:59.706+0000] {attractions_dag.py:528} INFO -   (746/840) Geocoding: Westlake Center
+[2025-04-18T07:40:59.946+0000] {attractions_dag.py:528} INFO -   (747/840) Geocoding: Bill And Melinda Gates Foundation Visitor Centre
+[2025-04-18T07:41:00.210+0000] {attractions_dag.py:528} INFO -   (748/840) Geocoding: Nordstrom Downtown Seattle
+[2025-04-18T07:41:00.449+0000] {attractions_dag.py:541} INFO - Completed batch 14. Sleeping before next batch...
+[2025-04-18T07:41:02.452+0000] {attractions_dag.py:521} INFO - Processing batch 15: rows 749 to 798
+[2025-04-18T07:41:02.454+0000] {attractions_dag.py:528} INFO -   (749/840) Geocoding: Safeco Field
+[2025-04-18T07:41:02.687+0000] {attractions_dag.py:528} INFO -   (750/840) Geocoding: Century Link Field
+[2025-04-18T07:41:02.939+0000] {attractions_dag.py:528} INFO -   (751/840) Geocoding: Green Lake Park
+[2025-04-18T07:41:03.205+0000] {attractions_dag.py:528} INFO -   (752/840) Geocoding: Pike Place Fish Market
+[2025-04-18T07:41:03.461+0000] {attractions_dag.py:528} INFO -   (753/840) Geocoding: Seattle Waterfall Garden
+[2025-04-18T07:41:03.705+0000] {attractions_dag.py:528} INFO -   (754/840) Geocoding: Paramount Theatre
+[2025-04-18T07:41:03.956+0000] {attractions_dag.py:528} INFO -   (755/840) Geocoding: Key Arena
+[2025-04-18T07:41:04.205+0000] {attractions_dag.py:528} INFO -   (756/840) Geocoding: The Unity Museum
+[2025-04-18T07:41:04.449+0000] {attractions_dag.py:528} INFO -   (757/840) Geocoding: Lake View Cemetery
+[2025-04-18T07:41:04.693+0000] {attractions_dag.py:528} INFO -   (758/840) Geocoding: Westland Distillery
+[2025-04-18T07:41:04.926+0000] {attractions_dag.py:528} INFO -   (759/840) Geocoding: Occidental Park
+[2025-04-18T07:41:05.170+0000] {attractions_dag.py:528} INFO -   (760/840) Geocoding: Magnuson Park
+[2025-04-18T07:41:05.436+0000] {attractions_dag.py:528} INFO -   (761/840) Geocoding: Edmonds Underwater Park
+[2025-04-18T07:41:05.688+0000] {attractions_dag.py:528} INFO -   (762/840) Geocoding: Fremont Mischief
+[2025-04-18T07:41:05.927+0000] {attractions_dag.py:528} INFO -   (763/840) Geocoding: Milepost 31
+[2025-04-18T07:41:06.166+0000] {attractions_dag.py:528} INFO -   (764/840) Geocoding: Act Theatre
+[2025-04-18T07:41:06.413+0000] {attractions_dag.py:528} INFO -   (765/840) Geocoding: Schooner Exact Brewing Company
+[2025-04-18T07:41:06.656+0000] {attractions_dag.py:528} INFO -   (766/840) Geocoding: Georgetown Steam Plant
+[2025-04-18T07:41:06.885+0000] {attractions_dag.py:528} INFO -   (767/840) Geocoding: Daybreak Star Cultural Center
+[2025-04-18T07:41:07.129+0000] {attractions_dag.py:528} INFO -   (768/840) Geocoding: Madrona Park
+[2025-04-18T07:41:07.382+0000] {attractions_dag.py:528} INFO -   (769/840) Geocoding: Freeway Park
+[2025-04-18T07:41:07.623+0000] {attractions_dag.py:528} INFO -   (770/840) Geocoding: Alki Point Lighthouse
+[2025-04-18T07:41:07.874+0000] {attractions_dag.py:528} INFO -   (771/840) Geocoding: Seattle Chinese Garden
+[2025-04-18T07:41:08.131+0000] {attractions_dag.py:528} INFO -   (772/840) Geocoding: Museum Of Communications
+[2025-04-18T07:41:08.367+0000] {attractions_dag.py:528} INFO -   (773/840) Geocoding: Lake Union
+[2025-04-18T07:41:08.609+0000] {attractions_dag.py:528} INFO -   (774/840) Geocoding: Wallingford Center
+[2025-04-18T07:41:08.844+0000] {attractions_dag.py:528} INFO -   (775/840) Geocoding: Holocaust Center For Humanity
+[2025-04-18T07:41:09.096+0000] {attractions_dag.py:528} INFO -   (776/840) Geocoding: Matthews Beach Park
+[2025-04-18T07:41:09.356+0000] {attractions_dag.py:528} INFO -   (777/840) Geocoding: Maritime Pacific Brewing Company
+[2025-04-18T07:41:09.606+0000] {attractions_dag.py:528} INFO -   (778/840) Geocoding: Cal Anderson Park
+[2025-04-18T07:41:09.873+0000] {attractions_dag.py:528} INFO -   (779/840) Geocoding: Dunn Gardens
+[2025-04-18T07:41:10.117+0000] {attractions_dag.py:528} INFO -   (780/840) Geocoding: Oxbow Park
+[2025-04-18T07:41:10.374+0000] {attractions_dag.py:528} INFO -   (781/840) Geocoding: Ye Olde Curiosity Shop
+[2025-04-18T07:41:10.627+0000] {attractions_dag.py:528} INFO -   (782/840) Geocoding: Full Tilt
+[2025-04-18T07:41:10.876+0000] {attractions_dag.py:528} INFO -   (783/840) Geocoding: Seattle Pinball Museum
+[2025-04-18T07:41:11.128+0000] {attractions_dag.py:528} INFO -   (784/840) Geocoding: Seattle Ferry
+[2025-04-18T07:41:11.352+0000] {attractions_dag.py:528} INFO -   (785/840) Geocoding: Argosy Cruises
+[2025-04-18T07:41:11.603+0000] {attractions_dag.py:528} INFO -   (786/840) Geocoding: Boeing Field
+[2025-04-18T07:41:11.862+0000] {attractions_dag.py:528} INFO -   (787/840) Geocoding: Kenmore Air Harbor Spb Airport
+[2025-04-18T07:41:12.110+0000] {attractions_dag.py:528} INFO -   (788/840) Geocoding: 59773fae5840d43f54000b6a
+[2025-04-18T07:41:12.316+0000] {attractions_dag.py:528} INFO -   (789/840) Geocoding: Meerkat Exhibit
+[2025-04-18T07:41:12.529+0000] {attractions_dag.py:528} INFO -   (790/840) Geocoding: Historic Carousel
+[2025-04-18T07:41:12.764+0000] {attractions_dag.py:528} INFO -   (791/840) Geocoding: Artisan Aquatics
+[2025-04-18T07:41:13.001+0000] {attractions_dag.py:528} INFO -   (792/840) Geocoding: Hartford Library
+[2025-04-18T07:41:13.222+0000] {attractions_dag.py:528} INFO -   (793/840) Geocoding: Nw African American Museum
+[2025-04-18T07:41:13.466+0000] {attractions_dag.py:528} INFO -   (794/840) Geocoding: The Poster Museum
+[2025-04-18T07:41:13.707+0000] {attractions_dag.py:528} INFO -   (795/840) Geocoding: Childhaven Lake City Branch
+[2025-04-18T07:41:13.954+0000] {attractions_dag.py:528} INFO -   (796/840) Geocoding: Seattle City Library
+[2025-04-18T07:41:14.177+0000] {attractions_dag.py:528} INFO -   (797/840) Geocoding: Noaa Art Walk
+[2025-04-18T07:41:14.412+0000] {attractions_dag.py:528} INFO -   (798/840) Geocoding: Umojafest Heritage Center
+[2025-04-18T07:41:14.661+0000] {attractions_dag.py:541} INFO - Completed batch 15. Sleeping before next batch...
+[2025-04-18T07:41:16.662+0000] {attractions_dag.py:521} INFO - Processing batch 16: rows 799 to 840
+[2025-04-18T07:41:16.664+0000] {attractions_dag.py:528} INFO -   (799/840) Geocoding: Dorothy Stimson Bullitt Library
+[2025-04-18T07:41:16.920+0000] {attractions_dag.py:528} INFO -   (800/840) Geocoding: Save Our Knees Wood Floor For Nordic Heritage Museum Auditorium
+[2025-04-18T07:41:17.168+0000] {attractions_dag.py:528} INFO -   (801/840) Geocoding: Seattle Aquarium Society
+[2025-04-18T07:41:17.376+0000] {attractions_dag.py:528} INFO -   (802/840) Geocoding: Instructional Resources Center Lb
+[2025-04-18T07:41:17.602+0000] {attractions_dag.py:528} INFO -   (803/840) Geocoding: Seattle Great Wheel
+[2025-04-18T07:41:17.864+0000] {attractions_dag.py:528} INFO -   (804/840) Geocoding: Olympic Sculpture Park
+[2025-04-18T07:41:18.112+0000] {attractions_dag.py:528} INFO -   (805/840) Geocoding: Myrtle Edwards Park
+[2025-04-18T07:41:18.355+0000] {attractions_dag.py:528} INFO -   (806/840) Geocoding: Kerry Park
+[2025-04-18T07:41:18.595+0000] {attractions_dag.py:528} INFO -   (807/840) Geocoding: Discovery Park
+[2025-04-18T07:41:18.848+0000] {attractions_dag.py:528} INFO -   (808/840) Geocoding: Pioneer Square
+[2025-04-18T07:41:19.090+0000] {attractions_dag.py:528} INFO -   (809/840) Geocoding: Starbucks
+[2025-04-18T07:41:19.326+0000] {attractions_dag.py:528} INFO -   (810/840) Geocoding: Pure Food Fish Market
+[2025-04-18T07:41:19.588+0000] {attractions_dag.py:528} INFO -   (811/840) Geocoding: Ballard Sunday Farmers Market
+[2025-04-18T07:41:19.865+0000] {attractions_dag.py:528} INFO -   (812/840) Geocoding: Bitterroot Bbq
+[2025-04-18T07:41:20.111+0000] {attractions_dag.py:528} INFO -   (813/840) Geocoding: Mt St Helens
+[2025-04-18T07:41:20.412+0000] {attractions_dag.py:528} INFO -   (814/840) Geocoding: Portland Rose Gardens
+[2025-04-18T07:41:20.662+0000] {attractions_dag.py:528} INFO -   (815/840) Geocoding: Lloyd Center Ice Rink
+[2025-04-18T07:41:20.889+0000] {attractions_dag.py:528} INFO -   (816/840) Geocoding: Starbucks Reserve Roastery Tasting Room
+[2025-04-18T07:41:21.142+0000] {attractions_dag.py:528} INFO -   (817/840) Geocoding: Bill Speidel S Underground Tour
+[2025-04-18T07:41:21.417+0000] {attractions_dag.py:528} INFO -   (818/840) Geocoding: Crab Pot Restaurant
+[2025-04-18T07:41:21.667+0000] {attractions_dag.py:528} INFO -   (819/840) Geocoding: Ballard
+[2025-04-18T07:41:21.889+0000] {attractions_dag.py:528} INFO -   (820/840) Geocoding: Bathtub Gin Co
+[2025-04-18T07:41:22.128+0000] {attractions_dag.py:528} INFO -   (821/840) Geocoding: Serious Pie Biscuit
+[2025-04-18T07:41:22.369+0000] {attractions_dag.py:528} INFO -   (822/840) Geocoding: The Blarney Stone Pub And Restaurant
+[2025-04-18T07:41:22.627+0000] {attractions_dag.py:528} INFO -   (823/840) Geocoding: Ballard Locks Fish Ladder
+[2025-04-18T07:41:22.860+0000] {attractions_dag.py:528} INFO -   (824/840) Geocoding: Brandon Lee And Bruce Lee S Grave Site
+[2025-04-18T07:41:23.125+0000] {attractions_dag.py:528} INFO -   (825/840) Geocoding: Boeing Everett Factory
+[2025-04-18T07:41:23.371+0000] {attractions_dag.py:528} INFO -   (826/840) Geocoding: Red Roof Inn Seattle Airport Seatac
+[2025-04-18T07:41:23.630+0000] {attractions_dag.py:528} INFO -   (827/840) Geocoding: Din Tai Fung
+[2025-04-18T07:41:23.914+0000] {attractions_dag.py:528} INFO -   (828/840) Geocoding: Elysian Capitol Hill Brewery
+[2025-04-18T07:41:24.177+0000] {attractions_dag.py:528} INFO -   (829/840) Geocoding: Green Tortoise Hostel
+[2025-04-18T07:41:24.439+0000] {attractions_dag.py:528} INFO -   (830/840) Geocoding: Experience Music Project
+[2025-04-18T07:41:24.667+0000] {attractions_dag.py:528} INFO -   (831/840) Geocoding: Fremont
+[2025-04-18T07:41:24.906+0000] {attractions_dag.py:528} INFO -   (832/840) Geocoding: Lower Coal Creek Trail East Trailhead
+[2025-04-18T07:41:25.153+0000] {attractions_dag.py:528} INFO -   (833/840) Geocoding: New La Hacienda Motel
+[2025-04-18T07:41:25.425+0000] {attractions_dag.py:528} INFO -   (834/840) Geocoding: University District Farmers Market
+[2025-04-18T07:41:25.665+0000] {attractions_dag.py:528} INFO -   (835/840) Geocoding: Crystal Mountain
+[2025-04-18T07:41:25.952+0000] {attractions_dag.py:528} INFO -   (836/840) Geocoding: University Inn A Piece Of Pineapple Hospitality
+[2025-04-18T07:41:26.210+0000] {attractions_dag.py:528} INFO -   (837/840) Geocoding: Fishermen S Terminal
+[2025-04-18T07:41:26.458+0000] {attractions_dag.py:528} INFO -   (838/840) Geocoding: Blewett Pass
+[2025-04-18T07:41:26.690+0000] {attractions_dag.py:528} INFO -   (839/840) Geocoding: Der Ritterhof
+[2025-04-18T07:41:26.914+0000] {attractions_dag.py:528} INFO -   (840/840) Geocoding: Bill Melinda Gates Foundation
+[2025-04-18T07:41:27.143+0000] {attractions_dag.py:541} INFO - Completed batch 16. Sleeping before next batch...
+[2025-04-18T07:41:29.144+0000] {attractions_dag.py:545} INFO - Successfully processed all 840 attractions
+[2025-04-18T07:41:29.146+0000] {attractions_dag.py:546} INFO - Output saved to: /tmp/triphobo_data/attractions_with_coords.csv
+[2025-04-18T07:41:29.153+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-18T07:41:29.180+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T07:41:29.181+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_attractions_pipeline, task_id=geocode_attractions, run_id=scheduled__2025-04-16T11:30:00+00:00, execution_date=20250416T113000, start_date=20250418T073803, end_date=20250418T074129
+[2025-04-18T07:41:29.228+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T07:41:29.253+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T07:41:29.254+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

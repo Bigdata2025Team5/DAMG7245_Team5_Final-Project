@@ -1,0 +1,34 @@
+[2025-04-14T22:50:39.437+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:50:39.444+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:50:34.854321+00:00 [queued]>
+[2025-04-14T22:50:39.448+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:50:34.854321+00:00 [queued]>
+[2025-04-14T22:50:39.449+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:50:39.456+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_NewYork> on 2025-04-14 22:50:34.854321+00:00
+[2025-04-14T22:50:39.461+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=345) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:50:39.466+0000] {standard_task_runner.py:72} INFO - Started process 349 to run task
+[2025-04-14T22:50:39.469+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_NewYork', 'manual__2025-04-14T22:50:34.854321+00:00', '--job-id', '362', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmp_qgu0fdx']
+[2025-04-14T22:50:39.472+0000] {standard_task_runner.py:105} INFO - Job 362: Subtask process_city_NewYork
+[2025-04-14T22:50:39.514+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:50:34.854321+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:50:39.609+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_NewYork' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:50:34.854321+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:50:34.854321+00:00'
+[2025-04-14T22:50:39.610+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:50:39.655+0000] {youtube_dag.py:142} INFO - Starting processing for city: NewYork
+[2025-04-14T22:50:39.656+0000] {youtube_dag.py:157} INFO - Creating directory structure for NewYork
+[2025-04-14T22:50:39.656+0000] {youtube_dag.py:161} INFO - Created directories: /opt/***/data/city_transcripts/Newyork, /opt/***/data/city_transcripts/Newyork/transcripts
+[2025-04-14T22:50:39.657+0000] {youtube_dag.py:172} INFO - Parameters for NewYork: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:50:39.736+0000] {youtube_dag.py:188} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:50:39.738+0000] {youtube_dag.py:208} WARNING - Missing credentials for NewYork: YOUTUBE_API_KEY, AWS_ACCESS_KEY, AWS_SECRET_KEY, S3_BUCKET_NAME, OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_INDEX
+[2025-04-14T22:50:39.739+0000] {youtube_dag.py:227} INFO - Loading spaCy model for NewYork
+[2025-04-14T22:50:40.497+0000] {youtube_dag.py:229} INFO - Successfully loaded spaCy model
+[2025-04-14T22:50:40.497+0000] {youtube_dag.py:251} INFO - Downloading transcripts for NewYork
+[2025-04-14T22:50:40.498+0000] {youtube_dag.py:302} INFO - Starting transcript download for NewYork
+[2025-04-14T22:50:40.498+0000] {youtube_dag.py:306} ERROR - Cannot download transcripts for NewYork: YouTube API key not provided
+[2025-04-14T22:50:40.498+0000] {youtube_dag.py:265} INFO - Skipping S3 upload phase for NewYork
+[2025-04-14T22:50:40.499+0000] {youtube_dag.py:274} WARNING - Skipping embedding phase for NewYork due to missing credentials
+[2025-04-14T22:50:40.499+0000] {youtube_dag.py:287} INFO - Completed processing for NewYork: {"city_key": "NewYork", "transcript_count": 0, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:50:40.501+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'NewYork', 'transcript_count': 0, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:50:40.522+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:50:40.524+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_NewYork, run_id=manual__2025-04-14T22:50:34.854321+00:00, execution_date=20250414T225034, start_date=20250414T225039, end_date=20250414T225040
+[2025-04-14T22:50:40.554+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:50:40.569+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:50:40.571+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

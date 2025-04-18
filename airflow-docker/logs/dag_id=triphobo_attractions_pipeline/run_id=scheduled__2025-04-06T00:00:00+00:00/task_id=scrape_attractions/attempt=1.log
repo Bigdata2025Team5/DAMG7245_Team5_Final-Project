@@ -1,0 +1,153 @@
+[2025-04-13T20:03:47.849+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T20:03:47.855+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.859+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.861+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-13T20:03:47.866+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-06 00:00:00+00:00
+[2025-04-13T20:03:47.870+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T20:03:47.872+0000] {standard_task_runner.py:72} INFO - Started process 84 to run task
+[2025-04-13T20:03:47.873+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_pipeline', 'scrape_attractions', 'scheduled__2025-04-06T00:00:00+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmpg3gihiac']
+[2025-04-13T20:03:47.875+0000] {standard_task_runner.py:105} INFO - Job 177: Subtask scrape_attractions
+[2025-04-13T20:03:47.898+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [running]> on host f5674eb65eee
+[2025-04-13T20:03:47.935+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_pipeline' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T00:00:00+00:00'
+[2025-04-13T20:03:47.937+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T20:03:47.974+0000] {things_to_do.py:89} INFO - Loaded 812 existing records from /tmp/triphobo_data/multi_city_attractions.csv
+[2025-04-13T20:03:47.975+0000] {things_to_do.py:93} INFO - Found 812 existing URLs in the dataset
+[2025-04-13T20:03:48.554+0000] {things_to_do.py:110} INFO - Scraping city: New York City United States
+[2025-04-13T20:03:48.555+0000] {things_to_do.py:114} INFO - Scraping page 1: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-13T20:03:56.121+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:03:56.121+0000] {things_to_do.py:126} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-13T20:03:59.538+0000] {things_to_do.py:126} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-13T20:04:03.213+0000] {things_to_do.py:126} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-13T20:04:06.618+0000] {things_to_do.py:126} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-13T20:04:10.025+0000] {things_to_do.py:126} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-13T20:04:13.489+0000] {things_to_do.py:126} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-13T20:04:16.894+0000] {things_to_do.py:126} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-13T20:04:21.516+0000] {things_to_do.py:126} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-13T20:04:25.162+0000] {things_to_do.py:126} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-13T20:04:28.513+0000] {things_to_do.py:126} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/national-9-11-memorial-museum
+[2025-04-13T20:04:32.048+0000] {things_to_do.py:126} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/intrepid-sea-air-and-space-museum
+[2025-04-13T20:04:35.547+0000] {things_to_do.py:126} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/solomon-r-guggenheim-museum
+[2025-04-13T20:04:39.304+0000] {things_to_do.py:126} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/radio-city-music-hall
+[2025-04-13T20:04:43.926+0000] {things_to_do.py:126} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/fanaberie
+[2025-04-13T20:04:47.484+0000] {things_to_do.py:126} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/united-nations-headquarters
+[2025-04-13T20:04:51.025+0000] {things_to_do.py:114} INFO - Scraping page 2: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=2
+[2025-04-13T20:04:55.794+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-public-library
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/national-museum-of-american-indian
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/children-s-museum-of-manhattan
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-morgan-library-and-museum
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cathedral-church-of-saint-john-the-divine
+[2025-04-13T20:04:55.795+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/gramercy-tavern
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bryant-park
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-heights-promenade
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/65th-street
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chrysler-building
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chinatown
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/dead-rabbit
+[2025-04-13T20:04:55.796+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-transit-museum
+[2025-04-13T20:04:55.797+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/frick-collection
+[2025-04-13T20:04:55.797+0000] {things_to_do.py:114} INFO - Scraping page 3: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=3
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/yankee-stadium
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/harlem
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/battery-park
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-mean-fiddler
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-paul-s-chapel
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/metropolitan-opera-house
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-patrick-s-cathedral
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/little-italy
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/central-park-zoo
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/lexington-avenue
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-botanical-garden
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-botanical-garden
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/place/adda/51c828b2e705454c13000000
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-industries
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bloomingdale-s
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:114} INFO - Scraping page 4: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=4
+[2025-04-13T20:05:05.153+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:05.154+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/one-world-trade-center
+[2025-04-13T20:05:05.154+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/carnegie-hall
+[2025-04-13T20:05:05.154+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/ground-zero
+[2025-04-13T20:05:05.154+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/narcissa
+[2025-04-13T20:05:05.154+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/minton-s
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-the-moving-image
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/south-street-seaport
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/french-roast
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/little-owl
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/wall-street-new-york
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/century-21
+[2025-04-13T20:05:05.155+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-harbor
+[2025-04-13T20:05:05.156+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/flushing-meadows-corona-park
+[2025-04-13T20:05:05.156+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/governor-s-island
+[2025-04-13T20:05:05.156+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/apollo-theater
+[2025-04-13T20:05:05.156+0000] {things_to_do.py:114} INFO - Scraping page 5: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=5
+[2025-04-13T20:05:09.779+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:09.779+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/big-gay-ice-cream
+[2025-04-13T20:05:09.779+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/luna-park-coney-island
+[2025-04-13T20:05:09.779+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge-park
+[2025-04-13T20:05:09.779+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/plaza-hotel
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chelsea-market
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-strip-house-12th-street
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/germania-bank-building
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/graffiti-hall-of-fame
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/flatiron-building
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hayden-planetarium
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cafe-mogador
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/broadway-street
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/eataly
+[2025-04-13T20:05:09.780+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hunts-point
+[2025-04-13T20:05:09.781+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/circle-line-cruise
+[2025-04-13T20:05:09.781+0000] {things_to_do.py:114} INFO - Scraping page 6: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=6
+[2025-04-13T20:05:14.107+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:14.107+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/fifth-avenue
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/marea
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-jewish-heritage
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/church-of-st-paul-the-apostle
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-vincent-ferrer
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-francis-xavier
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/calvary-episcopal-church
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/macy-s-herald-square
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-flea
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/neue-gallery
+[2025-04-13T20:05:14.108+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bldg-92
+[2025-04-13T20:05:14.109+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/centre-fuge-public-art-project
+[2025-04-13T20:05:14.109+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-lion
+[2025-04-13T20:05:14.109+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bowery-graffiti-wall
+[2025-04-13T20:05:14.109+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bronx-hall-of-fame
+[2025-04-13T20:05:14.109+0000] {things_to_do.py:114} INFO - Scraping page 7: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7
+[2025-04-13T20:05:18.224+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:18.225+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/general-grant-national-memorial
+[2025-04-13T20:05:18.225+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/union-square
+[2025-04-13T20:05:18.225+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brandy-library
+[2025-04-13T20:05:18.225+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/casa-lever
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hudson-river-greenway
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-united-states/museum-of-the-city-of-new-york
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/union-square-greenmarket
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-arts-and-design-store
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/welling-court
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/stillwell-avenue
+[2025-04-13T20:05:18.226+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/woolworth-building-tour
+[2025-04-13T20:05:18.227+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/tuff-city
+[2025-04-13T20:05:18.227+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/north-6th-street
+[2025-04-13T20:05:18.227+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cafe-wha
+[2025-04-13T20:05:18.227+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/majestic-theatre
+[2025-04-13T20:05:18.227+0000] {things_to_do.py:114} INFO - Scraping page 8: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=8
+[2025-04-13T20:05:18.508+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-13T20:05:18.512+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-13T20:05:18.514+0000] {process_utils.py:132} INFO - Sending 15 to group 84. PIDs of all processes in the group: [87, 120, 125, 128, 178, 217, 171, 84]
+[2025-04-13T20:05:18.514+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 84
+[2025-04-13T20:05:18.514+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-13T20:05:18.531+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=217, status='terminated', started='20:03:47') (217) terminated with exit code None
+[2025-04-13T20:05:18.532+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=125, status='terminated', started='20:03:47') (125) terminated with exit code None
+[2025-04-13T20:05:18.532+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=120, status='terminated', started='20:03:47') (120) terminated with exit code None
+[2025-04-13T20:05:18.535+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=87, status='terminated', started='20:03:47') (87) terminated with exit code None
+[2025-04-13T20:05:18.535+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=171, status='terminated', started='20:03:47') (171) terminated with exit code None
+[2025-04-13T20:05:18.536+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=128, status='terminated', started='20:03:47') (128) terminated with exit code None
+[2025-04-13T20:05:18.687+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=178, status='terminated', started='20:03:47') (178) terminated with exit code None
+[2025-04-13T20:06:18.521+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=84, name='airflow task ru', status='sleeping', started='20:03:47') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-13T20:06:18.526+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 84
+[2025-04-13T20:06:18.560+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=84, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='20:03:47') (84) terminated with exit code -9
+[2025-04-13T20:06:18.561+0000] {standard_task_runner.py:190} ERROR - ('Job 177 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

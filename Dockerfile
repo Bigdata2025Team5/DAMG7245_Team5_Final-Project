@@ -1,18 +1,19 @@
 FROM python:3.9-slim
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy requirements file
-COPY requirements.txt .
+# Copy backend requirements
+COPY backend/requirements.txt .
 
-# Install dependencies
+# Install Python dependencies
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy only backend code (adjust if needed)
+COPY backend/ .
 
-# Expose ports for FastAPI and Streamlit
+# Expose FastAPI port
 EXPOSE 8000
 
 

@@ -1,0 +1,21 @@
+[2025-04-13T22:35:50.776+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T22:35:50.781+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.upload_to_s3 manual__2025-04-13T22:32:04.434926+00:00 [queued]>
+[2025-04-13T22:35:50.783+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.upload_to_s3 manual__2025-04-13T22:32:04.434926+00:00 [queued]>
+[2025-04-13T22:35:50.784+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-13T22:35:50.787+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): upload_to_s3> on 2025-04-13 22:32:04.434926+00:00
+[2025-04-13T22:35:50.793+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=400) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T22:35:50.795+0000] {standard_task_runner.py:72} INFO - Started process 401 to run task
+[2025-04-13T22:35:50.795+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'upload_to_s3', 'manual__2025-04-13T22:32:04.434926+00:00', '--job-id', '208', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpzpw3e3se']
+[2025-04-13T22:35:50.796+0000] {standard_task_runner.py:105} INFO - Job 208: Subtask upload_to_s3
+[2025-04-13T22:35:50.812+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.upload_to_s3 manual__2025-04-13T22:32:04.434926+00:00 [running]> on host 599bf25ffed0
+[2025-04-13T22:35:50.837+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='upload_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T22:32:04.434926+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T22:32:04.434926+00:00'
+[2025-04-13T22:35:50.838+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T22:35:51.464+0000] {hotel_scrape_dag.py:268} INFO - ✅ Uploaded to s3://bigdatafinal2025/multi_city_ihg_hotels.csv
+[2025-04-13T22:35:51.467+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-13T22:35:51.477+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T22:35:51.477+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=upload_to_s3, run_id=manual__2025-04-13T22:32:04.434926+00:00, execution_date=20250413T223204, start_date=20250413T223550, end_date=20250413T223551
+[2025-04-13T22:35:51.529+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T22:35:51.540+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T22:35:51.541+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

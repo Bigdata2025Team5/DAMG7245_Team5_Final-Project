@@ -1,0 +1,263 @@
+[2025-04-18T04:32:09.507+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T04:32:09.512+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:32:09.515+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:32:09.515+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T04:32:09.518+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_attractions> on 2025-04-17 04:00:00+00:00
+[2025-04-18T04:32:09.521+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=554) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T04:32:09.522+0000] {standard_task_runner.py:72} INFO - Started process 555 to run task
+[2025-04-18T04:32:09.522+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_scrape', 'geocode_attractions', 'scheduled__2025-04-17T04:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmpmr4kr04x']
+[2025-04-18T04:32:09.523+0000] {standard_task_runner.py:105} INFO - Job 37: Subtask geocode_attractions
+[2025-04-18T04:32:09.539+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [running]> on host 41648ed0d7d3
+[2025-04-18T04:32:09.563+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_scrape' AIRFLOW_CTX_TASK_ID='geocode_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-17T04:00:00+00:00'
+[2025-04-18T04:32:09.564+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T04:32:09.570+0000] {attractions_dag.py:420} INFO - Total attractions to process: 90
+[2025-04-18T04:32:09.570+0000] {attractions_dag.py:425} INFO - Resuming from existing output file with 21 rows
+[2025-04-18T04:32:09.570+0000] {attractions_dag.py:445} INFO - Processing batch 1: rows 22 to 71
+[2025-04-18T04:32:09.571+0000] {attractions_dag.py:452} INFO -   (22/90) Geocoding: Brooklyn Bridge
+[2025-04-18T04:32:09.824+0000] {attractions_dag.py:452} INFO -   (23/90) Geocoding: Bryant Park
+[2025-04-18T04:32:10.104+0000] {attractions_dag.py:452} INFO -   (24/90) Geocoding: Brooklyn Heights Promenade
+[2025-04-18T04:32:10.352+0000] {attractions_dag.py:452} INFO -   (25/90) Geocoding: 65th Street
+[2025-04-18T04:32:10.593+0000] {attractions_dag.py:452} INFO -   (26/90) Geocoding: Chrysler Building
+[2025-04-18T04:32:10.832+0000] {attractions_dag.py:452} INFO -   (27/90) Geocoding: Chinatown
+[2025-04-18T04:32:11.054+0000] {attractions_dag.py:452} INFO -   (28/90) Geocoding: Dead Rabbit
+[2025-04-18T04:32:11.299+0000] {attractions_dag.py:452} INFO -   (29/90) Geocoding: New York Transit Museum
+[2025-04-18T04:32:11.561+0000] {attractions_dag.py:452} INFO -   (30/90) Geocoding: Frick Collection
+[2025-04-18T04:32:11.811+0000] {attractions_dag.py:452} INFO -   (31/90) Geocoding: Yankee Stadium
+[2025-04-18T04:32:12.079+0000] {attractions_dag.py:452} INFO -   (32/90) Geocoding: Harlem
+[2025-04-18T04:32:12.317+0000] {attractions_dag.py:452} INFO -   (33/90) Geocoding: Battery Park
+[2025-04-18T04:32:12.601+0000] {attractions_dag.py:452} INFO -   (34/90) Geocoding: The Mean Fiddler
+[2025-04-18T04:32:12.864+0000] {attractions_dag.py:452} INFO -   (35/90) Geocoding: St Paul S Chapel
+[2025-04-18T04:32:13.157+0000] {attractions_dag.py:452} INFO -   (36/90) Geocoding: Metropolitan Opera House
+[2025-04-18T04:32:13.470+0000] {attractions_dag.py:452} INFO -   (37/90) Geocoding: St Patrick S Cathedral
+[2025-04-18T04:32:13.742+0000] {attractions_dag.py:452} INFO -   (38/90) Geocoding: Little Italy
+[2025-04-18T04:32:13.982+0000] {attractions_dag.py:452} INFO -   (39/90) Geocoding: Central Park Zoo
+[2025-04-18T04:32:14.252+0000] {attractions_dag.py:452} INFO -   (40/90) Geocoding: Lexington Avenue
+[2025-04-18T04:32:14.513+0000] {attractions_dag.py:452} INFO -   (41/90) Geocoding: New York Botanical Garden
+[2025-04-18T04:32:14.750+0000] {attractions_dag.py:452} INFO -   (42/90) Geocoding: Brooklyn Botanical Garden
+[2025-04-18T04:32:15.012+0000] {attractions_dag.py:452} INFO -   (43/90) Geocoding: 51c828b2e705454c13000000
+[2025-04-18T04:32:15.253+0000] {attractions_dag.py:452} INFO -   (44/90) Geocoding: Brooklyn Industries
+[2025-04-18T04:32:15.500+0000] {attractions_dag.py:452} INFO -   (45/90) Geocoding: Bloomingdale S
+[2025-04-18T04:32:15.780+0000] {attractions_dag.py:452} INFO -   (46/90) Geocoding: One World Trade Center
+[2025-04-18T04:32:16.041+0000] {attractions_dag.py:452} INFO -   (47/90) Geocoding: Carnegie Hall
+[2025-04-18T04:32:16.300+0000] {attractions_dag.py:452} INFO -   (48/90) Geocoding: Ground Zero
+[2025-04-18T04:32:16.567+0000] {attractions_dag.py:452} INFO -   (49/90) Geocoding: Narcissa
+[2025-04-18T04:32:16.824+0000] {attractions_dag.py:452} INFO -   (50/90) Geocoding: Minton S
+[2025-04-18T04:32:17.083+0000] {attractions_dag.py:452} INFO -   (51/90) Geocoding: Museum Of The Moving Image
+[2025-04-18T04:32:17.316+0000] {attractions_dag.py:452} INFO -   (52/90) Geocoding: South Street Seaport
+[2025-04-18T04:32:17.606+0000] {attractions_dag.py:452} INFO -   (53/90) Geocoding: French Roast
+[2025-04-18T04:32:17.868+0000] {attractions_dag.py:452} INFO -   (54/90) Geocoding: Little Owl
+[2025-04-18T04:32:18.135+0000] {attractions_dag.py:452} INFO -   (55/90) Geocoding: Wall Street New York
+[2025-04-18T04:32:18.377+0000] {attractions_dag.py:452} INFO -   (56/90) Geocoding: Century 21
+[2025-04-18T04:32:18.638+0000] {attractions_dag.py:452} INFO -   (57/90) Geocoding: New York Harbor
+[2025-04-18T04:32:18.895+0000] {attractions_dag.py:452} INFO -   (58/90) Geocoding: Flushing Meadows Corona Park
+[2025-04-18T04:32:19.180+0000] {attractions_dag.py:452} INFO -   (59/90) Geocoding: Governor S Island
+[2025-04-18T04:32:19.429+0000] {attractions_dag.py:452} INFO -   (60/90) Geocoding: Apollo Theater
+[2025-04-18T04:32:19.696+0000] {attractions_dag.py:452} INFO -   (61/90) Geocoding: Big Gay Ice Cream
+[2025-04-18T04:32:19.957+0000] {attractions_dag.py:452} INFO -   (62/90) Geocoding: Luna Park Coney Island
+[2025-04-18T04:32:20.260+0000] {attractions_dag.py:452} INFO -   (63/90) Geocoding: Brooklyn Bridge Park
+[2025-04-18T04:32:20.517+0000] {attractions_dag.py:452} INFO -   (64/90) Geocoding: Plaza Hotel
+[2025-04-18T04:32:20.788+0000] {attractions_dag.py:452} INFO -   (65/90) Geocoding: Chelsea Market
+[2025-04-18T04:32:21.056+0000] {attractions_dag.py:452} INFO -   (66/90) Geocoding: The Strip House 12th Street
+[2025-04-18T04:32:21.323+0000] {attractions_dag.py:452} INFO -   (67/90) Geocoding: Germania Bank Building
+[2025-04-18T04:32:21.607+0000] {attractions_dag.py:452} INFO -   (68/90) Geocoding: Graffiti Hall Of Fame
+[2025-04-18T04:32:21.915+0000] {attractions_dag.py:452} INFO -   (69/90) Geocoding: Flatiron Building
+[2025-04-18T04:32:22.204+0000] {attractions_dag.py:452} INFO -   (70/90) Geocoding: Hayden Planetarium
+[2025-04-18T04:32:22.458+0000] {attractions_dag.py:452} INFO -   (71/90) Geocoding: Cafe Mogador
+[2025-04-18T04:32:22.704+0000] {attractions_dag.py:465} INFO - Completed batch 1. Sleeping before next batch...
+[2025-04-18T04:32:24.710+0000] {attractions_dag.py:445} INFO - Processing batch 2: rows 72 to 90
+[2025-04-18T04:32:24.711+0000] {attractions_dag.py:452} INFO -   (72/90) Geocoding: Broadway Street
+[2025-04-18T04:32:24.890+0000] {attractions_dag.py:452} INFO -   (73/90) Geocoding: Eataly
+[2025-04-18T04:32:25.065+0000] {attractions_dag.py:452} INFO -   (74/90) Geocoding: Hunts Point
+[2025-04-18T04:32:25.241+0000] {attractions_dag.py:452} INFO -   (75/90) Geocoding: Circle Line Cruise
+[2025-04-18T04:32:25.423+0000] {attractions_dag.py:452} INFO -   (76/90) Geocoding: Fifth Avenue
+[2025-04-18T04:32:25.623+0000] {attractions_dag.py:452} INFO -   (77/90) Geocoding: Marea
+[2025-04-18T04:32:25.901+0000] {attractions_dag.py:452} INFO -   (78/90) Geocoding: Museum Of Jewish Heritage
+[2025-04-18T04:32:26.108+0000] {attractions_dag.py:452} INFO -   (79/90) Geocoding: Church Of St Paul The Apostle
+[2025-04-18T04:32:26.336+0000] {attractions_dag.py:452} INFO -   (80/90) Geocoding: St Vincent Ferrer
+[2025-04-18T04:32:26.542+0000] {attractions_dag.py:452} INFO -   (81/90) Geocoding: St Francis Xavier
+[2025-04-18T04:32:26.731+0000] {attractions_dag.py:452} INFO -   (82/90) Geocoding: Calvary Episcopal Church
+[2025-04-18T04:32:26.908+0000] {attractions_dag.py:452} INFO -   (83/90) Geocoding: Macy S Herald Square
+[2025-04-18T04:32:27.092+0000] {attractions_dag.py:452} INFO -   (84/90) Geocoding: Brooklyn Flea
+[2025-04-18T04:32:27.275+0000] {attractions_dag.py:452} INFO -   (85/90) Geocoding: Neue Gallery
+[2025-04-18T04:32:27.458+0000] {attractions_dag.py:452} INFO -   (86/90) Geocoding: Bldg 92
+[2025-04-18T04:32:27.649+0000] {attractions_dag.py:452} INFO -   (87/90) Geocoding: Centre Fuge Public Art Project
+[2025-04-18T04:32:27.836+0000] {attractions_dag.py:452} INFO -   (88/90) Geocoding: The Lion
+[2025-04-18T04:32:28.026+0000] {attractions_dag.py:452} INFO -   (89/90) Geocoding: Bowery Graffiti Wall
+[2025-04-18T04:32:28.196+0000] {attractions_dag.py:452} INFO -   (90/90) Geocoding: Bronx Hall Of Fame
+[2025-04-18T04:32:28.379+0000] {attractions_dag.py:465} INFO - Completed batch 2. Sleeping before next batch...
+[2025-04-18T04:32:30.384+0000] {attractions_dag.py:469} INFO - Successfully processed all 90 attractions
+[2025-04-18T04:32:30.386+0000] {attractions_dag.py:470} INFO - Output saved to: /tmp/triphobo_data/attractions_with_coords.csv
+[2025-04-18T04:32:30.390+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-18T04:32:30.406+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T04:32:30.407+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_attractions_scrape, task_id=geocode_attractions, run_id=scheduled__2025-04-17T04:00:00+00:00, execution_date=20250417T040000, start_date=20250418T043209, end_date=20250418T043230
+[2025-04-18T04:32:30.421+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T04:32:30.433+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T04:32:30.434+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-18T05:30:05.871+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T05:30:05.877+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T05:30:05.879+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T05:30:05.879+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T05:30:05.883+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_attractions> on 2025-04-17 04:00:00+00:00
+[2025-04-18T05:30:05.885+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T05:30:05.886+0000] {standard_task_runner.py:72} INFO - Started process 1016 to run task
+[2025-04-18T05:30:05.886+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_scrape', 'geocode_attractions', 'scheduled__2025-04-17T04:00:00+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmp4rtd5aat']
+[2025-04-18T05:30:05.888+0000] {standard_task_runner.py:105} INFO - Job 44: Subtask geocode_attractions
+[2025-04-18T05:30:05.904+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_scrape.geocode_attractions scheduled__2025-04-17T04:00:00+00:00 [running]> on host 41648ed0d7d3
+[2025-04-18T05:30:05.928+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_scrape' AIRFLOW_CTX_TASK_ID='geocode_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-17T04:00:00+00:00'
+[2025-04-18T05:30:05.928+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T05:30:05.936+0000] {attractions_dag.py:491} INFO - Total attractions to process: 236
+[2025-04-18T05:30:05.938+0000] {attractions_dag.py:496} INFO - Resuming from existing output file with 100 rows
+[2025-04-18T05:30:05.938+0000] {attractions_dag.py:516} INFO - Processing batch 3: rows 101 to 150
+[2025-04-18T05:30:05.938+0000] {attractions_dag.py:523} INFO -   (101/236) Geocoding: The Walt Disney Family Museum
+[2025-04-18T05:30:06.268+0000] {attractions_dag.py:523} INFO -   (102/236) Geocoding: San Francisco Cable Car Museum
+[2025-04-18T05:30:06.607+0000] {attractions_dag.py:523} INFO -   (103/236) Geocoding: Asian Art Museum Of San Francisco
+[2025-04-18T05:30:06.884+0000] {attractions_dag.py:523} INFO -   (104/236) Geocoding: Musee Mecanique
+[2025-04-18T05:30:07.168+0000] {attractions_dag.py:523} INFO -   (105/236) Geocoding: Cliff House
+[2025-04-18T05:30:07.442+0000] {attractions_dag.py:523} INFO -   (106/236) Geocoding: Washington Square
+[2025-04-18T05:30:07.718+0000] {attractions_dag.py:523} INFO -   (107/236) Geocoding: Coit Tower
+[2025-04-18T05:30:08.064+0000] {attractions_dag.py:523} INFO -   (108/236) Geocoding: Fort Point National Historic Site
+[2025-04-18T05:30:08.477+0000] {attractions_dag.py:523} INFO -   (109/236) Geocoding: Grace Cathedral
+[2025-04-18T05:30:08.737+0000] {attractions_dag.py:523} INFO -   (110/236) Geocoding: Bay Bridge
+[2025-04-18T05:30:09.034+0000] {attractions_dag.py:523} INFO -   (111/236) Geocoding: Exploratorium
+[2025-04-18T05:30:09.299+0000] {attractions_dag.py:523} INFO -   (112/236) Geocoding: San Francisco Maritime National Historical Park
+[2025-04-18T05:30:09.577+0000] {attractions_dag.py:523} INFO -   (113/236) Geocoding: City Hall
+[2025-04-18T05:30:09.873+0000] {attractions_dag.py:523} INFO -   (114/236) Geocoding: De Young Museum
+[2025-04-18T05:30:10.185+0000] {attractions_dag.py:523} INFO -   (115/236) Geocoding: Embarcadero Center
+[2025-04-18T05:30:10.451+0000] {attractions_dag.py:523} INFO -   (116/236) Geocoding: Transamerica Pyramid
+[2025-04-18T05:30:10.727+0000] {attractions_dag.py:523} INFO -   (117/236) Geocoding: Japanese Tea Garden
+[2025-04-18T05:30:10.983+0000] {attractions_dag.py:523} INFO -   (118/236) Geocoding: Ocean Beach
+[2025-04-18T05:30:11.292+0000] {attractions_dag.py:523} INFO -   (119/236) Geocoding: Palace Of Fine Arts
+[2025-04-18T05:30:11.615+0000] {attractions_dag.py:523} INFO -   (120/236) Geocoding: Haight Ashbury
+[2025-04-18T05:30:11.859+0000] {attractions_dag.py:523} INFO -   (121/236) Geocoding: Sutro Baths Ruins
+[2025-04-18T05:30:12.116+0000] {attractions_dag.py:523} INFO -   (122/236) Geocoding: Ripley S Believe It Or Not
+[2025-04-18T05:30:12.396+0000] {attractions_dag.py:523} INFO -   (123/236) Geocoding: Aquarium Of The Bay
+[2025-04-18T05:30:12.667+0000] {attractions_dag.py:523} INFO -   (124/236) Geocoding: Alamo Square
+[2025-04-18T05:30:12.927+0000] {attractions_dag.py:523} INFO -   (125/236) Geocoding: Union Square
+[2025-04-18T05:30:13.129+0000] {attractions_dag.py:523} INFO -   (126/236) Geocoding: Hollywood Cafe
+[2025-04-18T05:30:13.460+0000] {attractions_dag.py:523} INFO -   (127/236) Geocoding: Elbo Room
+[2025-04-18T05:30:13.711+0000] {attractions_dag.py:523} INFO -   (128/236) Geocoding: Asiasf
+[2025-04-18T05:30:13.966+0000] {attractions_dag.py:523} INFO -   (129/236) Geocoding: Butter
+[2025-04-18T05:30:14.226+0000] {attractions_dag.py:523} INFO -   (130/236) Geocoding: Crissy Field
+[2025-04-18T05:30:14.488+0000] {attractions_dag.py:523} INFO -   (131/236) Geocoding: Mission Dolores
+[2025-04-18T05:30:14.839+0000] {attractions_dag.py:523} INFO -   (132/236) Geocoding: Hyde Street Pier
+[2025-04-18T05:30:15.089+0000] {attractions_dag.py:523} INFO -   (133/236) Geocoding: 555 California Street
+[2025-04-18T05:30:15.352+0000] {attractions_dag.py:523} INFO -   (134/236) Geocoding: Randall Museum
+[2025-04-18T05:30:15.674+0000] {attractions_dag.py:523} INFO -   (135/236) Geocoding: California Palace Of The Legion Of Honor
+[2025-04-18T05:30:15.952+0000] {attractions_dag.py:523} INFO -   (136/236) Geocoding: Beach Blanket Babylon
+[2025-04-18T05:30:16.206+0000] {attractions_dag.py:523} INFO -   (137/236) Geocoding: San Francisco Zoo
+[2025-04-18T05:30:16.477+0000] {attractions_dag.py:523} INFO -   (138/236) Geocoding: San Francisco Public Library Main
+[2025-04-18T05:30:16.812+0000] {attractions_dag.py:523} INFO -   (139/236) Geocoding: Marrakech Magic Theatre
+[2025-04-18T05:30:17.080+0000] {attractions_dag.py:523} INFO -   (140/236) Geocoding: City Lights Booksellers And Publishers
+[2025-04-18T05:30:17.340+0000] {attractions_dag.py:523} INFO -   (141/236) Geocoding: Boudin At The Wharf
+[2025-04-18T05:30:17.594+0000] {attractions_dag.py:523} INFO -   (142/236) Geocoding: San Francisco Botanical Garden
+[2025-04-18T05:30:17.851+0000] {attractions_dag.py:523} INFO -   (143/236) Geocoding: Powell And Market Cable Car Turnaround
+[2025-04-18T05:30:18.142+0000] {attractions_dag.py:523} INFO -   (144/236) Geocoding: Filbert Steps And Grace Marchant Gardens
+[2025-04-18T05:30:18.409+0000] {attractions_dag.py:523} INFO -   (145/236) Geocoding: S S Jeremiah O Brien
+[2025-04-18T05:30:18.705+0000] {attractions_dag.py:523} INFO -   (146/236) Geocoding: The San Francisco Dungeon
+[2025-04-18T05:30:18.971+0000] {attractions_dag.py:523} INFO -   (147/236) Geocoding: Japan Town
+[2025-04-18T05:30:19.222+0000] {attractions_dag.py:523} INFO -   (148/236) Geocoding: Golden Gate Promenade
+[2025-04-18T05:30:19.499+0000] {attractions_dag.py:523} INFO -   (149/236) Geocoding: Caffe Trieste
+[2025-04-18T05:30:19.798+0000] {attractions_dag.py:523} INFO -   (150/236) Geocoding: Nob Hill
+[2025-04-18T05:30:20.041+0000] {attractions_dag.py:536} INFO - Completed batch 3. Sleeping before next batch...
+[2025-04-18T05:30:22.042+0000] {attractions_dag.py:516} INFO - Processing batch 4: rows 151 to 200
+[2025-04-18T05:30:22.044+0000] {attractions_dag.py:523} INFO -   (151/236) Geocoding: Conservatory Of Flowers
+[2025-04-18T05:30:22.320+0000] {attractions_dag.py:523} INFO -   (152/236) Geocoding: Biscuits And Blues
+[2025-04-18T05:30:22.593+0000] {attractions_dag.py:523} INFO -   (153/236) Geocoding: Smuggler S Cove
+[2025-04-18T05:30:22.919+0000] {attractions_dag.py:523} INFO -   (154/236) Geocoding: Vesuvio
+[2025-04-18T05:30:23.166+0000] {attractions_dag.py:523} INFO -   (155/236) Geocoding: The Saloon
+[2025-04-18T05:30:23.512+0000] {attractions_dag.py:523} INFO -   (156/236) Geocoding: Ferry Building
+[2025-04-18T05:30:23.779+0000] {attractions_dag.py:523} INFO -   (157/236) Geocoding: Ferry Plaza Farmers Market
+[2025-04-18T05:30:24.225+0000] {attractions_dag.py:523} INFO -   (158/236) Geocoding: Telegraph Hill
+[2025-04-18T05:30:24.486+0000] {attractions_dag.py:523} INFO -   (159/236) Geocoding: Civic Center
+[2025-04-18T05:30:24.751+0000] {attractions_dag.py:523} INFO -   (160/236) Geocoding: Yerba Buena Gardens
+[2025-04-18T05:30:25.012+0000] {attractions_dag.py:523} INFO -   (161/236) Geocoding: Treasure Island
+[2025-04-18T05:30:25.337+0000] {attractions_dag.py:523} INFO -   (162/236) Geocoding: Little Italy
+[2025-04-18T05:30:25.653+0000] {attractions_dag.py:523} INFO -   (163/236) Geocoding: Wells Fargo History Museum
+[2025-04-18T05:30:25.910+0000] {attractions_dag.py:523} INFO -   (164/236) Geocoding: Saint Mary S Cathedral
+[2025-04-18T05:30:26.181+0000] {attractions_dag.py:523} INFO -   (165/236) Geocoding: Kabuki Springs And Spa
+[2025-04-18T05:30:26.433+0000] {attractions_dag.py:523} INFO -   (166/236) Geocoding: Fillmore Street
+[2025-04-18T05:30:26.690+0000] {attractions_dag.py:523} INFO -   (167/236) Geocoding: Union Street
+[2025-04-18T05:30:26.929+0000] {attractions_dag.py:523} INFO -   (168/236) Geocoding: Pier 23 Cafe
+[2025-04-18T05:30:27.188+0000] {attractions_dag.py:523} INFO -   (169/236) Geocoding: Balmy Alley Murals
+[2025-04-18T05:30:27.440+0000] {attractions_dag.py:523} INFO -   (170/236) Geocoding: 16th Avenue Tiled Steps
+[2025-04-18T05:30:27.757+0000] {attractions_dag.py:523} INFO -   (171/236) Geocoding: Fort Mason Center For Arts And Culture
+[2025-04-18T05:30:28.025+0000] {attractions_dag.py:523} INFO -   (172/236) Geocoding: Sea Lion Center
+[2025-04-18T05:30:28.278+0000] {attractions_dag.py:523} INFO -   (173/236) Geocoding: Nordstrom
+[2025-04-18T05:30:28.531+0000] {attractions_dag.py:523} INFO -   (174/236) Geocoding: Redwood Room
+[2025-04-18T05:30:28.787+0000] {attractions_dag.py:523} INFO -   (175/236) Geocoding: War Memorial Opera House
+[2025-04-18T05:30:29.050+0000] {attractions_dag.py:523} INFO -   (176/236) Geocoding: Buena Vista Park
+[2025-04-18T05:30:29.313+0000] {attractions_dag.py:523} INFO -   (177/236) Geocoding: Saints Peter And Paul Church
+[2025-04-18T05:30:29.629+0000] {attractions_dag.py:523} INFO -   (178/236) Geocoding: Pacific Heights
+[2025-04-18T05:30:29.945+0000] {attractions_dag.py:523} INFO -   (179/236) Geocoding: Maritime Museum
+[2025-04-18T05:30:30.211+0000] {attractions_dag.py:523} INFO -   (180/236) Geocoding: Pier 7
+[2025-04-18T05:30:30.459+0000] {attractions_dag.py:523} INFO -   (181/236) Geocoding: Greenwich Steps
+[2025-04-18T05:30:30.711+0000] {attractions_dag.py:523} INFO -   (182/236) Geocoding: Panhandle At Golden Gate Park
+[2025-04-18T05:30:30.971+0000] {attractions_dag.py:523} INFO -   (183/236) Geocoding: Warfield Theater
+[2025-04-18T05:30:31.216+0000] {attractions_dag.py:523} INFO -   (184/236) Geocoding: American Conservatory Theater
+[2025-04-18T05:30:31.490+0000] {attractions_dag.py:523} INFO -   (185/236) Geocoding: Museum Of The African Diaspora
+[2025-04-18T05:30:31.754+0000] {attractions_dag.py:523} INFO -   (186/236) Geocoding: Noe Valley
+[2025-04-18T05:30:32.003+0000] {attractions_dag.py:523} INFO -   (187/236) Geocoding: Angel Island Immigration Station
+[2025-04-18T05:30:32.351+0000] {attractions_dag.py:523} INFO -   (188/236) Geocoding: Hayes Valley
+[2025-04-18T05:30:32.579+0000] {attractions_dag.py:523} INFO -   (189/236) Geocoding: Heart Of The City Farmers Market
+[2025-04-18T05:30:32.877+0000] {attractions_dag.py:523} INFO -   (190/236) Geocoding: Sfo Aviation Museum
+[2025-04-18T05:30:33.161+0000] {attractions_dag.py:523} INFO -   (191/236) Geocoding: Gump S
+[2025-04-18T05:30:33.498+0000] {attractions_dag.py:523} INFO -   (192/236) Geocoding: Candy Baron
+[2025-04-18T05:30:33.771+0000] {attractions_dag.py:523} INFO -   (193/236) Geocoding: Corona Heights Park
+[2025-04-18T05:30:34.040+0000] {attractions_dag.py:523} INFO -   (194/236) Geocoding: Grateful Dead House
+[2025-04-18T05:30:34.301+0000] {attractions_dag.py:523} INFO -   (195/236) Geocoding: Pioneer Monument
+[2025-04-18T05:30:34.562+0000] {attractions_dag.py:523} INFO -   (196/236) Geocoding: Speakeasy Ales And Lagers
+[2025-04-18T05:30:34.830+0000] {attractions_dag.py:523} INFO -   (197/236) Geocoding: San Francisco National Cemetery
+[2025-04-18T05:30:35.090+0000] {attractions_dag.py:523} INFO -   (198/236) Geocoding: Clarion Alley Murals
+[2025-04-18T05:30:35.365+0000] {attractions_dag.py:523} INFO -   (199/236) Geocoding: Hendrik Point
+[2025-04-18T05:30:35.593+0000] {attractions_dag.py:523} INFO -   (200/236) Geocoding: Don Edwards San Francisco Bay Wildlife Refuge
+[2025-04-18T05:30:35.890+0000] {attractions_dag.py:536} INFO - Completed batch 4. Sleeping before next batch...
+[2025-04-18T05:30:37.897+0000] {attractions_dag.py:516} INFO - Processing batch 5: rows 201 to 236
+[2025-04-18T05:30:37.899+0000] {attractions_dag.py:523} INFO -   (201/236) Geocoding: Women S Building Mural
+[2025-04-18T05:30:38.169+0000] {attractions_dag.py:523} INFO -   (202/236) Geocoding: Yerba Buena Center For The Arts Ybca
+[2025-04-18T05:30:38.454+0000] {attractions_dag.py:523} INFO -   (203/236) Geocoding: Sutro Heights Park
+[2025-04-18T05:30:38.733+0000] {attractions_dag.py:523} INFO -   (204/236) Geocoding: Camera Obscura
+[2025-04-18T05:30:38.984+0000] {attractions_dag.py:523} INFO -   (205/236) Geocoding: Chinese Historical Society Of America Museum
+[2025-04-18T05:30:39.258+0000] {attractions_dag.py:523} INFO -   (206/236) Geocoding: Autodesk Gallery
+[2025-04-18T05:30:39.513+0000] {attractions_dag.py:523} INFO -   (207/236) Geocoding: National Aids Memorial Grove
+[2025-04-18T05:30:39.775+0000] {attractions_dag.py:523} INFO -   (208/236) Geocoding: The National Shrine Of Saint Francis Of Assisi
+[2025-04-18T05:30:40.041+0000] {attractions_dag.py:523} INFO -   (209/236) Geocoding: Cellarmaker Brewing Company
+[2025-04-18T05:30:40.318+0000] {attractions_dag.py:523} INFO -   (210/236) Geocoding: Mount Davidson
+[2025-04-18T05:30:40.587+0000] {attractions_dag.py:523} INFO -   (211/236) Geocoding: Hard Rock Cafe San Francisco
+[2025-04-18T05:30:40.864+0000] {attractions_dag.py:523} INFO -   (212/236) Geocoding: Potrero Hill
+[2025-04-18T05:30:41.177+0000] {attractions_dag.py:523} INFO -   (213/236) Geocoding: Neptune Society Columbarium
+[2025-04-18T05:30:41.442+0000] {attractions_dag.py:523} INFO -   (214/236) Geocoding: Lotta S Fountain
+[2025-04-18T05:30:41.711+0000] {attractions_dag.py:523} INFO -   (215/236) Geocoding: Alemany Flea Market
+[2025-04-18T05:30:41.991+0000] {attractions_dag.py:523} INFO -   (216/236) Geocoding: The Castro
+[2025-04-18T05:30:42.248+0000] {attractions_dag.py:523} INFO -   (217/236) Geocoding: Vermont Street
+[2025-04-18T05:30:42.502+0000] {attractions_dag.py:523} INFO -   (218/236) Geocoding: Anchor Brewing Company
+[2025-04-18T05:30:42.778+0000] {attractions_dag.py:523} INFO -   (219/236) Geocoding: Henry M Jackson Playground
+[2025-04-18T05:30:43.088+0000] {attractions_dag.py:523} INFO -   (220/236) Geocoding: Christopher S Books
+[2025-04-18T05:30:43.389+0000] {attractions_dag.py:523} INFO -   (221/236) Geocoding: Masonic Temple
+[2025-04-18T05:30:43.654+0000] {attractions_dag.py:523} INFO -   (222/236) Geocoding: Beach Chalet Brewery Restaurant
+[2025-04-18T05:30:43.927+0000] {attractions_dag.py:523} INFO -   (223/236) Geocoding: The Magic Theatre
+[2025-04-18T05:30:44.254+0000] {attractions_dag.py:523} INFO -   (224/236) Geocoding: Hidden Garden Steps
+[2025-04-18T05:30:44.513+0000] {attractions_dag.py:523} INFO -   (225/236) Geocoding: San Francisco Flower Mart
+[2025-04-18T05:30:44.788+0000] {attractions_dag.py:523} INFO -   (226/236) Geocoding: The Flood Building
+[2025-04-18T05:30:45.057+0000] {attractions_dag.py:523} INFO -   (227/236) Geocoding: Stockton Street
+[2025-04-18T05:30:45.310+0000] {attractions_dag.py:523} INFO -   (228/236) Geocoding: Crocker Galleria
+[2025-04-18T05:30:45.560+0000] {attractions_dag.py:523} INFO -   (229/236) Geocoding: Maiden Lane
+[2025-04-18T05:30:45.817+0000] {attractions_dag.py:523} INFO -   (230/236) Geocoding: Museo Italo Americano
+[2025-04-18T05:30:46.109+0000] {attractions_dag.py:523} INFO -   (231/236) Geocoding: Pier 24 Photography Museum
+[2025-04-18T05:30:46.373+0000] {attractions_dag.py:523} INFO -   (232/236) Geocoding: Swedenborgian Church
+[2025-04-18T05:30:46.690+0000] {attractions_dag.py:523} INFO -   (233/236) Geocoding: Sacramento Street
+[2025-04-18T05:30:46.949+0000] {attractions_dag.py:523} INFO -   (234/236) Geocoding: Occidental Cigar Club
+[2025-04-18T05:30:47.220+0000] {attractions_dag.py:523} INFO -   (235/236) Geocoding: Castro Theatre
+[2025-04-18T05:30:47.493+0000] {attractions_dag.py:523} INFO -   (236/236) Geocoding: Uss Pampanito
+[2025-04-18T05:30:47.764+0000] {attractions_dag.py:536} INFO - Completed batch 5. Sleeping before next batch...
+[2025-04-18T05:30:49.768+0000] {attractions_dag.py:540} INFO - Successfully processed all 236 attractions
+[2025-04-18T05:30:49.769+0000] {attractions_dag.py:541} INFO - Output saved to: /tmp/triphobo_data/attractions_with_coords.csv
+[2025-04-18T05:30:49.771+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-18T05:30:49.793+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T05:30:49.794+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_attractions_scrape, task_id=geocode_attractions, run_id=scheduled__2025-04-17T04:00:00+00:00, execution_date=20250417T040000, start_date=20250418T053005, end_date=20250418T053049
+[2025-04-18T05:30:49.821+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T05:30:49.844+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T05:30:49.845+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

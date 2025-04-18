@@ -1,0 +1,194 @@
+[2025-04-18T04:23:22.836+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T04:23:22.844+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:23:22.848+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:23:22.848+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T04:23:22.855+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-17 04:00:00+00:00
+[2025-04-18T04:23:22.859+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T04:23:22.860+0000] {standard_task_runner.py:72} INFO - Started process 107 to run task
+[2025-04-18T04:23:22.860+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_scrape', 'scrape_attractions', 'scheduled__2025-04-17T04:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmpeqp3pfc_']
+[2025-04-18T04:23:22.862+0000] {standard_task_runner.py:105} INFO - Job 29: Subtask scrape_attractions
+[2025-04-18T04:23:22.882+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [running]> on host 41648ed0d7d3
+[2025-04-18T04:23:22.914+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_scrape' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-17T04:00:00+00:00'
+[2025-04-18T04:23:22.914+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T04:23:22.924+0000] {attractions_dag.py:208} INFO - Scraping city 1/6: New York City United States
+[2025-04-18T04:23:23.206+0000] {attractions_dag.py:218} INFO - Scraping page 1/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-18T04:23:30.492+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:23:30.496+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-18T04:23:34.202+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-18T04:23:37.991+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-18T04:23:37.993+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-18T04:23:37.994+0000] {process_utils.py:132} INFO - Sending 15 to group 107. PIDs of all processes in the group: [110, 127, 136, 138, 172, 200, 166, 107]
+[2025-04-18T04:23:37.994+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 107
+[2025-04-18T04:23:37.995+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-18T04:23:38.013+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=110, status='terminated', started='04:23:22') (110) terminated with exit code None
+[2025-04-18T04:23:38.013+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=127, status='terminated', started='04:23:22') (127) terminated with exit code None
+[2025-04-18T04:23:38.014+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=138, status='terminated', started='04:23:22') (138) terminated with exit code None
+[2025-04-18T04:23:38.014+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=166, status='terminated', started='04:23:22') (166) terminated with exit code None
+[2025-04-18T04:23:38.014+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=172, status='terminated', started='04:23:22') (172) terminated with exit code None
+[2025-04-18T04:23:38.157+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=200, status='terminated', started='04:23:22') (200) terminated with exit code None
+[2025-04-18T04:23:38.157+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=136, status='terminated', started='04:23:22') (136) terminated with exit code None
+[2025-04-18T04:24:38.005+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=107, name='airflow task ru', status='sleeping', started='04:23:22') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-18T04:24:38.019+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 107
+[2025-04-18T04:24:38.053+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=107, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='04:23:22') (107) terminated with exit code -9
+[2025-04-18T04:24:38.055+0000] {standard_task_runner.py:190} ERROR - ('Job 29 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')
+[2025-04-18T04:24:48.596+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T04:24:48.602+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:24:48.604+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [queued]>
+[2025-04-18T04:24:48.604+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T04:24:48.607+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-17 04:00:00+00:00
+[2025-04-18T04:24:48.610+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=353) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T04:24:48.611+0000] {standard_task_runner.py:72} INFO - Started process 354 to run task
+[2025-04-18T04:24:48.612+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_scrape', 'scrape_attractions', 'scheduled__2025-04-17T04:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmpim5rrm50']
+[2025-04-18T04:24:48.613+0000] {standard_task_runner.py:105} INFO - Job 31: Subtask scrape_attractions
+[2025-04-18T04:24:48.628+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_scrape.scrape_attractions scheduled__2025-04-17T04:00:00+00:00 [running]> on host 41648ed0d7d3
+[2025-04-18T04:24:48.651+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_scrape' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-17T04:00:00+00:00'
+[2025-04-18T04:24:48.652+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T04:24:48.657+0000] {attractions_dag.py:175} INFO - Loaded checkpoint: City 0, Page 1, Completed cities: []
+[2025-04-18T04:24:48.661+0000] {attractions_dag.py:191} INFO - Loaded 10 existing records from /tmp/triphobo_data/multi_city_attractions.csv
+[2025-04-18T04:24:48.661+0000] {attractions_dag.py:195} INFO - Found 10 existing URLs in the dataset
+[2025-04-18T04:24:48.661+0000] {attractions_dag.py:208} INFO - Scraping city 1/6: New York City United States
+[2025-04-18T04:24:48.818+0000] {attractions_dag.py:218} INFO - Scraping page 1/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-18T04:24:54.901+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:24:54.902+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-18T04:24:54.902+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-18T04:24:54.902+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-18T04:24:54.902+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-18T04:24:54.902+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-18T04:24:56.906+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-18T04:24:56.906+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-18T04:24:56.907+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-18T04:24:56.907+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-18T04:24:56.907+0000] {attractions_dag.py:236} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/national-9-11-memorial-museum
+[2025-04-18T04:24:58.912+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/intrepid-sea-air-and-space-museum
+[2025-04-18T04:25:02.632+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/solomon-r-guggenheim-museum
+[2025-04-18T04:25:06.330+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/radio-city-music-hall
+[2025-04-18T04:25:10.004+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/fanaberie
+[2025-04-18T04:25:13.674+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/united-nations-headquarters
+[2025-04-18T04:25:17.326+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 1, Completed cities: []
+[2025-04-18T04:25:19.337+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 2, Completed cities: []
+[2025-04-18T04:25:19.338+0000] {attractions_dag.py:218} INFO - Scraping page 2/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=2
+[2025-04-18T04:25:23.850+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:25:23.850+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-public-library
+[2025-04-18T04:25:27.615+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/national-museum-of-american-indian
+[2025-04-18T04:25:31.346+0000] {attractions_dag.py:240} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/children-s-museum-of-manhattan
+[2025-04-18T04:25:35.008+0000] {attractions_dag.py:240} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/the-morgan-library-and-museum
+[2025-04-18T04:25:38.798+0000] {attractions_dag.py:240} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/cathedral-church-of-saint-john-the-divine
+[2025-04-18T04:25:42.733+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 2, Completed cities: []
+[2025-04-18T04:25:44.737+0000] {attractions_dag.py:240} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/gramercy-tavern
+[2025-04-18T04:25:48.695+0000] {attractions_dag.py:240} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge
+[2025-04-18T04:25:52.441+0000] {attractions_dag.py:240} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/bryant-park
+[2025-04-18T04:25:56.164+0000] {attractions_dag.py:240} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-heights-promenade
+[2025-04-18T04:25:59.936+0000] {attractions_dag.py:240} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/65th-street
+[2025-04-18T04:26:03.712+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 2, Completed cities: []
+[2025-04-18T04:26:05.716+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/chrysler-building
+[2025-04-18T04:26:09.443+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/chinatown
+[2025-04-18T04:26:13.133+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/dead-rabbit
+[2025-04-18T04:26:16.852+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-transit-museum
+[2025-04-18T04:26:20.626+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/frick-collection
+[2025-04-18T04:26:24.364+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 2, Completed cities: []
+[2025-04-18T04:26:26.370+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 3, Completed cities: []
+[2025-04-18T04:26:26.370+0000] {attractions_dag.py:218} INFO - Scraping page 3/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=3
+[2025-04-18T04:26:31.446+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:26:31.446+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/yankee-stadium
+[2025-04-18T04:26:35.150+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/harlem
+[2025-04-18T04:26:38.918+0000] {attractions_dag.py:240} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/battery-park
+[2025-04-18T04:26:42.593+0000] {attractions_dag.py:240} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/the-mean-fiddler
+[2025-04-18T04:26:46.333+0000] {attractions_dag.py:240} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/st-paul-s-chapel
+[2025-04-18T04:26:50.031+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 3, Completed cities: []
+[2025-04-18T04:26:52.037+0000] {attractions_dag.py:240} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/metropolitan-opera-house
+[2025-04-18T04:26:55.768+0000] {attractions_dag.py:240} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/st-patrick-s-cathedral
+[2025-04-18T04:26:59.502+0000] {attractions_dag.py:240} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/little-italy
+[2025-04-18T04:27:03.191+0000] {attractions_dag.py:240} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/central-park-zoo
+[2025-04-18T04:27:07.042+0000] {attractions_dag.py:240} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/lexington-avenue
+[2025-04-18T04:27:10.753+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 3, Completed cities: []
+[2025-04-18T04:27:12.757+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-botanical-garden
+[2025-04-18T04:27:16.442+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-botanical-garden
+[2025-04-18T04:27:20.186+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/place/adda/51c828b2e705454c13000000
+[2025-04-18T04:27:24.879+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-industries
+[2025-04-18T04:27:28.636+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/bloomingdale-s
+[2025-04-18T04:27:32.337+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 3, Completed cities: []
+[2025-04-18T04:27:34.342+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 4, Completed cities: []
+[2025-04-18T04:27:34.342+0000] {attractions_dag.py:218} INFO - Scraping page 4/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=4
+[2025-04-18T04:27:40.084+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:27:40.084+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/one-world-trade-center
+[2025-04-18T04:27:43.736+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/carnegie-hall
+[2025-04-18T04:27:47.392+0000] {attractions_dag.py:240} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/ground-zero
+[2025-04-18T04:27:51.083+0000] {attractions_dag.py:240} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/narcissa
+[2025-04-18T04:27:55.090+0000] {attractions_dag.py:240} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/minton-s
+[2025-04-18T04:27:58.791+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 4, Completed cities: []
+[2025-04-18T04:28:00.795+0000] {attractions_dag.py:240} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-the-moving-image
+[2025-04-18T04:28:04.568+0000] {attractions_dag.py:240} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/south-street-seaport
+[2025-04-18T04:28:08.325+0000] {attractions_dag.py:240} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/french-roast
+[2025-04-18T04:28:12.047+0000] {attractions_dag.py:240} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/little-owl
+[2025-04-18T04:28:15.757+0000] {attractions_dag.py:240} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/wall-street-new-york
+[2025-04-18T04:28:19.422+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 4, Completed cities: []
+[2025-04-18T04:28:21.426+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/century-21
+[2025-04-18T04:28:25.113+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/new-york-harbor
+[2025-04-18T04:28:28.850+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/flushing-meadows-corona-park
+[2025-04-18T04:28:32.682+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/governor-s-island
+[2025-04-18T04:28:36.489+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/apollo-theater
+[2025-04-18T04:28:40.337+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 4, Completed cities: []
+[2025-04-18T04:28:42.349+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 5, Completed cities: []
+[2025-04-18T04:28:42.350+0000] {attractions_dag.py:218} INFO - Scraping page 5/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=5
+[2025-04-18T04:28:47.521+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:28:47.521+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/big-gay-ice-cream
+[2025-04-18T04:28:51.421+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/luna-park-coney-island
+[2025-04-18T04:28:55.101+0000] {attractions_dag.py:240} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge-park
+[2025-04-18T04:28:58.865+0000] {attractions_dag.py:240} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/plaza-hotel
+[2025-04-18T04:29:02.560+0000] {attractions_dag.py:240} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/chelsea-market
+[2025-04-18T04:29:06.250+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 5, Completed cities: []
+[2025-04-18T04:29:08.254+0000] {attractions_dag.py:240} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/the-strip-house-12th-street
+[2025-04-18T04:29:12.007+0000] {attractions_dag.py:240} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/germania-bank-building
+[2025-04-18T04:29:15.846+0000] {attractions_dag.py:240} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/graffiti-hall-of-fame
+[2025-04-18T04:29:19.560+0000] {attractions_dag.py:240} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/flatiron-building
+[2025-04-18T04:29:23.386+0000] {attractions_dag.py:240} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/hayden-planetarium
+[2025-04-18T04:29:27.217+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 5, Completed cities: []
+[2025-04-18T04:29:29.219+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/cafe-mogador
+[2025-04-18T04:29:32.886+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/broadway-street
+[2025-04-18T04:29:36.545+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/eataly
+[2025-04-18T04:29:40.466+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/hunts-point
+[2025-04-18T04:29:44.119+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/circle-line-cruise
+[2025-04-18T04:29:47.897+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 5, Completed cities: []
+[2025-04-18T04:29:49.900+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 6, Completed cities: []
+[2025-04-18T04:29:49.901+0000] {attractions_dag.py:218} INFO - Scraping page 6/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=6
+[2025-04-18T04:29:54.406+0000] {attractions_dag.py:222} INFO - Found 15 attraction links
+[2025-04-18T04:29:54.407+0000] {attractions_dag.py:240} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/fifth-avenue
+[2025-04-18T04:29:58.067+0000] {attractions_dag.py:240} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/marea
+[2025-04-18T04:30:01.715+0000] {attractions_dag.py:240} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-jewish-heritage
+[2025-04-18T04:30:06.354+0000] {attractions_dag.py:240} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/church-of-st-paul-the-apostle
+[2025-04-18T04:30:11.757+0000] {attractions_dag.py:240} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/st-vincent-ferrer
+[2025-04-18T04:30:15.893+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 6, Completed cities: []
+[2025-04-18T04:30:17.899+0000] {attractions_dag.py:240} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/st-francis-xavier
+[2025-04-18T04:30:21.575+0000] {attractions_dag.py:240} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/calvary-episcopal-church
+[2025-04-18T04:30:25.237+0000] {attractions_dag.py:240} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/macy-s-herald-square
+[2025-04-18T04:30:28.949+0000] {attractions_dag.py:240} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-flea
+[2025-04-18T04:30:32.886+0000] {attractions_dag.py:240} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/neue-gallery
+[2025-04-18T04:30:36.621+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 6, Completed cities: []
+[2025-04-18T04:30:38.625+0000] {attractions_dag.py:240} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/bldg-92
+[2025-04-18T04:30:42.375+0000] {attractions_dag.py:240} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/centre-fuge-public-art-project
+[2025-04-18T04:30:46.073+0000] {attractions_dag.py:240} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/the-lion
+[2025-04-18T04:30:49.781+0000] {attractions_dag.py:240} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/bowery-graffiti-wall
+[2025-04-18T04:30:57.614+0000] {attractions_dag.py:240} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/bronx-hall-of-fame
+[2025-04-18T04:31:03.907+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 6, Completed cities: []
+[2025-04-18T04:31:05.922+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 0, Page 7, Completed cities: []
+[2025-04-18T04:31:05.923+0000] {attractions_dag.py:218} INFO - Scraping page 7/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7
+[2025-04-18T04:32:05.943+0000] {attractions_dag.py:100} ERROR - Failed to extract read more links from https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7", waiting until "load"
+
+[2025-04-18T04:32:05.946+0000] {attractions_dag.py:222} INFO - Found 0 attraction links
+[2025-04-18T04:32:05.947+0000] {attractions_dag.py:225} INFO - No more links found on page 7, moving to next city
+[2025-04-18T04:32:06.000+0000] {attractions_dag.py:272} INFO - Completed scraping New York City United States, found 80 new attractions
+[2025-04-18T04:32:06.007+0000] {attractions_dag.py:165} INFO - Saved checkpoint: City 1, Page 1, Completed cities: ['New York City United States']
+[2025-04-18T04:32:06.014+0000] {attractions_dag.py:308} INFO - City 0 scraped, more cities pending
+[2025-04-18T04:32:06.014+0000] {attractions_dag.py:338} INFO - Attraction scraping completed for city 0, saved 90 attractions to /tmp/triphobo_data/multi_city_attractions.csv
+[2025-04-18T04:32:06.014+0000] {python.py:240} INFO - Done. Returned value was: 90
+[2025-04-18T04:32:06.043+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T04:32:06.044+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_attractions_scrape, task_id=scrape_attractions, run_id=scheduled__2025-04-17T04:00:00+00:00, execution_date=20250417T040000, start_date=20250418T042448, end_date=20250418T043206
+[2025-04-18T04:32:06.077+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T04:32:06.092+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T04:32:06.093+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

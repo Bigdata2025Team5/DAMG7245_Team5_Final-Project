@@ -1,0 +1,88 @@
+[2025-04-13T22:43:50.151+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T22:43:50.155+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:43:49.205804+00:00 [queued]>
+[2025-04-13T22:43:50.158+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:43:49.205804+00:00 [queued]>
+[2025-04-13T22:43:50.158+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-13T22:43:50.161+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-13 22:43:49.205804+00:00
+[2025-04-13T22:43:50.164+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=682) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T22:43:50.164+0000] {standard_task_runner.py:72} INFO - Started process 683 to run task
+[2025-04-13T22:43:50.165+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'manual__2025-04-13T22:43:49.205804+00:00', '--job-id', '216', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpoauwobdp']
+[2025-04-13T22:43:50.166+0000] {standard_task_runner.py:105} INFO - Job 216: Subtask scrape_hotels
+[2025-04-13T22:43:50.179+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:43:49.205804+00:00 [running]> on host 599bf25ffed0
+[2025-04-13T22:43:50.203+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T22:43:49.205804+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T22:43:49.205804+00:00'
+[2025-04-13T22:43:50.203+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T22:43:50.208+0000] {hotel_scrape_dag.py:67} INFO - Processing New York
+[2025-04-13T22:43:50.332+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:43:50.465+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:43:50.467+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for New York, trying generic extraction
+[2025-04-13T22:43:50.574+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:43:50.575+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for New York, trying generic extraction
+[2025-04-13T22:43:50.767+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 451
+[2025-04-13T22:43:50.768+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for New York, trying generic extraction
+[2025-04-13T22:43:50.768+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for New York, using fallback data
+[2025-04-13T22:43:50.768+0000] {hotel_scrape_dag.py:195} INFO - Added 2 fallback hotels for New York
+[2025-04-13T22:43:50.768+0000] {hotel_scrape_dag.py:199} INFO - Waiting 7 seconds before next city
+[2025-04-13T22:43:57.774+0000] {hotel_scrape_dag.py:67} INFO - Processing San Francisco
+[2025-04-13T22:43:57.913+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:43:58.032+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:43:58.034+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for San Francisco, trying generic extraction
+[2025-04-13T22:43:58.135+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:43:58.136+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for San Francisco, trying generic extraction
+[2025-04-13T22:43:58.322+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 456
+[2025-04-13T22:43:58.323+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for San Francisco, trying generic extraction
+[2025-04-13T22:43:58.323+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for San Francisco, using fallback data
+[2025-04-13T22:43:58.324+0000] {hotel_scrape_dag.py:195} INFO - Added 1 fallback hotels for San Francisco
+[2025-04-13T22:43:58.324+0000] {hotel_scrape_dag.py:199} INFO - Waiting 3 seconds before next city
+[2025-04-13T22:44:01.325+0000] {hotel_scrape_dag.py:67} INFO - Processing Chicago
+[2025-04-13T22:44:01.414+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:44:01.512+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:44:01.513+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Chicago, trying generic extraction
+[2025-04-13T22:44:01.622+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:44:01.622+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Chicago, trying generic extraction
+[2025-04-13T22:44:01.794+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 444
+[2025-04-13T22:44:01.796+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Chicago, trying generic extraction
+[2025-04-13T22:44:01.801+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for Chicago, using fallback data
+[2025-04-13T22:44:01.805+0000] {hotel_scrape_dag.py:195} INFO - Added 1 fallback hotels for Chicago
+[2025-04-13T22:44:01.805+0000] {hotel_scrape_dag.py:199} INFO - Waiting 3 seconds before next city
+[2025-04-13T22:44:04.810+0000] {hotel_scrape_dag.py:67} INFO - Processing Seattle
+[2025-04-13T22:44:04.909+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:44:05.042+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:44:05.044+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Seattle, trying generic extraction
+[2025-04-13T22:44:05.142+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:44:05.143+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Seattle, trying generic extraction
+[2025-04-13T22:44:05.346+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 444
+[2025-04-13T22:44:05.347+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Seattle, trying generic extraction
+[2025-04-13T22:44:05.348+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for Seattle, using fallback data
+[2025-04-13T22:44:05.348+0000] {hotel_scrape_dag.py:195} INFO - Added 1 fallback hotels for Seattle
+[2025-04-13T22:44:05.348+0000] {hotel_scrape_dag.py:199} INFO - Waiting 8 seconds before next city
+[2025-04-13T22:44:13.350+0000] {hotel_scrape_dag.py:67} INFO - Processing Las Vegas
+[2025-04-13T22:44:13.481+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:44:13.608+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:44:13.609+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Las Vegas, trying generic extraction
+[2025-04-13T22:44:13.760+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:44:13.761+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Las Vegas, trying generic extraction
+[2025-04-13T22:44:14.015+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 452
+[2025-04-13T22:44:14.015+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Las Vegas, trying generic extraction
+[2025-04-13T22:44:14.016+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for Las Vegas, using fallback data
+[2025-04-13T22:44:14.016+0000] {hotel_scrape_dag.py:195} INFO - Added 1 fallback hotels for Las Vegas
+[2025-04-13T22:44:14.016+0000] {hotel_scrape_dag.py:199} INFO - Waiting 5 seconds before next city
+[2025-04-13T22:44:19.022+0000] {hotel_scrape_dag.py:67} INFO - Processing Los Angeles
+[2025-04-13T22:44:19.860+0000] {hotel_scrape_dag.py:83} INFO - Initial request status: 403
+[2025-04-13T22:44:19.958+0000] {hotel_scrape_dag.py:95} INFO - Holiday Inn page size: 444
+[2025-04-13T22:44:19.959+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Los Angeles, trying generic extraction
+[2025-04-13T22:44:20.122+0000] {hotel_scrape_dag.py:114} INFO - All brands page size: 429
+[2025-04-13T22:44:20.123+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Los Angeles, trying generic extraction
+[2025-04-13T22:44:20.700+0000] {hotel_scrape_dag.py:171} INFO - Directory page size: 454
+[2025-04-13T22:44:20.702+0000] {hotel_scrape_dag.py:264} INFO - No hotel cards found for Los Angeles, trying generic extraction
+[2025-04-13T22:44:20.702+0000] {hotel_scrape_dag.py:192} WARNING - No hotels found through any method for Los Angeles, using fallback data
+[2025-04-13T22:44:20.703+0000] {hotel_scrape_dag.py:195} INFO - Added 1 fallback hotels for Los Angeles
+[2025-04-13T22:44:20.703+0000] {hotel_scrape_dag.py:199} INFO - Waiting 4 seconds before next city
+[2025-04-13T22:44:24.704+0000] {hotel_scrape_dag.py:207} INFO - Total hotels found: 7
+[2025-04-13T22:44:24.720+0000] {hotel_scrape_dag.py:210} INFO - ✅ Data saved to multi_city_ihg_hotels.csv
+[2025-04-13T22:44:24.721+0000] {python.py:240} INFO - Done. Returned value was: 7
+[2025-04-13T22:44:24.744+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T22:44:24.745+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=manual__2025-04-13T22:43:49.205804+00:00, execution_date=20250413T224349, start_date=20250413T224350, end_date=20250413T224424
+[2025-04-13T22:44:24.786+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T22:44:24.802+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T22:44:24.803+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

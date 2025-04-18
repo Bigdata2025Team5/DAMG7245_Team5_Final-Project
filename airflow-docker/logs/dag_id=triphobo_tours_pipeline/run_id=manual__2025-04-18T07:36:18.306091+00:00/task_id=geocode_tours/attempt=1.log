@@ -1,0 +1,1116 @@
+[2025-04-18T07:36:22.335+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T07:36:22.341+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.geocode_tours manual__2025-04-18T07:36:18.306091+00:00 [queued]>
+[2025-04-18T07:36:22.344+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.geocode_tours manual__2025-04-18T07:36:18.306091+00:00 [queued]>
+[2025-04-18T07:36:22.344+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T07:36:22.349+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_tours> on 2025-04-18 07:36:18.306091+00:00
+[2025-04-18T07:36:22.352+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2086) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T07:36:22.353+0000] {standard_task_runner.py:72} INFO - Started process 2087 to run task
+[2025-04-18T07:36:22.353+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_tours_pipeline', 'geocode_tours', 'manual__2025-04-18T07:36:18.306091+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/itinerary_tours_dag.py', '--cfg-path', '/tmp/tmpoysiwvxp']
+[2025-04-18T07:36:22.354+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask geocode_tours
+[2025-04-18T07:36:22.376+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_tours_pipeline.geocode_tours manual__2025-04-18T07:36:18.306091+00:00 [running]> on host 68d96c644388
+[2025-04-18T07:36:22.405+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_tours_pipeline' AIRFLOW_CTX_TASK_ID='geocode_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T07:36:18.306091+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T07:36:18.306091+00:00'
+[2025-04-18T07:36:22.406+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T07:36:22.411+0000] {itinerary_tours_dag.py:461} INFO - Processing file from /tmp/triphobo_data/cleaned_tours.csv to /tmp/triphobo_data/tours_with_coords.csv
+[2025-04-18T07:36:22.454+0000] {itinerary_tours_dag.py:403} INFO - Total tours to process: 1049
+[2025-04-18T07:36:22.455+0000] {itinerary_tours_dag.py:409} INFO - Resuming from existing output file with 0 rows
+[2025-04-18T07:36:22.455+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 1: rows 1 to 50
+[2025-04-18T07:36:22.455+0000] {itinerary_tours_dag.py:435} INFO -   (1/1049) Geocoding: New York In One Day Guided Sightseeing Tour
+[2025-04-18T07:36:22.790+0000] {itinerary_tours_dag.py:435} INFO -   (2/1049) Geocoding: Tour Contrastes Harlem Bronx Queens Coney Island And Brooklyn
+[2025-04-18T07:36:23.113+0000] {itinerary_tours_dag.py:435} INFO -   (3/1049) Geocoding: Empire State Building Tickets Observatory And Optional Skip The Line Tickets
+[2025-04-18T07:36:23.442+0000] {itinerary_tours_dag.py:435} INFO -   (4/1049) Geocoding: Bateaux New York Dinner Cruise
+[2025-04-18T07:36:23.752+0000] {itinerary_tours_dag.py:435} INFO -   (5/1049) Geocoding: Manhattan Sky Tour New York Helicopter Flight
+[2025-04-18T07:36:24.151+0000] {itinerary_tours_dag.py:435} INFO -   (6/1049) Geocoding: Gossip Girl Sites Tour
+[2025-04-18T07:36:24.431+0000] {itinerary_tours_dag.py:435} INFO -   (7/1049) Geocoding: The Museum Of Modern Art Admission With Skip The Line Access
+[2025-04-18T07:36:24.716+0000] {itinerary_tours_dag.py:435} INFO -   (8/1049) Geocoding: Small Group Guided 9 11 Memorial Tour With Museum Tickets
+[2025-04-18T07:36:24.996+0000] {itinerary_tours_dag.py:435} INFO -   (9/1049) Geocoding: High Line Park And Greenwich Village Food Tour
+[2025-04-18T07:36:25.282+0000] {itinerary_tours_dag.py:435} INFO -   (10/1049) Geocoding: Big Apple Helicopter Tour Of New York
+[2025-04-18T07:36:25.618+0000] {itinerary_tours_dag.py:435} INFO -   (11/1049) Geocoding: Sunset Sail Aboard The Schooner Adirondack
+[2025-04-18T07:36:25.903+0000] {itinerary_tours_dag.py:435} INFO -   (12/1049) Geocoding: Small Group Tour Of Catacombs By Candelight In New York
+[2025-04-18T07:36:26.222+0000] {itinerary_tours_dag.py:435} INFO -   (13/1049) Geocoding: New York City Tour By Classic Convertible 5ac65a105840d467a20000a0
+[2025-04-18T07:36:26.493+0000] {itinerary_tours_dag.py:435} INFO -   (14/1049) Geocoding: Sex And The City Hotspots Tour
+[2025-04-18T07:36:26.873+0000] {itinerary_tours_dag.py:435} INFO -   (15/1049) Geocoding: New York Dinner Cruise With Buffet
+[2025-04-18T07:36:27.126+0000] {itinerary_tours_dag.py:435} INFO -   (16/1049) Geocoding: New York Manhattan Scenic Helicopter Tour
+[2025-04-18T07:36:27.441+0000] {itinerary_tours_dag.py:435} INFO -   (17/1049) Geocoding: New York City Guided Sightseeing Tour By Minibus
+[2025-04-18T07:36:27.686+0000] {itinerary_tours_dag.py:435} INFO -   (18/1049) Geocoding: Harlem Wednesday Morning Gospel Tour
+[2025-04-18T07:36:27.951+0000] {itinerary_tours_dag.py:435} INFO -   (19/1049) Geocoding: Best Of Brooklyn Half Day Food And Culture Tour
+[2025-04-18T07:36:28.222+0000] {itinerary_tours_dag.py:435} INFO -   (20/1049) Geocoding: Small Group Central Park Bike Tour
+[2025-04-18T07:36:28.492+0000] {itinerary_tours_dag.py:435} INFO -   (21/1049) Geocoding: Manhattan To Brooklyn Nyc Walking Tour Brooklyn Bridge And Dumbo
+[2025-04-18T07:36:28.818+0000] {itinerary_tours_dag.py:435} INFO -   (22/1049) Geocoding: New York Helicopter Tour Ultimate Manhattan Sightseeing
+[2025-04-18T07:36:29.094+0000] {itinerary_tours_dag.py:435} INFO -   (23/1049) Geocoding: Chinatown And Little Italy Food Fest
+[2025-04-18T07:36:29.375+0000] {itinerary_tours_dag.py:435} INFO -   (24/1049) Geocoding: Christmas Lights In Dyker Heights Brooklyn
+[2025-04-18T07:36:29.671+0000] {itinerary_tours_dag.py:435} INFO -   (25/1049) Geocoding: Private Custom New York City Tour By Suv
+[2025-04-18T07:36:29.947+0000] {itinerary_tours_dag.py:435} INFO -   (26/1049) Geocoding: New York Hip Hop Tour
+[2025-04-18T07:36:30.217+0000] {itinerary_tours_dag.py:435} INFO -   (27/1049) Geocoding: Full Day Nyc Small Group Tour
+[2025-04-18T07:36:30.476+0000] {itinerary_tours_dag.py:435} INFO -   (28/1049) Geocoding: Metropolitan Museum Of Art Tour With Skip The Line Access
+[2025-04-18T07:36:30.759+0000] {itinerary_tours_dag.py:435} INFO -   (29/1049) Geocoding: Statue Of Liberty Ellis Island And 9 11 Memorial Walking Tour
+[2025-04-18T07:36:31.098+0000] {itinerary_tours_dag.py:435} INFO -   (30/1049) Geocoding: Big Bus New York Night Tour
+[2025-04-18T07:36:31.359+0000] {itinerary_tours_dag.py:435} INFO -   (31/1049) Geocoding: Manhattan Evening Jazz Cruise
+[2025-04-18T07:36:31.608+0000] {itinerary_tours_dag.py:435} INFO -   (32/1049) Geocoding: New York City Explorer Pass 5ac65a5b5840d48aa600008b
+[2025-04-18T07:36:31.848+0000] {itinerary_tours_dag.py:435} INFO -   (33/1049) Geocoding: New York Helicopter Flight Grand Island
+[2025-04-18T07:36:32.109+0000] {itinerary_tours_dag.py:435} INFO -   (34/1049) Geocoding: Private New York Walking Tour With A Personal Photographer
+[2025-04-18T07:36:32.375+0000] {itinerary_tours_dag.py:435} INFO -   (35/1049) Geocoding: New York City Airport Private Arrival Transfer
+[2025-04-18T07:36:32.623+0000] {itinerary_tours_dag.py:435} INFO -   (36/1049) Geocoding: Circle Line New York Landmarks Cruise
+[2025-04-18T07:36:32.890+0000] {itinerary_tours_dag.py:435} INFO -   (37/1049) Geocoding: Private Suv Tour Best Of Nyc
+[2025-04-18T07:36:33.190+0000] {itinerary_tours_dag.py:435} INFO -   (38/1049) Geocoding: New York City 3 Day Hop On Hop Off Bus Tour And Attractions Pass
+[2025-04-18T07:36:33.498+0000] {itinerary_tours_dag.py:435} INFO -   (39/1049) Geocoding: Nyc At Night Sightseeing Cruise And Bus Tour
+[2025-04-18T07:36:33.756+0000] {itinerary_tours_dag.py:435} INFO -   (40/1049) Geocoding: Hell S Kitchen Food Tour And Central Park Stroll
+[2025-04-18T07:36:34.047+0000] {itinerary_tours_dag.py:435} INFO -   (41/1049) Geocoding: World Trade Center 911 And Ground Zero Walking Tour
+[2025-04-18T07:36:34.393+0000] {itinerary_tours_dag.py:435} INFO -   (42/1049) Geocoding: Manhattan Architecture Yacht Cruise
+[2025-04-18T07:36:34.658+0000] {itinerary_tours_dag.py:435} INFO -   (43/1049) Geocoding: Private Statue Of Liberty And Ellis Island Tour Includes Pedestal Access
+[2025-04-18T07:36:34.997+0000] {itinerary_tours_dag.py:435} INFO -   (44/1049) Geocoding: New York Citypass 5ac65a875840d44aa10000bd
+[2025-04-18T07:36:35.241+0000] {itinerary_tours_dag.py:435} INFO -   (45/1049) Geocoding: New York City Wall Street Insider Tour
+[2025-04-18T07:36:35.518+0000] {itinerary_tours_dag.py:435} INFO -   (46/1049) Geocoding: Shared Departure Transfer Hotel To New York City Airports
+[2025-04-18T07:36:35.795+0000] {itinerary_tours_dag.py:435} INFO -   (47/1049) Geocoding: Shared Arrival Transfer New York Airports To Hotel
+[2025-04-18T07:36:36.072+0000] {itinerary_tours_dag.py:435} INFO -   (48/1049) Geocoding: New York City Buffet Lunch Cruise
+[2025-04-18T07:36:36.327+0000] {itinerary_tours_dag.py:435} INFO -   (49/1049) Geocoding: Greenwich Village Walking Tour
+[2025-04-18T07:36:36.595+0000] {itinerary_tours_dag.py:435} INFO -   (50/1049) Geocoding: Flatiron Food Architecture And History Tour
+[2025-04-18T07:36:36.869+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 1. Sleeping before next batch...
+[2025-04-18T07:36:38.871+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 2: rows 51 to 100
+[2025-04-18T07:36:38.872+0000] {itinerary_tours_dag.py:435} INFO -   (51/1049) Geocoding: The Sightseeing Pass Nyc
+[2025-04-18T07:36:39.126+0000] {itinerary_tours_dag.py:435} INFO -   (52/1049) Geocoding: New York City Luxury Boat Tour
+[2025-04-18T07:36:39.433+0000] {itinerary_tours_dag.py:435} INFO -   (53/1049) Geocoding: New York City Twilight Sail
+[2025-04-18T07:36:39.672+0000] {itinerary_tours_dag.py:435} INFO -   (54/1049) Geocoding: Viator Vip Empire State Building Sunrise Experience
+[2025-04-18T07:36:39.947+0000] {itinerary_tours_dag.py:435} INFO -   (55/1049) Geocoding: The Super Tour Of Nyc Heroes Comics And More
+[2025-04-18T07:36:40.215+0000] {itinerary_tours_dag.py:435} INFO -   (56/1049) Geocoding: Statue Of Liberty Express Cruise
+[2025-04-18T07:36:40.527+0000] {itinerary_tours_dag.py:435} INFO -   (57/1049) Geocoding: New York City Airport Luxury Arrival Transfer
+[2025-04-18T07:36:40.770+0000] {itinerary_tours_dag.py:435} INFO -   (58/1049) Geocoding: The Sopranos Sites Tour
+[2025-04-18T07:36:41.025+0000] {itinerary_tours_dag.py:435} INFO -   (59/1049) Geocoding: Private Economy Departure Transfer Manhattan Hotels To New York Airports
+[2025-04-18T07:36:41.305+0000] {itinerary_tours_dag.py:435} INFO -   (60/1049) Geocoding: New York Helicopter Tour Manhattan Highlights
+[2025-04-18T07:36:41.552+0000] {itinerary_tours_dag.py:435} INFO -   (61/1049) Geocoding: Half Day Nyc Small Group Tour
+[2025-04-18T07:36:41.831+0000] {itinerary_tours_dag.py:435} INFO -   (62/1049) Geocoding: Superheroes In New York Walking Tour
+[2025-04-18T07:36:42.167+0000] {itinerary_tours_dag.py:435} INFO -   (63/1049) Geocoding: Private New York City Boat Tour
+[2025-04-18T07:36:42.475+0000] {itinerary_tours_dag.py:435} INFO -   (64/1049) Geocoding: Statue Express Tour With Statue Of Liberty Pedestal Tickets
+[2025-04-18T07:36:42.758+0000] {itinerary_tours_dag.py:435} INFO -   (65/1049) Geocoding: A Slice Of Brooklyn Pizza Tour
+[2025-04-18T07:36:43.109+0000] {itinerary_tours_dag.py:435} INFO -   (66/1049) Geocoding: Statue Of Liberty Tall Ship Sailing Cruise
+[2025-04-18T07:36:43.349+0000] {itinerary_tours_dag.py:435} INFO -   (67/1049) Geocoding: Complete New York New York Helicopter Tour
+[2025-04-18T07:36:43.589+0000] {itinerary_tours_dag.py:435} INFO -   (68/1049) Geocoding: New York City Original Rock N Roll Walking Tour
+[2025-04-18T07:36:43.871+0000] {itinerary_tours_dag.py:435} INFO -   (69/1049) Geocoding: Soho Little Italy And Chinatown Walking Tour
+[2025-04-18T07:36:44.157+0000] {itinerary_tours_dag.py:435} INFO -   (70/1049) Geocoding: Hard Rock Cafe New York Times Square
+[2025-04-18T07:36:44.489+0000] {itinerary_tours_dag.py:435} INFO -   (71/1049) Geocoding: Secrets Of The Statue Of Liberty And Ellis Island Tour
+[2025-04-18T07:36:44.768+0000] {itinerary_tours_dag.py:435} INFO -   (72/1049) Geocoding: Metropolitan Museum Of Art Small Group Tour
+[2025-04-18T07:36:45.030+0000] {itinerary_tours_dag.py:435} INFO -   (73/1049) Geocoding: Nyc Tv And Movie Sites Tour
+[2025-04-18T07:36:45.341+0000] {itinerary_tours_dag.py:435} INFO -   (74/1049) Geocoding: Private Limousine Tour Best Of Nyc
+[2025-04-18T07:36:45.587+0000] {itinerary_tours_dag.py:435} INFO -   (75/1049) Geocoding: Brooklyn Bridge Bike Tour
+[2025-04-18T07:36:45.925+0000] {itinerary_tours_dag.py:435} INFO -   (76/1049) Geocoding: Nyc Central Park Bike Rental
+[2025-04-18T07:36:46.232+0000] {itinerary_tours_dag.py:435} INFO -   (77/1049) Geocoding: New York Helicopter Tour Manhattan Brooklyn And Staten Island
+[2025-04-18T07:36:46.587+0000] {itinerary_tours_dag.py:435} INFO -   (78/1049) Geocoding: Central Park Bike Tour
+[2025-04-18T07:36:46.839+0000] {itinerary_tours_dag.py:435} INFO -   (79/1049) Geocoding: Iconic New York Photography Tour
+[2025-04-18T07:36:47.103+0000] {itinerary_tours_dag.py:435} INFO -   (80/1049) Geocoding: Williamsburg Bites Brooklyn Food Tour
+[2025-04-18T07:36:47.410+0000] {itinerary_tours_dag.py:435} INFO -   (81/1049) Geocoding: Guided Bike Tour Of Central Park
+[2025-04-18T07:36:47.661+0000] {itinerary_tours_dag.py:435} INFO -   (82/1049) Geocoding: Harlem Gospel And Brunch Tour
+[2025-04-18T07:36:47.924+0000] {itinerary_tours_dag.py:435} INFO -   (83/1049) Geocoding: Macdougal Street New York City Walking Tour
+[2025-04-18T07:36:48.196+0000] {itinerary_tours_dag.py:435} INFO -   (84/1049) Geocoding: Central Park Manhattan Waterfront Bike Tour
+[2025-04-18T07:36:48.478+0000] {itinerary_tours_dag.py:435} INFO -   (85/1049) Geocoding: Cupcake Walking Tour In New York City
+[2025-04-18T07:36:48.729+0000] {itinerary_tours_dag.py:435} INFO -   (86/1049) Geocoding: New York City Airport Private Departure Transfer
+[2025-04-18T07:36:48.971+0000] {itinerary_tours_dag.py:435} INFO -   (87/1049) Geocoding: Central Park Tv And Movie Sites Walking Tour
+[2025-04-18T07:36:49.316+0000] {itinerary_tours_dag.py:435} INFO -   (88/1049) Geocoding: New York City Shore Excursion Post Cruise Half Day Private Tour
+[2025-04-18T07:36:49.585+0000] {itinerary_tours_dag.py:435} INFO -   (89/1049) Geocoding: Tcm Classic Film Tour Of New York
+[2025-04-18T07:36:49.829+0000] {itinerary_tours_dag.py:435} INFO -   (90/1049) Geocoding: Disney S Aladdin On Broadway
+[2025-04-18T07:36:50.152+0000] {itinerary_tours_dag.py:435} INFO -   (91/1049) Geocoding: Statue Of Liberty Lunch Cruise
+[2025-04-18T07:36:50.411+0000] {itinerary_tours_dag.py:435} INFO -   (92/1049) Geocoding: Private Economy New York Inter Airport Transfer
+[2025-04-18T07:36:50.702+0000] {itinerary_tours_dag.py:435} INFO -   (93/1049) Geocoding: Brooklyn Bridge Guided Bike Tour
+[2025-04-18T07:36:50.970+0000] {itinerary_tours_dag.py:435} INFO -   (94/1049) Geocoding: Central Park Bike Rental
+[2025-04-18T07:36:51.242+0000] {itinerary_tours_dag.py:435} INFO -   (95/1049) Geocoding: Private New York City Sunset Boat Tour
+[2025-04-18T07:36:51.506+0000] {itinerary_tours_dag.py:435} INFO -   (96/1049) Geocoding: Panoramic Night Tour Of New York City
+[2025-04-18T07:36:51.778+0000] {itinerary_tours_dag.py:435} INFO -   (97/1049) Geocoding: 911 Memorial Pools Ground Zero Walking Tour Optional Upgrade To 911 Museum
+[2025-04-18T07:36:52.070+0000] {itinerary_tours_dag.py:435} INFO -   (98/1049) Geocoding: Circle Line Nyc Liberty Cruise
+[2025-04-18T07:36:52.345+0000] {itinerary_tours_dag.py:435} INFO -   (99/1049) Geocoding: Pizza Walking Tour Of Manhattan
+[2025-04-18T07:36:52.593+0000] {itinerary_tours_dag.py:435} INFO -   (100/1049) Geocoding: New York City Sightseeing Tour By Coach
+[2025-04-18T07:36:52.917+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 2. Sleeping before next batch...
+[2025-04-18T07:36:54.924+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 3: rows 101 to 150
+[2025-04-18T07:36:54.926+0000] {itinerary_tours_dag.py:435} INFO -   (101/1049) Geocoding: Around Manhattan Brunch Cruise
+[2025-04-18T07:36:55.176+0000] {itinerary_tours_dag.py:435} INFO -   (102/1049) Geocoding: Statue Of Liberty Tour With Optional Pedestal Access
+[2025-04-18T07:36:55.422+0000] {itinerary_tours_dag.py:435} INFO -   (103/1049) Geocoding: Private Tour Of The Metropolitan Museum Of Art In New York City
+[2025-04-18T07:36:55.770+0000] {itinerary_tours_dag.py:435} INFO -   (104/1049) Geocoding: Private Arrival Transfer New York Airports To Brooklyn
+[2025-04-18T07:36:56.131+0000] {itinerary_tours_dag.py:435} INFO -   (105/1049) Geocoding: Williamsburg Walking Tour History Culture And Art Scene
+[2025-04-18T07:36:56.402+0000] {itinerary_tours_dag.py:435} INFO -   (106/1049) Geocoding: Central Park Walking Tour 58aed7c68427a5de080005b9
+[2025-04-18T07:36:56.673+0000] {itinerary_tours_dag.py:435} INFO -   (107/1049) Geocoding: Nyc Private Tour With Local Guide By Suv Or Van
+[2025-04-18T07:36:56.932+0000] {itinerary_tours_dag.py:435} INFO -   (108/1049) Geocoding: Ellis Island Statue Of Liberty Pedestal And Pre Ferry Tour
+[2025-04-18T07:36:57.190+0000] {itinerary_tours_dag.py:435} INFO -   (109/1049) Geocoding: Soho Chinatown Little Italy Tour
+[2025-04-18T07:36:57.463+0000] {itinerary_tours_dag.py:435} INFO -   (110/1049) Geocoding: New York To Washington Dc Day Trip By Rail
+[2025-04-18T07:36:57.763+0000] {itinerary_tours_dag.py:435} INFO -   (111/1049) Geocoding: Central Park And Metropolitan Museum Of Art Private Nyc Combo Tour
+[2025-04-18T07:36:58.059+0000] {itinerary_tours_dag.py:435} INFO -   (112/1049) Geocoding: The Hamptons Sag Harbor And Outlet Shopping Day Trip From New York City
+[2025-04-18T07:36:58.386+0000] {itinerary_tours_dag.py:435} INFO -   (113/1049) Geocoding: The Lion King On Broadway 5ac65a735840d4de9b0000db
+[2025-04-18T07:36:58.711+0000] {itinerary_tours_dag.py:435} INFO -   (114/1049) Geocoding: New York City Airport Luxury Departure Transfer
+[2025-04-18T07:36:58.948+0000] {itinerary_tours_dag.py:435} INFO -   (115/1049) Geocoding: Private Departure Transfer Brooklyn To New York Airports
+[2025-04-18T07:36:59.270+0000] {itinerary_tours_dag.py:435} INFO -   (116/1049) Geocoding: Long Island Wine Tour From Nyc Day Trip Meet The Winemakers Taste Food And Wine
+[2025-04-18T07:36:59.709+0000] {itinerary_tours_dag.py:435} INFO -   (117/1049) Geocoding: New York City To The Hamptons Private Day Trip
+[2025-04-18T07:36:59.985+0000] {itinerary_tours_dag.py:435} INFO -   (118/1049) Geocoding: Nyc Speakeasy Walking Tour
+[2025-04-18T07:37:00.217+0000] {itinerary_tours_dag.py:435} INFO -   (119/1049) Geocoding: Private Tour Niagara Falls Day Trip From New York City
+[2025-04-18T07:37:00.568+0000] {itinerary_tours_dag.py:435} INFO -   (120/1049) Geocoding: Private New York City Transfer Cruise Port To Airport
+[2025-04-18T07:37:00.865+0000] {itinerary_tours_dag.py:435} INFO -   (121/1049) Geocoding: Long Island Wine Tour From Manhattan 5ac501bb5840d48eae000cec
+[2025-04-18T07:37:01.171+0000] {itinerary_tours_dag.py:435} INFO -   (122/1049) Geocoding: Dyker Heights Christmas Lights Tour
+[2025-04-18T07:37:01.428+0000] {itinerary_tours_dag.py:435} INFO -   (123/1049) Geocoding: Nyc Walking Tour Broadway History And Culture
+[2025-04-18T07:37:01.690+0000] {itinerary_tours_dag.py:435} INFO -   (124/1049) Geocoding: New York City Slavery And Underground Railroad Tour
+[2025-04-18T07:37:01.951+0000] {itinerary_tours_dag.py:435} INFO -   (125/1049) Geocoding: New York City Shopping With A Personal Stylist
+[2025-04-18T07:37:02.206+0000] {itinerary_tours_dag.py:435} INFO -   (126/1049) Geocoding: Grand Central The Open Sesame Bagel Tour
+[2025-04-18T07:37:02.505+0000] {itinerary_tours_dag.py:435} INFO -   (127/1049) Geocoding: Hell S Kitchen Food Tour
+[2025-04-18T07:37:02.748+0000] {itinerary_tours_dag.py:435} INFO -   (128/1049) Geocoding: Holdouts A Nyc Architecture Walking Tour
+[2025-04-18T07:37:03.095+0000] {itinerary_tours_dag.py:435} INFO -   (129/1049) Geocoding: Midtown Mix Guided Food Tour New York Food On Foot Tours
+[2025-04-18T07:37:03.388+0000] {itinerary_tours_dag.py:435} INFO -   (130/1049) Geocoding: Chelsea Architecture And Art Tour With Award Winning Nyc Guide
+[2025-04-18T07:37:03.675+0000] {itinerary_tours_dag.py:435} INFO -   (131/1049) Geocoding: New York City Holiday Lights And Markets Walking Tour
+[2025-04-18T07:37:03.941+0000] {itinerary_tours_dag.py:435} INFO -   (132/1049) Geocoding: Brooklyn Graffiti Lesson
+[2025-04-18T07:37:04.198+0000] {itinerary_tours_dag.py:435} INFO -   (133/1049) Geocoding: Christmas In New York Private Walking Tour
+[2025-04-18T07:37:04.469+0000] {itinerary_tours_dag.py:435} INFO -   (134/1049) Geocoding: Times Square Hell S Kitchen Food Tour And Central Park Stroll
+[2025-04-18T07:37:04.771+0000] {itinerary_tours_dag.py:435} INFO -   (135/1049) Geocoding: Nyc Comedian Walking Tour
+[2025-04-18T07:37:05.004+0000] {itinerary_tours_dag.py:435} INFO -   (136/1049) Geocoding: The Best Of Brooklyn Walking Tour The Brooklyn Revolution
+[2025-04-18T07:37:05.270+0000] {itinerary_tours_dag.py:435} INFO -   (137/1049) Geocoding: Hamilton Washington In New York City Secrets Of The Past
+[2025-04-18T07:37:05.555+0000] {itinerary_tours_dag.py:435} INFO -   (138/1049) Geocoding: Secrets Of Hudson Yards Walking Tour With High Line And Vessel
+[2025-04-18T07:37:05.853+0000] {itinerary_tours_dag.py:435} INFO -   (139/1049) Geocoding: New York City S Amazing Subway Mosaic Art
+[2025-04-18T07:37:06.123+0000] {itinerary_tours_dag.py:435} INFO -   (140/1049) Geocoding: Grand Central Photo Tour
+[2025-04-18T07:37:06.427+0000] {itinerary_tours_dag.py:435} INFO -   (141/1049) Geocoding: New York Like A Local Customized Private Tour
+[2025-04-18T07:37:06.691+0000] {itinerary_tours_dag.py:435} INFO -   (142/1049) Geocoding: Nyc Secrets Of Grand Central Terminal Private Walking Tour
+[2025-04-18T07:37:06.963+0000] {itinerary_tours_dag.py:435} INFO -   (143/1049) Geocoding: New York City Gourmet Food Cart Walking Tour
+[2025-04-18T07:37:07.232+0000] {itinerary_tours_dag.py:435} INFO -   (144/1049) Geocoding: Ground Zero Museum Workshop Tour
+[2025-04-18T07:37:07.483+0000] {itinerary_tours_dag.py:435} INFO -   (145/1049) Geocoding: Greenwich Village Literary Pub Crawl
+[2025-04-18T07:37:07.715+0000] {itinerary_tours_dag.py:435} INFO -   (146/1049) Geocoding: New York City Shore Excursion Pre Cruise Half Day Private Tour
+[2025-04-18T07:37:07.967+0000] {itinerary_tours_dag.py:435} INFO -   (147/1049) Geocoding: Private Chauffeur Service From Boston To New York
+[2025-04-18T07:37:08.242+0000] {itinerary_tours_dag.py:435} INFO -   (148/1049) Geocoding: Street Art Tour Of Bushwick
+[2025-04-18T07:37:08.557+0000] {itinerary_tours_dag.py:435} INFO -   (149/1049) Geocoding: Private Half Day Tour Of Brooklyn
+[2025-04-18T07:37:08.858+0000] {itinerary_tours_dag.py:435} INFO -   (150/1049) Geocoding: Greenwich Village Food Tour 5836a24e8427a51f08000003
+[2025-04-18T07:37:09.108+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 3. Sleeping before next batch...
+[2025-04-18T07:37:11.111+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 4: rows 151 to 200
+[2025-04-18T07:37:11.112+0000] {itinerary_tours_dag.py:435} INFO -   (151/1049) Geocoding: Midtown Manhattan Art And Architecture Walking Tour
+[2025-04-18T07:37:11.391+0000] {itinerary_tours_dag.py:435} INFO -   (152/1049) Geocoding: Hoboken And Nyc At Night Walking Tour
+[2025-04-18T07:37:11.631+0000] {itinerary_tours_dag.py:435} INFO -   (153/1049) Geocoding: World Trade Center Photo Tour
+[2025-04-18T07:37:11.900+0000] {itinerary_tours_dag.py:435} INFO -   (154/1049) Geocoding: Nyc West Village Pub Crawl
+[2025-04-18T07:37:12.173+0000] {itinerary_tours_dag.py:435} INFO -   (155/1049) Geocoding: Ruins Of A Forgotten City Historical Manhattan Walking Tour
+[2025-04-18T07:37:12.424+0000] {itinerary_tours_dag.py:435} INFO -   (156/1049) Geocoding: Nyc Private Holiday Lights Tour By Limo
+[2025-04-18T07:37:12.688+0000] {itinerary_tours_dag.py:435} INFO -   (157/1049) Geocoding: New York City 4th Of July Fireworks Luxury Boat Tour 5ac4bdb35840d455e9000bec
+[2025-04-18T07:37:13.009+0000] {itinerary_tours_dag.py:435} INFO -   (158/1049) Geocoding: Central Park Night Time Photo Tour
+[2025-04-18T07:37:13.254+0000] {itinerary_tours_dag.py:435} INFO -   (159/1049) Geocoding: City Lights Sail On Adirondack
+[2025-04-18T07:37:13.493+0000] {itinerary_tours_dag.py:435} INFO -   (160/1049) Geocoding: The Gazillion Bubble Show 5ac503ea5840d4fa30000c49
+[2025-04-18T07:37:13.745+0000] {itinerary_tours_dag.py:435} INFO -   (161/1049) Geocoding: Secrets Of The Brooklyn Bridge Walking Tour
+[2025-04-18T07:37:14.045+0000] {itinerary_tours_dag.py:435} INFO -   (162/1049) Geocoding: High Line And Hudson Yards
+[2025-04-18T07:37:14.325+0000] {itinerary_tours_dag.py:435} INFO -   (163/1049) Geocoding: Harlem Gospel Holiday Celebration 5ac51a465840d4e3ac000d87
+[2025-04-18T07:37:14.591+0000] {itinerary_tours_dag.py:435} INFO -   (164/1049) Geocoding: Underground Tour Of The Nyc Subway
+[2025-04-18T07:37:14.857+0000] {itinerary_tours_dag.py:435} INFO -   (165/1049) Geocoding: Manhattan And Brooklyn Bridge Bicycle Tour
+[2025-04-18T07:37:15.180+0000] {itinerary_tours_dag.py:435} INFO -   (166/1049) Geocoding: Private 9 11 Memorial And Ground Zero Walking Tour With Optional 9 11 Museum Upgrade
+[2025-04-18T07:37:15.464+0000] {itinerary_tours_dag.py:435} INFO -   (167/1049) Geocoding: New York City Private Custom Walking Tour With Local Guide
+[2025-04-18T07:37:15.731+0000] {itinerary_tours_dag.py:435} INFO -   (168/1049) Geocoding: New York Neighborhoods Private Walking Tour
+[2025-04-18T07:37:15.983+0000] {itinerary_tours_dag.py:435} INFO -   (169/1049) Geocoding: Greenwich Village Food Tour 5ac622f65840d487dd000051
+[2025-04-18T07:37:16.324+0000] {itinerary_tours_dag.py:435} INFO -   (170/1049) Geocoding: Music And Eats On Macdougal Street Walking Tour
+[2025-04-18T07:37:16.575+0000] {itinerary_tours_dag.py:435} INFO -   (171/1049) Geocoding: Wall Street And Financial District Walking Tour
+[2025-04-18T07:37:16.848+0000] {itinerary_tours_dag.py:435} INFO -   (172/1049) Geocoding: Statue Of Liberty Pedestal Ellis Island And Pre Ferry Tour
+[2025-04-18T07:37:17.202+0000] {itinerary_tours_dag.py:435} INFO -   (173/1049) Geocoding: Guided Tour Of Statue Of Liberty And Ellis Island National Immigration Museum
+[2025-04-18T07:37:17.515+0000] {itinerary_tours_dag.py:435} INFO -   (174/1049) Geocoding: See Over 30 Top New York Sights Fun Guide
+[2025-04-18T07:37:17.850+0000] {itinerary_tours_dag.py:435} INFO -   (175/1049) Geocoding: New York City Lights Sail With A Live Jazz Band
+[2025-04-18T07:37:18.127+0000] {itinerary_tours_dag.py:435} INFO -   (176/1049) Geocoding: Statue Of Liberty Express Optional Pedestal
+[2025-04-18T07:37:18.370+0000] {itinerary_tours_dag.py:435} INFO -   (177/1049) Geocoding: Central Park Rockefeller Times Square Horse Carriage Ride
+[2025-04-18T07:37:18.692+0000] {itinerary_tours_dag.py:435} INFO -   (178/1049) Geocoding: Chelsea Market Meatpacking District And High Line Food Tour
+[2025-04-18T07:37:19.033+0000] {itinerary_tours_dag.py:435} INFO -   (179/1049) Geocoding: Private Brooklyn Walking Tour With Personal Photographer Brooklyn Bridge Dumbo And Brooklyn Heights
+[2025-04-18T07:37:19.353+0000] {itinerary_tours_dag.py:435} INFO -   (180/1049) Geocoding: Fun Statue Of Liberty And Ellis Island Tour With Energetic University Students
+[2025-04-18T07:37:19.640+0000] {itinerary_tours_dag.py:435} INFO -   (181/1049) Geocoding: Romantic Central Park Horse Drawn Carriage Tour
+[2025-04-18T07:37:19.920+0000] {itinerary_tours_dag.py:435} INFO -   (182/1049) Geocoding: Exclusive Ellis Island Statue Of Liberty 911 Memorial Pools Escorted Tour
+[2025-04-18T07:37:20.221+0000] {itinerary_tours_dag.py:435} INFO -   (183/1049) Geocoding: Brooklyn Bridge Bike Tour 5de641970a21c76c3a33d929
+[2025-04-18T07:37:20.471+0000] {itinerary_tours_dag.py:435} INFO -   (184/1049) Geocoding: Horse Carriage Ride To The Loeb Boathouse Tavern On The Green At Central Park
+[2025-04-18T07:37:20.824+0000] {itinerary_tours_dag.py:435} INFO -   (185/1049) Geocoding: Manhattan Adventure Boat Tour
+[2025-04-18T07:37:21.061+0000] {itinerary_tours_dag.py:435} INFO -   (186/1049) Geocoding: Statue Of Liberty And Ellis Island Ferry Ticket With Optional Pedestal Upgrade
+[2025-04-18T07:37:21.363+0000] {itinerary_tours_dag.py:435} INFO -   (187/1049) Geocoding: Nyc Speakeasy Drinks And Prohibition Era Nightlife Tour
+[2025-04-18T07:37:21.640+0000] {itinerary_tours_dag.py:435} INFO -   (188/1049) Geocoding: Nyc Extremes Downtown Photo Tour With Pro Photographer
+[2025-04-18T07:37:21.972+0000] {itinerary_tours_dag.py:435} INFO -   (189/1049) Geocoding: Nyc Prohibition Pub And History Walk
+[2025-04-18T07:37:22.230+0000] {itinerary_tours_dag.py:435} INFO -   (190/1049) Geocoding: Underground Donut Tour New York S Only Donut Tour
+[2025-04-18T07:37:22.493+0000] {itinerary_tours_dag.py:435} INFO -   (191/1049) Geocoding: Skip The Ticket Line 911 Museum 1 World Obs Tickets W World Trade Ctr Tour
+[2025-04-18T07:37:22.848+0000] {itinerary_tours_dag.py:435} INFO -   (192/1049) Geocoding: Tour Noir A Dame To Guide For
+[2025-04-18T07:37:23.079+0000] {itinerary_tours_dag.py:435} INFO -   (193/1049) Geocoding: Nyc Secrets Of Grand Central Terminal Tour
+[2025-04-18T07:37:23.332+0000] {itinerary_tours_dag.py:435} INFO -   (194/1049) Geocoding: Hidden Jewish History Of Harlem
+[2025-04-18T07:37:23.656+0000] {itinerary_tours_dag.py:435} INFO -   (195/1049) Geocoding: Speakeasy Historic Bars Night Tour Nyc
+[2025-04-18T07:37:23.927+0000] {itinerary_tours_dag.py:435} INFO -   (196/1049) Geocoding: New York Midtown Scavenger Hunt Adventure
+[2025-04-18T07:37:24.201+0000] {itinerary_tours_dag.py:435} INFO -   (197/1049) Geocoding: New York City Ghost Tour Of Greenwich Village
+[2025-04-18T07:37:24.449+0000] {itinerary_tours_dag.py:435} INFO -   (198/1049) Geocoding: Harlem Hip Hop Walking Tour
+[2025-04-18T07:37:24.711+0000] {itinerary_tours_dag.py:435} INFO -   (199/1049) Geocoding: Central Park Photography Tour
+[2025-04-18T07:37:25.018+0000] {itinerary_tours_dag.py:435} INFO -   (200/1049) Geocoding: Harlem Gospel Experience Walking Tour
+[2025-04-18T07:37:25.268+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 4. Sleeping before next batch...
+[2025-04-18T07:37:27.270+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 5: rows 201 to 250
+[2025-04-18T07:37:27.272+0000] {itinerary_tours_dag.py:435} INFO -   (201/1049) Geocoding: Guided Private Underground New York Subway Tour
+[2025-04-18T07:37:27.538+0000] {itinerary_tours_dag.py:435} INFO -   (202/1049) Geocoding: Private Guided Walking Tour Of The Brooklyn Bridge And Dumbo
+[2025-04-18T07:37:27.824+0000] {itinerary_tours_dag.py:435} INFO -   (203/1049) Geocoding: Harlem Walking Tour Of Mount Morris Park Historic District With Lunch
+[2025-04-18T07:37:28.151+0000] {itinerary_tours_dag.py:435} INFO -   (204/1049) Geocoding: New York Christmas Holiday Tour
+[2025-04-18T07:37:28.410+0000] {itinerary_tours_dag.py:435} INFO -   (205/1049) Geocoding: Nyc Freedom Tower Private Photo Or Video Experience
+[2025-04-18T07:37:28.725+0000] {itinerary_tours_dag.py:435} INFO -   (206/1049) Geocoding: Central Harlem African American Culture Walking Tour
+[2025-04-18T07:37:29.016+0000] {itinerary_tours_dag.py:435} INFO -   (207/1049) Geocoding: Sugar Hill To Washington Heights Walking Tour
+[2025-04-18T07:37:29.332+0000] {itinerary_tours_dag.py:435} INFO -   (208/1049) Geocoding: Harlem Civil Rights Multimedia Walking Tour
+[2025-04-18T07:37:29.576+0000] {itinerary_tours_dag.py:435} INFO -   (209/1049) Geocoding: Harlem Renaissance Multimedia Walking Tour
+[2025-04-18T07:37:29.840+0000] {itinerary_tours_dag.py:435} INFO -   (210/1049) Geocoding: Landmarks Of Midtown Walking Tour
+[2025-04-18T07:37:30.094+0000] {itinerary_tours_dag.py:435} INFO -   (211/1049) Geocoding: Central Park 5k Fun Run
+[2025-04-18T07:37:30.341+0000] {itinerary_tours_dag.py:435} INFO -   (212/1049) Geocoding: Small Group New York Meatpacking District Chelsea Market And The Highline Walking Tour
+[2025-04-18T07:37:30.664+0000] {itinerary_tours_dag.py:435} INFO -   (213/1049) Geocoding: New York City Prohibition Speakeasy Drinking Tour Midtown
+[2025-04-18T07:37:30.936+0000] {itinerary_tours_dag.py:435} INFO -   (214/1049) Geocoding: Private Harlem Tour In New York
+[2025-04-18T07:37:31.192+0000] {itinerary_tours_dag.py:435} INFO -   (215/1049) Geocoding: New York Food Tour
+[2025-04-18T07:37:31.442+0000] {itinerary_tours_dag.py:435} INFO -   (216/1049) Geocoding: Edgar Allan Poe And His Ghostly Neighbors Walking Tour
+[2025-04-18T07:37:31.810+0000] {itinerary_tours_dag.py:435} INFO -   (217/1049) Geocoding: Big Bus San Francisco Hop On Hop Off Tour
+[2025-04-18T07:37:32.080+0000] {itinerary_tours_dag.py:435} INFO -   (218/1049) Geocoding: Napa And Sonoma Wine Country Tour
+[2025-04-18T07:37:32.322+0000] {itinerary_tours_dag.py:435} INFO -   (219/1049) Geocoding: San Francisco Super Saver Muir Woods And Wine Country Tour
+[2025-04-18T07:37:32.630+0000] {itinerary_tours_dag.py:435} INFO -   (220/1049) Geocoding: Muir Woods Giant Redwoods And Sausalito Half Day Trip
+[2025-04-18T07:37:32.952+0000] {itinerary_tours_dag.py:435} INFO -   (221/1049) Geocoding: Yosemite National Park And Giant Sequoias Trip
+[2025-04-18T07:37:33.242+0000] {itinerary_tours_dag.py:435} INFO -   (222/1049) Geocoding: Yosemite National Park Day Trip From San Francisco
+[2025-04-18T07:37:33.507+0000] {itinerary_tours_dag.py:435} INFO -   (223/1049) Geocoding: Monterey Carmel And 17 Mile Drive Day Trip From San Francisco
+[2025-04-18T07:37:33.781+0000] {itinerary_tours_dag.py:435} INFO -   (224/1049) Geocoding: Private Sonoma And Napa Wine Tour From San Francisco
+[2025-04-18T07:37:34.063+0000] {itinerary_tours_dag.py:435} INFO -   (225/1049) Geocoding: San Francisco Bay Sunset Cruise
+[2025-04-18T07:37:34.306+0000] {itinerary_tours_dag.py:435} INFO -   (226/1049) Geocoding: Sausalito Food And Wine Tour
+[2025-04-18T07:37:34.544+0000] {itinerary_tours_dag.py:435} INFO -   (227/1049) Geocoding: Muir Woods And Sausalito Tour Plus Bay Cruise
+[2025-04-18T07:37:34.842+0000] {itinerary_tours_dag.py:435} INFO -   (228/1049) Geocoding: San Francisco Combo Ferry Building Food Tour And Alcatraz
+[2025-04-18T07:37:35.120+0000] {itinerary_tours_dag.py:435} INFO -   (229/1049) Geocoding: San Francisco Bay Sunset Catamaran Cruise
+[2025-04-18T07:37:35.375+0000] {itinerary_tours_dag.py:435} INFO -   (230/1049) Geocoding: Haunted Sf Ghosts In The City After Dark
+[2025-04-18T07:37:35.627+0000] {itinerary_tours_dag.py:435} INFO -   (231/1049) Geocoding: Little Italy And North Beach Walking Tour
+[2025-04-18T07:37:35.965+0000] {itinerary_tours_dag.py:435} INFO -   (232/1049) Geocoding: Muir Woods Tour Of California Coastal Redwoods
+[2025-04-18T07:37:36.262+0000] {itinerary_tours_dag.py:435} INFO -   (233/1049) Geocoding: Alcatraz Tour Plus Muir Woods Giant Redwoods And Sausalito Day Trip
+[2025-04-18T07:37:36.570+0000] {itinerary_tours_dag.py:435} INFO -   (234/1049) Geocoding: 3 Day Yosemite Camping Adventure From San Francisco
+[2025-04-18T07:37:36.814+0000] {itinerary_tours_dag.py:435} INFO -   (235/1049) Geocoding: San Francisco Urban Adventure And Alcatraz Tour
+[2025-04-18T07:37:37.076+0000] {itinerary_tours_dag.py:435} INFO -   (236/1049) Geocoding: San Francisco Chinatown Walking Tour
+[2025-04-18T07:37:37.317+0000] {itinerary_tours_dag.py:435} INFO -   (237/1049) Geocoding: Chinatown And North Beach Night Walking Tour
+[2025-04-18T07:37:37.640+0000] {itinerary_tours_dag.py:435} INFO -   (238/1049) Geocoding: 2 Day Yosemite National Park Winter Tour From San Francisco
+[2025-04-18T07:37:37.892+0000] {itinerary_tours_dag.py:435} INFO -   (239/1049) Geocoding: Muir Woods And Sausalito Tour Afternoon Tour
+[2025-04-18T07:37:38.149+0000] {itinerary_tours_dag.py:435} INFO -   (240/1049) Geocoding: San Francisco Deluxe Half Day City Tour
+[2025-04-18T07:37:38.413+0000] {itinerary_tours_dag.py:435} INFO -   (241/1049) Geocoding: San Francisco Champagne Brunch Cruise
+[2025-04-18T07:37:38.712+0000] {itinerary_tours_dag.py:435} INFO -   (242/1049) Geocoding: Big Bus San Francisco Sightseeing And Alcatraz Combo
+[2025-04-18T07:37:39.019+0000] {itinerary_tours_dag.py:435} INFO -   (243/1049) Geocoding: The Ultimate Wine Experience Day Trip To Napa And Sonoma
+[2025-04-18T07:37:39.275+0000] {itinerary_tours_dag.py:435} INFO -   (244/1049) Geocoding: Alcatraz And San Francisco City Tour
+[2025-04-18T07:37:39.515+0000] {itinerary_tours_dag.py:435} INFO -   (245/1049) Geocoding: San Francisco Super Saver City Tour Plus Muir Woods And Sausalito Day Trip
+[2025-04-18T07:37:39.811+0000] {itinerary_tours_dag.py:435} INFO -   (246/1049) Geocoding: San Francisco Bike Tour And Alcatraz Admission
+[2025-04-18T07:37:40.086+0000] {itinerary_tours_dag.py:435} INFO -   (247/1049) Geocoding: San Francisco Love Tour
+[2025-04-18T07:37:40.346+0000] {itinerary_tours_dag.py:435} INFO -   (248/1049) Geocoding: Golden Gate Bay Cruise
+[2025-04-18T07:37:40.625+0000] {itinerary_tours_dag.py:435} INFO -   (249/1049) Geocoding: 2 Day Yosemite National Park Tour From San Francisco
+[2025-04-18T07:37:40.888+0000] {itinerary_tours_dag.py:435} INFO -   (250/1049) Geocoding: San Francisco Bay Sailing Cruise
+[2025-04-18T07:37:41.151+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 5. Sleeping before next batch...
+[2025-04-18T07:37:43.154+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 6: rows 251 to 300
+[2025-04-18T07:37:43.156+0000] {itinerary_tours_dag.py:435} INFO -   (251/1049) Geocoding: San Francisco Fire Engine Tour
+[2025-04-18T07:37:43.422+0000] {itinerary_tours_dag.py:435} INFO -   (252/1049) Geocoding: Muir Woods And Sausalito Tour By Hop On Hop Off Bus
+[2025-04-18T07:37:43.698+0000] {itinerary_tours_dag.py:435} INFO -   (253/1049) Geocoding: San Francisco Dinner Dance Cruise
+[2025-04-18T07:37:44.004+0000] {itinerary_tours_dag.py:435} INFO -   (254/1049) Geocoding: San Francisco Golden Gate Bridge Bike Tour
+[2025-04-18T07:37:44.307+0000] {itinerary_tours_dag.py:435} INFO -   (255/1049) Geocoding: Yosemite In A Day Tour From San Francisco
+[2025-04-18T07:37:44.623+0000] {itinerary_tours_dag.py:435} INFO -   (256/1049) Geocoding: Exploratorium General Admission
+[2025-04-18T07:37:44.895+0000] {itinerary_tours_dag.py:435} INFO -   (257/1049) Geocoding: Skip The Line California Academy Of Sciences General Admission Ticket
+[2025-04-18T07:37:45.234+0000] {itinerary_tours_dag.py:435} INFO -   (258/1049) Geocoding: San Francisco Bridge To Bridge Cruise
+[2025-04-18T07:37:45.516+0000] {itinerary_tours_dag.py:435} INFO -   (259/1049) Geocoding: San Francisco Golden Gate Seaplane Tour
+[2025-04-18T07:37:45.798+0000] {itinerary_tours_dag.py:435} INFO -   (260/1049) Geocoding: San Francisco Escape From The Rock Cruise
+[2025-04-18T07:37:46.073+0000] {itinerary_tours_dag.py:435} INFO -   (261/1049) Geocoding: San Francisco Lunch Cruise
+[2025-04-18T07:37:46.337+0000] {itinerary_tours_dag.py:435} INFO -   (262/1049) Geocoding: Semi Private Small Group Wine Country Tour From San Francisco
+[2025-04-18T07:37:46.599+0000] {itinerary_tours_dag.py:435} INFO -   (263/1049) Geocoding: Muir Woods And Sausalito Morning Tour
+[2025-04-18T07:37:46.850+0000] {itinerary_tours_dag.py:435} INFO -   (264/1049) Geocoding: Explore California S Coastal Redwoods With Sausalito Ferry Boat Experience
+[2025-04-18T07:37:47.124+0000] {itinerary_tours_dag.py:435} INFO -   (265/1049) Geocoding: San Francisco Citypass 5ac65a6c5840d4d89b0000ed
+[2025-04-18T07:37:47.402+0000] {itinerary_tours_dag.py:435} INFO -   (266/1049) Geocoding: San Francisco Gocar Tour
+[2025-04-18T07:37:47.735+0000] {itinerary_tours_dag.py:435} INFO -   (267/1049) Geocoding: Bike The Golden Gate Bridge San Francisco To Sausalito
+[2025-04-18T07:37:48.014+0000] {itinerary_tours_dag.py:435} INFO -   (268/1049) Geocoding: San Francisco And Muir Woods City And Nature Tour
+[2025-04-18T07:37:48.257+0000] {itinerary_tours_dag.py:435} INFO -   (269/1049) Geocoding: The Castro Historical Walking Tour Of San Francisco S Gay Lesbian District
+[2025-04-18T07:37:48.572+0000] {itinerary_tours_dag.py:435} INFO -   (270/1049) Geocoding: San Francisco Bay Cruise Adventure
+[2025-04-18T07:37:48.810+0000] {itinerary_tours_dag.py:435} INFO -   (271/1049) Geocoding: San Francisco Sunset Photography Tour
+[2025-04-18T07:37:49.066+0000] {itinerary_tours_dag.py:435} INFO -   (272/1049) Geocoding: Muir Woods Expedition Tour
+[2025-04-18T07:37:49.335+0000] {itinerary_tours_dag.py:435} INFO -   (273/1049) Geocoding: San Francisco Movie Sights City Tour
+[2025-04-18T07:37:49.592+0000] {itinerary_tours_dag.py:435} INFO -   (274/1049) Geocoding: Shore Excursion Napa And Sonoma Ultimate Wine Tasting Experience Full Day Tour
+[2025-04-18T07:37:49.858+0000] {itinerary_tours_dag.py:435} INFO -   (275/1049) Geocoding: San Francisco Bay Rib Boat Cruise
+[2025-04-18T07:37:50.127+0000] {itinerary_tours_dag.py:435} INFO -   (276/1049) Geocoding: San Francisco City Tour 5ac4c9645840d452e9000c64
+[2025-04-18T07:37:50.359+0000] {itinerary_tours_dag.py:435} INFO -   (277/1049) Geocoding: Best Day In San Francisco With Muir Woods
+[2025-04-18T07:37:50.636+0000] {itinerary_tours_dag.py:435} INFO -   (278/1049) Geocoding: Private Arrival Transfer San Francisco International Airport To Hotel
+[2025-04-18T07:37:50.894+0000] {itinerary_tours_dag.py:435} INFO -   (279/1049) Geocoding: City And Sea Adventure Hop On Hop Off Tour Package Including San Francisco Bay Cruise
+[2025-04-18T07:37:51.221+0000] {itinerary_tours_dag.py:435} INFO -   (280/1049) Geocoding: Small Group Mission District Food Tour San Francisco
+[2025-04-18T07:37:51.587+0000] {itinerary_tours_dag.py:435} INFO -   (281/1049) Geocoding: San Francisco City Tour 57ace4f68427a56e1d00006f
+[2025-04-18T07:37:51.831+0000] {itinerary_tours_dag.py:435} INFO -   (282/1049) Geocoding: Half Day Sonoma Wine Tour
+[2025-04-18T07:37:52.076+0000] {itinerary_tours_dag.py:435} INFO -   (283/1049) Geocoding: 6 Hour Private Sonoma Or Napa Wine Tasting Tour Sedan Suv Or Limo
+[2025-04-18T07:37:52.364+0000] {itinerary_tours_dag.py:435} INFO -   (284/1049) Geocoding: San Francisco 1 Hour Seaplane Tour With Shuttle Transport
+[2025-04-18T07:37:52.627+0000] {itinerary_tours_dag.py:435} INFO -   (285/1049) Geocoding: Big Bus San Francisco Night Tour
+[2025-04-18T07:37:52.878+0000] {itinerary_tours_dag.py:435} INFO -   (286/1049) Geocoding: Go San Francisco Card 57ab2d758427a56f440000d6
+[2025-04-18T07:37:53.157+0000] {itinerary_tours_dag.py:435} INFO -   (287/1049) Geocoding: California Academy Of Sciences Nightlife
+[2025-04-18T07:37:53.408+0000] {itinerary_tours_dag.py:435} INFO -   (288/1049) Geocoding: San Francisco Bay Air Tour
+[2025-04-18T07:37:53.673+0000] {itinerary_tours_dag.py:435} INFO -   (289/1049) Geocoding: Exploratorium Admission Thursday Evening Happy Hour
+[2025-04-18T07:37:53.936+0000] {itinerary_tours_dag.py:435} INFO -   (290/1049) Geocoding: Aquarium Of The Bay General Admission
+[2025-04-18T07:37:54.187+0000] {itinerary_tours_dag.py:435} INFO -   (291/1049) Geocoding: Coastal Redwoods Visit With San Francisco Hop On Hop Off Tour
+[2025-04-18T07:37:54.431+0000] {itinerary_tours_dag.py:435} INFO -   (292/1049) Geocoding: The San Francisco Sightseeing Pass With 3 4 Or 5 Attractions
+[2025-04-18T07:37:54.698+0000] {itinerary_tours_dag.py:435} INFO -   (293/1049) Geocoding: Private Departure Transfer Hotel To San Francisco International Airport
+[2025-04-18T07:37:54.940+0000] {itinerary_tours_dag.py:435} INFO -   (294/1049) Geocoding: San Francisco Scavenger Hunt Adventure
+[2025-04-18T07:37:55.259+0000] {itinerary_tours_dag.py:435} INFO -   (295/1049) Geocoding: San Francisco Explorer Pass 57ac388f8427a54f1a000092
+[2025-04-18T07:37:55.495+0000] {itinerary_tours_dag.py:435} INFO -   (296/1049) Geocoding: Shore Excursion Coastal Redwoods Of Muir Woods National Monument Half Day Tour
+[2025-04-18T07:37:55.789+0000] {itinerary_tours_dag.py:435} INFO -   (297/1049) Geocoding: Private Tour San Francisco Sightseeing 3 Hour
+[2025-04-18T07:37:56.119+0000] {itinerary_tours_dag.py:435} INFO -   (298/1049) Geocoding: San Francisco Full Day Hop On Hop Off Tour
+[2025-04-18T07:37:56.374+0000] {itinerary_tours_dag.py:435} INFO -   (299/1049) Geocoding: Napa And Sonoma Wine Tour From San Francisco
+[2025-04-18T07:37:56.625+0000] {itinerary_tours_dag.py:435} INFO -   (300/1049) Geocoding: 8 Hour Private Sonoma Or Napa Wine Tasting Tour Sedan Suv Or Limo
+[2025-04-18T07:37:56.894+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 6. Sleeping before next batch...
+[2025-04-18T07:37:58.901+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 7: rows 301 to 350
+[2025-04-18T07:37:58.904+0000] {itinerary_tours_dag.py:435} INFO -   (301/1049) Geocoding: Mission District Food Tasting And Cultural Walking Tour
+[2025-04-18T07:37:59.150+0000] {itinerary_tours_dag.py:435} INFO -   (302/1049) Geocoding: Muir Woods And Sausalito Half Day Tour 5ac547605840d408ea0001aa
+[2025-04-18T07:37:59.393+0000] {itinerary_tours_dag.py:435} INFO -   (303/1049) Geocoding: Self Guided Bike Rentals From San Francisco
+[2025-04-18T07:37:59.623+0000] {itinerary_tours_dag.py:435} INFO -   (304/1049) Geocoding: Small Group Tour San Francisco City And Muir Woods
+[2025-04-18T07:37:59.878+0000] {itinerary_tours_dag.py:435} INFO -   (305/1049) Geocoding: 3 Day Hop On Hop Off Pass
+[2025-04-18T07:38:00.119+0000] {itinerary_tours_dag.py:435} INFO -   (306/1049) Geocoding: San Francisco Night Tour By Bus
+[2025-04-18T07:38:00.430+0000] {itinerary_tours_dag.py:435} INFO -   (307/1049) Geocoding: 2 Day Narrated Hop On Hop Off Tour In San Francisco
+[2025-04-18T07:38:00.688+0000] {itinerary_tours_dag.py:435} INFO -   (308/1049) Geocoding: Silicon Valley Tour Private Day Trip From San Francisco
+[2025-04-18T07:38:00.944+0000] {itinerary_tours_dag.py:435} INFO -   (309/1049) Geocoding: North Beach Culinary Experience With Alcohol Pairing
+[2025-04-18T07:38:01.182+0000] {itinerary_tours_dag.py:435} INFO -   (310/1049) Geocoding: Small Group Vintage Wine Country Tour
+[2025-04-18T07:38:01.426+0000] {itinerary_tours_dag.py:435} INFO -   (311/1049) Geocoding: The Walt Disney Family Museum Admission In San Francisco
+[2025-04-18T07:38:01.701+0000] {itinerary_tours_dag.py:435} INFO -   (312/1049) Geocoding: North Beach Food Tasting And Cultural Walking Tour
+[2025-04-18T07:38:01.952+0000] {itinerary_tours_dag.py:435} INFO -   (313/1049) Geocoding: San Francisco Museum Of Modern Art General Admission Ticket
+[2025-04-18T07:38:02.210+0000] {itinerary_tours_dag.py:435} INFO -   (314/1049) Geocoding: Alcatraz Island Tour Package Deal
+[2025-04-18T07:38:02.461+0000] {itinerary_tours_dag.py:435} INFO -   (315/1049) Geocoding: Alcatraz With Bay Cruise
+[2025-04-18T07:38:02.701+0000] {itinerary_tours_dag.py:435} INFO -   (316/1049) Geocoding: 7d Darkride Admission At Pier 39
+[2025-04-18T07:38:02.971+0000] {itinerary_tours_dag.py:435} INFO -   (317/1049) Geocoding: San Francisco Fire Engine Holiday Lights Tour
+[2025-04-18T07:38:03.294+0000] {itinerary_tours_dag.py:435} INFO -   (318/1049) Geocoding: Bike Brew Golden Gate Bridge Guided Bicycle Tour With Lunch At Local Hotspot
+[2025-04-18T07:38:03.770+0000] {itinerary_tours_dag.py:435} INFO -   (319/1049) Geocoding: Small Group Muir Woods And Sonoma Wine Tour Plus Sausalito
+[2025-04-18T07:38:04.050+0000] {itinerary_tours_dag.py:435} INFO -   (320/1049) Geocoding: 60 Minute Private Vacation Photography Session With Local Photographer In San Francisco
+[2025-04-18T07:38:04.323+0000] {itinerary_tours_dag.py:435} INFO -   (321/1049) Geocoding: Private Sonoma Coast Food And Wine Tour
+[2025-04-18T07:38:04.570+0000] {itinerary_tours_dag.py:435} INFO -   (322/1049) Geocoding: The Flyer San Francisco Admission Ticket
+[2025-04-18T07:38:04.885+0000] {itinerary_tours_dag.py:435} INFO -   (323/1049) Geocoding: A Feast For Foodies In San Francisco
+[2025-04-18T07:38:05.136+0000] {itinerary_tours_dag.py:435} INFO -   (324/1049) Geocoding: San Francisco Food Tour Ferry Building And Ferry Plaza Farmers Market
+[2025-04-18T07:38:05.457+0000] {itinerary_tours_dag.py:435} INFO -   (325/1049) Geocoding: San Francisco Private City Tour
+[2025-04-18T07:38:05.787+0000] {itinerary_tours_dag.py:435} INFO -   (326/1049) Geocoding: Legion Of Honor Museum Admission
+[2025-04-18T07:38:06.035+0000] {itinerary_tours_dag.py:435} INFO -   (327/1049) Geocoding: Hard Rock Cafe San Francisco
+[2025-04-18T07:38:06.315+0000] {itinerary_tours_dag.py:435} INFO -   (328/1049) Geocoding: San Francisco Urban Adventure Tour
+[2025-04-18T07:38:06.595+0000] {itinerary_tours_dag.py:435} INFO -   (329/1049) Geocoding: San Francisco Sunrise Photography Tour
+[2025-04-18T07:38:06.845+0000] {itinerary_tours_dag.py:435} INFO -   (330/1049) Geocoding: Rides By Me
+[2025-04-18T07:38:07.073+0000] {itinerary_tours_dag.py:435} INFO -   (331/1049) Geocoding: Shore Excursion Coastal Redwoods And San Francisco Hop On Hop Off Tour
+[2025-04-18T07:38:07.327+0000] {itinerary_tours_dag.py:435} INFO -   (332/1049) Geocoding: Sf Ghosts Extended Walking Tour
+[2025-04-18T07:38:07.575+0000] {itinerary_tours_dag.py:435} INFO -   (333/1049) Geocoding: Walking Tour Of Nob Hill Cable Cars Luxury Hotels French Gothic Cathedral
+[2025-04-18T07:38:07.885+0000] {itinerary_tours_dag.py:435} INFO -   (334/1049) Geocoding: De Young Museum Admission
+[2025-04-18T07:38:08.138+0000] {itinerary_tours_dag.py:435} INFO -   (335/1049) Geocoding: San Francisco Mega Pass Pick 3 Tours Attractions
+[2025-04-18T07:38:08.394+0000] {itinerary_tours_dag.py:435} INFO -   (336/1049) Geocoding: Golden Gate Bay Cruise Tour Around The Alcatraz Under The Golden Gate Bridge
+[2025-04-18T07:38:08.692+0000] {itinerary_tours_dag.py:435} INFO -   (337/1049) Geocoding: Mix Save Muir Woods And Sausalito Escape From The Rock Boat Tour
+[2025-04-18T07:38:08.968+0000] {itinerary_tours_dag.py:435} INFO -   (338/1049) Geocoding: Alcatraz With Muir Woods And Sausalito Tour
+[2025-04-18T07:38:09.231+0000] {itinerary_tours_dag.py:435} INFO -   (339/1049) Geocoding: A Full Day In San Francisco With A Local Private Personalized
+[2025-04-18T07:38:09.494+0000] {itinerary_tours_dag.py:435} INFO -   (340/1049) Geocoding: San Francisco City Game The Gold Rush Quest
+[2025-04-18T07:38:09.730+0000] {itinerary_tours_dag.py:435} INFO -   (341/1049) Geocoding: San Francisco Castro Mission Loop
+[2025-04-18T07:38:09.971+0000] {itinerary_tours_dag.py:435} INFO -   (342/1049) Geocoding: San Francisco Deluxe Hop On Hop Off Tour
+[2025-04-18T07:38:10.211+0000] {itinerary_tours_dag.py:435} INFO -   (343/1049) Geocoding: San Francisco City Bike Rental
+[2025-04-18T07:38:10.447+0000] {itinerary_tours_dag.py:435} INFO -   (344/1049) Geocoding: San Francisco Chinatown Food Tour
+[2025-04-18T07:38:10.686+0000] {itinerary_tours_dag.py:435} INFO -   (345/1049) Geocoding: Arrival Private Transfer Sfo Airport To Oakland In Business Car
+[2025-04-18T07:38:10.966+0000] {itinerary_tours_dag.py:435} INFO -   (346/1049) Geocoding: Cruise Around The Alcatraz Island Bike Across The Golden Gate Bridge
+[2025-04-18T07:38:11.264+0000] {itinerary_tours_dag.py:435} INFO -   (347/1049) Geocoding: 8hr Private Napa Sonoma Wine Tour Custom Built Itineraries
+[2025-04-18T07:38:11.504+0000] {itinerary_tours_dag.py:435} INFO -   (348/1049) Geocoding: Muir Woods And Sausalito Tour
+[2025-04-18T07:38:11.770+0000] {itinerary_tours_dag.py:435} INFO -   (349/1049) Geocoding: Small Group Redwoods And Wine Country Day Trip From San Francisco
+[2025-04-18T07:38:12.041+0000] {itinerary_tours_dag.py:435} INFO -   (350/1049) Geocoding: Small Group Redwoods California Coast Sausalito Day Trip From San Francisco
+[2025-04-18T07:38:12.315+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 7. Sleeping before next batch...
+[2025-04-18T07:38:14.318+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 8: rows 351 to 400
+[2025-04-18T07:38:14.320+0000] {itinerary_tours_dag.py:435} INFO -   (351/1049) Geocoding: Amazing Muir Woods And Sausalito Tour
+[2025-04-18T07:38:14.573+0000] {itinerary_tours_dag.py:435} INFO -   (352/1049) Geocoding: Golden Gate Park Bike Tour
+[2025-04-18T07:38:14.851+0000] {itinerary_tours_dag.py:435} INFO -   (353/1049) Geocoding: The Best Of San Francisco Ebike Tour
+[2025-04-18T07:38:15.103+0000] {itinerary_tours_dag.py:435} INFO -   (354/1049) Geocoding: Mission District Culinary Experience With Alcohol Pairing
+[2025-04-18T07:38:15.332+0000] {itinerary_tours_dag.py:435} INFO -   (355/1049) Geocoding: San Francisco Food Tour Taste The Mission
+[2025-04-18T07:38:15.579+0000] {itinerary_tours_dag.py:435} INFO -   (356/1049) Geocoding: City And Sea Adventure San Francisco Bay Cruise Including Hop On Hop Off Tour
+[2025-04-18T07:38:15.834+0000] {itinerary_tours_dag.py:435} INFO -   (357/1049) Geocoding: 2 Day Alcatraz With Aquarium And Small Group Muir Woods With Sonoma Wine Tour
+[2025-04-18T07:38:16.210+0000] {itinerary_tours_dag.py:435} INFO -   (358/1049) Geocoding: Exclusive Napa Valley Wine Tour
+[2025-04-18T07:38:16.497+0000] {itinerary_tours_dag.py:435} INFO -   (359/1049) Geocoding: Exclusive Napa Valley Wine Tour 5ac4b6445840d4d9ac000c22
+[2025-04-18T07:38:16.784+0000] {itinerary_tours_dag.py:435} INFO -   (360/1049) Geocoding: Golden Gate Park Surrey Rental
+[2025-04-18T07:38:17.083+0000] {itinerary_tours_dag.py:435} INFO -   (361/1049) Geocoding: Two Day Los Angeles San Francisco Private Tour
+[2025-04-18T07:38:17.350+0000] {itinerary_tours_dag.py:435} INFO -   (362/1049) Geocoding: Painted Ladies Wine Country Tour
+[2025-04-18T07:38:17.630+0000] {itinerary_tours_dag.py:435} INFO -   (363/1049) Geocoding: The Classic San Francisco Bike Tour
+[2025-04-18T07:38:17.895+0000] {itinerary_tours_dag.py:435} INFO -   (364/1049) Geocoding: North Beach Pub Tour Best Day Ever
+[2025-04-18T07:38:18.195+0000] {itinerary_tours_dag.py:435} INFO -   (365/1049) Geocoding: Teas Temples And Beatniks Best Day Ever
+[2025-04-18T07:38:18.492+0000] {itinerary_tours_dag.py:435} INFO -   (366/1049) Geocoding: San Francisco Independent Bike Tour With Rental
+[2025-04-18T07:38:18.753+0000] {itinerary_tours_dag.py:435} INFO -   (367/1049) Geocoding: 2 Day Alcatraz Muir Woods And Sonoma Wine Tour With Aquarium
+[2025-04-18T07:38:19.054+0000] {itinerary_tours_dag.py:435} INFO -   (368/1049) Geocoding: Private Napa Sonoma Gourmet Food And Wine Tour
+[2025-04-18T07:38:19.327+0000] {itinerary_tours_dag.py:435} INFO -   (369/1049) Geocoding: San Francisco Embarcadero Scavenger Hunt Adventure 5ac5eb2a5840d40fea000c72
+[2025-04-18T07:38:19.670+0000] {itinerary_tours_dag.py:435} INFO -   (370/1049) Geocoding: Zombie Scavengers Game San Francisco Ca
+[2025-04-18T07:38:19.912+0000] {itinerary_tours_dag.py:435} INFO -   (371/1049) Geocoding: San Francisco S Barbary Past Walking Audio Tour By Voicemap
+[2025-04-18T07:38:20.162+0000] {itinerary_tours_dag.py:435} INFO -   (372/1049) Geocoding: Fernet N Paint Night
+[2025-04-18T07:38:20.415+0000] {itinerary_tours_dag.py:435} INFO -   (373/1049) Geocoding: San Francisco Parks And Beaches Bike Tour
+[2025-04-18T07:38:20.656+0000] {itinerary_tours_dag.py:435} INFO -   (374/1049) Geocoding: Small Group Golden Gate Bridge Sailing Tour
+[2025-04-18T07:38:20.943+0000] {itinerary_tours_dag.py:435} INFO -   (375/1049) Geocoding: San Francisco Sunset Champagne Seaplane Tour
+[2025-04-18T07:38:21.246+0000] {itinerary_tours_dag.py:435} INFO -   (376/1049) Geocoding: San Francisco Urban Bike Tour
+[2025-04-18T07:38:21.495+0000] {itinerary_tours_dag.py:435} INFO -   (377/1049) Geocoding: San Francisco Urban Hike Coit Tower Lombard Street And North Beach
+[2025-04-18T07:38:21.804+0000] {itinerary_tours_dag.py:435} INFO -   (378/1049) Geocoding: San Francisco City Adventure Tour
+[2025-04-18T07:38:22.042+0000] {itinerary_tours_dag.py:435} INFO -   (379/1049) Geocoding: Intro To San Francisco Electric Bike Tour
+[2025-04-18T07:38:22.320+0000] {itinerary_tours_dag.py:435} INFO -   (380/1049) Geocoding: Alcatraz And San Francisco City Tour 5836a92c8427a52108000091
+[2025-04-18T07:38:22.572+0000] {itinerary_tours_dag.py:435} INFO -   (381/1049) Geocoding: San Francisco Private Tour
+[2025-04-18T07:38:22.820+0000] {itinerary_tours_dag.py:435} INFO -   (382/1049) Geocoding: San Francisco Private Love Tour 5ac56a9d5840d4fb30000e77
+[2025-04-18T07:38:23.072+0000] {itinerary_tours_dag.py:435} INFO -   (383/1049) Geocoding: 24 Hour Bike Rental In San Francisco
+[2025-04-18T07:38:23.341+0000] {itinerary_tours_dag.py:435} INFO -   (384/1049) Geocoding: Skip The Bus San Francisco By Luxury Minivan Tour
+[2025-04-18T07:38:23.593+0000] {itinerary_tours_dag.py:435} INFO -   (385/1049) Geocoding: Private Lucky Tuk Tuk 3 Hour Ultimate San Francisco City Tour W Your Own Guide
+[2025-04-18T07:38:23.890+0000] {itinerary_tours_dag.py:435} INFO -   (386/1049) Geocoding: Lucky Tuk Tuk At Night San Francisco Lights Tour
+[2025-04-18T07:38:24.134+0000] {itinerary_tours_dag.py:435} INFO -   (387/1049) Geocoding: San Francisco Hop On Hop Off Bus Tour 1 Day Pass Unlimited Use Live Guide
+[2025-04-18T07:38:24.396+0000] {itinerary_tours_dag.py:435} INFO -   (388/1049) Geocoding: Fisherman S Wharf Walking Tour And Alcatraz Upgrade Option
+[2025-04-18T07:38:24.672+0000] {itinerary_tours_dag.py:435} INFO -   (389/1049) Geocoding: San Francisco City Insider S Tour
+[2025-04-18T07:38:24.915+0000] {itinerary_tours_dag.py:435} INFO -   (390/1049) Geocoding: Private Tour Of San Francisco
+[2025-04-18T07:38:25.148+0000] {itinerary_tours_dag.py:435} INFO -   (391/1049) Geocoding: 4 Hour Painted Ladies And Haight Ashbury Gocar Tour
+[2025-04-18T07:38:25.432+0000] {itinerary_tours_dag.py:435} INFO -   (392/1049) Geocoding: Painted Ladies San Francisco City Tour
+[2025-04-18T07:38:25.719+0000] {itinerary_tours_dag.py:435} INFO -   (393/1049) Geocoding: Holiday Lights Sites Lucky Tuk Tuk Tour In San Francisco
+[2025-04-18T07:38:25.975+0000] {itinerary_tours_dag.py:435} INFO -   (394/1049) Geocoding: Sfo Pick Up With City Sightseeing Tour
+[2025-04-18T07:38:26.250+0000] {itinerary_tours_dag.py:435} INFO -   (395/1049) Geocoding: 2hr Golden Gate Bridge And Lombard Loop Gocar Tour
+[2025-04-18T07:38:26.599+0000] {itinerary_tours_dag.py:435} INFO -   (396/1049) Geocoding: 1hr San Francisco Chinatown Downtown Loop
+[2025-04-18T07:38:26.863+0000] {itinerary_tours_dag.py:435} INFO -   (397/1049) Geocoding: 3hr Golden Gate Bridge And Golden Gate Park Gocar Tour
+[2025-04-18T07:38:27.155+0000] {itinerary_tours_dag.py:435} INFO -   (398/1049) Geocoding: Elite Flight Tour Over San Francisco
+[2025-04-18T07:38:27.400+0000] {itinerary_tours_dag.py:435} INFO -   (399/1049) Geocoding: Fisherman S Wharf Walking Tour
+[2025-04-18T07:38:27.647+0000] {itinerary_tours_dag.py:435} INFO -   (400/1049) Geocoding: San Francisco Independent Electric Bike Tour With Rental
+[2025-04-18T07:38:27.925+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 8. Sleeping before next batch...
+[2025-04-18T07:38:29.926+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 9: rows 401 to 450
+[2025-04-18T07:38:29.929+0000] {itinerary_tours_dag.py:435} INFO -   (401/1049) Geocoding: Golden Gate Bridge Bike Tour
+[2025-04-18T07:38:30.185+0000] {itinerary_tours_dag.py:435} INFO -   (402/1049) Geocoding: San Francisco Fishermans Wharf Tourist Scavenger Hunt
+[2025-04-18T07:38:30.440+0000] {itinerary_tours_dag.py:435} INFO -   (403/1049) Geocoding: San Francisco Hop On Hop Off Open Top Bus Tour With Sausalito Tour Live Guide
+[2025-04-18T07:38:30.703+0000] {itinerary_tours_dag.py:435} INFO -   (404/1049) Geocoding: Mother S Day Brunch Cruise On San Francisco Bay
+[2025-04-18T07:38:30.984+0000] {itinerary_tours_dag.py:435} INFO -   (405/1049) Geocoding: Nate S Review Express Product
+[2025-04-18T07:38:31.257+0000] {itinerary_tours_dag.py:435} INFO -   (406/1049) Geocoding: Bokun Sapi Ec Connected
+[2025-04-18T07:38:31.546+0000] {itinerary_tours_dag.py:435} INFO -   (407/1049) Geocoding: Bridge And The Beach Best Day Ever
+[2025-04-18T07:38:31.934+0000] {itinerary_tours_dag.py:435} INFO -   (408/1049) Geocoding: San Francisco Ferry Sausalito Or Tiburon
+[2025-04-18T07:38:32.215+0000] {itinerary_tours_dag.py:435} INFO -   (409/1049) Geocoding: Arrival Private Transfer San Francisco Cruise Port To Oakland In Luxury Car
+[2025-04-18T07:38:32.477+0000] {itinerary_tours_dag.py:435} INFO -   (410/1049) Geocoding: Arrival Private Transfer San Francisco Cruise Port To Oakland In Business Car
+[2025-04-18T07:38:32.766+0000] {itinerary_tours_dag.py:435} INFO -   (411/1049) Geocoding: Sip N Shop Livermore Wine Tasting And Outlet Shopping From San Francisco
+[2025-04-18T07:38:33.068+0000] {itinerary_tours_dag.py:435} INFO -   (412/1049) Geocoding: San Francisco Explorer Pass
+[2025-04-18T07:38:33.305+0000] {itinerary_tours_dag.py:435} INFO -   (413/1049) Geocoding: Go San Francisco Card
+[2025-04-18T07:38:33.539+0000] {itinerary_tours_dag.py:435} INFO -   (414/1049) Geocoding: San Francisco Self Guided Audio Tour
+[2025-04-18T07:38:33.789+0000] {itinerary_tours_dag.py:435} INFO -   (415/1049) Geocoding: The San Francisco Sightseeing Day Pass Save Big At 30 Attractions Tours
+[2025-04-18T07:38:34.063+0000] {itinerary_tours_dag.py:435} INFO -   (416/1049) Geocoding: Private Full Day Napa Wine Tour In A Luxury Vehicle
+[2025-04-18T07:38:34.330+0000] {itinerary_tours_dag.py:435} INFO -   (417/1049) Geocoding: Private 6 Hour Napa Valley Wine Tour
+[2025-04-18T07:38:34.606+0000] {itinerary_tours_dag.py:435} INFO -   (418/1049) Geocoding: Napa And Sonoma Valley Wine Tour From San Francisco
+[2025-04-18T07:38:34.896+0000] {itinerary_tours_dag.py:435} INFO -   (419/1049) Geocoding: Monterey Carmel And Big Sur Private Day Trip From San Francisco
+[2025-04-18T07:38:35.161+0000] {itinerary_tours_dag.py:435} INFO -   (420/1049) Geocoding: Beginner Surfing 1 Day Pacifica
+[2025-04-18T07:38:35.525+0000] {itinerary_tours_dag.py:435} INFO -   (421/1049) Geocoding: Introduction To Wilderness Survival Clinic Marin County
+[2025-04-18T07:38:35.789+0000] {itinerary_tours_dag.py:435} INFO -   (422/1049) Geocoding: Private Napa Valley Day Trip From San Francisco
+[2025-04-18T07:38:36.051+0000] {itinerary_tours_dag.py:435} INFO -   (423/1049) Geocoding: Yosemite Tour
+[2025-04-18T07:38:36.303+0000] {itinerary_tours_dag.py:435} INFO -   (424/1049) Geocoding: Muir Woods And Sausalito Alcatraz
+[2025-04-18T07:38:36.544+0000] {itinerary_tours_dag.py:435} INFO -   (425/1049) Geocoding: Deluxe Sonoma Napa Valley Wine Country Tour
+[2025-04-18T07:38:36.837+0000] {itinerary_tours_dag.py:435} INFO -   (426/1049) Geocoding: Muir Woods Sausalito Tour
+[2025-04-18T07:38:37.085+0000] {itinerary_tours_dag.py:435} INFO -   (427/1049) Geocoding: Private Wine Tour Of Napa And Sonoma
+[2025-04-18T07:38:37.340+0000] {itinerary_tours_dag.py:435} INFO -   (428/1049) Geocoding: 8 Hour Napa And Sonoma Private Wine Tour
+[2025-04-18T07:38:37.590+0000] {itinerary_tours_dag.py:435} INFO -   (429/1049) Geocoding: Private Russian River Wine Tour From San Francisco
+[2025-04-18T07:38:37.875+0000] {itinerary_tours_dag.py:435} INFO -   (430/1049) Geocoding: Private Muir Woods And Napa Wine Tour From San Francisco
+[2025-04-18T07:38:38.170+0000] {itinerary_tours_dag.py:435} INFO -   (431/1049) Geocoding: 8 Hour Private Limousine Wine Country Tour Of Napa Valley From San Francisco
+[2025-04-18T07:38:38.431+0000] {itinerary_tours_dag.py:435} INFO -   (432/1049) Geocoding: 6 Hour Livermore Valley Wine Tasting Tour From San Francisco
+[2025-04-18T07:38:38.678+0000] {itinerary_tours_dag.py:435} INFO -   (433/1049) Geocoding: Monterey Carmel The 17 Mile Drive 5ab11bb25840d47c1d000a9e
+[2025-04-18T07:38:38.920+0000] {itinerary_tours_dag.py:435} INFO -   (434/1049) Geocoding: San Francisco City Tour 5ab1223c5840d47f1d000a7e
+[2025-04-18T07:38:39.170+0000] {itinerary_tours_dag.py:435} INFO -   (435/1049) Geocoding: San Francisco City Tour Muir Woods 5ab122505840d44a1e000a75
+[2025-04-18T07:38:39.459+0000] {itinerary_tours_dag.py:435} INFO -   (436/1049) Geocoding: San Francisco City Tour Bay Cruise
+[2025-04-18T07:38:39.704+0000] {itinerary_tours_dag.py:435} INFO -   (437/1049) Geocoding: Aquarium Of The Bay 5ab114fa5840d4811d000b3a
+[2025-04-18T07:38:39.935+0000] {itinerary_tours_dag.py:435} INFO -   (438/1049) Geocoding: Sf City Tour And Escape From The Rock Cruise
+[2025-04-18T07:38:40.172+0000] {itinerary_tours_dag.py:435} INFO -   (439/1049) Geocoding: Sf Bay Cruise
+[2025-04-18T07:38:40.397+0000] {itinerary_tours_dag.py:435} INFO -   (440/1049) Geocoding: Escape From The Rock
+[2025-04-18T07:38:40.626+0000] {itinerary_tours_dag.py:435} INFO -   (441/1049) Geocoding: Muir Woods Sausalito Bay Cruise
+[2025-04-18T07:38:40.875+0000] {itinerary_tours_dag.py:435} INFO -   (442/1049) Geocoding: San Francisco City Tour Alcatraz
+[2025-04-18T07:38:41.106+0000] {itinerary_tours_dag.py:435} INFO -   (443/1049) Geocoding: San Francisco Bay Indoor Skydiving Experience
+[2025-04-18T07:38:41.347+0000] {itinerary_tours_dag.py:435} INFO -   (444/1049) Geocoding: San Francisco Japantown Audio Tour By Voicemap Food History And Resistance
+[2025-04-18T07:38:41.593+0000] {itinerary_tours_dag.py:435} INFO -   (445/1049) Geocoding: Sfo Intl Executive Transportation
+[2025-04-18T07:38:41.855+0000] {itinerary_tours_dag.py:435} INFO -   (446/1049) Geocoding: Yosemite Day Tour
+[2025-04-18T07:38:42.097+0000] {itinerary_tours_dag.py:435} INFO -   (447/1049) Geocoding: Half Day San Francisco Bike Rental For The Golden Gate Bridge 3 Hour
+[2025-04-18T07:38:42.391+0000] {itinerary_tours_dag.py:435} INFO -   (448/1049) Geocoding: Big Sur Monterey California Pacific Coast One Day Tour
+[2025-04-18T07:38:42.772+0000] {itinerary_tours_dag.py:435} INFO -   (449/1049) Geocoding: Napa Valley Wine Country Flight Tour
+[2025-04-18T07:38:43.026+0000] {itinerary_tours_dag.py:435} INFO -   (450/1049) Geocoding: Wine Country Tour
+[2025-04-18T07:38:43.274+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 9. Sleeping before next batch...
+[2025-04-18T07:38:45.275+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 10: rows 451 to 500
+[2025-04-18T07:38:45.276+0000] {itinerary_tours_dag.py:435} INFO -   (451/1049) Geocoding: Chinatown Culinary Walking Tour
+[2025-04-18T07:38:45.516+0000] {itinerary_tours_dag.py:435} INFO -   (452/1049) Geocoding: Discovering The 3 Days Trip To Desert
+[2025-04-18T07:38:45.759+0000] {itinerary_tours_dag.py:435} INFO -   (453/1049) Geocoding: Golden Gate Bridge To Sausalito Bike Rental
+[2025-04-18T07:38:46.055+0000] {itinerary_tours_dag.py:435} INFO -   (454/1049) Geocoding: Half Day Private Tour Of Muir Woods Sausalito
+[2025-04-18T07:38:46.295+0000] {itinerary_tours_dag.py:435} INFO -   (455/1049) Geocoding: Experience Our Napa Valley Sonoma Wine Country Combo Tour
+[2025-04-18T07:38:46.580+0000] {itinerary_tours_dag.py:435} INFO -   (456/1049) Geocoding: Chicago Architecture River Cruise
+[2025-04-18T07:38:46.815+0000] {itinerary_tours_dag.py:435} INFO -   (457/1049) Geocoding: Big Bus Chicago Hop On Hop Off Tour
+[2025-04-18T07:38:47.045+0000] {itinerary_tours_dag.py:435} INFO -   (458/1049) Geocoding: Chicago Crime And Mob Tour
+[2025-04-18T07:38:47.295+0000] {itinerary_tours_dag.py:435} INFO -   (459/1049) Geocoding: Lake Michigan Sightseeing Cruise 58d170088427a53c720003ef
+[2025-04-18T07:38:47.549+0000] {itinerary_tours_dag.py:435} INFO -   (460/1049) Geocoding: Skydeck Chicago Admission
+[2025-04-18T07:38:47.796+0000] {itinerary_tours_dag.py:435} INFO -   (461/1049) Geocoding: Lake Michigan And Chicago River Architecture Cruise By Speedboat
+[2025-04-18T07:38:48.048+0000] {itinerary_tours_dag.py:435} INFO -   (462/1049) Geocoding: Tastes Of Chicago Bike Tour Chicago Style Pizza Beer Cupcakes And Hot Dogs
+[2025-04-18T07:38:48.319+0000] {itinerary_tours_dag.py:435} INFO -   (463/1049) Geocoding: 360 Chicago Observation Deck Formerly John Hancock Observatory Admission
+[2025-04-18T07:38:48.589+0000] {itinerary_tours_dag.py:435} INFO -   (464/1049) Geocoding: Chicago Citypass 5ac65a665840d44ac100007a
+[2025-04-18T07:38:48.833+0000] {itinerary_tours_dag.py:435} INFO -   (465/1049) Geocoding: Chicago Dinner Cruise
+[2025-04-18T07:38:49.084+0000] {itinerary_tours_dag.py:435} INFO -   (466/1049) Geocoding: Chicago Explorer Pass 57ac38868427a53d1a00006b
+[2025-04-18T07:38:49.301+0000] {itinerary_tours_dag.py:435} INFO -   (467/1049) Geocoding: Behind The Scenes Chicago Pizza Tour By Coach
+[2025-04-18T07:38:49.567+0000] {itinerary_tours_dag.py:435} INFO -   (468/1049) Geocoding: Chicago City Tour With Optional River Cruise
+[2025-04-18T07:38:49.861+0000] {itinerary_tours_dag.py:435} INFO -   (469/1049) Geocoding: Underground Donut Tour Chicago S First Donut Tour
+[2025-04-18T07:38:50.129+0000] {itinerary_tours_dag.py:435} INFO -   (470/1049) Geocoding: Lake Michigan Speedboat Ride
+[2025-04-18T07:38:50.349+0000] {itinerary_tours_dag.py:435} INFO -   (471/1049) Geocoding: Willis Tower Skydeck Dinner
+[2025-04-18T07:38:50.581+0000] {itinerary_tours_dag.py:435} INFO -   (472/1049) Geocoding: Small Group Chicago Loop Food Walking Tour
+[2025-04-18T07:38:50.890+0000] {itinerary_tours_dag.py:435} INFO -   (473/1049) Geocoding: Private Chicago Sunset Sail On Lake Michigan
+[2025-04-18T07:38:51.201+0000] {itinerary_tours_dag.py:435} INFO -   (474/1049) Geocoding: Tastes Of Chicago Walking Tour Chicago Style Pizza Beer Brownies And Italian Beef
+[2025-04-18T07:38:51.464+0000] {itinerary_tours_dag.py:435} INFO -   (475/1049) Geocoding: Chicago Walking Tour Art Deco Skyscrapers
+[2025-04-18T07:38:51.700+0000] {itinerary_tours_dag.py:435} INFO -   (476/1049) Geocoding: Haunted Chicago Segway Tour
+[2025-04-18T07:38:51.949+0000] {itinerary_tours_dag.py:435} INFO -   (477/1049) Geocoding: Chicago Night Crimes Tour
+[2025-04-18T07:38:52.181+0000] {itinerary_tours_dag.py:435} INFO -   (478/1049) Geocoding: Chicago Brunch Cruise
+[2025-04-18T07:38:52.419+0000] {itinerary_tours_dag.py:435} INFO -   (479/1049) Geocoding: Electric Bikes At Night Tour In Chicago
+[2025-04-18T07:38:52.672+0000] {itinerary_tours_dag.py:435} INFO -   (480/1049) Geocoding: Chicago Lakefront Neighborhoods Bicycle Tour
+[2025-04-18T07:38:52.907+0000] {itinerary_tours_dag.py:435} INFO -   (481/1049) Geocoding: Chicago Lakefront And Museum Campus Segway Tour
+[2025-04-18T07:38:53.243+0000] {itinerary_tours_dag.py:435} INFO -   (482/1049) Geocoding: Chicago Walking Tour Historic Skyscrapers
+[2025-04-18T07:38:53.466+0000] {itinerary_tours_dag.py:435} INFO -   (483/1049) Geocoding: Chicago Loop Walking Tour
+[2025-04-18T07:38:53.686+0000] {itinerary_tours_dag.py:435} INFO -   (484/1049) Geocoding: Private Arrival Transfer Chicago Airport To Downtown Chicago
+[2025-04-18T07:38:53.938+0000] {itinerary_tours_dag.py:435} INFO -   (485/1049) Geocoding: Chicago Lincoln Park Bike Adventure
+[2025-04-18T07:38:54.185+0000] {itinerary_tours_dag.py:435} INFO -   (486/1049) Geocoding: Amazing Lakefront Segway In Chicago
+[2025-04-18T07:38:54.473+0000] {itinerary_tours_dag.py:435} INFO -   (487/1049) Geocoding: Chicago Walking Tour Modern Architecture
+[2025-04-18T07:38:54.692+0000] {itinerary_tours_dag.py:435} INFO -   (488/1049) Geocoding: Chicago Holiday Stroll And Food Tour
+[2025-04-18T07:38:54.927+0000] {itinerary_tours_dag.py:435} INFO -   (489/1049) Geocoding: Chicago Tastes Of Chinatown Walking Food Tour
+[2025-04-18T07:38:55.176+0000] {itinerary_tours_dag.py:435} INFO -   (490/1049) Geocoding: Private Departure Transfer Downtown Chicago To Chicago Airport
+[2025-04-18T07:38:55.488+0000] {itinerary_tours_dag.py:435} INFO -   (491/1049) Geocoding: Chicago Walking Tour Tiffany Treasures
+[2025-04-18T07:38:55.720+0000] {itinerary_tours_dag.py:435} INFO -   (492/1049) Geocoding: Museums And Parks Bicycle Tour In Chicago
+[2025-04-18T07:38:55.946+0000] {itinerary_tours_dag.py:435} INFO -   (493/1049) Geocoding: Spirit Of Chicago Lunch Cruise With Buffet
+[2025-04-18T07:38:56.279+0000] {itinerary_tours_dag.py:435} INFO -   (494/1049) Geocoding: Private Navy Pier Fireworks Sail In Chicago
+[2025-04-18T07:38:56.506+0000] {itinerary_tours_dag.py:435} INFO -   (495/1049) Geocoding: Chicago Craft Brewery Barrel Bus Tour
+[2025-04-18T07:38:56.774+0000] {itinerary_tours_dag.py:435} INFO -   (496/1049) Geocoding: Chicago Independent Bike Tour With Full Day Rental
+[2025-04-18T07:38:57.037+0000] {itinerary_tours_dag.py:435} INFO -   (497/1049) Geocoding: Haunted Evening Chicago Pub Tour
+[2025-04-18T07:38:57.271+0000] {itinerary_tours_dag.py:435} INFO -   (498/1049) Geocoding: Chicago Scavenger Hunt Adventure
+[2025-04-18T07:38:57.512+0000] {itinerary_tours_dag.py:435} INFO -   (499/1049) Geocoding: Fright Hike Halloween Edition Chicago Bike Tour
+[2025-04-18T07:38:57.745+0000] {itinerary_tours_dag.py:435} INFO -   (500/1049) Geocoding: Chicago Architecture Walking Tour Dazzling Interiors Of The Loop
+[2025-04-18T07:38:57.994+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 10. Sleeping before next batch...
+[2025-04-18T07:38:59.996+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 11: rows 501 to 550
+[2025-04-18T07:39:00.002+0000] {itinerary_tours_dag.py:435} INFO -   (501/1049) Geocoding: Chicago Walking Tour Historic Treasures Of Chicago
+[2025-04-18T07:39:00.299+0000] {itinerary_tours_dag.py:435} INFO -   (502/1049) Geocoding: Chicago Insider Segway Tour
+[2025-04-18T07:39:00.528+0000] {itinerary_tours_dag.py:435} INFO -   (503/1049) Geocoding: 30 Minute Private Vacation Photography Session With Local Photographer In Chicago
+[2025-04-18T07:39:01.003+0000] {itinerary_tours_dag.py:435} INFO -   (504/1049) Geocoding: Chicago Fireworks Viewing By Segway
+[2025-04-18T07:39:01.249+0000] {itinerary_tours_dag.py:435} INFO -   (505/1049) Geocoding: Chicago River Experience
+[2025-04-18T07:39:01.457+0000] {itinerary_tours_dag.py:435} INFO -   (506/1049) Geocoding: 2 Hr Lakefront And Museum Campus Segway Tour
+[2025-04-18T07:39:01.686+0000] {itinerary_tours_dag.py:435} INFO -   (507/1049) Geocoding: Chicago Sunset Segway Tour
+[2025-04-18T07:39:01.907+0000] {itinerary_tours_dag.py:435} INFO -   (508/1049) Geocoding: Volo Auto Museum Admission
+[2025-04-18T07:39:02.148+0000] {itinerary_tours_dag.py:435} INFO -   (509/1049) Geocoding: American Writers Museum Admission
+[2025-04-18T07:39:02.380+0000] {itinerary_tours_dag.py:435} INFO -   (510/1049) Geocoding: Chicago In A Day Food History And Architecture Combo Tour
+[2025-04-18T07:39:02.604+0000] {itinerary_tours_dag.py:435} INFO -   (511/1049) Geocoding: Chicago Historical Food Tour Of River North
+[2025-04-18T07:39:02.864+0000] {itinerary_tours_dag.py:435} INFO -   (512/1049) Geocoding: Chicago Walking Tour The Magnificent Mile
+[2025-04-18T07:39:03.098+0000] {itinerary_tours_dag.py:435} INFO -   (513/1049) Geocoding: Field Museum Of Natural History All Access Pass
+[2025-04-18T07:39:03.336+0000] {itinerary_tours_dag.py:435} INFO -   (514/1049) Geocoding: Hidden History In Chicago S Gold Coast Walking Audio Tour By Voicemap
+[2025-04-18T07:39:03.598+0000] {itinerary_tours_dag.py:435} INFO -   (515/1049) Geocoding: Chicago Citypass
+[2025-04-18T07:39:03.874+0000] {itinerary_tours_dag.py:435} INFO -   (516/1049) Geocoding: Over 31 Years As Chicago S Original Gangster Tour Focused On The Prohibition Era
+[2025-04-18T07:39:04.116+0000] {itinerary_tours_dag.py:435} INFO -   (517/1049) Geocoding: Nching Product Options With Start Times
+[2025-04-18T07:39:04.358+0000] {itinerary_tours_dag.py:435} INFO -   (518/1049) Geocoding: Spirit Of Chicago Fireworks Dinner Cruise With Buffet
+[2025-04-18T07:39:04.601+0000] {itinerary_tours_dag.py:435} INFO -   (519/1049) Geocoding: Windy City Ghost Tour
+[2025-04-18T07:39:04.821+0000] {itinerary_tours_dag.py:435} INFO -   (520/1049) Geocoding: Odyssey Chicago River Architectural Lunch Cruise
+[2025-04-18T07:39:05.079+0000] {itinerary_tours_dag.py:435} INFO -   (521/1049) Geocoding: Chicago River Architecture Tour
+[2025-04-18T07:39:05.305+0000] {itinerary_tours_dag.py:435} INFO -   (522/1049) Geocoding: Chicago Lakefront Electric Bike Tour 5de612e10a21c77129300bc0
+[2025-04-18T07:39:05.548+0000] {itinerary_tours_dag.py:435} INFO -   (523/1049) Geocoding: 45 Minute Chicago Helicopter Skyline Tour Experience For 3 Passengers
+[2025-04-18T07:39:05.925+0000] {itinerary_tours_dag.py:435} INFO -   (524/1049) Geocoding: Chicago Lake And River Architecture Tour
+[2025-04-18T07:39:06.162+0000] {itinerary_tours_dag.py:435} INFO -   (525/1049) Geocoding: Big Bus Chicago Night Tour
+[2025-04-18T07:39:06.403+0000] {itinerary_tours_dag.py:435} INFO -   (526/1049) Geocoding: Best Of Chicago History Culture Tour With Chocolate And Popcorn
+[2025-04-18T07:39:06.694+0000] {itinerary_tours_dag.py:435} INFO -   (527/1049) Geocoding: Macy S Star Shopper State Street Chicago
+[2025-04-18T07:39:06.954+0000] {itinerary_tours_dag.py:435} INFO -   (528/1049) Geocoding: Shop And Shuttle Chicago
+[2025-04-18T07:39:07.173+0000] {itinerary_tours_dag.py:435} INFO -   (529/1049) Geocoding: 2 Hours Chicago Sightseeing Tour Luxury Private Stretch Limo 8 Passengers
+[2025-04-18T07:39:07.440+0000] {itinerary_tours_dag.py:435} INFO -   (530/1049) Geocoding: Chicago Explorer Pass
+[2025-04-18T07:39:07.717+0000] {itinerary_tours_dag.py:435} INFO -   (531/1049) Geocoding: Chicago Mafia And Blues Night Tour
+[2025-04-18T07:39:07.962+0000] {itinerary_tours_dag.py:435} INFO -   (532/1049) Geocoding: Chicago Barrel Bus Craft Brewery Tour
+[2025-04-18T07:39:08.211+0000] {itinerary_tours_dag.py:435} INFO -   (533/1049) Geocoding: Arrival Private Transfer Chicago O Hare Airport Ord To Chicago In An Suv
+[2025-04-18T07:39:08.480+0000] {itinerary_tours_dag.py:435} INFO -   (534/1049) Geocoding: Transfer In Private Vehicle From Chicago Airport To City
+[2025-04-18T07:39:08.771+0000] {itinerary_tours_dag.py:435} INFO -   (535/1049) Geocoding: Offbeat Street Art Tour Urban Graffiti Art And Mural Tour
+[2025-04-18T07:39:09.031+0000] {itinerary_tours_dag.py:435} INFO -   (536/1049) Geocoding: Chicago Arrival Private Transfers From O Hare Airport Ord To Chicago City
+[2025-04-18T07:39:09.283+0000] {itinerary_tours_dag.py:435} INFO -   (537/1049) Geocoding: Chicago Airport Transfers Chicago City To O Hare Airport Ord In Luxury Suv
+[2025-04-18T07:39:09.526+0000] {itinerary_tours_dag.py:435} INFO -   (538/1049) Geocoding: Chicago Walking Tour A Walk Through Time
+[2025-04-18T07:39:09.754+0000] {itinerary_tours_dag.py:435} INFO -   (539/1049) Geocoding: Chicago Naperville Indoor Skydiving Experience
+[2025-04-18T07:39:09.985+0000] {itinerary_tours_dag.py:435} INFO -   (540/1049) Geocoding: Chicago Lincoln Park Indoor Skydiving Experience
+[2025-04-18T07:39:10.232+0000] {itinerary_tours_dag.py:435} INFO -   (541/1049) Geocoding: Chicago Rosemont Indoor Skydiving Experience
+[2025-04-18T07:39:10.471+0000] {itinerary_tours_dag.py:435} INFO -   (542/1049) Geocoding: All Inclusive Luxury Sedan Transfer From O Hare Airport To Chicago Downtown
+[2025-04-18T07:39:10.723+0000] {itinerary_tours_dag.py:435} INFO -   (543/1049) Geocoding: Lincoln Park Hauntings Ghost Investigation Tour
+[2025-04-18T07:39:10.954+0000] {itinerary_tours_dag.py:435} INFO -   (544/1049) Geocoding: Curbside Suv Transfer From Ord To Downtown Chicago
+[2025-04-18T07:39:11.179+0000] {itinerary_tours_dag.py:435} INFO -   (545/1049) Geocoding: Curbside Sedan Transfer From O Hare Airport To Downtown Chicago
+[2025-04-18T07:39:11.422+0000] {itinerary_tours_dag.py:435} INFO -   (546/1049) Geocoding: Private Airport Transfer Chicago Airport Arrival And Departure
+[2025-04-18T07:39:11.674+0000] {itinerary_tours_dag.py:435} INFO -   (547/1049) Geocoding: Airport Transfer 5d84a1df0a21c71fb30b993d
+[2025-04-18T07:39:11.900+0000] {itinerary_tours_dag.py:435} INFO -   (548/1049) Geocoding: Odyssey Lake Michigan Thanksgiving Dinner Cruise
+[2025-04-18T07:39:12.122+0000] {itinerary_tours_dag.py:435} INFO -   (549/1049) Geocoding: Departure Private Transfer Chicago To O Hare Airport Ord In A Sedan Car
+[2025-04-18T07:39:12.384+0000] {itinerary_tours_dag.py:435} INFO -   (550/1049) Geocoding: Round Trip Transfer In Private Vehicle From To Airport In Chicago
+[2025-04-18T07:39:12.651+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 11. Sleeping before next batch...
+[2025-04-18T07:39:14.656+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 12: rows 551 to 600
+[2025-04-18T07:39:14.657+0000] {itinerary_tours_dag.py:435} INFO -   (551/1049) Geocoding: Transfer In Private Vehicle From Chicago City To Airport
+[2025-04-18T07:39:14.881+0000] {itinerary_tours_dag.py:435} INFO -   (552/1049) Geocoding: Chicago Departure Private Transfers Chicago To O Hare Airport Ord In Luxury Suv
+[2025-04-18T07:39:15.125+0000] {itinerary_tours_dag.py:435} INFO -   (553/1049) Geocoding: Chicago Departure Private Transfers From Chicago City To O Hare Airport Ord
+[2025-04-18T07:39:15.369+0000] {itinerary_tours_dag.py:435} INFO -   (554/1049) Geocoding: Chicago Arrival Private Transfers O Hare Airport Ord To Chicago In Luxury Suv
+[2025-04-18T07:39:15.690+0000] {itinerary_tours_dag.py:435} INFO -   (555/1049) Geocoding: Chicago Airport Transfers Chicago City To O Hare Airport Ord In Sedan Car
+[2025-04-18T07:39:15.944+0000] {itinerary_tours_dag.py:435} INFO -   (556/1049) Geocoding: Chicago Airport Transfers O Hare Airport Ord To Chicago City In Luxury Sedan
+[2025-04-18T07:39:16.234+0000] {itinerary_tours_dag.py:435} INFO -   (557/1049) Geocoding: Chicago Airport Transfers O Hare Airport Ord To Chicago City In Luxury Suv
+[2025-04-18T07:39:16.488+0000] {itinerary_tours_dag.py:435} INFO -   (558/1049) Geocoding: Chicago Airport Transfers Chicago City To O Hare Airport Ord In Luxury Sedan
+[2025-04-18T07:39:16.731+0000] {itinerary_tours_dag.py:435} INFO -   (559/1049) Geocoding: Private Sedan Transfer Between Ord And Indianapolis In
+[2025-04-18T07:39:16.992+0000] {itinerary_tours_dag.py:435} INFO -   (560/1049) Geocoding: Chicago Airport Transfer Midway Airport Mdw To O Hare Airport Ord In Luxury Suv
+[2025-04-18T07:39:17.274+0000] {itinerary_tours_dag.py:435} INFO -   (561/1049) Geocoding: Grand Canyon South Rim Bus Tour With Optional Upgrades
+[2025-04-18T07:39:17.580+0000] {itinerary_tours_dag.py:435} INFO -   (562/1049) Geocoding: Deluxe Las Vegas Helicopter Night Flight With Vip Transportation
+[2025-04-18T07:39:17.819+0000] {itinerary_tours_dag.py:435} INFO -   (563/1049) Geocoding: Las Vegas Strip Night Flight By Helicopter With Transport
+[2025-04-18T07:39:18.058+0000] {itinerary_tours_dag.py:435} INFO -   (564/1049) Geocoding: Morning Maverick Horseback Ride With Breakfast
+[2025-04-18T07:39:18.324+0000] {itinerary_tours_dag.py:435} INFO -   (565/1049) Geocoding: Ultimate Hoover Dam Tour
+[2025-04-18T07:39:18.639+0000] {itinerary_tours_dag.py:435} INFO -   (566/1049) Geocoding: Grand Canyon National Park Bus Tour
+[2025-04-18T07:39:18.928+0000] {itinerary_tours_dag.py:435} INFO -   (567/1049) Geocoding: Grand Canyon West Rim Ultimate Vip Tour
+[2025-04-18T07:39:19.195+0000] {itinerary_tours_dag.py:435} INFO -   (568/1049) Geocoding: Death Valley Tour From Las Vegas
+[2025-04-18T07:39:19.449+0000] {itinerary_tours_dag.py:435} INFO -   (569/1049) Geocoding: The High Roller At The Linq
+[2025-04-18T07:39:19.715+0000] {itinerary_tours_dag.py:435} INFO -   (570/1049) Geocoding: Grand Canyon West Rim Luxury Helicopter Tour
+[2025-04-18T07:39:20.075+0000] {itinerary_tours_dag.py:435} INFO -   (571/1049) Geocoding: Grand Canyon And Hoover Dam Day Trip From Las Vegas With Optional Skywalk
+[2025-04-18T07:39:20.385+0000] {itinerary_tours_dag.py:435} INFO -   (572/1049) Geocoding: Las Vegas Super Saver Romance Package At Madame Tussauds With The High Roller And Lunch Or Dinner
+[2025-04-18T07:39:20.670+0000] {itinerary_tours_dag.py:435} INFO -   (573/1049) Geocoding: 3 Day National Parks Tour From Las Vegas Grand Canyon Zion And Bryce Canyon
+[2025-04-18T07:39:20.988+0000] {itinerary_tours_dag.py:435} INFO -   (574/1049) Geocoding: Las Vegas Combo Tour Grand Canyon Helicopter Flight And Colorado River Float Day Trip
+[2025-04-18T07:39:21.281+0000] {itinerary_tours_dag.py:435} INFO -   (575/1049) Geocoding: 3 Day National Parks Camping Tour Zion Bryce Canyon Monument Valley And Grand Canyon From Las Vegas
+[2025-04-18T07:39:21.613+0000] {itinerary_tours_dag.py:435} INFO -   (576/1049) Geocoding: O By Cirque Du Soleil At The Bellagio Hotel And Casino
+[2025-04-18T07:39:21.932+0000] {itinerary_tours_dag.py:435} INFO -   (577/1049) Geocoding: Valley Of Fire Hiking Tour From Las Vegas
+[2025-04-18T07:39:22.187+0000] {itinerary_tours_dag.py:435} INFO -   (578/1049) Geocoding: Deluxe Grand Canyon West Rim Day Trip From Las Vegas With Optional Skywalk
+[2025-04-18T07:39:22.466+0000] {itinerary_tours_dag.py:435} INFO -   (579/1049) Geocoding: Big Bus Las Vegas Night Tour
+[2025-04-18T07:39:22.690+0000] {itinerary_tours_dag.py:435} INFO -   (580/1049) Geocoding: Grand Canyon West Rim Day Trip By Coach Helicopter And Boat With Optional Skywalk
+[2025-04-18T07:39:22.991+0000] {itinerary_tours_dag.py:435} INFO -   (581/1049) Geocoding: Vegas The Show At Planet Hollywood Resort And Casino
+[2025-04-18T07:39:23.289+0000] {itinerary_tours_dag.py:435} INFO -   (582/1049) Geocoding: Bryce Canyon And Zion National Parks Small Group Tour From Las Vegas
+[2025-04-18T07:39:23.603+0000] {itinerary_tours_dag.py:435} INFO -   (583/1049) Geocoding: Scooter Car Tour Of Red Rock Canyon With Transport From Las Vegas
+[2025-04-18T07:39:23.863+0000] {itinerary_tours_dag.py:435} INFO -   (584/1049) Geocoding: Grand Canyon West Rim Bus Tour From Las Vegas
+[2025-04-18T07:39:24.155+0000] {itinerary_tours_dag.py:435} INFO -   (585/1049) Geocoding: Grand Canyon West 6 In 1 Tour With Helicopter And Landing
+[2025-04-18T07:39:24.455+0000] {itinerary_tours_dag.py:435} INFO -   (586/1049) Geocoding: Zion National Park Day Tour From Las Vegas
+[2025-04-18T07:39:24.708+0000] {itinerary_tours_dag.py:435} INFO -   (587/1049) Geocoding: Blue Man Group At The Luxor Hotel And Casino
+[2025-04-18T07:39:24.995+0000] {itinerary_tours_dag.py:435} INFO -   (588/1049) Geocoding: Above And Below The Rim Grand Canyon West Rim Helicopter Flight
+[2025-04-18T07:39:25.303+0000] {itinerary_tours_dag.py:435} INFO -   (589/1049) Geocoding: Half Or Full Day Kayaking Tour On The Colorado River From Las Vegas
+[2025-04-18T07:39:25.556+0000] {itinerary_tours_dag.py:435} INFO -   (590/1049) Geocoding: Hoover Dam Tour From Las Vegas
+[2025-04-18T07:39:25.806+0000] {itinerary_tours_dag.py:435} INFO -   (591/1049) Geocoding: Small Group Death Valley National Park Day Trip From Las Vegas
+[2025-04-18T07:39:26.108+0000] {itinerary_tours_dag.py:435} INFO -   (592/1049) Geocoding: Red Rock Canyon Hiking Tour
+[2025-04-18T07:39:26.371+0000] {itinerary_tours_dag.py:435} INFO -   (593/1049) Geocoding: Scooter Tours Of Red Rock Canyon
+[2025-04-18T07:39:26.724+0000] {itinerary_tours_dag.py:435} INFO -   (594/1049) Geocoding: Black Canyon Kayak Day Trip From Las Vegas
+[2025-04-18T07:39:26.990+0000] {itinerary_tours_dag.py:435} INFO -   (595/1049) Geocoding: Las Vegas Night Flight Helicopter Wedding Ceremony
+[2025-04-18T07:39:27.236+0000] {itinerary_tours_dag.py:435} INFO -   (596/1049) Geocoding: Self Drive 1 Day Grand Canyon Whitewater Rafting Tour
+[2025-04-18T07:39:27.495+0000] {itinerary_tours_dag.py:435} INFO -   (597/1049) Geocoding: Hidden Valley And Primm Atv Tour
+[2025-04-18T07:39:27.756+0000] {itinerary_tours_dag.py:435} INFO -   (598/1049) Geocoding: Exotic Car Driving Experience Package In Las Vegas
+[2025-04-18T07:39:28.025+0000] {itinerary_tours_dag.py:435} INFO -   (599/1049) Geocoding: Valley Of Fire And Lost City Museum Tour From Las Vegas
+[2025-04-18T07:39:28.282+0000] {itinerary_tours_dag.py:435} INFO -   (600/1049) Geocoding: Las Vegas Reality Show Vip Tour
+[2025-04-18T07:39:28.521+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 12. Sleeping before next batch...
+[2025-04-18T07:39:30.524+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 13: rows 601 to 650
+[2025-04-18T07:39:30.526+0000] {itinerary_tours_dag.py:435} INFO -   (601/1049) Geocoding: Vegas Rock Star Nightclub Tour
+[2025-04-18T07:39:30.802+0000] {itinerary_tours_dag.py:435} INFO -   (602/1049) Geocoding: Arizona Ghost Towns And Wild West Day Trip From Las Vegas
+[2025-04-18T07:39:31.067+0000] {itinerary_tours_dag.py:435} INFO -   (603/1049) Geocoding: Atv Tour Of Lake Mead And Colorado River From Las Vegas
+[2025-04-18T07:39:31.387+0000] {itinerary_tours_dag.py:435} INFO -   (604/1049) Geocoding: Eiffel Tower Experience At Paris Las Vegas
+[2025-04-18T07:39:31.649+0000] {itinerary_tours_dag.py:435} INFO -   (605/1049) Geocoding: Las Vegas Car Lovers Vip Tour
+[2025-04-18T07:39:31.900+0000] {itinerary_tours_dag.py:435} INFO -   (606/1049) Geocoding: Grand Canyon West Rim Helicopter Tour From Las Vegas
+[2025-04-18T07:39:32.178+0000] {itinerary_tours_dag.py:435} INFO -   (607/1049) Geocoding: Grand Canyon West Rim Day Tour From Las Vegas
+[2025-04-18T07:39:32.458+0000] {itinerary_tours_dag.py:435} INFO -   (608/1049) Geocoding: Grand Canyon And Hoover Dam Small Group Day Trip With Optional Skywalk Admission
+[2025-04-18T07:39:32.730+0000] {itinerary_tours_dag.py:435} INFO -   (609/1049) Geocoding: Grand Canyon Deluxe Helicopter Tour From Las Vegas
+[2025-04-18T07:39:32.971+0000] {itinerary_tours_dag.py:435} INFO -   (610/1049) Geocoding: K By Cirque Du Soleil At The Mgm Grand Hotel And Casino
+[2025-04-18T07:39:33.281+0000] {itinerary_tours_dag.py:435} INFO -   (611/1049) Geocoding: Hoover Dam Experience From Las Vegas
+[2025-04-18T07:39:33.521+0000] {itinerary_tours_dag.py:435} INFO -   (612/1049) Geocoding: V The Ultimate Variety Show At Planet Hollywood Resort And Casino
+[2025-04-18T07:39:33.787+0000] {itinerary_tours_dag.py:435} INFO -   (613/1049) Geocoding: Big Bus Las Vegas Hop On Hop Off Tour
+[2025-04-18T07:39:34.104+0000] {itinerary_tours_dag.py:435} INFO -   (614/1049) Geocoding: Valley Of Fire Wedding By Private Limousine
+[2025-04-18T07:39:34.359+0000] {itinerary_tours_dag.py:435} INFO -   (615/1049) Geocoding: Elvis Wedding At Graceland Wedding Chapel
+[2025-04-18T07:39:34.647+0000] {itinerary_tours_dag.py:435} INFO -   (616/1049) Geocoding: Donny And Marie At Flamingo Hotel And Casino Las Vegas
+[2025-04-18T07:39:34.943+0000] {itinerary_tours_dag.py:435} INFO -   (617/1049) Geocoding: Valley Of Fire Buggy Tour
+[2025-04-18T07:39:35.201+0000] {itinerary_tours_dag.py:435} INFO -   (618/1049) Geocoding: Fantasy At The Luxor Hotel And Casino
+[2025-04-18T07:39:35.449+0000] {itinerary_tours_dag.py:435} INFO -   (619/1049) Geocoding: Grand Canyon Helicopter Tour From Las Vegas With Champagne Picnic
+[2025-04-18T07:39:35.725+0000] {itinerary_tours_dag.py:435} INFO -   (620/1049) Geocoding: Marriage Can Be Murder A Comedy Murder Mystery Dinner Show At The D Las Vegas
+[2025-04-18T07:39:35.999+0000] {itinerary_tours_dag.py:435} INFO -   (621/1049) Geocoding: Best Of The West Rim Grand Canyon Air Tour With Optional Helicopter Boat Ride And Skywalk Admission
+[2025-04-18T07:39:36.315+0000] {itinerary_tours_dag.py:435} INFO -   (622/1049) Geocoding: Antelope Canyon Horseshoe Bend Expedition From Las Vegas
+[2025-04-18T07:39:36.650+0000] {itinerary_tours_dag.py:435} INFO -   (623/1049) Geocoding: Viator Exclusive Vip Helicopter Strip Flight With Eiffel Tower Dinner
+[2025-04-18T07:39:36.911+0000] {itinerary_tours_dag.py:435} INFO -   (624/1049) Geocoding: Hoover Dam Trike Tour
+[2025-04-18T07:39:37.151+0000] {itinerary_tours_dag.py:435} INFO -   (625/1049) Geocoding: Machine Gun Experience With Military Humvee In Las Vegas
+[2025-04-18T07:39:37.426+0000] {itinerary_tours_dag.py:435} INFO -   (626/1049) Geocoding: Grand Canyon West Rim Airplane Tour 57ad23bc8427a54446000173
+[2025-04-18T07:39:37.702+0000] {itinerary_tours_dag.py:435} INFO -   (627/1049) Geocoding: Mat Franco Magic Reinvented Nightly At The Linq Hotel And Casino
+[2025-04-18T07:39:38.062+0000] {itinerary_tours_dag.py:435} INFO -   (628/1049) Geocoding: Guided Mountain Bike Tour Of Mustang Trail In Red Rock Canyon
+[2025-04-18T07:39:38.358+0000] {itinerary_tours_dag.py:435} INFO -   (629/1049) Geocoding: Madame Tussauds Las Vegas
+[2025-04-18T07:39:38.590+0000] {itinerary_tours_dag.py:435} INFO -   (630/1049) Geocoding: X Burlesque At The Flamingo Hotel And Casino
+[2025-04-18T07:39:38.892+0000] {itinerary_tours_dag.py:435} INFO -   (631/1049) Geocoding: Las Vegas Wedding At The Graceland Wedding Chapel
+[2025-04-18T07:39:39.213+0000] {itinerary_tours_dag.py:435} INFO -   (632/1049) Geocoding: Zombie Burlesque At Planet Hollywood Resort And Casino
+[2025-04-18T07:39:39.474+0000] {itinerary_tours_dag.py:435} INFO -   (633/1049) Geocoding: Paranormal The Mindreading Magic Show At Bally S Las Vegas
+[2025-04-18T07:39:39.750+0000] {itinerary_tours_dag.py:435} INFO -   (634/1049) Geocoding: Small Group Hoover Dam Vip Tour From Las Vegas
+[2025-04-18T07:39:39.994+0000] {itinerary_tours_dag.py:435} INFO -   (635/1049) Geocoding: Viator Exclusive Las Vegas Strip By Limo With Personal Photographer
+[2025-04-18T07:39:40.224+0000] {itinerary_tours_dag.py:435} INFO -   (636/1049) Geocoding: Hoover Dam Small Group By Luxury Tour Trekker Am Or Pm
+[2025-04-18T07:39:40.463+0000] {itinerary_tours_dag.py:435} INFO -   (637/1049) Geocoding: Wild West Sunset Horseback Ride With Dinner
+[2025-04-18T07:39:40.715+0000] {itinerary_tours_dag.py:435} INFO -   (638/1049) Geocoding: Hidden Valley And Primm Valley Extreme Rzr Tour From Las Vegas
+[2025-04-18T07:39:40.964+0000] {itinerary_tours_dag.py:435} INFO -   (639/1049) Geocoding: The Mentalist At Planet Hollywood Hotel And Casino
+[2025-04-18T07:39:41.264+0000] {itinerary_tours_dag.py:435} INFO -   (640/1049) Geocoding: Haunted Vegas Tour And Ghost Hunt
+[2025-04-18T07:39:41.511+0000] {itinerary_tours_dag.py:435} INFO -   (641/1049) Geocoding: 2 Day Grand Canyon Tour From Las Vegas
+[2025-04-18T07:39:41.839+0000] {itinerary_tours_dag.py:435} INFO -   (642/1049) Geocoding: Las Vegas Fountains Photo Shoot
+[2025-04-18T07:39:42.070+0000] {itinerary_tours_dag.py:435} INFO -   (643/1049) Geocoding: Dig This Heavy Equipment Playground
+[2025-04-18T07:39:42.315+0000] {itinerary_tours_dag.py:435} INFO -   (644/1049) Geocoding: Las Vegas Live Comedy Club At Planet Hollywood Resort And Casino
+[2025-04-18T07:39:42.616+0000] {itinerary_tours_dag.py:435} INFO -   (645/1049) Geocoding: Las Vegas Strip Helicopter Flight At Twilight
+[2025-04-18T07:39:42.846+0000] {itinerary_tours_dag.py:435} INFO -   (646/1049) Geocoding: Outdoor Shooting Experience In Las Vegas
+[2025-04-18T07:39:43.083+0000] {itinerary_tours_dag.py:435} INFO -   (647/1049) Geocoding: Chippendales At The Rio Suite Hotel And Casino
+[2025-04-18T07:39:43.340+0000] {itinerary_tours_dag.py:435} INFO -   (648/1049) Geocoding: Area 51 Day Tour From Las Vegas
+[2025-04-18T07:39:43.653+0000] {itinerary_tours_dag.py:435} INFO -   (649/1049) Geocoding: Las Vegas Strip And Downtown Scooter And Food Tour 5ac59bb35840d455e900176a
+[2025-04-18T07:39:43.911+0000] {itinerary_tours_dag.py:435} INFO -   (650/1049) Geocoding: Antelope Canyon And Horseshoe Bend Day Tour From Las Vegas
+[2025-04-18T07:39:44.153+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 13. Sleeping before next batch...
+[2025-04-18T07:39:46.157+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 14: rows 651 to 700
+[2025-04-18T07:39:46.159+0000] {itinerary_tours_dag.py:435} INFO -   (651/1049) Geocoding: Las Vegas Pool Party Tour 5ac659fb5840d4d3c100008c
+[2025-04-18T07:39:46.510+0000] {itinerary_tours_dag.py:435} INFO -   (652/1049) Geocoding: Las Vegas 51 S Baseball Tickets 5ac659925840d467a2000097
+[2025-04-18T07:39:46.792+0000] {itinerary_tours_dag.py:435} INFO -   (653/1049) Geocoding: Mini Baja Buggy Half Day Tour From Las Vegas
+[2025-04-18T07:39:47.036+0000] {itinerary_tours_dag.py:435} INFO -   (654/1049) Geocoding: World Famous Drive Up Wedding In Las Vegas
+[2025-04-18T07:39:47.317+0000] {itinerary_tours_dag.py:435} INFO -   (655/1049) Geocoding: Stripper 101 At Planet Hollywood Resort And Casino
+[2025-04-18T07:39:47.611+0000] {itinerary_tours_dag.py:435} INFO -   (656/1049) Geocoding: Brad Garrett S Comedy Club At Mgm Grand Hotel And Casino
+[2025-04-18T07:39:47.957+0000] {itinerary_tours_dag.py:435} INFO -   (657/1049) Geocoding: Piff The Magic Dragon At The Flamingo Las Vegas
+[2025-04-18T07:39:48.227+0000] {itinerary_tours_dag.py:435} INFO -   (658/1049) Geocoding: The Australian Bee Gees Show A Tribute To The Bee Gees At The Excalibur Hotel And Casino
+[2025-04-18T07:39:48.484+0000] {itinerary_tours_dag.py:435} INFO -   (659/1049) Geocoding: Titanic The Artifact Exhibition At The Luxor Hotel And Casino
+[2025-04-18T07:39:48.777+0000] {itinerary_tours_dag.py:435} INFO -   (660/1049) Geocoding: Grand Canyon National Park Vip Tour
+[2025-04-18T07:39:49.015+0000] {itinerary_tours_dag.py:435} INFO -   (661/1049) Geocoding: Grand Canyon South Rim Air And Ground Tour From Las Vegas
+[2025-04-18T07:39:49.295+0000] {itinerary_tours_dag.py:435} INFO -   (662/1049) Geocoding: Half Day Mojave Desert Atv Tour From Las Vegas With Lunch
+[2025-04-18T07:39:49.542+0000] {itinerary_tours_dag.py:435} INFO -   (663/1049) Geocoding: Private Las Vegas Airport To Hotel Luxury Limousine Transfer
+[2025-04-18T07:39:49.842+0000] {itinerary_tours_dag.py:435} INFO -   (664/1049) Geocoding: Las Vegas Explorer Pass 57ac388c8427a58f1a000088
+[2025-04-18T07:39:50.081+0000] {itinerary_tours_dag.py:435} INFO -   (665/1049) Geocoding: Grand Canyon West Helicopter Tour With Optional Boat Ride
+[2025-04-18T07:39:50.356+0000] {itinerary_tours_dag.py:435} INFO -   (666/1049) Geocoding: Small Group Grand Canyon West Rim Day Trip From Las Vegas
+[2025-04-18T07:39:50.701+0000] {itinerary_tours_dag.py:435} INFO -   (667/1049) Geocoding: 2 Hour Horseback Riding Through Red Rock Canyon
+[2025-04-18T07:39:50.958+0000] {itinerary_tours_dag.py:435} INFO -   (668/1049) Geocoding: Downtown And Fremont Street History Walking Tour
+[2025-04-18T07:39:51.229+0000] {itinerary_tours_dag.py:435} INFO -   (669/1049) Geocoding: David Copperfield At The Mgm Grand Hotel And Casino
+[2025-04-18T07:39:51.543+0000] {itinerary_tours_dag.py:435} INFO -   (670/1049) Geocoding: Half Day Kayaking Tour On The Colorado River From Las Vegas
+[2025-04-18T07:39:51.790+0000] {itinerary_tours_dag.py:435} INFO -   (671/1049) Geocoding: Las Vegas Bite Card
+[2025-04-18T07:39:52.012+0000] {itinerary_tours_dag.py:435} INFO -   (672/1049) Geocoding: The Rat Pack Is Back At The Tuscany Suites And Casino
+[2025-04-18T07:39:52.278+0000] {itinerary_tours_dag.py:435} INFO -   (673/1049) Geocoding: El Dorado Canyon And Gold Mine Trip
+[2025-04-18T07:39:52.558+0000] {itinerary_tours_dag.py:435} INFO -   (674/1049) Geocoding: Las Vegas Wedding At A Special Memory Wedding Chapel
+[2025-04-18T07:39:52.845+0000] {itinerary_tours_dag.py:435} INFO -   (675/1049) Geocoding: Hoot And Hoover Dam Tour
+[2025-04-18T07:39:53.071+0000] {itinerary_tours_dag.py:435} INFO -   (676/1049) Geocoding: Hidden Valley Atv Half Day Tour From Las Vegas
+[2025-04-18T07:39:53.308+0000] {itinerary_tours_dag.py:435} INFO -   (677/1049) Geocoding: Magic Mike Live Las Vegas At The Hard Rock Hotel And Casino
+[2025-04-18T07:39:53.633+0000] {itinerary_tours_dag.py:435} INFO -   (678/1049) Geocoding: 6 Hour Black Canyon And Colorado River By Motorized Raft Tour From Las Vegas
+[2025-04-18T07:39:53.912+0000] {itinerary_tours_dag.py:435} INFO -   (679/1049) Geocoding: Menopause The Musical At Harrah S Hotel And Casino
+[2025-04-18T07:39:54.263+0000] {itinerary_tours_dag.py:435} INFO -   (680/1049) Geocoding: Las Vegas Private Airport Roundtrip Transfer
+[2025-04-18T07:39:54.515+0000] {itinerary_tours_dag.py:435} INFO -   (681/1049) Geocoding: Stratosphere Tower Observation Deck
+[2025-04-18T07:39:54.773+0000] {itinerary_tours_dag.py:435} INFO -   (682/1049) Geocoding: 2 Day Las Vegas And Hoover Dam From Los Angeles
+[2025-04-18T07:39:55.036+0000] {itinerary_tours_dag.py:435} INFO -   (683/1049) Geocoding: Private Las Vegas Hotel To Airport Luxury Limousine Transfer
+[2025-04-18T07:39:55.277+0000] {itinerary_tours_dag.py:435} INFO -   (684/1049) Geocoding: Food Walking Tour Of The Las Vegas Strip
+[2025-04-18T07:39:55.581+0000] {itinerary_tours_dag.py:435} INFO -   (685/1049) Geocoding: Stratosphere Tower Unlimited Ride Pass
+[2025-04-18T07:39:55.813+0000] {itinerary_tours_dag.py:435} INFO -   (686/1049) Geocoding: Raiding The Rock Vault At The Hard Rock Hotel And Casino
+[2025-04-18T07:39:56.115+0000] {itinerary_tours_dag.py:435} INFO -   (687/1049) Geocoding: The Vegas Mob Tour
+[2025-04-18T07:39:56.363+0000] {itinerary_tours_dag.py:435} INFO -   (688/1049) Geocoding: Las Vegas Strip Food Walking Tour
+[2025-04-18T07:39:56.597+0000] {itinerary_tours_dag.py:435} INFO -   (689/1049) Geocoding: The Ultimate Las Vegas Fight Tour
+[2025-04-18T07:39:56.866+0000] {itinerary_tours_dag.py:435} INFO -   (690/1049) Geocoding: Purple Reign The Prince Tribute Show At The Tropicana Hotel Las Vegas
+[2025-04-18T07:39:57.168+0000] {itinerary_tours_dag.py:435} INFO -   (691/1049) Geocoding: Rzr Desert Adventure With Lunch At The Historic Pioneer Saloon
+[2025-04-18T07:39:57.443+0000] {itinerary_tours_dag.py:435} INFO -   (692/1049) Geocoding: Top Gun And Air Combat Experience
+[2025-04-18T07:39:57.694+0000] {itinerary_tours_dag.py:435} INFO -   (693/1049) Geocoding: 3 Day National Parks Winter Tour Grand Canyon Monument Valley And Zion From Las Vegas
+[2025-04-18T07:39:58.018+0000] {itinerary_tours_dag.py:435} INFO -   (694/1049) Geocoding: Grand Canyon National Park Roundtrip Shuttle From Las Vegas
+[2025-04-18T07:39:58.274+0000] {itinerary_tours_dag.py:435} INFO -   (695/1049) Geocoding: Desert Off Road Rzr Adventure From Las Vegas
+[2025-04-18T07:39:58.519+0000] {itinerary_tours_dag.py:435} INFO -   (696/1049) Geocoding: Carrot Top At The Luxor Hotel And Casino
+[2025-04-18T07:39:58.796+0000] {itinerary_tours_dag.py:435} INFO -   (697/1049) Geocoding: Downtown Las Vegas Nighttime Walking Tour
+[2025-04-18T07:39:59.031+0000] {itinerary_tours_dag.py:435} INFO -   (698/1049) Geocoding: Western Ranch Overnight Experience Cabin Or Camp Out
+[2025-04-18T07:39:59.322+0000] {itinerary_tours_dag.py:435} INFO -   (699/1049) Geocoding: 3 Or 4 Hour Las Vegas Bar Crawl
+[2025-04-18T07:39:59.581+0000] {itinerary_tours_dag.py:435} INFO -   (700/1049) Geocoding: 2 Hour Downtown Walking Tour With Professional Photographer
+[2025-04-18T07:39:59.826+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 14. Sleeping before next batch...
+[2025-04-18T07:40:01.829+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 15: rows 701 to 750
+[2025-04-18T07:40:01.830+0000] {itinerary_tours_dag.py:435} INFO -   (701/1049) Geocoding: Downtown Delights Food Tour
+[2025-04-18T07:40:02.086+0000] {itinerary_tours_dag.py:435} INFO -   (702/1049) Geocoding: Half Day Hiking Tour Of The Valley Of Fire
+[2025-04-18T07:40:02.321+0000] {itinerary_tours_dag.py:435} INFO -   (703/1049) Geocoding: Fun Group Photo Tour By Party Bus
+[2025-04-18T07:40:02.582+0000] {itinerary_tours_dag.py:435} INFO -   (704/1049) Geocoding: Valley Of Fire State Park With Brunch
+[2025-04-18T07:40:02.824+0000] {itinerary_tours_dag.py:435} INFO -   (705/1049) Geocoding: Valley Of Fire
+[2025-04-18T07:40:03.116+0000] {itinerary_tours_dag.py:435} INFO -   (706/1049) Geocoding: Secret Food Tours Las Vegas
+[2025-04-18T07:40:03.374+0000] {itinerary_tours_dag.py:435} INFO -   (707/1049) Geocoding: Red Rock Canyon Trike Tour With Las Vegas Strip
+[2025-04-18T07:40:03.631+0000] {itinerary_tours_dag.py:435} INFO -   (708/1049) Geocoding: Valley Of Fire Guided Tour From Las Vegas
+[2025-04-18T07:40:03.943+0000] {itinerary_tours_dag.py:435} INFO -   (709/1049) Geocoding: Atv Tour And Dune Buggy Combo Adventure From Las Vegas
+[2025-04-18T07:40:04.177+0000] {itinerary_tours_dag.py:435} INFO -   (710/1049) Geocoding: Valley Of Fire Luxury Tour Trekker Excursion
+[2025-04-18T07:40:04.425+0000] {itinerary_tours_dag.py:435} INFO -   (711/1049) Geocoding: Valley Of Fire Lost City Museum Small Group Tour
+[2025-04-18T07:40:04.662+0000] {itinerary_tours_dag.py:435} INFO -   (712/1049) Geocoding: Mike Hammer Comedy Magic Show
+[2025-04-18T07:40:04.924+0000] {itinerary_tours_dag.py:435} INFO -   (713/1049) Geocoding: Las Vegas Exotic Car Ride Along
+[2025-04-18T07:40:05.180+0000] {itinerary_tours_dag.py:435} INFO -   (714/1049) Geocoding: Jabbawockeez At The Mgm Grand Hotel And Casino
+[2025-04-18T07:40:05.487+0000] {itinerary_tours_dag.py:435} INFO -   (715/1049) Geocoding: La Comedy Club At The Stratosphere Hotel And Casino
+[2025-04-18T07:40:05.856+0000] {itinerary_tours_dag.py:435} INFO -   (716/1049) Geocoding: Las Vegas Strip By Suv Stretch Limo With Personal Photographer
+[2025-04-18T07:40:06.104+0000] {itinerary_tours_dag.py:435} INFO -   (717/1049) Geocoding: Downtown Las Vegas Evening Tour By Segway
+[2025-04-18T07:40:06.386+0000] {itinerary_tours_dag.py:435} INFO -   (718/1049) Geocoding: Exotic Car Driving Experiences At Las Vegas Motor Speedway
+[2025-04-18T07:40:06.635+0000] {itinerary_tours_dag.py:435} INFO -   (719/1049) Geocoding: Personal Travel And Vacation Photographer Tour In Las Vegas
+[2025-04-18T07:40:06.882+0000] {itinerary_tours_dag.py:435} INFO -   (720/1049) Geocoding: Valley Of Fire 1 Person 2 Seater Utv Tour Free Hotel Pickup Lunch Included
+[2025-04-18T07:40:07.170+0000] {itinerary_tours_dag.py:435} INFO -   (721/1049) Geocoding: Las Vegas City Lights Night Tour By Open Air Jeep With Optional Night Flight
+[2025-04-18T07:40:07.443+0000] {itinerary_tours_dag.py:435} INFO -   (722/1049) Geocoding: Las Vegas Outdoor Go Kart Experience
+[2025-04-18T07:40:07.707+0000] {itinerary_tours_dag.py:435} INFO -   (723/1049) Geocoding: Popovich Comedy Pet Theater At Planet Hollywood Resort And Casino
+[2025-04-18T07:40:08.002+0000] {itinerary_tours_dag.py:435} INFO -   (724/1049) Geocoding: Grand Canyon Flight And Valley Of Fire Landing By Helicopter
+[2025-04-18T07:40:08.273+0000] {itinerary_tours_dag.py:435} INFO -   (725/1049) Geocoding: Las Vegas Segway Tour Fremont Street Experience
+[2025-04-18T07:40:08.532+0000] {itinerary_tours_dag.py:435} INFO -   (726/1049) Geocoding: Las Vegas Segway Tour South Fremont Street
+[2025-04-18T07:40:08.769+0000] {itinerary_tours_dag.py:435} INFO -   (727/1049) Geocoding: 2 Hour Las Vegas Strip Walking Tour With Photographer
+[2025-04-18T07:40:09.010+0000] {itinerary_tours_dag.py:435} INFO -   (728/1049) Geocoding: Las Vegas Natural History Museum Admission
+[2025-04-18T07:40:09.282+0000] {itinerary_tours_dag.py:435} INFO -   (729/1049) Geocoding: Black Canyon Hike And Desert Hot Springs Day Trip From Las Vegas
+[2025-04-18T07:40:09.589+0000] {itinerary_tours_dag.py:435} INFO -   (730/1049) Geocoding: Thunder From Down Under At The Excalibur Hotel And Casino
+[2025-04-18T07:40:09.891+0000] {itinerary_tours_dag.py:435} INFO -   (731/1049) Geocoding: Grand Celebration Helicopter Tour With Black Canyon Rafting
+[2025-04-18T07:40:10.164+0000] {itinerary_tours_dag.py:435} INFO -   (732/1049) Geocoding: Full Day Colorado River Hot Springs Tour From Las Vegas
+[2025-04-18T07:40:10.415+0000] {itinerary_tours_dag.py:435} INFO -   (733/1049) Geocoding: The Weird Wacky And Wonderful Bar Crawl Of Fremont Street
+[2025-04-18T07:40:10.664+0000] {itinerary_tours_dag.py:435} INFO -   (734/1049) Geocoding: Feel Freedom 3 Hours You Drive Utv Las Vegas Desert Experience
+[2025-04-18T07:40:10.929+0000] {itinerary_tours_dag.py:435} INFO -   (735/1049) Geocoding: Deluxe Mini Tour Of Hoover Dam Lake Mead And Historic Boulder City
+[2025-04-18T07:40:11.238+0000] {itinerary_tours_dag.py:435} INFO -   (736/1049) Geocoding: Grand Canyon Hoover Dam And Route 66 Tour From Las Vegas
+[2025-04-18T07:40:11.525+0000] {itinerary_tours_dag.py:435} INFO -   (737/1049) Geocoding: Hoover Dam Mini Tour
+[2025-04-18T07:40:11.784+0000] {itinerary_tours_dag.py:435} INFO -   (738/1049) Geocoding: Red Rock Canyon And Hoover Dam Small Group Tour
+[2025-04-18T07:40:12.080+0000] {itinerary_tours_dag.py:435} INFO -   (739/1049) Geocoding: Hidden Valley And Primm Extreme Dirt Bike Tour
+[2025-04-18T07:40:12.368+0000] {itinerary_tours_dag.py:435} INFO -   (740/1049) Geocoding: Hoover Dam Mountain Bike Tour
+[2025-04-18T07:40:12.679+0000] {itinerary_tours_dag.py:435} INFO -   (741/1049) Geocoding: The Mob Museum Admission
+[2025-04-18T07:40:12.921+0000] {itinerary_tours_dag.py:435} INFO -   (742/1049) Geocoding: Las Vegas Photo Tour By Limousine Or Party Bus
+[2025-04-18T07:40:13.167+0000] {itinerary_tours_dag.py:435} INFO -   (743/1049) Geocoding: Boulder Islands Kayak Sup Or Hydrobike Tour From Las Vegas
+[2025-04-18T07:40:13.432+0000] {itinerary_tours_dag.py:435} INFO -   (744/1049) Geocoding: Grand Canyon West Rim Cabin And Helicopter Tour From Las Vegas
+[2025-04-18T07:40:13.727+0000] {itinerary_tours_dag.py:435} INFO -   (745/1049) Geocoding: Grand Canyon South Rim Small Group Tour
+[2025-04-18T07:40:13.976+0000] {itinerary_tours_dag.py:435} INFO -   (746/1049) Geocoding: Hoover Dam Tour With Optional Grand Canyon Helicopter Flight From Las Vegas
+[2025-04-18T07:40:14.269+0000] {itinerary_tours_dag.py:435} INFO -   (747/1049) Geocoding: Grand Canyon West Rim Evening Vip Tour
+[2025-04-18T07:40:14.517+0000] {itinerary_tours_dag.py:435} INFO -   (748/1049) Geocoding: Explore The Best Must See Spots Las Vegas Strip Walking Tour
+[2025-04-18T07:40:14.757+0000] {itinerary_tours_dag.py:435} INFO -   (749/1049) Geocoding: Off Road Racing 7 Laps
+[2025-04-18T07:40:14.983+0000] {itinerary_tours_dag.py:435} INFO -   (750/1049) Geocoding: Off Road Racing 10 Laps
+[2025-04-18T07:40:15.218+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 15. Sleeping before next batch...
+[2025-04-18T07:40:17.219+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 16: rows 751 to 800
+[2025-04-18T07:40:17.221+0000] {itinerary_tours_dag.py:435} INFO -   (751/1049) Geocoding: Hoover Dam Highlights Tour From Las Vegas
+[2025-04-18T07:40:17.456+0000] {itinerary_tours_dag.py:435} INFO -   (752/1049) Geocoding: Grand Canyon National Park Hoover Dam And Route 66 Small Group From Las Vegas
+[2025-04-18T07:40:17.756+0000] {itinerary_tours_dag.py:435} INFO -   (753/1049) Geocoding: Grand Canyon West Hoover Dam Seven Magic Mountains Small Group Day Tour
+[2025-04-18T07:40:18.081+0000] {itinerary_tours_dag.py:435} INFO -   (754/1049) Geocoding: Grand Canyon West Rim Tour With Options From Las Vegas
+[2025-04-18T07:40:18.355+0000] {itinerary_tours_dag.py:435} INFO -   (755/1049) Geocoding: Grand Canyon Helicopter And Eagle Point Rim Landing Tour
+[2025-04-18T07:40:18.633+0000] {itinerary_tours_dag.py:435} INFO -   (756/1049) Geocoding: Lake Mead National Park Atv Tour To The Colorado River Off Road Racing Combo
+[2025-04-18T07:40:18.937+0000] {itinerary_tours_dag.py:435} INFO -   (757/1049) Geocoding: King Of Canyons
+[2025-04-18T07:40:19.198+0000] {itinerary_tours_dag.py:435} INFO -   (758/1049) Geocoding: X Country At Harrah S Hotel And Casino
+[2025-04-18T07:40:19.476+0000] {itinerary_tours_dag.py:435} INFO -   (759/1049) Geocoding: Wayne Newton Up Close And Personal At Bally S Las Vegas
+[2025-04-18T07:40:19.737+0000] {itinerary_tours_dag.py:435} INFO -   (760/1049) Geocoding: Bodies The Exhibition At The Luxor Hotel And Casino
+[2025-04-18T07:40:20.004+0000] {itinerary_tours_dag.py:435} INFO -   (761/1049) Geocoding: Viator Exclusive Private Tour Of Las Vegas And The Hoover Dam
+[2025-04-18T07:40:20.237+0000] {itinerary_tours_dag.py:435} INFO -   (762/1049) Geocoding: Viator Exclusive Private Overnight Tour To Antelope Canyon Horseshoe Bend Lake Powell And Zion From Las Vegas
+[2025-04-18T07:40:20.540+0000] {itinerary_tours_dag.py:435} INFO -   (763/1049) Geocoding: Hard Rock Cafe Las Vegas
+[2025-04-18T07:40:20.712+0000] {itinerary_tours_dag.py:435} INFO -   (764/1049) Geocoding: Las Vegas Strip Limo Tour With Day And Nightclub Access
+[2025-04-18T07:40:20.974+0000] {itinerary_tours_dag.py:435} INFO -   (765/1049) Geocoding: Red Rock Canyon Electric Bike Tour
+[2025-04-18T07:40:21.228+0000] {itinerary_tours_dag.py:435} INFO -   (766/1049) Geocoding: Bellagio Gallery Of Fine Art At The Bellagio Hotel And Casino 5ac4b1495840d47faf000bd7
+[2025-04-18T07:40:21.560+0000] {itinerary_tours_dag.py:435} INFO -   (767/1049) Geocoding: Grand Canyon West And Hoover Dam Vip Day Tour From Las Vegas
+[2025-04-18T07:40:21.850+0000] {itinerary_tours_dag.py:435} INFO -   (768/1049) Geocoding: Grand Canyon Sunset Helicopter Tour From Las Vegas
+[2025-04-18T07:40:22.096+0000] {itinerary_tours_dag.py:435} INFO -   (769/1049) Geocoding: Zombie Scavengers Game Las Vegas Downtown Nv
+[2025-04-18T07:40:22.351+0000] {itinerary_tours_dag.py:435} INFO -   (770/1049) Geocoding: Lunch Horseback Riding Tour
+[2025-04-18T07:40:22.582+0000] {itinerary_tours_dag.py:435} INFO -   (771/1049) Geocoding: Grand Canyon Bus Tour From Las Vegas Optional Skywalk Helicopter Boat
+[2025-04-18T07:40:22.841+0000] {itinerary_tours_dag.py:435} INFO -   (772/1049) Geocoding: Half Day Canyoneering Tour
+[2025-04-18T07:40:23.078+0000] {itinerary_tours_dag.py:435} INFO -   (773/1049) Geocoding: Canyoneering Zion Full Day Canyoneering Tour
+[2025-04-18T07:40:23.321+0000] {itinerary_tours_dag.py:435} INFO -   (774/1049) Geocoding: Grand Canyon National Park Luxury Private Tour Experience
+[2025-04-18T07:40:23.599+0000] {itinerary_tours_dag.py:435} INFO -   (775/1049) Geocoding: Zion And Bryce Canyon Day Tour From Las Vegas
+[2025-04-18T07:40:23.852+0000] {itinerary_tours_dag.py:435} INFO -   (776/1049) Geocoding: The Jets 80 S 90 S Experience
+[2025-04-18T07:40:24.114+0000] {itinerary_tours_dag.py:435} INFO -   (777/1049) Geocoding: Zion And Bryce Canyon National Parks Small Group Tour From Las Vegas
+[2025-04-18T07:40:24.406+0000] {itinerary_tours_dag.py:435} INFO -   (778/1049) Geocoding: Off Road Racing
+[2025-04-18T07:40:24.642+0000] {itinerary_tours_dag.py:435} INFO -   (779/1049) Geocoding: Hoover Dam Private Limo Luxury Tour From Las Vegas
+[2025-04-18T07:40:24.893+0000] {itinerary_tours_dag.py:435} INFO -   (780/1049) Geocoding: Grand Canyon Monument Valley And Zion National Park 3 Day Tour
+[2025-04-18T07:40:25.195+0000] {itinerary_tours_dag.py:435} INFO -   (781/1049) Geocoding: Las Vegas Nightclub Crawl By Party Bus With Fast Pass Entry
+[2025-04-18T07:40:25.598+0000] {itinerary_tours_dag.py:435} INFO -   (782/1049) Geocoding: Vegas Chocolate Tour
+[2025-04-18T07:40:25.852+0000] {itinerary_tours_dag.py:435} INFO -   (783/1049) Geocoding: Off Road Racing 5 Laps
+[2025-04-18T07:40:26.119+0000] {itinerary_tours_dag.py:435} INFO -   (784/1049) Geocoding: Potted Potter At Bally S Hotel And Casino In Las Vegas
+[2025-04-18T07:40:26.410+0000] {itinerary_tours_dag.py:435} INFO -   (785/1049) Geocoding: Bachelorette Party Club Crawl
+[2025-04-18T07:40:26.648+0000] {itinerary_tours_dag.py:435} INFO -   (786/1049) Geocoding: Grand Canyon West Hoover Dam Bus Tour W Optional Skywalk Helicopter Boat Ride
+[2025-04-18T07:40:26.954+0000] {itinerary_tours_dag.py:435} INFO -   (787/1049) Geocoding: Queen Of Sights
+[2025-04-18T07:40:27.178+0000] {itinerary_tours_dag.py:435} INFO -   (788/1049) Geocoding: Grand Canyon Helicopter Tour From Las Vegas With Vip Skywalk And Pontoon Boat Ride
+[2025-04-18T07:40:27.462+0000] {itinerary_tours_dag.py:435} INFO -   (789/1049) Geocoding: Day Trip To Zion National Park From Las Vegas
+[2025-04-18T07:40:27.725+0000] {itinerary_tours_dag.py:435} INFO -   (790/1049) Geocoding: Outdoor Shooting And Off Road Racing Combo
+[2025-04-18T07:40:27.977+0000] {itinerary_tours_dag.py:435} INFO -   (791/1049) Geocoding: Off Road Racing And Outdoor Shooting Package
+[2025-04-18T07:40:28.239+0000] {itinerary_tours_dag.py:435} INFO -   (792/1049) Geocoding: Grand Canyon West Skywalk Optional
+[2025-04-18T07:40:28.509+0000] {itinerary_tours_dag.py:435} INFO -   (793/1049) Geocoding: Grand Canyon West Admission Ticket
+[2025-04-18T07:40:28.794+0000] {itinerary_tours_dag.py:435} INFO -   (794/1049) Geocoding: Las Vegas Club Crawl Experience
+[2025-04-18T07:40:29.049+0000] {itinerary_tours_dag.py:435} INFO -   (795/1049) Geocoding: Full Day Grand Canyon Trip With Horseback Ride From Las Vegas
+[2025-04-18T07:40:29.314+0000] {itinerary_tours_dag.py:435} INFO -   (796/1049) Geocoding: Zion Park And Bryce Canyon
+[2025-04-18T07:40:29.581+0000] {itinerary_tours_dag.py:435} INFO -   (797/1049) Geocoding: Go Las Vegas All Inclusive Pass
+[2025-04-18T07:40:29.828+0000] {itinerary_tours_dag.py:435} INFO -   (798/1049) Geocoding: Hoover Dam Tour Paddle Boat Cruise On Lake Mead
+[2025-04-18T07:40:30.079+0000] {itinerary_tours_dag.py:435} INFO -   (799/1049) Geocoding: Disco Party Bus Photo Tour
+[2025-04-18T07:40:30.336+0000] {itinerary_tours_dag.py:435} INFO -   (800/1049) Geocoding: Hollywood Hills Hiking Tour In Los Angeles
+[2025-04-18T07:40:30.578+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 16. Sleeping before next batch...
+[2025-04-18T07:40:32.579+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 17: rows 801 to 850
+[2025-04-18T07:40:32.581+0000] {itinerary_tours_dag.py:435} INFO -   (801/1049) Geocoding: Los Angeles And Hollywood Small Group Day Trip From Las Vegas
+[2025-04-18T07:40:32.834+0000] {itinerary_tours_dag.py:435} INFO -   (802/1049) Geocoding: Grand City Tour Of Los Angeles
+[2025-04-18T07:40:33.071+0000] {itinerary_tours_dag.py:435} INFO -   (803/1049) Geocoding: Los Angeles Dinner Cruise
+[2025-04-18T07:40:33.299+0000] {itinerary_tours_dag.py:435} INFO -   (804/1049) Geocoding: Amazing Los Angeles Race Small Group Tour And Scavenger Hunt
+[2025-04-18T07:40:33.565+0000] {itinerary_tours_dag.py:435} INFO -   (805/1049) Geocoding: Full Day Los Angeles Sightseeing Tour From Anaheim
+[2025-04-18T07:40:33.882+0000] {itinerary_tours_dag.py:435} INFO -   (806/1049) Geocoding: Hollywood Sign And Griffith Park Hiking Tour
+[2025-04-18T07:40:34.156+0000] {itinerary_tours_dag.py:435} INFO -   (807/1049) Geocoding: The Ultimate Los Angeles Bike Tour
+[2025-04-18T07:40:34.383+0000] {itinerary_tours_dag.py:435} INFO -   (808/1049) Geocoding: Hollywood Day Tour From Las Vegas
+[2025-04-18T07:40:34.620+0000] {itinerary_tours_dag.py:435} INFO -   (809/1049) Geocoding: Los Angeles Hop On Hop Off Double Decker Bus Tour
+[2025-04-18T07:40:34.864+0000] {itinerary_tours_dag.py:435} INFO -   (810/1049) Geocoding: Madame Tussauds Hollywood
+[2025-04-18T07:40:35.043+0000] {itinerary_tours_dag.py:435} INFO -   (811/1049) Geocoding: Privately Customized Tour Of Los Angeles
+[2025-04-18T07:40:35.280+0000] {itinerary_tours_dag.py:435} INFO -   (812/1049) Geocoding: Hollywood And Stars Homes Tour In Open Bus
+[2025-04-18T07:40:35.555+0000] {itinerary_tours_dag.py:435} INFO -   (813/1049) Geocoding: Tour Of Los Angeles Hollywood And Beverly Hills
+[2025-04-18T07:40:35.852+0000] {itinerary_tours_dag.py:435} INFO -   (814/1049) Geocoding: Small Group Highlights Tour Of Los Angeles
+[2025-04-18T07:40:36.105+0000] {itinerary_tours_dag.py:435} INFO -   (815/1049) Geocoding: Grand Tour Of Hollywood Los Angeles And Beaches From Anaheim
+[2025-04-18T07:40:36.369+0000] {itinerary_tours_dag.py:435} INFO -   (816/1049) Geocoding: Los Angeles Private Tour 5ac645375840d449a1000042
+[2025-04-18T07:40:36.590+0000] {itinerary_tours_dag.py:435} INFO -   (817/1049) Geocoding: Afternoon Los Angeles Sightseeing Tour With Movie Star Homes
+[2025-04-18T07:40:36.867+0000] {itinerary_tours_dag.py:435} INFO -   (818/1049) Geocoding: Grand Tour Of Los Angeles
+[2025-04-18T07:40:37.106+0000] {itinerary_tours_dag.py:435} INFO -   (819/1049) Geocoding: Beverly Hills Segway Tour
+[2025-04-18T07:40:37.353+0000] {itinerary_tours_dag.py:435} INFO -   (820/1049) Geocoding: Small Group Tour Of Los Angeles From Long Beach
+[2025-04-18T07:40:37.674+0000] {itinerary_tours_dag.py:435} INFO -   (821/1049) Geocoding: City Tour Of Los Angeles From Long Beach And San Pedro Cruise Terminals
+[2025-04-18T07:40:37.996+0000] {itinerary_tours_dag.py:435} INFO -   (822/1049) Geocoding: Los Angeles Champagne Brunch Cruise
+[2025-04-18T07:40:38.246+0000] {itinerary_tours_dag.py:435} INFO -   (823/1049) Geocoding: Private Sightseeing Tour Of Los Angeles In A Luxurious Suv
+[2025-04-18T07:40:38.517+0000] {itinerary_tours_dag.py:435} INFO -   (824/1049) Geocoding: Whale Watching Day Cruise Santa Monica
+[2025-04-18T07:40:38.757+0000] {itinerary_tours_dag.py:435} INFO -   (825/1049) Geocoding: Half Day Hollywood And Beverly Hills Tour
+[2025-04-18T07:40:39.035+0000] {itinerary_tours_dag.py:435} INFO -   (826/1049) Geocoding: Private Tour Hollywood Highlights Or Celebrity Homes Of Beverly Hills
+[2025-04-18T07:40:39.316+0000] {itinerary_tours_dag.py:435} INFO -   (827/1049) Geocoding: Deluxe Los Angeles Private Tour
+[2025-04-18T07:40:39.569+0000] {itinerary_tours_dag.py:435} INFO -   (828/1049) Geocoding: Movie Stars Homes Tour
+[2025-04-18T07:40:39.878+0000] {itinerary_tours_dag.py:435} INFO -   (829/1049) Geocoding: Santa Monica And Venice Beach Tour From Los Angeles
+[2025-04-18T07:40:40.164+0000] {itinerary_tours_dag.py:435} INFO -   (830/1049) Geocoding: Hollywood Stars Tour
+[2025-04-18T07:40:40.504+0000] {itinerary_tours_dag.py:435} INFO -   (831/1049) Geocoding: Hollywood Walking And Hiking Tour
+[2025-04-18T07:40:40.765+0000] {itinerary_tours_dag.py:435} INFO -   (832/1049) Geocoding: Dolby Theatre Admission Ticket And Tour
+[2025-04-18T07:40:41.071+0000] {itinerary_tours_dag.py:435} INFO -   (833/1049) Geocoding: Universal Studios Hollywood And Movie Stars Homes Tour
+[2025-04-18T07:40:41.426+0000] {itinerary_tours_dag.py:435} INFO -   (834/1049) Geocoding: Los Angeles Highlights Tour Santa Monica Venice Beach Hollywood And Beverly Hills
+[2025-04-18T07:40:41.725+0000] {itinerary_tours_dag.py:435} INFO -   (835/1049) Geocoding: Sightseeing Tour Of Los Angeles From Lax Hotels
+[2025-04-18T07:40:41.955+0000] {itinerary_tours_dag.py:435} INFO -   (836/1049) Geocoding: Los Angeles Combo Hop On Hop Off Bus Tour And Self Guided Beverly Hills Bike Tour
+[2025-04-18T07:40:42.203+0000] {itinerary_tours_dag.py:435} INFO -   (837/1049) Geocoding: Private Los Angeles Must See Tour
+[2025-04-18T07:40:42.444+0000] {itinerary_tours_dag.py:435} INFO -   (838/1049) Geocoding: Natural History Museum Of Los Angeles County Museum Admission
+[2025-04-18T07:40:42.724+0000] {itinerary_tours_dag.py:435} INFO -   (839/1049) Geocoding: Los Angeles Driving Tour With Private Local Guide All Must See Locations
+[2025-04-18T07:40:42.977+0000] {itinerary_tours_dag.py:435} INFO -   (840/1049) Geocoding: La Brea Tar Pits And Museum General Admission
+[2025-04-18T07:40:43.235+0000] {itinerary_tours_dag.py:435} INFO -   (841/1049) Geocoding: Hollywood Tours Celebrity Homes The Original Hollywood Tour Open Air Bus
+[2025-04-18T07:40:43.505+0000] {itinerary_tours_dag.py:435} INFO -   (842/1049) Geocoding: Santa Monica And Venice Beach Segway Tour
+[2025-04-18T07:40:43.811+0000] {itinerary_tours_dag.py:435} INFO -   (843/1049) Geocoding: Hard Rock Cafe Hollywood
+[2025-04-18T07:40:44.069+0000] {itinerary_tours_dag.py:435} INFO -   (844/1049) Geocoding: Los Angeles Beginnings Walking Tour
+[2025-04-18T07:40:44.317+0000] {itinerary_tours_dag.py:435} INFO -   (845/1049) Geocoding: Old And New Downtown Los Angeles Tour
+[2025-04-18T07:40:44.581+0000] {itinerary_tours_dag.py:435} INFO -   (846/1049) Geocoding: Hollywood Scavenger Hunt Adventure
+[2025-04-18T07:40:44.809+0000] {itinerary_tours_dag.py:435} INFO -   (847/1049) Geocoding: Private Luxurious Tour Of Los Angeles
+[2025-04-18T07:40:45.032+0000] {itinerary_tours_dag.py:435} INFO -   (848/1049) Geocoding: Hollywood And Downtown Los Angeles Walking And Subway Tour
+[2025-04-18T07:40:45.282+0000] {itinerary_tours_dag.py:435} INFO -   (849/1049) Geocoding: Los Angeles Private Full Day Tour
+[2025-04-18T07:40:45.526+0000] {itinerary_tours_dag.py:435} INFO -   (850/1049) Geocoding: Transfer To Los Angeles International Airport Lax
+[2025-04-18T07:40:45.793+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 17. Sleeping before next batch...
+[2025-04-18T07:40:47.795+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 18: rows 851 to 900
+[2025-04-18T07:40:47.797+0000] {itinerary_tours_dag.py:435} INFO -   (851/1049) Geocoding: Shared Airport Arrival Transfer Lax International Airport To Anaheim Buena Park Or Garden Grove
+[2025-04-18T07:40:48.129+0000] {itinerary_tours_dag.py:435} INFO -   (852/1049) Geocoding: Downtown Guided Los Angeles Small Group Bike Tour
+[2025-04-18T07:40:48.440+0000] {itinerary_tours_dag.py:435} INFO -   (853/1049) Geocoding: La Helicopter Tour With Malibu Peak Landing
+[2025-04-18T07:40:48.710+0000] {itinerary_tours_dag.py:435} INFO -   (854/1049) Geocoding: Hollywood Private Helicopter Tour
+[2025-04-18T07:40:48.950+0000] {itinerary_tours_dag.py:435} INFO -   (855/1049) Geocoding: Los Angeles Bike Rental
+[2025-04-18T07:40:49.186+0000] {itinerary_tours_dag.py:435} INFO -   (856/1049) Geocoding: Glamorous Hollywood And Beverly Hills Highlights Tour Of Los Angeles
+[2025-04-18T07:40:49.441+0000] {itinerary_tours_dag.py:435} INFO -   (857/1049) Geocoding: Hollywood Bike Tour
+[2025-04-18T07:40:49.677+0000] {itinerary_tours_dag.py:435} INFO -   (858/1049) Geocoding: Hollywood And Beverly Hills Bike Tour
+[2025-04-18T07:40:49.944+0000] {itinerary_tours_dag.py:435} INFO -   (859/1049) Geocoding: 2 Hour Small Group Hollywood Open Bus Tour
+[2025-04-18T07:40:50.200+0000] {itinerary_tours_dag.py:435} INFO -   (860/1049) Geocoding: Awesome La Surf Turf Private Tour
+[2025-04-18T07:40:50.434+0000] {itinerary_tours_dag.py:435} INFO -   (861/1049) Geocoding: Grand Los Angeles Tour
+[2025-04-18T07:40:50.672+0000] {itinerary_tours_dag.py:435} INFO -   (862/1049) Geocoding: Universal Studios Hollywood With Transport From Anaheim
+[2025-04-18T07:40:50.923+0000] {itinerary_tours_dag.py:435} INFO -   (863/1049) Geocoding: La In A Day Tour
+[2025-04-18T07:40:51.176+0000] {itinerary_tours_dag.py:435} INFO -   (864/1049) Geocoding: Surf Lesson 1 Person 2 Hours
+[2025-04-18T07:40:51.458+0000] {itinerary_tours_dag.py:435} INFO -   (865/1049) Geocoding: Deluxe Los Angeles 6 Hr Limo Tour For 2 6 People Beer Wine Liquor Included
+[2025-04-18T07:40:51.738+0000] {itinerary_tours_dag.py:435} INFO -   (866/1049) Geocoding: Downtown Los Angeles Small Group Taco Tasting Tour
+[2025-04-18T07:40:52.011+0000] {itinerary_tours_dag.py:435} INFO -   (867/1049) Geocoding: Private Surfing Lesson In Venice Beach
+[2025-04-18T07:40:52.240+0000] {itinerary_tours_dag.py:435} INFO -   (868/1049) Geocoding: La Iconic Coast Tour And Beach Day Scenic Hike Venice Santa Monica Malibu
+[2025-04-18T07:40:52.581+0000] {itinerary_tours_dag.py:435} INFO -   (869/1049) Geocoding: 3 Hour Venice Beach Bike Tour
+[2025-04-18T07:40:52.823+0000] {itinerary_tours_dag.py:435} INFO -   (870/1049) Geocoding: Los Angeles Coast And Beaches Private Tour
+[2025-04-18T07:40:53.069+0000] {itinerary_tours_dag.py:435} INFO -   (871/1049) Geocoding: La Brea Tar Pits Tour By Segway
+[2025-04-18T07:40:53.320+0000] {itinerary_tours_dag.py:435} INFO -   (872/1049) Geocoding: Hollywood In Downtown Los Angeles Walking Tour
+[2025-04-18T07:40:53.582+0000] {itinerary_tours_dag.py:435} INFO -   (873/1049) Geocoding: Private Helicopter Tour Over Los Angeles Shoreline
+[2025-04-18T07:40:53.826+0000] {itinerary_tours_dag.py:435} INFO -   (874/1049) Geocoding: Mini Car Sunrise Tour See The Hollywood Sign And Observatory Includes Breakfast
+[2025-04-18T07:40:54.096+0000] {itinerary_tours_dag.py:435} INFO -   (875/1049) Geocoding: Reel To Real Hollywood Downtown La Tour
+[2025-04-18T07:40:54.362+0000] {itinerary_tours_dag.py:435} INFO -   (876/1049) Geocoding: 60 Minute Private Vacation Photography Session With Local Photographer In Los Angeles
+[2025-04-18T07:40:54.639+0000] {itinerary_tours_dag.py:435} INFO -   (877/1049) Geocoding: Private Hollywood Sign Adventure Hike Closest Possible View
+[2025-04-18T07:40:54.900+0000] {itinerary_tours_dag.py:435} INFO -   (878/1049) Geocoding: Chinatown Little Tokyo Tour
+[2025-04-18T07:40:55.136+0000] {itinerary_tours_dag.py:435} INFO -   (879/1049) Geocoding: Mount Hollywood Hike
+[2025-04-18T07:40:55.391+0000] {itinerary_tours_dag.py:435} INFO -   (880/1049) Geocoding: Hollywood Sign Electric Bike Tour
+[2025-04-18T07:40:55.668+0000] {itinerary_tours_dag.py:435} INFO -   (881/1049) Geocoding: 7 Hr Tour Of Hollywood Beverly Hills Santa Monica And Malibu 2 6 People Total
+[2025-04-18T07:40:55.937+0000] {itinerary_tours_dag.py:435} INFO -   (882/1049) Geocoding: Hollywood Sign Walk To The Top
+[2025-04-18T07:40:56.154+0000] {itinerary_tours_dag.py:435} INFO -   (883/1049) Geocoding: Instagram Photo Private Tour
+[2025-04-18T07:40:56.372+0000] {itinerary_tours_dag.py:435} INFO -   (884/1049) Geocoding: Downtown Los Angles Architecture Tour
+[2025-04-18T07:40:56.613+0000] {itinerary_tours_dag.py:435} INFO -   (885/1049) Geocoding: Aquarium Of The Pacific General Admission
+[2025-04-18T07:40:56.856+0000] {itinerary_tours_dag.py:435} INFO -   (886/1049) Geocoding: Los Angeles Arts District Walking Tour
+[2025-04-18T07:40:57.115+0000] {itinerary_tours_dag.py:435} INFO -   (887/1049) Geocoding: Los Angeles City Private Group Tour
+[2025-04-18T07:40:57.353+0000] {itinerary_tours_dag.py:435} INFO -   (888/1049) Geocoding: 20 Min Ferrari Drive On Hollywood Blvd And Sunset Plaza
+[2025-04-18T07:40:57.639+0000] {itinerary_tours_dag.py:435} INFO -   (889/1049) Geocoding: Los Angeles Full Day Private Tour
+[2025-04-18T07:40:57.875+0000] {itinerary_tours_dag.py:435} INFO -   (890/1049) Geocoding: Los Angeles Half Day Private Tour
+[2025-04-18T07:40:58.111+0000] {itinerary_tours_dag.py:435} INFO -   (891/1049) Geocoding: Private Helicopter Tour Of Downtown Los Angeles Landmarks
+[2025-04-18T07:40:58.344+0000] {itinerary_tours_dag.py:435} INFO -   (892/1049) Geocoding: La Highlights Private Tour
+[2025-04-18T07:40:58.576+0000] {itinerary_tours_dag.py:435} INFO -   (893/1049) Geocoding: Elite Los Angeles Private Tour
+[2025-04-18T07:40:58.807+0000] {itinerary_tours_dag.py:435} INFO -   (894/1049) Geocoding: Hollywood History Walking Tour
+[2025-04-18T07:40:59.064+0000] {itinerary_tours_dag.py:435} INFO -   (895/1049) Geocoding: Classic Car Tour Of Los Angeles
+[2025-04-18T07:40:59.308+0000] {itinerary_tours_dag.py:435} INFO -   (896/1049) Geocoding: Private 4 Hour Tour Hollywood Santa Monica Venice For 2 6 People One Price
+[2025-04-18T07:40:59.594+0000] {itinerary_tours_dag.py:435} INFO -   (897/1049) Geocoding: Private Photo Tour In Los Angeles Most Instagrammable Places In La
+[2025-04-18T07:40:59.860+0000] {itinerary_tours_dag.py:435} INFO -   (898/1049) Geocoding: 1h Tour Driving A Ferrari Hollywood Beverly Hills
+[2025-04-18T07:41:00.139+0000] {itinerary_tours_dag.py:435} INFO -   (899/1049) Geocoding: Knott S Berry Farm Admission Ticket With Transport From Los Angeles
+[2025-04-18T07:41:00.422+0000] {itinerary_tours_dag.py:435} INFO -   (900/1049) Geocoding: Los Angeles And Hollywood 7 Hours Private Tour
+[2025-04-18T07:41:00.668+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 18. Sleeping before next batch...
+[2025-04-18T07:41:02.671+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 19: rows 901 to 950
+[2025-04-18T07:41:02.673+0000] {itinerary_tours_dag.py:435} INFO -   (901/1049) Geocoding: Gambling Built The Sunset Strip Walking Audio Tour By Voicemap
+[2025-04-18T07:41:02.918+0000] {itinerary_tours_dag.py:435} INFO -   (902/1049) Geocoding: Your Private Tour
+[2025-04-18T07:41:03.158+0000] {itinerary_tours_dag.py:435} INFO -   (903/1049) Geocoding: 3 Hours Private City Tour Of Los Angeles
+[2025-04-18T07:41:03.392+0000] {itinerary_tours_dag.py:435} INFO -   (904/1049) Geocoding: Shop And Shuttle Citadel Outlets
+[2025-04-18T07:41:03.638+0000] {itinerary_tours_dag.py:435} INFO -   (905/1049) Geocoding: Los Angeles Scavenger Hunt Adventure
+[2025-04-18T07:41:03.863+0000] {itinerary_tours_dag.py:435} INFO -   (906/1049) Geocoding: Two Day Los Angeles Las Vegas Private Tour
+[2025-04-18T07:41:04.106+0000] {itinerary_tours_dag.py:435} INFO -   (907/1049) Geocoding: 6hr Tour Of Los Angeles By A Tv Personality Free Beer Wine Liquor Mixers Sodas
+[2025-04-18T07:41:04.389+0000] {itinerary_tours_dag.py:435} INFO -   (908/1049) Geocoding: Christmas Lights In Beverly Hills Private Guide And Free Coffee With Dessert
+[2025-04-18T07:41:04.665+0000] {itinerary_tours_dag.py:435} INFO -   (909/1049) Geocoding: Beverly Hills Beyond The Botox
+[2025-04-18T07:41:04.890+0000] {itinerary_tours_dag.py:435} INFO -   (910/1049) Geocoding: Private Tour Hollywood Hotel Restaurant And Bar
+[2025-04-18T07:41:05.160+0000] {itinerary_tours_dag.py:435} INFO -   (911/1049) Geocoding: Downtown Los Angeles Food Tour
+[2025-04-18T07:41:05.440+0000] {itinerary_tours_dag.py:435} INFO -   (912/1049) Geocoding: Small Group Haunted Hollywood Tour
+[2025-04-18T07:41:05.676+0000] {itinerary_tours_dag.py:435} INFO -   (913/1049) Geocoding: Christmas Lights Tour Of Los Angeles Private Tour With Free Christmas Drink
+[2025-04-18T07:41:05.910+0000] {itinerary_tours_dag.py:435} INFO -   (914/1049) Geocoding: Fly Over Los Angeles Soar Above The Hollywood Sign 55ef2eaf11c472b405000000
+[2025-04-18T07:41:06.165+0000] {itinerary_tours_dag.py:435} INFO -   (915/1049) Geocoding: Private Tour Of Los Angeles
+[2025-04-18T07:41:06.395+0000] {itinerary_tours_dag.py:435} INFO -   (916/1049) Geocoding: Hollywood Explorer Pass
+[2025-04-18T07:41:06.638+0000] {itinerary_tours_dag.py:435} INFO -   (917/1049) Geocoding: Hollywood Sign Driving Tour In A Ferrari
+[2025-04-18T07:41:06.885+0000] {itinerary_tours_dag.py:435} INFO -   (918/1049) Geocoding: Private 3 Day Tour Of Los Angeles Downtown La Hollywood And Santa Monica
+[2025-04-18T07:41:07.161+0000] {itinerary_tours_dag.py:435} INFO -   (919/1049) Geocoding: Private Hollywood Tour Walk Of Fame Hollywood Theaters Amoeba Music And More
+[2025-04-18T07:41:07.410+0000] {itinerary_tours_dag.py:435} INFO -   (920/1049) Geocoding: Fabulous La Fun Fashion Photo Food Private Tour
+[2025-04-18T07:41:07.682+0000] {itinerary_tours_dag.py:435} INFO -   (921/1049) Geocoding: The Real Hollywood Tour
+[2025-04-18T07:41:07.907+0000] {itinerary_tours_dag.py:435} INFO -   (922/1049) Geocoding: Private City Tour Of The Los Angeles Area
+[2025-04-18T07:41:08.144+0000] {itinerary_tours_dag.py:435} INFO -   (923/1049) Geocoding: 2 Hour Hollywood Tours
+[2025-04-18T07:41:08.392+0000] {itinerary_tours_dag.py:435} INFO -   (924/1049) Geocoding: Hollywood Celebrity Homes
+[2025-04-18T07:41:08.661+0000] {itinerary_tours_dag.py:435} INFO -   (925/1049) Geocoding: Downtown Los Angeles Tourist Scavenger Hunt
+[2025-04-18T07:41:08.889+0000] {itinerary_tours_dag.py:435} INFO -   (926/1049) Geocoding: Celebrity Bike Tour Guided
+[2025-04-18T07:41:09.139+0000] {itinerary_tours_dag.py:435} INFO -   (927/1049) Geocoding: Los Angeles Vip Tour
+[2025-04-18T07:41:09.388+0000] {itinerary_tours_dag.py:435} INFO -   (928/1049) Geocoding: Private Los Angeles Tour
+[2025-04-18T07:41:09.609+0000] {itinerary_tours_dag.py:435} INFO -   (929/1049) Geocoding: Hollywood Beverly Hills Celebrity Homes Landmark Locations In Open Air Buses
+[2025-04-18T07:41:09.910+0000] {itinerary_tours_dag.py:435} INFO -   (930/1049) Geocoding: Private Photo Walk In Los Angeles With Personal Photographer And Color Stylist
+[2025-04-18T07:41:10.179+0000] {itinerary_tours_dag.py:435} INFO -   (931/1049) Geocoding: 4hr Tour Of Los Angeles By A Tv Personality Free Beer Wine Liquor And Sodas
+[2025-04-18T07:41:10.434+0000] {itinerary_tours_dag.py:435} INFO -   (932/1049) Geocoding: Private Tour Of Los Angeles In A Luxury Suv Minivan
+[2025-04-18T07:41:10.685+0000] {itinerary_tours_dag.py:435} INFO -   (933/1049) Geocoding: La Vip Shopping Day
+[2025-04-18T07:41:10.948+0000] {itinerary_tours_dag.py:435} INFO -   (934/1049) Geocoding: Private Departure Transfer Hotel To Los Angeles International Airport 57ac49498427a5881a0002a9
+[2025-04-18T07:41:11.195+0000] {itinerary_tours_dag.py:435} INFO -   (935/1049) Geocoding: Private Sightseeing Tour Of Los Angeles With A Vegan Touch
+[2025-04-18T07:41:11.434+0000] {itinerary_tours_dag.py:435} INFO -   (936/1049) Geocoding: Big Bus Los Angeles Hop On Hop Off Tour
+[2025-04-18T07:41:11.705+0000] {itinerary_tours_dag.py:435} INFO -   (937/1049) Geocoding: Go Los Angeles Explorer Pass With Hop On Hop Off Bus And Warner Bros Studio Tour
+[2025-04-18T07:41:11.974+0000] {itinerary_tours_dag.py:435} INFO -   (938/1049) Geocoding: Los Angeles Ports Of Call Tours
+[2025-04-18T07:41:12.216+0000] {itinerary_tours_dag.py:435} INFO -   (939/1049) Geocoding: Private Audio Tour Long Beach
+[2025-04-18T07:41:12.454+0000] {itinerary_tours_dag.py:435} INFO -   (940/1049) Geocoding: Private Los Angeles City Tour
+[2025-04-18T07:41:12.680+0000] {itinerary_tours_dag.py:435} INFO -   (941/1049) Geocoding: Los Angeles And Hollywood 5 Hours Private Tour
+[2025-04-18T07:41:12.934+0000] {itinerary_tours_dag.py:435} INFO -   (942/1049) Geocoding: Private Christmas Tour With Christmas Afternoon Tea Ceremony In Old Pasadena
+[2025-04-18T07:41:13.197+0000] {itinerary_tours_dag.py:435} INFO -   (943/1049) Geocoding: Go Los Angeles Card
+[2025-04-18T07:41:13.441+0000] {itinerary_tours_dag.py:435} INFO -   (944/1049) Geocoding: Private Sightseeing Tour Of Beverly Hills
+[2025-04-18T07:41:13.683+0000] {itinerary_tours_dag.py:435} INFO -   (945/1049) Geocoding: Hollywood Tourist Scavenger Hunt
+[2025-04-18T07:41:13.909+0000] {itinerary_tours_dag.py:435} INFO -   (946/1049) Geocoding: Christmas Market In Los Angeles And Charming Old Pasadena On Private Tour
+[2025-04-18T07:41:14.223+0000] {itinerary_tours_dag.py:435} INFO -   (947/1049) Geocoding: Lax Airport To San Diego In A Luxurious Suv
+[2025-04-18T07:41:14.461+0000] {itinerary_tours_dag.py:435} INFO -   (948/1049) Geocoding: 3 Hour Food Tour In Venice Beach Los Angeles
+[2025-04-18T07:41:14.693+0000] {itinerary_tours_dag.py:435} INFO -   (949/1049) Geocoding: Surf Camping Trip
+[2025-04-18T07:41:14.913+0000] {itinerary_tours_dag.py:435} INFO -   (950/1049) Geocoding: Afternoon Multimedia Tour Of Los Angeles Hollywood Beverly Hills
+[2025-04-18T07:41:15.162+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 19. Sleeping before next batch...
+[2025-04-18T07:41:17.164+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 20: rows 951 to 1000
+[2025-04-18T07:41:17.164+0000] {itinerary_tours_dag.py:435} INFO -   (951/1049) Geocoding: Hollywood Tours Hollywood Sign Celebrity Homes Tour
+[2025-04-18T07:41:17.402+0000] {itinerary_tours_dag.py:435} INFO -   (952/1049) Geocoding: Swan Boat Night Ride At Echo Park Lake
+[2025-04-18T07:41:17.665+0000] {itinerary_tours_dag.py:435} INFO -   (953/1049) Geocoding: Family Surf Lesson
+[2025-04-18T07:41:17.896+0000] {itinerary_tours_dag.py:435} INFO -   (954/1049) Geocoding: Surf Lesson For Kids
+[2025-04-18T07:41:18.112+0000] {itinerary_tours_dag.py:435} INFO -   (955/1049) Geocoding: Private Surf Lesson At Venice
+[2025-04-18T07:41:18.352+0000] {itinerary_tours_dag.py:435} INFO -   (956/1049) Geocoding: 4 Day Las Vegas And Western Deserts Tour From Los Angeles
+[2025-04-18T07:41:18.600+0000] {itinerary_tours_dag.py:435} INFO -   (957/1049) Geocoding: Private Tour Of Griffith Observatory
+[2025-04-18T07:41:18.826+0000] {itinerary_tours_dag.py:435} INFO -   (958/1049) Geocoding: Sequoia Park Private Tour
+[2025-04-18T07:41:19.092+0000] {itinerary_tours_dag.py:435} INFO -   (959/1049) Geocoding: The Looney Los Angeles Scavenger Hunt
+[2025-04-18T07:41:19.326+0000] {itinerary_tours_dag.py:435} INFO -   (960/1049) Geocoding: West Hollywood Food Tour
+[2025-04-18T07:41:19.611+0000] {itinerary_tours_dag.py:435} INFO -   (961/1049) Geocoding: Catalina Island Day Trip From Los Angeles With Zipline Adventure
+[2025-04-18T07:41:19.904+0000] {itinerary_tours_dag.py:435} INFO -   (962/1049) Geocoding: Los Angeles Arrival And Departure
+[2025-04-18T07:41:20.127+0000] {itinerary_tours_dag.py:435} INFO -   (963/1049) Geocoding: Catalina Island Day Trip From Los Angeles With Avalon Tour
+[2025-04-18T07:41:20.440+0000] {itinerary_tours_dag.py:435} INFO -   (964/1049) Geocoding: Warner Bros Studio Tour With Transportation
+[2025-04-18T07:41:20.691+0000] {itinerary_tours_dag.py:435} INFO -   (965/1049) Geocoding: Catalina Island Day Trip From Los Angeles With Undersea Adventure
+[2025-04-18T07:41:20.956+0000] {itinerary_tours_dag.py:435} INFO -   (966/1049) Geocoding: Private Group Transfer Los Angeles To Or From Anaheim
+[2025-04-18T07:41:21.196+0000] {itinerary_tours_dag.py:435} INFO -   (967/1049) Geocoding: Round Trip Transfer In Executive Private Vehicle From To Airport In Los Angeles
+[2025-04-18T07:41:21.471+0000] {itinerary_tours_dag.py:435} INFO -   (968/1049) Geocoding: Transfer In Private Luxury Minivan From Los Angeles City Downtown To Airport
+[2025-04-18T07:41:21.737+0000] {itinerary_tours_dag.py:435} INFO -   (969/1049) Geocoding: Best Electric Mtn Bike Experience Montrose
+[2025-04-18T07:41:22.010+0000] {itinerary_tours_dag.py:435} INFO -   (970/1049) Geocoding: Zombie Scavengers Game Los Angeles Ca
+[2025-04-18T07:41:22.245+0000] {itinerary_tours_dag.py:435} INFO -   (971/1049) Geocoding: Operation City Quest Scavenger Hunt Los Angeles Ca
+[2025-04-18T07:41:22.476+0000] {itinerary_tours_dag.py:435} INFO -   (972/1049) Geocoding: Los Angeles Airport Lax Private Transfer From Hollywood
+[2025-04-18T07:41:22.730+0000] {itinerary_tours_dag.py:435} INFO -   (973/1049) Geocoding: Snorkeling Los Angeles
+[2025-04-18T07:41:22.944+0000] {itinerary_tours_dag.py:435} INFO -   (974/1049) Geocoding: Snoqualmie Falls And Seattle Winery Tour
+[2025-04-18T07:41:23.197+0000] {itinerary_tours_dag.py:435} INFO -   (975/1049) Geocoding: Seattle City Tour
+[2025-04-18T07:41:23.404+0000] {itinerary_tours_dag.py:435} INFO -   (976/1049) Geocoding: Food And Cultural Walking Tour Of Pike Place Market
+[2025-04-18T07:41:23.709+0000] {itinerary_tours_dag.py:435} INFO -   (977/1049) Geocoding: Viator Exclusive Early Access Food Tour Of Pike Place Market
+[2025-04-18T07:41:23.998+0000] {itinerary_tours_dag.py:435} INFO -   (978/1049) Geocoding: Subterranean Seattle Walking History Tour
+[2025-04-18T07:41:24.250+0000] {itinerary_tours_dag.py:435} INFO -   (979/1049) Geocoding: Mt Rainier Day Trip From Seattle
+[2025-04-18T07:41:24.508+0000] {itinerary_tours_dag.py:435} INFO -   (980/1049) Geocoding: Snoqualmie Falls And Seattle City Tour
+[2025-04-18T07:41:24.749+0000] {itinerary_tours_dag.py:435} INFO -   (981/1049) Geocoding: Mt Rainier Small Group Walking Or Snowshoeing Tour With Lunch
+[2025-04-18T07:41:25.004+0000] {itinerary_tours_dag.py:435} INFO -   (982/1049) Geocoding: Chef Guided Food Tour Of Pike Place Market
+[2025-04-18T07:41:25.265+0000] {itinerary_tours_dag.py:435} INFO -   (983/1049) Geocoding: Seattle Harbor Cruise
+[2025-04-18T07:41:25.501+0000] {itinerary_tours_dag.py:435} INFO -   (984/1049) Geocoding: Premier 3 Hour Seattle City Tour
+[2025-04-18T07:41:25.743+0000] {itinerary_tours_dag.py:435} INFO -   (985/1049) Geocoding: Small Group Olympic National Park Tour From Seattle
+[2025-04-18T07:41:25.990+0000] {itinerary_tours_dag.py:435} INFO -   (986/1049) Geocoding: Morning Tour Of Boeing Factory From Seattle
+[2025-04-18T07:41:26.210+0000] {itinerary_tours_dag.py:435} INFO -   (987/1049) Geocoding: 2 Hour Cruise On Lake Union In Seattle
+[2025-04-18T07:41:26.446+0000] {itinerary_tours_dag.py:435} INFO -   (988/1049) Geocoding: Guaranteed Whale Watching Tour
+[2025-04-18T07:41:26.672+0000] {itinerary_tours_dag.py:435} INFO -   (989/1049) Geocoding: Private Tour Seattle Highlights
+[2025-04-18T07:41:26.910+0000] {itinerary_tours_dag.py:435} INFO -   (990/1049) Geocoding: 2 Hour Seattle City Tour
+[2025-04-18T07:41:27.491+0000] {itinerary_tours_dag.py:435} INFO -   (991/1049) Geocoding: City Sightseeing Seattle Hop On Hop Off Tour
+[2025-04-18T07:41:27.781+0000] {itinerary_tours_dag.py:435} INFO -   (992/1049) Geocoding: Anacortes Whale Watching
+[2025-04-18T07:41:28.012+0000] {itinerary_tours_dag.py:435} INFO -   (993/1049) Geocoding: Whale Watching From Friday Harbor
+[2025-04-18T07:41:28.267+0000] {itinerary_tours_dag.py:435} INFO -   (994/1049) Geocoding: Seattle Shore Excursion Pre Cruise Sightseeing City Tour 5ac659955840d4c99b0000a8
+[2025-04-18T07:41:28.501+0000] {itinerary_tours_dag.py:435} INFO -   (995/1049) Geocoding: Canopy Tree Climbing On Bainbridge Island
+[2025-04-18T07:41:28.755+0000] {itinerary_tours_dag.py:435} INFO -   (996/1049) Geocoding: Private Arrival Transfer Seattle Tacoma Airport To Hotel
+[2025-04-18T07:41:28.987+0000] {itinerary_tours_dag.py:435} INFO -   (997/1049) Geocoding: Admission To The Museum Of Flight
+[2025-04-18T07:41:29.269+0000] {itinerary_tours_dag.py:435} INFO -   (998/1049) Geocoding: Seattle Scavenger Hunt Adventure
+[2025-04-18T07:41:29.493+0000] {itinerary_tours_dag.py:435} INFO -   (999/1049) Geocoding: Seattle City Tour Spanish
+[2025-04-18T07:41:29.716+0000] {itinerary_tours_dag.py:435} INFO -   (1000/1049) Geocoding: Sunset Canopy Climb At Deception Pass State Park
+[2025-04-18T07:41:29.965+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 20. Sleeping before next batch...
+[2025-04-18T07:41:31.971+0000] {itinerary_tours_dag.py:428} INFO - Processing batch 21: rows 1001 to 1049
+[2025-04-18T07:41:31.972+0000] {itinerary_tours_dag.py:435} INFO -   (1001/1049) Geocoding: Private Olympic National Park Rainforest Tour From Seattle
+[2025-04-18T07:41:32.226+0000] {itinerary_tours_dag.py:435} INFO -   (1002/1049) Geocoding: 60 Minute Private Vacation Photography Session With Photographer In Seattle
+[2025-04-18T07:41:32.490+0000] {itinerary_tours_dag.py:435} INFO -   (1003/1049) Geocoding: Haunted Seattle Ghost And Pub Walking Tour
+[2025-04-18T07:41:32.726+0000] {itinerary_tours_dag.py:435} INFO -   (1004/1049) Geocoding: Underground Donut Tour Seattle S Only Donut Tour
+[2025-04-18T07:41:32.963+0000] {itinerary_tours_dag.py:435} INFO -   (1005/1049) Geocoding: Boeing Factory And Optional Restoration Center Tour With Private Transport From Seattle
+[2025-04-18T07:41:33.197+0000] {itinerary_tours_dag.py:435} INFO -   (1006/1049) Geocoding: Private Sailing Adventure On The Puget Sound
+[2025-04-18T07:41:33.424+0000] {itinerary_tours_dag.py:435} INFO -   (1007/1049) Geocoding: Private Departure Transfer Hotel To Seattle Tacoma Airport
+[2025-04-18T07:41:33.663+0000] {itinerary_tours_dag.py:435} INFO -   (1008/1049) Geocoding: Private Tour Snoqualmie Falls And Woodinville Wineries Day Trip From Seattle
+[2025-04-18T07:41:33.907+0000] {itinerary_tours_dag.py:435} INFO -   (1009/1049) Geocoding: Seattle Private Tour For 2 6
+[2025-04-18T07:41:34.139+0000] {itinerary_tours_dag.py:435} INFO -   (1010/1049) Geocoding: Queen Anne True Crime Tour
+[2025-04-18T07:41:34.367+0000] {itinerary_tours_dag.py:435} INFO -   (1011/1049) Geocoding: Seattle Locks Cruise One Way Stay Play
+[2025-04-18T07:41:34.614+0000] {itinerary_tours_dag.py:435} INFO -   (1012/1049) Geocoding: Operation City Quest Scavenger Hunt Seattle Wa
+[2025-04-18T07:41:34.867+0000] {itinerary_tours_dag.py:435} INFO -   (1013/1049) Geocoding: Day Trip To Leavenworth Via The Cascade Mountains From Seattle
+[2025-04-18T07:41:35.097+0000] {itinerary_tours_dag.py:435} INFO -   (1014/1049) Geocoding: Boeing Tour Espa Ol
+[2025-04-18T07:41:35.317+0000] {itinerary_tours_dag.py:435} INFO -   (1015/1049) Geocoding: 7 Day Small Group Tour Canadian Rockies And National Parks
+[2025-04-18T07:41:35.556+0000] {itinerary_tours_dag.py:435} INFO -   (1016/1049) Geocoding: Private Airport Shuttle To Seattle Tacoma International Airport
+[2025-04-18T07:41:35.781+0000] {itinerary_tours_dag.py:435} INFO -   (1017/1049) Geocoding: Seattle Shore Excursion Private City Tour
+[2025-04-18T07:41:36.040+0000] {itinerary_tours_dag.py:435} INFO -   (1018/1049) Geocoding: Private Tour Mt Rainier Day Trip From Seattle
+[2025-04-18T07:41:36.272+0000] {itinerary_tours_dag.py:435} INFO -   (1019/1049) Geocoding: Private 3 Hour Seattle City Tour
+[2025-04-18T07:41:36.499+0000] {itinerary_tours_dag.py:435} INFO -   (1020/1049) Geocoding: Pre Cruise Seattle Sightseeing Tour
+[2025-04-18T07:41:36.747+0000] {itinerary_tours_dag.py:435} INFO -   (1021/1049) Geocoding: Clue Gathering Game By 3quest Challenge Seattle Wa
+[2025-04-18T07:41:36.995+0000] {itinerary_tours_dag.py:435} INFO -   (1022/1049) Geocoding: Crazy Dash Walking Adventure Seattle Wa
+[2025-04-18T07:41:37.225+0000] {itinerary_tours_dag.py:435} INFO -   (1023/1049) Geocoding: Wacky Walk Adventure Game Seattle Wa
+[2025-04-18T07:41:37.476+0000] {itinerary_tours_dag.py:435} INFO -   (1024/1049) Geocoding: Private Mount Rainier Gondola Tour
+[2025-04-18T07:41:37.720+0000] {itinerary_tours_dag.py:435} INFO -   (1025/1049) Geocoding: Seattle Tour
+[2025-04-18T07:41:37.944+0000] {itinerary_tours_dag.py:435} INFO -   (1026/1049) Geocoding: Private Seattle City Tour
+[2025-04-18T07:41:38.162+0000] {itinerary_tours_dag.py:435} INFO -   (1027/1049) Geocoding: Private Mountains Waterfalls And Alpine Village Tour
+[2025-04-18T07:41:38.417+0000] {itinerary_tours_dag.py:435} INFO -   (1028/1049) Geocoding: Chauffeur Transfer Service
+[2025-04-18T07:41:38.637+0000] {itinerary_tours_dag.py:435} INFO -   (1029/1049) Geocoding: Small Group Wine Tasting Tour Through Woodinville
+[2025-04-18T07:41:38.885+0000] {itinerary_tours_dag.py:435} INFO -   (1030/1049) Geocoding: Towncar Service From Or To Seattle Tacoma Airport
+[2025-04-18T07:41:39.138+0000] {itinerary_tours_dag.py:435} INFO -   (1031/1049) Geocoding: Orcas Island Whale Watching
+[2025-04-18T07:41:39.396+0000] {itinerary_tours_dag.py:435} INFO -   (1032/1049) Geocoding: Tacoma Puzzling Adventure
+[2025-04-18T07:41:39.626+0000] {itinerary_tours_dag.py:435} INFO -   (1033/1049) Geocoding: Deception Pass Bridge Island Tour From Seattle
+[2025-04-18T07:41:39.885+0000] {itinerary_tours_dag.py:435} INFO -   (1034/1049) Geocoding: Skagit Valley Tulip Festival Day Trip From Seattle
+[2025-04-18T07:41:40.137+0000] {itinerary_tours_dag.py:435} INFO -   (1035/1049) Geocoding: Emerald City Bicycle Tour
+[2025-04-18T07:41:40.387+0000] {itinerary_tours_dag.py:435} INFO -   (1036/1049) Geocoding: West Seatte Electric Bike Tour
+[2025-04-18T07:41:40.648+0000] {itinerary_tours_dag.py:435} INFO -   (1037/1049) Geocoding: 3 Day Canopy Tree Climbing Academy
+[2025-04-18T07:41:40.885+0000] {itinerary_tours_dag.py:435} INFO -   (1038/1049) Geocoding: 3 Days In Olympic National Park From Seattle Silent Forest Hoh Rainforest
+[2025-04-18T07:41:41.144+0000] {itinerary_tours_dag.py:435} INFO -   (1039/1049) Geocoding: Hourly Car Limo Rental Airport Transportation
+[2025-04-18T07:41:41.381+0000] {itinerary_tours_dag.py:435} INFO -   (1040/1049) Geocoding: Mount Rainier Tour From Seattle 5de66a5a0a21c71a9243f0a3
+[2025-04-18T07:41:41.625+0000] {itinerary_tours_dag.py:435} INFO -   (1041/1049) Geocoding: Hike Mt Rainier Taste Yakima Valley Wine All Inclusive Day Tour From Seattle
+[2025-04-18T07:41:41.889+0000] {itinerary_tours_dag.py:435} INFO -   (1042/1049) Geocoding: Mt Rainier
+[2025-04-18T07:41:42.111+0000] {itinerary_tours_dag.py:435} INFO -   (1043/1049) Geocoding: Mount Rainier National Park Luxury Small Group Day Tour With Lunch
+[2025-04-18T07:41:42.361+0000] {itinerary_tours_dag.py:435} INFO -   (1044/1049) Geocoding: Seattle Wine And Waterfall Luxury Small Group Day Tour With Lunch
+[2025-04-18T07:41:42.600+0000] {itinerary_tours_dag.py:435} INFO -   (1045/1049) Geocoding: Seattle Indoor Skydiving Experience
+[2025-04-18T07:41:42.857+0000] {itinerary_tours_dag.py:435} INFO -   (1046/1049) Geocoding: Seattle To Vancouver Seaplane Flight
+[2025-04-18T07:41:43.078+0000] {itinerary_tours_dag.py:435} INFO -   (1047/1049) Geocoding: Sky View Observatory Admission Tickets
+[2025-04-18T07:41:43.302+0000] {itinerary_tours_dag.py:435} INFO -   (1048/1049) Geocoding: Olympia Puzzling Adventure
+[2025-04-18T07:41:43.539+0000] {itinerary_tours_dag.py:435} INFO -   (1049/1049) Geocoding: Seattle Puzzling Adventure
+[2025-04-18T07:41:43.765+0000] {itinerary_tours_dag.py:448} INFO - Completed batch 21. Sleeping before next batch...
+[2025-04-18T07:41:45.769+0000] {itinerary_tours_dag.py:452} INFO - Successfully processed all 1049 tours
+[2025-04-18T07:41:45.770+0000] {itinerary_tours_dag.py:453} INFO - Output saved to: /tmp/triphobo_data/tours_with_coords.csv
+[2025-04-18T07:41:45.782+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-18T07:41:45.801+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T07:41:45.801+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_tours_pipeline, task_id=geocode_tours, run_id=manual__2025-04-18T07:36:18.306091+00:00, execution_date=20250418T073618, start_date=20250418T073622, end_date=20250418T074145
+[2025-04-18T07:41:45.831+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T07:41:45.846+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T07:41:45.847+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

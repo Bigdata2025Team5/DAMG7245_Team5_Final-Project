@@ -1,0 +1,40 @@
+[2025-04-17T21:23:35.706+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-17T21:23:35.712+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.load_tours_snowflake scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:23:35.715+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.load_tours_snowflake scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:23:35.715+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-17T21:23:35.722+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): load_tours_snowflake> on 2025-04-16 07:30:00+00:00
+[2025-04-17T21:23:35.725+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1355) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-17T21:23:35.726+0000] {standard_task_runner.py:72} INFO - Started process 1356 to run task
+[2025-04-17T21:23:35.726+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_tours_pipeline', 'load_tours_snowflake', 'scheduled__2025-04-16T07:30:00+00:00', '--job-id', '404', '--raw', '--subdir', 'DAGS_FOLDER/itinerary_tours_dag.py', '--cfg-path', '/tmp/tmpgcmuhkae']
+[2025-04-17T21:23:35.727+0000] {standard_task_runner.py:105} INFO - Job 404: Subtask load_tours_snowflake
+[2025-04-17T21:23:35.747+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_tours_pipeline.load_tours_snowflake scheduled__2025-04-16T07:30:00+00:00 [running]> on host 4d0efc92e922
+[2025-04-17T21:23:35.778+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_tours_pipeline' AIRFLOW_CTX_TASK_ID='load_tours_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T07:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T07:30:00+00:00'
+[2025-04-17T21:23:35.779+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-17T21:23:35.821+0000] {upload_to_snowflake.py:30} INFO - CSV file contains 479 rows and 20 columns
+[2025-04-17T21:23:35.823+0000] {upload_to_snowflake.py:35} INFO - City distribution in CSV: {'New York City United States': 240, 'San Francisco United States': 239}
+[2025-04-17T21:23:35.823+0000] {connection.py:414} INFO - Snowflake Connector for Python Version: 3.12.4, Python Version: 3.12.8, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-04-17T21:23:35.824+0000] {connection.py:1197} INFO - Connecting to GLOBAL Snowflake domain
+[2025-04-17T21:23:35.824+0000] {connection.py:1278} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2025-04-17T21:23:36.552+0000] {upload_to_snowflake.py:45} INFO - Dropping table `TRIPHOBO_TOURS` if it exists...
+[2025-04-17T21:23:36.832+0000] {cursor.py:1166} INFO - Number of results in first chunk: 1
+[2025-04-17T21:23:36.833+0000] {upload_to_snowflake.py:49} INFO - Creating table `TRIPHOBO_TOURS`...
+[2025-04-17T21:23:37.131+0000] {cursor.py:1166} INFO - Number of results in first chunk: 1
+[2025-04-17T21:23:37.131+0000] {upload_to_snowflake.py:55} INFO - Staging local file /tmp/triphobo_data/tours_with_coords.csv to Snowflake...
+[2025-04-17T21:23:38.679+0000] {upload_to_snowflake.py:60} INFO - Copying data into `TRIPHOBO_TOURS` from staged file...
+[2025-04-17T21:23:40.005+0000] {cursor.py:1166} INFO - Number of results in first chunk: 1
+[2025-04-17T21:23:40.006+0000] {upload_to_snowflake.py:76} INFO - COPY command result: [('data/tours_with_coords.csv.gz', 'LOADED', 479, 479, 479, 0, None, None, None, None)]
+[2025-04-17T21:23:40.235+0000] {cursor.py:1166} INFO - Number of results in first chunk: 1
+[2025-04-17T21:23:40.236+0000] {upload_to_snowflake.py:81} INFO - Total rows in Snowflake table: 479
+[2025-04-17T21:23:40.806+0000] {cursor.py:1166} INFO - Number of results in first chunk: 2
+[2025-04-17T21:23:40.806+0000] {upload_to_snowflake.py:87} INFO - City distribution in Snowflake: [('San Francisco United States', 239), ('New York City United States', 240)]
+[2025-04-17T21:23:40.807+0000] {connection.py:789} INFO - closed
+[2025-04-17T21:23:40.852+0000] {connection.py:795} INFO - No async queries seem to be running, deleting session
+[2025-04-17T21:23:40.900+0000] {upload_to_snowflake.py:92} INFO - Data successfully copied to Snowflake table: TRIPHOBO_TOURS
+[2025-04-17T21:23:40.903+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-17T21:23:40.911+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-17T21:23:40.912+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_tours_pipeline, task_id=load_tours_snowflake, run_id=scheduled__2025-04-16T07:30:00+00:00, execution_date=20250416T073000, start_date=20250417T212335, end_date=20250417T212340
+[2025-04-17T21:23:40.956+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-17T21:23:40.962+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-17T21:23:40.963+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

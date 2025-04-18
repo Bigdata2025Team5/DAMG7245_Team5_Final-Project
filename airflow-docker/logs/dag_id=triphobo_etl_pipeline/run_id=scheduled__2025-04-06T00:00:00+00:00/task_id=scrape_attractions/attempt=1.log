@@ -1,0 +1,85 @@
+[2025-04-13T20:03:47.844+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T20:03:47.853+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.859+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.859+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-13T20:03:47.864+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_attractions> on 2025-04-06 00:00:00+00:00
+[2025-04-13T20:03:47.867+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=79) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T20:03:47.868+0000] {standard_task_runner.py:72} INFO - Started process 82 to run task
+[2025-04-13T20:03:47.868+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_etl_pipeline', 'scrape_attractions', 'scheduled__2025-04-06T00:00:00+00:00', '--job-id', '176', '--raw', '--subdir', 'DAGS_FOLDER/trip_dag.py', '--cfg-path', '/tmp/tmpqpf6ploz']
+[2025-04-13T20:03:47.869+0000] {standard_task_runner.py:105} INFO - Job 176: Subtask scrape_attractions
+[2025-04-13T20:03:47.896+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_etl_pipeline.scrape_attractions scheduled__2025-04-06T00:00:00+00:00 [running]> on host f5674eb65eee
+[2025-04-13T20:03:47.932+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_etl_pipeline' AIRFLOW_CTX_TASK_ID='scrape_attractions' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T00:00:00+00:00'
+[2025-04-13T20:03:47.933+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T20:03:47.975+0000] {things_to_do.py:89} INFO - Loaded 812 existing records from /tmp/triphobo_data/multi_city_attractions.csv
+[2025-04-13T20:03:47.975+0000] {things_to_do.py:93} INFO - Found 812 existing URLs in the dataset
+[2025-04-13T20:03:48.554+0000] {things_to_do.py:110} INFO - Scraping city: New York City United States
+[2025-04-13T20:03:48.555+0000] {things_to_do.py:114} INFO - Scraping page 1: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-13T20:03:56.061+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:03:56.062+0000] {things_to_do.py:126} INFO - Scraping place 1/15: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-13T20:03:59.534+0000] {things_to_do.py:126} INFO - Scraping place 2/15: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-13T20:04:03.710+0000] {things_to_do.py:126} INFO - Scraping place 3/15: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-13T20:04:07.538+0000] {things_to_do.py:126} INFO - Scraping place 4/15: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-13T20:04:11.031+0000] {things_to_do.py:126} INFO - Scraping place 5/15: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-13T20:04:14.824+0000] {things_to_do.py:126} INFO - Scraping place 6/15: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-13T20:04:18.878+0000] {things_to_do.py:126} INFO - Scraping place 7/15: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-13T20:04:22.348+0000] {things_to_do.py:126} INFO - Scraping place 8/15: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-13T20:04:25.859+0000] {things_to_do.py:126} INFO - Scraping place 9/15: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-13T20:04:29.342+0000] {things_to_do.py:126} INFO - Scraping place 10/15: https://www.triphobo.com/places/new-york-city-united-states/national-9-11-memorial-museum
+[2025-04-13T20:04:32.816+0000] {things_to_do.py:126} INFO - Scraping place 11/15: https://www.triphobo.com/places/new-york-city-united-states/intrepid-sea-air-and-space-museum
+[2025-04-13T20:04:36.543+0000] {things_to_do.py:126} INFO - Scraping place 12/15: https://www.triphobo.com/places/new-york-city-united-states/solomon-r-guggenheim-museum
+[2025-04-13T20:04:40.032+0000] {things_to_do.py:126} INFO - Scraping place 13/15: https://www.triphobo.com/places/new-york-city-united-states/radio-city-music-hall
+[2025-04-13T20:04:43.637+0000] {things_to_do.py:126} INFO - Scraping place 14/15: https://www.triphobo.com/places/new-york-city-united-states/fanaberie
+[2025-04-13T20:04:47.155+0000] {things_to_do.py:126} INFO - Scraping place 15/15: https://www.triphobo.com/places/new-york-city-united-states/united-nations-headquarters
+[2025-04-13T20:04:50.718+0000] {things_to_do.py:114} INFO - Scraping page 2: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=2
+[2025-04-13T20:04:55.559+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:04:55.560+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-public-library
+[2025-04-13T20:04:55.560+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/national-museum-of-american-indian
+[2025-04-13T20:04:55.560+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/children-s-museum-of-manhattan
+[2025-04-13T20:04:55.560+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-morgan-library-and-museum
+[2025-04-13T20:04:55.560+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cathedral-church-of-saint-john-the-divine
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/gramercy-tavern
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bryant-park
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-heights-promenade
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/65th-street
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chrysler-building
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chinatown
+[2025-04-13T20:04:55.561+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/dead-rabbit
+[2025-04-13T20:04:55.562+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-transit-museum
+[2025-04-13T20:04:55.562+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/frick-collection
+[2025-04-13T20:04:55.562+0000] {things_to_do.py:114} INFO - Scraping page 3: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=3
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:117} INFO - Found 15 attraction links
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/yankee-stadium
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/harlem
+[2025-04-13T20:05:00.064+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/battery-park
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-mean-fiddler
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-paul-s-chapel
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/metropolitan-opera-house
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-patrick-s-cathedral
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/little-italy
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/central-park-zoo
+[2025-04-13T20:05:00.065+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/lexington-avenue
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-botanical-garden
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-botanical-garden
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/place/adda/51c828b2e705454c13000000
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-industries
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:122} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bloomingdale-s
+[2025-04-13T20:05:00.066+0000] {things_to_do.py:114} INFO - Scraping page 4: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=4
+[2025-04-13T20:05:03.286+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-13T20:05:03.292+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-13T20:05:03.294+0000] {process_utils.py:132} INFO - Sending 15 to group 82. PIDs of all processes in the group: [88, 119, 126, 130, 180, 218, 170, 82]
+[2025-04-13T20:05:03.295+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 82
+[2025-04-13T20:05:03.296+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-13T20:05:03.312+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=126, status='terminated', started='20:03:47') (126) terminated with exit code None
+[2025-04-13T20:05:03.313+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=130, status='terminated', started='20:03:47') (130) terminated with exit code None
+[2025-04-13T20:05:03.455+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=180, status='terminated', started='20:03:47') (180) terminated with exit code None
+[2025-04-13T20:05:03.455+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=88, status='terminated', started='20:03:47') (88) terminated with exit code None
+[2025-04-13T20:05:03.456+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=170, status='terminated', started='20:03:47') (170) terminated with exit code None
+[2025-04-13T20:05:03.456+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=119, status='terminated', started='20:03:47') (119) terminated with exit code None
+[2025-04-13T20:05:03.457+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=218, status='terminated', started='20:03:47') (218) terminated with exit code None
+[2025-04-13T20:06:03.305+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=82, name='airflow task ru', status='sleeping', started='20:03:47') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-13T20:06:03.313+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 82
+[2025-04-13T20:06:03.333+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=82, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='20:03:47') (82) terminated with exit code -9
+[2025-04-13T20:06:03.334+0000] {standard_task_runner.py:190} ERROR - ('Job 176 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

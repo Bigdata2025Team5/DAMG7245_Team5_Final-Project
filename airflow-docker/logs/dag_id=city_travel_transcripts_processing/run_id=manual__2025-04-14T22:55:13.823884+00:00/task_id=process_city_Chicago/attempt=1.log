@@ -1,0 +1,586 @@
+[2025-04-14T22:55:17.680+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:55:17.695+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_Chicago manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.704+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_Chicago manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.704+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:55:17.719+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_Chicago> on 2025-04-14 22:55:13.823884+00:00
+[2025-04-14T22:55:17.723+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=449) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:55:17.724+0000] {standard_task_runner.py:72} INFO - Started process 462 to run task
+[2025-04-14T22:55:17.725+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_Chicago', 'manual__2025-04-14T22:55:13.823884+00:00', '--job-id', '375', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpmtvad08e']
+[2025-04-14T22:55:17.727+0000] {standard_task_runner.py:105} INFO - Job 375: Subtask process_city_Chicago
+[2025-04-14T22:55:17.786+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_Chicago manual__2025-04-14T22:55:13.823884+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:55:17.884+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_Chicago' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:55:13.823884+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:55:13.823884+00:00'
+[2025-04-14T22:55:17.885+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:55:17.896+0000] {youtube_dag.py:140} INFO - Starting processing for city: Chicago
+[2025-04-14T22:55:17.897+0000] {youtube_dag.py:155} INFO - Creating directory structure for Chicago
+[2025-04-14T22:55:17.897+0000] {youtube_dag.py:159} INFO - Created directories: /opt/***/data/city_transcripts/Chicago, /opt/***/data/city_transcripts/Chicago/transcripts
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:170} INFO - Parameters for Chicago: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:186} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:206} INFO - Loading spaCy model for Chicago
+[2025-04-14T22:55:18.388+0000] {youtube_dag.py:208} INFO - Successfully loaded spaCy model
+[2025-04-14T22:55:18.388+0000] {youtube_dag.py:230} INFO - Downloading transcripts for Chicago
+[2025-04-14T22:55:18.388+0000] {youtube_dag.py:281} INFO - Starting transcript download for Chicago
+[2025-04-14T22:55:18.388+0000] {youtube_dag.py:294} INFO - Initializing YouTube client for Chicago
+[2025-04-14T22:55:18.390+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2025-04-14T22:55:18.570+0000] {youtube_dag.py:301} INFO - YouTube client initialized successfully
+[2025-04-14T22:55:18.570+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 1/6: 'Chicago travel vlog'
+[2025-04-14T22:55:19.006+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago travel vlog'
+[2025-04-14T22:55:19.007+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:55:19.068+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video joSf9hLciH0
+[2025-04-14T22:55:19.584+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video joSf9hLciH0 (3559 words)
+[2025-04-14T22:55:19.593+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary.txt
+[2025-04-14T22:55:19.594+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary_segments.json
+[2025-04-14T22:55:19.595+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video NnQ9R8inqEU
+[2025-04-14T22:55:20.056+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video NnQ9R8inqEU (747 words)
+[2025-04-14T22:55:20.058+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/NnQ9R8inqEU_CHICAGO_TRAVEL_VLOG_best_places_to_eat_and_visit_e.txt
+[2025-04-14T22:55:20.059+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/NnQ9R8inqEU_CHICAGO_TRAVEL_VLOG_best_places_to_eat_and_visit_e_segments.json
+[2025-04-14T22:55:20.059+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video XxzXT8flxoM
+[2025-04-14T22:55:20.880+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video XxzXT8flxoM (3280 words)
+[2025-04-14T22:55:20.887+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/XxzXT8flxoM_48_Hours_in_Chicago_Illinois_Best_Things_to_Do_and.txt
+[2025-04-14T22:55:20.889+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/XxzXT8flxoM_48_Hours_in_Chicago_Illinois_Best_Things_to_Do_and_segments.json
+[2025-04-14T22:55:20.889+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 9KybWIrDCPs
+[2025-04-14T22:55:21.347+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 9KybWIrDCPs (2757 words)
+[2025-04-14T22:55:21.354+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/9KybWIrDCPs_Chicago_The_Classic_American_City_Solo_Travel_Vlog.txt
+[2025-04-14T22:55:21.355+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/9KybWIrDCPs_Chicago_The_Classic_American_City_Solo_Travel_Vlog_segments.json
+[2025-04-14T22:55:21.355+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video qbAm-ypjzoc
+[2025-04-14T22:55:21.821+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video qbAm-ypjzoc (375 words)
+[2025-04-14T22:55:21.822+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/qbAm-ypjzoc_chicago_travel_vlog_best_places_to_eat_thrifting_i.txt
+[2025-04-14T22:55:21.823+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/qbAm-ypjzoc_chicago_travel_vlog_best_places_to_eat_thrifting_i_segments.json
+[2025-04-14T22:55:22.824+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:55:22.915+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video I-xL582lHXE
+[2025-04-14T22:55:23.686+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video I-xL582lHXE (2625 words)
+[2025-04-14T22:55:23.693+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/I-xL582lHXE_CHICAGO_TRAVEL_VLOG_eating_exploring_the_city.txt
+[2025-04-14T22:55:23.696+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/I-xL582lHXE_CHICAGO_TRAVEL_VLOG_eating_exploring_the_city_segments.json
+[2025-04-14T22:55:23.696+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Es9X1du3SVM
+[2025-04-14T22:55:24.229+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Es9X1du3SVM (1519 words)
+[2025-04-14T22:55:24.233+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Es9X1du3SVM_My_Solo_Trip_to_Chicago_Holiday_Lights_Sightseeing.txt
+[2025-04-14T22:55:24.234+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Es9X1du3SVM_My_Solo_Trip_to_Chicago_Holiday_Lights_Sightseeing_segments.json
+[2025-04-14T22:55:24.234+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ZAMPnmjYxTE
+[2025-04-14T22:55:24.874+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video ZAMPnmjYxTE (2428 words)
+[2025-04-14T22:55:24.884+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/ZAMPnmjYxTE_CHICAGO_TRAVEL_VLOG_Exploring_Chicago_iconic_landm.txt
+[2025-04-14T22:55:24.885+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/ZAMPnmjYxTE_CHICAGO_TRAVEL_VLOG_Exploring_Chicago_iconic_landm_segments.json
+[2025-04-14T22:55:24.885+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video jxhohYUkhbQ
+[2025-04-14T22:55:25.509+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video jxhohYUkhbQ (9 words)
+[2025-04-14T22:55:25.510+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/jxhohYUkhbQ_our_trip_to_Chicago_vlog_is_out_now_chicago_travel.txt
+[2025-04-14T22:55:25.510+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/jxhohYUkhbQ_our_trip_to_Chicago_vlog_is_out_now_chicago_travel_segments.json
+[2025-04-14T22:55:25.511+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video hXqSPYn7Q60
+[2025-04-14T22:55:26.073+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video hXqSPYn7Q60 (216 words)
+[2025-04-14T22:55:26.074+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/hXqSPYn7Q60_Where_to_stay_eat_and_things_to_do_in_Chicago_shor.txt
+[2025-04-14T22:55:26.074+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/hXqSPYn7Q60_Where_to_stay_eat_and_things_to_do_in_Chicago_shor_segments.json
+[2025-04-14T22:55:27.080+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:55:27.127+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 7AK5jUGfcGQ
+[2025-04-14T22:55:27.721+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 7AK5jUGfcGQ (1886 words)
+[2025-04-14T22:55:27.727+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide.txt
+[2025-04-14T22:55:27.728+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide_segments.json
+[2025-04-14T22:55:27.728+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video i5ctSI7B6G8
+[2025-04-14T22:55:28.215+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video i5ctSI7B6G8 (6315 words)
+[2025-04-14T22:55:28.228+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/i5ctSI7B6G8_Chicago_Travel_Vlog_Girls_Trip_Sunday_Funday_Birth.txt
+[2025-04-14T22:55:28.231+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/i5ctSI7B6G8_Chicago_Travel_Vlog_Girls_Trip_Sunday_Funday_Birth_segments.json
+[2025-04-14T22:55:28.232+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 3njpcpfLHi8
+[2025-04-14T22:55:28.965+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 3njpcpfLHi8 (3632 words)
+[2025-04-14T22:55:28.978+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/3njpcpfLHi8_TRAVEL_VLOG_72_Hours_In_Chicago_Boat_rides_New_foo.txt
+[2025-04-14T22:55:28.981+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/3njpcpfLHi8_TRAVEL_VLOG_72_Hours_In_Chicago_Boat_rides_New_foo_segments.json
+[2025-04-14T22:55:28.981+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video zcb2Tmk0SL4
+[2025-04-14T22:55:29.521+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video zcb2Tmk0SL4 (1574 words)
+[2025-04-14T22:55:29.528+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI.txt
+[2025-04-14T22:55:29.529+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI_segments.json
+[2025-04-14T22:55:29.530+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 4gcQkqYicAs
+[2025-04-14T22:55:30.030+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 4gcQkqYicAs (1714 words)
+[2025-04-14T22:55:30.039+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/4gcQkqYicAs_4_days_alone_in_Chicago_rating_Chicago_hot_spots_s.txt
+[2025-04-14T22:55:30.040+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/4gcQkqYicAs_4_days_alone_in_Chicago_rating_Chicago_hot_spots_s_segments.json
+[2025-04-14T22:55:31.045+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:55:31.098+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video HxS-DIomJRE
+[2025-04-14T22:55:31.646+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video HxS-DIomJRE (232 words)
+[2025-04-14T22:55:31.647+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/HxS-DIomJRE_Fun_Things_to_do_in_Chicago_travelvlog_chicago_thi.txt
+[2025-04-14T22:55:31.647+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/HxS-DIomJRE_Fun_Things_to_do_in_Chicago_travelvlog_chicago_thi_segments.json
+[2025-04-14T22:55:31.647+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Jves9jauNqY
+[2025-04-14T22:55:32.229+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Jves9jauNqY (267 words)
+[2025-04-14T22:55:32.230+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Jves9jauNqY_Top_6_things_to_do_in_Chicago_travel_travelvlog.txt
+[2025-04-14T22:55:32.230+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Jves9jauNqY_Top_6_things_to_do_in_Chicago_travel_travelvlog_segments.json
+[2025-04-14T22:55:32.231+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video qGkenJtoyEM
+[2025-04-14T22:55:32.843+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video qGkenJtoyEM (2598 words)
+[2025-04-14T22:55:32.848+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/qGkenJtoyEM_72_HOURS_IN_CHICAGO_my_honest_first_impressions.txt
+[2025-04-14T22:55:32.849+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/qGkenJtoyEM_72_HOURS_IN_CHICAGO_my_honest_first_impressions_segments.json
+[2025-04-14T22:55:32.849+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video A61GjwhiY_w
+[2025-04-14T22:55:33.333+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video A61GjwhiY_w (2673 words)
+[2025-04-14T22:55:33.340+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/A61GjwhiY_w_chicago_travel_vlog_22nd_birthday_trip_things_to_d.txt
+[2025-04-14T22:55:33.343+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/A61GjwhiY_w_chicago_travel_vlog_22nd_birthday_trip_things_to_d_segments.json
+[2025-04-14T22:55:33.346+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video yZ25-ITev4Y
+[2025-04-14T22:55:33.810+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video yZ25-ITev4Y (1364 words)
+[2025-04-14T22:55:33.813+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/yZ25-ITev4Y_CHICAGO_TRAVEL_VLOG_BAECATION_food_exploring_the_c.txt
+[2025-04-14T22:55:33.814+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/yZ25-ITev4Y_CHICAGO_TRAVEL_VLOG_BAECATION_food_exploring_the_c_segments.json
+[2025-04-14T22:55:34.816+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 2/6: 'Chicago travel guide'
+[2025-04-14T22:55:35.184+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago travel guide'
+[2025-04-14T22:55:35.185+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:55:35.236+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video QSwvg9Rv2EI
+[2025-04-14T22:55:35.742+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video QSwvg9Rv2EI (859 words)
+[2025-04-14T22:55:35.745+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/QSwvg9Rv2EI_Chicago_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:35.746+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/QSwvg9Rv2EI_Chicago_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:35.746+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video kFMHx6XwBk0
+[2025-04-14T22:55:36.386+0000] {youtube_dag.py:903} INFO - No English transcript found for kFMHx6XwBk0, trying en-US
+[2025-04-14T22:55:37.244+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video kFMHx6XwBk0 (1223 words)
+[2025-04-14T22:55:37.247+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide.txt
+[2025-04-14T22:55:37.248+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide_segments.json
+[2025-04-14T22:55:37.248+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video joSf9hLciH0
+[2025-04-14T22:55:37.824+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video joSf9hLciH0 (3559 words)
+[2025-04-14T22:55:37.833+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary.txt
+[2025-04-14T22:55:37.835+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary_segments.json
+[2025-04-14T22:55:37.835+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video w7t9CH5BCiU
+[2025-04-14T22:55:38.453+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video w7t9CH5BCiU (927 words)
+[2025-04-14T22:55:38.457+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide.txt
+[2025-04-14T22:55:38.458+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide_segments.json
+[2025-04-14T22:55:38.458+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 8SaG-SY07uE
+[2025-04-14T22:55:39.090+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 8SaG-SY07uE (1514 words)
+[2025-04-14T22:55:39.098+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/8SaG-SY07uE_Chicago_Travel_Guide_2024_-_Best_Places_to_Visit_i.txt
+[2025-04-14T22:55:39.099+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/8SaG-SY07uE_Chicago_Travel_Guide_2024_-_Best_Places_to_Visit_i_segments.json
+[2025-04-14T22:55:40.103+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:55:40.181+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0Z7PohGzbKU
+[2025-04-14T22:55:40.774+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0Z7PohGzbKU (1093 words)
+[2025-04-14T22:55:40.776+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els.txt
+[2025-04-14T22:55:40.777+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els_segments.json
+[2025-04-14T22:55:40.777+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video t_Pg-iXFvig
+[2025-04-14T22:55:41.294+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video t_Pg-iXFvig (2009 words)
+[2025-04-14T22:55:41.300+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/t_Pg-iXFvig_Chicago_Travel_Guide.txt
+[2025-04-14T22:55:41.301+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/t_Pg-iXFvig_Chicago_Travel_Guide_segments.json
+[2025-04-14T22:55:41.301+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 46L-zZAQ41o
+[2025-04-14T22:55:41.861+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 46L-zZAQ41o (2853 words)
+[2025-04-14T22:55:41.869+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/46L-zZAQ41o_CHICAGO_Travel_Guide_19_things_to_do_in_Chicago_20.txt
+[2025-04-14T22:55:41.870+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/46L-zZAQ41o_CHICAGO_Travel_Guide_19_things_to_do_in_Chicago_20_segments.json
+[2025-04-14T22:55:41.870+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 7sxTxs1hsKw
+[2025-04-14T22:55:42.752+0000] {youtube_dag.py:903} INFO - No English transcript found for 7sxTxs1hsKw, trying en-US
+[2025-04-14T22:55:43.181+0000] {youtube_dag.py:912} INFO - No en-US transcript found for 7sxTxs1hsKw, trying auto-translate
+[2025-04-14T22:55:43.832+0000] {youtube_dag.py:918} INFO - Translating hi transcript to English for 7sxTxs1hsKw
+[2025-04-14T22:55:44.283+0000] {youtube_dag.py:928} ERROR - Error translating transcript for 7sxTxs1hsKw: 'FetchedTranscriptSnippet' object has no attribute 'get'
+[2025-04-14T22:55:44.284+0000] {youtube_dag.py:941} WARNING - Could not find any usable transcript for 7sxTxs1hsKw
+[2025-04-14T22:55:44.284+0000] {youtube_dag.py:339} WARNING - [Chicago] No transcript available for video 7sxTxs1hsKw
+[2025-04-14T22:55:44.284+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video NmBgCRVo-Yg
+[2025-04-14T22:55:45.105+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video NmBgCRVo-Yg (2529 words)
+[2025-04-14T22:55:45.110+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/NmBgCRVo-Yg_Chicago_Illinois_Travel_Guide_4K.txt
+[2025-04-14T22:55:45.111+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/NmBgCRVo-Yg_Chicago_Illinois_Travel_Guide_4K_segments.json
+[2025-04-14T22:55:46.112+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:55:46.167+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 7AK5jUGfcGQ
+[2025-04-14T22:55:46.641+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 7AK5jUGfcGQ (1886 words)
+[2025-04-14T22:55:46.646+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide.txt
+[2025-04-14T22:55:46.650+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide_segments.json
+[2025-04-14T22:55:46.650+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video FTFnuYSz1O8
+[2025-04-14T22:55:47.216+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video FTFnuYSz1O8 (4360 words)
+[2025-04-14T22:55:47.223+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO.txt
+[2025-04-14T22:55:47.225+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO_segments.json
+[2025-04-14T22:55:47.225+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video qmgygrLXzps
+[2025-04-14T22:55:47.692+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video qmgygrLXzps (859 words)
+[2025-04-14T22:55:47.694+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/qmgygrLXzps_Top_10_Best_Things_to_Do_in_Chicago_Illinois_Chica.txt
+[2025-04-14T22:55:47.694+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/qmgygrLXzps_Top_10_Best_Things_to_Do_in_Chicago_Illinois_Chica_segments.json
+[2025-04-14T22:55:47.694+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video iWSA3sUh63Y
+[2025-04-14T22:55:48.171+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video iWSA3sUh63Y (2265 words)
+[2025-04-14T22:55:48.175+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K.txt
+[2025-04-14T22:55:48.176+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K_segments.json
+[2025-04-14T22:55:48.176+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video I8rr9sRJh-0
+[2025-04-14T22:55:49.362+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video I8rr9sRJh-0 (1313 words)
+[2025-04-14T22:55:49.371+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/I8rr9sRJh-0_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO_CHICAGO_.txt
+[2025-04-14T22:55:49.373+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/I8rr9sRJh-0_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO_CHICAGO__segments.json
+[2025-04-14T22:55:50.375+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:55:50.454+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video w2RHPBWj9K0
+[2025-04-14T22:55:51.039+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video w2RHPBWj9K0 (2829 words)
+[2025-04-14T22:55:51.047+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/w2RHPBWj9K0_Chicago_The_ULTIMATE_Travel_Guide_Must-Know_Money_.txt
+[2025-04-14T22:55:51.049+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/w2RHPBWj9K0_Chicago_The_ULTIMATE_Travel_Guide_Must-Know_Money__segments.json
+[2025-04-14T22:55:51.050+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video zcb2Tmk0SL4
+[2025-04-14T22:55:51.543+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video zcb2Tmk0SL4 (1574 words)
+[2025-04-14T22:55:51.546+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI.txt
+[2025-04-14T22:55:51.547+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI_segments.json
+[2025-04-14T22:55:51.547+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0m63oL5-ONs
+[2025-04-14T22:55:52.071+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0m63oL5-ONs (693 words)
+[2025-04-14T22:55:52.074+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0m63oL5-ONs_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO.txt
+[2025-04-14T22:55:52.075+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0m63oL5-ONs_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO_segments.json
+[2025-04-14T22:55:52.075+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video DCia9ERHd2s
+[2025-04-14T22:55:52.788+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video DCia9ERHd2s (78 words)
+[2025-04-14T22:55:52.789+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US.txt
+[2025-04-14T22:55:52.789+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US_segments.json
+[2025-04-14T22:55:52.790+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0CvnIKmbG-g
+[2025-04-14T22:55:53.712+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0CvnIKmbG-g (1765 words)
+[2025-04-14T22:55:53.718+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0CvnIKmbG-g_Chicago_Insider_Tips_Travel_Guide_Must-See_Itinera.txt
+[2025-04-14T22:55:53.720+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0CvnIKmbG-g_Chicago_Insider_Tips_Travel_Guide_Must-See_Itinera_segments.json
+[2025-04-14T22:55:54.721+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 3/6: 'Chicago tourism'
+[2025-04-14T22:55:55.093+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago tourism'
+[2025-04-14T22:55:55.094+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:55:55.220+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video joSf9hLciH0
+[2025-04-14T22:55:56.130+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video joSf9hLciH0 (3559 words)
+[2025-04-14T22:55:56.139+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary.txt
+[2025-04-14T22:55:56.141+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary_segments.json
+[2025-04-14T22:55:56.141+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video QSwvg9Rv2EI
+[2025-04-14T22:55:56.618+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video QSwvg9Rv2EI (859 words)
+[2025-04-14T22:55:56.623+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/QSwvg9Rv2EI_Chicago_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:56.624+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/QSwvg9Rv2EI_Chicago_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:56.624+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0Z7PohGzbKU
+[2025-04-14T22:55:57.178+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0Z7PohGzbKU (1093 words)
+[2025-04-14T22:55:57.183+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els.txt
+[2025-04-14T22:55:57.184+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els_segments.json
+[2025-04-14T22:55:57.185+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video iWSA3sUh63Y
+[2025-04-14T22:55:57.671+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video iWSA3sUh63Y (2265 words)
+[2025-04-14T22:55:57.679+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K.txt
+[2025-04-14T22:55:57.680+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K_segments.json
+[2025-04-14T22:55:57.680+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video kFMHx6XwBk0
+[2025-04-14T22:55:58.440+0000] {youtube_dag.py:903} INFO - No English transcript found for kFMHx6XwBk0, trying en-US
+[2025-04-14T22:55:59.466+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video kFMHx6XwBk0 (1223 words)
+[2025-04-14T22:55:59.470+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide.txt
+[2025-04-14T22:55:59.471+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide_segments.json
+[2025-04-14T22:56:00.473+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:56:00.551+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video UT8SnicEct0
+[2025-04-14T22:56:01.093+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video UT8SnicEct0 (4358 words)
+[2025-04-14T22:56:01.107+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/UT8SnicEct0_Visit_Chicago_-_The_DONTs_of_Visiting_Chicago.txt
+[2025-04-14T22:56:01.110+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/UT8SnicEct0_Visit_Chicago_-_The_DONTs_of_Visiting_Chicago_segments.json
+[2025-04-14T22:56:01.110+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0m63oL5-ONs
+[2025-04-14T22:56:01.585+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0m63oL5-ONs (693 words)
+[2025-04-14T22:56:01.586+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0m63oL5-ONs_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO.txt
+[2025-04-14T22:56:01.587+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0m63oL5-ONs_10_THINGS_TO_KNOW_BEFORE_VISITING_CHICAGO_segments.json
+[2025-04-14T22:56:01.587+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video upeGx79dgOM
+[2025-04-14T22:56:02.018+0000] {youtube_dag.py:935} WARNING - No transcript available for video upeGx79dgOM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=upeGx79dgOM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:02.019+0000] {youtube_dag.py:339} WARNING - [Chicago] No transcript available for video upeGx79dgOM
+[2025-04-14T22:56:02.019+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video V9MPX87doBk
+[2025-04-14T22:56:02.550+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video V9MPX87doBk (1001 words)
+[2025-04-14T22:56:02.553+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/V9MPX87doBk_Whats_Inside_the_New_Harry_Potter_Store_in_Chicago.txt
+[2025-04-14T22:56:02.554+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/V9MPX87doBk_Whats_Inside_the_New_Harry_Potter_Store_in_Chicago_segments.json
+[2025-04-14T22:56:02.554+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video DCia9ERHd2s
+[2025-04-14T22:56:03.083+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video DCia9ERHd2s (78 words)
+[2025-04-14T22:56:03.083+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US.txt
+[2025-04-14T22:56:03.084+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US_segments.json
+[2025-04-14T22:56:04.085+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:56:04.132+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video w7t9CH5BCiU
+[2025-04-14T22:56:04.931+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video w7t9CH5BCiU (927 words)
+[2025-04-14T22:56:04.936+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide.txt
+[2025-04-14T22:56:04.937+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide_segments.json
+[2025-04-14T22:56:04.937+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video FTFnuYSz1O8
+[2025-04-14T22:56:05.530+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video FTFnuYSz1O8 (4360 words)
+[2025-04-14T22:56:05.546+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO.txt
+[2025-04-14T22:56:05.548+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO_segments.json
+[2025-04-14T22:56:05.549+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video EKJ6BepEnfE
+[2025-04-14T22:56:06.076+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video EKJ6BepEnfE (1417 words)
+[2025-04-14T22:56:06.082+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/EKJ6BepEnfE_TOP_THINGS_TO_DO_IN_CHICAGO_ATTRACTION_GUIDE.txt
+[2025-04-14T22:56:06.084+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/EKJ6BepEnfE_TOP_THINGS_TO_DO_IN_CHICAGO_ATTRACTION_GUIDE_segments.json
+[2025-04-14T22:56:06.085+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Asw4NOHXBDQ
+[2025-04-14T22:56:06.602+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Asw4NOHXBDQ (4729 words)
+[2025-04-14T22:56:06.617+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Asw4NOHXBDQ_Chicago_USA_Why_Its_a_Must-Visit.txt
+[2025-04-14T22:56:06.620+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Asw4NOHXBDQ_Chicago_USA_Why_Its_a_Must-Visit_segments.json
+[2025-04-14T22:56:06.621+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 7AK5jUGfcGQ
+[2025-04-14T22:56:07.183+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 7AK5jUGfcGQ (1886 words)
+[2025-04-14T22:56:07.188+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide.txt
+[2025-04-14T22:56:07.190+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/7AK5jUGfcGQ_Three_Perfect_Days_in_Chicago_The_Beginners_Guide_segments.json
+[2025-04-14T22:56:08.191+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:56:08.239+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video U_U0qJZnPqM
+[2025-04-14T22:56:09.165+0000] {youtube_dag.py:935} WARNING - No transcript available for video U_U0qJZnPqM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=U_U0qJZnPqM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:09.166+0000] {youtube_dag.py:339} WARNING - [Chicago] No transcript available for video U_U0qJZnPqM
+[2025-04-14T22:56:09.166+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ll3vgvBuiU4
+[2025-04-14T22:56:09.784+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video ll3vgvBuiU4 (37 words)
+[2025-04-14T22:56:09.786+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/ll3vgvBuiU4_15_Cool_Things_To_Do_In_Chicago.txt
+[2025-04-14T22:56:09.786+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/ll3vgvBuiU4_15_Cool_Things_To_Do_In_Chicago_segments.json
+[2025-04-14T22:56:09.787+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video hKjAiCk_W1M
+[2025-04-14T22:56:10.496+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video hKjAiCk_W1M (8 words)
+[2025-04-14T22:56:10.497+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/hKjAiCk_W1M_Top_10_Best_Tourist_Places_To_Visit_In_Chicago_chi.txt
+[2025-04-14T22:56:10.497+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/hKjAiCk_W1M_Top_10_Best_Tourist_Places_To_Visit_In_Chicago_chi_segments.json
+[2025-04-14T22:56:10.498+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video NmBgCRVo-Yg
+[2025-04-14T22:56:11.065+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video NmBgCRVo-Yg (2529 words)
+[2025-04-14T22:56:11.072+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/NmBgCRVo-Yg_Chicago_Illinois_Travel_Guide_4K.txt
+[2025-04-14T22:56:11.073+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/NmBgCRVo-Yg_Chicago_Illinois_Travel_Guide_4K_segments.json
+[2025-04-14T22:56:11.073+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video z00vC92JnHY
+[2025-04-14T22:56:11.905+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video z00vC92JnHY (1577 words)
+[2025-04-14T22:56:11.910+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/z00vC92JnHY_10_BEST_Things_To_Do_In_Chicago_Illinois.txt
+[2025-04-14T22:56:11.911+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/z00vC92JnHY_10_BEST_Things_To_Do_In_Chicago_Illinois_segments.json
+[2025-04-14T22:56:12.913+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 4/6: 'Chicago must see'
+[2025-04-14T22:56:13.255+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago must see'
+[2025-04-14T22:56:13.255+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:56:13.308+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 0Z7PohGzbKU
+[2025-04-14T22:56:13.880+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 0Z7PohGzbKU (1093 words)
+[2025-04-14T22:56:13.884+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els.txt
+[2025-04-14T22:56:13.885+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/0Z7PohGzbKU_The_Chicago_5_Dont_waste_your_trip_on_anything_els_segments.json
+[2025-04-14T22:56:13.885+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video iWSA3sUh63Y
+[2025-04-14T22:56:14.640+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video iWSA3sUh63Y (2265 words)
+[2025-04-14T22:56:14.646+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K.txt
+[2025-04-14T22:56:14.646+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K_segments.json
+[2025-04-14T22:56:14.646+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video DCia9ERHd2s
+[2025-04-14T22:56:15.165+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video DCia9ERHd2s (78 words)
+[2025-04-14T22:56:15.166+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US.txt
+[2025-04-14T22:56:15.166+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/DCia9ERHd2s_Chicago_ranked_5th_Best_City_to_Travel_in_the_US_segments.json
+[2025-04-14T22:56:15.166+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video UT8SnicEct0
+[2025-04-14T22:56:15.855+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video UT8SnicEct0 (4358 words)
+[2025-04-14T22:56:15.868+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/UT8SnicEct0_Visit_Chicago_-_The_DONTs_of_Visiting_Chicago.txt
+[2025-04-14T22:56:15.870+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/UT8SnicEct0_Visit_Chicago_-_The_DONTs_of_Visiting_Chicago_segments.json
+[2025-04-14T22:56:15.870+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video FTFnuYSz1O8
+[2025-04-14T22:56:16.526+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video FTFnuYSz1O8 (4360 words)
+[2025-04-14T22:56:16.537+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO.txt
+[2025-04-14T22:56:16.539+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO_segments.json
+[2025-04-14T22:56:17.541+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:56:17.608+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video joSf9hLciH0
+[2025-04-14T22:56:18.503+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video joSf9hLciH0 (3559 words)
+[2025-04-14T22:56:18.510+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary.txt
+[2025-04-14T22:56:18.512+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/joSf9hLciH0_How_to_Spend_3_Days_in_CHICAGO_Travel_Itinerary_segments.json
+[2025-04-14T22:56:18.512+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ll3vgvBuiU4
+[2025-04-14T22:56:19.180+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video ll3vgvBuiU4 (37 words)
+[2025-04-14T22:56:19.181+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/ll3vgvBuiU4_15_Cool_Things_To_Do_In_Chicago.txt
+[2025-04-14T22:56:19.181+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/ll3vgvBuiU4_15_Cool_Things_To_Do_In_Chicago_segments.json
+[2025-04-14T22:56:19.181+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video kFMHx6XwBk0
+[2025-04-14T22:56:19.620+0000] {youtube_dag.py:903} INFO - No English transcript found for kFMHx6XwBk0, trying en-US
+[2025-04-14T22:56:20.131+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video kFMHx6XwBk0 (1223 words)
+[2025-04-14T22:56:20.134+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide.txt
+[2025-04-14T22:56:20.135+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/kFMHx6XwBk0_TOP_10_things_to_do_in_CHICAGO_Travel_Guide_segments.json
+[2025-04-14T22:56:20.135+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video wQJii-C01R4
+[2025-04-14T22:56:20.587+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video wQJii-C01R4 (3381 words)
+[2025-04-14T22:56:20.593+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/wQJii-C01R4_BULLS_POSTCAST_The_Chicago_Bulls_CLINCH_the_9_seed.txt
+[2025-04-14T22:56:20.594+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/wQJii-C01R4_BULLS_POSTCAST_The_Chicago_Bulls_CLINCH_the_9_seed_segments.json
+[2025-04-14T22:56:20.594+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video XFxtTz5NXfg
+[2025-04-14T22:56:21.092+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video XFxtTz5NXfg (76 words)
+[2025-04-14T22:56:21.092+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/XFxtTz5NXfg_AD_The_6_best_things_to_do_in_Chicago_Illinois_Enj.txt
+[2025-04-14T22:56:21.093+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/XFxtTz5NXfg_AD_The_6_best_things_to_do_in_Chicago_Illinois_Enj_segments.json
+[2025-04-14T22:56:22.124+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:56:22.198+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video w7t9CH5BCiU
+[2025-04-14T22:56:22.964+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video w7t9CH5BCiU (927 words)
+[2025-04-14T22:56:22.967+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide.txt
+[2025-04-14T22:56:22.967+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/w7t9CH5BCiU_TOP_18_Things_To_Do_In_Chicago_Travel_Guide_segments.json
+[2025-04-14T22:56:22.968+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video z00vC92JnHY
+[2025-04-14T22:56:24.058+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video z00vC92JnHY (1577 words)
+[2025-04-14T22:56:24.061+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/z00vC92JnHY_10_BEST_Things_To_Do_In_Chicago_Illinois.txt
+[2025-04-14T22:56:24.062+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/z00vC92JnHY_10_BEST_Things_To_Do_In_Chicago_Illinois_segments.json
+[2025-04-14T22:56:24.063+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video EKJ6BepEnfE
+[2025-04-14T22:56:24.608+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video EKJ6BepEnfE (1417 words)
+[2025-04-14T22:56:24.611+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/EKJ6BepEnfE_TOP_THINGS_TO_DO_IN_CHICAGO_ATTRACTION_GUIDE.txt
+[2025-04-14T22:56:24.611+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/EKJ6BepEnfE_TOP_THINGS_TO_DO_IN_CHICAGO_ATTRACTION_GUIDE_segments.json
+[2025-04-14T22:56:24.612+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video upeGx79dgOM
+[2025-04-14T22:56:25.014+0000] {youtube_dag.py:935} WARNING - No transcript available for video upeGx79dgOM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=upeGx79dgOM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:25.015+0000] {youtube_dag.py:339} WARNING - [Chicago] No transcript available for video upeGx79dgOM
+[2025-04-14T22:56:25.015+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video hKjAiCk_W1M
+[2025-04-14T22:56:25.442+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video hKjAiCk_W1M (8 words)
+[2025-04-14T22:56:25.443+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/hKjAiCk_W1M_Top_10_Best_Tourist_Places_To_Visit_In_Chicago_chi.txt
+[2025-04-14T22:56:25.443+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/hKjAiCk_W1M_Top_10_Best_Tourist_Places_To_Visit_In_Chicago_chi_segments.json
+[2025-04-14T22:56:26.450+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:56:26.504+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video hXqSPYn7Q60
+[2025-04-14T22:56:27.030+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video hXqSPYn7Q60 (216 words)
+[2025-04-14T22:56:27.032+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/hXqSPYn7Q60_Where_to_stay_eat_and_things_to_do_in_Chicago_shor.txt
+[2025-04-14T22:56:27.033+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/hXqSPYn7Q60_Where_to_stay_eat_and_things_to_do_in_Chicago_shor_segments.json
+[2025-04-14T22:56:27.034+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Jves9jauNqY
+[2025-04-14T22:56:27.674+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Jves9jauNqY (267 words)
+[2025-04-14T22:56:27.675+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Jves9jauNqY_Top_6_things_to_do_in_Chicago_travel_travelvlog.txt
+[2025-04-14T22:56:27.676+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Jves9jauNqY_Top_6_things_to_do_in_Chicago_travel_travelvlog_segments.json
+[2025-04-14T22:56:27.676+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video zcb2Tmk0SL4
+[2025-04-14T22:56:28.203+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video zcb2Tmk0SL4 (1574 words)
+[2025-04-14T22:56:28.207+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI.txt
+[2025-04-14T22:56:28.208+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/zcb2Tmk0SL4_CHICAGOS_WORST_TOURIST_TRAPS_What_NOT_to_do_in_CHI_segments.json
+[2025-04-14T22:56:28.208+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video w2RHPBWj9K0
+[2025-04-14T22:56:28.815+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video w2RHPBWj9K0 (2829 words)
+[2025-04-14T22:56:28.822+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/w2RHPBWj9K0_Chicago_The_ULTIMATE_Travel_Guide_Must-Know_Money_.txt
+[2025-04-14T22:56:28.823+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/w2RHPBWj9K0_Chicago_The_ULTIMATE_Travel_Guide_Must-Know_Money__segments.json
+[2025-04-14T22:56:28.824+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video OkSXxuooRNE
+[2025-04-14T22:56:29.305+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video OkSXxuooRNE (1551 words)
+[2025-04-14T22:56:29.316+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/OkSXxuooRNE_Iconic_Chicago_Foods_You_MUST_Eat.txt
+[2025-04-14T22:56:29.317+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/OkSXxuooRNE_Iconic_Chicago_Foods_You_MUST_Eat_segments.json
+[2025-04-14T22:56:30.320+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 5/6: 'Chicago hidden gems'
+[2025-04-14T22:56:30.720+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago hidden gems'
+[2025-04-14T22:56:30.722+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:56:30.788+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Q-4x5lmtF1A
+[2025-04-14T22:56:31.572+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Q-4x5lmtF1A (1054 words)
+[2025-04-14T22:56:31.574+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Q-4x5lmtF1A_7_Hidden_Gems_You_MUST_VISIT_in_Chicago_2024.txt
+[2025-04-14T22:56:31.575+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Q-4x5lmtF1A_7_Hidden_Gems_You_MUST_VISIT_in_Chicago_2024_segments.json
+[2025-04-14T22:56:31.575+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Bg3qOPNYEKw
+[2025-04-14T22:56:32.274+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Bg3qOPNYEKw (2065 words)
+[2025-04-14T22:56:32.279+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Bg3qOPNYEKw_Top_10_EPIC_Hidden_Gems_Secret_Spots_in_Chicago_Ev.txt
+[2025-04-14T22:56:32.280+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Bg3qOPNYEKw_Top_10_EPIC_Hidden_Gems_Secret_Spots_in_Chicago_Ev_segments.json
+[2025-04-14T22:56:32.280+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video uf-u8PYrvec
+[2025-04-14T22:56:32.834+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video uf-u8PYrvec (1830 words)
+[2025-04-14T22:56:32.841+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/uf-u8PYrvec_EXPLORE_Chicagos_Hidden_Gems_ON_FOOT.txt
+[2025-04-14T22:56:32.842+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/uf-u8PYrvec_EXPLORE_Chicagos_Hidden_Gems_ON_FOOT_segments.json
+[2025-04-14T22:56:32.842+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video mo4tpHcH2FQ
+[2025-04-14T22:56:33.435+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video mo4tpHcH2FQ (2113 words)
+[2025-04-14T22:56:33.440+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/mo4tpHcH2FQ_3_Chicago_Hidden_Gems_Explore_Chicago_Like_A_Local.txt
+[2025-04-14T22:56:33.442+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/mo4tpHcH2FQ_3_Chicago_Hidden_Gems_Explore_Chicago_Like_A_Local_segments.json
+[2025-04-14T22:56:33.442+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 5CS-TN-E50k
+[2025-04-14T22:56:33.940+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 5CS-TN-E50k (550 words)
+[2025-04-14T22:56:33.941+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/5CS-TN-E50k_Chicago_Hidden_Gems_Worth_The_Drive.txt
+[2025-04-14T22:56:33.942+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/5CS-TN-E50k_Chicago_Hidden_Gems_Worth_The_Drive_segments.json
+[2025-04-14T22:56:34.943+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:56:35.017+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video SmHQ8vuY3C0
+[2025-04-14T22:56:35.552+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video SmHQ8vuY3C0 (284 words)
+[2025-04-14T22:56:35.554+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/SmHQ8vuY3C0_Chicagos_Hidden_Gems_2024_-_3_Restaurants_You_NEED.txt
+[2025-04-14T22:56:35.554+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/SmHQ8vuY3C0_Chicagos_Hidden_Gems_2024_-_3_Restaurants_You_NEED_segments.json
+[2025-04-14T22:56:35.555+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video wqjXnxqn7w8
+[2025-04-14T22:56:36.202+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video wqjXnxqn7w8 (1144 words)
+[2025-04-14T22:56:36.207+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/wqjXnxqn7w8_Explore_Chicagos_Hidden_Gems_Iconic_Attractions_tr.txt
+[2025-04-14T22:56:36.208+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/wqjXnxqn7w8_Explore_Chicagos_Hidden_Gems_Iconic_Attractions_tr_segments.json
+[2025-04-14T22:56:36.209+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video TkHJM5UwlTM
+[2025-04-14T22:56:36.812+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video TkHJM5UwlTM (7122 words)
+[2025-04-14T22:56:36.831+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/TkHJM5UwlTM_The_Most_Beautiful_Places_in_Chicago_with_Geoffrey.txt
+[2025-04-14T22:56:36.835+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/TkHJM5UwlTM_The_Most_Beautiful_Places_in_Chicago_with_Geoffrey_segments.json
+[2025-04-14T22:56:36.835+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video V9MPX87doBk
+[2025-04-14T22:56:37.338+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video V9MPX87doBk (1001 words)
+[2025-04-14T22:56:37.341+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/V9MPX87doBk_Whats_Inside_the_New_Harry_Potter_Store_in_Chicago.txt
+[2025-04-14T22:56:37.342+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/V9MPX87doBk_Whats_Inside_the_New_Harry_Potter_Store_in_Chicago_segments.json
+[2025-04-14T22:56:37.342+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video FTFnuYSz1O8
+[2025-04-14T22:56:38.337+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video FTFnuYSz1O8 (4360 words)
+[2025-04-14T22:56:38.348+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO.txt
+[2025-04-14T22:56:38.350+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO_segments.json
+[2025-04-14T22:56:39.356+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:56:39.429+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ofuDLjajHcA
+[2025-04-14T22:56:39.964+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video ofuDLjajHcA (555 words)
+[2025-04-14T22:56:39.966+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/ofuDLjajHcA_Top_10_Hidden_Places_to_Visit_in_Chicago_Illinois_.txt
+[2025-04-14T22:56:39.967+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/ofuDLjajHcA_Top_10_Hidden_Places_to_Visit_in_Chicago_Illinois__segments.json
+[2025-04-14T22:56:39.967+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video yyNX9hlG3ts
+[2025-04-14T22:56:40.488+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video yyNX9hlG3ts (1836 words)
+[2025-04-14T22:56:40.492+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/yyNX9hlG3ts_Chicago_2025_Top_10_Must-See_Attractions_Hidden_Ge.txt
+[2025-04-14T22:56:40.492+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/yyNX9hlG3ts_Chicago_2025_Top_10_Must-See_Attractions_Hidden_Ge_segments.json
+[2025-04-14T22:56:40.493+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video VJQBfeHP90M
+[2025-04-14T22:56:41.054+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video VJQBfeHP90M (1880 words)
+[2025-04-14T22:56:41.062+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/VJQBfeHP90M_THE_BEST_CHEAP_EAT_HIDDEN_GEMS_in_CHICAGO_4K.txt
+[2025-04-14T22:56:41.064+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/VJQBfeHP90M_THE_BEST_CHEAP_EAT_HIDDEN_GEMS_in_CHICAGO_4K_segments.json
+[2025-04-14T22:56:41.065+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video sCNDBg4g5FM
+[2025-04-14T22:56:41.868+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video sCNDBg4g5FM (3442 words)
+[2025-04-14T22:56:41.876+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/sCNDBg4g5FM_Ultimate_Local_Guide_to_Chicago_Hidden_Gems_Must-S.txt
+[2025-04-14T22:56:41.878+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/sCNDBg4g5FM_Ultimate_Local_Guide_to_Chicago_Hidden_Gems_Must-S_segments.json
+[2025-04-14T22:56:41.879+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video iWSA3sUh63Y
+[2025-04-14T22:56:42.374+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video iWSA3sUh63Y (2265 words)
+[2025-04-14T22:56:42.382+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K.txt
+[2025-04-14T22:56:42.383+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/iWSA3sUh63Y_Best_Things_To_Do_in_Chicago_2025_4K_segments.json
+[2025-04-14T22:56:43.385+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:56:43.468+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video fKyRZgmjVmo
+[2025-04-14T22:56:43.997+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video fKyRZgmjVmo (35 words)
+[2025-04-14T22:56:43.999+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/fKyRZgmjVmo_Exploring_Chicagos_Hidden_Gems.txt
+[2025-04-14T22:56:44.000+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/fKyRZgmjVmo_Exploring_Chicagos_Hidden_Gems_segments.json
+[2025-04-14T22:56:44.000+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video sbi2NoWln8s
+[2025-04-14T22:56:44.554+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video sbi2NoWln8s (145 words)
+[2025-04-14T22:56:44.556+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/sbi2NoWln8s_Three_Chicago_hidden_gems_you_should_know_aboutchi.txt
+[2025-04-14T22:56:44.557+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/sbi2NoWln8s_Three_Chicago_hidden_gems_you_should_know_aboutchi_segments.json
+[2025-04-14T22:56:44.557+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 5tI309hVmMo
+[2025-04-14T22:56:45.052+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 5tI309hVmMo (174 words)
+[2025-04-14T22:56:45.053+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/5tI309hVmMo_Best_hidden_gems_in_Chicago_chicago_thingstodo_hid.txt
+[2025-04-14T22:56:45.053+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/5tI309hVmMo_Best_hidden_gems_in_Chicago_chicago_thingstodo_hid_segments.json
+[2025-04-14T22:56:45.054+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video lnadZdCsMvg
+[2025-04-14T22:56:45.855+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video lnadZdCsMvg (1364 words)
+[2025-04-14T22:56:45.859+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/lnadZdCsMvg_Discover_CHICAGOS_Hidden_Gems.txt
+[2025-04-14T22:56:45.860+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/lnadZdCsMvg_Discover_CHICAGOS_Hidden_Gems_segments.json
+[2025-04-14T22:56:45.860+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 7HV28zW1wjY
+[2025-04-14T22:56:46.520+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 7HV28zW1wjY (82 words)
+[2025-04-14T22:56:46.521+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/7HV28zW1wjY_TOP_5_HIDDEN_GEM_MENU_ITEMS_IN_CHICAGO_.txt
+[2025-04-14T22:56:46.521+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/7HV28zW1wjY_TOP_5_HIDDEN_GEM_MENU_ITEMS_IN_CHICAGO__segments.json
+[2025-04-14T22:56:47.522+0000] {youtube_dag.py:318} INFO - [Chicago] Processing query 6/6: 'Chicago food guide'
+[2025-04-14T22:56:47.944+0000] {youtube_dag.py:321} INFO - [Chicago] Found 20 videos for query: 'Chicago food guide'
+[2025-04-14T22:56:47.944+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 1/4
+[2025-04-14T22:56:48.015+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video v5eSLjASRPE
+[2025-04-14T22:56:48.592+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video v5eSLjASRPE (231 words)
+[2025-04-14T22:56:48.593+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/v5eSLjASRPE_The_5_best_food_spots_to_take_someone_visiting_Chi.txt
+[2025-04-14T22:56:48.593+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/v5eSLjASRPE_The_5_best_food_spots_to_take_someone_visiting_Chi_segments.json
+[2025-04-14T22:56:48.593+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video OkSXxuooRNE
+[2025-04-14T22:56:49.138+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video OkSXxuooRNE (1551 words)
+[2025-04-14T22:56:49.144+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/OkSXxuooRNE_Iconic_Chicago_Foods_You_MUST_Eat.txt
+[2025-04-14T22:56:49.145+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/OkSXxuooRNE_Iconic_Chicago_Foods_You_MUST_Eat_segments.json
+[2025-04-14T22:56:49.146+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Jk7UKcf7XOA
+[2025-04-14T22:56:49.919+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Jk7UKcf7XOA (3548 words)
+[2025-04-14T22:56:49.924+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Jk7UKcf7XOA_Chicago_Food_Tour_-_A_Locals_Guide_NO_Deep_Dish.txt
+[2025-04-14T22:56:49.925+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Jk7UKcf7XOA_Chicago_Food_Tour_-_A_Locals_Guide_NO_Deep_Dish_segments.json
+[2025-04-14T22:56:49.925+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video HR8COXPqGeY
+[2025-04-14T22:56:50.449+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video HR8COXPqGeY (205 words)
+[2025-04-14T22:56:50.451+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/HR8COXPqGeY_Eating_CHICAGOS_Most_Famous_Sandwiches_For_A_Full_.txt
+[2025-04-14T22:56:50.451+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/HR8COXPqGeY_Eating_CHICAGOS_Most_Famous_Sandwiches_For_A_Full__segments.json
+[2025-04-14T22:56:50.452+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video FTFnuYSz1O8
+[2025-04-14T22:56:51.053+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video FTFnuYSz1O8 (4360 words)
+[2025-04-14T22:56:51.060+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO.txt
+[2025-04-14T22:56:51.062+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/FTFnuYSz1O8_72_Hours_in_Downtown_Chicago_MUST_EAT_DO_ATTRACTIO_segments.json
+[2025-04-14T22:56:52.064+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 2/4
+[2025-04-14T22:56:52.149+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video d2d18e2hfAM
+[2025-04-14T22:56:52.677+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video d2d18e2hfAM (231 words)
+[2025-04-14T22:56:52.679+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/d2d18e2hfAM_Must-try_food_guide_for_Chicago_2-day_itinerary_ch.txt
+[2025-04-14T22:56:52.679+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/d2d18e2hfAM_Must-try_food_guide_for_Chicago_2-day_itinerary_ch_segments.json
+[2025-04-14T22:56:52.680+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ydeOJ3MEl-o
+[2025-04-14T22:56:53.275+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video ydeOJ3MEl-o (2240 words)
+[2025-04-14T22:56:53.282+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/ydeOJ3MEl-o_Chicagos_Top_Michelin_Chef_Reveals_His_Favourite_S.txt
+[2025-04-14T22:56:53.282+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/ydeOJ3MEl-o_Chicagos_Top_Michelin_Chef_Reveals_His_Favourite_S_segments.json
+[2025-04-14T22:56:53.283+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video IXjkbgrdAkw
+[2025-04-14T22:56:53.969+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video IXjkbgrdAkw (6061 words)
+[2025-04-14T22:56:53.978+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/IXjkbgrdAkw_Chicago_Street_Food_5_MUST_EAT_FOODS_You_Cant_Miss.txt
+[2025-04-14T22:56:53.981+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/IXjkbgrdAkw_Chicago_Street_Food_5_MUST_EAT_FOODS_You_Cant_Miss_segments.json
+[2025-04-14T22:56:53.981+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video wQ3N6WRjR8M
+[2025-04-14T22:56:54.783+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video wQ3N6WRjR8M (6863 words)
+[2025-04-14T22:56:54.797+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/wQ3N6WRjR8M_Cook_Bake_with_Confidence_Dennis_Prescott_Anne_Byr.txt
+[2025-04-14T22:56:54.800+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/wQ3N6WRjR8M_Cook_Bake_with_Confidence_Dennis_Prescott_Anne_Byr_segments.json
+[2025-04-14T22:56:54.800+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video E2rvIHF4z6c
+[2025-04-14T22:56:55.290+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video E2rvIHF4z6c (1183 words)
+[2025-04-14T22:56:55.294+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/E2rvIHF4z6c_Chicagos_Top_Restaurants_for_Every_Budget.txt
+[2025-04-14T22:56:55.294+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/E2rvIHF4z6c_Chicagos_Top_Restaurants_for_Every_Budget_segments.json
+[2025-04-14T22:56:56.299+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 3/4
+[2025-04-14T22:56:56.368+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 1mqXRLfw3g8
+[2025-04-14T22:56:57.779+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 1mqXRLfw3g8 (55 words)
+[2025-04-14T22:56:57.781+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/1mqXRLfw3g8_the_best_chicago_food_guide-non_touristy.txt
+[2025-04-14T22:56:57.782+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/1mqXRLfw3g8_the_best_chicago_food_guide-non_touristy_segments.json
+[2025-04-14T22:56:57.782+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video ahXWA7OB1Wk
+[2025-04-14T22:56:58.199+0000] {youtube_dag.py:935} WARNING - No transcript available for video ahXWA7OB1Wk: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ahXWA7OB1Wk! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:58.199+0000] {youtube_dag.py:339} WARNING - [Chicago] No transcript available for video ahXWA7OB1Wk
+[2025-04-14T22:56:58.200+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video cpvp7c3ipUQ
+[2025-04-14T22:56:58.998+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video cpvp7c3ipUQ (12040 words)
+[2025-04-14T22:56:59.016+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/cpvp7c3ipUQ_The_Best_Chicago_Eats_Marathon.txt
+[2025-04-14T22:56:59.020+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/cpvp7c3ipUQ_The_Best_Chicago_Eats_Marathon_segments.json
+[2025-04-14T22:56:59.021+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 3JbdgBkK3lM
+[2025-04-14T22:56:59.712+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 3JbdgBkK3lM (1487 words)
+[2025-04-14T22:56:59.718+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/3JbdgBkK3lM_17_Must_Try_Chicago_Foods_and_Drinks_Best_Food_in_.txt
+[2025-04-14T22:56:59.720+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/3JbdgBkK3lM_17_Must_Try_Chicago_Foods_and_Drinks_Best_Food_in__segments.json
+[2025-04-14T22:56:59.720+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Udy9WU-Jhlg
+[2025-04-14T22:57:00.194+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Udy9WU-Jhlg (16 words)
+[2025-04-14T22:57:00.196+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Udy9WU-Jhlg_Chicago_Suburbs_Top_5_November_chicagofoodguide_fo.txt
+[2025-04-14T22:57:00.196+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Udy9WU-Jhlg_Chicago_Suburbs_Top_5_November_chicagofoodguide_fo_segments.json
+[2025-04-14T22:57:01.199+0000] {youtube_dag.py:327} INFO - [Chicago] Processing batch 4/4
+[2025-04-14T22:57:01.267+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video Y3FRHWACSkA
+[2025-04-14T22:57:01.761+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video Y3FRHWACSkA (44 words)
+[2025-04-14T22:57:01.762+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/Y3FRHWACSkA_anti-tourist_food_guide_where_to_eat_in_Chicago.txt
+[2025-04-14T22:57:01.763+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/Y3FRHWACSkA_anti-tourist_food_guide_where_to_eat_in_Chicago_segments.json
+[2025-04-14T22:57:01.763+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video 3yZ9Rgzsook
+[2025-04-14T22:57:02.411+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video 3yZ9Rgzsook (1864 words)
+[2025-04-14T22:57:02.419+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/3yZ9Rgzsook_What_to_Eat_In_Chicago_Your_Weekend_Chicago_Food_G.txt
+[2025-04-14T22:57:02.421+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/3yZ9Rgzsook_What_to_Eat_In_Chicago_Your_Weekend_Chicago_Food_G_segments.json
+[2025-04-14T22:57:02.422+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video VYntDJlAAQA
+[2025-04-14T22:57:03.075+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video VYntDJlAAQA (94 words)
+[2025-04-14T22:57:03.077+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/VYntDJlAAQA_Sophia_Steak_River_North_chicagofoodguide_foodie_f.txt
+[2025-04-14T22:57:03.078+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/VYntDJlAAQA_Sophia_Steak_River_North_chicagofoodguide_foodie_f_segments.json
+[2025-04-14T22:57:03.079+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video fVgjusP1ZF8
+[2025-04-14T22:57:03.674+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video fVgjusP1ZF8 (4217 words)
+[2025-04-14T22:57:03.685+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/fVgjusP1ZF8_Where_to_Eat_in_Lakeview_East_Chicago_Restaurants_.txt
+[2025-04-14T22:57:03.687+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/fVgjusP1ZF8_Where_to_Eat_in_Lakeview_East_Chicago_Restaurants__segments.json
+[2025-04-14T22:57:03.687+0000] {youtube_dag.py:335} INFO - [Chicago] Retrieving transcript for video _laf49B3x3E
+[2025-04-14T22:57:04.123+0000] {youtube_dag.py:344} INFO - [Chicago] Retrieved transcript for video _laf49B3x3E (37 words)
+[2025-04-14T22:57:04.124+0000] {youtube_dag.py:381} INFO - [Chicago] Saved transcript to /opt/***/data/city_transcripts/Chicago/transcripts/_laf49B3x3E_chinatown_chicago_food_guide_where_to_eat_authenti.txt
+[2025-04-14T22:57:04.124+0000] {youtube_dag.py:387} INFO - [Chicago] Saved transcript segments to /opt/***/data/city_transcripts/Chicago/transcripts/_laf49B3x3E_chinatown_chicago_food_guide_where_to_eat_authenti_segments.json
+[2025-04-14T22:57:05.130+0000] {youtube_dag.py:426} INFO - [Chicago] Saved transcript metadata to /opt/***/data/city_transcripts/Chicago/chicago_vlog_transcripts.csv
+[2025-04-14T22:57:05.130+0000] {youtube_dag.py:430} INFO - [Chicago] Download summary: 115 successful, 5 failed
+[2025-04-14T22:57:05.130+0000] {youtube_dag.py:244} INFO - Skipping S3 upload phase for Chicago
+[2025-04-14T22:57:05.131+0000] {youtube_dag.py:248} INFO - Processing and embedding Chicago transcripts
+[2025-04-14T22:57:05.131+0000] {youtube_dag.py:552} INFO - Starting processing and embedding for Chicago
+[2025-04-14T22:57:05.131+0000] {youtube_dag.py:576} INFO - Initializing OpenAI client for Chicago
+[2025-04-14T22:57:05.149+0000] {youtube_dag.py:578} INFO - OpenAI client initialized successfully
+[2025-04-14T22:57:05.149+0000] {youtube_dag.py:590} INFO - Initializing Pinecone for Chicago
+[2025-04-14T22:57:06.627+0000] {youtube_dag.py:595} INFO - Existing Pinecone indexes: ['bigdatafinal']
+[2025-04-14T22:57:06.628+0000] {youtube_dag.py:598} INFO - Creating Pinecone index: travel-data
+[2025-04-14T22:57:07.949+0000] {youtube_dag.py:616} ERROR - Failed to initialize Pinecone: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'content-type': 'text/plain; charset=utf-8', 'access-control-allow-origin': '*', 'vary': 'origin,access-control-request-method,access-control-request-headers', 'access-control-expose-headers': '*', 'x-pinecone-api-version': '2025-01', 'x-cloud-trace-context': 'a83f0f6059120715caf0b723cb3fb7ed', 'date': 'Mon, 14 Apr 2025 22:57:07 GMT', 'server': 'Google Frontend', 'Content-Length': '200', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: {"error":{"code":"INVALID_ARGUMENT","message":"Bad request: Your free plan does not support indexes in the us-west-2 region of aws. To create indexes in this region, upgrade your plan."},"status":400}
+
+[2025-04-14T22:57:07.950+0000] {youtube_dag.py:266} INFO - Completed processing for Chicago: {"city_key": "Chicago", "transcript_count": 115, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:57:07.956+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'Chicago', 'transcript_count': 115, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:57:07.970+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:57:07.970+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_Chicago, run_id=manual__2025-04-14T22:55:13.823884+00:00, execution_date=20250414T225513, start_date=20250414T225517, end_date=20250414T225707
+[2025-04-14T22:57:07.990+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:57:08.001+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:57:08.002+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

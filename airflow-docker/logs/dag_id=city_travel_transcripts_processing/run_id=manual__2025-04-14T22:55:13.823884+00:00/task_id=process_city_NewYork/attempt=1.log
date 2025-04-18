@@ -1,0 +1,591 @@
+[2025-04-14T22:55:17.686+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:55:17.702+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.708+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.708+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:55:17.720+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_NewYork> on 2025-04-14 22:55:13.823884+00:00
+[2025-04-14T22:55:17.729+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=453) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:55:17.732+0000] {standard_task_runner.py:72} INFO - Started process 464 to run task
+[2025-04-14T22:55:17.731+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_NewYork', 'manual__2025-04-14T22:55:13.823884+00:00', '--job-id', '376', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpweueclc3']
+[2025-04-14T22:55:17.734+0000] {standard_task_runner.py:105} INFO - Job 376: Subtask process_city_NewYork
+[2025-04-14T22:55:17.787+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_NewYork manual__2025-04-14T22:55:13.823884+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:55:17.886+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_NewYork' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:55:13.823884+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:55:13.823884+00:00'
+[2025-04-14T22:55:17.888+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:55:17.897+0000] {youtube_dag.py:140} INFO - Starting processing for city: NewYork
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:155} INFO - Creating directory structure for NewYork
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:159} INFO - Created directories: /opt/***/data/city_transcripts/Newyork, /opt/***/data/city_transcripts/Newyork/transcripts
+[2025-04-14T22:55:17.898+0000] {youtube_dag.py:170} INFO - Parameters for NewYork: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:55:17.899+0000] {youtube_dag.py:186} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:55:17.899+0000] {youtube_dag.py:206} INFO - Loading spaCy model for NewYork
+[2025-04-14T22:55:18.394+0000] {youtube_dag.py:208} INFO - Successfully loaded spaCy model
+[2025-04-14T22:55:18.394+0000] {youtube_dag.py:230} INFO - Downloading transcripts for NewYork
+[2025-04-14T22:55:18.395+0000] {youtube_dag.py:281} INFO - Starting transcript download for NewYork
+[2025-04-14T22:55:18.395+0000] {youtube_dag.py:294} INFO - Initializing YouTube client for NewYork
+[2025-04-14T22:55:18.396+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2025-04-14T22:55:18.543+0000] {youtube_dag.py:301} INFO - YouTube client initialized successfully
+[2025-04-14T22:55:18.543+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 1/6: 'New York City travel vlog'
+[2025-04-14T22:55:18.961+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'New York City travel vlog'
+[2025-04-14T22:55:18.961+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:55:19.036+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video BypAiWABAK8
+[2025-04-14T22:55:19.581+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video BypAiWABAK8 (4115 words)
+[2025-04-14T22:55:19.590+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/BypAiWABAK8_NYC_Travel_Vlog_Exploring_New_York_City_w_Best_Fri.txt
+[2025-04-14T22:55:19.592+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/BypAiWABAK8_NYC_Travel_Vlog_Exploring_New_York_City_w_Best_Fri_segments.json
+[2025-04-14T22:55:19.592+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video flqL0IZOZvY
+[2025-04-14T22:55:20.124+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video flqL0IZOZvY (5208 words)
+[2025-04-14T22:55:20.136+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D.txt
+[2025-04-14T22:55:20.138+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D_segments.json
+[2025-04-14T22:55:20.139+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video zGwNeQSI2NY
+[2025-04-14T22:55:20.637+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video zGwNeQSI2NY (1816 words)
+[2025-04-14T22:55:20.645+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/zGwNeQSI2NY_New_York_City_Travel_Vlog_museum_days_record_bars_.txt
+[2025-04-14T22:55:20.647+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/zGwNeQSI2NY_New_York_City_Travel_Vlog_museum_days_record_bars__segments.json
+[2025-04-14T22:55:20.647+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3aqDhUiNSP0
+[2025-04-14T22:55:21.371+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3aqDhUiNSP0 (4610 words)
+[2025-04-14T22:55:21.381+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary.txt
+[2025-04-14T22:55:21.383+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary_segments.json
+[2025-04-14T22:55:21.383+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WthWWdXlzFI
+[2025-04-14T22:55:21.891+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WthWWdXlzFI (2167 words)
+[2025-04-14T22:55:21.896+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit.txt
+[2025-04-14T22:55:21.896+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit_segments.json
+[2025-04-14T22:55:22.898+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:55:22.963+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 1JJfWnAryrM
+[2025-04-14T22:55:23.499+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 1JJfWnAryrM (1856 words)
+[2025-04-14T22:55:23.503+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting_.txt
+[2025-04-14T22:55:23.504+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting__segments.json
+[2025-04-14T22:55:23.504+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ksS_FhU7Kk0
+[2025-04-14T22:55:24.028+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ksS_FhU7Kk0 (5286 words)
+[2025-04-14T22:55:24.043+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress.txt
+[2025-04-14T22:55:24.045+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:24.048+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video TT2R5B9F3EQ
+[2025-04-14T22:55:24.699+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video TT2R5B9F3EQ (3435 words)
+[2025-04-14T22:55:24.709+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress.txt
+[2025-04-14T22:55:24.711+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:24.711+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 23wY0KbTZAQ
+[2025-04-14T22:55:25.159+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 23wY0KbTZAQ (1403 words)
+[2025-04-14T22:55:25.163+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/23wY0KbTZAQ_Thompson_Street_to_WASHINGTON_SQUARE_PARK_Walking_.txt
+[2025-04-14T22:55:25.164+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/23wY0KbTZAQ_Thompson_Street_to_WASHINGTON_SQUARE_PARK_Walking__segments.json
+[2025-04-14T22:55:25.164+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video Y7HVDYGSJsI
+[2025-04-14T22:55:25.737+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video Y7HVDYGSJsI (3339 words)
+[2025-04-14T22:55:25.746+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/Y7HVDYGSJsI_OUR_DREAM_TRIP_7_Day_New_York_City_Travel_Guide.txt
+[2025-04-14T22:55:25.748+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/Y7HVDYGSJsI_OUR_DREAM_TRIP_7_Day_New_York_City_Travel_Guide_segments.json
+[2025-04-14T22:55:26.751+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:55:26.853+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video NrDMVbSo_rM
+[2025-04-14T22:55:27.537+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video NrDMVbSo_rM (1978 words)
+[2025-04-14T22:55:27.546+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/NrDMVbSo_rM_New_York_City_Travel_Vlog_exploring_New_York_City_.txt
+[2025-04-14T22:55:27.548+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/NrDMVbSo_rM_New_York_City_Travel_Vlog_exploring_New_York_City__segments.json
+[2025-04-14T22:55:27.549+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ZP-VkSWUoRo
+[2025-04-14T22:55:28.032+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ZP-VkSWUoRo (2676 words)
+[2025-04-14T22:55:28.039+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ZP-VkSWUoRo_NEW_YORK_CITY_TRAVEL_VLOG_the_best_NYC_itinerary.txt
+[2025-04-14T22:55:28.041+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ZP-VkSWUoRo_NEW_YORK_CITY_TRAVEL_VLOG_the_best_NYC_itinerary_segments.json
+[2025-04-14T22:55:28.041+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video qiIj96tbxRM
+[2025-04-14T22:55:28.498+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video qiIj96tbxRM (1716 words)
+[2025-04-14T22:55:28.503+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/qiIj96tbxRM_NYC_Travel_Vlog_EVERYTHING_you_need_to_eat_in_New_.txt
+[2025-04-14T22:55:28.504+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/qiIj96tbxRM_NYC_Travel_Vlog_EVERYTHING_you_need_to_eat_in_New__segments.json
+[2025-04-14T22:55:28.505+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video nA8xoR00KxY
+[2025-04-14T22:55:29.108+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video nA8xoR00KxY (5 words)
+[2025-04-14T22:55:29.109+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/nA8xoR00KxY_New_York_City_Vlog_Traveling_in_USA_New_York_State.txt
+[2025-04-14T22:55:29.109+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/nA8xoR00KxY_New_York_City_Vlog_Traveling_in_USA_New_York_State_segments.json
+[2025-04-14T22:55:29.112+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 7YknzQlKoZ4
+[2025-04-14T22:55:29.882+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 7YknzQlKoZ4 (979 words)
+[2025-04-14T22:55:29.887+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/7YknzQlKoZ4_NYC_DIARIES_my_first_time_in_new_york_shopping_in_.txt
+[2025-04-14T22:55:29.889+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/7YknzQlKoZ4_NYC_DIARIES_my_first_time_in_new_york_shopping_in__segments.json
+[2025-04-14T22:55:30.890+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:55:30.968+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video SheHmgLMdRI
+[2025-04-14T22:55:31.412+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video SheHmgLMdRI (139 words)
+[2025-04-14T22:55:31.413+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/SheHmgLMdRI_DONT_do_this_with_NYC_Pizza.txt
+[2025-04-14T22:55:31.413+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/SheHmgLMdRI_DONT_do_this_with_NYC_Pizza_segments.json
+[2025-04-14T22:55:31.413+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ro6_3EyQ0JA
+[2025-04-14T22:55:31.939+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ro6_3EyQ0JA (3924 words)
+[2025-04-14T22:55:31.947+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ro6_3EyQ0JA_BEST_Local_Guide_to_NYC_Manhattan_Brooklyn_Harlem_.txt
+[2025-04-14T22:55:31.949+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ro6_3EyQ0JA_BEST_Local_Guide_to_NYC_Manhattan_Brooklyn_Harlem__segments.json
+[2025-04-14T22:55:31.949+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video TjpXRPLntOg
+[2025-04-14T22:55:32.528+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video TjpXRPLntOg (2562 words)
+[2025-04-14T22:55:32.537+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/TjpXRPLntOg_New_York_A_Day_in_New_York_City_-_Travel_Vlog_What.txt
+[2025-04-14T22:55:32.539+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/TjpXRPLntOg_New_York_A_Day_in_New_York_City_-_Travel_Vlog_What_segments.json
+[2025-04-14T22:55:32.539+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video I_Pd_hFNmB0
+[2025-04-14T22:55:33.264+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video I_Pd_hFNmB0 (2552 words)
+[2025-04-14T22:55:33.272+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K.txt
+[2025-04-14T22:55:33.274+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K_segments.json
+[2025-04-14T22:55:33.275+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 9TvhZXNy3_A
+[2025-04-14T22:55:33.900+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 9TvhZXNy3_A (5359 words)
+[2025-04-14T22:55:33.914+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/9TvhZXNy3_A_NEW_YORK_VLOG_5_days_travel_things_to_do_in_the_ci.txt
+[2025-04-14T22:55:33.916+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/9TvhZXNy3_A_NEW_YORK_VLOG_5_days_travel_things_to_do_in_the_ci_segments.json
+[2025-04-14T22:55:34.917+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 2/6: 'NYC travel guide'
+[2025-04-14T22:55:35.294+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'NYC travel guide'
+[2025-04-14T22:55:35.294+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:55:35.368+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video MtCMtC50gwY
+[2025-04-14T22:55:35.845+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video MtCMtC50gwY (727 words)
+[2025-04-14T22:55:35.848+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/MtCMtC50gwY_New_York_City_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:35.849+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/MtCMtC50gwY_New_York_City_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:35.849+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video flqL0IZOZvY
+[2025-04-14T22:55:36.365+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video flqL0IZOZvY (5208 words)
+[2025-04-14T22:55:36.380+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D.txt
+[2025-04-14T22:55:36.383+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D_segments.json
+[2025-04-14T22:55:36.383+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 1JJfWnAryrM
+[2025-04-14T22:55:36.884+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 1JJfWnAryrM (1856 words)
+[2025-04-14T22:55:36.892+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting_.txt
+[2025-04-14T22:55:36.894+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting__segments.json
+[2025-04-14T22:55:36.894+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video QHstChTtwQs
+[2025-04-14T22:55:37.432+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video QHstChTtwQs (5713 words)
+[2025-04-14T22:55:37.450+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/QHstChTtwQs_NYC_TRAVEL_TIPS_FOR_FIRST_TIMERS_40_Must-Knows_Bef.txt
+[2025-04-14T22:55:37.451+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/QHstChTtwQs_NYC_TRAVEL_TIPS_FOR_FIRST_TIMERS_40_Must-Knows_Bef_segments.json
+[2025-04-14T22:55:37.451+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video TT2R5B9F3EQ
+[2025-04-14T22:55:38.276+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video TT2R5B9F3EQ (3435 words)
+[2025-04-14T22:55:38.287+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress.txt
+[2025-04-14T22:55:38.288+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:39.289+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:55:39.338+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WLSnrXEtrT4
+[2025-04-14T22:55:39.939+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WLSnrXEtrT4 (2323 words)
+[2025-04-14T22:55:39.947+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu.txt
+[2025-04-14T22:55:39.948+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu_segments.json
+[2025-04-14T22:55:39.948+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video VXoQyC9-DC8
+[2025-04-14T22:55:40.454+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video VXoQyC9-DC8 (3031 words)
+[2025-04-14T22:55:40.463+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T.txt
+[2025-04-14T22:55:40.465+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T_segments.json
+[2025-04-14T22:55:40.465+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3aqDhUiNSP0
+[2025-04-14T22:55:41.045+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3aqDhUiNSP0 (4610 words)
+[2025-04-14T22:55:41.058+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary.txt
+[2025-04-14T22:55:41.060+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary_segments.json
+[2025-04-14T22:55:41.060+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 23wY0KbTZAQ
+[2025-04-14T22:55:41.739+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 23wY0KbTZAQ (1403 words)
+[2025-04-14T22:55:41.743+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/23wY0KbTZAQ_Thompson_Street_to_WASHINGTON_SQUARE_PARK_Walking_.txt
+[2025-04-14T22:55:41.745+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/23wY0KbTZAQ_Thompson_Street_to_WASHINGTON_SQUARE_PARK_Walking__segments.json
+[2025-04-14T22:55:41.745+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video I9gotv1kmzM
+[2025-04-14T22:55:42.471+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video I9gotv1kmzM (1878 words)
+[2025-04-14T22:55:42.479+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/I9gotv1kmzM_25_ESSENTIAL_New_York_City_Tips_in_10_Minutes.txt
+[2025-04-14T22:55:42.480+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/I9gotv1kmzM_25_ESSENTIAL_New_York_City_Tips_in_10_Minutes_segments.json
+[2025-04-14T22:55:43.482+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:55:43.591+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video toMRwG9JrT0
+[2025-04-14T22:55:44.248+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video toMRwG9JrT0 (5669 words)
+[2025-04-14T22:55:44.263+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/toMRwG9JrT0_New_York_City_Travel_Guide_-_20_Experiences_YOU_MU.txt
+[2025-04-14T22:55:44.266+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/toMRwG9JrT0_New_York_City_Travel_Guide_-_20_Experiences_YOU_MU_segments.json
+[2025-04-14T22:55:44.266+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WthWWdXlzFI
+[2025-04-14T22:55:45.323+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WthWWdXlzFI (2167 words)
+[2025-04-14T22:55:45.329+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit.txt
+[2025-04-14T22:55:45.329+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit_segments.json
+[2025-04-14T22:55:45.330+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video kQrcRfbcIPM
+[2025-04-14T22:55:46.038+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video kQrcRfbcIPM (42936 words)
+[2025-04-14T22:55:46.134+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/kQrcRfbcIPM_The_ONLY_NYC_Travel_Guide_Youll_Ever_Need.txt
+[2025-04-14T22:55:46.139+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/kQrcRfbcIPM_The_ONLY_NYC_Travel_Guide_Youll_Ever_Need_segments.json
+[2025-04-14T22:55:46.140+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video UTLrEKGu9Vo
+[2025-04-14T22:55:46.571+0000] {youtube_dag.py:935} WARNING - No transcript available for video UTLrEKGu9Vo: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=UTLrEKGu9Vo! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:46.572+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video UTLrEKGu9Vo
+[2025-04-14T22:55:46.575+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video dXj2aFRwyYo
+[2025-04-14T22:55:47.123+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video dXj2aFRwyYo (1297 words)
+[2025-04-14T22:55:47.126+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/dXj2aFRwyYo_How_to_Spend_5_days_in_New_York_City_-_Travel_Itin.txt
+[2025-04-14T22:55:47.127+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/dXj2aFRwyYo_How_to_Spend_5_days_in_New_York_City_-_Travel_Itin_segments.json
+[2025-04-14T22:55:48.128+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:55:48.182+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ksS_FhU7Kk0
+[2025-04-14T22:55:48.754+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ksS_FhU7Kk0 (5286 words)
+[2025-04-14T22:55:48.766+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress.txt
+[2025-04-14T22:55:48.767+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:48.767+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video b4nlA7hQfZo
+[2025-04-14T22:55:49.647+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video b4nlA7hQfZo (1782 words)
+[2025-04-14T22:55:49.652+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/b4nlA7hQfZo_5_Day_NYC_Itinerary_New_York_City_Travel_Guide.txt
+[2025-04-14T22:55:49.653+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/b4nlA7hQfZo_5_Day_NYC_Itinerary_New_York_City_Travel_Guide_segments.json
+[2025-04-14T22:55:49.653+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video oG6Sw__VXN8
+[2025-04-14T22:55:50.208+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video oG6Sw__VXN8 (292 words)
+[2025-04-14T22:55:50.209+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/oG6Sw__VXN8_NYC_weekend_itinerary_for_first_timers.txt
+[2025-04-14T22:55:50.210+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/oG6Sw__VXN8_NYC_weekend_itinerary_for_first_timers_segments.json
+[2025-04-14T22:55:50.210+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video i6tcnbseaBw
+[2025-04-14T22:55:50.682+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video i6tcnbseaBw (180 words)
+[2025-04-14T22:55:50.683+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/i6tcnbseaBw_DO_NOT_DO_THIS_IN_NEW_YORK.txt
+[2025-04-14T22:55:50.684+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/i6tcnbseaBw_DO_NOT_DO_THIS_IN_NEW_YORK_segments.json
+[2025-04-14T22:55:50.684+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video PlSUxD7j-II
+[2025-04-14T22:55:51.437+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video PlSUxD7j-II (121 words)
+[2025-04-14T22:55:51.439+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/PlSUxD7j-II_3_days_in_New_York_Complete_Travel_Guide.txt
+[2025-04-14T22:55:51.439+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/PlSUxD7j-II_3_days_in_New_York_Complete_Travel_Guide_segments.json
+[2025-04-14T22:55:52.442+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 3/6: 'Manhattan tourism'
+[2025-04-14T22:55:52.782+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'Manhattan tourism'
+[2025-04-14T22:55:52.783+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:55:52.848+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 1JJfWnAryrM
+[2025-04-14T22:55:53.345+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 1JJfWnAryrM (1856 words)
+[2025-04-14T22:55:53.349+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting_.txt
+[2025-04-14T22:55:53.350+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting__segments.json
+[2025-04-14T22:55:53.350+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video flqL0IZOZvY
+[2025-04-14T22:55:53.878+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video flqL0IZOZvY (5208 words)
+[2025-04-14T22:55:53.891+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D.txt
+[2025-04-14T22:55:53.893+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D_segments.json
+[2025-04-14T22:55:53.894+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video TT2R5B9F3EQ
+[2025-04-14T22:55:54.409+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video TT2R5B9F3EQ (3435 words)
+[2025-04-14T22:55:54.420+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress.txt
+[2025-04-14T22:55:54.421+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:54.422+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video I_Pd_hFNmB0
+[2025-04-14T22:55:55.036+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video I_Pd_hFNmB0 (2552 words)
+[2025-04-14T22:55:55.051+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K.txt
+[2025-04-14T22:55:55.052+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K_segments.json
+[2025-04-14T22:55:55.053+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WLSnrXEtrT4
+[2025-04-14T22:55:55.580+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WLSnrXEtrT4 (2323 words)
+[2025-04-14T22:55:55.587+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu.txt
+[2025-04-14T22:55:55.587+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu_segments.json
+[2025-04-14T22:55:56.590+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:55:56.647+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3aqDhUiNSP0
+[2025-04-14T22:55:57.475+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3aqDhUiNSP0 (4610 words)
+[2025-04-14T22:55:57.488+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary.txt
+[2025-04-14T22:55:57.490+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary_segments.json
+[2025-04-14T22:55:57.490+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ksS_FhU7Kk0
+[2025-04-14T22:55:58.046+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ksS_FhU7Kk0 (5286 words)
+[2025-04-14T22:55:58.063+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress.txt
+[2025-04-14T22:55:58.064+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress_segments.json
+[2025-04-14T22:55:58.064+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video FjU_x1106pg
+[2025-04-14T22:55:58.564+0000] {youtube_dag.py:935} WARNING - No transcript available for video FjU_x1106pg: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=FjU_x1106pg! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:58.565+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video FjU_x1106pg
+[2025-04-14T22:55:58.565+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video KgdIeyauSJ0
+[2025-04-14T22:55:59.063+0000] {youtube_dag.py:903} INFO - No English transcript found for KgdIeyauSJ0, trying en-US
+[2025-04-14T22:55:59.462+0000] {youtube_dag.py:912} INFO - No en-US transcript found for KgdIeyauSJ0, trying auto-translate
+[2025-04-14T22:55:59.838+0000] {youtube_dag.py:918} INFO - Translating pt transcript to English for KgdIeyauSJ0
+[2025-04-14T22:56:00.094+0000] {youtube_dag.py:928} ERROR - Error translating transcript for KgdIeyauSJ0: 'FetchedTranscriptSnippet' object has no attribute 'get'
+[2025-04-14T22:56:00.095+0000] {youtube_dag.py:941} WARNING - Could not find any usable transcript for KgdIeyauSJ0
+[2025-04-14T22:56:00.096+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video KgdIeyauSJ0
+[2025-04-14T22:56:00.096+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video MtCMtC50gwY
+[2025-04-14T22:56:00.750+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video MtCMtC50gwY (727 words)
+[2025-04-14T22:56:00.755+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/MtCMtC50gwY_New_York_City_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:56:00.757+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/MtCMtC50gwY_New_York_City_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:56:01.758+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:56:01.836+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video mXmBJk_8460
+[2025-04-14T22:56:02.440+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video mXmBJk_8460 (2015 words)
+[2025-04-14T22:56:02.447+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/mXmBJk_8460_Deadly_NYC_helicopter_crash_into_Hudson_River_new_.txt
+[2025-04-14T22:56:02.447+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/mXmBJk_8460_Deadly_NYC_helicopter_crash_into_Hudson_River_new__segments.json
+[2025-04-14T22:56:02.448+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video m5ooVaAl7pU
+[2025-04-14T22:56:02.951+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video m5ooVaAl7pU (51 words)
+[2025-04-14T22:56:02.951+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/m5ooVaAl7pU_Top_10_Places_to_Visit_in_New_York.txt
+[2025-04-14T22:56:02.952+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/m5ooVaAl7pU_Top_10_Places_to_Visit_in_New_York_segments.json
+[2025-04-14T22:56:02.952+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video sBWmTxYqZ3U
+[2025-04-14T22:56:03.676+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video sBWmTxYqZ3U (397 words)
+[2025-04-14T22:56:03.678+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/sBWmTxYqZ3U_New_York_and_New_Jersey_face_big_hit_as_Canadian_t.txt
+[2025-04-14T22:56:03.678+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/sBWmTxYqZ3U_New_York_and_New_Jersey_face_big_hit_as_Canadian_t_segments.json
+[2025-04-14T22:56:03.678+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video VXoQyC9-DC8
+[2025-04-14T22:56:04.140+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video VXoQyC9-DC8 (3031 words)
+[2025-04-14T22:56:04.147+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T.txt
+[2025-04-14T22:56:04.148+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T_segments.json
+[2025-04-14T22:56:04.148+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video AXSyVwCQ8Ds
+[2025-04-14T22:56:04.595+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video AXSyVwCQ8Ds (515 words)
+[2025-04-14T22:56:04.596+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/AXSyVwCQ8Ds_The_Most_Overlooked_Landmark_in_NYC.txt
+[2025-04-14T22:56:04.597+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/AXSyVwCQ8Ds_The_Most_Overlooked_Landmark_in_NYC_segments.json
+[2025-04-14T22:56:05.598+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:56:05.682+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video dxsawQOQ9lU
+[2025-04-14T22:56:06.235+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video dxsawQOQ9lU (6624 words)
+[2025-04-14T22:56:06.254+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/dxsawQOQ9lU_New_York_USA_The_largest_city_in_America.txt
+[2025-04-14T22:56:06.257+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/dxsawQOQ9lU_New_York_USA_The_largest_city_in_America_segments.json
+[2025-04-14T22:56:06.257+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video OeG8kVL9et8
+[2025-04-14T22:56:06.728+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video OeG8kVL9et8 (1750 words)
+[2025-04-14T22:56:06.735+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit_.txt
+[2025-04-14T22:56:06.736+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit__segments.json
+[2025-04-14T22:56:06.736+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video u_BfhroTR1s
+[2025-04-14T22:56:07.222+0000] {youtube_dag.py:935} WARNING - No transcript available for video u_BfhroTR1s: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=u_BfhroTR1s! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:07.223+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video u_BfhroTR1s
+[2025-04-14T22:56:07.223+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video RyvFc_Aht8Y
+[2025-04-14T22:56:07.754+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video RyvFc_Aht8Y (1855 words)
+[2025-04-14T22:56:07.762+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/RyvFc_Aht8Y_ULTIMATE_Guide_To_The_High_Line_in_NYC_20_Things_T.txt
+[2025-04-14T22:56:07.764+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/RyvFc_Aht8Y_ULTIMATE_Guide_To_The_High_Line_in_NYC_20_Things_T_segments.json
+[2025-04-14T22:56:07.765+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 80lyZtH30FQ
+[2025-04-14T22:56:08.222+0000] {youtube_dag.py:935} WARNING - No transcript available for video 80lyZtH30FQ: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=80lyZtH30FQ! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:08.222+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video 80lyZtH30FQ
+[2025-04-14T22:56:09.229+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 4/6: 'NYC must see'
+[2025-04-14T22:56:09.634+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'NYC must see'
+[2025-04-14T22:56:09.634+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:56:09.703+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 1JJfWnAryrM
+[2025-04-14T22:56:10.219+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 1JJfWnAryrM (1856 words)
+[2025-04-14T22:56:10.228+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting_.txt
+[2025-04-14T22:56:10.230+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/1JJfWnAryrM_12_Things_Every_First_Timer_MUST_DO_When_Visiting__segments.json
+[2025-04-14T22:56:10.230+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video TT2R5B9F3EQ
+[2025-04-14T22:56:10.772+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video TT2R5B9F3EQ (3435 words)
+[2025-04-14T22:56:10.786+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress.txt
+[2025-04-14T22:56:10.788+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/TT2R5B9F3EQ_How_To_See_NYC_in_3_Days_Without_The_Stress_segments.json
+[2025-04-14T22:56:10.789+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video I_Pd_hFNmB0
+[2025-04-14T22:56:11.533+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video I_Pd_hFNmB0 (2552 words)
+[2025-04-14T22:56:11.540+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K.txt
+[2025-04-14T22:56:11.541+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/I_Pd_hFNmB0_Best_Things_To_Do_in_New_York_City_2025_4K_segments.json
+[2025-04-14T22:56:11.541+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ksS_FhU7Kk0
+[2025-04-14T22:56:12.264+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ksS_FhU7Kk0 (5286 words)
+[2025-04-14T22:56:12.280+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress.txt
+[2025-04-14T22:56:12.281+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress_segments.json
+[2025-04-14T22:56:12.281+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video UTLrEKGu9Vo
+[2025-04-14T22:56:12.893+0000] {youtube_dag.py:935} WARNING - No transcript available for video UTLrEKGu9Vo: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=UTLrEKGu9Vo! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:12.894+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video UTLrEKGu9Vo
+[2025-04-14T22:56:13.896+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:56:13.986+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3aqDhUiNSP0
+[2025-04-14T22:56:14.749+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3aqDhUiNSP0 (4610 words)
+[2025-04-14T22:56:14.761+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary.txt
+[2025-04-14T22:56:14.763+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3aqDhUiNSP0_How_to_Spend_4_Days_in_NEW_YORK_Travel_Itinerary_segments.json
+[2025-04-14T22:56:14.764+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 6WdlY2EVLKI
+[2025-04-14T22:56:15.594+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 6WdlY2EVLKI (3500 words)
+[2025-04-14T22:56:15.605+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/6WdlY2EVLKI_Ultimate_New_York_Bucket_List_50_Must-Do_Activitie.txt
+[2025-04-14T22:56:15.606+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/6WdlY2EVLKI_Ultimate_New_York_Bucket_List_50_Must-Do_Activitie_segments.json
+[2025-04-14T22:56:15.607+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video mWzogob2cq0
+[2025-04-14T22:56:16.140+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video mWzogob2cq0 (1655 words)
+[2025-04-14T22:56:16.146+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/mWzogob2cq0_NYC_First_Timers_GUIDE_10_MUST_Do_Experiences.txt
+[2025-04-14T22:56:16.146+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/mWzogob2cq0_NYC_First_Timers_GUIDE_10_MUST_Do_Experiences_segments.json
+[2025-04-14T22:56:16.147+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 6dB5q_XKCsY
+[2025-04-14T22:56:16.643+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 6dB5q_XKCsY (9635 words)
+[2025-04-14T22:56:16.664+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/6dB5q_XKCsY_April_Resurrection_Series_Part_2_Adoration_Palm_Su.txt
+[2025-04-14T22:56:16.668+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/6dB5q_XKCsY_April_Resurrection_Series_Part_2_Adoration_Palm_Su_segments.json
+[2025-04-14T22:56:16.669+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video zBUR6bIa2Po
+[2025-04-14T22:56:17.152+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video zBUR6bIa2Po (1754 words)
+[2025-04-14T22:56:17.160+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/zBUR6bIa2Po_NYC_in_2025_Top_10_COOLEST_things_to_do_all_brand_.txt
+[2025-04-14T22:56:17.161+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/zBUR6bIa2Po_NYC_in_2025_Top_10_COOLEST_things_to_do_all_brand__segments.json
+[2025-04-14T22:56:18.166+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:56:18.218+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WLSnrXEtrT4
+[2025-04-14T22:56:18.716+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WLSnrXEtrT4 (2323 words)
+[2025-04-14T22:56:18.724+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu.txt
+[2025-04-14T22:56:18.725+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WLSnrXEtrT4_TOP_10_Things_to_do_in_NEW_YORK_CITY_NYC_Travel_Gu_segments.json
+[2025-04-14T22:56:18.725+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WthWWdXlzFI
+[2025-04-14T22:56:19.428+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WthWWdXlzFI (2167 words)
+[2025-04-14T22:56:19.433+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit.txt
+[2025-04-14T22:56:19.433+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit_segments.json
+[2025-04-14T22:56:19.433+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video VXoQyC9-DC8
+[2025-04-14T22:56:19.908+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video VXoQyC9-DC8 (3031 words)
+[2025-04-14T22:56:19.916+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T.txt
+[2025-04-14T22:56:19.917+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/VXoQyC9-DC8_Preparing_to_visit_NYC_Tips_What_to_Expect_FIRST_T_segments.json
+[2025-04-14T22:56:19.917+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video m5ooVaAl7pU
+[2025-04-14T22:56:20.420+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video m5ooVaAl7pU (51 words)
+[2025-04-14T22:56:20.420+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/m5ooVaAl7pU_Top_10_Places_to_Visit_in_New_York.txt
+[2025-04-14T22:56:20.421+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/m5ooVaAl7pU_Top_10_Places_to_Visit_in_New_York_segments.json
+[2025-04-14T22:56:20.421+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video -MSL-VdS8e8
+[2025-04-14T22:56:20.896+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video -MSL-VdS8e8 (1580 words)
+[2025-04-14T22:56:20.899+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/-MSL-VdS8e8_7_Secrets_Every_NYC_Tourist_Needs_To_Know.txt
+[2025-04-14T22:56:20.900+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/-MSL-VdS8e8_7_Secrets_Every_NYC_Tourist_Needs_To_Know_segments.json
+[2025-04-14T22:56:21.901+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:56:21.951+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video mAPeCpcUTVo
+[2025-04-14T22:56:22.373+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video mAPeCpcUTVo (3044 words)
+[2025-04-14T22:56:22.379+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/mAPeCpcUTVo_10_places_you_MUST_VISIT_in_NYC_before_you_DIE_.txt
+[2025-04-14T22:56:22.380+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/mAPeCpcUTVo_10_places_you_MUST_VISIT_in_NYC_before_you_DIE__segments.json
+[2025-04-14T22:56:22.380+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video OeG8kVL9et8
+[2025-04-14T22:56:23.405+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video OeG8kVL9et8 (1750 words)
+[2025-04-14T22:56:23.409+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit_.txt
+[2025-04-14T22:56:23.410+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit__segments.json
+[2025-04-14T22:56:23.410+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 9v61LoCUZZQ
+[2025-04-14T22:56:24.162+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 9v61LoCUZZQ (2188 words)
+[2025-04-14T22:56:24.169+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/9v61LoCUZZQ_Things_To_Do_In_New_York_City_-_Bucket_List_Editio.txt
+[2025-04-14T22:56:24.172+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/9v61LoCUZZQ_Things_To_Do_In_New_York_City_-_Bucket_List_Editio_segments.json
+[2025-04-14T22:56:24.172+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 9FO3z-PfPoE
+[2025-04-14T22:56:24.841+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 9FO3z-PfPoE (148 words)
+[2025-04-14T22:56:24.842+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/9FO3z-PfPoE_NYCs_craziest_travel_scams_.txt
+[2025-04-14T22:56:24.843+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/9FO3z-PfPoE_NYCs_craziest_travel_scams__segments.json
+[2025-04-14T22:56:24.843+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video oG6Sw__VXN8
+[2025-04-14T22:56:25.358+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video oG6Sw__VXN8 (292 words)
+[2025-04-14T22:56:25.361+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/oG6Sw__VXN8_NYC_weekend_itinerary_for_first_timers.txt
+[2025-04-14T22:56:25.362+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/oG6Sw__VXN8_NYC_weekend_itinerary_for_first_timers_segments.json
+[2025-04-14T22:56:26.368+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 5/6: 'NYC hidden gems'
+[2025-04-14T22:56:26.696+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'NYC hidden gems'
+[2025-04-14T22:56:26.696+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:56:26.777+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video OyJmHTYn-Z4
+[2025-04-14T22:56:27.245+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video OyJmHTYn-Z4 (1455 words)
+[2025-04-14T22:56:27.251+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/OyJmHTYn-Z4_Top_5_NYC_Hidden_Gems_NOT_To_Skip.txt
+[2025-04-14T22:56:27.251+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/OyJmHTYn-Z4_Top_5_NYC_Hidden_Gems_NOT_To_Skip_segments.json
+[2025-04-14T22:56:27.252+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 8jrtg1jNnNs
+[2025-04-14T22:56:27.834+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 8jrtg1jNnNs (2053 words)
+[2025-04-14T22:56:27.842+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/8jrtg1jNnNs_22_Hidden_Gems_in_New_York_City_That_Even_Locals_M.txt
+[2025-04-14T22:56:27.843+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/8jrtg1jNnNs_22_Hidden_Gems_in_New_York_City_That_Even_Locals_M_segments.json
+[2025-04-14T22:56:27.843+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video q3VuuDBIyMM
+[2025-04-14T22:56:28.363+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video q3VuuDBIyMM (1817 words)
+[2025-04-14T22:56:28.368+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/q3VuuDBIyMM_7_Hidden_Gems_in_NYC_You_MUST_Visit_2024.txt
+[2025-04-14T22:56:28.370+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/q3VuuDBIyMM_7_Hidden_Gems_in_NYC_You_MUST_Visit_2024_segments.json
+[2025-04-14T22:56:28.370+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video OeG8kVL9et8
+[2025-04-14T22:56:28.810+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video OeG8kVL9et8 (1750 words)
+[2025-04-14T22:56:28.816+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit_.txt
+[2025-04-14T22:56:28.817+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/OeG8kVL9et8_Places_New_Yorkers_dont_want_tourists_to_visit__segments.json
+[2025-04-14T22:56:28.817+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video EvOEqfoFvcU
+[2025-04-14T22:56:29.404+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video EvOEqfoFvcU (146 words)
+[2025-04-14T22:56:29.407+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/EvOEqfoFvcU_You_definitely_havent_heard_of_this_NYC_hidden_gem.txt
+[2025-04-14T22:56:29.410+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/EvOEqfoFvcU_You_definitely_havent_heard_of_this_NYC_hidden_gem_segments.json
+[2025-04-14T22:56:30.414+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:56:30.493+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 0jIeAQJubBc
+[2025-04-14T22:56:31.070+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 0jIeAQJubBc (1953 words)
+[2025-04-14T22:56:31.077+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/0jIeAQJubBc_10_AMAZING_Hidden_Gems_Secret_Spots_in_NYC_MUST_VI.txt
+[2025-04-14T22:56:31.079+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/0jIeAQJubBc_10_AMAZING_Hidden_Gems_Secret_Spots_in_NYC_MUST_VI_segments.json
+[2025-04-14T22:56:31.079+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video UWgN5wCRAQM
+[2025-04-14T22:56:31.664+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video UWgN5wCRAQM (3575 words)
+[2025-04-14T22:56:31.672+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/UWgN5wCRAQM_Hidden_Secrets_of_New_York_City.txt
+[2025-04-14T22:56:31.673+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/UWgN5wCRAQM_Hidden_Secrets_of_New_York_City_segments.json
+[2025-04-14T22:56:31.674+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video RLCnNY7jA_k
+[2025-04-14T22:56:32.538+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video RLCnNY7jA_k (1160 words)
+[2025-04-14T22:56:32.543+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/RLCnNY7jA_k_Best_HIDDEN_GEMS_in_Times_Square_NYC.txt
+[2025-04-14T22:56:32.543+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/RLCnNY7jA_k_Best_HIDDEN_GEMS_in_Times_Square_NYC_segments.json
+[2025-04-14T22:56:32.544+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video W81dlqR_34s
+[2025-04-14T22:56:33.242+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video W81dlqR_34s (1087 words)
+[2025-04-14T22:56:33.247+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/W81dlqR_34s__A_Drones_Eye_View_New_Yorks_Hidden_Gems_NewYorkCi.txt
+[2025-04-14T22:56:33.248+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/W81dlqR_34s__A_Drones_Eye_View_New_Yorks_Hidden_Gems_NewYorkCi_segments.json
+[2025-04-14T22:56:33.248+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3gNph25gxhw
+[2025-04-14T22:56:33.823+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3gNph25gxhw (3103 words)
+[2025-04-14T22:56:33.834+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3gNph25gxhw_Exploring_New_York_Citys_Hidden_Culinary_Gems_Cook.txt
+[2025-04-14T22:56:33.836+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3gNph25gxhw_Exploring_New_York_Citys_Hidden_Culinary_Gems_Cook_segments.json
+[2025-04-14T22:56:34.839+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:56:34.895+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video vLrzD1eF4PQ
+[2025-04-14T22:56:35.701+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video vLrzD1eF4PQ (1369 words)
+[2025-04-14T22:56:35.706+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/vLrzD1eF4PQ_NEW_YORKS_BEST_Hidden_Gems_Secret_Places.txt
+[2025-04-14T22:56:35.707+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/vLrzD1eF4PQ_NEW_YORKS_BEST_Hidden_Gems_Secret_Places_segments.json
+[2025-04-14T22:56:35.708+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video -MSL-VdS8e8
+[2025-04-14T22:56:36.244+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video -MSL-VdS8e8 (1580 words)
+[2025-04-14T22:56:36.249+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/-MSL-VdS8e8_7_Secrets_Every_NYC_Tourist_Needs_To_Know.txt
+[2025-04-14T22:56:36.250+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/-MSL-VdS8e8_7_Secrets_Every_NYC_Tourist_Needs_To_Know_segments.json
+[2025-04-14T22:56:36.250+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 0K4TBLacFjU
+[2025-04-14T22:56:36.840+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 0K4TBLacFjU (1392 words)
+[2025-04-14T22:56:36.843+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/0K4TBLacFjU_NYCS_HIDDEN_GEM.txt
+[2025-04-14T22:56:36.844+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/0K4TBLacFjU_NYCS_HIDDEN_GEM_segments.json
+[2025-04-14T22:56:36.844+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 4b9gzvRE3MQ
+[2025-04-14T22:56:37.362+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 4b9gzvRE3MQ (165 words)
+[2025-04-14T22:56:37.363+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/4b9gzvRE3MQ_NYC_Itinerary_unique_New_York_attractions_and_hidd.txt
+[2025-04-14T22:56:37.363+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/4b9gzvRE3MQ_NYC_Itinerary_unique_New_York_attractions_and_hidd_segments.json
+[2025-04-14T22:56:37.363+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video wUgd-SSCkXs
+[2025-04-14T22:56:38.192+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video wUgd-SSCkXs (2243 words)
+[2025-04-14T22:56:38.199+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/wUgd-SSCkXs_50_Best_FREE_Things_To_Do_in_New_York_City.txt
+[2025-04-14T22:56:38.201+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/wUgd-SSCkXs_50_Best_FREE_Things_To_Do_in_New_York_City_segments.json
+[2025-04-14T22:56:39.203+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:56:39.276+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 6WdlY2EVLKI
+[2025-04-14T22:56:39.937+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 6WdlY2EVLKI (3500 words)
+[2025-04-14T22:56:39.950+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/6WdlY2EVLKI_Ultimate_New_York_Bucket_List_50_Must-Do_Activitie.txt
+[2025-04-14T22:56:39.952+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/6WdlY2EVLKI_Ultimate_New_York_Bucket_List_50_Must-Do_Activitie_segments.json
+[2025-04-14T22:56:39.953+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ksS_FhU7Kk0
+[2025-04-14T22:56:40.446+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ksS_FhU7Kk0 (5286 words)
+[2025-04-14T22:56:40.460+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress.txt
+[2025-04-14T22:56:40.461+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ksS_FhU7Kk0_How_To_See_NYC_in_4_Days_Without_The_Stress_segments.json
+[2025-04-14T22:56:40.462+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video VzDX6_3e9rA
+[2025-04-14T22:56:41.677+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video VzDX6_3e9rA (43367 words)
+[2025-04-14T22:56:41.756+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/VzDX6_3e9rA_COMPLETE_NYC_Secret_Places_Hidden_Gems_Guide_2025.txt
+[2025-04-14T22:56:41.769+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/VzDX6_3e9rA_COMPLETE_NYC_Secret_Places_Hidden_Gems_Guide_2025_segments.json
+[2025-04-14T22:56:41.770+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 7xVk2Jpt0fY
+[2025-04-14T22:56:42.462+0000] {youtube_dag.py:935} WARNING - No transcript available for video 7xVk2Jpt0fY: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=7xVk2Jpt0fY! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:42.463+0000] {youtube_dag.py:339} WARNING - [NewYork] No transcript available for video 7xVk2Jpt0fY
+[2025-04-14T22:56:42.464+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video OaAW-a2nJ7A
+[2025-04-14T22:56:42.953+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video OaAW-a2nJ7A (1161 words)
+[2025-04-14T22:56:42.959+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/OaAW-a2nJ7A_New_Yorks_Top_10_Hidden_Gems_Best_Kept_Secrets_202.txt
+[2025-04-14T22:56:42.960+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/OaAW-a2nJ7A_New_Yorks_Top_10_Hidden_Gems_Best_Kept_Secrets_202_segments.json
+[2025-04-14T22:56:43.964+0000] {youtube_dag.py:318} INFO - [NewYork] Processing query 6/6: 'NYC food guide'
+[2025-04-14T22:56:44.370+0000] {youtube_dag.py:321} INFO - [NewYork] Found 20 videos for query: 'NYC food guide'
+[2025-04-14T22:56:44.371+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 1/4
+[2025-04-14T22:56:44.449+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video ODluYyMZzs0
+[2025-04-14T22:56:44.983+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video ODluYyMZzs0 (2213 words)
+[2025-04-14T22:56:44.991+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/ODluYyMZzs0_Top_5_NYC_Foods_You_MUST_TRY_Before_You_Die.txt
+[2025-04-14T22:56:44.992+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/ODluYyMZzs0_Top_5_NYC_Foods_You_MUST_TRY_Before_You_Die_segments.json
+[2025-04-14T22:56:44.992+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video zN5VfiDX_9Q
+[2025-04-14T22:56:45.761+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video zN5VfiDX_9Q (262 words)
+[2025-04-14T22:56:45.762+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/zN5VfiDX_9Q_Anthony_Bourdain_on_what_you_should_eat_in_New_Yor.txt
+[2025-04-14T22:56:45.762+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/zN5VfiDX_9Q_Anthony_Bourdain_on_what_you_should_eat_in_New_Yor_segments.json
+[2025-04-14T22:56:45.763+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 3odHzPRZars
+[2025-04-14T22:56:46.585+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 3odHzPRZars (42725 words)
+[2025-04-14T22:56:46.666+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/3odHzPRZars_COMPLETE_NYC_Food_Guide_for_2025_Watch_Before_You_.txt
+[2025-04-14T22:56:46.678+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/3odHzPRZars_COMPLETE_NYC_Food_Guide_for_2025_Watch_Before_You__segments.json
+[2025-04-14T22:56:46.680+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video Fr06X3WeWCg
+[2025-04-14T22:56:47.241+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video Fr06X3WeWCg (142 words)
+[2025-04-14T22:56:47.242+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/Fr06X3WeWCg_NYC_Top_10_Foods_2022.txt
+[2025-04-14T22:56:47.243+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/Fr06X3WeWCg_NYC_Top_10_Foods_2022_segments.json
+[2025-04-14T22:56:47.243+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video rQ5yvwJWHP4
+[2025-04-14T22:56:47.793+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video rQ5yvwJWHP4 (1746 words)
+[2025-04-14T22:56:47.798+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/rQ5yvwJWHP4_NYC_Food_Guide_-_13_Must_Hit_Places_to_Eat_in_New_.txt
+[2025-04-14T22:56:47.799+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/rQ5yvwJWHP4_NYC_Food_Guide_-_13_Must_Hit_Places_to_Eat_in_New__segments.json
+[2025-04-14T22:56:48.800+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 2/4
+[2025-04-14T22:56:48.866+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video yygImdiCkYI
+[2025-04-14T22:56:49.405+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video yygImdiCkYI (2489 words)
+[2025-04-14T22:56:49.414+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/yygImdiCkYI_Top_10_NYC_Foods_You_MUST_try_Before_you_DIE.txt
+[2025-04-14T22:56:49.417+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/yygImdiCkYI_Top_10_NYC_Foods_You_MUST_try_Before_you_DIE_segments.json
+[2025-04-14T22:56:49.417+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video AOqdn2Dz4ls
+[2025-04-14T22:56:49.955+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video AOqdn2Dz4ls (904 words)
+[2025-04-14T22:56:49.957+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/AOqdn2Dz4ls_BEST_NYC_FOOD_Spots_Everyones_Talking_About_2025.txt
+[2025-04-14T22:56:49.958+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/AOqdn2Dz4ls_BEST_NYC_FOOD_Spots_Everyones_Talking_About_2025_segments.json
+[2025-04-14T22:56:49.958+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video _zqRbkuSrj0
+[2025-04-14T22:56:50.777+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video _zqRbkuSrj0 (27638 words)
+[2025-04-14T22:56:50.829+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/_zqRbkuSrj0_25_Bucket_List_NYC_Foods_Insider_Food_Marathon.txt
+[2025-04-14T22:56:50.838+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/_zqRbkuSrj0_25_Bucket_List_NYC_Foods_Insider_Food_Marathon_segments.json
+[2025-04-14T22:56:50.839+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 1h5hHNKXby4
+[2025-04-14T22:56:51.393+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 1h5hHNKXby4 (90 words)
+[2025-04-14T22:56:51.393+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/1h5hHNKXby4_The_best_food_spots_to_hit_for_a_NYC_trip_foodie_t.txt
+[2025-04-14T22:56:51.394+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/1h5hHNKXby4_The_best_food_spots_to_hit_for_a_NYC_trip_foodie_t_segments.json
+[2025-04-14T22:56:51.394+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video cZlrTuhFOek
+[2025-04-14T22:56:52.149+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video cZlrTuhFOek (219 words)
+[2025-04-14T22:56:52.155+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/cZlrTuhFOek_Only_eating_viral_food_for_a_full_day_in_NYC_foodi.txt
+[2025-04-14T22:56:52.162+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/cZlrTuhFOek_Only_eating_viral_food_for_a_full_day_in_NYC_foodi_segments.json
+[2025-04-14T22:56:53.163+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 3/4
+[2025-04-14T22:56:53.227+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WHlqm72HsJc
+[2025-04-14T22:56:53.788+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WHlqm72HsJc (3193 words)
+[2025-04-14T22:56:53.798+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WHlqm72HsJc_EVERYTHING_you_should_do_EAT_in_NYC.txt
+[2025-04-14T22:56:53.800+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WHlqm72HsJc_EVERYTHING_you_should_do_EAT_in_NYC_segments.json
+[2025-04-14T22:56:53.805+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 9FcSH-fjOfE
+[2025-04-14T22:56:54.271+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 9FcSH-fjOfE (2836 words)
+[2025-04-14T22:56:54.277+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/9FcSH-fjOfE_I_Ranked_NYCs_Most_Famous_Restaurants_from_WORST_t.txt
+[2025-04-14T22:56:54.278+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/9FcSH-fjOfE_I_Ranked_NYCs_Most_Famous_Restaurants_from_WORST_t_segments.json
+[2025-04-14T22:56:54.278+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video Br_yz-JbazE
+[2025-04-14T22:56:54.811+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video Br_yz-JbazE (3711 words)
+[2025-04-14T22:56:54.819+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/Br_yz-JbazE_The_ULTIMATE_New_York_City_Food_Tour_2025.txt
+[2025-04-14T22:56:54.821+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/Br_yz-JbazE_The_ULTIMATE_New_York_City_Food_Tour_2025_segments.json
+[2025-04-14T22:56:54.821+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video XkUOl9FAfCM
+[2025-04-14T22:56:55.390+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video XkUOl9FAfCM (3178 words)
+[2025-04-14T22:56:55.399+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/XkUOl9FAfCM_The_Best_New_York_Food_Spots_-_Watch_Before_You_Go.txt
+[2025-04-14T22:56:55.400+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/XkUOl9FAfCM_The_Best_New_York_Food_Spots_-_Watch_Before_You_Go_segments.json
+[2025-04-14T22:56:55.401+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video 8IcE3ODtUK4
+[2025-04-14T22:56:55.913+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video 8IcE3ODtUK4 (7128 words)
+[2025-04-14T22:56:55.933+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/8IcE3ODtUK4_New_Yorks_Best_Restaurants_2024_Where_Chefs_Eat.txt
+[2025-04-14T22:56:55.935+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/8IcE3ODtUK4_New_Yorks_Best_Restaurants_2024_Where_Chefs_Eat_segments.json
+[2025-04-14T22:56:56.938+0000] {youtube_dag.py:327} INFO - [NewYork] Processing batch 4/4
+[2025-04-14T22:56:56.994+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video WthWWdXlzFI
+[2025-04-14T22:56:57.515+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video WthWWdXlzFI (2167 words)
+[2025-04-14T22:56:57.525+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit.txt
+[2025-04-14T22:56:57.527+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/WthWWdXlzFI_NYC_Travel_Mistakes_What_NOT_to_Do_in_New_York_Cit_segments.json
+[2025-04-14T22:56:57.527+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video flqL0IZOZvY
+[2025-04-14T22:56:58.423+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video flqL0IZOZvY (5208 words)
+[2025-04-14T22:56:58.438+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D.txt
+[2025-04-14T22:56:58.441+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/flqL0IZOZvY_The_PERFECT_Trip_to_New_York_City_Best_Things_to_D_segments.json
+[2025-04-14T22:56:58.441+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video SDLRwV0ywGI
+[2025-04-14T22:56:59.241+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video SDLRwV0ywGI (2577 words)
+[2025-04-14T22:56:59.248+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/SDLRwV0ywGI_NYC_food_spots_you_must_try.txt
+[2025-04-14T22:56:59.249+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/SDLRwV0ywGI_NYC_food_spots_you_must_try_segments.json
+[2025-04-14T22:56:59.249+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video Q4Rdi1q8L9Y
+[2025-04-14T22:56:59.923+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video Q4Rdi1q8L9Y (1982 words)
+[2025-04-14T22:56:59.929+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/Q4Rdi1q8L9Y_The_8_BEST_Cheap_Eats_in_New_York_City_5_FOOD_GUID.txt
+[2025-04-14T22:56:59.930+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/Q4Rdi1q8L9Y_The_8_BEST_Cheap_Eats_in_New_York_City_5_FOOD_GUID_segments.json
+[2025-04-14T22:56:59.930+0000] {youtube_dag.py:335} INFO - [NewYork] Retrieving transcript for video bgXYWX6n6f0
+[2025-04-14T22:57:00.882+0000] {youtube_dag.py:344} INFO - [NewYork] Retrieved transcript for video bgXYWX6n6f0 (80 words)
+[2025-04-14T22:57:00.883+0000] {youtube_dag.py:381} INFO - [NewYork] Saved transcript to /opt/***/data/city_transcripts/Newyork/transcripts/bgXYWX6n6f0_NYCs_TOP_50_Restaurants_No_1_4_Charles_Prime_Rib_s.txt
+[2025-04-14T22:57:00.883+0000] {youtube_dag.py:387} INFO - [NewYork] Saved transcript segments to /opt/***/data/city_transcripts/Newyork/transcripts/bgXYWX6n6f0_NYCs_TOP_50_Restaurants_No_1_4_Charles_Prime_Rib_s_segments.json
+[2025-04-14T22:57:01.893+0000] {youtube_dag.py:426} INFO - [NewYork] Saved transcript metadata to /opt/***/data/city_transcripts/Newyork/nyc_vlog_transcripts.csv
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:430} INFO - [NewYork] Download summary: 113 successful, 7 failed
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:244} INFO - Skipping S3 upload phase for NewYork
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:248} INFO - Processing and embedding NewYork transcripts
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:552} INFO - Starting processing and embedding for NewYork
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:576} INFO - Initializing OpenAI client for NewYork
+[2025-04-14T22:57:01.913+0000] {youtube_dag.py:578} INFO - OpenAI client initialized successfully
+[2025-04-14T22:57:01.913+0000] {youtube_dag.py:590} INFO - Initializing Pinecone for NewYork
+[2025-04-14T22:57:03.658+0000] {youtube_dag.py:595} INFO - Existing Pinecone indexes: ['bigdatafinal']
+[2025-04-14T22:57:03.658+0000] {youtube_dag.py:598} INFO - Creating Pinecone index: travel-data
+[2025-04-14T22:57:05.453+0000] {youtube_dag.py:616} ERROR - Failed to initialize Pinecone: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'content-type': 'text/plain; charset=utf-8', 'access-control-allow-origin': '*', 'vary': 'origin,access-control-request-method,access-control-request-headers', 'access-control-expose-headers': '*', 'x-pinecone-api-version': '2025-01', 'x-cloud-trace-context': '66922d45420fa3c5c5532b64eec27011', 'date': 'Mon, 14 Apr 2025 22:57:05 GMT', 'server': 'Google Frontend', 'Content-Length': '200', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: {"error":{"code":"INVALID_ARGUMENT","message":"Bad request: Your free plan does not support indexes in the us-west-2 region of aws. To create indexes in this region, upgrade your plan."},"status":400}
+
+[2025-04-14T22:57:05.457+0000] {youtube_dag.py:266} INFO - Completed processing for NewYork: {"city_key": "NewYork", "transcript_count": 113, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:57:05.468+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'NewYork', 'transcript_count': 113, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:57:05.490+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:57:05.491+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_NewYork, run_id=manual__2025-04-14T22:55:13.823884+00:00, execution_date=20250414T225513, start_date=20250414T225517, end_date=20250414T225705
+[2025-04-14T22:57:05.522+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:57:05.533+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:57:05.534+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

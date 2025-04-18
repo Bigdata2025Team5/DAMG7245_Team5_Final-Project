@@ -10,18 +10,13 @@ snowflake-connector-python==3.0.4
 # Web frameworks
 fastapi==0.100.0
 uvicorn==0.21.1
+python-dotenv==1.0.0
 streamlit==1.22.0
 
-# Env variables
-python-dotenv==1.0.0
+openai==1.14.2
+litellm==1.31.6
 
-# LLM and AI
-openai==1.14.2                  # ✅ supports beta.threads & works with litellm
-litellm==1.31.6                 # ✅ latest as of Apr 2025, tested with openai>=1.12
-langchain==0.1.16               # ✅ stable & compatible with crewai 0.1.32
-langchain-openai==0.0.2         # ✅ matches langchain==0.1.16
-crewai==0.1.32                  # ✅ compatible with above stack
+langchain==0.1.16
+langchain-openai==0.3.14
+crewai==0.114.0
 
-# REMOVE: 'dotenv' (incorrect — use 'python-dotenv')
-google-cloud-aiplatform
-vertexai

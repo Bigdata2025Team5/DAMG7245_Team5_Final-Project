@@ -1,10 +1,12 @@
 name: Build and Deploy to Google Cloud Run
 
 on:
-  push:
-   branches: [ main ]
-  #pull_request:
-   # branches: [ main ]
+  workflow_run:
+    workflows: ["CI - Backend Endpoint Testing"]
+    types:
+      - completed
+    branches:
+      - main
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -49,7 +51,24 @@ jobs:
           --region $REGION \
           --allow-unauthenticated \
           --port 8000 \
-          --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}"
+          --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},\
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},\
+          SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},\
+          SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},\
+          SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},\
+          SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},\
+          SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},\
+          SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }},\
+          SNOWFLAKE_ROLE=${{ secrets.SNOWFLAKE_ROLE }},\
+          AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }},\
+          AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }},\
+          AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }},\
+          GCP_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }},\
+          GCP_SA_KEY=${{ secrets.GCP_SA_KEY }},\
+          PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }},\
+          PINECONE_CLOUD=${{ secrets.PINECONE_CLOUD }},\
+          PINECONE_INDEX=${{ secrets.PINECONE_INDEX }},\
+          PINECONE_REGION=${{ secrets.PINECONE_REGION }}"
     
     - name: Show deployed service URL
       run: echo "Service deployed to ${{ steps.deploy.outputs.url }}"

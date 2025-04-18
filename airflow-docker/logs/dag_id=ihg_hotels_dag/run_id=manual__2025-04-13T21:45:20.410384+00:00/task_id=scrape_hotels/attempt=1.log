@@ -1,0 +1,69 @@
+[2025-04-13T21:45:21.477+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T21:45:21.483+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:45:20.410384+00:00 [queued]>
+[2025-04-13T21:45:21.485+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:45:20.410384+00:00 [queued]>
+[2025-04-13T21:45:21.486+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-13T21:45:21.489+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-13 21:45:20.410384+00:00
+[2025-04-13T21:45:21.493+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1376) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T21:45:21.494+0000] {standard_task_runner.py:72} INFO - Started process 1377 to run task
+[2025-04-13T21:45:21.495+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'manual__2025-04-13T21:45:20.410384+00:00', '--job-id', '195', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpyqey16od']
+[2025-04-13T21:45:21.497+0000] {standard_task_runner.py:105} INFO - Job 195: Subtask scrape_hotels
+[2025-04-13T21:45:21.517+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T21:45:20.410384+00:00 [running]> on host 2af885ea35b8
+[2025-04-13T21:45:21.549+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T21:45:20.410384+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T21:45:20.410384+00:00'
+[2025-04-13T21:45:21.550+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T21:45:21.767+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in New York...
+[2025-04-13T21:45:21.768+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in New York...
+[2025-04-13T21:45:25.002+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for New York
+[2025-04-13T21:45:25.002+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in New York...
+[2025-04-13T21:45:55.018+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in New York: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:45:59.324+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in San Francisco...
+[2025-04-13T21:45:59.326+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in San Francisco...
+[2025-04-13T21:46:01.216+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for San Francisco
+[2025-04-13T21:46:01.216+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in San Francisco...
+[2025-04-13T21:46:31.221+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in San Francisco: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:46:35.199+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in Chicago...
+[2025-04-13T21:46:35.201+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Chicago...
+[2025-04-13T21:46:37.013+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Chicago
+[2025-04-13T21:46:37.013+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in Chicago...
+[2025-04-13T21:47:07.018+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in Chicago: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:47:11.358+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in Seattle...
+[2025-04-13T21:47:11.360+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Seattle...
+[2025-04-13T21:47:12.995+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Seattle
+[2025-04-13T21:47:12.996+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in Seattle...
+[2025-04-13T21:47:43.005+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in Seattle: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:47:45.958+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in Las Vegas...
+[2025-04-13T21:47:45.959+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Las Vegas...
+[2025-04-13T21:47:48.941+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Las Vegas
+[2025-04-13T21:47:48.942+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in Las Vegas...
+[2025-04-13T21:48:18.945+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in Las Vegas: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:48:22.189+0000] {hotel_scrape_dag.py:184} INFO - Scraping hotels in Los Angeles...
+[2025-04-13T21:48:22.191+0000] {hotel_scrape_dag.py:50} INFO - Scraping hotels in Los Angeles...
+[2025-04-13T21:48:24.509+0000] {hotel_scrape_dag.py:63} INFO - Saved initial screenshot for Los Angeles
+[2025-04-13T21:48:24.509+0000] {hotel_scrape_dag.py:66} INFO - Waiting for hotel cards in Los Angeles...
+[2025-04-13T21:48:54.522+0000] {hotel_scrape_dag.py:82} ERROR - Failed to find hotel cards in Los Angeles: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("div[data-component-hotelcard]") to be visible
+
+[2025-04-13T21:48:59.091+0000] {hotel_scrape_dag.py:194} INFO - ✅ Saved 0 records to multi_city_ihg_hotels.csv
+[2025-04-13T21:48:59.093+0000] {python.py:240} INFO - Done. Returned value was: 0
+[2025-04-13T21:48:59.117+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T21:48:59.117+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=manual__2025-04-13T21:45:20.410384+00:00, execution_date=20250413T214520, start_date=20250413T214521, end_date=20250413T214859
+[2025-04-13T21:48:59.141+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T21:48:59.160+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T21:48:59.160+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

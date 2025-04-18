@@ -1,0 +1,40 @@
+[2025-04-14T22:57:11.413+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:57:11.419+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.generate_summary manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:57:11.422+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.generate_summary manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:57:11.422+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:57:11.425+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): generate_summary> on 2025-04-14 22:55:13.823884+00:00
+[2025-04-14T22:57:11.429+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=487) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:57:11.430+0000] {standard_task_runner.py:72} INFO - Started process 488 to run task
+[2025-04-14T22:57:11.430+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'generate_summary', 'manual__2025-04-14T22:55:13.823884+00:00', '--job-id', '377', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpcj6oij2j']
+[2025-04-14T22:57:11.431+0000] {standard_task_runner.py:105} INFO - Job 377: Subtask generate_summary
+[2025-04-14T22:57:11.451+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.generate_summary manual__2025-04-14T22:55:13.823884+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:57:11.478+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='generate_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:55:13.823884+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:55:13.823884+00:00'
+[2025-04-14T22:57:11.479+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:57:11.484+0000] {youtube_dag.py:800} INFO - Generating processing summary
+[2025-04-14T22:57:11.488+0000] {youtube_dag.py:822} INFO - Retrieved results for NewYork: 113 transcripts, 0 vectors
+[2025-04-14T22:57:11.490+0000] {youtube_dag.py:822} INFO - Retrieved results for Chicago: 115 transcripts, 0 vectors
+[2025-04-14T22:57:11.492+0000] {youtube_dag.py:822} INFO - Retrieved results for LasVegas: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.494+0000] {youtube_dag.py:822} INFO - Retrieved results for LosAngeles: 104 transcripts, 0 vectors
+[2025-04-14T22:57:11.496+0000] {youtube_dag.py:822} INFO - Retrieved results for Seattle: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.499+0000] {youtube_dag.py:822} INFO - Retrieved results for SanFrancisco: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.499+0000] {youtube_dag.py:842} INFO - 
+===== MULTI-CITY PROCESSING SUMMARY =====
+[2025-04-14T22:57:11.499+0000] {youtube_dag.py:843} INFO - Total transcripts processed: 665
+[2025-04-14T22:57:11.499+0000] {youtube_dag.py:844} INFO - Total files uploaded to S3: 0
+[2025-04-14T22:57:11.499+0000] {youtube_dag.py:845} INFO - Total vectors uploaded to Pinecone: 0
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:846} INFO - 
+Per-city breakdown:
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   NewYork: 113 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   Chicago: 115 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   LasVegas: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   LosAngeles: 104 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   Seattle: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {youtube_dag.py:849} INFO -   SanFrancisco: 111 transcripts, 0 vectors
+[2025-04-14T22:57:11.500+0000] {python.py:240} INFO - Done. Returned value was: {'total_transcripts': 665, 'total_s3_files': 0, 'total_vectors': 0, 'city_results': {'NewYork': {'city_key': 'NewYork', 'transcript_count': 113, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}, 'Chicago': {'city_key': 'Chicago', 'transcript_count': 115, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}, 'LasVegas': {'city_key': 'LasVegas', 'transcript_count': 111, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}, 'LosAngeles': {'city_key': 'LosAngeles', 'transcript_count': 104, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}, 'Seattle': {'city_key': 'Seattle', 'transcript_count': 111, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}, 'SanFrancisco': {'city_key': 'SanFrancisco', 'transcript_count': 111, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}}}
+[2025-04-14T22:57:11.506+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:57:11.507+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=generate_summary, run_id=manual__2025-04-14T22:55:13.823884+00:00, execution_date=20250414T225513, start_date=20250414T225711, end_date=20250414T225711
+[2025-04-14T22:57:11.529+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:57:11.537+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:57:11.538+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

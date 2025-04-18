@@ -136,7 +136,7 @@ services:
         condition: service_completed_successfully
     environment:
       <<: *airflow-common-env
-      _PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
+      #_PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
 
   airflow-scheduler:
     <<: *airflow-common
@@ -155,7 +155,7 @@ services:
         condition: service_completed_successfully
     environment:
       <<: *airflow-common-env
-      _PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
+      #_PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
       AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
 
   airflow-worker:
@@ -173,7 +173,7 @@ services:
       start_period: 30s
     environment:
       <<: *airflow-common-env
-      _PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
+      #_PIP_ADDITIONAL_REQUIREMENTS: "playwright snowflake-connector-python beautifulsoup4 requests boto3 python-dotenv pandas"
       AIRFLOW__CORE__DEFAULT_TIMEZONE: America/New_York
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation

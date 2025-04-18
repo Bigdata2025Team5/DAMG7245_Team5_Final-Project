@@ -1,16 +1,23 @@
+# tests/test_main.py
+
+import pytest
 from fastapi.testclient import TestClient
-from backend.main import app  # Adjust this import based on your actual file structure
+from backend.main import app  # Adjust if path is different
 
 client = TestClient(app)
 
+
+@pytest.mark.unit
 def test_root():
-    """Test root status endpoint"""
+    """Unit: Root status endpoint"""
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"status": "online"}
 
+
+@pytest.mark.unit
 def test_health_check():
-    """Test health check endpoint"""
+    """Unit: Health check endpoint"""
     response = client.get("/health")
     assert response.status_code == 200
     assert response.json() == {
@@ -18,8 +25,10 @@ def test_health_check():
         "message": "Service is running"
     }
 
+
+@pytest.mark.integration
 def test_generate_itinerary_valid():
-    """Test valid itinerary generation"""
+    """Integration: Valid itinerary generation"""
     payload = {
         "city": "New York",
         "start_date": "2025-04-20",
@@ -39,12 +48,14 @@ def test_generate_itinerary_valid():
     assert "itinerary_html" in data
     assert "itinerary_text" in data
 
+
+@pytest.mark.integration
 def test_generate_itinerary_invalid_dates():
-    """Test itinerary generation with end_date before start_date"""
+    """Integration: Itinerary generation fails if end_date < start_date"""
     payload = {
         "city": "Chicago",
         "start_date": "2025-04-25",
-        "end_date": "2025-04-20",  # Invalid: end < start
+        "end_date": "2025-04-20",
         "preference": "Suggest an itinerary with Things to do",
         "travel_type": "Solo",
         "adults": 1,
@@ -57,12 +68,12 @@ def test_generate_itinerary_invalid_dates():
     response = client.post("/generate-itinerary", json=payload)
     assert response.status_code == 422
 
+
+@pytest.mark.integration
 def test_ask_question_empty():
-    """Test /ask endpoint with an empty question"""
+    """Integration: Ask endpoint fails with empty question"""
     response = client.post("/ask", json={
         "itinerary": "Sample itinerary text.",
         "question": ""
     })
     assert response.status_code in [422, 500]
-
-

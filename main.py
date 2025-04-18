@@ -1,6 +1,7 @@
 import os
 import json
 import traceback
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
@@ -173,6 +174,11 @@ Generate a {num_days}-day HTML travel itinerary for a trip to {data['city']} fro
 def root():
     return {"status": "online"}
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Cloud Run passes $PORT
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+
 @app.post("/generate-itinerary")
 def generate_itinerary(payload: ItineraryInput):
     try:
@@ -261,3 +267,7 @@ def regenerate_itinerary(payload: dict):
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="Error regenerating itinerary")
+    
+    
+from fastapi.responses import RedirectResponse
+

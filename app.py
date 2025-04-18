@@ -6,7 +6,7 @@ from datetime import date, timedelta
 st.set_page_config(page_title="✈️ AI Travel Itinerary Planner", page_icon="🌍", layout="wide")
 
 # Constants
-BACKEND_URL = "http://localhost:8000"
+BACKEND_URL = "https://travel-planner-app-577642034601.us-central1.run.app"
 CITIES = ["New York", "San Francisco", "Chicago", "Seattle", "Las Vegas", "Los Angeles"]
 BUDGET_RANGES = ["Low (Less than $300/day)", "Medium ($300-$700/day)", "High (Above $700/day)"]
 

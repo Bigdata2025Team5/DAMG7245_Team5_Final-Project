@@ -1,9 +1,10 @@
 name: Build and Deploy to Google Cloud Run
 
 on:
-  push:
+  #push:
+   # branches: [ main ]
+  pull_request:
     branches: [ main ]
-  
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -16,10 +17,17 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+
+    - name: Google Auth
+      id: auth
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+
 
     - name: Set up Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@v0
+      uses: google-github-actions/setup-gcloud@v1
       with:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: ${{ secrets.GCP_PROJECT_ID }}
@@ -40,4 +48,7 @@ jobs:
           --region $REGION \
           --allow-unauthenticated \
           --port 8000 \
-          --set-env-vars="OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}"
+          --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}"
+    
+    - name: Show deployed service URL
+      run: echo "Service deployed to ${{ steps.deploy.outputs.url }}"

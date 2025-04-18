@@ -1,8 +1,7 @@
 import os
-import json
 import traceback
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
 from datetime import date
@@ -13,11 +12,11 @@ from snowflake_fetch import (
     fetch_attractions,
     fetch_hotels,
     fetch_tours,
-    convert_decimal_to_float,
-    get_next_closest_places
+    convert_decimal_to_float
 )
 from pinecone_fetch import fetch_hidden_gems
 from llm_formating import convert_itinerary_to_text
+from generate_pdf import create_itinerary_pdf
 
 load_dotenv(override=True)
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
@@ -59,7 +58,18 @@ class ChatRequest(BaseModel):
     itinerary: str
     question: str
 
-# ----------------- Helpers -----------------
+class PDFRequest(BaseModel):
+    city: str
+    itinerary: str
+    start_date: str
+
+class RawDataRequest(BaseModel):
+    city: str
+    budget: Literal["low", "medium", "high"] = "medium"
+    include_accommodation: bool = True
+    include_tours: bool = True
+    include_things: bool = True
+
 
 def fetch_itinerary_data(city, start_date, end_date, travel_type, adults, kids, budget,
                          include_tours=True, include_accommodation=True, include_things=True):
@@ -91,7 +101,6 @@ def fetch_itinerary_data(city, start_date, end_date, travel_type, adults, kids, 
         "hidden_gems": hidden_gems
     }
 
-# ----------------- Routes -----------------
 
 @app.get("/")
 def root():
@@ -128,67 +137,24 @@ def generate_itinerary(payload: ItineraryInput):
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Error generating itinerary: {str(e)}")
 
-@app.post("/get-alternatives")
-def get_alternatives(payload: dict):
+
+@app.post("/generate-pdf")
+def generate_pdf(payload: PDFRequest):
     try:
-        city = payload["city"]
-        category = payload["category"]
-        current_url = payload["current_url"]
-        budget = payload["budget"]
+        pdf_bytes = create_itinerary_pdf(payload.city, payload.itinerary, payload.start_date)
 
-        if category == "hotel":
-            all_items = fetch_hotels(city, budget)
-        elif category == "tour":
-            all_items = fetch_tours(city, budget)
-        elif category == "attraction":
-            all_items = fetch_attractions(city, budget)
-        else:
-            raise ValueError("Invalid category")
+        if not pdf_bytes or pdf_bytes.getbuffer().nbytes == 0:
+            raise ValueError("Generated PDF is empty.")
 
-        alternatives = get_next_closest_places(current_url, all_items, category_type=category, max_results=2)
-
-        return {"status": "success", "data": {"alternatives": alternatives}}
+        return Response(
+            content=pdf_bytes.getvalue(),
+            media_type="application/pdf"
+        )
 
     except Exception as e:
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Error generating PDF: {str(e)}")
 
-@app.post("/regenerate-itinerary")
-def regenerate_itinerary(payload: dict):
-    try:
-        updated_days = []
-        original_days = payload.get("original_days", [])
-        replacements = payload.get("replacements", {})
-
-        for day in original_days:
-            updated_day = {
-                "day": day["day"],
-                "hotel": replacements.get(f"{day['day']}_hotel", day["hotel"]),
-                "tours": [
-                    replacements.get(f"{day['day']}_tour_{i}", t)
-                    for i, t in enumerate(day["tours"])
-                ],
-                "attractions": [
-                    replacements.get(f"{day['day']}_attraction_{i}", a)
-                    for i, a in enumerate(day["attractions"])
-                ],
-            }
-            updated_days.append(updated_day)
-
-        final_data = payload.get("meta", {})
-        final_data["days"] = updated_days
-
-        html = run_crew_with_data(final_data)
-        text_summary = convert_itinerary_to_text(html)
-
-        return {"status": "success", "data": {
-            "itinerary_html": html,
-            "itinerary_text": text_summary
-        }}
-
-    except Exception as e:
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail="Error regenerating itinerary")
 
 @app.post("/ask")
 def ask_question(req: ChatRequest):
@@ -198,8 +164,6 @@ def ask_question(req: ChatRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# ----------------- Main Entry -----------------
-
-if __name__ == "__main__":
+if __name__ == "_main_":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)

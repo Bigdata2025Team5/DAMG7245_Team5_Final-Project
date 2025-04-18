@@ -1,5 +1,4 @@
 FROM apache/airflow:2.10.4
-
 USER root
 
 # Install system dependencies
@@ -29,11 +28,16 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a requirements.txt file
-COPY requirements.txt /tmp/requirements.txt
+# Create directories with proper permissions
+RUN mkdir -p /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/config \
+    && chown -R airflow:root /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/config \
+    && chmod -R 777 /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/config
 
-# Switch to airflow user and install dependencies using Airflow's recommended method
+# Switch to airflow user for pip installations
 USER airflow
+
+# Install Python dependencies
+COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Install Playwright browsers

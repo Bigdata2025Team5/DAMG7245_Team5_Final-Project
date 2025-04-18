@@ -28,14 +28,17 @@ jobs:
           pip install -r requirements.txt
           pip install pytest python-dotenv
 
-      - name: Load all secrets into environment
+      - name: Save GCP SA Key to file
+        run: |
+          echo '${{ secrets.GCP_SA_KEY }}' > $HOME/gcp-key.json
+
+
+      - name: Export secrets to GITHUB_ENV
         run: |
           echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
           echo "AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}" >> $GITHUB_ENV
-          echo "ENV_GITHUB=${{ secrets.ENV_GITHUB }}" >> $GITHUB_ENV
           echo "GCP_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }}" >> $GITHUB_ENV
-          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY }}" >> $GITHUB_ENV
           echo "PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }}" >> $GITHUB_ENV
           echo "PINECONE_CLOUD=${{ secrets.PINECONE_CLOUD }}" >> $GITHUB_ENV
           echo "PINECONE_INDEX=${{ secrets.PINECONE_INDEX }}" >> $GITHUB_ENV
@@ -48,6 +51,7 @@ jobs:
           echo "SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }}" >> $GITHUB_ENV
           echo "SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }}" >> $GITHUB_ENV
           echo "XAI_API_KEY=${{ secrets.XAI_API_KEY }}" >> $GITHUB_ENV
+        shell: bash
 
 
       - name: Run pytest

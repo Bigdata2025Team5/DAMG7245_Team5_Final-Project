@@ -1,8 +1,15 @@
 name: Build and Deploy to Google Cloud Run
 
 on:
-  push:
-   branches: [ main ]
+  workflow_run:
+    workflows: ["CI - Backend Endpoint Testing"]
+    types:
+      - completed
+    branches:
+      - main
+#on:
+ # push:
+ #branches: [ main ]
   #pull_request:
    # branches: [ main ]
 

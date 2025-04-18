@@ -1,3 +1,4 @@
+# main.py
 import os
 import json
 import traceback
@@ -5,14 +6,10 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
-from datetime import date , timedelta
+from datetime import date
 from typing import Literal
-from litellm import completion
-from decimal import Decimal
-import os
 from dotenv import load_dotenv
-
-load_dotenv(override=True)
+from agents import run_crew_with_data, run_chat_with_agent
 from snowflake_fetch import (
     fetch_attractions,
     fetch_hotels,
@@ -20,11 +17,11 @@ from snowflake_fetch import (
     convert_decimal_to_float,
     get_next_closest_places
 )
+from llm_formating import convert_itinerary_to_text
 
-# Load Grok API key
+load_dotenv(override=True)
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
 
-# FastAPI app setup
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -34,7 +31,8 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# --- Input schema ---
+# ----------------- Models -----------------
+
 class ItineraryInput(BaseModel):
     city: str
     start_date: date
@@ -48,6 +46,9 @@ class ItineraryInput(BaseModel):
     adults: int = 1
     kids: int = 0
     budget: Literal["low", "medium", "high"] = "medium"
+    include_tours: bool = True
+    include_accommodation: bool = True
+    include_things: bool = True
 
     @field_validator('end_date')
     def end_date_after_start(cls, end_date, values):
@@ -55,11 +56,23 @@ class ItineraryInput(BaseModel):
             raise ValueError("End date must be after start date")
         return end_date
 
-# --- Itinerary data fetch ---
-def fetch_itinerary_data(city, start_date, end_date, preference, travel_type, adults, kids, budget):
-    include_tours = "Tours" in preference
-    include_accommodation = "Accommodation" in preference
-    include_things = "Things to do" in preference
+class ChatRequest(BaseModel):
+    itinerary: str
+    question: str
+
+# ----------------- Helpers -----------------
+
+def fetch_itinerary_data(city, start_date, end_date, travel_type, adults, kids, budget,
+                         include_tours=True, include_accommodation=True, include_things=True):
+    print("--- FETCHING ITINERARY DATA ---")
+    print(f"City: {city}, Budget: {budget}, Start: {start_date}, End: {end_date}")
+    print(f"Include Tours: {include_tours}, Include Accommodations: {include_accommodation}, Include Things to Do: {include_things}")
+    hotels = convert_decimal_to_float(fetch_hotels(city, budget)) if include_accommodation else []
+    print(f"Fetched {len(hotels)} hotels")
+    tours = convert_decimal_to_float(fetch_tours(city, budget)) if include_tours else []
+    print(f"Fetched {len(tours)} tours")
+    attractions = convert_decimal_to_float(fetch_attractions(city, budget, include_free=True)) if include_things else []
+    print(f"Fetched {len(attractions)} attractions")
 
     return {
         "city": city,
@@ -69,143 +82,47 @@ def fetch_itinerary_data(city, start_date, end_date, preference, travel_type, ad
         "adults": adults,
         "kids": kids,
         "budget": budget,
-        "hotels": convert_decimal_to_float(fetch_hotels(city, budget))[:3] if include_accommodation else [],
-        "tours": convert_decimal_to_float(fetch_tours(city, budget))[:6] if include_tours else [],
-        "attractions": convert_decimal_to_float(fetch_attractions(city, budget, include_free=True))[:6] if include_things else []
+        "hotels": hotels,
+        "tours": tours,
+        "attractions": attractions
     }
 
-# --- Use Grok via LiteLLM ---
-import random
-import json
-from datetime import datetime
-from litellm import completion
+# ----------------- Routes -----------------
 
-import random
-import json
-from datetime import datetime
-from litellm import completion
-
-def run_crew_with_data(data):
-    try:
-        # Step 1: Date difference calculation
-        start = datetime.strptime(data["start_date"], "%Y-%m-%d")
-        end = datetime.strptime(data["end_date"], "%Y-%m-%d")
-        num_days = (end - start).days + 1
-        date_list = [(start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(num_days)]
-
-        # Step 2: Get and shuffle items
-        hotels = data.get("hotels", [])
-        tours = data.get("tours", [])
-        attractions = data.get("attractions", [])
-
-        random.shuffle(hotels)
-        random.shuffle(tours)
-        random.shuffle(attractions)
-
-        # Step 3: Repeat items to ensure sufficient data
-        while len(hotels) < num_days:
-            hotels += hotels
-        while len(tours) < num_days * 2:
-            tours += tours
-        while len(attractions) < num_days * 2:
-            attractions += attractions
-
-        # Step 4: Create day-wise structured data
-        days = []
-        for i in range(num_days):
-            day_data = {
-                "day": f"Day {i+1}",
-                "hotel": hotels[i % len(hotels)],
-                "tours": tours[i*2:(i+1)*2],
-                "attractions": attractions[i*2:(i+1)*2]
-            }
-            days.append(day_data)
-
-        # Step 5: Final data format for LLM
-        reduced_data = {
-            "city": data["city"],
-            "start_date": data["start_date"],
-            "end_date": data["end_date"],
-            "travel_type": data["travel_type"],
-            "adults": data["adults"],
-            "kids": data["kids"],
-            "budget": data["budget"],
-            "days": days
-        }
-
-        # Step 6: Prompt with HTML formatting instructions
-        prompt = f"""
-You are a travel itinerary expert.
-
-Generate a {num_days}-day HTML travel itinerary for a trip to {data['city']} from {data['start_date']} to {data['end_date']} for {data['adults']} adults and {data['kids']} kids, traveling as {data['travel_type']} on a {data['budget']} budget.
-
-📝 Requirements per day:
-- 1 hotel (use NAME, LINK, IMAGE, ADDRESS, DISTANCE, RATING, REVIEWS, "Price (per night)",  EXCLUSIONS, CERTIFIED)
-- 2 tours (use TITLE, RATING, Review Count, PRICE, Know More, ITINERARY, INCLUSIONS, EXCLUSIONS, Additional Info, Key Details,IMAGE, Short Reviews)
-- 2 attractions (use Travel Tips, Ticket Details, HOURS, How to Reach, Restaurants Nearby, IMAGE, Short Description)
-
-🖼️ Important: Display the image of each hotel, tour, and attraction using:
-<img src="IMAGE_URL" alt="Title" width="300" style="border-radius: 10px; margin-bottom: 10px;" />
-
-🧱 Output Format:
-- Return raw HTML only (no backticks or Markdown).
-- Use structured HTML with <div>, <h2>, <h3>, <p>, <ul>, <img>, etc.
-- Use class names like "day-card", "item-section", "image-block" for styling hooks.
-
-📦 Data:
-{json.dumps(data, indent=2, default=str)}
-"""
-
-        response = completion(
-            model="xai/grok-2-1212",
-            messages=[{"role": "user", "content": prompt}],
-            provider="grok",
-            api_key=os.getenv("XAI_API_KEY")  # 👈 make sure this env variable is set
-        )
-
-        return response['choices'][0]['message']['content']
-
-    except Exception as e:
-        print("Grok call error:", e)
-        raise RuntimeError("Failed to generate itinerary from Grok.")
-
-# --- Routes ---
 @app.get("/")
 def root():
     return {"status": "online"}
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Cloud Run passes $PORT
-    uvicorn.run(app, host="0.0.0.0", port=port)
-
 
 @app.post("/generate-itinerary")
 def generate_itinerary(payload: ItineraryInput):
     try:
         structured_data = fetch_itinerary_data(
-            payload.city,
-            payload.start_date,
-            payload.end_date,
-            payload.preference,
-            payload.travel_type,
-            payload.adults,
-            payload.kids,
-            payload.budget
+            city=payload.city,
+            start_date=payload.start_date,
+            end_date=payload.end_date,
+            travel_type=payload.travel_type,
+            adults=payload.adults,
+            kids=payload.kids,
+            budget=payload.budget,
+            include_tours=payload.include_tours,
+            include_accommodation=payload.include_accommodation,
+            include_things=payload.include_things
         )
 
         html = run_crew_with_data(structured_data)
+        text_summary = convert_itinerary_to_text(html)
 
         return {
             "status": "success",
             "data": {
-                "itinerary_html": html
+                "itinerary_html": html,
+                "itinerary_text": text_summary
             }
         }
 
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Error generating itinerary: {str(e)}")
-
 
 @app.post("/get-alternatives")
 def get_alternatives(payload: dict):
@@ -215,7 +132,6 @@ def get_alternatives(payload: dict):
         current_url = payload["current_url"]
         budget = payload["budget"]
 
-        # Fetch full list
         if category == "hotel":
             all_items = fetch_hotels(city, budget)
         elif category == "tour":
@@ -225,16 +141,14 @@ def get_alternatives(payload: dict):
         else:
             raise ValueError("Invalid category")
 
-        # Get closest 2 alternatives
         alternatives = get_next_closest_places(current_url, all_items, category_type=category, max_results=2)
 
         return {"status": "success", "data": {"alternatives": alternatives}}
-    
+
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
-    
 @app.post("/regenerate-itinerary")
 def regenerate_itinerary(payload: dict):
     try:
@@ -261,13 +175,27 @@ def regenerate_itinerary(payload: dict):
         final_data["days"] = updated_days
 
         html = run_crew_with_data(final_data)
+        text_summary = convert_itinerary_to_text(html)
 
-        return {"status": "success", "data": {"itinerary_html": html}}
+        return {"status": "success", "data": {
+            "itinerary_html": html,
+            "itinerary_text": text_summary
+        }}
 
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="Error regenerating itinerary")
-    
-    
-from fastapi.responses import RedirectResponse
 
+@app.post("/ask")
+def ask_question(req: ChatRequest):
+    try:
+        answer = run_chat_with_agent(req.itinerary, req.question)
+        return {"answer": answer}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# ----------------- Main Entry -----------------
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

@@ -1,74 +1,104 @@
-name: Build and Deploy to Google Cloud Run
+name: CI/CD - Test and Deploy
 
 on:
-  workflow_run:
-    workflows: ["CI - Backend Endpoint Testing"]
-    types:
-      - completed
-    branches:
-      - main
+  pull_request:
+    branches: [main]
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  SERVICE_NAME: travel-planner-app
+  SERVICE_NAME: your-service-name
   REGION: us-central1
 
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest python-dotenv
+
+    - name: Inject mock environment variables
+      run: |
+        echo "OPENAI_API_KEY=test" >> $GITHUB_ENV
+        echo "XAI_API_KEY=test" >> $GITHUB_ENV
+        echo "AWS_ACCESS_KEY_ID=test" >> $GITHUB_ENV
+        echo "AWS_SECRET_ACCESS_KEY=test" >> $GITHUB_ENV
+        echo "AWS_S3_BUCKET=test-bucket" >> $GITHUB_ENV
+        echo "GCP_PROJECT_ID=test" >> $GITHUB_ENV
+        echo "PINECONE_API_KEY=test" >> $GITHUB_ENV
+        echo "PINECONE_INDEX=test-index" >> $GITHUB_ENV
+        echo "PINECONE_REGION=test-region" >> $GITHUB_ENV
+        echo "SNOWFLAKE_USER=test" >> $GITHUB_ENV
+        echo "SNOWFLAKE_PASSWORD=test" >> $GITHUB_ENV
+        echo "SNOWFLAKE_ACCOUNT=test" >> $GITHUB_ENV
+        echo "SNOWFLAKE_WAREHOUSE=test" >> $GITHUB_ENV
+        echo "SNOWFLAKE_DATABASE=test_db" >> $GITHUB_ENV
+        echo "SNOWFLAKE_SCHEMA=test_schema" >> $GITHUB_ENV
+        echo "SNOWFLAKE_ROLE=test_role" >> $GITHUB_ENV
+
+    - name: Run unit tests
+      run: pytest backend/tests/unit --maxfail=1 --disable-warnings -v
+
+    - name: Run integration tests
+      run: pytest backend/tests/integration --maxfail=1 --disable-warnings -v
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Google Auth
-      id: auth
+    - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
       with:
-        credentials_json: ${{ secrets.GCP_SA_KEY }}
+        credentials_json: ${{ secrets.GCP_CLOUD_RUN_KEY }}
 
-
-    - name: Set up Google Cloud SDK
+    - name: Set up gcloud
       uses: google-github-actions/setup-gcloud@v1
       with:
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-    - name: Configure Docker to use gcloud
+    - name: Configure Docker
       run: gcloud auth configure-docker
 
-    - name: Build Docker image
+    - name: Build and push Docker image
       run: |
         docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} .
         docker push gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }}
 
-    - name: Deploy to Google Cloud Run
+    - name: Deploy to Cloud Run
       run: |
         gcloud run deploy $SERVICE_NAME \
-          --service-account=deployfinal@finalproject-457119.iam.gserviceaccount.com \
           --image gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} \
           --platform managed \
           --region $REGION \
           --allow-unauthenticated \
           --port 8000 \
-          --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},\
-          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},\
-          SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},\
-          SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},\
-          SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},\
-          SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},\
-          SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},\
-          SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }},\
-          SNOWFLAKE_ROLE=${{ secrets.SNOWFLAKE_ROLE }},\
-          AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }},\
-          AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }},\
-          AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }},\
-          GCP_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }},\
-          GCP_SA_KEY=${{ secrets.GCP_SA_KEY }},\
-          PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }},\
-          PINECONE_CLOUD=${{ secrets.PINECONE_CLOUD }},\
-          PINECONE_INDEX=${{ secrets.PINECONE_INDEX }},\
-          PINECONE_REGION=${{ secrets.PINECONE_REGION }}"
-    
-    - name: Show deployed service URL
-      run: echo "Service deployed to ${{ steps.deploy.outputs.url }}"
+          --set-env-vars="OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},
+                          XAI_API_KEY=${{ secrets.XAI_API_KEY }},
+                          SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},
+                          SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},
+                          SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},
+                          SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},
+                          SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},
+                          SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }},
+                          SNOWFLAKE_ROLE=${{ secrets.SNOWFLAKE_ROLE }},
+                          PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }},
+                          PINECONE_INDEX=${{ secrets.PINECONE_INDEX }},
+                          PINECONE_REGION=${{ secrets.PINECONE_REGION }},
+                          AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }},
+                          AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }},
+                          AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}"
+
+    - name: Show Deployed URL
+      run: echo "Deployed at $(gcloud run services describe $SERVICE_NAME --region $REGION --format='value(status.url)')"

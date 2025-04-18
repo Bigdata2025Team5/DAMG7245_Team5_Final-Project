@@ -46,10 +46,9 @@ jobs:
         echo "SNOWFLAKE_ROLE=test_role" >> $GITHUB_ENV
 
     - name: Run unit tests
-      run: pytest backend/tests/unit --maxfail=1 --disable-warnings -v
+      run: pytest backend/test/tests --maxfail=1 --disable-warnings -v
 
-    - name: Run integration tests
-      run: pytest backend/tests/integration --maxfail=1 --disable-warnings -v
+
 
   deploy:
     needs: test

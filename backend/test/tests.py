@@ -2,7 +2,7 @@
 
 import pytest
 from fastapi.testclient import TestClient
-from main import app  # Adjust if path is different
+from backend.main import app
 
 client = TestClient(app)
 

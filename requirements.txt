@@ -23,5 +23,3 @@ langchain-openai==0.0.2
 crewai==0.1.32                
 
 # REMOVE: 'dotenv' (incorrect — use 'python-dotenv')
-google-cloud-aiplatform
-vertexai

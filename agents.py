@@ -1,8 +1,8 @@
 # agents.py
-from crewai import Agent
-from dotenv import load_dotenv
 import os
+import json
 import math
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from random import shuffle
 from litellm import completion
@@ -10,30 +10,12 @@ from litellm import completion
 load_dotenv()
 os.environ["LITELLM_API_KEY"] = os.getenv("XAI_API_KEY")
 
-# ✅ Define LLM config for Grok
+# ✅ LLM config for Grok
 llm_config = {
     "model": "xai/grok-2-1212",
-    "api_key": os.getenv("XAI_API_KEY"),
-    "provider": "grok"
+    "provider": "grok",
+    "api_key": os.getenv("XAI_API_KEY")
 }
-
-# ✅ Crew Agent for itinerary generation
-crew_agent = Agent(
-    role="Travel Planner",
-    goal="Generate an HTML-based multi-day travel itinerary",
-    backstory="You are a helpful AI travel assistant who plans perfect trips based on structured data.",
-    verbose=True,
-    llm_config=llm_config
-)
-
-# ✅ Agent for Chat with Grok
-chat_agent = Agent(
-    role="Itinerary Q&A Expert",
-    goal="Answer questions about a generated travel itinerary",
-    backstory="You help users understand their travel plans in detail.",
-    verbose=True,
-    llm_config=llm_config
-)
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     if None in (lat1, lon1, lat2, lon2):
@@ -153,7 +135,6 @@ Fallback if missing: https://placehold.co/400x300
     except Exception as e:
         print("Grok call error:", e)
         raise RuntimeError(f"Failed to generate itinerary: {str(e)}")
-
 
 def run_chat_with_agent(itinerary_text: str, question: str):
     try:

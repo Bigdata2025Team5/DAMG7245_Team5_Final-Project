@@ -13,7 +13,7 @@ Codelabs :
 
 Streamlit + FastApi: 
 
-video link : 
+ 
 
 ---
 

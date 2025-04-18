@@ -56,6 +56,7 @@ jobs:
 
 
 
-      - name: Run pytest
+       - name: Run unittest
         run: |
-          pytest backend/test/tests.py --maxfail=1 --disable-warnings -v
+          python -m unittest discover -s backend/test -p "test_*.py" -v
+

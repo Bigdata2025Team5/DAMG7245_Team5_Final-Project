@@ -1,10 +1,7 @@
 FROM apache/airflow:2.10.4
+
+# First install system dependencies as root
 USER root
-
-# Set PIP_USER to false to avoid permission issues
-ENV PIP_USER=false
-
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     wget \
     fonts-liberation \
@@ -39,7 +36,10 @@ RUN mkdir -p /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airfl
 # Copy requirements file
 COPY requirements.txt /tmp/requirements.txt
 
-# Install Python dependencies as root to avoid permission issues
+# Switch to airflow user for Python package installation
+USER airflow
+
+# Install Python dependencies as airflow user to avoid permission issues
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Install Playwright browsers
@@ -47,13 +47,3 @@ RUN python -m playwright install chromium
 
 # Download spaCy model
 RUN python -m spacy download en_core_web_sm
-
-# Fix permissions in the Python site-packages directory
-RUN mkdir -p /home/airflow/.local \
-    && chown -R airflow:root /home/airflow/.local \
-    && chmod -R 777 /home/airflow/.local
-
-# Switch back to airflow user for security
-USER airflow
-# Reset PIP_USER for the airflow user
-ENV PIP_USER=true

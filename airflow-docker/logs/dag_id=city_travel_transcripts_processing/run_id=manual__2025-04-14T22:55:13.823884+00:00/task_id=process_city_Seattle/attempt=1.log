@@ -1,0 +1,600 @@
+[2025-04-14T22:55:17.538+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:55:17.555+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_Seattle manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.564+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_Seattle manual__2025-04-14T22:55:13.823884+00:00 [queued]>
+[2025-04-14T22:55:17.565+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:55:17.575+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_Seattle> on 2025-04-14 22:55:13.823884+00:00
+[2025-04-14T22:55:17.581+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=448) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:55:17.582+0000] {standard_task_runner.py:72} INFO - Started process 456 to run task
+[2025-04-14T22:55:17.588+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_Seattle', 'manual__2025-04-14T22:55:13.823884+00:00', '--job-id', '372', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpm4t8r_hj']
+[2025-04-14T22:55:17.590+0000] {standard_task_runner.py:105} INFO - Job 372: Subtask process_city_Seattle
+[2025-04-14T22:55:17.643+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_Seattle manual__2025-04-14T22:55:13.823884+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:55:17.704+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_Seattle' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:55:13.823884+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:55:13.823884+00:00'
+[2025-04-14T22:55:17.705+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:55:17.715+0000] {youtube_dag.py:140} INFO - Starting processing for city: Seattle
+[2025-04-14T22:55:17.715+0000] {youtube_dag.py:155} INFO - Creating directory structure for Seattle
+[2025-04-14T22:55:17.716+0000] {youtube_dag.py:159} INFO - Created directories: /opt/***/data/city_transcripts/Seattle, /opt/***/data/city_transcripts/Seattle/transcripts
+[2025-04-14T22:55:17.717+0000] {youtube_dag.py:170} INFO - Parameters for Seattle: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:55:17.717+0000] {youtube_dag.py:186} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:55:17.718+0000] {youtube_dag.py:206} INFO - Loading spaCy model for Seattle
+[2025-04-14T22:55:18.248+0000] {youtube_dag.py:208} INFO - Successfully loaded spaCy model
+[2025-04-14T22:55:18.249+0000] {youtube_dag.py:230} INFO - Downloading transcripts for Seattle
+[2025-04-14T22:55:18.250+0000] {youtube_dag.py:281} INFO - Starting transcript download for Seattle
+[2025-04-14T22:55:18.250+0000] {youtube_dag.py:294} INFO - Initializing YouTube client for Seattle
+[2025-04-14T22:55:18.252+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2025-04-14T22:55:18.428+0000] {youtube_dag.py:301} INFO - YouTube client initialized successfully
+[2025-04-14T22:55:18.428+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 1/6: 'Seattle travel vlog'
+[2025-04-14T22:55:18.865+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle travel vlog'
+[2025-04-14T22:55:18.865+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:55:18.941+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video jzKZtQl-3Ig
+[2025-04-14T22:55:19.492+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video jzKZtQl-3Ig (2367 words)
+[2025-04-14T22:55:19.498+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/jzKZtQl-3Ig_EXPLORING_SEATTLE_TRAVEL_VLOG.txt
+[2025-04-14T22:55:19.499+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/jzKZtQl-3Ig_EXPLORING_SEATTLE_TRAVEL_VLOG_segments.json
+[2025-04-14T22:55:19.499+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video JY3dN1rAV1s
+[2025-04-14T22:55:20.031+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video JY3dN1rAV1s (4956 words)
+[2025-04-14T22:55:20.039+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do_.txt
+[2025-04-14T22:55:20.041+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do__segments.json
+[2025-04-14T22:55:20.041+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Xn6-FyVdjqA
+[2025-04-14T22:55:20.807+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Xn6-FyVdjqA (1430 words)
+[2025-04-14T22:55:20.811+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se.txt
+[2025-04-14T22:55:20.812+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se_segments.json
+[2025-04-14T22:55:20.812+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video uxNTIqGrCTM
+[2025-04-14T22:55:21.316+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video uxNTIqGrCTM (2385 words)
+[2025-04-14T22:55:21.321+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/uxNTIqGrCTM_weekend_in_seattle_what_i_eat_cafés_flea_market.txt
+[2025-04-14T22:55:21.323+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/uxNTIqGrCTM_weekend_in_seattle_what_i_eat_cafés_flea_market_segments.json
+[2025-04-14T22:55:21.323+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video QCoyg8_BgoA
+[2025-04-14T22:55:21.900+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video QCoyg8_BgoA (229 words)
+[2025-04-14T22:55:21.901+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/QCoyg8_BgoA_Seattle_Travel_Vlogwhat_I_ate_and_did_in_3_days_ex.txt
+[2025-04-14T22:55:21.901+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/QCoyg8_BgoA_Seattle_Travel_Vlogwhat_I_ate_and_did_in_3_days_ex_segments.json
+[2025-04-14T22:55:22.902+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:55:22.952+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video xyHpdXw-ADM
+[2025-04-14T22:55:23.482+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video xyHpdXw-ADM (2475 words)
+[2025-04-14T22:55:23.488+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/xyHpdXw-ADM_The_ULTIMATE_Weekend_in_Seattle_Washington_-_Seatt.txt
+[2025-04-14T22:55:23.489+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/xyHpdXw-ADM_The_ULTIMATE_Weekend_in_Seattle_Washington_-_Seatt_segments.json
+[2025-04-14T22:55:23.489+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XIeCx9bxBBc
+[2025-04-14T22:55:24.038+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XIeCx9bxBBc (2726 words)
+[2025-04-14T22:55:24.044+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid.txt
+[2025-04-14T22:55:24.049+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid_segments.json
+[2025-04-14T22:55:24.049+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video S973ZhUR6N0
+[2025-04-14T22:55:24.543+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video S973ZhUR6N0 (3345 words)
+[2025-04-14T22:55:24.549+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t.txt
+[2025-04-14T22:55:24.551+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t_segments.json
+[2025-04-14T22:55:24.551+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video WVvvCNzhXMY
+[2025-04-14T22:55:24.943+0000] {youtube_dag.py:935} WARNING - No transcript available for video WVvvCNzhXMY: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=WVvvCNzhXMY! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:24.946+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video WVvvCNzhXMY
+[2025-04-14T22:55:24.946+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video baFfsG31sQ8
+[2025-04-14T22:55:25.692+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video baFfsG31sQ8 (5211 words)
+[2025-04-14T22:55:25.705+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/baFfsG31sQ8_TRAVEL_WITH_ME_TO_SEATTLE_4_day_itinerary_pier_mar.txt
+[2025-04-14T22:55:25.707+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/baFfsG31sQ8_TRAVEL_WITH_ME_TO_SEATTLE_4_day_itinerary_pier_mar_segments.json
+[2025-04-14T22:55:26.708+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:55:26.755+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NnrVSgNKius
+[2025-04-14T22:55:27.333+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video NnrVSgNKius (6292 words)
+[2025-04-14T22:55:27.350+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/NnrVSgNKius_How_to_Spend_One_Day_in_Seattle_Washington_Top_Thi.txt
+[2025-04-14T22:55:27.354+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/NnrVSgNKius_How_to_Spend_One_Day_in_Seattle_Washington_Top_Thi_segments.json
+[2025-04-14T22:55:27.354+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video X6YxSvlntLQ
+[2025-04-14T22:55:27.827+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video X6YxSvlntLQ (3455 words)
+[2025-04-14T22:55:27.835+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s.txt
+[2025-04-14T22:55:27.837+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s_segments.json
+[2025-04-14T22:55:27.837+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video TiuQa_s5EuI
+[2025-04-14T22:55:28.396+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video TiuQa_s5EuI (2977 words)
+[2025-04-14T22:55:28.406+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/TiuQa_s5EuI_USA_VLOG_my_first_trip_to_seattle_olympic_national.txt
+[2025-04-14T22:55:28.407+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/TiuQa_s5EuI_USA_VLOG_my_first_trip_to_seattle_olympic_national_segments.json
+[2025-04-14T22:55:28.408+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video oXJFc1M5jPc
+[2025-04-14T22:55:28.889+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video oXJFc1M5jPc (220 words)
+[2025-04-14T22:55:28.891+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s.txt
+[2025-04-14T22:55:28.891+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s_segments.json
+[2025-04-14T22:55:28.892+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video eHbU9MzEEzQ
+[2025-04-14T22:55:29.343+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video eHbU9MzEEzQ (1836 words)
+[2025-04-14T22:55:29.349+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel_.txt
+[2025-04-14T22:55:29.351+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel__segments.json
+[2025-04-14T22:55:30.356+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:55:30.407+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video yzBbbL90SS8
+[2025-04-14T22:55:30.938+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video yzBbbL90SS8 (4950 words)
+[2025-04-14T22:55:30.952+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/yzBbbL90SS8_I_went_to_the_FIRST_Starbucks_in_the_world_seattle.txt
+[2025-04-14T22:55:30.955+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/yzBbbL90SS8_I_went_to_the_FIRST_Starbucks_in_the_world_seattle_segments.json
+[2025-04-14T22:55:30.955+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video mAJHTcclygg
+[2025-04-14T22:55:31.852+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video mAJHTcclygg (2784 words)
+[2025-04-14T22:55:31.859+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/mAJHTcclygg_BEST_Things_to_do_in_Seattle_3_Day_Seattle_Travel_.txt
+[2025-04-14T22:55:31.860+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/mAJHTcclygg_BEST_Things_to_do_in_Seattle_3_Day_Seattle_Travel__segments.json
+[2025-04-14T22:55:31.861+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XNqkXesJEKM
+[2025-04-14T22:55:32.451+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XNqkXesJEKM (1977 words)
+[2025-04-14T22:55:32.458+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XNqkXesJEKM_weekend_trip_to_seattle_vlog_food_at_pikes_place_v.txt
+[2025-04-14T22:55:32.459+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XNqkXesJEKM_weekend_trip_to_seattle_vlog_food_at_pikes_place_v_segments.json
+[2025-04-14T22:55:32.460+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video EmCFUiioY2o
+[2025-04-14T22:55:32.981+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video EmCFUiioY2o (1965 words)
+[2025-04-14T22:55:32.985+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/EmCFUiioY2o_24_Hours_in_Seattle_-_Travel_Vlog_What_To_Do_See_a.txt
+[2025-04-14T22:55:32.986+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/EmCFUiioY2o_24_Hours_in_Seattle_-_Travel_Vlog_What_To_Do_See_a_segments.json
+[2025-04-14T22:55:32.986+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video F18uKeseaGM
+[2025-04-14T22:55:33.779+0000] {youtube_dag.py:935} WARNING - No transcript available for video F18uKeseaGM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=F18uKeseaGM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:33.780+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video F18uKeseaGM
+[2025-04-14T22:55:34.781+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 2/6: 'Seattle travel guide'
+[2025-04-14T22:55:35.145+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle travel guide'
+[2025-04-14T22:55:35.146+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:55:35.199+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 92ISlO9U-84
+[2025-04-14T22:55:35.678+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 92ISlO9U-84 (725 words)
+[2025-04-14T22:55:35.681+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/92ISlO9U-84_Seattle_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:35.685+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/92ISlO9U-84_Seattle_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:35.686+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video JY3dN1rAV1s
+[2025-04-14T22:55:36.469+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video JY3dN1rAV1s (4956 words)
+[2025-04-14T22:55:36.480+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do_.txt
+[2025-04-14T22:55:36.482+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do__segments.json
+[2025-04-14T22:55:36.483+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XIeCx9bxBBc
+[2025-04-14T22:55:37.174+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XIeCx9bxBBc (2726 words)
+[2025-04-14T22:55:37.181+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid.txt
+[2025-04-14T22:55:37.182+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid_segments.json
+[2025-04-14T22:55:37.182+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video p5nlS0Mwcc0
+[2025-04-14T22:55:37.715+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video p5nlS0Mwcc0 (1103 words)
+[2025-04-14T22:55:37.718+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide.txt
+[2025-04-14T22:55:37.719+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide_segments.json
+[2025-04-14T22:55:37.719+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Xn6-FyVdjqA
+[2025-04-14T22:55:38.267+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Xn6-FyVdjqA (1430 words)
+[2025-04-14T22:55:38.272+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se.txt
+[2025-04-14T22:55:38.273+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se_segments.json
+[2025-04-14T22:55:39.274+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:55:39.339+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video xyHpdXw-ADM
+[2025-04-14T22:55:39.828+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video xyHpdXw-ADM (2475 words)
+[2025-04-14T22:55:39.834+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/xyHpdXw-ADM_The_ULTIMATE_Weekend_in_Seattle_Washington_-_Seatt.txt
+[2025-04-14T22:55:39.835+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/xyHpdXw-ADM_The_ULTIMATE_Weekend_in_Seattle_Washington_-_Seatt_segments.json
+[2025-04-14T22:55:39.835+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video sgUEosRA95s
+[2025-04-14T22:55:40.301+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video sgUEosRA95s (725 words)
+[2025-04-14T22:55:40.304+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/sgUEosRA95s_Seattle_-_City_Video_Guide.txt
+[2025-04-14T22:55:40.304+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/sgUEosRA95s_Seattle_-_City_Video_Guide_segments.json
+[2025-04-14T22:55:40.305+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NQCWA13jqNc
+[2025-04-14T22:55:41.173+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video NQCWA13jqNc (838 words)
+[2025-04-14T22:55:41.176+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE.txt
+[2025-04-14T22:55:41.178+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE_segments.json
+[2025-04-14T22:55:41.178+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video VYlgvyXZ96s
+[2025-04-14T22:55:41.668+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video VYlgvyXZ96s (874 words)
+[2025-04-14T22:55:41.671+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/VYlgvyXZ96s_Seattle_-_The_emerald_city_travel_guide.txt
+[2025-04-14T22:55:41.672+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/VYlgvyXZ96s_Seattle_-_The_emerald_city_travel_guide_segments.json
+[2025-04-14T22:55:41.672+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video wqffXo6euV8
+[2025-04-14T22:55:42.145+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video wqffXo6euV8 (2202 words)
+[2025-04-14T22:55:42.153+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/wqffXo6euV8_23_Tips_I_Wish_I_Knew_Before_Visiting_Seattle.txt
+[2025-04-14T22:55:42.155+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/wqffXo6euV8_23_Tips_I_Wish_I_Knew_Before_Visiting_Seattle_segments.json
+[2025-04-14T22:55:43.157+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:55:43.214+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video gBVsK6uOObE
+[2025-04-14T22:55:44.093+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video gBVsK6uOObE (2586 words)
+[2025-04-14T22:55:44.101+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/gBVsK6uOObE_Visit_Seattle_-_5_Things_You_Will_LOVE_and_HATE_ab.txt
+[2025-04-14T22:55:44.102+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/gBVsK6uOObE_Visit_Seattle_-_5_Things_You_Will_LOVE_and_HATE_ab_segments.json
+[2025-04-14T22:55:44.103+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video oL0llwNHqVA
+[2025-04-14T22:55:44.546+0000] {youtube_dag.py:935} WARNING - No transcript available for video oL0llwNHqVA: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=oL0llwNHqVA! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:44.547+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video oL0llwNHqVA
+[2025-04-14T22:55:44.548+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video DwKHJo1TBtE
+[2025-04-14T22:55:45.309+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video DwKHJo1TBtE (725 words)
+[2025-04-14T22:55:45.312+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/DwKHJo1TBtE_Seattle_-_City_Video_Guide.txt
+[2025-04-14T22:55:45.313+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/DwKHJo1TBtE_Seattle_-_City_Video_Guide_segments.json
+[2025-04-14T22:55:45.314+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XoeD0O92L04
+[2025-04-14T22:55:46.212+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XoeD0O92L04 (1601 words)
+[2025-04-14T22:55:46.215+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XoeD0O92L04_Seattle_Washington_Travel_Guide_Best_Things_To_Do_.txt
+[2025-04-14T22:55:46.215+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XoeD0O92L04_Seattle_Washington_Travel_Guide_Best_Things_To_Do__segments.json
+[2025-04-14T22:55:46.215+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video oXJFc1M5jPc
+[2025-04-14T22:55:46.678+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video oXJFc1M5jPc (220 words)
+[2025-04-14T22:55:46.679+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s.txt
+[2025-04-14T22:55:46.679+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s_segments.json
+[2025-04-14T22:55:47.682+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:55:47.728+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video S973ZhUR6N0
+[2025-04-14T22:55:48.258+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video S973ZhUR6N0 (3345 words)
+[2025-04-14T22:55:48.264+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t.txt
+[2025-04-14T22:55:48.265+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t_segments.json
+[2025-04-14T22:55:48.265+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video sO5-oFuDPEA
+[2025-04-14T22:55:49.481+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video sO5-oFuDPEA (2261 words)
+[2025-04-14T22:55:49.487+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington.txt
+[2025-04-14T22:55:49.489+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington_segments.json
+[2025-04-14T22:55:49.489+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video F18uKeseaGM
+[2025-04-14T22:55:49.991+0000] {youtube_dag.py:935} WARNING - No transcript available for video F18uKeseaGM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=F18uKeseaGM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:55:49.992+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video F18uKeseaGM
+[2025-04-14T22:55:49.995+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video wd_kzQjQyTg
+[2025-04-14T22:55:50.814+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video wd_kzQjQyTg (3360 words)
+[2025-04-14T22:55:50.822+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/wd_kzQjQyTg_Seattle_Travel_Tips_8_Things_to_Know_Before_You_Go.txt
+[2025-04-14T22:55:50.823+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/wd_kzQjQyTg_Seattle_Travel_Tips_8_Things_to_Know_Before_You_Go_segments.json
+[2025-04-14T22:55:50.823+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video GB_8NQjDhUc
+[2025-04-14T22:55:51.610+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video GB_8NQjDhUc (1921 words)
+[2025-04-14T22:55:51.614+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE.txt
+[2025-04-14T22:55:51.615+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE_segments.json
+[2025-04-14T22:55:52.616+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 3/6: 'Seattle tourism'
+[2025-04-14T22:55:52.951+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle tourism'
+[2025-04-14T22:55:52.951+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:55:52.997+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Xn6-FyVdjqA
+[2025-04-14T22:55:53.520+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Xn6-FyVdjqA (1430 words)
+[2025-04-14T22:55:53.524+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se.txt
+[2025-04-14T22:55:53.525+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se_segments.json
+[2025-04-14T22:55:53.525+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 92ISlO9U-84
+[2025-04-14T22:55:54.007+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 92ISlO9U-84 (725 words)
+[2025-04-14T22:55:54.010+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/92ISlO9U-84_Seattle_Vacation_Travel_Guide_Expedia.txt
+[2025-04-14T22:55:54.011+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/92ISlO9U-84_Seattle_Vacation_Travel_Guide_Expedia_segments.json
+[2025-04-14T22:55:54.011+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video gBVsK6uOObE
+[2025-04-14T22:55:54.710+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video gBVsK6uOObE (2586 words)
+[2025-04-14T22:55:54.720+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/gBVsK6uOObE_Visit_Seattle_-_5_Things_You_Will_LOVE_and_HATE_ab.txt
+[2025-04-14T22:55:54.723+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/gBVsK6uOObE_Visit_Seattle_-_5_Things_You_Will_LOVE_and_HATE_ab_segments.json
+[2025-04-14T22:55:54.723+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video jRm6WCmIrGM
+[2025-04-14T22:55:55.290+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video jRm6WCmIrGM (1402 words)
+[2025-04-14T22:55:55.296+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/jRm6WCmIrGM_Seattle_Overview_An_informative_introduction_to_Se.txt
+[2025-04-14T22:55:55.297+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/jRm6WCmIrGM_Seattle_Overview_An_informative_introduction_to_Se_segments.json
+[2025-04-14T22:55:55.297+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video wqffXo6euV8
+[2025-04-14T22:55:55.928+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video wqffXo6euV8 (2202 words)
+[2025-04-14T22:55:55.936+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/wqffXo6euV8_23_Tips_I_Wish_I_Knew_Before_Visiting_Seattle.txt
+[2025-04-14T22:55:55.938+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/wqffXo6euV8_23_Tips_I_Wish_I_Knew_Before_Visiting_Seattle_segments.json
+[2025-04-14T22:55:56.939+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:55:57.003+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NQCWA13jqNc
+[2025-04-14T22:55:57.533+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video NQCWA13jqNc (838 words)
+[2025-04-14T22:55:57.536+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE.txt
+[2025-04-14T22:55:57.536+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE_segments.json
+[2025-04-14T22:55:57.537+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XIeCx9bxBBc
+[2025-04-14T22:55:58.262+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XIeCx9bxBBc (2726 words)
+[2025-04-14T22:55:58.271+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid.txt
+[2025-04-14T22:55:58.273+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid_segments.json
+[2025-04-14T22:55:58.274+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video GB_8NQjDhUc
+[2025-04-14T22:55:59.025+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video GB_8NQjDhUc (1921 words)
+[2025-04-14T22:55:59.031+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE.txt
+[2025-04-14T22:55:59.032+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE_segments.json
+[2025-04-14T22:55:59.032+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 2Zx2-HJr45E
+[2025-04-14T22:55:59.582+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 2Zx2-HJr45E (1 words)
+[2025-04-14T22:55:59.582+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/2Zx2-HJr45E_Cherry_blossom_Washington_Seattle_University.txt
+[2025-04-14T22:55:59.583+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/2Zx2-HJr45E_Cherry_blossom_Washington_Seattle_University_segments.json
+[2025-04-14T22:55:59.583+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video sO5-oFuDPEA
+[2025-04-14T22:56:00.175+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video sO5-oFuDPEA (2261 words)
+[2025-04-14T22:56:00.181+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington.txt
+[2025-04-14T22:56:00.182+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington_segments.json
+[2025-04-14T22:56:01.184+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:56:01.235+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video p5nlS0Mwcc0
+[2025-04-14T22:56:01.904+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video p5nlS0Mwcc0 (1103 words)
+[2025-04-14T22:56:01.908+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide.txt
+[2025-04-14T22:56:01.909+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide_segments.json
+[2025-04-14T22:56:01.909+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video S973ZhUR6N0
+[2025-04-14T22:56:02.767+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video S973ZhUR6N0 (3345 words)
+[2025-04-14T22:56:02.777+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t.txt
+[2025-04-14T22:56:02.779+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t_segments.json
+[2025-04-14T22:56:02.779+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video JY3dN1rAV1s
+[2025-04-14T22:56:03.330+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video JY3dN1rAV1s (4956 words)
+[2025-04-14T22:56:03.342+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do_.txt
+[2025-04-14T22:56:03.344+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do__segments.json
+[2025-04-14T22:56:03.344+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 3puidyVaP-I
+[2025-04-14T22:56:03.812+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 3puidyVaP-I (313 words)
+[2025-04-14T22:56:03.813+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/3puidyVaP-I_Cruise_season_kicks_off_in_Seattle_this_weekend_br.txt
+[2025-04-14T22:56:03.814+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/3puidyVaP-I_Cruise_season_kicks_off_in_Seattle_this_weekend_br_segments.json
+[2025-04-14T22:56:03.815+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 3QmPy6NH2Kk
+[2025-04-14T22:56:04.337+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 3QmPy6NH2Kk (281 words)
+[2025-04-14T22:56:04.339+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/3QmPy6NH2Kk_Downtown_Seattle_tourism_nearing_pre-pandemic_leve.txt
+[2025-04-14T22:56:04.340+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/3QmPy6NH2Kk_Downtown_Seattle_tourism_nearing_pre-pandemic_leve_segments.json
+[2025-04-14T22:56:05.343+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:56:05.419+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video -dZ5lAemyrc
+[2025-04-14T22:56:06.220+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video -dZ5lAemyrc (782 words)
+[2025-04-14T22:56:06.225+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/-dZ5lAemyrc_10_BEST_THINGS_TO_DO_IN_SEATTLE.txt
+[2025-04-14T22:56:06.226+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/-dZ5lAemyrc_10_BEST_THINGS_TO_DO_IN_SEATTLE_segments.json
+[2025-04-14T22:56:06.226+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video hYVVaeTxq0Y
+[2025-04-14T22:56:06.725+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video hYVVaeTxq0Y (407 words)
+[2025-04-14T22:56:06.727+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/hYVVaeTxq0Y_Seattle_named_among_busiest_cities_in_the_country_.txt
+[2025-04-14T22:56:06.728+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/hYVVaeTxq0Y_Seattle_named_among_busiest_cities_in_the_country__segments.json
+[2025-04-14T22:56:06.728+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video YD1sLJIVYts
+[2025-04-14T22:56:07.484+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video YD1sLJIVYts (1180 words)
+[2025-04-14T22:56:07.488+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/YD1sLJIVYts_If_Seattles_Tourism_Marketing_was_Honest_what_woul.txt
+[2025-04-14T22:56:07.489+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/YD1sLJIVYts_If_Seattles_Tourism_Marketing_was_Honest_what_woul_segments.json
+[2025-04-14T22:56:07.489+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video eHbU9MzEEzQ
+[2025-04-14T22:56:08.057+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video eHbU9MzEEzQ (1836 words)
+[2025-04-14T22:56:08.061+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel_.txt
+[2025-04-14T22:56:08.062+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel__segments.json
+[2025-04-14T22:56:08.063+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video _02GKzZSwTk
+[2025-04-14T22:56:08.525+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video _02GKzZSwTk (102 words)
+[2025-04-14T22:56:08.525+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/_02GKzZSwTk_New_Seattle_tourism_improvement_area_law.txt
+[2025-04-14T22:56:08.526+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/_02GKzZSwTk_New_Seattle_tourism_improvement_area_law_segments.json
+[2025-04-14T22:56:09.527+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 4/6: 'Seattle must see'
+[2025-04-14T22:56:09.918+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle must see'
+[2025-04-14T22:56:09.919+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:56:09.990+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Xn6-FyVdjqA
+[2025-04-14T22:56:10.577+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Xn6-FyVdjqA (1430 words)
+[2025-04-14T22:56:10.582+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se.txt
+[2025-04-14T22:56:10.583+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Xn6-FyVdjqA_SEATTLE_WA_10_INCREDIBLE_Things_to_Do_in_Around_Se_segments.json
+[2025-04-14T22:56:10.583+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video S973ZhUR6N0
+[2025-04-14T22:56:11.128+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video S973ZhUR6N0 (3345 words)
+[2025-04-14T22:56:11.135+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t.txt
+[2025-04-14T22:56:11.137+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/S973ZhUR6N0_Perfect_Day_in_Seattle_Without_a_Car_14_Stops_in_t_segments.json
+[2025-04-14T22:56:11.137+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video sO5-oFuDPEA
+[2025-04-14T22:56:11.613+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video sO5-oFuDPEA (2261 words)
+[2025-04-14T22:56:11.617+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington.txt
+[2025-04-14T22:56:11.618+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/sO5-oFuDPEA_22_Things_to_Do_in_Seattle_Washington_segments.json
+[2025-04-14T22:56:11.618+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video JY3dN1rAV1s
+[2025-04-14T22:56:12.198+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video JY3dN1rAV1s (4956 words)
+[2025-04-14T22:56:12.211+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do_.txt
+[2025-04-14T22:56:12.214+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/JY3dN1rAV1s_THE_ULTIMATE_SEATTLE_TRAVEL_GUIDE_40_things_to_do__segments.json
+[2025-04-14T22:56:12.214+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video F18uKeseaGM
+[2025-04-14T22:56:12.706+0000] {youtube_dag.py:935} WARNING - No transcript available for video F18uKeseaGM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=F18uKeseaGM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:12.706+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video F18uKeseaGM
+[2025-04-14T22:56:13.709+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:56:13.775+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video XIeCx9bxBBc
+[2025-04-14T22:56:14.299+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video XIeCx9bxBBc (2726 words)
+[2025-04-14T22:56:14.312+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid.txt
+[2025-04-14T22:56:14.315+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/XIeCx9bxBBc_Top_10_Things_to_Do_in_Seattle_Seattle_Travel_Guid_segments.json
+[2025-04-14T22:56:14.316+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video noVRL1x7JJM
+[2025-04-14T22:56:15.037+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video noVRL1x7JJM (3333 words)
+[2025-04-14T22:56:15.047+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/noVRL1x7JJM_48_Hours_in_Seattle_Washington_Best_Things_to_Do.txt
+[2025-04-14T22:56:15.049+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/noVRL1x7JJM_48_Hours_in_Seattle_Washington_Best_Things_to_Do_segments.json
+[2025-04-14T22:56:15.049+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video p5nlS0Mwcc0
+[2025-04-14T22:56:15.565+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video p5nlS0Mwcc0 (1103 words)
+[2025-04-14T22:56:15.569+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide.txt
+[2025-04-14T22:56:15.569+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/p5nlS0Mwcc0_TOP_23_Things_To_Do_In_Seattle_Travel_Guide_segments.json
+[2025-04-14T22:56:15.570+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video eHbU9MzEEzQ
+[2025-04-14T22:56:16.097+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video eHbU9MzEEzQ (1836 words)
+[2025-04-14T22:56:16.101+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel_.txt
+[2025-04-14T22:56:16.102+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/eHbU9MzEEzQ_7_Things_You_HAVE_To_Do_In_Seattle_24_hour_Travel__segments.json
+[2025-04-14T22:56:16.102+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video GB_8NQjDhUc
+[2025-04-14T22:56:16.652+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video GB_8NQjDhUc (1921 words)
+[2025-04-14T22:56:16.656+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE.txt
+[2025-04-14T22:56:16.657+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/GB_8NQjDhUc_How_to_spend_the_PERFECT_weekend_in_SEATTLE_segments.json
+[2025-04-14T22:56:17.660+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:56:17.704+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video X6YxSvlntLQ
+[2025-04-14T22:56:18.261+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video X6YxSvlntLQ (3455 words)
+[2025-04-14T22:56:18.269+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s.txt
+[2025-04-14T22:56:18.271+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s_segments.json
+[2025-04-14T22:56:18.271+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video oXJFc1M5jPc
+[2025-04-14T22:56:18.751+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video oXJFc1M5jPc (220 words)
+[2025-04-14T22:56:18.752+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s.txt
+[2025-04-14T22:56:18.752+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/oXJFc1M5jPc_Fun_Things_To_Do_In_Seattle_travelvlog_traveling_s_segments.json
+[2025-04-14T22:56:18.752+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NnrVSgNKius
+[2025-04-14T22:56:19.593+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video NnrVSgNKius (6292 words)
+[2025-04-14T22:56:19.603+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/NnrVSgNKius_How_to_Spend_One_Day_in_Seattle_Washington_Top_Thi.txt
+[2025-04-14T22:56:19.605+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/NnrVSgNKius_How_to_Spend_One_Day_in_Seattle_Washington_Top_Thi_segments.json
+[2025-04-14T22:56:19.606+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 5gIlIM9uLwY
+[2025-04-14T22:56:20.299+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 5gIlIM9uLwY (143 words)
+[2025-04-14T22:56:20.300+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/5gIlIM9uLwY_Top_8_Must-Visit_Places_in_Seattle_WA_US.txt
+[2025-04-14T22:56:20.300+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/5gIlIM9uLwY_Top_8_Must-Visit_Places_in_Seattle_WA_US_segments.json
+[2025-04-14T22:56:20.301+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video wd_kzQjQyTg
+[2025-04-14T22:56:21.008+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video wd_kzQjQyTg (3360 words)
+[2025-04-14T22:56:21.014+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/wd_kzQjQyTg_Seattle_Travel_Tips_8_Things_to_Know_Before_You_Go.txt
+[2025-04-14T22:56:21.015+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/wd_kzQjQyTg_Seattle_Travel_Tips_8_Things_to_Know_Before_You_Go_segments.json
+[2025-04-14T22:56:22.019+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:56:22.125+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NQCWA13jqNc
+[2025-04-14T22:56:23.029+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video NQCWA13jqNc (838 words)
+[2025-04-14T22:56:23.031+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE.txt
+[2025-04-14T22:56:23.032+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/NQCWA13jqNc_THINGS_TO_KNOW_BEFORE_YOU_GO_TO_SEATTLE_segments.json
+[2025-04-14T22:56:23.032+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video nputaaDXTGM
+[2025-04-14T22:56:24.057+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video nputaaDXTGM (101 words)
+[2025-04-14T22:56:24.058+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/nputaaDXTGM_Best_Things_Ive_Eaten_in_Seattle_in_the_last_30_da.txt
+[2025-04-14T22:56:24.058+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/nputaaDXTGM_Best_Things_Ive_Eaten_in_Seattle_in_the_last_30_da_segments.json
+[2025-04-14T22:56:24.058+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video mAJHTcclygg
+[2025-04-14T22:56:24.597+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video mAJHTcclygg (2784 words)
+[2025-04-14T22:56:24.602+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/mAJHTcclygg_BEST_Things_to_do_in_Seattle_3_Day_Seattle_Travel_.txt
+[2025-04-14T22:56:24.603+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/mAJHTcclygg_BEST_Things_to_do_in_Seattle_3_Day_Seattle_Travel__segments.json
+[2025-04-14T22:56:24.603+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video IZsxgbdChyM
+[2025-04-14T22:56:25.090+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video IZsxgbdChyM (2900 words)
+[2025-04-14T22:56:25.097+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/IZsxgbdChyM_SEATTLE_WA_10_FUN_Things_To_Do_While_Visiting_2024.txt
+[2025-04-14T22:56:25.098+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/IZsxgbdChyM_SEATTLE_WA_10_FUN_Things_To_Do_While_Visiting_2024_segments.json
+[2025-04-14T22:56:25.099+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video w_oBnLtqHsQ
+[2025-04-14T22:56:25.599+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video w_oBnLtqHsQ (15 words)
+[2025-04-14T22:56:25.600+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/w_oBnLtqHsQ_10_fun_things_to_do_if_youre_planning_a_trip_to_Se.txt
+[2025-04-14T22:56:25.601+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/w_oBnLtqHsQ_10_fun_things_to_do_if_youre_planning_a_trip_to_Se_segments.json
+[2025-04-14T22:56:26.603+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 5/6: 'Seattle hidden gems'
+[2025-04-14T22:56:26.958+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle hidden gems'
+[2025-04-14T22:56:26.958+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:56:27.033+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video GZDYzgDhYbs
+[2025-04-14T22:56:27.626+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video GZDYzgDhYbs (1440 words)
+[2025-04-14T22:56:27.630+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/GZDYzgDhYbs_Explore_SEATTLES_Hidden_Gems.txt
+[2025-04-14T22:56:27.631+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/GZDYzgDhYbs_Explore_SEATTLES_Hidden_Gems_segments.json
+[2025-04-14T22:56:27.632+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video EV4iEloJlr8
+[2025-04-14T22:56:28.150+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video EV4iEloJlr8 (1565 words)
+[2025-04-14T22:56:28.153+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/EV4iEloJlr8_Hidden_Gems_of_Seattle_NorthCountry.txt
+[2025-04-14T22:56:28.154+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/EV4iEloJlr8_Hidden_Gems_of_Seattle_NorthCountry_segments.json
+[2025-04-14T22:56:28.154+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video OH9xUG2_qII
+[2025-04-14T22:56:28.903+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video OH9xUG2_qII (527 words)
+[2025-04-14T22:56:28.905+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/OH9xUG2_qII_Top_10_Hidden_Places_to_Visit_in_Seattle_Washingto.txt
+[2025-04-14T22:56:28.906+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/OH9xUG2_qII_Top_10_Hidden_Places_to_Visit_in_Seattle_Washingto_segments.json
+[2025-04-14T22:56:28.906+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video TRKUj3mVKpE
+[2025-04-14T22:56:29.582+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video TRKUj3mVKpE (906 words)
+[2025-04-14T22:56:29.587+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/TRKUj3mVKpE_Seattles_Top_Hidden_Gems_Seattle_has_a_museum_for_.txt
+[2025-04-14T22:56:29.588+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/TRKUj3mVKpE_Seattles_Top_Hidden_Gems_Seattle_has_a_museum_for__segments.json
+[2025-04-14T22:56:29.589+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video SL6HLPlpB8w
+[2025-04-14T22:56:30.085+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video SL6HLPlpB8w (164 words)
+[2025-04-14T22:56:30.090+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/SL6HLPlpB8w_Seattles_BEST_Hidden_Gems.txt
+[2025-04-14T22:56:30.091+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/SL6HLPlpB8w_Seattles_BEST_Hidden_Gems_segments.json
+[2025-04-14T22:56:31.092+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:56:31.197+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video -zFln7HPkXk
+[2025-04-14T22:56:31.769+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video -zFln7HPkXk (80 words)
+[2025-04-14T22:56:31.770+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/-zFln7HPkXk_Seattle_Uncovered_6_Hidden_Gems_travel_weekendexpe.txt
+[2025-04-14T22:56:31.771+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/-zFln7HPkXk_Seattle_Uncovered_6_Hidden_Gems_travel_weekendexpe_segments.json
+[2025-04-14T22:56:31.771+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video JGPMIwCGoV4
+[2025-04-14T22:56:32.355+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video JGPMIwCGoV4 (1797 words)
+[2025-04-14T22:56:32.360+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/JGPMIwCGoV4_Seattles_Hidden_Gems_Discover_the_Best_Kept_Secret.txt
+[2025-04-14T22:56:32.361+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/JGPMIwCGoV4_Seattles_Hidden_Gems_Discover_the_Best_Kept_Secret_segments.json
+[2025-04-14T22:56:32.362+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video RKs_kwT_e2U
+[2025-04-14T22:56:33.148+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video RKs_kwT_e2U (776 words)
+[2025-04-14T22:56:33.151+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/RKs_kwT_e2U_5_Hidden_Gems_in_Seattle_That_Will_BLOW_Your_Mind.txt
+[2025-04-14T22:56:33.152+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/RKs_kwT_e2U_5_Hidden_Gems_in_Seattle_That_Will_BLOW_Your_Mind_segments.json
+[2025-04-14T22:56:33.152+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video GC4XsWyqvrA
+[2025-04-14T22:56:33.608+0000] {youtube_dag.py:935} WARNING - No transcript available for video GC4XsWyqvrA: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=GC4XsWyqvrA! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:33.609+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video GC4XsWyqvrA
+[2025-04-14T22:56:33.609+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video krj2j_WnzzY
+[2025-04-14T22:56:34.248+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video krj2j_WnzzY (1486 words)
+[2025-04-14T22:56:34.256+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/krj2j_WnzzY_Explore_Seattle_Hidden_Gems_Iconic_Landmarks_Revea.txt
+[2025-04-14T22:56:34.259+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/krj2j_WnzzY_Explore_Seattle_Hidden_Gems_Iconic_Landmarks_Revea_segments.json
+[2025-04-14T22:56:35.262+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:56:35.333+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video FkABoOKsXIA
+[2025-04-14T22:56:36.004+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video FkABoOKsXIA (1728 words)
+[2025-04-14T22:56:36.013+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/FkABoOKsXIA_Hidden_Gems_at_Pike_Place_Market_Local_Lens_Seattl.txt
+[2025-04-14T22:56:36.015+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/FkABoOKsXIA_Hidden_Gems_at_Pike_Place_Market_Local_Lens_Seattl_segments.json
+[2025-04-14T22:56:36.016+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video F9URkOkXSy4
+[2025-04-14T22:56:36.821+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video F9URkOkXSy4 (477 words)
+[2025-04-14T22:56:36.823+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/F9URkOkXSy4_Six_hidden_gems_to_explore_in_Seattle_-_2022s_BNWE.txt
+[2025-04-14T22:56:36.824+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/F9URkOkXSy4_Six_hidden_gems_to_explore_in_Seattle_-_2022s_BNWE_segments.json
+[2025-04-14T22:56:36.824+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 07d5qNBm1F8
+[2025-04-14T22:56:37.532+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 07d5qNBm1F8 (596 words)
+[2025-04-14T22:56:37.534+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/07d5qNBm1F8_Solo_in_Seattle_Best_Spots_Hidden_Gems_with_a_Twis.txt
+[2025-04-14T22:56:37.534+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/07d5qNBm1F8_Solo_in_Seattle_Best_Spots_Hidden_Gems_with_a_Twis_segments.json
+[2025-04-14T22:56:37.534+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video us1Y0wY9n5I
+[2025-04-14T22:56:38.456+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video us1Y0wY9n5I (1580 words)
+[2025-04-14T22:56:38.463+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/us1Y0wY9n5I_Seattles_Hidden_Gems_You_Cant_Miss_.txt
+[2025-04-14T22:56:38.465+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/us1Y0wY9n5I_Seattles_Hidden_Gems_You_Cant_Miss__segments.json
+[2025-04-14T22:56:38.465+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 6HUmrPZzAI4
+[2025-04-14T22:56:39.214+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 6HUmrPZzAI4 (2962 words)
+[2025-04-14T22:56:39.228+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/6HUmrPZzAI4_EXPLORING_Seattles_Best-Kept_Secrets_Uncover_The_H.txt
+[2025-04-14T22:56:39.230+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/6HUmrPZzAI4_EXPLORING_Seattles_Best-Kept_Secrets_Uncover_The_H_segments.json
+[2025-04-14T22:56:40.236+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:56:40.316+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video u8AAE7Ew0ZE
+[2025-04-14T22:56:40.881+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video u8AAE7Ew0ZE (1037 words)
+[2025-04-14T22:56:40.885+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/u8AAE7Ew0ZE_Exploring_the_HIDDEN_GEMS_of_Seattle_Washington.txt
+[2025-04-14T22:56:40.886+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/u8AAE7Ew0ZE_Exploring_the_HIDDEN_GEMS_of_Seattle_Washington_segments.json
+[2025-04-14T22:56:40.887+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 9MCtNpaM_9M
+[2025-04-14T22:56:41.536+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 9MCtNpaM_9M (1346 words)
+[2025-04-14T22:56:41.542+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/9MCtNpaM_9M_Uncover_Seattles_Secret_Treasures_Best_Hidden_Gems.txt
+[2025-04-14T22:56:41.546+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/9MCtNpaM_9M_Uncover_Seattles_Secret_Treasures_Best_Hidden_Gems_segments.json
+[2025-04-14T22:56:41.546+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video ByDFscj2O1g
+[2025-04-14T22:56:42.135+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video ByDFscj2O1g (1841 words)
+[2025-04-14T22:56:42.145+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/ByDFscj2O1g_Seattles_Hidden_Gems_You_Wont_Believe_Exist.txt
+[2025-04-14T22:56:42.146+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/ByDFscj2O1g_Seattles_Hidden_Gems_You_Wont_Believe_Exist_segments.json
+[2025-04-14T22:56:42.147+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video NoB7frum2vw
+[2025-04-14T22:56:42.546+0000] {youtube_dag.py:935} WARNING - No transcript available for video NoB7frum2vw: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=NoB7frum2vw! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:42.547+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video NoB7frum2vw
+[2025-04-14T22:56:42.547+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video vi0SvNcd9do
+[2025-04-14T22:56:43.184+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video vi0SvNcd9do (3465 words)
+[2025-04-14T22:56:43.192+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/vi0SvNcd9do_FREE_things_to_do_in_Seattle.txt
+[2025-04-14T22:56:43.194+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/vi0SvNcd9do_FREE_things_to_do_in_Seattle_segments.json
+[2025-04-14T22:56:44.196+0000] {youtube_dag.py:318} INFO - [Seattle] Processing query 6/6: 'Seattle food guide'
+[2025-04-14T22:56:44.540+0000] {youtube_dag.py:321} INFO - [Seattle] Found 20 videos for query: 'Seattle food guide'
+[2025-04-14T22:56:44.541+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 1/4
+[2025-04-14T22:56:44.634+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video mA46BuWFRCE
+[2025-04-14T22:56:45.268+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video mA46BuWFRCE (850 words)
+[2025-04-14T22:56:45.272+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/mA46BuWFRCE_10_BEST_PLACES_to_EAT_in_Downtown_Seattle_Washingt.txt
+[2025-04-14T22:56:45.273+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/mA46BuWFRCE_10_BEST_PLACES_to_EAT_in_Downtown_Seattle_Washingt_segments.json
+[2025-04-14T22:56:45.273+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video X6YxSvlntLQ
+[2025-04-14T22:56:45.873+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video X6YxSvlntLQ (3455 words)
+[2025-04-14T22:56:45.880+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s.txt
+[2025-04-14T22:56:45.881+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/X6YxSvlntLQ_my_seattle_guide_EVERYTHING_you_should_EAT_DO_in_s_segments.json
+[2025-04-14T22:56:45.882+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video FMgYXnJ9apw
+[2025-04-14T22:56:46.423+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video FMgYXnJ9apw (3987 words)
+[2025-04-14T22:56:46.432+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/FMgYXnJ9apw_What_to_Eat_in_SEATTLE_Seattle_Food_Tour_Part_1_20.txt
+[2025-04-14T22:56:46.434+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/FMgYXnJ9apw_What_to_Eat_in_SEATTLE_Seattle_Food_Tour_Part_1_20_segments.json
+[2025-04-14T22:56:46.434+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Zr_eFH_SvyY
+[2025-04-14T22:56:47.157+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Zr_eFH_SvyY (4049 words)
+[2025-04-14T22:56:47.168+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Zr_eFH_SvyY_24_Hours_Eating_ONLY_at_PIKE_PLACE_MARKET_in_Seatt.txt
+[2025-04-14T22:56:47.170+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Zr_eFH_SvyY_24_Hours_Eating_ONLY_at_PIKE_PLACE_MARKET_in_Seatt_segments.json
+[2025-04-14T22:56:47.170+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video jeE30bM82BA
+[2025-04-14T22:56:47.767+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video jeE30bM82BA (2501 words)
+[2025-04-14T22:56:47.773+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/jeE30bM82BA_All_the_BEST_Food_at_Pike_Place_Market_Seattle_Was.txt
+[2025-04-14T22:56:47.774+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/jeE30bM82BA_All_the_BEST_Food_at_Pike_Place_Market_Seattle_Was_segments.json
+[2025-04-14T22:56:48.775+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 2/4
+[2025-04-14T22:56:48.878+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 6I8mo_PZ3ag
+[2025-04-14T22:56:49.402+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 6I8mo_PZ3ag (1318 words)
+[2025-04-14T22:56:49.407+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/6I8mo_PZ3ag_The_TOP_10_BEST_RESTAURANTS_in_SEATTLE_Washington_.txt
+[2025-04-14T22:56:49.409+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/6I8mo_PZ3ag_The_TOP_10_BEST_RESTAURANTS_in_SEATTLE_Washington__segments.json
+[2025-04-14T22:56:49.409+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video IRJhAQMIs8Y
+[2025-04-14T22:56:49.941+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video IRJhAQMIs8Y (2483 words)
+[2025-04-14T22:56:49.945+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/IRJhAQMIs8Y_The_MUNCHIES_Guide_To_Washington_Going_Deep.txt
+[2025-04-14T22:56:49.946+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/IRJhAQMIs8Y_The_MUNCHIES_Guide_To_Washington_Going_Deep_segments.json
+[2025-04-14T22:56:49.947+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 3D8tAScqvZA
+[2025-04-14T22:56:50.546+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 3D8tAScqvZA (2198 words)
+[2025-04-14T22:56:50.550+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/3D8tAScqvZA_Seattle_Food_Tour_5_Foods_You_NEED_to_Try_in_Pike_.txt
+[2025-04-14T22:56:50.551+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/3D8tAScqvZA_Seattle_Food_Tour_5_Foods_You_NEED_to_Try_in_Pike__segments.json
+[2025-04-14T22:56:50.551+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video TvfePq94NUg
+[2025-04-14T22:56:51.175+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video TvfePq94NUg (2880 words)
+[2025-04-14T22:56:51.182+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/TvfePq94NUg_Pike_Place_Market_-_AMERICAS_1_CHOWDER_Must-Eat_Ma.txt
+[2025-04-14T22:56:51.184+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/TvfePq94NUg_Pike_Place_Market_-_AMERICAS_1_CHOWDER_Must-Eat_Ma_segments.json
+[2025-04-14T22:56:51.185+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video dGi9YcD4RRE
+[2025-04-14T22:56:51.732+0000] {youtube_dag.py:935} WARNING - No transcript available for video dGi9YcD4RRE: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=dGi9YcD4RRE! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:51.733+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video dGi9YcD4RRE
+[2025-04-14T22:56:52.739+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 3/4
+[2025-04-14T22:56:52.794+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video _fh9AE7kU0I
+[2025-04-14T22:56:53.583+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video _fh9AE7kU0I (1503 words)
+[2025-04-14T22:56:53.590+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/_fh9AE7kU0I_SEATTLE_Food_Tour_What_to_EAT_in_SEATTLE_Part_1_Tr.txt
+[2025-04-14T22:56:53.594+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/_fh9AE7kU0I_SEATTLE_Food_Tour_What_to_EAT_in_SEATTLE_Part_1_Tr_segments.json
+[2025-04-14T22:56:53.595+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video ZId9M3EVoTE
+[2025-04-14T22:56:54.426+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video ZId9M3EVoTE (3281 words)
+[2025-04-14T22:56:54.432+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/ZId9M3EVoTE_Seattles_ICONIC_Foods_Seattle_Food_Tour_Pike_Place.txt
+[2025-04-14T22:56:54.433+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/ZId9M3EVoTE_Seattles_ICONIC_Foods_Seattle_Food_Tour_Pike_Place_segments.json
+[2025-04-14T22:56:54.433+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video ELh76UYFmnA
+[2025-04-14T22:56:54.979+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video ELh76UYFmnA (1046 words)
+[2025-04-14T22:56:54.982+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/ELh76UYFmnA_Seattle_Food_Tour_Guide.txt
+[2025-04-14T22:56:54.984+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/ELh76UYFmnA_Seattle_Food_Tour_Guide_segments.json
+[2025-04-14T22:56:54.984+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video L77MMvvTFiI
+[2025-04-14T22:56:55.534+0000] {youtube_dag.py:935} WARNING - No transcript available for video L77MMvvTFiI: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=L77MMvvTFiI! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+[2025-04-14T22:56:55.535+0000] {youtube_dag.py:339} WARNING - [Seattle] No transcript available for video L77MMvvTFiI
+[2025-04-14T22:56:55.535+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video EhBZVy-DhJ4
+[2025-04-14T22:56:56.342+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video EhBZVy-DhJ4 (3028 words)
+[2025-04-14T22:56:56.347+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/EhBZVy-DhJ4_TOP_10_THINGS_TO_DO_IN_SEATTLE_Where_To_Eat_Ultima.txt
+[2025-04-14T22:56:56.348+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/EhBZVy-DhJ4_TOP_10_THINGS_TO_DO_IN_SEATTLE_Where_To_Eat_Ultima_segments.json
+[2025-04-14T22:56:57.352+0000] {youtube_dag.py:327} INFO - [Seattle] Processing batch 4/4
+[2025-04-14T22:56:57.421+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video cYXBAqDRrJ8
+[2025-04-14T22:56:58.004+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video cYXBAqDRrJ8 (4533 words)
+[2025-04-14T22:56:58.019+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/cYXBAqDRrJ8_What_to_Eat_in_SEATTLE_Seattle_Food_Tour_Part_1_20.txt
+[2025-04-14T22:56:58.022+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/cYXBAqDRrJ8_What_to_Eat_in_SEATTLE_Seattle_Food_Tour_Part_1_20_segments.json
+[2025-04-14T22:56:58.023+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video fL5MGkGxcjw
+[2025-04-14T22:56:58.512+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video fL5MGkGxcjw (748 words)
+[2025-04-14T22:56:58.515+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/fL5MGkGxcjw_5-Minute_Guide_to_Seattle_Food_Things_to_Do.txt
+[2025-04-14T22:56:58.516+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/fL5MGkGxcjw_5-Minute_Guide_to_Seattle_Food_Things_to_Do_segments.json
+[2025-04-14T22:56:58.516+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video 6TZye-behRA
+[2025-04-14T22:56:59.177+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video 6TZye-behRA (8395 words)
+[2025-04-14T22:56:59.199+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/6TZye-behRA_Keith_Eats_Everything_At_Pike_Place_Market.txt
+[2025-04-14T22:56:59.203+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/6TZye-behRA_Keith_Eats_Everything_At_Pike_Place_Market_segments.json
+[2025-04-14T22:56:59.203+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video Cv7MqVqp05E
+[2025-04-14T22:57:00.397+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video Cv7MqVqp05E (733 words)
+[2025-04-14T22:57:00.401+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/Cv7MqVqp05E_Top_Rated_Best_Restaurants_in_Seattle_Washington_f.txt
+[2025-04-14T22:57:00.402+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/Cv7MqVqp05E_Top_Rated_Best_Restaurants_in_Seattle_Washington_f_segments.json
+[2025-04-14T22:57:00.402+0000] {youtube_dag.py:335} INFO - [Seattle] Retrieving transcript for video f_f8LcIhRPg
+[2025-04-14T22:57:00.879+0000] {youtube_dag.py:344} INFO - [Seattle] Retrieved transcript for video f_f8LcIhRPg (186 words)
+[2025-04-14T22:57:00.880+0000] {youtube_dag.py:381} INFO - [Seattle] Saved transcript to /opt/***/data/city_transcripts/Seattle/transcripts/f_f8LcIhRPg_This_is_the_BEST_FOOD_MARKET_in_Seattle.txt
+[2025-04-14T22:57:00.880+0000] {youtube_dag.py:387} INFO - [Seattle] Saved transcript segments to /opt/***/data/city_transcripts/Seattle/transcripts/f_f8LcIhRPg_This_is_the_BEST_FOOD_MARKET_in_Seattle_segments.json
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:426} INFO - [Seattle] Saved transcript metadata to /opt/***/data/city_transcripts/Seattle/seattle_vlog_transcripts.csv
+[2025-04-14T22:57:01.894+0000] {youtube_dag.py:430} INFO - [Seattle] Download summary: 111 successful, 9 failed
+[2025-04-14T22:57:01.895+0000] {youtube_dag.py:244} INFO - Skipping S3 upload phase for Seattle
+[2025-04-14T22:57:01.895+0000] {youtube_dag.py:248} INFO - Processing and embedding Seattle transcripts
+[2025-04-14T22:57:01.895+0000] {youtube_dag.py:552} INFO - Starting processing and embedding for Seattle
+[2025-04-14T22:57:01.895+0000] {youtube_dag.py:576} INFO - Initializing OpenAI client for Seattle
+[2025-04-14T22:57:01.915+0000] {youtube_dag.py:578} INFO - OpenAI client initialized successfully
+[2025-04-14T22:57:01.915+0000] {youtube_dag.py:590} INFO - Initializing Pinecone for Seattle
+[2025-04-14T22:57:03.645+0000] {youtube_dag.py:595} INFO - Existing Pinecone indexes: ['bigdatafinal']
+[2025-04-14T22:57:03.646+0000] {youtube_dag.py:598} INFO - Creating Pinecone index: travel-data
+[2025-04-14T22:57:04.599+0000] {youtube_dag.py:616} ERROR - Failed to initialize Pinecone: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'content-type': 'text/plain; charset=utf-8', 'access-control-allow-origin': '*', 'vary': 'origin,access-control-request-method,access-control-request-headers', 'access-control-expose-headers': '*', 'x-pinecone-api-version': '2025-01', 'x-cloud-trace-context': '74b87e8686238a40fb66e013cede4110', 'date': 'Mon, 14 Apr 2025 22:57:04 GMT', 'server': 'Google Frontend', 'Content-Length': '200', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: {"error":{"code":"INVALID_ARGUMENT","message":"Bad request: Your free plan does not support indexes in the us-west-2 region of aws. To create indexes in this region, upgrade your plan."},"status":400}
+
+[2025-04-14T22:57:04.603+0000] {youtube_dag.py:266} INFO - Completed processing for Seattle: {"city_key": "Seattle", "transcript_count": 111, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:57:04.616+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'Seattle', 'transcript_count': 111, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:57:04.641+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:57:04.641+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_Seattle, run_id=manual__2025-04-14T22:55:13.823884+00:00, execution_date=20250414T225513, start_date=20250414T225517, end_date=20250414T225704
+[2025-04-14T22:57:04.680+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:57:04.690+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-14T22:57:04.691+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

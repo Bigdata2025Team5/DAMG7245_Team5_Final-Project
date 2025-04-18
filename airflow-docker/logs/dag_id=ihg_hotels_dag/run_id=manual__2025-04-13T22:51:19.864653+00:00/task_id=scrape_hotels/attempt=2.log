@@ -1,0 +1,173 @@
+[2025-04-13T22:56:22.084+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T22:56:22.089+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:51:19.864653+00:00 [queued]>
+[2025-04-13T22:56:22.091+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:51:19.864653+00:00 [queued]>
+[2025-04-13T22:56:22.091+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2025-04-13T22:56:22.096+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-13 22:51:19.864653+00:00
+[2025-04-13T22:56:22.099+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=998) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T22:56:22.099+0000] {standard_task_runner.py:72} INFO - Started process 999 to run task
+[2025-04-13T22:56:22.100+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'manual__2025-04-13T22:51:19.864653+00:00', '--job-id', '231', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpft1a67bk']
+[2025-04-13T22:56:22.101+0000] {standard_task_runner.py:105} INFO - Job 231: Subtask scrape_hotels
+[2025-04-13T22:56:22.119+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:51:19.864653+00:00 [running]> on host 599bf25ffed0
+[2025-04-13T22:56:22.152+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T22:51:19.864653+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T22:51:19.864653+00:00'
+[2025-04-13T22:56:22.153+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T22:56:22.158+0000] {hotel_scrape_dag.py:75} INFO - Installing Playwright browsers...
+[2025-04-13T22:56:22.372+0000] {hotel_scrape_dag.py:82} INFO - Playwright browsers installed: 
+[2025-04-13T22:56:22.473+0000] {hotel_scrape_dag.py:685} INFO - Attempting to launch Chromium browser
+[2025-04-13T22:56:22.503+0000] {hotel_scrape_dag.py:695} INFO - Successfully launched Chromium browser
+[2025-04-13T22:56:22.561+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape New York
+[2025-04-13T22:56:22.562+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for New York at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:22.775+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - holidayinn
+[2025-04-13T22:56:23.424+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - holidayinn
+[2025-04-13T22:56:23.426+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for New York at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:23.486+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - crowneplaza
+[2025-04-13T22:56:24.099+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - crowneplaza
+[2025-04-13T22:56:24.100+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for New York at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:24.150+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - ihg
+[2025-04-13T22:56:24.761+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - ihg
+[2025-04-13T22:56:24.761+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for New York at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:24.886+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - intercontinental
+[2025-04-13T22:56:25.534+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - intercontinental
+[2025-04-13T22:56:25.535+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for New York at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:25.585+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - hotelindigo
+[2025-04-13T22:56:26.195+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - hotelindigo
+[2025-04-13T22:56:26.195+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for New York at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=New%20York%2C%20NY&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:26.237+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for New York - staybridge
+[2025-04-13T22:56:26.840+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for New York - staybridge
+[2025-04-13T22:56:26.841+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for New York
+[2025-04-13T22:56:26.894+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for New York
+[2025-04-13T22:56:27.516+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping New York. Found total of 0 hotels.
+[2025-04-13T22:56:27.516+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for New York
+[2025-04-13T22:56:27.516+0000] {hotel_scrape_dag.py:768} INFO - Waiting 8709ms before next city
+[2025-04-13T22:56:36.234+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape San Francisco
+[2025-04-13T22:56:36.237+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for San Francisco at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:36.316+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - holidayinn
+[2025-04-13T22:56:36.903+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - holidayinn
+[2025-04-13T22:56:36.904+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for San Francisco at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:36.942+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - crowneplaza
+[2025-04-13T22:56:37.562+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - crowneplaza
+[2025-04-13T22:56:37.562+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for San Francisco at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:37.610+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - ihg
+[2025-04-13T22:56:38.229+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - ihg
+[2025-04-13T22:56:38.230+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for San Francisco at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:38.273+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - intercontinental
+[2025-04-13T22:56:38.878+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - intercontinental
+[2025-04-13T22:56:38.879+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for San Francisco at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:38.924+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - hotelindigo
+[2025-04-13T22:56:39.553+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - hotelindigo
+[2025-04-13T22:56:39.553+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for San Francisco at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:39.637+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for San Francisco - staybridge
+[2025-04-13T22:56:40.263+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for San Francisco - staybridge
+[2025-04-13T22:56:40.264+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for San Francisco
+[2025-04-13T22:56:40.314+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for San Francisco
+[2025-04-13T22:56:40.954+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping San Francisco. Found total of 0 hotels.
+[2025-04-13T22:56:40.954+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for San Francisco
+[2025-04-13T22:56:40.954+0000] {hotel_scrape_dag.py:768} INFO - Waiting 5835ms before next city
+[2025-04-13T22:56:46.793+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape Chicago
+[2025-04-13T22:56:46.794+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for Chicago at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:46.852+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - holidayinn
+[2025-04-13T22:56:47.466+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - holidayinn
+[2025-04-13T22:56:47.466+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for Chicago at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:47.531+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - crowneplaza
+[2025-04-13T22:56:48.153+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - crowneplaza
+[2025-04-13T22:56:48.153+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for Chicago at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:48.207+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - ihg
+[2025-04-13T22:56:48.829+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - ihg
+[2025-04-13T22:56:48.830+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for Chicago at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:48.885+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - intercontinental
+[2025-04-13T22:56:49.499+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - intercontinental
+[2025-04-13T22:56:49.501+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for Chicago at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:49.544+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - hotelindigo
+[2025-04-13T22:56:50.163+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - hotelindigo
+[2025-04-13T22:56:50.163+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for Chicago at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=Chicago%2C%20IL&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:50.203+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Chicago - staybridge
+[2025-04-13T22:56:50.814+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Chicago - staybridge
+[2025-04-13T22:56:50.814+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for Chicago
+[2025-04-13T22:56:50.868+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for Chicago
+[2025-04-13T22:56:51.584+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping Chicago. Found total of 0 hotels.
+[2025-04-13T22:56:51.584+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for Chicago
+[2025-04-13T22:56:51.584+0000] {hotel_scrape_dag.py:768} INFO - Waiting 5744ms before next city
+[2025-04-13T22:56:57.335+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape Seattle
+[2025-04-13T22:56:57.336+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for Seattle at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:57.490+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - holidayinn
+[2025-04-13T22:56:58.118+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - holidayinn
+[2025-04-13T22:56:58.122+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for Seattle at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:58.168+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - crowneplaza
+[2025-04-13T22:56:58.752+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - crowneplaza
+[2025-04-13T22:56:58.752+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for Seattle at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:58.802+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - ihg
+[2025-04-13T22:56:59.387+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - ihg
+[2025-04-13T22:56:59.387+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for Seattle at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:56:59.674+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - intercontinental
+[2025-04-13T22:57:00.274+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - intercontinental
+[2025-04-13T22:57:00.275+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for Seattle at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:00.334+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - hotelindigo
+[2025-04-13T22:57:00.941+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - hotelindigo
+[2025-04-13T22:57:00.942+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for Seattle at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=Seattle%2C%20WA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:01.038+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Seattle - staybridge
+[2025-04-13T22:57:01.642+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Seattle - staybridge
+[2025-04-13T22:57:01.642+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for Seattle
+[2025-04-13T22:57:01.712+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for Seattle
+[2025-04-13T22:57:02.331+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping Seattle. Found total of 0 hotels.
+[2025-04-13T22:57:02.331+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for Seattle
+[2025-04-13T22:57:02.332+0000] {hotel_scrape_dag.py:768} INFO - Waiting 7869ms before next city
+[2025-04-13T22:57:10.204+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape Las Vegas
+[2025-04-13T22:57:10.205+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for Las Vegas at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:10.255+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - holidayinn
+[2025-04-13T22:57:10.855+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - holidayinn
+[2025-04-13T22:57:10.855+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for Las Vegas at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:10.898+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - crowneplaza
+[2025-04-13T22:57:11.486+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - crowneplaza
+[2025-04-13T22:57:11.486+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for Las Vegas at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:11.523+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - ihg
+[2025-04-13T22:57:12.130+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - ihg
+[2025-04-13T22:57:12.131+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for Las Vegas at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:12.183+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - intercontinental
+[2025-04-13T22:57:12.785+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - intercontinental
+[2025-04-13T22:57:12.785+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for Las Vegas at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:12.828+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - hotelindigo
+[2025-04-13T22:57:13.444+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - hotelindigo
+[2025-04-13T22:57:13.444+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for Las Vegas at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas%2C%20NV&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:13.510+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Las Vegas - staybridge
+[2025-04-13T22:57:14.130+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Las Vegas - staybridge
+[2025-04-13T22:57:14.130+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for Las Vegas
+[2025-04-13T22:57:14.179+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for Las Vegas
+[2025-04-13T22:57:14.823+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping Las Vegas. Found total of 0 hotels.
+[2025-04-13T22:57:14.823+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for Las Vegas
+[2025-04-13T22:57:14.823+0000] {hotel_scrape_dag.py:768} INFO - Waiting 7791ms before next city
+[2025-04-13T22:57:22.618+0000] {hotel_scrape_dag.py:98} INFO - Starting to scrape Los Angeles
+[2025-04-13T22:57:22.621+0000] {hotel_scrape_dag.py:107} INFO - Trying holidayinn for Los Angeles at URL: https://www.ihg.com/holidayinn/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:22.698+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - holidayinn
+[2025-04-13T22:57:23.310+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - holidayinn
+[2025-04-13T22:57:23.310+0000] {hotel_scrape_dag.py:107} INFO - Trying crowneplaza for Los Angeles at URL: https://www.ihg.com/crowneplaza/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:23.343+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - crowneplaza
+[2025-04-13T22:57:24.062+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - crowneplaza
+[2025-04-13T22:57:24.062+0000] {hotel_scrape_dag.py:107} INFO - Trying ihg for Los Angeles at URL: https://www.ihg.com/ihg/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:24.152+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - ihg
+[2025-04-13T22:57:24.779+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - ihg
+[2025-04-13T22:57:24.780+0000] {hotel_scrape_dag.py:107} INFO - Trying intercontinental for Los Angeles at URL: https://www.ihg.com/intercontinental/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:24.819+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - intercontinental
+[2025-04-13T22:57:25.443+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - intercontinental
+[2025-04-13T22:57:25.443+0000] {hotel_scrape_dag.py:107} INFO - Trying hotelindigo for Los Angeles at URL: https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:25.482+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - hotelindigo
+[2025-04-13T22:57:26.084+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - hotelindigo
+[2025-04-13T22:57:26.084+0000] {hotel_scrape_dag.py:107} INFO - Trying staybridge for Los Angeles at URL: https://www.ihg.com/staybridge/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles%2C%20CA&qCiD=15&qCoD=16&qCiMy=42025&qCoMy=42025&qAdlt=1&qChld=0&qRms=1
+[2025-04-13T22:57:26.144+0000] {hotel_scrape_dag.py:111} INFO - Page loaded for Los Angeles - staybridge
+[2025-04-13T22:57:26.768+0000] {hotel_scrape_dag.py:158} INFO - No hotel results found for Los Angeles - staybridge
+[2025-04-13T22:57:26.769+0000] {hotel_scrape_dag.py:195} INFO - Trying API approach for Los Angeles
+[2025-04-13T22:57:26.819+0000] {hotel_scrape_dag.py:276} INFO - Trying directory approach for Los Angeles
+[2025-04-13T22:57:27.452+0000] {hotel_scrape_dag.py:301} INFO - Completed scraping Los Angeles. Found total of 0 hotels.
+[2025-04-13T22:57:27.452+0000] {hotel_scrape_dag.py:764} WARNING - No hotels found for Los Angeles
+[2025-04-13T22:57:27.452+0000] {hotel_scrape_dag.py:768} INFO - Waiting 9267ms before next city
+[2025-04-13T22:57:36.746+0000] {hotel_scrape_dag.py:783} WARNING - No hotels were found! Adding fallback hotels.
+[2025-04-13T22:57:36.747+0000] {hotel_scrape_dag.py:797} INFO - Generating fallback hotel data
+[2025-04-13T22:57:36.747+0000] {hotel_scrape_dag.py:895} INFO - Generated 150 fallback hotels
+[2025-04-13T22:57:36.747+0000] {hotel_scrape_dag.py:788} INFO - Total hotels found: 150
+[2025-04-13T22:57:36.751+0000] {hotel_scrape_dag.py:791} INFO - ✅ Scraped 150 hotels across all cities. Data saved to multi_city_ihg_hotels.csv
+[2025-04-13T22:57:36.751+0000] {python.py:240} INFO - Done. Returned value was: 150
+[2025-04-13T22:57:36.762+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T22:57:36.763+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=manual__2025-04-13T22:51:19.864653+00:00, execution_date=20250413T225119, start_date=20250413T225622, end_date=20250413T225736
+[2025-04-13T22:57:36.781+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T22:57:36.794+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T22:57:36.795+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

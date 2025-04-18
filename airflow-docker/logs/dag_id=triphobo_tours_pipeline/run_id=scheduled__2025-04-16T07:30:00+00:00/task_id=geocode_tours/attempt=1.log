@@ -1,0 +1,523 @@
+[2025-04-17T21:20:53.401+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-17T21:20:53.406+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.geocode_tours scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:20:53.409+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_tours_pipeline.geocode_tours scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:20:53.409+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-17T21:20:53.412+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): geocode_tours> on 2025-04-16 07:30:00+00:00
+[2025-04-17T21:20:53.415+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1313) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-17T21:20:53.416+0000] {standard_task_runner.py:72} INFO - Started process 1314 to run task
+[2025-04-17T21:20:53.416+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_tours_pipeline', 'geocode_tours', 'scheduled__2025-04-16T07:30:00+00:00', '--job-id', '402', '--raw', '--subdir', 'DAGS_FOLDER/itinerary_tours_dag.py', '--cfg-path', '/tmp/tmpcqv8n1m4']
+[2025-04-17T21:20:53.417+0000] {standard_task_runner.py:105} INFO - Job 402: Subtask geocode_tours
+[2025-04-17T21:20:53.434+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_tours_pipeline.geocode_tours scheduled__2025-04-16T07:30:00+00:00 [running]> on host 4d0efc92e922
+[2025-04-17T21:20:53.462+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_tours_pipeline' AIRFLOW_CTX_TASK_ID='geocode_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T07:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T07:30:00+00:00'
+[2025-04-17T21:20:53.463+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-17T21:20:53.468+0000] {tours_geocoding.py:142} INFO - Processing file from /tmp/triphobo_data/cleaned_tours.csv to /tmp/triphobo_data/tours_with_coords.csv
+[2025-04-17T21:20:53.488+0000] {tours_geocoding.py:81} INFO - Total tours to process: 479
+[2025-04-17T21:20:53.489+0000] {tours_geocoding.py:105} INFO - Processing batch 1: rows 1 to 50
+[2025-04-17T21:20:53.489+0000] {tours_geocoding.py:112} INFO -   (1/479) Geocoding: Big Bus New York Hop On Hop Off Tour
+[2025-04-17T21:20:53.901+0000] {tours_geocoding.py:112} INFO -   (2/479) Geocoding: All Access 9 11 Experience Ground Zero Tour 9 11 Memorial And Museum One World Observatory
+[2025-04-17T21:20:54.277+0000] {tours_geocoding.py:112} INFO -   (3/479) Geocoding: Statue Of Liberty And Ellis Island Guided Tour
+[2025-04-17T21:20:54.665+0000] {tours_geocoding.py:112} INFO -   (4/479) Geocoding: One World Observatory Admission
+[2025-04-17T21:20:54.962+0000] {tours_geocoding.py:112} INFO -   (5/479) Geocoding: 9 11 Memorial Museum Admission
+[2025-04-17T21:20:55.258+0000] {tours_geocoding.py:112} INFO -   (6/479) Geocoding: Niagara Falls In One Day From New York City
+[2025-04-17T21:20:55.583+0000] {tours_geocoding.py:112} INFO -   (7/479) Geocoding: 9 11 Memorial And Ground Zero Walking Tour With Optional 9 11 Museum Upgrade
+[2025-04-17T21:20:55.939+0000] {tours_geocoding.py:112} INFO -   (8/479) Geocoding: Top Of The Rock Observation Deck New York
+[2025-04-17T21:20:56.268+0000] {tours_geocoding.py:112} INFO -   (9/479) Geocoding: Guided Tour Of Statue Of Liberty And Ellis Island
+[2025-04-17T21:20:56.587+0000] {tours_geocoding.py:112} INFO -   (10/479) Geocoding: Intrepid Sea Air And Space Museum
+[2025-04-17T21:20:56.896+0000] {tours_geocoding.py:112} INFO -   (11/479) Geocoding: Small Group Early Access Statue Of Liberty Tour And Ellis Island
+[2025-04-17T21:20:57.237+0000] {tours_geocoding.py:112} INFO -   (12/479) Geocoding: Woodbury Common Premium Outlets Shopping Tour
+[2025-04-17T21:20:57.510+0000] {tours_geocoding.py:112} INFO -   (13/479) Geocoding: Circle Line Harbor Lights Night Cruise
+[2025-04-17T21:20:57.851+0000] {tours_geocoding.py:112} INFO -   (14/479) Geocoding: Madame Tussauds New York
+[2025-04-17T21:20:58.138+0000] {tours_geocoding.py:112} INFO -   (15/479) Geocoding: Circle Line Complete Manhattan Island Cruise
+[2025-04-17T21:20:58.420+0000] {tours_geocoding.py:112} INFO -   (16/479) Geocoding: Harlem Sunday Morning Gospel Tour
+[2025-04-17T21:20:58.692+0000] {tours_geocoding.py:112} INFO -   (17/479) Geocoding: American Museum Of Natural History
+[2025-04-17T21:20:58.957+0000] {tours_geocoding.py:112} INFO -   (18/479) Geocoding: Viator Exclusive Statue Of Liberty Monument Access And 9 11 Memorial
+[2025-04-17T21:20:59.253+0000] {tours_geocoding.py:112} INFO -   (19/479) Geocoding: Lower East Side Food And Culture Tour
+[2025-04-17T21:20:59.539+0000] {tours_geocoding.py:112} INFO -   (20/479) Geocoding: Hamilton Musical Walking Tour
+[2025-04-17T21:20:59.909+0000] {tours_geocoding.py:112} INFO -   (21/479) Geocoding: The Ride New York City
+[2025-04-17T21:21:00.171+0000] {tours_geocoding.py:112} INFO -   (22/479) Geocoding: One World Observatory Or 911 Museum With World Trade Center Area Tour
+[2025-04-17T21:21:00.485+0000] {tours_geocoding.py:112} INFO -   (23/479) Geocoding: 9 11 Memorial And Ground Zero Walking Tour With Optional One World Observatory Entrance
+[2025-04-17T21:21:00.799+0000] {tours_geocoding.py:112} INFO -   (24/479) Geocoding: Central Park Pedicab Tours
+[2025-04-17T21:21:01.095+0000] {tours_geocoding.py:112} INFO -   (25/479) Geocoding: New York In One Day Guided Sightseeing Tour
+[2025-04-17T21:21:01.370+0000] {tours_geocoding.py:112} INFO -   (26/479) Geocoding: Tour Contrastes Harlem Bronx Queens Coney Island And Brooklyn
+[2025-04-17T21:21:01.675+0000] {tours_geocoding.py:112} INFO -   (27/479) Geocoding: Empire State Building Tickets Observatory And Optional Skip The Line Tickets
+[2025-04-17T21:21:01.985+0000] {tours_geocoding.py:112} INFO -   (28/479) Geocoding: Bateaux New York Dinner Cruise
+[2025-04-17T21:21:02.287+0000] {tours_geocoding.py:112} INFO -   (29/479) Geocoding: Manhattan Sky Tour New York Helicopter Flight
+[2025-04-17T21:21:02.625+0000] {tours_geocoding.py:112} INFO -   (30/479) Geocoding: Gossip Girl Sites Tour
+[2025-04-17T21:21:03.132+0000] {tours_geocoding.py:112} INFO -   (31/479) Geocoding: The Museum Of Modern Art Admission With Skip The Line Access
+[2025-04-17T21:21:03.426+0000] {tours_geocoding.py:112} INFO -   (32/479) Geocoding: Small Group Guided 9 11 Memorial Tour With Museum Tickets
+[2025-04-17T21:21:03.725+0000] {tours_geocoding.py:112} INFO -   (33/479) Geocoding: High Line Park And Greenwich Village Food Tour
+[2025-04-17T21:21:04.057+0000] {tours_geocoding.py:112} INFO -   (34/479) Geocoding: Big Apple Helicopter Tour Of New York
+[2025-04-17T21:21:04.344+0000] {tours_geocoding.py:112} INFO -   (35/479) Geocoding: Sunset Sail Aboard The Schooner Adirondack
+[2025-04-17T21:21:04.630+0000] {tours_geocoding.py:112} INFO -   (36/479) Geocoding: Small Group Tour Of Catacombs By Candelight In New York
+[2025-04-17T21:21:04.936+0000] {tours_geocoding.py:112} INFO -   (37/479) Geocoding: New York City Tour By Classic Convertible 5ac65a105840d467a20000a0
+[2025-04-17T21:21:05.199+0000] {tours_geocoding.py:112} INFO -   (38/479) Geocoding: Sex And The City Hotspots Tour
+[2025-04-17T21:21:05.488+0000] {tours_geocoding.py:112} INFO -   (39/479) Geocoding: New York Dinner Cruise With Buffet
+[2025-04-17T21:21:05.744+0000] {tours_geocoding.py:112} INFO -   (40/479) Geocoding: New York Manhattan Scenic Helicopter Tour
+[2025-04-17T21:21:06.026+0000] {tours_geocoding.py:112} INFO -   (41/479) Geocoding: New York City Guided Sightseeing Tour By Minibus
+[2025-04-17T21:21:06.296+0000] {tours_geocoding.py:112} INFO -   (42/479) Geocoding: Harlem Wednesday Morning Gospel Tour
+[2025-04-17T21:21:06.575+0000] {tours_geocoding.py:112} INFO -   (43/479) Geocoding: Best Of Brooklyn Half Day Food And Culture Tour
+[2025-04-17T21:21:06.846+0000] {tours_geocoding.py:112} INFO -   (44/479) Geocoding: Small Group Central Park Bike Tour
+[2025-04-17T21:21:07.157+0000] {tours_geocoding.py:112} INFO -   (45/479) Geocoding: Manhattan To Brooklyn Nyc Walking Tour Brooklyn Bridge And Dumbo
+[2025-04-17T21:21:07.640+0000] {tours_geocoding.py:112} INFO -   (46/479) Geocoding: New York Helicopter Tour Ultimate Manhattan Sightseeing
+[2025-04-17T21:21:07.912+0000] {tours_geocoding.py:112} INFO -   (47/479) Geocoding: Chinatown And Little Italy Food Fest
+[2025-04-17T21:21:08.196+0000] {tours_geocoding.py:112} INFO -   (48/479) Geocoding: Christmas Lights In Dyker Heights Brooklyn
+[2025-04-17T21:21:08.454+0000] {tours_geocoding.py:112} INFO -   (49/479) Geocoding: Private Custom New York City Tour By Suv
+[2025-04-17T21:21:08.721+0000] {tours_geocoding.py:112} INFO -   (50/479) Geocoding: New York Hip Hop Tour
+[2025-04-17T21:21:09.010+0000] {tours_geocoding.py:125} INFO - Completed batch 1. Sleeping before next batch...
+[2025-04-17T21:21:11.011+0000] {tours_geocoding.py:105} INFO - Processing batch 2: rows 51 to 100
+[2025-04-17T21:21:11.012+0000] {tours_geocoding.py:112} INFO -   (51/479) Geocoding: Full Day Nyc Small Group Tour
+[2025-04-17T21:21:11.357+0000] {tours_geocoding.py:112} INFO -   (52/479) Geocoding: Metropolitan Museum Of Art Tour With Skip The Line Access
+[2025-04-17T21:21:11.633+0000] {tours_geocoding.py:112} INFO -   (53/479) Geocoding: Statue Of Liberty Ellis Island And 9 11 Memorial Walking Tour
+[2025-04-17T21:21:11.979+0000] {tours_geocoding.py:112} INFO -   (54/479) Geocoding: Big Bus New York Night Tour
+[2025-04-17T21:21:12.233+0000] {tours_geocoding.py:112} INFO -   (55/479) Geocoding: Manhattan Evening Jazz Cruise
+[2025-04-17T21:21:12.499+0000] {tours_geocoding.py:112} INFO -   (56/479) Geocoding: New York City Explorer Pass 5ac65a5b5840d48aa600008b
+[2025-04-17T21:21:12.776+0000] {tours_geocoding.py:112} INFO -   (57/479) Geocoding: New York Helicopter Flight Grand Island
+[2025-04-17T21:21:13.041+0000] {tours_geocoding.py:112} INFO -   (58/479) Geocoding: Private New York Walking Tour With A Personal Photographer
+[2025-04-17T21:21:13.308+0000] {tours_geocoding.py:112} INFO -   (59/479) Geocoding: New York City Airport Private Arrival Transfer
+[2025-04-17T21:21:13.589+0000] {tours_geocoding.py:112} INFO -   (60/479) Geocoding: Circle Line New York Landmarks Cruise
+[2025-04-17T21:21:13.876+0000] {tours_geocoding.py:112} INFO -   (61/479) Geocoding: Private Suv Tour Best Of Nyc
+[2025-04-17T21:21:14.140+0000] {tours_geocoding.py:112} INFO -   (62/479) Geocoding: New York City 3 Day Hop On Hop Off Bus Tour And Attractions Pass
+[2025-04-17T21:21:14.452+0000] {tours_geocoding.py:112} INFO -   (63/479) Geocoding: Nyc At Night Sightseeing Cruise And Bus Tour
+[2025-04-17T21:21:14.745+0000] {tours_geocoding.py:112} INFO -   (64/479) Geocoding: Hell S Kitchen Food Tour And Central Park Stroll
+[2025-04-17T21:21:15.061+0000] {tours_geocoding.py:112} INFO -   (65/479) Geocoding: World Trade Center 911 And Ground Zero Walking Tour
+[2025-04-17T21:21:15.354+0000] {tours_geocoding.py:112} INFO -   (66/479) Geocoding: Manhattan Architecture Yacht Cruise
+[2025-04-17T21:21:15.625+0000] {tours_geocoding.py:112} INFO -   (67/479) Geocoding: Private Statue Of Liberty And Ellis Island Tour Includes Pedestal Access
+[2025-04-17T21:21:15.910+0000] {tours_geocoding.py:112} INFO -   (68/479) Geocoding: New York Citypass 5ac65a875840d44aa10000bd
+[2025-04-17T21:21:16.192+0000] {tours_geocoding.py:112} INFO -   (69/479) Geocoding: New York City Wall Street Insider Tour
+[2025-04-17T21:21:16.473+0000] {tours_geocoding.py:112} INFO -   (70/479) Geocoding: Shared Departure Transfer Hotel To New York City Airports
+[2025-04-17T21:21:16.754+0000] {tours_geocoding.py:112} INFO -   (71/479) Geocoding: Shared Arrival Transfer New York Airports To Hotel
+[2025-04-17T21:21:17.059+0000] {tours_geocoding.py:112} INFO -   (72/479) Geocoding: New York City Buffet Lunch Cruise
+[2025-04-17T21:21:17.319+0000] {tours_geocoding.py:112} INFO -   (73/479) Geocoding: Greenwich Village Walking Tour
+[2025-04-17T21:21:17.653+0000] {tours_geocoding.py:112} INFO -   (74/479) Geocoding: Flatiron Food Architecture And History Tour
+[2025-04-17T21:21:17.943+0000] {tours_geocoding.py:112} INFO -   (75/479) Geocoding: The Sightseeing Pass Nyc
+[2025-04-17T21:21:18.212+0000] {tours_geocoding.py:112} INFO -   (76/479) Geocoding: New York City Luxury Boat Tour
+[2025-04-17T21:21:18.466+0000] {tours_geocoding.py:112} INFO -   (77/479) Geocoding: New York City Twilight Sail
+[2025-04-17T21:21:18.751+0000] {tours_geocoding.py:112} INFO -   (78/479) Geocoding: Viator Vip Empire State Building Sunrise Experience
+[2025-04-17T21:21:19.019+0000] {tours_geocoding.py:112} INFO -   (79/479) Geocoding: The Super Tour Of Nyc Heroes Comics And More
+[2025-04-17T21:21:19.300+0000] {tours_geocoding.py:112} INFO -   (80/479) Geocoding: Statue Of Liberty Express Cruise
+[2025-04-17T21:21:19.578+0000] {tours_geocoding.py:112} INFO -   (81/479) Geocoding: New York City Airport Luxury Arrival Transfer
+[2025-04-17T21:21:19.851+0000] {tours_geocoding.py:112} INFO -   (82/479) Geocoding: The Sopranos Sites Tour
+[2025-04-17T21:21:20.128+0000] {tours_geocoding.py:112} INFO -   (83/479) Geocoding: Private Economy Departure Transfer Manhattan Hotels To New York Airports
+[2025-04-17T21:21:20.469+0000] {tours_geocoding.py:112} INFO -   (84/479) Geocoding: New York Helicopter Tour Manhattan Highlights
+[2025-04-17T21:21:20.721+0000] {tours_geocoding.py:112} INFO -   (85/479) Geocoding: Half Day Nyc Small Group Tour
+[2025-04-17T21:21:21.049+0000] {tours_geocoding.py:112} INFO -   (86/479) Geocoding: Superheroes In New York Walking Tour
+[2025-04-17T21:21:21.304+0000] {tours_geocoding.py:112} INFO -   (87/479) Geocoding: Private New York City Boat Tour
+[2025-04-17T21:21:21.564+0000] {tours_geocoding.py:112} INFO -   (88/479) Geocoding: Statue Express Tour With Statue Of Liberty Pedestal Tickets
+[2025-04-17T21:21:21.862+0000] {tours_geocoding.py:112} INFO -   (89/479) Geocoding: A Slice Of Brooklyn Pizza Tour
+[2025-04-17T21:21:22.193+0000] {tours_geocoding.py:112} INFO -   (90/479) Geocoding: Statue Of Liberty Tall Ship Sailing Cruise
+[2025-04-17T21:21:22.441+0000] {tours_geocoding.py:112} INFO -   (91/479) Geocoding: Complete New York New York Helicopter Tour
+[2025-04-17T21:21:22.715+0000] {tours_geocoding.py:112} INFO -   (92/479) Geocoding: New York City Original Rock N Roll Walking Tour
+[2025-04-17T21:21:22.993+0000] {tours_geocoding.py:112} INFO -   (93/479) Geocoding: Soho Little Italy And Chinatown Walking Tour
+[2025-04-17T21:21:23.269+0000] {tours_geocoding.py:112} INFO -   (94/479) Geocoding: Hard Rock Cafe New York Times Square
+[2025-04-17T21:21:23.638+0000] {tours_geocoding.py:112} INFO -   (95/479) Geocoding: Secrets Of The Statue Of Liberty And Ellis Island Tour
+[2025-04-17T21:21:24.013+0000] {tours_geocoding.py:112} INFO -   (96/479) Geocoding: Metropolitan Museum Of Art Small Group Tour
+[2025-04-17T21:21:24.295+0000] {tours_geocoding.py:112} INFO -   (97/479) Geocoding: Nyc Tv And Movie Sites Tour
+[2025-04-17T21:21:24.544+0000] {tours_geocoding.py:112} INFO -   (98/479) Geocoding: Private Limousine Tour Best Of Nyc
+[2025-04-17T21:21:24.804+0000] {tours_geocoding.py:112} INFO -   (99/479) Geocoding: Brooklyn Bridge Bike Tour
+[2025-04-17T21:21:25.094+0000] {tours_geocoding.py:112} INFO -   (100/479) Geocoding: Nyc Central Park Bike Rental
+[2025-04-17T21:21:25.407+0000] {tours_geocoding.py:125} INFO - Completed batch 2. Sleeping before next batch...
+[2025-04-17T21:21:27.410+0000] {tours_geocoding.py:105} INFO - Processing batch 3: rows 101 to 150
+[2025-04-17T21:21:27.413+0000] {tours_geocoding.py:112} INFO -   (101/479) Geocoding: New York Helicopter Tour Manhattan Brooklyn And Staten Island
+[2025-04-17T21:21:27.726+0000] {tours_geocoding.py:112} INFO -   (102/479) Geocoding: Central Park Bike Tour
+[2025-04-17T21:21:27.987+0000] {tours_geocoding.py:112} INFO -   (103/479) Geocoding: Iconic New York Photography Tour
+[2025-04-17T21:21:28.274+0000] {tours_geocoding.py:112} INFO -   (104/479) Geocoding: Williamsburg Bites Brooklyn Food Tour
+[2025-04-17T21:21:28.607+0000] {tours_geocoding.py:112} INFO -   (105/479) Geocoding: Guided Bike Tour Of Central Park
+[2025-04-17T21:21:28.879+0000] {tours_geocoding.py:112} INFO -   (106/479) Geocoding: Harlem Gospel And Brunch Tour
+[2025-04-17T21:21:29.157+0000] {tours_geocoding.py:112} INFO -   (107/479) Geocoding: Macdougal Street New York City Walking Tour
+[2025-04-17T21:21:29.440+0000] {tours_geocoding.py:112} INFO -   (108/479) Geocoding: Central Park Manhattan Waterfront Bike Tour
+[2025-04-17T21:21:29.737+0000] {tours_geocoding.py:112} INFO -   (109/479) Geocoding: Cupcake Walking Tour In New York City
+[2025-04-17T21:21:30.001+0000] {tours_geocoding.py:112} INFO -   (110/479) Geocoding: New York City Airport Private Departure Transfer
+[2025-04-17T21:21:30.265+0000] {tours_geocoding.py:112} INFO -   (111/479) Geocoding: Central Park Tv And Movie Sites Walking Tour
+[2025-04-17T21:21:30.558+0000] {tours_geocoding.py:112} INFO -   (112/479) Geocoding: New York City Shore Excursion Post Cruise Half Day Private Tour
+[2025-04-17T21:21:30.838+0000] {tours_geocoding.py:112} INFO -   (113/479) Geocoding: Tcm Classic Film Tour Of New York
+[2025-04-17T21:21:31.086+0000] {tours_geocoding.py:112} INFO -   (114/479) Geocoding: Disney S Aladdin On Broadway
+[2025-04-17T21:21:31.414+0000] {tours_geocoding.py:112} INFO -   (115/479) Geocoding: Statue Of Liberty Lunch Cruise
+[2025-04-17T21:21:31.687+0000] {tours_geocoding.py:112} INFO -   (116/479) Geocoding: Private Economy New York Inter Airport Transfer
+[2025-04-17T21:21:31.984+0000] {tours_geocoding.py:112} INFO -   (117/479) Geocoding: Brooklyn Bridge Guided Bike Tour
+[2025-04-17T21:21:32.301+0000] {tours_geocoding.py:112} INFO -   (118/479) Geocoding: Central Park Bike Rental
+[2025-04-17T21:21:32.618+0000] {tours_geocoding.py:112} INFO -   (119/479) Geocoding: Private New York City Sunset Boat Tour
+[2025-04-17T21:21:32.877+0000] {tours_geocoding.py:112} INFO -   (120/479) Geocoding: Panoramic Night Tour Of New York City
+[2025-04-17T21:21:33.151+0000] {tours_geocoding.py:112} INFO -   (121/479) Geocoding: 911 Memorial Pools Ground Zero Walking Tour Optional Upgrade To 911 Museum
+[2025-04-17T21:21:33.420+0000] {tours_geocoding.py:112} INFO -   (122/479) Geocoding: Circle Line Nyc Liberty Cruise
+[2025-04-17T21:21:33.719+0000] {tours_geocoding.py:112} INFO -   (123/479) Geocoding: Pizza Walking Tour Of Manhattan
+[2025-04-17T21:21:33.990+0000] {tours_geocoding.py:112} INFO -   (124/479) Geocoding: New York City Sightseeing Tour By Coach
+[2025-04-17T21:21:34.259+0000] {tours_geocoding.py:112} INFO -   (125/479) Geocoding: Around Manhattan Brunch Cruise
+[2025-04-17T21:21:34.539+0000] {tours_geocoding.py:112} INFO -   (126/479) Geocoding: Statue Of Liberty Tour With Optional Pedestal Access
+[2025-04-17T21:21:34.803+0000] {tours_geocoding.py:112} INFO -   (127/479) Geocoding: Private Tour Of The Metropolitan Museum Of Art In New York City
+[2025-04-17T21:21:35.120+0000] {tours_geocoding.py:112} INFO -   (128/479) Geocoding: Private Arrival Transfer New York Airports To Brooklyn
+[2025-04-17T21:21:35.421+0000] {tours_geocoding.py:112} INFO -   (129/479) Geocoding: Williamsburg Walking Tour History Culture And Art Scene
+[2025-04-17T21:21:35.718+0000] {tours_geocoding.py:112} INFO -   (130/479) Geocoding: Central Park Walking Tour 58aed7c68427a5de080005b9
+[2025-04-17T21:21:35.993+0000] {tours_geocoding.py:112} INFO -   (131/479) Geocoding: Nyc Private Tour With Local Guide By Suv Or Van
+[2025-04-17T21:21:36.269+0000] {tours_geocoding.py:112} INFO -   (132/479) Geocoding: Ellis Island Statue Of Liberty Pedestal And Pre Ferry Tour
+[2025-04-17T21:21:36.582+0000] {tours_geocoding.py:112} INFO -   (133/479) Geocoding: Soho Chinatown Little Italy Tour
+[2025-04-17T21:21:36.882+0000] {tours_geocoding.py:112} INFO -   (134/479) Geocoding: New York To Washington Dc Day Trip By Rail
+[2025-04-17T21:21:37.219+0000] {tours_geocoding.py:112} INFO -   (135/479) Geocoding: Central Park And Metropolitan Museum Of Art Private Nyc Combo Tour
+[2025-04-17T21:21:37.556+0000] {tours_geocoding.py:112} INFO -   (136/479) Geocoding: The Hamptons Sag Harbor And Outlet Shopping Day Trip From New York City
+[2025-04-17T21:21:37.886+0000] {tours_geocoding.py:112} INFO -   (137/479) Geocoding: The Lion King On Broadway 5ac65a735840d4de9b0000db
+[2025-04-17T21:21:38.173+0000] {tours_geocoding.py:112} INFO -   (138/479) Geocoding: New York City Airport Luxury Departure Transfer
+[2025-04-17T21:21:38.439+0000] {tours_geocoding.py:112} INFO -   (139/479) Geocoding: Private Departure Transfer Brooklyn To New York Airports
+[2025-04-17T21:21:38.726+0000] {tours_geocoding.py:112} INFO -   (140/479) Geocoding: Long Island Wine Tour From Nyc Day Trip Meet The Winemakers Taste Food And Wine
+[2025-04-17T21:21:39.042+0000] {tours_geocoding.py:112} INFO -   (141/479) Geocoding: New York City To The Hamptons Private Day Trip
+[2025-04-17T21:21:39.337+0000] {tours_geocoding.py:112} INFO -   (142/479) Geocoding: Nyc Speakeasy Walking Tour
+[2025-04-17T21:21:39.587+0000] {tours_geocoding.py:112} INFO -   (143/479) Geocoding: Private Tour Niagara Falls Day Trip From New York City
+[2025-04-17T21:21:39.903+0000] {tours_geocoding.py:112} INFO -   (144/479) Geocoding: Private New York City Transfer Cruise Port To Airport
+[2025-04-17T21:21:40.203+0000] {tours_geocoding.py:112} INFO -   (145/479) Geocoding: Long Island Wine Tour From Manhattan 5ac501bb5840d48eae000cec
+[2025-04-17T21:21:40.535+0000] {tours_geocoding.py:112} INFO -   (146/479) Geocoding: Dyker Heights Christmas Lights Tour
+[2025-04-17T21:21:40.849+0000] {tours_geocoding.py:112} INFO -   (147/479) Geocoding: Nyc Walking Tour Broadway History And Culture
+[2025-04-17T21:21:41.231+0000] {tours_geocoding.py:112} INFO -   (148/479) Geocoding: New York City Slavery And Underground Railroad Tour
+[2025-04-17T21:21:41.538+0000] {tours_geocoding.py:112} INFO -   (149/479) Geocoding: New York City Shopping With A Personal Stylist
+[2025-04-17T21:21:41.806+0000] {tours_geocoding.py:112} INFO -   (150/479) Geocoding: Grand Central The Open Sesame Bagel Tour
+[2025-04-17T21:21:42.144+0000] {tours_geocoding.py:125} INFO - Completed batch 3. Sleeping before next batch...
+[2025-04-17T21:21:44.148+0000] {tours_geocoding.py:105} INFO - Processing batch 4: rows 151 to 200
+[2025-04-17T21:21:44.149+0000] {tours_geocoding.py:112} INFO -   (151/479) Geocoding: Hell S Kitchen Food Tour
+[2025-04-17T21:21:44.407+0000] {tours_geocoding.py:112} INFO -   (152/479) Geocoding: Holdouts A Nyc Architecture Walking Tour
+[2025-04-17T21:21:44.688+0000] {tours_geocoding.py:112} INFO -   (153/479) Geocoding: Midtown Mix Guided Food Tour New York Food On Foot Tours
+[2025-04-17T21:21:44.988+0000] {tours_geocoding.py:112} INFO -   (154/479) Geocoding: Chelsea Architecture And Art Tour With Award Winning Nyc Guide
+[2025-04-17T21:21:45.277+0000] {tours_geocoding.py:112} INFO -   (155/479) Geocoding: New York City Holiday Lights And Markets Walking Tour
+[2025-04-17T21:21:45.539+0000] {tours_geocoding.py:112} INFO -   (156/479) Geocoding: Brooklyn Graffiti Lesson
+[2025-04-17T21:21:45.816+0000] {tours_geocoding.py:112} INFO -   (157/479) Geocoding: Christmas In New York Private Walking Tour
+[2025-04-17T21:21:46.090+0000] {tours_geocoding.py:112} INFO -   (158/479) Geocoding: Times Square Hell S Kitchen Food Tour And Central Park Stroll
+[2025-04-17T21:21:46.409+0000] {tours_geocoding.py:112} INFO -   (159/479) Geocoding: Nyc Comedian Walking Tour
+[2025-04-17T21:21:46.650+0000] {tours_geocoding.py:112} INFO -   (160/479) Geocoding: The Best Of Brooklyn Walking Tour The Brooklyn Revolution
+[2025-04-17T21:21:46.929+0000] {tours_geocoding.py:112} INFO -   (161/479) Geocoding: Hamilton Washington In New York City Secrets Of The Past
+[2025-04-17T21:21:47.223+0000] {tours_geocoding.py:112} INFO -   (162/479) Geocoding: Secrets Of Hudson Yards Walking Tour With High Line And Vessel
+[2025-04-17T21:21:47.529+0000] {tours_geocoding.py:112} INFO -   (163/479) Geocoding: New York City S Amazing Subway Mosaic Art
+[2025-04-17T21:21:47.807+0000] {tours_geocoding.py:112} INFO -   (164/479) Geocoding: Grand Central Photo Tour
+[2025-04-17T21:21:48.074+0000] {tours_geocoding.py:112} INFO -   (165/479) Geocoding: New York Like A Local Customized Private Tour
+[2025-04-17T21:21:48.353+0000] {tours_geocoding.py:112} INFO -   (166/479) Geocoding: Nyc Secrets Of Grand Central Terminal Private Walking Tour
+[2025-04-17T21:21:48.638+0000] {tours_geocoding.py:112} INFO -   (167/479) Geocoding: New York City Gourmet Food Cart Walking Tour
+[2025-04-17T21:21:48.930+0000] {tours_geocoding.py:112} INFO -   (168/479) Geocoding: Ground Zero Museum Workshop Tour
+[2025-04-17T21:21:49.193+0000] {tours_geocoding.py:112} INFO -   (169/479) Geocoding: Greenwich Village Literary Pub Crawl
+[2025-04-17T21:21:49.459+0000] {tours_geocoding.py:112} INFO -   (170/479) Geocoding: New York City Shore Excursion Pre Cruise Half Day Private Tour
+[2025-04-17T21:21:49.726+0000] {tours_geocoding.py:112} INFO -   (171/479) Geocoding: Private Chauffeur Service From Boston To New York
+[2025-04-17T21:21:50.025+0000] {tours_geocoding.py:112} INFO -   (172/479) Geocoding: Street Art Tour Of Bushwick
+[2025-04-17T21:21:50.318+0000] {tours_geocoding.py:112} INFO -   (173/479) Geocoding: Private Half Day Tour Of Brooklyn
+[2025-04-17T21:21:50.591+0000] {tours_geocoding.py:112} INFO -   (174/479) Geocoding: Greenwich Village Food Tour 5836a24e8427a51f08000003
+[2025-04-17T21:21:50.868+0000] {tours_geocoding.py:112} INFO -   (175/479) Geocoding: Midtown Manhattan Art And Architecture Walking Tour
+[2025-04-17T21:21:51.203+0000] {tours_geocoding.py:112} INFO -   (176/479) Geocoding: Hoboken And Nyc At Night Walking Tour
+[2025-04-17T21:21:51.444+0000] {tours_geocoding.py:112} INFO -   (177/479) Geocoding: World Trade Center Photo Tour
+[2025-04-17T21:21:51.726+0000] {tours_geocoding.py:112} INFO -   (178/479) Geocoding: Nyc West Village Pub Crawl
+[2025-04-17T21:21:52.045+0000] {tours_geocoding.py:112} INFO -   (179/479) Geocoding: Ruins Of A Forgotten City Historical Manhattan Walking Tour
+[2025-04-17T21:21:52.336+0000] {tours_geocoding.py:112} INFO -   (180/479) Geocoding: Nyc Private Holiday Lights Tour By Limo
+[2025-04-17T21:21:52.638+0000] {tours_geocoding.py:112} INFO -   (181/479) Geocoding: New York City 4th Of July Fireworks Luxury Boat Tour 5ac4bdb35840d455e9000bec
+[2025-04-17T21:21:52.949+0000] {tours_geocoding.py:112} INFO -   (182/479) Geocoding: Central Park Night Time Photo Tour
+[2025-04-17T21:21:53.316+0000] {tours_geocoding.py:112} INFO -   (183/479) Geocoding: City Lights Sail On Adirondack
+[2025-04-17T21:21:53.588+0000] {tours_geocoding.py:112} INFO -   (184/479) Geocoding: The Gazillion Bubble Show 5ac503ea5840d4fa30000c49
+[2025-04-17T21:21:53.852+0000] {tours_geocoding.py:112} INFO -   (185/479) Geocoding: Secrets Of The Brooklyn Bridge Walking Tour
+[2025-04-17T21:21:54.182+0000] {tours_geocoding.py:112} INFO -   (186/479) Geocoding: High Line And Hudson Yards
+[2025-04-17T21:21:54.468+0000] {tours_geocoding.py:112} INFO -   (187/479) Geocoding: Harlem Gospel Holiday Celebration 5ac51a465840d4e3ac000d87
+[2025-04-17T21:21:54.748+0000] {tours_geocoding.py:112} INFO -   (188/479) Geocoding: Underground Tour Of The Nyc Subway
+[2025-04-17T21:21:55.027+0000] {tours_geocoding.py:112} INFO -   (189/479) Geocoding: Manhattan And Brooklyn Bridge Bicycle Tour
+[2025-04-17T21:21:55.351+0000] {tours_geocoding.py:112} INFO -   (190/479) Geocoding: Private 9 11 Memorial And Ground Zero Walking Tour With Optional 9 11 Museum Upgrade
+[2025-04-17T21:21:55.646+0000] {tours_geocoding.py:112} INFO -   (191/479) Geocoding: New York City Private Custom Walking Tour With Local Guide
+[2025-04-17T21:21:55.926+0000] {tours_geocoding.py:112} INFO -   (192/479) Geocoding: New York Neighborhoods Private Walking Tour
+[2025-04-17T21:21:56.202+0000] {tours_geocoding.py:112} INFO -   (193/479) Geocoding: Greenwich Village Food Tour 5ac622f65840d487dd000051
+[2025-04-17T21:21:56.462+0000] {tours_geocoding.py:112} INFO -   (194/479) Geocoding: Music And Eats On Macdougal Street Walking Tour
+[2025-04-17T21:21:56.764+0000] {tours_geocoding.py:112} INFO -   (195/479) Geocoding: Wall Street And Financial District Walking Tour
+[2025-04-17T21:21:57.050+0000] {tours_geocoding.py:112} INFO -   (196/479) Geocoding: Statue Of Liberty Pedestal Ellis Island And Pre Ferry Tour
+[2025-04-17T21:21:57.363+0000] {tours_geocoding.py:112} INFO -   (197/479) Geocoding: Guided Tour Of Statue Of Liberty And Ellis Island National Immigration Museum
+[2025-04-17T21:21:57.696+0000] {tours_geocoding.py:112} INFO -   (198/479) Geocoding: See Over 30 Top New York Sights Fun Guide
+[2025-04-17T21:21:57.978+0000] {tours_geocoding.py:112} INFO -   (199/479) Geocoding: New York City Lights Sail With A Live Jazz Band
+[2025-04-17T21:21:58.266+0000] {tours_geocoding.py:112} INFO -   (200/479) Geocoding: Statue Of Liberty Express Optional Pedestal
+[2025-04-17T21:21:58.523+0000] {tours_geocoding.py:125} INFO - Completed batch 4. Sleeping before next batch...
+[2025-04-17T21:22:00.525+0000] {tours_geocoding.py:105} INFO - Processing batch 5: rows 201 to 250
+[2025-04-17T21:22:00.525+0000] {tours_geocoding.py:112} INFO -   (201/479) Geocoding: Central Park Rockefeller Times Square Horse Carriage Ride
+[2025-04-17T21:22:00.868+0000] {tours_geocoding.py:112} INFO -   (202/479) Geocoding: Chelsea Market Meatpacking District And High Line Food Tour
+[2025-04-17T21:22:01.151+0000] {tours_geocoding.py:112} INFO -   (203/479) Geocoding: Private Brooklyn Walking Tour With Personal Photographer Brooklyn Bridge Dumbo And Brooklyn Heights
+[2025-04-17T21:22:01.486+0000] {tours_geocoding.py:112} INFO -   (204/479) Geocoding: Fun Statue Of Liberty And Ellis Island Tour With Energetic University Students
+[2025-04-17T21:22:01.807+0000] {tours_geocoding.py:112} INFO -   (205/479) Geocoding: Romantic Central Park Horse Drawn Carriage Tour
+[2025-04-17T21:22:02.108+0000] {tours_geocoding.py:112} INFO -   (206/479) Geocoding: Exclusive Ellis Island Statue Of Liberty 911 Memorial Pools Escorted Tour
+[2025-04-17T21:22:02.448+0000] {tours_geocoding.py:112} INFO -   (207/479) Geocoding: Brooklyn Bridge Bike Tour 5de641970a21c76c3a33d929
+[2025-04-17T21:22:02.720+0000] {tours_geocoding.py:112} INFO -   (208/479) Geocoding: Horse Carriage Ride To The Loeb Boathouse Tavern On The Green At Central Park
+[2025-04-17T21:22:03.068+0000] {tours_geocoding.py:112} INFO -   (209/479) Geocoding: Manhattan Adventure Boat Tour
+[2025-04-17T21:22:03.317+0000] {tours_geocoding.py:112} INFO -   (210/479) Geocoding: Statue Of Liberty And Ellis Island Ferry Ticket With Optional Pedestal Upgrade
+[2025-04-17T21:22:03.628+0000] {tours_geocoding.py:112} INFO -   (211/479) Geocoding: Nyc Speakeasy Drinks And Prohibition Era Nightlife Tour
+[2025-04-17T21:22:03.931+0000] {tours_geocoding.py:112} INFO -   (212/479) Geocoding: Nyc Extremes Downtown Photo Tour With Pro Photographer
+[2025-04-17T21:22:04.220+0000] {tours_geocoding.py:112} INFO -   (213/479) Geocoding: Nyc Prohibition Pub And History Walk
+[2025-04-17T21:22:04.503+0000] {tours_geocoding.py:112} INFO -   (214/479) Geocoding: Underground Donut Tour New York S Only Donut Tour
+[2025-04-17T21:22:04.792+0000] {tours_geocoding.py:112} INFO -   (215/479) Geocoding: Skip The Ticket Line 911 Museum 1 World Obs Tickets W World Trade Ctr Tour
+[2025-04-17T21:22:05.165+0000] {tours_geocoding.py:112} INFO -   (216/479) Geocoding: Tour Noir A Dame To Guide For
+[2025-04-17T21:22:05.412+0000] {tours_geocoding.py:112} INFO -   (217/479) Geocoding: Nyc Secrets Of Grand Central Terminal Tour
+[2025-04-17T21:22:05.680+0000] {tours_geocoding.py:112} INFO -   (218/479) Geocoding: Hidden Jewish History Of Harlem
+[2025-04-17T21:22:05.958+0000] {tours_geocoding.py:112} INFO -   (219/479) Geocoding: Speakeasy Historic Bars Night Tour Nyc
+[2025-04-17T21:22:06.239+0000] {tours_geocoding.py:112} INFO -   (220/479) Geocoding: New York Midtown Scavenger Hunt Adventure
+[2025-04-17T21:22:06.524+0000] {tours_geocoding.py:112} INFO -   (221/479) Geocoding: New York City Ghost Tour Of Greenwich Village
+[2025-04-17T21:22:06.789+0000] {tours_geocoding.py:112} INFO -   (222/479) Geocoding: Harlem Hip Hop Walking Tour
+[2025-04-17T21:22:07.086+0000] {tours_geocoding.py:112} INFO -   (223/479) Geocoding: Central Park Photography Tour
+[2025-04-17T21:22:07.347+0000] {tours_geocoding.py:112} INFO -   (224/479) Geocoding: Harlem Gospel Experience Walking Tour
+[2025-04-17T21:22:07.602+0000] {tours_geocoding.py:112} INFO -   (225/479) Geocoding: Guided Private Underground New York Subway Tour
+[2025-04-17T21:22:07.862+0000] {tours_geocoding.py:112} INFO -   (226/479) Geocoding: Private Guided Walking Tour Of The Brooklyn Bridge And Dumbo
+[2025-04-17T21:22:08.159+0000] {tours_geocoding.py:112} INFO -   (227/479) Geocoding: Harlem Walking Tour Of Mount Morris Park Historic District With Lunch
+[2025-04-17T21:22:08.510+0000] {tours_geocoding.py:112} INFO -   (228/479) Geocoding: New York Christmas Holiday Tour
+[2025-04-17T21:22:08.779+0000] {tours_geocoding.py:112} INFO -   (229/479) Geocoding: Nyc Freedom Tower Private Photo Or Video Experience
+[2025-04-17T21:22:09.049+0000] {tours_geocoding.py:112} INFO -   (230/479) Geocoding: Central Harlem African American Culture Walking Tour
+[2025-04-17T21:22:09.344+0000] {tours_geocoding.py:112} INFO -   (231/479) Geocoding: Sugar Hill To Washington Heights Walking Tour
+[2025-04-17T21:22:09.684+0000] {tours_geocoding.py:112} INFO -   (232/479) Geocoding: Harlem Civil Rights Multimedia Walking Tour
+[2025-04-17T21:22:09.944+0000] {tours_geocoding.py:112} INFO -   (233/479) Geocoding: Harlem Renaissance Multimedia Walking Tour
+[2025-04-17T21:22:10.212+0000] {tours_geocoding.py:112} INFO -   (234/479) Geocoding: Landmarks Of Midtown Walking Tour
+[2025-04-17T21:22:10.478+0000] {tours_geocoding.py:112} INFO -   (235/479) Geocoding: Central Park 5k Fun Run
+[2025-04-17T21:22:10.727+0000] {tours_geocoding.py:112} INFO -   (236/479) Geocoding: Small Group New York Meatpacking District Chelsea Market And The Highline Walking Tour
+[2025-04-17T21:22:11.105+0000] {tours_geocoding.py:112} INFO -   (237/479) Geocoding: New York City Prohibition Speakeasy Drinking Tour Midtown
+[2025-04-17T21:22:11.390+0000] {tours_geocoding.py:112} INFO -   (238/479) Geocoding: Private Harlem Tour In New York
+[2025-04-17T21:22:11.651+0000] {tours_geocoding.py:112} INFO -   (239/479) Geocoding: New York Food Tour
+[2025-04-17T21:22:11.889+0000] {tours_geocoding.py:112} INFO -   (240/479) Geocoding: Edgar Allan Poe And His Ghostly Neighbors Walking Tour
+[2025-04-17T21:22:12.221+0000] {tours_geocoding.py:112} INFO -   (241/479) Geocoding: Big Bus San Francisco Hop On Hop Off Tour
+[2025-04-17T21:22:12.519+0000] {tours_geocoding.py:112} INFO -   (242/479) Geocoding: Napa And Sonoma Wine Country Tour
+[2025-04-17T21:22:12.796+0000] {tours_geocoding.py:112} INFO -   (243/479) Geocoding: San Francisco Super Saver Muir Woods And Wine Country Tour
+[2025-04-17T21:22:13.126+0000] {tours_geocoding.py:112} INFO -   (244/479) Geocoding: Muir Woods Giant Redwoods And Sausalito Half Day Trip
+[2025-04-17T21:22:13.406+0000] {tours_geocoding.py:112} INFO -   (245/479) Geocoding: Yosemite National Park And Giant Sequoias Trip
+[2025-04-17T21:22:13.718+0000] {tours_geocoding.py:112} INFO -   (246/479) Geocoding: Yosemite National Park Day Trip From San Francisco
+[2025-04-17T21:22:13.976+0000] {tours_geocoding.py:112} INFO -   (247/479) Geocoding: Monterey Carmel And 17 Mile Drive Day Trip From San Francisco
+[2025-04-17T21:22:14.248+0000] {tours_geocoding.py:112} INFO -   (248/479) Geocoding: Private Sonoma And Napa Wine Tour From San Francisco
+[2025-04-17T21:22:14.519+0000] {tours_geocoding.py:112} INFO -   (249/479) Geocoding: San Francisco Bay Sunset Cruise
+[2025-04-17T21:22:14.763+0000] {tours_geocoding.py:112} INFO -   (250/479) Geocoding: Sausalito Food And Wine Tour
+[2025-04-17T21:22:15.011+0000] {tours_geocoding.py:125} INFO - Completed batch 5. Sleeping before next batch...
+[2025-04-17T21:22:17.017+0000] {tours_geocoding.py:105} INFO - Processing batch 6: rows 251 to 300
+[2025-04-17T21:22:17.018+0000] {tours_geocoding.py:112} INFO -   (251/479) Geocoding: Muir Woods And Sausalito Tour Plus Bay Cruise
+[2025-04-17T21:22:17.315+0000] {tours_geocoding.py:112} INFO -   (252/479) Geocoding: San Francisco Combo Ferry Building Food Tour And Alcatraz
+[2025-04-17T21:22:17.602+0000] {tours_geocoding.py:112} INFO -   (253/479) Geocoding: San Francisco Bay Sunset Catamaran Cruise
+[2025-04-17T21:22:17.863+0000] {tours_geocoding.py:112} INFO -   (254/479) Geocoding: Haunted Sf Ghosts In The City After Dark
+[2025-04-17T21:22:18.161+0000] {tours_geocoding.py:112} INFO -   (255/479) Geocoding: Little Italy And North Beach Walking Tour
+[2025-04-17T21:22:18.442+0000] {tours_geocoding.py:112} INFO -   (256/479) Geocoding: Muir Woods Tour Of California Coastal Redwoods
+[2025-04-17T21:22:18.751+0000] {tours_geocoding.py:112} INFO -   (257/479) Geocoding: Alcatraz Tour Plus Muir Woods Giant Redwoods And Sausalito Day Trip
+[2025-04-17T21:22:19.078+0000] {tours_geocoding.py:112} INFO -   (258/479) Geocoding: 3 Day Yosemite Camping Adventure From San Francisco
+[2025-04-17T21:22:19.338+0000] {tours_geocoding.py:112} INFO -   (259/479) Geocoding: San Francisco Urban Adventure And Alcatraz Tour
+[2025-04-17T21:22:19.622+0000] {tours_geocoding.py:112} INFO -   (260/479) Geocoding: San Francisco Chinatown Walking Tour
+[2025-04-17T21:22:19.887+0000] {tours_geocoding.py:112} INFO -   (261/479) Geocoding: Chinatown And North Beach Night Walking Tour
+[2025-04-17T21:22:20.143+0000] {tours_geocoding.py:112} INFO -   (262/479) Geocoding: 2 Day Yosemite National Park Winter Tour From San Francisco
+[2025-04-17T21:22:20.415+0000] {tours_geocoding.py:112} INFO -   (263/479) Geocoding: Muir Woods And Sausalito Tour Afternoon Tour
+[2025-04-17T21:22:20.699+0000] {tours_geocoding.py:112} INFO -   (264/479) Geocoding: San Francisco Deluxe Half Day City Tour
+[2025-04-17T21:22:20.985+0000] {tours_geocoding.py:112} INFO -   (265/479) Geocoding: San Francisco Champagne Brunch Cruise
+[2025-04-17T21:22:21.252+0000] {tours_geocoding.py:112} INFO -   (266/479) Geocoding: Big Bus San Francisco Sightseeing And Alcatraz Combo
+[2025-04-17T21:22:21.533+0000] {tours_geocoding.py:112} INFO -   (267/479) Geocoding: The Ultimate Wine Experience Day Trip To Napa And Sonoma
+[2025-04-17T21:22:21.808+0000] {tours_geocoding.py:112} INFO -   (268/479) Geocoding: Alcatraz And San Francisco City Tour
+[2025-04-17T21:22:22.080+0000] {tours_geocoding.py:112} INFO -   (269/479) Geocoding: San Francisco Super Saver City Tour Plus Muir Woods And Sausalito Day Trip
+[2025-04-17T21:22:22.387+0000] {tours_geocoding.py:112} INFO -   (270/479) Geocoding: San Francisco Bike Tour And Alcatraz Admission
+[2025-04-17T21:22:22.664+0000] {tours_geocoding.py:112} INFO -   (271/479) Geocoding: San Francisco Love Tour
+[2025-04-17T21:22:22.941+0000] {tours_geocoding.py:112} INFO -   (272/479) Geocoding: Golden Gate Bay Cruise
+[2025-04-17T21:22:23.219+0000] {tours_geocoding.py:112} INFO -   (273/479) Geocoding: 2 Day Yosemite National Park Tour From San Francisco
+[2025-04-17T21:22:23.490+0000] {tours_geocoding.py:112} INFO -   (274/479) Geocoding: San Francisco Bay Sailing Cruise
+[2025-04-17T21:22:23.760+0000] {tours_geocoding.py:112} INFO -   (275/479) Geocoding: San Francisco Fire Engine Tour
+[2025-04-17T21:22:24.043+0000] {tours_geocoding.py:112} INFO -   (276/479) Geocoding: Muir Woods And Sausalito Tour By Hop On Hop Off Bus
+[2025-04-17T21:22:24.336+0000] {tours_geocoding.py:112} INFO -   (277/479) Geocoding: San Francisco Dinner Dance Cruise
+[2025-04-17T21:22:24.592+0000] {tours_geocoding.py:112} INFO -   (278/479) Geocoding: San Francisco Golden Gate Bridge Bike Tour
+[2025-04-17T21:22:24.902+0000] {tours_geocoding.py:112} INFO -   (279/479) Geocoding: Yosemite In A Day Tour From San Francisco
+[2025-04-17T21:22:25.169+0000] {tours_geocoding.py:112} INFO -   (280/479) Geocoding: Exploratorium General Admission
+[2025-04-17T21:22:25.452+0000] {tours_geocoding.py:112} INFO -   (281/479) Geocoding: Skip The Line California Academy Of Sciences General Admission Ticket
+[2025-04-17T21:22:25.744+0000] {tours_geocoding.py:112} INFO -   (282/479) Geocoding: San Francisco Bridge To Bridge Cruise
+[2025-04-17T21:22:26.028+0000] {tours_geocoding.py:112} INFO -   (283/479) Geocoding: San Francisco Golden Gate Seaplane Tour
+[2025-04-17T21:22:26.320+0000] {tours_geocoding.py:112} INFO -   (284/479) Geocoding: San Francisco Escape From The Rock Cruise
+[2025-04-17T21:22:26.599+0000] {tours_geocoding.py:112} INFO -   (285/479) Geocoding: San Francisco Lunch Cruise
+[2025-04-17T21:22:26.863+0000] {tours_geocoding.py:112} INFO -   (286/479) Geocoding: Semi Private Small Group Wine Country Tour From San Francisco
+[2025-04-17T21:22:27.153+0000] {tours_geocoding.py:112} INFO -   (287/479) Geocoding: Muir Woods And Sausalito Morning Tour
+[2025-04-17T21:22:27.410+0000] {tours_geocoding.py:112} INFO -   (288/479) Geocoding: Explore California S Coastal Redwoods With Sausalito Ferry Boat Experience
+[2025-04-17T21:22:27.707+0000] {tours_geocoding.py:112} INFO -   (289/479) Geocoding: San Francisco Citypass 5ac65a6c5840d4d89b0000ed
+[2025-04-17T21:22:27.967+0000] {tours_geocoding.py:112} INFO -   (290/479) Geocoding: San Francisco Gocar Tour
+[2025-04-17T21:22:28.256+0000] {tours_geocoding.py:112} INFO -   (291/479) Geocoding: Bike The Golden Gate Bridge San Francisco To Sausalito
+[2025-04-17T21:22:28.549+0000] {tours_geocoding.py:112} INFO -   (292/479) Geocoding: San Francisco And Muir Woods City And Nature Tour
+[2025-04-17T21:22:28.813+0000] {tours_geocoding.py:112} INFO -   (293/479) Geocoding: The Castro Historical Walking Tour Of San Francisco S Gay Lesbian District
+[2025-04-17T21:22:29.116+0000] {tours_geocoding.py:112} INFO -   (294/479) Geocoding: San Francisco Bay Cruise Adventure
+[2025-04-17T21:22:29.365+0000] {tours_geocoding.py:112} INFO -   (295/479) Geocoding: San Francisco Sunset Photography Tour
+[2025-04-17T21:22:29.642+0000] {tours_geocoding.py:112} INFO -   (296/479) Geocoding: Muir Woods Expedition Tour
+[2025-04-17T21:22:29.916+0000] {tours_geocoding.py:112} INFO -   (297/479) Geocoding: San Francisco Movie Sights City Tour
+[2025-04-17T21:22:30.210+0000] {tours_geocoding.py:112} INFO -   (298/479) Geocoding: Shore Excursion Napa And Sonoma Ultimate Wine Tasting Experience Full Day Tour
+[2025-04-17T21:22:30.498+0000] {tours_geocoding.py:112} INFO -   (299/479) Geocoding: San Francisco Bay Rib Boat Cruise
+[2025-04-17T21:22:30.787+0000] {tours_geocoding.py:112} INFO -   (300/479) Geocoding: San Francisco City Tour 5ac4c9645840d452e9000c64
+[2025-04-17T21:22:31.039+0000] {tours_geocoding.py:125} INFO - Completed batch 6. Sleeping before next batch...
+[2025-04-17T21:22:33.041+0000] {tours_geocoding.py:105} INFO - Processing batch 7: rows 301 to 350
+[2025-04-17T21:22:33.041+0000] {tours_geocoding.py:112} INFO -   (301/479) Geocoding: Best Day In San Francisco With Muir Woods
+[2025-04-17T21:22:33.328+0000] {tours_geocoding.py:112} INFO -   (302/479) Geocoding: Private Arrival Transfer San Francisco International Airport To Hotel
+[2025-04-17T21:22:33.605+0000] {tours_geocoding.py:112} INFO -   (303/479) Geocoding: City And Sea Adventure Hop On Hop Off Tour Package Including San Francisco Bay Cruise
+[2025-04-17T21:22:33.887+0000] {tours_geocoding.py:112} INFO -   (304/479) Geocoding: Small Group Mission District Food Tour San Francisco
+[2025-04-17T21:22:34.185+0000] {tours_geocoding.py:112} INFO -   (305/479) Geocoding: San Francisco City Tour 57ace4f68427a56e1d00006f
+[2025-04-17T21:22:34.447+0000] {tours_geocoding.py:112} INFO -   (306/479) Geocoding: Combo Tour Muir Woods And Sausalito And Wine Country
+[2025-04-17T21:22:34.737+0000] {tours_geocoding.py:112} INFO -   (307/479) Geocoding: Half Day Sonoma Wine Tour
+[2025-04-17T21:22:34.994+0000] {tours_geocoding.py:112} INFO -   (308/479) Geocoding: 6 Hour Private Sonoma Or Napa Wine Tasting Tour Sedan Suv Or Limo
+[2025-04-17T21:22:35.286+0000] {tours_geocoding.py:112} INFO -   (309/479) Geocoding: San Francisco 1 Hour Seaplane Tour With Shuttle Transport
+[2025-04-17T21:22:35.559+0000] {tours_geocoding.py:112} INFO -   (310/479) Geocoding: Big Bus San Francisco Night Tour
+[2025-04-17T21:22:35.865+0000] {tours_geocoding.py:112} INFO -   (311/479) Geocoding: Go San Francisco Card 57ab2d758427a56f440000d6
+[2025-04-17T21:22:36.138+0000] {tours_geocoding.py:112} INFO -   (312/479) Geocoding: California Academy Of Sciences Nightlife
+[2025-04-17T21:22:36.437+0000] {tours_geocoding.py:112} INFO -   (313/479) Geocoding: San Francisco Bay Air Tour
+[2025-04-17T21:22:36.713+0000] {tours_geocoding.py:112} INFO -   (314/479) Geocoding: Exploratorium Admission Thursday Evening Happy Hour
+[2025-04-17T21:22:37.005+0000] {tours_geocoding.py:112} INFO -   (315/479) Geocoding: Aquarium Of The Bay General Admission
+[2025-04-17T21:22:37.298+0000] {tours_geocoding.py:112} INFO -   (316/479) Geocoding: Coastal Redwoods Visit With San Francisco Hop On Hop Off Tour
+[2025-04-17T21:22:37.593+0000] {tours_geocoding.py:112} INFO -   (317/479) Geocoding: The San Francisco Sightseeing Pass With 3 4 Or 5 Attractions
+[2025-04-17T21:22:37.884+0000] {tours_geocoding.py:112} INFO -   (318/479) Geocoding: Private Departure Transfer Hotel To San Francisco International Airport
+[2025-04-17T21:22:38.168+0000] {tours_geocoding.py:112} INFO -   (319/479) Geocoding: San Francisco Scavenger Hunt Adventure
+[2025-04-17T21:22:38.450+0000] {tours_geocoding.py:112} INFO -   (320/479) Geocoding: San Francisco Explorer Pass 57ac388f8427a54f1a000092
+[2025-04-17T21:22:38.707+0000] {tours_geocoding.py:112} INFO -   (321/479) Geocoding: Shore Excursion Coastal Redwoods Of Muir Woods National Monument Half Day Tour
+[2025-04-17T21:22:39.072+0000] {tours_geocoding.py:112} INFO -   (322/479) Geocoding: Private Tour San Francisco Sightseeing 3 Hour
+[2025-04-17T21:22:39.400+0000] {tours_geocoding.py:112} INFO -   (323/479) Geocoding: San Francisco Full Day Hop On Hop Off Tour
+[2025-04-17T21:22:39.679+0000] {tours_geocoding.py:112} INFO -   (324/479) Geocoding: Napa And Sonoma Wine Tour From San Francisco
+[2025-04-17T21:22:39.940+0000] {tours_geocoding.py:112} INFO -   (325/479) Geocoding: 8 Hour Private Sonoma Or Napa Wine Tasting Tour Sedan Suv Or Limo
+[2025-04-17T21:22:40.236+0000] {tours_geocoding.py:112} INFO -   (326/479) Geocoding: Mission District Food Tasting And Cultural Walking Tour
+[2025-04-17T21:22:40.544+0000] {tours_geocoding.py:112} INFO -   (327/479) Geocoding: Muir Woods And Sausalito Half Day Tour 5ac547605840d408ea0001aa
+[2025-04-17T21:22:40.822+0000] {tours_geocoding.py:112} INFO -   (328/479) Geocoding: Self Guided Bike Rentals From San Francisco
+[2025-04-17T21:22:41.070+0000] {tours_geocoding.py:112} INFO -   (329/479) Geocoding: Small Group Tour San Francisco City And Muir Woods
+[2025-04-17T21:22:41.340+0000] {tours_geocoding.py:112} INFO -   (330/479) Geocoding: 3 Day Hop On Hop Off Pass
+[2025-04-17T21:22:41.612+0000] {tours_geocoding.py:112} INFO -   (331/479) Geocoding: San Francisco Night Tour By Bus
+[2025-04-17T21:22:41.928+0000] {tours_geocoding.py:112} INFO -   (332/479) Geocoding: 2 Day Narrated Hop On Hop Off Tour In San Francisco
+[2025-04-17T21:22:42.209+0000] {tours_geocoding.py:112} INFO -   (333/479) Geocoding: Silicon Valley Tour Private Day Trip From San Francisco
+[2025-04-17T21:22:42.495+0000] {tours_geocoding.py:112} INFO -   (334/479) Geocoding: North Beach Culinary Experience With Alcohol Pairing
+[2025-04-17T21:22:42.778+0000] {tours_geocoding.py:112} INFO -   (335/479) Geocoding: Small Group Vintage Wine Country Tour
+[2025-04-17T21:22:43.041+0000] {tours_geocoding.py:112} INFO -   (336/479) Geocoding: North Beach Food Tasting And Cultural Walking Tour
+[2025-04-17T21:22:43.303+0000] {tours_geocoding.py:112} INFO -   (337/479) Geocoding: San Francisco Museum Of Modern Art General Admission Ticket
+[2025-04-17T21:22:43.622+0000] {tours_geocoding.py:112} INFO -   (338/479) Geocoding: Alcatraz Island Tour Package Deal
+[2025-04-17T21:22:43.995+0000] {tours_geocoding.py:112} INFO -   (339/479) Geocoding: Alcatraz With Bay Cruise
+[2025-04-17T21:22:44.493+0000] {tours_geocoding.py:112} INFO -   (340/479) Geocoding: 7d Darkride Admission At Pier 39
+[2025-04-17T21:22:44.836+0000] {tours_geocoding.py:112} INFO -   (341/479) Geocoding: San Francisco Fire Engine Holiday Lights Tour
+[2025-04-17T21:22:45.140+0000] {tours_geocoding.py:112} INFO -   (342/479) Geocoding: Bike Brew Golden Gate Bridge Guided Bicycle Tour With Lunch At Local Hotspot
+[2025-04-17T21:22:45.511+0000] {tours_geocoding.py:112} INFO -   (343/479) Geocoding: Small Group Muir Woods And Sonoma Wine Tour Plus Sausalito
+[2025-04-17T21:22:45.837+0000] {tours_geocoding.py:112} INFO -   (344/479) Geocoding: 60 Minute Private Vacation Photography Session With Local Photographer In San Francisco
+[2025-04-17T21:22:46.213+0000] {tours_geocoding.py:112} INFO -   (345/479) Geocoding: Private Sonoma Coast Food And Wine Tour
+[2025-04-17T21:22:46.625+0000] {tours_geocoding.py:112} INFO -   (346/479) Geocoding: The Flyer San Francisco Admission Ticket
+[2025-04-17T21:22:46.926+0000] {tours_geocoding.py:112} INFO -   (347/479) Geocoding: A Feast For Foodies In San Francisco
+[2025-04-17T21:22:47.258+0000] {tours_geocoding.py:112} INFO -   (348/479) Geocoding: San Francisco Food Tour Ferry Building And Ferry Plaza Farmers Market
+[2025-04-17T21:22:47.660+0000] {tours_geocoding.py:112} INFO -   (349/479) Geocoding: San Francisco Private City Tour
+[2025-04-17T21:22:47.948+0000] {tours_geocoding.py:112} INFO -   (350/479) Geocoding: Legion Of Honor Museum Admission
+[2025-04-17T21:22:48.224+0000] {tours_geocoding.py:125} INFO - Completed batch 7. Sleeping before next batch...
+[2025-04-17T21:22:50.228+0000] {tours_geocoding.py:105} INFO - Processing batch 8: rows 351 to 400
+[2025-04-17T21:22:50.229+0000] {tours_geocoding.py:112} INFO -   (351/479) Geocoding: Hard Rock Cafe San Francisco
+[2025-04-17T21:22:50.532+0000] {tours_geocoding.py:112} INFO -   (352/479) Geocoding: San Francisco Urban Adventure Tour
+[2025-04-17T21:22:50.807+0000] {tours_geocoding.py:112} INFO -   (353/479) Geocoding: San Francisco Sunrise Photography Tour
+[2025-04-17T21:22:51.062+0000] {tours_geocoding.py:112} INFO -   (354/479) Geocoding: Rides By Me
+[2025-04-17T21:22:51.310+0000] {tours_geocoding.py:112} INFO -   (355/479) Geocoding: Shore Excursion Coastal Redwoods And San Francisco Hop On Hop Off Tour
+[2025-04-17T21:22:51.586+0000] {tours_geocoding.py:112} INFO -   (356/479) Geocoding: Sf Ghosts Extended Walking Tour
+[2025-04-17T21:22:51.873+0000] {tours_geocoding.py:112} INFO -   (357/479) Geocoding: Walking Tour Of Nob Hill Cable Cars Luxury Hotels French Gothic Cathedral
+[2025-04-17T21:22:52.233+0000] {tours_geocoding.py:112} INFO -   (358/479) Geocoding: De Young Museum Admission
+[2025-04-17T21:22:52.515+0000] {tours_geocoding.py:112} INFO -   (359/479) Geocoding: San Francisco Mega Pass Pick 3 Tours Attractions
+[2025-04-17T21:22:52.795+0000] {tours_geocoding.py:112} INFO -   (360/479) Geocoding: Golden Gate Bay Cruise Tour Around The Alcatraz Under The Golden Gate Bridge
+[2025-04-17T21:22:53.144+0000] {tours_geocoding.py:112} INFO -   (361/479) Geocoding: Mix Save Muir Woods And Sausalito Escape From The Rock Boat Tour
+[2025-04-17T21:22:53.460+0000] {tours_geocoding.py:112} INFO -   (362/479) Geocoding: Alcatraz With Muir Woods And Sausalito Tour
+[2025-04-17T21:22:53.785+0000] {tours_geocoding.py:112} INFO -   (363/479) Geocoding: A Full Day In San Francisco With A Local Private Personalized
+[2025-04-17T21:22:54.079+0000] {tours_geocoding.py:112} INFO -   (364/479) Geocoding: San Francisco City Game The Gold Rush Quest
+[2025-04-17T21:22:54.343+0000] {tours_geocoding.py:112} INFO -   (365/479) Geocoding: San Francisco Castro Mission Loop
+[2025-04-17T21:22:54.607+0000] {tours_geocoding.py:112} INFO -   (366/479) Geocoding: San Francisco Deluxe Hop On Hop Off Tour
+[2025-04-17T21:22:54.879+0000] {tours_geocoding.py:112} INFO -   (367/479) Geocoding: San Francisco City Bike Rental
+[2025-04-17T21:22:55.126+0000] {tours_geocoding.py:112} INFO -   (368/479) Geocoding: San Francisco Chinatown Food Tour
+[2025-04-17T21:22:55.380+0000] {tours_geocoding.py:112} INFO -   (369/479) Geocoding: Arrival Private Transfer Sfo Airport To Oakland In Business Car
+[2025-04-17T21:22:55.656+0000] {tours_geocoding.py:112} INFO -   (370/479) Geocoding: Cruise Around The Alcatraz Island Bike Across The Golden Gate Bridge
+[2025-04-17T21:22:55.990+0000] {tours_geocoding.py:112} INFO -   (371/479) Geocoding: 8hr Private Napa Sonoma Wine Tour Custom Built Itineraries
+[2025-04-17T21:22:56.256+0000] {tours_geocoding.py:112} INFO -   (372/479) Geocoding: Muir Woods And Sausalito Tour
+[2025-04-17T21:22:56.562+0000] {tours_geocoding.py:112} INFO -   (373/479) Geocoding: Small Group Redwoods And Wine Country Day Trip From San Francisco
+[2025-04-17T21:22:56.848+0000] {tours_geocoding.py:112} INFO -   (374/479) Geocoding: Small Group Redwoods California Coast Sausalito Day Trip From San Francisco
+[2025-04-17T21:22:57.160+0000] {tours_geocoding.py:112} INFO -   (375/479) Geocoding: Amazing Muir Woods And Sausalito Tour
+[2025-04-17T21:22:57.454+0000] {tours_geocoding.py:112} INFO -   (376/479) Geocoding: Golden Gate Park Bike Tour
+[2025-04-17T21:22:57.788+0000] {tours_geocoding.py:112} INFO -   (377/479) Geocoding: The Best Of San Francisco Ebike Tour
+[2025-04-17T21:22:58.072+0000] {tours_geocoding.py:112} INFO -   (378/479) Geocoding: Mission District Culinary Experience With Alcohol Pairing
+[2025-04-17T21:22:58.322+0000] {tours_geocoding.py:112} INFO -   (379/479) Geocoding: San Francisco Food Tour Taste The Mission
+[2025-04-17T21:22:58.607+0000] {tours_geocoding.py:112} INFO -   (380/479) Geocoding: City And Sea Adventure San Francisco Bay Cruise Including Hop On Hop Off Tour
+[2025-04-17T21:22:58.900+0000] {tours_geocoding.py:112} INFO -   (381/479) Geocoding: 2 Day Alcatraz With Aquarium And Small Group Muir Woods With Sonoma Wine Tour
+[2025-04-17T21:22:59.236+0000] {tours_geocoding.py:112} INFO -   (382/479) Geocoding: Exclusive Napa Valley Wine Tour
+[2025-04-17T21:22:59.549+0000] {tours_geocoding.py:112} INFO -   (383/479) Geocoding: Exclusive Napa Valley Wine Tour 5ac4b6445840d4d9ac000c22
+[2025-04-17T21:22:59.841+0000] {tours_geocoding.py:112} INFO -   (384/479) Geocoding: Golden Gate Park Surrey Rental
+[2025-04-17T21:23:00.149+0000] {tours_geocoding.py:112} INFO -   (385/479) Geocoding: Two Day Los Angeles San Francisco Private Tour
+[2025-04-17T21:23:00.413+0000] {tours_geocoding.py:112} INFO -   (386/479) Geocoding: Painted Ladies Wine Country Tour
+[2025-04-17T21:23:00.680+0000] {tours_geocoding.py:112} INFO -   (387/479) Geocoding: The Classic San Francisco Bike Tour
+[2025-04-17T21:23:00.960+0000] {tours_geocoding.py:112} INFO -   (388/479) Geocoding: North Beach Pub Tour Best Day Ever
+[2025-04-17T21:23:01.346+0000] {tours_geocoding.py:112} INFO -   (389/479) Geocoding: Teas Temples And Beatniks Best Day Ever
+[2025-04-17T21:23:01.672+0000] {tours_geocoding.py:112} INFO -   (390/479) Geocoding: San Francisco Independent Bike Tour With Rental
+[2025-04-17T21:23:02.096+0000] {tours_geocoding.py:112} INFO -   (391/479) Geocoding: 2 Day Alcatraz Muir Woods And Sonoma Wine Tour With Aquarium
+[2025-04-17T21:23:02.415+0000] {tours_geocoding.py:112} INFO -   (392/479) Geocoding: Private Napa Sonoma Gourmet Food And Wine Tour
+[2025-04-17T21:23:02.676+0000] {tours_geocoding.py:112} INFO -   (393/479) Geocoding: San Francisco Embarcadero Scavenger Hunt Adventure 5ac5eb2a5840d40fea000c72
+[2025-04-17T21:23:02.955+0000] {tours_geocoding.py:112} INFO -   (394/479) Geocoding: Zombie Scavengers Game San Francisco Ca
+[2025-04-17T21:23:03.212+0000] {tours_geocoding.py:112} INFO -   (395/479) Geocoding: San Francisco S Barbary Past Walking Audio Tour By Voicemap
+[2025-04-17T21:23:03.497+0000] {tours_geocoding.py:112} INFO -   (396/479) Geocoding: Fernet N Paint Night
+[2025-04-17T21:23:03.771+0000] {tours_geocoding.py:112} INFO -   (397/479) Geocoding: San Francisco Parks And Beaches Bike Tour
+[2025-04-17T21:23:04.041+0000] {tours_geocoding.py:112} INFO -   (398/479) Geocoding: Small Group Golden Gate Bridge Sailing Tour
+[2025-04-17T21:23:04.344+0000] {tours_geocoding.py:112} INFO -   (399/479) Geocoding: San Francisco Sunset Champagne Seaplane Tour
+[2025-04-17T21:23:04.603+0000] {tours_geocoding.py:112} INFO -   (400/479) Geocoding: San Francisco Urban Bike Tour
+[2025-04-17T21:23:04.863+0000] {tours_geocoding.py:125} INFO - Completed batch 8. Sleeping before next batch...
+[2025-04-17T21:23:06.864+0000] {tours_geocoding.py:105} INFO - Processing batch 9: rows 401 to 450
+[2025-04-17T21:23:06.865+0000] {tours_geocoding.py:112} INFO -   (401/479) Geocoding: San Francisco Urban Hike Coit Tower Lombard Street And North Beach
+[2025-04-17T21:23:07.201+0000] {tours_geocoding.py:112} INFO -   (402/479) Geocoding: San Francisco City Adventure Tour
+[2025-04-17T21:23:07.454+0000] {tours_geocoding.py:112} INFO -   (403/479) Geocoding: Intro To San Francisco Electric Bike Tour
+[2025-04-17T21:23:07.742+0000] {tours_geocoding.py:112} INFO -   (404/479) Geocoding: Alcatraz And San Francisco City Tour 5836a92c8427a52108000091
+[2025-04-17T21:23:07.999+0000] {tours_geocoding.py:112} INFO -   (405/479) Geocoding: San Francisco Private Tour
+[2025-04-17T21:23:08.242+0000] {tours_geocoding.py:112} INFO -   (406/479) Geocoding: San Francisco Private Love Tour 5ac56a9d5840d4fb30000e77
+[2025-04-17T21:23:08.491+0000] {tours_geocoding.py:112} INFO -   (407/479) Geocoding: 24 Hour Bike Rental In San Francisco
+[2025-04-17T21:23:08.782+0000] {tours_geocoding.py:112} INFO -   (408/479) Geocoding: Skip The Bus San Francisco By Luxury Minivan Tour
+[2025-04-17T21:23:09.083+0000] {tours_geocoding.py:112} INFO -   (409/479) Geocoding: Private Lucky Tuk Tuk 3 Hour Ultimate San Francisco City Tour W Your Own Guide
+[2025-04-17T21:23:09.404+0000] {tours_geocoding.py:112} INFO -   (410/479) Geocoding: Lucky Tuk Tuk At Night San Francisco Lights Tour
+[2025-04-17T21:23:09.679+0000] {tours_geocoding.py:112} INFO -   (411/479) Geocoding: San Francisco Hop On Hop Off Bus Tour 1 Day Pass Unlimited Use Live Guide
+[2025-04-17T21:23:09.967+0000] {tours_geocoding.py:112} INFO -   (412/479) Geocoding: Fisherman S Wharf Walking Tour And Alcatraz Upgrade Option
+[2025-04-17T21:23:10.252+0000] {tours_geocoding.py:112} INFO -   (413/479) Geocoding: San Francisco City Insider S Tour
+[2025-04-17T21:23:10.516+0000] {tours_geocoding.py:112} INFO -   (414/479) Geocoding: Private Tour Of San Francisco
+[2025-04-17T21:23:10.760+0000] {tours_geocoding.py:112} INFO -   (415/479) Geocoding: 4 Hour Painted Ladies And Haight Ashbury Gocar Tour
+[2025-04-17T21:23:11.043+0000] {tours_geocoding.py:112} INFO -   (416/479) Geocoding: Painted Ladies San Francisco City Tour
+[2025-04-17T21:23:11.301+0000] {tours_geocoding.py:112} INFO -   (417/479) Geocoding: Holiday Lights Sites Lucky Tuk Tuk Tour In San Francisco
+[2025-04-17T21:23:11.617+0000] {tours_geocoding.py:112} INFO -   (418/479) Geocoding: Sfo Pick Up With City Sightseeing Tour
+[2025-04-17T21:23:11.897+0000] {tours_geocoding.py:112} INFO -   (419/479) Geocoding: 2hr Golden Gate Bridge And Lombard Loop Gocar Tour
+[2025-04-17T21:23:12.197+0000] {tours_geocoding.py:112} INFO -   (420/479) Geocoding: 1hr San Francisco Chinatown Downtown Loop
+[2025-04-17T21:23:12.453+0000] {tours_geocoding.py:112} INFO -   (421/479) Geocoding: 3hr Golden Gate Bridge And Golden Gate Park Gocar Tour
+[2025-04-17T21:23:12.761+0000] {tours_geocoding.py:112} INFO -   (422/479) Geocoding: Elite Flight Tour Over San Francisco
+[2025-04-17T21:23:13.013+0000] {tours_geocoding.py:112} INFO -   (423/479) Geocoding: Fisherman S Wharf Walking Tour
+[2025-04-17T21:23:13.265+0000] {tours_geocoding.py:112} INFO -   (424/479) Geocoding: San Francisco Independent Electric Bike Tour With Rental
+[2025-04-17T21:23:13.567+0000] {tours_geocoding.py:112} INFO -   (425/479) Geocoding: Golden Gate Bridge Bike Tour
+[2025-04-17T21:23:13.825+0000] {tours_geocoding.py:112} INFO -   (426/479) Geocoding: San Francisco Fishermans Wharf Tourist Scavenger Hunt
+[2025-04-17T21:23:14.107+0000] {tours_geocoding.py:112} INFO -   (427/479) Geocoding: San Francisco Hop On Hop Off Open Top Bus Tour With Sausalito Tour Live Guide
+[2025-04-17T21:23:14.382+0000] {tours_geocoding.py:112} INFO -   (428/479) Geocoding: Mother S Day Brunch Cruise On San Francisco Bay
+[2025-04-17T21:23:14.673+0000] {tours_geocoding.py:112} INFO -   (429/479) Geocoding: Nate S Review Express Product
+[2025-04-17T21:23:14.968+0000] {tours_geocoding.py:112} INFO -   (430/479) Geocoding: Bokun Sapi Ec Connected
+[2025-04-17T21:23:15.283+0000] {tours_geocoding.py:112} INFO -   (431/479) Geocoding: Bridge And The Beach Best Day Ever
+[2025-04-17T21:23:15.528+0000] {tours_geocoding.py:112} INFO -   (432/479) Geocoding: San Francisco Ferry Sausalito Or Tiburon
+[2025-04-17T21:23:15.787+0000] {tours_geocoding.py:112} INFO -   (433/479) Geocoding: Arrival Private Transfer San Francisco Cruise Port To Oakland In Luxury Car
+[2025-04-17T21:23:16.069+0000] {tours_geocoding.py:112} INFO -   (434/479) Geocoding: Arrival Private Transfer San Francisco Cruise Port To Oakland In Business Car
+[2025-04-17T21:23:16.355+0000] {tours_geocoding.py:112} INFO -   (435/479) Geocoding: Sip N Shop Livermore Wine Tasting And Outlet Shopping From San Francisco
+[2025-04-17T21:23:16.640+0000] {tours_geocoding.py:112} INFO -   (436/479) Geocoding: San Francisco Explorer Pass
+[2025-04-17T21:23:16.870+0000] {tours_geocoding.py:112} INFO -   (437/479) Geocoding: Go San Francisco Card
+[2025-04-17T21:23:17.101+0000] {tours_geocoding.py:112} INFO -   (438/479) Geocoding: San Francisco Self Guided Audio Tour
+[2025-04-17T21:23:17.362+0000] {tours_geocoding.py:112} INFO -   (439/479) Geocoding: The San Francisco Sightseeing Day Pass Save Big At 30 Attractions Tours
+[2025-04-17T21:23:17.673+0000] {tours_geocoding.py:112} INFO -   (440/479) Geocoding: Private Full Day Napa Wine Tour In A Luxury Vehicle
+[2025-04-17T21:23:17.943+0000] {tours_geocoding.py:112} INFO -   (441/479) Geocoding: Private 6 Hour Napa Valley Wine Tour
+[2025-04-17T21:23:18.230+0000] {tours_geocoding.py:112} INFO -   (442/479) Geocoding: Napa And Sonoma Valley Wine Tour From San Francisco
+[2025-04-17T21:23:18.575+0000] {tours_geocoding.py:112} INFO -   (443/479) Geocoding: Monterey Carmel And Big Sur Private Day Trip From San Francisco
+[2025-04-17T21:23:18.854+0000] {tours_geocoding.py:112} INFO -   (444/479) Geocoding: Beginner Surfing 1 Day Pacifica
+[2025-04-17T21:23:19.205+0000] {tours_geocoding.py:112} INFO -   (445/479) Geocoding: Introduction To Wilderness Survival Clinic Marin County
+[2025-04-17T21:23:19.461+0000] {tours_geocoding.py:112} INFO -   (446/479) Geocoding: Private Napa Valley Day Trip From San Francisco
+[2025-04-17T21:23:19.716+0000] {tours_geocoding.py:112} INFO -   (447/479) Geocoding: Yosemite Tour
+[2025-04-17T21:23:19.986+0000] {tours_geocoding.py:112} INFO -   (448/479) Geocoding: Muir Woods And Sausalito Alcatraz
+[2025-04-17T21:23:20.263+0000] {tours_geocoding.py:112} INFO -   (449/479) Geocoding: Deluxe Sonoma Napa Valley Wine Country Tour
+[2025-04-17T21:23:20.571+0000] {tours_geocoding.py:112} INFO -   (450/479) Geocoding: Muir Woods Sausalito Tour
+[2025-04-17T21:23:20.833+0000] {tours_geocoding.py:125} INFO - Completed batch 9. Sleeping before next batch...
+[2025-04-17T21:23:22.834+0000] {tours_geocoding.py:105} INFO - Processing batch 10: rows 451 to 479
+[2025-04-17T21:23:22.834+0000] {tours_geocoding.py:112} INFO -   (451/479) Geocoding: Private Wine Tour Of Napa And Sonoma
+[2025-04-17T21:23:23.091+0000] {tours_geocoding.py:112} INFO -   (452/479) Geocoding: 8 Hour Napa And Sonoma Private Wine Tour
+[2025-04-17T21:23:23.349+0000] {tours_geocoding.py:112} INFO -   (453/479) Geocoding: Private Russian River Wine Tour From San Francisco
+[2025-04-17T21:23:23.612+0000] {tours_geocoding.py:112} INFO -   (454/479) Geocoding: Private Muir Woods And Napa Wine Tour From San Francisco
+[2025-04-17T21:23:23.923+0000] {tours_geocoding.py:112} INFO -   (455/479) Geocoding: 8 Hour Private Limousine Wine Country Tour Of Napa Valley From San Francisco
+[2025-04-17T21:23:24.221+0000] {tours_geocoding.py:112} INFO -   (456/479) Geocoding: 6 Hour Livermore Valley Wine Tasting Tour From San Francisco
+[2025-04-17T21:23:24.487+0000] {tours_geocoding.py:112} INFO -   (457/479) Geocoding: Monterey Carmel The 17 Mile Drive 5ab11bb25840d47c1d000a9e
+[2025-04-17T21:23:24.750+0000] {tours_geocoding.py:112} INFO -   (458/479) Geocoding: San Francisco City Tour 5ab1223c5840d47f1d000a7e
+[2025-04-17T21:23:25.014+0000] {tours_geocoding.py:112} INFO -   (459/479) Geocoding: San Francisco City Tour Muir Woods 5ab122505840d44a1e000a75
+[2025-04-17T21:23:25.303+0000] {tours_geocoding.py:112} INFO -   (460/479) Geocoding: San Francisco City Tour Bay Cruise
+[2025-04-17T21:23:25.574+0000] {tours_geocoding.py:112} INFO -   (461/479) Geocoding: Aquarium Of The Bay 5ab114fa5840d4811d000b3a
+[2025-04-17T21:23:25.832+0000] {tours_geocoding.py:112} INFO -   (462/479) Geocoding: Sf City Tour And Escape From The Rock Cruise
+[2025-04-17T21:23:26.114+0000] {tours_geocoding.py:112} INFO -   (463/479) Geocoding: Sf Bay Cruise
+[2025-04-17T21:23:26.369+0000] {tours_geocoding.py:112} INFO -   (464/479) Geocoding: Escape From The Rock
+[2025-04-17T21:23:26.622+0000] {tours_geocoding.py:112} INFO -   (465/479) Geocoding: Muir Woods Sausalito Bay Cruise
+[2025-04-17T21:23:26.890+0000] {tours_geocoding.py:112} INFO -   (466/479) Geocoding: San Francisco City Tour Alcatraz
+[2025-04-17T21:23:27.143+0000] {tours_geocoding.py:112} INFO -   (467/479) Geocoding: San Francisco Bay Indoor Skydiving Experience
+[2025-04-17T21:23:27.395+0000] {tours_geocoding.py:112} INFO -   (468/479) Geocoding: San Francisco Japantown Audio Tour By Voicemap Food History And Resistance
+[2025-04-17T21:23:27.686+0000] {tours_geocoding.py:112} INFO -   (469/479) Geocoding: Sfo Intl Executive Transportation
+[2025-04-17T21:23:27.969+0000] {tours_geocoding.py:112} INFO -   (470/479) Geocoding: Yosemite Day Tour
+[2025-04-17T21:23:28.216+0000] {tours_geocoding.py:112} INFO -   (471/479) Geocoding: Half Day San Francisco Bike Rental For The Golden Gate Bridge 3 Hour
+[2025-04-17T21:23:28.534+0000] {tours_geocoding.py:112} INFO -   (472/479) Geocoding: Big Sur Monterey California Pacific Coast One Day Tour
+[2025-04-17T21:23:28.813+0000] {tours_geocoding.py:112} INFO -   (473/479) Geocoding: Napa Valley Wine Country Flight Tour
+[2025-04-17T21:23:29.066+0000] {tours_geocoding.py:112} INFO -   (474/479) Geocoding: Wine Country Tour
+[2025-04-17T21:23:29.307+0000] {tours_geocoding.py:112} INFO -   (475/479) Geocoding: Chinatown Culinary Walking Tour
+[2025-04-17T21:23:29.565+0000] {tours_geocoding.py:112} INFO -   (476/479) Geocoding: Discovering The 3 Days Trip To Desert
+[2025-04-17T21:23:29.837+0000] {tours_geocoding.py:112} INFO -   (477/479) Geocoding: Golden Gate Bridge To Sausalito Bike Rental
+[2025-04-17T21:23:30.161+0000] {tours_geocoding.py:112} INFO -   (478/479) Geocoding: Half Day Private Tour Of Muir Woods Sausalito
+[2025-04-17T21:23:30.437+0000] {tours_geocoding.py:112} INFO -   (479/479) Geocoding: Experience Our Napa Valley Sonoma Wine Country Combo Tour
+[2025-04-17T21:23:30.742+0000] {tours_geocoding.py:125} INFO - Completed batch 10. Sleeping before next batch...
+[2025-04-17T21:23:32.744+0000] {tours_geocoding.py:129} INFO - Successfully processed all 479 tours
+[2025-04-17T21:23:32.744+0000] {tours_geocoding.py:130} INFO - Output saved to: /tmp/triphobo_data/tours_with_coords.csv
+[2025-04-17T21:23:32.747+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-17T21:23:32.756+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-17T21:23:32.757+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_tours_pipeline, task_id=geocode_tours, run_id=scheduled__2025-04-16T07:30:00+00:00, execution_date=20250416T073000, start_date=20250417T212053, end_date=20250417T212332
+[2025-04-17T21:23:32.778+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-17T21:23:32.795+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-17T21:23:32.796+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

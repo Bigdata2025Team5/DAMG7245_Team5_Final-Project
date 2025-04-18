@@ -1,0 +1,135 @@
+[2025-04-18T06:30:43.098+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T06:30:43.105+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.load_geocoded_attractions_snowflake manual__2025-04-18T06:19:00.130101+00:00 [queued]>
+[2025-04-18T06:30:43.108+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_scrape.load_geocoded_attractions_snowflake manual__2025-04-18T06:19:00.130101+00:00 [queued]>
+[2025-04-18T06:30:43.108+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T06:30:43.112+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): load_geocoded_attractions_snowflake> on 2025-04-18 06:19:00.130101+00:00
+[2025-04-18T06:30:43.116+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=952) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T06:30:43.117+0000] {standard_task_runner.py:72} INFO - Started process 953 to run task
+[2025-04-18T06:30:43.117+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_scrape', 'load_geocoded_attractions_snowflake', 'manual__2025-04-18T06:19:00.130101+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmp58w5t1cu']
+[2025-04-18T06:30:43.119+0000] {standard_task_runner.py:105} INFO - Job 59: Subtask load_geocoded_attractions_snowflake
+[2025-04-18T06:30:43.136+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_scrape.load_geocoded_attractions_snowflake manual__2025-04-18T06:19:00.130101+00:00 [running]> on host 68d96c644388
+[2025-04-18T06:30:43.172+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_scrape' AIRFLOW_CTX_TASK_ID='load_geocoded_attractions_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T06:19:00.130101+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T06:19:00.130101+00:00'
+[2025-04-18T06:30:43.172+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T06:30:43.220+0000] {attractions_dag.py:546} INFO - Downloading file from s3://bigdatafinal2025/clean/attractions_with_coords.csv
+[2025-04-18T06:30:43.493+0000] {attractions_dag.py:551} INFO - CSV contains 148 rows and 15 columns
+[2025-04-18T06:30:43.494+0000] {attractions_dag.py:553} INFO - CSV columns: ['Description', 'Travel Tips', 'City', 'Ticket Details', 'URL', 'Hours', 'Restaurants Nearby', 'How to Reach', 'Image', 'Short Description', 'Latitude', 'Longitude', 'PlaceName', 'FormattedAddress', 'SearchQuery']
+[2025-04-18T06:30:43.494+0000] {attractions_dag.py:555} INFO - First row sample: {'Description': "The milestone of ambitions is perfectly represented by the Empire State Building located in Midtown Manhattan, New York. This building just shows that Sky is the limit, really! This famous 102 story skyscraper has 73 elevators and was constructed within 1 year and 45 days and the height of this lofty building is 381 meters (1250 ft). Visitors can enjoy the magnificent view from the building’s observation deck on the 86th floor. This is a purely business spaces building and not for residential purposes. The main attraction of this place is its constructional beauty as this building possesses great historical significance and thus, it comes under the list of must visit places in New York. Every year more than three million people come here. This is a good place for tourists who love photography. Without taking a photo, the New York trip is incomplete. There is a beautiful light show at sunset. What makes the design so great is that for all its simplicity and sheer bulk it has a perfect composition and massing, giving the building a certain grandeur. Empire State Building is one of the tourist attractions inNew York City Itinerary 3 daysandNew York City Itinerary 7 Days. Get Empire State building tickets to visit this amazing attraction in NYC. Please your eyes with some breathtaking panoramic views of the New York City. Visit the iconic Empire State building, the 86th floor of which allows you to witness the incredible nature of NYC. The best way to explore this attraction is by getting the Empire State building tickets from the ticket counter. If you want to ignore the cue, then you can book the Empire State Building tickets, well in advance. You can also book the Empire State Building tour tickets to get a guided tour of the skydeck and enjoy mesmerising views. Admission to MAIN DECK86th Floor TOP AND MAIN DECK102nd & 86th Floors Love this? Explore the entire list ofplaces to visit in New York Citybefore you plan your trip. Fancy a good night's sleep after a tiring day? Check outwhere to stay in New York Cityand book an accommodation of your choice.", 'Travel Tips': 'Empire State Building Information\nDon’t miss out famous synchronized light show and special slideshow of famous guests.\nThere is also a special holiday event.\nIt has one of the most popular outdoor observatories.\nEmpire State building tour tickets can be purchased online or at the Empire State Building.\nAdvice is to arrive early to buy Empire State building tickets else you have to wait for tickets and also the view.', 'City': 'New York City United States', 'Ticket Details': 'Adult Price: $32\nChild Price: $26\nSenior Price: $29', 'URL': 'https://www.triphobo.com/places/new-york-city-united-states/empire-state-building', 'Hours': 'The last elevator up is at 1:15AM.', 'Restaurants Nearby': 'Olive Garden Italian Rastaurant\nHeartland Brewery\nEuropa Cafe\nRoses Pizza\nStarbucks', 'How to Reach': 'Port Authority Bus Terminal\nCitySights NY Double Decker bus stop: #6 Downtown Tour\nSubway 34th Street\nBuses: M1 – M16', 'Image': 'https://ak.jogurucdn.com/media/image/p14/place-2016-07-13-13-8467e510147d52a39069afc3bec73ed9.jpg', 'Short Description': 'The milestone of ambitions is perfectly represented by the Empire State Building located in Midtown Manhattan, New York. This building just shows that Sky is the limit, really! This famous 102 story skyscraper has 73 elevators and was constructed within 1 year and 45 days and the height of this lofty building is 381 meters (1250 ft). Visitors can enjoy the magnificent view from the building’s observation deck on the 86th floor. This is a purely business spaces building and not for residential pu...', 'Latitude': 40.7484405, 'Longitude': -73.98566439999999, 'PlaceName': 'Empire State Building', 'FormattedAddress': '20 W 34th St., New York, NY 10001, USA', 'SearchQuery': 'Empire State Building, New York City, NY, USA'}
+[2025-04-18T06:30:43.502+0000] {attractions_dag.py:591} INFO - Created temporary CSV file: /tmp/attractions_with_coords_fixed.csv, size: 327911 bytes
+[2025-04-18T06:30:43.503+0000] {connection.py:414} INFO - Snowflake Connector for Python Version: 3.12.4, Python Version: 3.12.8, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-04-18T06:30:43.503+0000] {connection.py:1197} INFO - Connecting to GLOBAL Snowflake domain
+[2025-04-18T06:30:43.503+0000] {connection.py:1278} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2025-04-18T06:30:44.130+0000] {attractions_dag.py:597} INFO - Creating table TRIPHOBO_ATTRACTIONS with predefined schema...
+[2025-04-18T06:30:44.481+0000] {attractions_dag.py:678} ERROR - Error loading to Snowflake: 003041 (42710): 01bbc406-010d-0a94-000b-5e4b0032647a: SQL compilation error:
+Table 'TRIPHOBO_ATTRACTIONS' already exists, but current role has no privileges on it. If this is unexpected and you cannot resolve this problem, contact your system administrator. ACCOUNTADMIN role may be required to manage the privileges on the object.
+[2025-04-18T06:30:44.481+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/attractions_dag.py", line 616, in load_from_s3_to_snowflake
+    cursor.execute(create_table_sql)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/cursor.py", line 1097, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 284, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 339, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 215, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 003041 (42710): 01bbc406-010d-0a94-000b-5e4b0032647a: SQL compilation error:
+Table 'TRIPHOBO_ATTRACTIONS' already exists, but current role has no privileges on it. If this is unexpected and you cannot resolve this problem, contact your system administrator. ACCOUNTADMIN role may be required to manage the privileges on the object.
+[2025-04-18T06:30:44.486+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=triphobo_attractions_scrape, task_id=load_geocoded_attractions_snowflake, run_id=manual__2025-04-18T06:19:00.130101+00:00, execution_date=20250418T061900, start_date=20250418T063043, end_date=20250418T063044
+[2025-04-18T06:30:44.493+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T06:30:44.493+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 59 for task load_geocoded_attractions_snowflake (003041 (42710): 01bbc406-010d-0a94-000b-5e4b0032647a: SQL compilation error:
+Table 'TRIPHOBO_ATTRACTIONS' already exists, but current role has no privileges on it. If this is unexpected and you cannot resolve this problem, contact your system administrator. ACCOUNTADMIN role may be required to manage the privileges on the object.; 953)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/attractions_dag.py", line 616, in load_from_s3_to_snowflake
+    cursor.execute(create_table_sql)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/cursor.py", line 1097, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 284, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 339, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 215, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 003041 (42710): 01bbc406-010d-0a94-000b-5e4b0032647a: SQL compilation error:
+Table 'TRIPHOBO_ATTRACTIONS' already exists, but current role has no privileges on it. If this is unexpected and you cannot resolve this problem, contact your system administrator. ACCOUNTADMIN role may be required to manage the privileges on the object.
+[2025-04-18T06:30:44.504+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-18T06:30:44.514+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T06:30:44.515+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,24 +1,25 @@
 FROM python:3.9-slim
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy requirements file
-COPY requirements.txt .
+# Copy backend requirements
+COPY backend/requirements.txt .
 
-# Install dependencies
+# Install Python dependencies
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy only backend code (adjust if needed)
+COPY backend/ .
 
-# Expose ports for FastAPI and Streamlit
+# Expose FastAPI port
 EXPOSE 8000
 
 
 # Create a script to run both applications
 RUN echo '#!/bin/bash\n\
-streamlit run app.py --server.port=8501 --server.address=0.0.0.0 &\n\
+
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 \n\
 
 wait\n' > /app/start.sh

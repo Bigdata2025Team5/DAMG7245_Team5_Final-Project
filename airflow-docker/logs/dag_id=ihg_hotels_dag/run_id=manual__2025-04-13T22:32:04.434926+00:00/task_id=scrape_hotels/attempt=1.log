@@ -1,0 +1,75 @@
+[2025-04-13T22:32:05.472+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T22:32:05.477+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:32:04.434926+00:00 [queued]>
+[2025-04-13T22:32:05.479+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:32:04.434926+00:00 [queued]>
+[2025-04-13T22:32:05.479+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-13T22:32:05.483+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-13 22:32:04.434926+00:00
+[2025-04-13T22:32:05.486+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=274) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T22:32:05.487+0000] {standard_task_runner.py:72} INFO - Started process 275 to run task
+[2025-04-13T22:32:05.487+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'manual__2025-04-13T22:32:04.434926+00:00', '--job-id', '207', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmp5rxhmv5h']
+[2025-04-13T22:32:05.489+0000] {standard_task_runner.py:105} INFO - Job 207: Subtask scrape_hotels
+[2025-04-13T22:32:05.504+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels manual__2025-04-13T22:32:04.434926+00:00 [running]> on host 599bf25ffed0
+[2025-04-13T22:32:05.530+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-13T22:32:04.434926+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-13T22:32:04.434926+00:00'
+[2025-04-13T22:32:05.531+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T22:32:05.814+0000] {hotel_scrape_dag.py:217} INFO - Processing New York
+[2025-04-13T22:32:05.851+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for New York at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=New%20York,%20NY,%20United%20States
+[2025-04-13T22:32:06.029+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for New York
+[2025-04-13T22:32:36.038+0000] {hotel_scrape_dag.py:145} ERROR - Failed New York: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:32:36.122+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping New York. Found 0 hotels.
+[2025-04-13T22:32:36.123+0000] {hotel_scrape_dag.py:230} INFO - Waiting 5715ms before next city
+[2025-04-13T22:32:41.842+0000] {hotel_scrape_dag.py:217} INFO - Processing San Francisco
+[2025-04-13T22:32:41.886+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for San Francisco at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=San%20Francisco,%20CA,%20United%20States
+[2025-04-13T22:32:41.992+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for San Francisco
+[2025-04-13T22:33:12.009+0000] {hotel_scrape_dag.py:145} ERROR - Failed San Francisco: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:33:12.091+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping San Francisco. Found 0 hotels.
+[2025-04-13T22:33:12.091+0000] {hotel_scrape_dag.py:230} INFO - Waiting 6432ms before next city
+[2025-04-13T22:33:18.529+0000] {hotel_scrape_dag.py:217} INFO - Processing Chicago
+[2025-04-13T22:33:18.558+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for Chicago at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=Chicago,%20IL,%20United%20States
+[2025-04-13T22:33:18.616+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for Chicago
+[2025-04-13T22:33:48.623+0000] {hotel_scrape_dag.py:145} ERROR - Failed Chicago: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:33:48.692+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping Chicago. Found 0 hotels.
+[2025-04-13T22:33:48.693+0000] {hotel_scrape_dag.py:230} INFO - Waiting 5544ms before next city
+[2025-04-13T22:33:54.242+0000] {hotel_scrape_dag.py:217} INFO - Processing Seattle
+[2025-04-13T22:33:54.264+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for Seattle at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=Seattle,%20WA,%20United%20States
+[2025-04-13T22:33:54.332+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for Seattle
+[2025-04-13T22:34:24.338+0000] {hotel_scrape_dag.py:145} ERROR - Failed Seattle: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:34:24.407+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping Seattle. Found 0 hotels.
+[2025-04-13T22:34:24.407+0000] {hotel_scrape_dag.py:230} INFO - Waiting 9492ms before next city
+[2025-04-13T22:34:33.907+0000] {hotel_scrape_dag.py:217} INFO - Processing Las Vegas
+[2025-04-13T22:34:33.937+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for Las Vegas at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=Las%20Vegas,%20NV,%20United%20States
+[2025-04-13T22:34:34.009+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for Las Vegas
+[2025-04-13T22:35:04.018+0000] {hotel_scrape_dag.py:145} ERROR - Failed Las Vegas: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:35:04.090+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping Las Vegas. Found 0 hotels.
+[2025-04-13T22:35:04.090+0000] {hotel_scrape_dag.py:230} INFO - Waiting 9669ms before next city
+[2025-04-13T22:35:13.763+0000] {hotel_scrape_dag.py:217} INFO - Processing Los Angeles
+[2025-04-13T22:35:13.792+0000] {hotel_scrape_dag.py:53} INFO - Starting scrape for Los Angeles at https://www.ihg.com/hotels/us/en/find-hotels/hotel/list?qDest=Los%20Angeles,%20CA,%20United%20States
+[2025-04-13T22:35:14.004+0000] {hotel_scrape_dag.py:57} INFO - Page loaded for Los Angeles
+[2025-04-13T22:35:44.010+0000] {hotel_scrape_dag.py:145} ERROR - Failed Los Angeles: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".hotels-list") to be visible
+
+[2025-04-13T22:35:44.072+0000] {hotel_scrape_dag.py:155} INFO - Completed scraping Los Angeles. Found 0 hotels.
+[2025-04-13T22:35:44.072+0000] {hotel_scrape_dag.py:230} INFO - Waiting 5464ms before next city
+[2025-04-13T22:35:49.574+0000] {hotel_scrape_dag.py:245} WARNING - No hotels were found!
+[2025-04-13T22:35:49.585+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-13T22:35:49.591+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-13T22:35:49.592+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=manual__2025-04-13T22:32:04.434926+00:00, execution_date=20250413T223204, start_date=20250413T223205, end_date=20250413T223549
+[2025-04-13T22:35:49.635+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-13T22:35:49.648+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-13T22:35:49.649+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

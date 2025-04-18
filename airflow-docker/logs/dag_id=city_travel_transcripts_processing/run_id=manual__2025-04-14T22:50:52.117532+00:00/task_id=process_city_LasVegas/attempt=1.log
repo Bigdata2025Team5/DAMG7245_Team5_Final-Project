@@ -1,0 +1,33 @@
+[2025-04-14T22:50:54.683+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-14T22:50:54.692+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:50:52.117532+00:00 [queued]>
+[2025-04-14T22:50:54.698+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:50:52.117532+00:00 [queued]>
+[2025-04-14T22:50:54.698+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-04-14T22:50:54.707+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): process_city_LasVegas> on 2025-04-14 22:50:52.117532+00:00
+[2025-04-14T22:50:54.711+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=365) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-14T22:50:54.712+0000] {standard_task_runner.py:72} INFO - Started process 372 to run task
+[2025-04-14T22:50:54.713+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'city_travel_transcripts_processing', 'process_city_LasVegas', 'manual__2025-04-14T22:50:52.117532+00:00', '--job-id', '365', '--raw', '--subdir', 'DAGS_FOLDER/youtube_dag.py', '--cfg-path', '/tmp/tmpprua_oki']
+[2025-04-14T22:50:54.717+0000] {standard_task_runner.py:105} INFO - Job 365: Subtask process_city_LasVegas
+[2025-04-14T22:50:54.745+0000] {task_command.py:467} INFO - Running <TaskInstance: city_travel_transcripts_processing.process_city_LasVegas manual__2025-04-14T22:50:52.117532+00:00 [running]> on host 3b4c46317285
+[2025-04-14T22:50:54.793+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='city_travel_transcripts_processing' AIRFLOW_CTX_TASK_ID='process_city_LasVegas' AIRFLOW_CTX_EXECUTION_DATE='2025-04-14T22:50:52.117532+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-14T22:50:52.117532+00:00'
+[2025-04-14T22:50:54.795+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-14T22:50:54.803+0000] {youtube_dag.py:142} INFO - Starting processing for city: LasVegas
+[2025-04-14T22:50:54.803+0000] {youtube_dag.py:157} INFO - Creating directory structure for LasVegas
+[2025-04-14T22:50:54.803+0000] {youtube_dag.py:161} INFO - Created directories: /opt/***/data/city_transcripts/LasVegas, /opt/***/data/city_transcripts/LasVegas/transcripts
+[2025-04-14T22:50:54.804+0000] {youtube_dag.py:172} INFO - Parameters for LasVegas: use_existing=False, skip_download=False, skip_upload=False
+[2025-04-14T22:50:54.841+0000] {youtube_dag.py:188} INFO - Successfully retrieved credentials from Airflow Variables
+[2025-04-14T22:50:54.842+0000] {youtube_dag.py:208} WARNING - Missing credentials for LasVegas: YOUTUBE_API_KEY, AWS_ACCESS_KEY, AWS_SECRET_KEY, S3_BUCKET_NAME, OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_INDEX
+[2025-04-14T22:50:54.842+0000] {youtube_dag.py:227} INFO - Loading spaCy model for LasVegas
+[2025-04-14T22:50:55.212+0000] {youtube_dag.py:229} INFO - Successfully loaded spaCy model
+[2025-04-14T22:50:55.213+0000] {youtube_dag.py:251} INFO - Downloading transcripts for LasVegas
+[2025-04-14T22:50:55.213+0000] {youtube_dag.py:302} INFO - Starting transcript download for LasVegas
+[2025-04-14T22:50:55.214+0000] {youtube_dag.py:306} ERROR - Cannot download transcripts for LasVegas: YouTube API key not provided
+[2025-04-14T22:50:55.214+0000] {youtube_dag.py:265} INFO - Skipping S3 upload phase for LasVegas
+[2025-04-14T22:50:55.214+0000] {youtube_dag.py:274} WARNING - Skipping embedding phase for LasVegas due to missing credentials
+[2025-04-14T22:50:55.215+0000] {youtube_dag.py:287} INFO - Completed processing for LasVegas: {"city_key": "LasVegas", "transcript_count": 0, "s3_files_uploaded": 0, "successful_embeddings": 0, "failed_count": 0, "total_vectors": 0, "status": "completed"}
+[2025-04-14T22:50:55.218+0000] {python.py:240} INFO - Done. Returned value was: {'city_key': 'LasVegas', 'transcript_count': 0, 's3_files_uploaded': 0, 'successful_embeddings': 0, 'failed_count': 0, 'total_vectors': 0, 'status': 'completed'}
+[2025-04-14T22:50:55.240+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-14T22:50:55.240+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=city_travel_transcripts_processing, task_id=process_city_LasVegas, run_id=manual__2025-04-14T22:50:52.117532+00:00, execution_date=20250414T225052, start_date=20250414T225054, end_date=20250414T225055
+[2025-04-14T22:50:55.269+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-14T22:50:55.278+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

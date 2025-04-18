@@ -1,0 +1,68 @@
+from fastapi.testclient import TestClient
+from backend.main import app  # Adjust this import based on your actual file structure
+
+client = TestClient(app)
+
+def test_root():
+    """Test root status endpoint"""
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"status": "online"}
+
+def test_health_check():
+    """Test health check endpoint"""
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "healthy",
+        "message": "Service is running"
+    }
+
+def test_generate_itinerary_valid():
+    """Test valid itinerary generation"""
+    payload = {
+        "city": "New York",
+        "start_date": "2025-04-20",
+        "end_date": "2025-04-22",
+        "preference": "Suggest an itinerary with Things to do",
+        "travel_type": "Solo",
+        "adults": 1,
+        "kids": 0,
+        "budget": "medium",
+        "include_tours": False,
+        "include_accommodation": False,
+        "include_things": True
+    }
+    response = client.post("/generate-itinerary", json=payload)
+    assert response.status_code == 200
+    data = response.json()["data"]
+    assert "itinerary_html" in data
+    assert "itinerary_text" in data
+
+def test_generate_itinerary_invalid_dates():
+    """Test itinerary generation with end_date before start_date"""
+    payload = {
+        "city": "Chicago",
+        "start_date": "2025-04-25",
+        "end_date": "2025-04-20",  # Invalid: end < start
+        "preference": "Suggest an itinerary with Things to do",
+        "travel_type": "Solo",
+        "adults": 1,
+        "kids": 0,
+        "budget": "medium",
+        "include_tours": False,
+        "include_accommodation": False,
+        "include_things": True
+    }
+    response = client.post("/generate-itinerary", json=payload)
+    assert response.status_code == 422
+
+def test_ask_question_empty():
+    """Test /ask endpoint with an empty question"""
+    response = client.post("/ask", json={
+        "itinerary": "Sample itinerary text.",
+        "question": ""
+    })
+    assert response.status_code in [422, 500]
+
+

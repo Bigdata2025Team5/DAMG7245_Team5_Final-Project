@@ -1,0 +1,130 @@
+[2025-04-17T21:16:42.966+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-17T21:16:42.972+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:16:42.975+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ihg_hotels_dag.scrape_hotels scheduled__2025-04-16T07:30:00+00:00 [queued]>
+[2025-04-17T21:16:42.975+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-17T21:16:42.980+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_hotels> on 2025-04-16 07:30:00+00:00
+[2025-04-17T21:16:42.984+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1234) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-17T21:16:42.985+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ihg_hotels_dag', 'scrape_hotels', 'scheduled__2025-04-16T07:30:00+00:00', '--job-id', '396', '--raw', '--subdir', 'DAGS_FOLDER/hotel_scrape_dag.py', '--cfg-path', '/tmp/tmpvyf7zo7o']
+[2025-04-17T21:16:42.986+0000] {standard_task_runner.py:72} INFO - Started process 1235 to run task
+[2025-04-17T21:16:42.986+0000] {standard_task_runner.py:105} INFO - Job 396: Subtask scrape_hotels
+[2025-04-17T21:16:43.005+0000] {task_command.py:467} INFO - Running <TaskInstance: ihg_hotels_dag.scrape_hotels scheduled__2025-04-16T07:30:00+00:00 [running]> on host 4d0efc92e922
+[2025-04-17T21:16:43.038+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ihg_hotels_dag' AIRFLOW_CTX_TASK_ID='scrape_hotels' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T07:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T07:30:00+00:00'
+[2025-04-17T21:16:43.039+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-17T21:16:43.044+0000] {hotel_scrape_dag.py:79} INFO - Starting hotel scraping process
+[2025-04-17T21:16:43.044+0000] {hotel_scrape_dag.py:83} INFO - Attempting to scrape using known hotel URLs
+[2025-04-17T21:16:43.044+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for New York
+[2025-04-17T21:16:43.045+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Manhattan-Financial District at https://www.ihg.com/holidayinn/hotels/us/en/nycmk/hoteldetail
+[2025-04-17T21:16:43.135+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:44.825+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn New York City - Times Square at https://www.ihg.com/holidayinn/hotels/us/en/nycre/hoteldetail
+[2025-04-17T21:16:44.904+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:46.060+0000] {hotel_scrape_dag.py:164} INFO - Scraping InterContinental New York Times Square at https://www.ihg.com/intercontinental/hotels/us/en/nycic/hoteldetail
+[2025-04-17T21:16:46.132+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:47.318+0000] {hotel_scrape_dag.py:164} INFO - Scraping Kimpton Hotel Eventi at https://www.ihg.com/kimpton/hotels/us/en/nycxn/hoteldetail
+[2025-04-17T21:16:47.399+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:48.747+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for New York
+[2025-04-17T21:16:48.747+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for San Francisco
+[2025-04-17T21:16:48.747+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn San Francisco-Golden Gateway at https://www.ihg.com/holidayinn/hotels/us/en/sfogg/hoteldetail
+[2025-04-17T21:16:48.828+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:50.355+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Express San Francisco Union Square at https://www.ihg.com/holidayinn/hotels/us/en/sfofn/hoteldetail
+[2025-04-17T21:16:50.491+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:51.729+0000] {hotel_scrape_dag.py:164} INFO - Scraping InterContinental San Francisco at https://www.ihg.com/intercontinental/hotels/us/en/sfofs/hoteldetail
+[2025-04-17T21:16:51.813+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:53.266+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for San Francisco
+[2025-04-17T21:16:53.267+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for Chicago
+[2025-04-17T21:16:53.267+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Chicago Downtown at https://www.ihg.com/holidayinn/hotels/us/en/chidw/hoteldetail
+[2025-04-17T21:16:53.362+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:54.871+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Chicago-Mart Plaza River North at https://www.ihg.com/holidayinn/hotels/us/en/chird/hoteldetail
+[2025-04-17T21:16:54.959+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:56.186+0000] {hotel_scrape_dag.py:164} INFO - Scraping InterContinental Chicago Magnificent Mile at https://www.ihg.com/intercontinental/hotels/us/en/chimg/hoteldetail
+[2025-04-17T21:16:56.272+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:57.829+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for Chicago
+[2025-04-17T21:16:57.831+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for Seattle
+[2025-04-17T21:16:57.831+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Seattle Downtown at https://www.ihg.com/holidayinn/hotels/us/en/seasc/hoteldetail
+[2025-04-17T21:16:57.912+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:16:59.011+0000] {hotel_scrape_dag.py:164} INFO - Scraping Crowne Plaza Seattle-Downtown at https://www.ihg.com/crowneplaza/hotels/us/en/seatc/hoteldetail
+[2025-04-17T21:16:59.090+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:00.485+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for Seattle
+[2025-04-17T21:17:00.486+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for Las Vegas
+[2025-04-17T21:17:00.487+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Club Vacations At Desert Club Resort at https://www.ihg.com/holidayinnclub/hotels/us/en/lasvs/hoteldetail
+[2025-04-17T21:17:00.568+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:02.116+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Express Las Vegas South at https://www.ihg.com/holidayinn/hotels/us/en/lashn/hoteldetail
+[2025-04-17T21:17:02.201+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:04.059+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for Las Vegas
+[2025-04-17T21:17:04.060+0000] {hotel_scrape_dag.py:153} INFO - Scraping known hotels for Los Angeles
+[2025-04-17T21:17:04.060+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Los Angeles - LAX Airport at https://www.ihg.com/holidayinn/hotels/us/en/laxap/hoteldetail
+[2025-04-17T21:17:04.138+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:05.227+0000] {hotel_scrape_dag.py:164} INFO - Scraping Holiday Inn Los Angeles - Hollywood Walk of Fame at https://www.ihg.com/holidayinn/hotels/us/en/laxbr/hoteldetail
+[2025-04-17T21:17:05.339+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:06.604+0000] {hotel_scrape_dag.py:164} INFO - Scraping InterContinental Los Angeles Downtown at https://www.ihg.com/intercontinental/hotels/us/en/laxdt/hoteldetail
+[2025-04-17T21:17:06.685+0000] {hotel_scrape_dag.py:167} INFO - Request returned status: 403
+[2025-04-17T21:17:08.342+0000] {hotel_scrape_dag.py:238} INFO - Added 0 hotels for Los Angeles
+[2025-04-17T21:17:08.342+0000] {hotel_scrape_dag.py:93} INFO - Attempting to scrape with API
+[2025-04-17T21:17:08.342+0000] {hotel_scrape_dag.py:254} INFO - Scraping New York with API
+[2025-04-17T21:17:08.343+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=New%20York%2C%20NY&radius=20
+[2025-04-17T21:17:08.417+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:08.418+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/new-york-ny
+[2025-04-17T21:17:08.488+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:08.488+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=New%20York%2C%20NY
+[2025-04-17T21:17:08.673+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:08.673+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for New York using API
+[2025-04-17T21:17:10.106+0000] {hotel_scrape_dag.py:254} INFO - Scraping San Francisco with API
+[2025-04-17T21:17:10.107+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=San%20Francisco%2C%20CA&radius=20
+[2025-04-17T21:17:10.325+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:10.325+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/san-francisco-ca
+[2025-04-17T21:17:10.496+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:10.497+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=San%20Francisco%2C%20CA
+[2025-04-17T21:17:10.606+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:10.606+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for San Francisco using API
+[2025-04-17T21:17:13.322+0000] {hotel_scrape_dag.py:254} INFO - Scraping Chicago with API
+[2025-04-17T21:17:13.323+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=Chicago%2C%20IL&radius=20
+[2025-04-17T21:17:13.431+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:13.432+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/chicago-il
+[2025-04-17T21:17:13.538+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:13.539+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=Chicago%2C%20IL
+[2025-04-17T21:17:13.775+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:13.775+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for Chicago using API
+[2025-04-17T21:17:16.567+0000] {hotel_scrape_dag.py:254} INFO - Scraping Seattle with API
+[2025-04-17T21:17:16.567+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=Seattle%2C%20WA&radius=20
+[2025-04-17T21:17:16.638+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:16.639+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/seattle-wa
+[2025-04-17T21:17:16.709+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:16.709+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=Seattle%2C%20WA
+[2025-04-17T21:17:16.787+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:16.788+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for Seattle using API
+[2025-04-17T21:17:19.649+0000] {hotel_scrape_dag.py:254} INFO - Scraping Las Vegas with API
+[2025-04-17T21:17:19.650+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=Las%20Vegas%2C%20NV&radius=20
+[2025-04-17T21:17:19.737+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:19.738+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/las-vegas-nv
+[2025-04-17T21:17:19.823+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:19.824+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=Las%20Vegas%2C%20NV
+[2025-04-17T21:17:19.933+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:19.933+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for Las Vegas using API
+[2025-04-17T21:17:21.438+0000] {hotel_scrape_dag.py:254} INFO - Scraping Los Angeles with API
+[2025-04-17T21:17:21.438+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hotels/nearby?location=Los%20Angeles%2C%20CA&radius=20
+[2025-04-17T21:17:21.576+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:21.577+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/api/hoteldetails/los-angeles-ca
+[2025-04-17T21:17:21.640+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:21.640+0000] {hotel_scrape_dag.py:269} INFO - Trying API endpoint: https://www.ihg.com/hotels/us/en/find-hotels/api/v1/search/geo?q=Los%20Angeles%2C%20CA
+[2025-04-17T21:17:21.715+0000] {hotel_scrape_dag.py:272} INFO - API response status: 403
+[2025-04-17T21:17:21.715+0000] {hotel_scrape_dag.py:329} INFO - Added 0 hotels for Los Angeles using API
+[2025-04-17T21:17:23.054+0000] {hotel_scrape_dag.py:102} INFO - API scraping added 0 hotels
+[2025-04-17T21:17:23.055+0000] {hotel_scrape_dag.py:107} INFO - Not enough hotels found (0), generating additional hotels
+[2025-04-17T21:17:23.057+0000] {hotel_scrape_dag.py:339} INFO - Generating 220 hotels using patterns
+[2025-04-17T21:17:23.058+0000] {hotel_scrape_dag.py:413} INFO - Generating 40 hotels for New York
+[2025-04-17T21:17:23.059+0000] {hotel_scrape_dag.py:413} INFO - Generating 36 hotels for San Francisco
+[2025-04-17T21:17:23.060+0000] {hotel_scrape_dag.py:413} INFO - Generating 36 hotels for Chicago
+[2025-04-17T21:17:23.061+0000] {hotel_scrape_dag.py:413} INFO - Generating 36 hotels for Seattle
+[2025-04-17T21:17:23.061+0000] {hotel_scrape_dag.py:413} INFO - Generating 36 hotels for Las Vegas
+[2025-04-17T21:17:23.062+0000] {hotel_scrape_dag.py:413} INFO - Generating 36 hotels for Los Angeles
+[2025-04-17T21:17:23.063+0000] {hotel_scrape_dag.py:469} INFO - Successfully generated 220 hotels
+[2025-04-17T21:17:23.064+0000] {hotel_scrape_dag.py:128} INFO - Added 220 generated hotels
+[2025-04-17T21:17:23.064+0000] {hotel_scrape_dag.py:130} INFO - Total hotels found: 220
+[2025-04-17T21:17:23.081+0000] {hotel_scrape_dag.py:133} INFO - Scraped 220 hotels across all cities. Data saved to /tmp/ihg_data/multi_city_ihg_hotels.csv
+[2025-04-17T21:17:23.082+0000] {python.py:240} INFO - Done. Returned value was: 220
+[2025-04-17T21:17:23.099+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-17T21:17:23.100+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ihg_hotels_dag, task_id=scrape_hotels, run_id=scheduled__2025-04-16T07:30:00+00:00, execution_date=20250416T073000, start_date=20250417T211642, end_date=20250417T211723
+[2025-04-17T21:17:23.133+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-17T21:17:23.144+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-17T21:17:23.145+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

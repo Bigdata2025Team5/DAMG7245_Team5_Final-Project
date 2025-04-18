@@ -1,0 +1,1122 @@
+[2025-04-18T06:49:46.442+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-18T06:49:46.448+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_all_cities scheduled__2025-04-16T11:30:00+00:00 [queued]>
+[2025-04-18T06:49:46.450+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_attractions_pipeline.scrape_all_cities scheduled__2025-04-16T11:30:00+00:00 [queued]>
+[2025-04-18T06:49:46.450+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-18T06:49:46.454+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_all_cities> on 2025-04-16 11:30:00+00:00
+[2025-04-18T06:49:46.458+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1210) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-18T06:49:46.459+0000] {standard_task_runner.py:72} INFO - Started process 1211 to run task
+[2025-04-18T06:49:46.459+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_attractions_pipeline', 'scrape_all_cities', 'scheduled__2025-04-16T11:30:00+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/attractions_dag.py', '--cfg-path', '/tmp/tmpexzecv3f']
+[2025-04-18T06:49:46.460+0000] {standard_task_runner.py:105} INFO - Job 61: Subtask scrape_all_cities
+[2025-04-18T06:49:46.479+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_attractions_pipeline.scrape_all_cities scheduled__2025-04-16T11:30:00+00:00 [running]> on host 68d96c644388
+[2025-04-18T06:49:46.507+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_attractions_pipeline' AIRFLOW_CTX_TASK_ID='scrape_all_cities' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T11:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T11:30:00+00:00'
+[2025-04-18T06:49:46.508+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-18T06:49:46.528+0000] {attractions_dag.py:314} INFO - Loaded 148 existing records with 148 unique URLs
+[2025-04-18T06:49:46.722+0000] {attractions_dag.py:323} INFO - Scraping city 1/6: New York City United States
+[2025-04-18T06:49:46.750+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=1
+[2025-04-18T06:49:52.837+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:49:52.838+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/empire-state-building
+[2025-04-18T06:49:52.838+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/statue-of-liberty
+[2025-04-18T06:49:52.838+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/rockefeller-center
+[2025-04-18T06:49:52.838+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/times-square
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-metropolitan-museum-of-art
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/grand-central-terminal
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/american-museum-of-natural-history
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-modern-art
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/high-line
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/national-9-11-memorial-museum
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/intrepid-sea-air-and-space-museum
+[2025-04-18T06:49:52.839+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/solomon-r-guggenheim-museum
+[2025-04-18T06:49:52.840+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/radio-city-music-hall
+[2025-04-18T06:49:52.840+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/fanaberie
+[2025-04-18T06:49:52.840+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/united-nations-headquarters
+[2025-04-18T06:49:52.845+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 148 total records
+[2025-04-18T06:49:52.845+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=2
+[2025-04-18T06:49:57.565+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:49:57.565+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-public-library
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/national-museum-of-american-indian
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/children-s-museum-of-manhattan
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-morgan-library-and-museum
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cathedral-church-of-saint-john-the-divine
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/gramercy-tavern
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bryant-park
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-heights-promenade
+[2025-04-18T06:49:57.566+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/65th-street
+[2025-04-18T06:49:57.567+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chrysler-building
+[2025-04-18T06:49:57.567+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chinatown
+[2025-04-18T06:49:57.567+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/dead-rabbit
+[2025-04-18T06:49:57.567+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-transit-museum
+[2025-04-18T06:49:57.567+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/frick-collection
+[2025-04-18T06:49:57.570+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 148 total records
+[2025-04-18T06:49:57.571+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=3
+[2025-04-18T06:50:03.150+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:03.151+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/yankee-stadium
+[2025-04-18T06:50:03.151+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/harlem
+[2025-04-18T06:50:03.151+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/battery-park
+[2025-04-18T06:50:03.151+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-mean-fiddler
+[2025-04-18T06:50:03.151+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-paul-s-chapel
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/metropolitan-opera-house
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-patrick-s-cathedral
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/little-italy
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/central-park-zoo
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/lexington-avenue
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-botanical-garden
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-botanical-garden
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/place/adda/51c828b2e705454c13000000
+[2025-04-18T06:50:03.152+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-industries
+[2025-04-18T06:50:03.153+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bloomingdale-s
+[2025-04-18T06:50:03.156+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 148 total records
+[2025-04-18T06:50:03.156+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=4
+[2025-04-18T06:50:08.089+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:08.090+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/one-world-trade-center
+[2025-04-18T06:50:08.090+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/carnegie-hall
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/ground-zero
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/narcissa
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/minton-s
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-the-moving-image
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/south-street-seaport
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/french-roast
+[2025-04-18T06:50:08.091+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/little-owl
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/wall-street-new-york
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/century-21
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-harbor
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/flushing-meadows-corona-park
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/governor-s-island
+[2025-04-18T06:50:08.092+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/apollo-theater
+[2025-04-18T06:50:08.098+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 148 total records
+[2025-04-18T06:50:08.099+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=5
+[2025-04-18T06:50:12.598+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:12.599+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/big-gay-ice-cream
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/luna-park-coney-island
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-bridge-park
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/plaza-hotel
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/chelsea-market
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-strip-house-12th-street
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/germania-bank-building
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/graffiti-hall-of-fame
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/flatiron-building
+[2025-04-18T06:50:12.600+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hayden-planetarium
+[2025-04-18T06:50:12.601+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cafe-mogador
+[2025-04-18T06:50:12.601+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/broadway-street
+[2025-04-18T06:50:12.601+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/eataly
+[2025-04-18T06:50:12.601+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hunts-point
+[2025-04-18T06:50:12.601+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/circle-line-cruise
+[2025-04-18T06:50:12.605+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 148 total records
+[2025-04-18T06:50:12.605+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=6
+[2025-04-18T06:50:18.376+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:18.376+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/fifth-avenue
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/marea
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-jewish-heritage
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/church-of-st-paul-the-apostle
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-vincent-ferrer
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-francis-xavier
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/calvary-episcopal-church
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/macy-s-herald-square
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brooklyn-flea
+[2025-04-18T06:50:18.377+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/neue-gallery
+[2025-04-18T06:50:18.378+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bldg-92
+[2025-04-18T06:50:18.378+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/centre-fuge-public-art-project
+[2025-04-18T06:50:18.378+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-lion
+[2025-04-18T06:50:18.378+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bowery-graffiti-wall
+[2025-04-18T06:50:18.378+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bronx-hall-of-fame
+[2025-04-18T06:50:18.381+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 148 total records
+[2025-04-18T06:50:18.381+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=7
+[2025-04-18T06:50:22.671+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/general-grant-national-memorial
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/union-square
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brandy-library
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/casa-lever
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/hudson-river-greenway
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-united-states/museum-of-the-city-of-new-york
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/union-square-greenmarket
+[2025-04-18T06:50:22.672+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/museum-of-arts-and-design-store
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/welling-court
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/stillwell-avenue
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/woolworth-building-tour
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/tuff-city
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/north-6th-street
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/cafe-wha
+[2025-04-18T06:50:22.673+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/majestic-theatre
+[2025-04-18T06:50:22.677+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 148 total records
+[2025-04-18T06:50:22.677+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=8
+[2025-04-18T06:50:27.387+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:27.387+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/greenwich-village
+[2025-04-18T06:50:27.387+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/ghostbusters-fire-station
+[2025-04-18T06:50:27.387+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/west-village
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/bethesda-terrace-and-fountain
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/madame-tussauds-wax-museum
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/washington-square-park
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/broadway-theater
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/riverside-park
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-octagon-roosevelt-island
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/long-beach
+[2025-04-18T06:50:27.388+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/42nd-east-street
+[2025-04-18T06:50:27.389+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/conservatory-garden
+[2025-04-18T06:50:27.389+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/trinity-church
+[2025-04-18T06:50:27.389+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/studio-54
+[2025-04-18T06:50:27.389+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/barrymore-theatre
+[2025-04-18T06:50:27.395+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 148 total records
+[2025-04-18T06:50:27.399+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=9
+[2025-04-18T06:50:32.039+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:32.039+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/st-thomas-church
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/alice-in-wonderland-statue
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/upper-east-side
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-world-stages
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/federal-hall
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/queensboro-bridge
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-film-academy
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/herald-square
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/pennsylvania-station
+[2025-04-18T06:50:32.040+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-university
+[2025-04-18T06:50:32.041+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/eleven-madison-park
+[2025-04-18T06:50:32.041+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/momofuku-ko
+[2025-04-18T06:50:32.041+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/aldea
+[2025-04-18T06:50:32.041+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/brick-lane-curry-house
+[2025-04-18T06:50:32.041+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/queen-s-zoo
+[2025-04-18T06:50:32.045+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 148 total records
+[2025-04-18T06:50:32.045+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/new-york-city-united-states/things-to-do?page=10
+[2025-04-18T06:50:37.060+0000] {attractions_dag.py:335} INFO - Found 13 attraction links
+[2025-04-18T06:50:37.061+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/great-new-york-noodle-town
+[2025-04-18T06:50:37.061+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/junoon
+[2025-04-18T06:50:37.061+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/greenhouse-36
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-press-lounge
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/penthouse-808
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-slipper-room
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/northern-theatre
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/alma
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/new-york-aquarium
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/the-box
+[2025-04-18T06:50:37.062+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/lit-lounge
+[2025-04-18T06:50:37.063+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/white-horse-tavern
+[2025-04-18T06:50:37.063+0000] {attractions_dag.py:343} INFO - Skipping already scraped URL: https://www.triphobo.com/places/new-york-city-united-states/kettle-of-fish
+[2025-04-18T06:50:37.067+0000] {attractions_dag.py:379} INFO - Saved progress after page 10: 148 total records
+[2025-04-18T06:50:37.092+0000] {attractions_dag.py:385} INFO - Completed scraping New York City United States, found 0 new attractions
+[2025-04-18T06:50:37.094+0000] {attractions_dag.py:323} INFO - Scraping city 2/6: San Francisco United States
+[2025-04-18T06:50:37.115+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=1
+[2025-04-18T06:50:42.521+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:50:42.521+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/muir-woods-national-monument
+[2025-04-18T06:50:46.185+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/alcatraz-island
+[2025-04-18T06:50:51.808+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/pier-39
+[2025-04-18T06:50:55.508+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/california-academy-of-sciences
+[2025-04-18T06:50:59.203+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/marin-headlands
+[2025-04-18T06:51:02.902+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/fishermans-wharf
+[2025-04-18T06:51:06.542+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/ghirardelli-square
+[2025-04-18T06:51:10.182+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/at-and-t-park
+[2025-04-18T06:51:13.900+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/north-beach
+[2025-04-18T06:51:17.726+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/lands-end
+[2025-04-18T06:51:21.434+0000] {attractions_dag.py:359} INFO - Saved progress: 158 total records
+[2025-04-18T06:51:21.435+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/the-walt-disney-family-museum
+[2025-04-18T06:51:25.071+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-cable-car-museum
+[2025-04-18T06:51:28.700+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/asian-art-museum-of-san-francisco
+[2025-04-18T06:51:32.341+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/musee-mecanique
+[2025-04-18T06:51:35.963+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/cliff-house
+[2025-04-18T06:51:39.727+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 163 total records
+[2025-04-18T06:51:39.728+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=2
+[2025-04-18T06:51:44.861+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:51:44.861+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/washington-square
+[2025-04-18T06:51:48.712+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/coit-tower
+[2025-04-18T06:51:52.395+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/fort-point-national-historic-site
+[2025-04-18T06:51:56.116+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/grace-cathedral
+[2025-04-18T06:51:59.777+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/bay-bridge
+[2025-04-18T06:52:03.457+0000] {attractions_dag.py:359} INFO - Saved progress: 168 total records
+[2025-04-18T06:52:03.457+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/exploratorium
+[2025-04-18T06:52:07.146+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-maritime-national-historical-park
+[2025-04-18T06:52:10.815+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/city-hall
+[2025-04-18T06:52:14.450+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/de-young-museum
+[2025-04-18T06:52:18.230+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/embarcadero-center
+[2025-04-18T06:52:21.901+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/transamerica-pyramid
+[2025-04-18T06:52:25.539+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/japanese-tea-garden
+[2025-04-18T06:52:29.227+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/ocean-beach
+[2025-04-18T06:52:32.878+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/palace-of-fine-arts
+[2025-04-18T06:52:36.559+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/haight-ashbury
+[2025-04-18T06:52:40.216+0000] {attractions_dag.py:359} INFO - Saved progress: 178 total records
+[2025-04-18T06:52:40.220+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 178 total records
+[2025-04-18T06:52:40.220+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=3
+[2025-04-18T06:52:49.103+0000] {attractions_dag.py:335} INFO - Found 13 attraction links
+[2025-04-18T06:52:49.104+0000] {attractions_dag.py:347} INFO - Scraping place 1/13: https://www.triphobo.com/places/san-francisco-united-states/sutro-baths-ruins
+[2025-04-18T06:52:52.772+0000] {attractions_dag.py:347} INFO - Scraping place 2/13: https://www.triphobo.com/places/san-francisco-united-states/ripley-s-believe-it-or-not
+[2025-04-18T06:52:56.390+0000] {attractions_dag.py:347} INFO - Scraping place 3/13: https://www.triphobo.com/places/san-francisco-united-states/aquarium-of-the-bay
+[2025-04-18T06:53:00.024+0000] {attractions_dag.py:347} INFO - Scraping place 4/13: https://www.triphobo.com/places/san-francisco-united-states/alamo-square
+[2025-04-18T06:53:03.739+0000] {attractions_dag.py:347} INFO - Scraping place 5/13: https://www.triphobo.com/places/san-francisco-united-states/union-square
+[2025-04-18T06:53:07.396+0000] {attractions_dag.py:347} INFO - Scraping place 6/13: https://www.triphobo.com/places/san-francisco-united-states/hollywood-cafe
+[2025-04-18T06:53:11.087+0000] {attractions_dag.py:347} INFO - Scraping place 7/13: https://www.triphobo.com/places/san-francisco-united-states/elbo-room
+[2025-04-18T06:53:14.772+0000] {attractions_dag.py:347} INFO - Scraping place 8/13: https://www.triphobo.com/places/san-francisco-united-states/asiasf
+[2025-04-18T06:53:18.408+0000] {attractions_dag.py:347} INFO - Scraping place 9/13: https://www.triphobo.com/places/san-francisco-united-states/butter
+[2025-04-18T06:53:22.036+0000] {attractions_dag.py:347} INFO - Scraping place 10/13: https://www.triphobo.com/places/san-francisco-united-states/crissy-field
+[2025-04-18T06:53:25.958+0000] {attractions_dag.py:359} INFO - Saved progress: 188 total records
+[2025-04-18T06:53:25.959+0000] {attractions_dag.py:347} INFO - Scraping place 11/13: https://www.triphobo.com/places/san-francisco-united-states/mission-dolores
+[2025-04-18T06:53:29.834+0000] {attractions_dag.py:347} INFO - Scraping place 12/13: https://www.triphobo.com/places/san-francisco-united-states/hyde-street-pier
+[2025-04-18T06:53:33.451+0000] {attractions_dag.py:347} INFO - Scraping place 13/13: https://www.triphobo.com/places/san-francisco-united-states/555-california-street
+[2025-04-18T06:53:37.117+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 191 total records
+[2025-04-18T06:53:37.117+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=4
+[2025-04-18T06:53:42.171+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:53:42.171+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/randall-museum
+[2025-04-18T06:53:45.812+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/california-palace-of-the-legion-of-honor
+[2025-04-18T06:53:49.471+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/beach-blanket-babylon
+[2025-04-18T06:53:53.162+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-zoo
+[2025-04-18T06:53:56.798+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-public-library-main
+[2025-04-18T06:54:00.471+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/marrakech-magic-theatre
+[2025-04-18T06:54:04.082+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/city-lights-booksellers-and-publishers
+[2025-04-18T06:54:07.745+0000] {attractions_dag.py:359} INFO - Saved progress: 198 total records
+[2025-04-18T06:54:07.746+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/boudin-at-the-wharf
+[2025-04-18T06:54:11.396+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-botanical-garden
+[2025-04-18T06:54:15.071+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/powell-and-market-cable-car-turnaround
+[2025-04-18T06:54:19.179+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/filbert-steps-and-grace-marchant-gardens
+[2025-04-18T06:54:22.812+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/s-s-jeremiah-o-brien
+[2025-04-18T06:54:27.237+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/the-san-francisco-dungeon
+[2025-04-18T06:54:30.855+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/japan-town
+[2025-04-18T06:54:34.561+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/golden-gate-promenade
+[2025-04-18T06:54:38.202+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 206 total records
+[2025-04-18T06:54:38.202+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=5
+[2025-04-18T06:54:43.414+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:54:43.414+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/caffe-trieste
+[2025-04-18T06:54:47.048+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/nob-hill
+[2025-04-18T06:54:50.706+0000] {attractions_dag.py:359} INFO - Saved progress: 208 total records
+[2025-04-18T06:54:50.707+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/conservatory-of-flowers
+[2025-04-18T06:54:54.443+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/biscuits-and-blues
+[2025-04-18T06:54:58.080+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/smuggler-s-cove
+[2025-04-18T06:55:01.747+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/vesuvio
+[2025-04-18T06:55:05.388+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/the-saloon
+[2025-04-18T06:55:09.073+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/ferry-building
+[2025-04-18T06:55:12.948+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/ferry-plaza-farmers-market
+[2025-04-18T06:55:16.645+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/telegraph-hill
+[2025-04-18T06:55:20.274+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/civic-center
+[2025-04-18T06:55:23.889+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/yerba-buena-gardens
+[2025-04-18T06:55:27.528+0000] {attractions_dag.py:359} INFO - Saved progress: 218 total records
+[2025-04-18T06:55:27.528+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/treasure-island
+[2025-04-18T06:55:31.154+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/little-italy
+[2025-04-18T06:55:34.945+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/wells-fargo-history-museum
+[2025-04-18T06:55:38.641+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 221 total records
+[2025-04-18T06:55:38.641+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=6
+[2025-04-18T06:55:43.332+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:55:43.333+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/saint-mary-s-cathedral
+[2025-04-18T06:55:46.966+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/kabuki-springs-and-spa
+[2025-04-18T06:55:50.830+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/fillmore-street
+[2025-04-18T06:55:54.560+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/union-street
+[2025-04-18T06:55:58.198+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/pier-23-cafe
+[2025-04-18T06:56:01.892+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/balmy-alley-murals
+[2025-04-18T06:56:05.661+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/16th-avenue-tiled-steps
+[2025-04-18T06:56:09.346+0000] {attractions_dag.py:359} INFO - Saved progress: 228 total records
+[2025-04-18T06:56:09.346+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/fort-mason-center-for-arts-and-culture
+[2025-04-18T06:56:13.005+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/sea-lion-center
+[2025-04-18T06:56:16.626+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/nordstrom
+[2025-04-18T06:56:20.270+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/redwood-room
+[2025-04-18T06:56:24.076+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/war-memorial-opera-house
+[2025-04-18T06:56:27.935+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/buena-vista-park
+[2025-04-18T06:56:31.630+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/saints-peter-and-paul-church
+[2025-04-18T06:56:35.325+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/pacific-heights
+[2025-04-18T06:56:39.105+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 236 total records
+[2025-04-18T06:56:39.106+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=7
+[2025-04-18T06:56:44.303+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T06:56:44.303+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/san-francisco-united-states/maritime-museum
+[2025-04-18T06:56:47.979+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/san-francisco-united-states/pier-7
+[2025-04-18T06:56:51.644+0000] {attractions_dag.py:359} INFO - Saved progress: 238 total records
+[2025-04-18T06:56:51.644+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/san-francisco-united-states/greenwich-steps
+[2025-04-18T06:56:55.273+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/san-francisco-united-states/panhandle-at-golden-gate-park
+[2025-04-18T06:56:58.902+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/san-francisco-united-states/warfield-theater
+[2025-04-18T06:57:02.605+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/san-francisco-united-states/american-conservatory-theater
+[2025-04-18T06:57:06.263+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/san-francisco-united-states/museum-of-the-african-diaspora
+[2025-04-18T06:57:09.947+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/san-francisco-united-states/noe-valley
+[2025-04-18T06:57:13.612+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/san-francisco-united-states/angel-island-immigration-station
+[2025-04-18T06:57:17.316+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/san-francisco-united-states/hayes-valley
+[2025-04-18T06:57:20.957+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/san-francisco-united-states/heart-of-the-city-farmers-market
+[2025-04-18T06:57:24.603+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/san-francisco-united-states/sfo-aviation-museum
+[2025-04-18T06:57:28.258+0000] {attractions_dag.py:359} INFO - Saved progress: 248 total records
+[2025-04-18T06:57:28.258+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/san-francisco-united-states/gump-s
+[2025-04-18T06:57:32.676+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/san-francisco-united-states/candy-baron
+[2025-04-18T06:57:36.323+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 250 total records
+[2025-04-18T06:57:36.324+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=8
+[2025-04-18T06:57:40.661+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T06:57:40.661+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/san-francisco-united-states/corona-heights-park
+[2025-04-18T06:57:44.728+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/san-francisco-united-states/grateful-dead-house
+[2025-04-18T06:57:48.688+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/san-francisco-united-states/pioneer-monument
+[2025-04-18T06:57:52.800+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/san-francisco-united-states/speakeasy-ales-and-lagers
+[2025-04-18T06:57:56.834+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-national-cemetery
+[2025-04-18T06:58:01.124+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/san-francisco-united-states/clarion-alley-murals
+[2025-04-18T06:58:05.273+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/san-francisco-united-states/hendrik-point
+[2025-04-18T06:58:09.218+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/san-francisco-united-states/don-edwards-san-francisco-bay-wildlife-refuge
+[2025-04-18T06:58:13.060+0000] {attractions_dag.py:359} INFO - Saved progress: 258 total records
+[2025-04-18T06:58:13.061+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/san-francisco-united-states/women-s-building-mural
+[2025-04-18T06:58:16.923+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/san-francisco-united-states/yerba-buena-center-for-the-arts-ybca
+[2025-04-18T06:58:20.869+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/san-francisco-united-states/sutro-heights-park
+[2025-04-18T06:58:24.512+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/san-francisco-united-states/camera-obscura
+[2025-04-18T06:58:28.209+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/san-francisco-united-states/chinese-historical-society-of-america-museum
+[2025-04-18T06:58:31.932+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/san-francisco-united-states/autodesk-gallery
+[2025-04-18T06:58:35.586+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 264 total records
+[2025-04-18T06:58:35.588+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=9
+[2025-04-18T06:58:40.167+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:58:40.167+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/national-aids-memorial-grove
+[2025-04-18T06:58:43.853+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/the-national-shrine-of-saint-francis-of-assisi
+[2025-04-18T06:58:47.493+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/cellarmaker-brewing-company
+[2025-04-18T06:58:51.175+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/mount-davidson
+[2025-04-18T06:58:54.834+0000] {attractions_dag.py:359} INFO - Saved progress: 268 total records
+[2025-04-18T06:58:54.834+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/hard-rock-cafe-san-francisco
+[2025-04-18T06:58:58.529+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/potrero-hill
+[2025-04-18T06:59:02.229+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/neptune-society-columbarium
+[2025-04-18T06:59:05.924+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/lotta-s-fountain
+[2025-04-18T06:59:09.792+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/alemany-flea-market
+[2025-04-18T06:59:13.428+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/the-castro
+[2025-04-18T06:59:17.105+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/vermont-street
+[2025-04-18T06:59:20.789+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/anchor-brewing-company
+[2025-04-18T06:59:24.460+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/henry-m-jackson-playground
+[2025-04-18T06:59:28.140+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/christopher-s-books
+[2025-04-18T06:59:31.903+0000] {attractions_dag.py:359} INFO - Saved progress: 278 total records
+[2025-04-18T06:59:31.904+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/masonic-temple
+[2025-04-18T06:59:35.611+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 279 total records
+[2025-04-18T06:59:35.611+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/san-francisco-united-states/things-to-do?page=10
+[2025-04-18T06:59:40.422+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T06:59:40.422+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/san-francisco-united-states/beach-chalet-brewery-restaurant
+[2025-04-18T06:59:44.051+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/san-francisco-united-states/the-magic-theatre
+[2025-04-18T06:59:48.002+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/san-francisco-united-states/hidden-garden-steps
+[2025-04-18T06:59:51.671+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/san-francisco-united-states/san-francisco-flower-mart
+[2025-04-18T06:59:55.356+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/san-francisco-united-states/the-flood-building
+[2025-04-18T06:59:59.052+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/san-francisco-united-states/stockton-street
+[2025-04-18T07:00:02.747+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/san-francisco-united-states/crocker-galleria
+[2025-04-18T07:00:06.385+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/san-francisco-united-states/maiden-lane
+[2025-04-18T07:00:10.106+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/san-francisco-united-states/museo-italo-americano
+[2025-04-18T07:00:13.772+0000] {attractions_dag.py:359} INFO - Saved progress: 288 total records
+[2025-04-18T07:00:13.772+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/san-francisco-united-states/pier-24-photography-museum
+[2025-04-18T07:00:17.407+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/san-francisco-united-states/swedenborgian-church
+[2025-04-18T07:00:21.145+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/san-francisco-united-states/sacramento-street
+[2025-04-18T07:00:24.819+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/san-francisco-united-states/occidental-cigar-club
+[2025-04-18T07:00:28.715+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/san-francisco-united-states/castro-theatre
+[2025-04-18T07:00:32.559+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/san-francisco-united-states/uss-pampanito
+[2025-04-18T07:00:36.429+0000] {attractions_dag.py:379} INFO - Saved progress after page 10: 294 total records
+[2025-04-18T07:00:36.458+0000] {attractions_dag.py:385} INFO - Completed scraping San Francisco United States, found 146 new attractions
+[2025-04-18T07:00:36.458+0000] {attractions_dag.py:323} INFO - Scraping city 3/6: Chicago United States
+[2025-04-18T07:00:36.480+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=1
+[2025-04-18T07:00:41.703+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:00:41.703+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/the-art-institute-of-chicago
+[2025-04-18T07:00:45.430+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/millennium-park
+[2025-04-18T07:00:49.064+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/willis-tower
+[2025-04-18T07:00:53.014+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/michigan-avenue
+[2025-04-18T07:00:56.648+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/museum-of-science-and-industry
+[2025-04-18T07:01:00.285+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/360-chicago-observation-deck
+[2025-04-18T07:01:05.551+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/john-hancock-center
+[2025-04-18T07:01:09.181+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/wrigley-field
+[2025-04-18T07:01:12.853+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/field-museum-of-natural-history
+[2025-04-18T07:01:16.714+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/lincoln-park
+[2025-04-18T07:01:20.446+0000] {attractions_dag.py:359} INFO - Saved progress: 304 total records
+[2025-04-18T07:01:20.449+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/chicago-cultural-center
+[2025-04-18T07:01:24.131+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/magnificent-mile
+[2025-04-18T07:01:27.828+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/lakefront-trail
+[2025-04-18T07:01:31.536+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/crown-fountain
+[2025-04-18T07:01:35.218+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/united-center
+[2025-04-18T07:01:39.091+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 309 total records
+[2025-04-18T07:01:39.093+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=2
+[2025-04-18T07:01:43.585+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:01:43.585+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/brookfield-zoo
+[2025-04-18T07:01:47.228+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/driehaus-museum
+[2025-04-18T07:01:50.847+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/chicago-riverwalk
+[2025-04-18T07:01:54.470+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/chicago-loop
+[2025-04-18T07:01:58.149+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/house-of-blues
+[2025-04-18T07:02:02.464+0000] {attractions_dag.py:359} INFO - Saved progress: 314 total records
+[2025-04-18T07:02:02.464+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/kingston-mines
+[2025-04-18T07:02:06.093+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/lake-michigan
+[2025-04-18T07:02:09.747+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/symphony-center
+[2025-04-18T07:02:13.365+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/macys
+[2025-04-18T07:02:17.017+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/museum-of-contemporary-art-chicago
+[2025-04-18T07:02:20.637+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/buddy-guys-legends
+[2025-04-18T07:02:24.284+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/water-tower-place
+[2025-04-18T07:02:28.039+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/grant-park
+[2025-04-18T07:02:31.751+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/michigan-avenue-bridge
+[2025-04-18T07:02:35.437+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/pritzker-military-museum-and-library
+[2025-04-18T07:02:39.301+0000] {attractions_dag.py:359} INFO - Saved progress: 324 total records
+[2025-04-18T07:02:39.307+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 324 total records
+[2025-04-18T07:02:39.307+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=3
+[2025-04-18T07:02:45.868+0000] {attractions_dag.py:335} INFO - Found 11 attraction links
+[2025-04-18T07:02:45.869+0000] {attractions_dag.py:347} INFO - Scraping place 1/11: https://www.triphobo.com/places/chicago-united-states/chicago-children-s-museum
+[2025-04-18T07:02:49.507+0000] {attractions_dag.py:347} INFO - Scraping place 2/11: https://www.triphobo.com/places/chicago-united-states/american-girl-place-chicago
+[2025-04-18T07:02:53.282+0000] {attractions_dag.py:347} INFO - Scraping place 3/11: https://www.triphobo.com/places/chicago-united-states/peggy-notebaert-nature-museum
+[2025-04-18T07:02:57.005+0000] {attractions_dag.py:347} INFO - Scraping place 4/11: https://www.triphobo.com/places/chicago-united-states/harold-washington-library-center-chicago-public-library
+[2025-04-18T07:03:00.684+0000] {attractions_dag.py:347} INFO - Scraping place 5/11: https://www.triphobo.com/places/chicago-united-states/dylan-s-candy-bar
+[2025-04-18T07:03:04.299+0000] {attractions_dag.py:347} INFO - Scraping place 6/11: https://www.triphobo.com/places/chicago-united-states/adagio-teas-chicago
+[2025-04-18T07:03:07.986+0000] {attractions_dag.py:347} INFO - Scraping place 7/11: https://www.triphobo.com/places/chicago-united-states/fox-in-a-box-chicago
+[2025-04-18T07:03:11.686+0000] {attractions_dag.py:347} INFO - Scraping place 8/11: https://www.triphobo.com/places/chicago-united-states/andersonville
+[2025-04-18T07:03:15.327+0000] {attractions_dag.py:347} INFO - Scraping place 9/11: https://www.triphobo.com/places/chicago-united-states/rockefeller-chapel
+[2025-04-18T07:03:19.003+0000] {attractions_dag.py:347} INFO - Scraping place 10/11: https://www.triphobo.com/places/chicago-united-states/flamingo
+[2025-04-18T07:03:22.654+0000] {attractions_dag.py:359} INFO - Saved progress: 334 total records
+[2025-04-18T07:03:22.654+0000] {attractions_dag.py:347} INFO - Scraping place 11/11: https://www.triphobo.com/places/chicago-united-states/lurie-garden
+[2025-04-18T07:03:26.313+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 335 total records
+[2025-04-18T07:03:26.314+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=4
+[2025-04-18T07:03:32.806+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:03:32.806+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/chicago-united-states/museum-of-broadcast-communications
+[2025-04-18T07:03:36.457+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/chicago-united-states/hyde-park
+[2025-04-18T07:03:40.081+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/chicago-united-states/900-north-michigan
+[2025-04-18T07:03:43.894+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/chicago-united-states/hull-house
+[2025-04-18T07:03:47.587+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/chicago-united-states/dusable-museum-of-african-american-history
+[2025-04-18T07:03:51.504+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/chicago-united-states/briar-street-theater
+[2025-04-18T07:03:55.157+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/chicago-united-states/aqua-tower
+[2025-04-18T07:03:58.850+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/chicago-united-states/newberry-library
+[2025-04-18T07:04:02.492+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/chicago-united-states/dana-hotel-spa
+[2025-04-18T07:04:06.115+0000] {attractions_dag.py:359} INFO - Saved progress: 344 total records
+[2025-04-18T07:04:06.115+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/chicago-united-states/smart-museum-of-art
+[2025-04-18T07:04:09.799+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/chicago-united-states/chicago-pedway
+[2025-04-18T07:04:13.487+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/chicago-united-states/chicago-distilling-company
+[2025-04-18T07:04:17.121+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/chicago-united-states/the-moody-church
+[2025-04-18T07:04:20.765+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/chicago-united-states/st-james-cathedral
+[2025-04-18T07:04:24.408+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 349 total records
+[2025-04-18T07:04:24.408+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=5
+[2025-04-18T07:04:29.105+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:04:29.105+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/half-acre-beer-company
+[2025-04-18T07:04:32.744+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/polish-museum-of-america
+[2025-04-18T07:04:36.391+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/music-box-theatre
+[2025-04-18T07:04:40.042+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/first-united-methodist-church-of-chicago
+[2025-04-18T07:04:43.668+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/randolph-street-market
+[2025-04-18T07:04:47.348+0000] {attractions_dag.py:359} INFO - Saved progress: 354 total records
+[2025-04-18T07:04:47.348+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/rosehill-cemetery
+[2025-04-18T07:04:50.992+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/mccormick-tribune-ice-rink
+[2025-04-18T07:04:54.933+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/elks-veterans-memorial
+[2025-04-18T07:04:58.798+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/disney-store
+[2025-04-18T07:05:02.441+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/agora-sculptures
+[2025-04-18T07:05:06.191+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/galos-caves-spa
+[2025-04-18T07:05:09.862+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/fisher-building
+[2025-04-18T07:05:13.564+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/merchandise-mart
+[2025-04-18T07:05:17.311+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/holy-name-cathedral
+[2025-04-18T07:05:21.055+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/marina-city
+[2025-04-18T07:05:24.747+0000] {attractions_dag.py:359} INFO - Saved progress: 364 total records
+[2025-04-18T07:05:24.753+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 364 total records
+[2025-04-18T07:05:24.754+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=6
+[2025-04-18T07:05:30.101+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:05:30.101+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/old-water-tower
+[2025-04-18T07:05:33.803+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/christkindlmarket
+[2025-04-18T07:05:37.479+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/loyola-university-museum-of-art
+[2025-04-18T07:05:41.156+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/centennial-wheel
+[2025-04-18T07:05:45.161+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/chicago-burger-company
+[2025-04-18T07:05:48.809+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/east-lower-wacker-drive
+[2025-04-18T07:05:52.455+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/five-faces-ice-cream-shop
+[2025-04-18T07:05:56.136+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/taste-of-chicago
+[2025-04-18T07:06:00.010+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/the-scout-waterhouse-kitchen
+[2025-04-18T07:06:03.641+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/chicago-rockford-international-airport
+[2025-04-18T07:06:07.277+0000] {attractions_dag.py:359} INFO - Saved progress: 374 total records
+[2025-04-18T07:06:07.277+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/place/adda/59772f505840d440270003ae
+[2025-04-18T07:06:12.071+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/terra-museum-of-american-art
+[2025-04-18T07:06:15.892+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/university-of-il-library
+[2025-04-18T07:06:19.524+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/garfield-ridge-public-library
+[2025-04-18T07:06:23.170+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/helen-brach-primate-house
+[2025-04-18T07:06:26.806+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 379 total records
+[2025-04-18T07:06:26.806+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=7
+[2025-04-18T07:06:31.349+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:06:31.349+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/chicago-city-library
+[2025-04-18T07:06:35.092+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/mobile-city-customers-with-disabilities
+[2025-04-18T07:06:38.959+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/national-jazz-museum
+[2025-04-18T07:06:43.130+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/mccormick-freedom-project
+[2025-04-18T07:06:46.772+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/joseph-g-stromberg-library
+[2025-04-18T07:06:50.427+0000] {attractions_dag.py:359} INFO - Saved progress: 384 total records
+[2025-04-18T07:06:50.427+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/driehaus-enterprise-management
+[2025-04-18T07:06:54.093+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/health-science-library
+[2025-04-18T07:06:57.744+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/rogers-park-historical-society
+[2025-04-18T07:07:01.378+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/galewood-mont-clare-library
+[2025-04-18T07:07:05.039+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/chicago-maritime-museum
+[2025-04-18T07:07:08.698+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/vivian-g-harsh-society
+[2025-04-18T07:07:12.335+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/sackrider-museum-of-handbags
+[2025-04-18T07:07:15.994+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/inventing-lab-chicago-childrens-museum
+[2025-04-18T07:07:19.630+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/james-p-fitzgibbons-hstrcl-msm
+[2025-04-18T07:07:23.478+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/chicago-academy-of-sciences
+[2025-04-18T07:07:27.132+0000] {attractions_dag.py:359} INFO - Saved progress: 394 total records
+[2025-04-18T07:07:27.140+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 394 total records
+[2025-04-18T07:07:27.141+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=8
+[2025-04-18T07:07:32.889+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:07:32.890+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/city-of-chicago-board-of-elections-whitney-young-l
+[2025-04-18T07:07:36.510+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/museum-africa
+[2025-04-18T07:07:40.166+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/library-media-project
+[2025-04-18T07:07:43.832+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/chinatown-library
+[2025-04-18T07:07:47.507+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/benjamin-b-green-field-natl
+[2025-04-18T07:07:51.296+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/nat-l-italian-amer-sports-hll-of-fm
+[2025-04-18T07:07:54.979+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/midwest-library
+[2025-04-18T07:07:58.693+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/galeria-gala
+[2025-04-18T07:08:02.407+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/fine-art-portraiture
+[2025-04-18T07:08:06.201+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/joseph-brennemann-library
+[2025-04-18T07:08:09.959+0000] {attractions_dag.py:359} INFO - Saved progress: 404 total records
+[2025-04-18T07:08:09.959+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/lewison-memorial-library
+[2025-04-18T07:08:13.682+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/kovler-sea-lion-house
+[2025-04-18T07:08:17.314+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/association-for-library-service-to-child
+[2025-04-18T07:08:20.984+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/associated-library-service
+[2025-04-18T07:08:24.691+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/museum-campus-bike-park-chicago
+[2025-04-18T07:08:28.407+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 409 total records
+[2025-04-18T07:08:28.408+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=9
+[2025-04-18T07:08:34.182+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:08:34.188+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/the-capo-museum
+[2025-04-18T07:08:37.902+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/ray-cosgrove-library
+[2025-04-18T07:08:41.596+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/chicago-athenaeum-museum-of-architecture-and-design
+[2025-04-18T07:08:45.293+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/ravenswood-lake-view-hist-asso
+[2025-04-18T07:08:48.975+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/egg
+[2025-04-18T07:08:52.921+0000] {attractions_dag.py:359} INFO - Saved progress: 414 total records
+[2025-04-18T07:08:52.921+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/hands-on-children-s-art-museum
+[2025-04-18T07:08:56.576+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/volo-auto-museum
+[2025-04-18T07:09:00.230+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/mexican-museum-of-culture
+[2025-04-18T07:09:04.265+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/360-chicago-in-chicago-united-states
+[2025-04-18T07:09:08.103+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/indo-american-heritage-museum
+[2025-04-18T07:09:11.794+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/city-chicago-board-elections
+[2025-04-18T07:09:15.461+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/west-addison-library
+[2025-04-18T07:09:19.123+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/chicago-baseball-museum
+[2025-04-18T07:09:23.099+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/sulzer-library-security-post
+[2025-04-18T07:09:26.803+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/chicago-maritime-society
+[2025-04-18T07:09:30.509+0000] {attractions_dag.py:359} INFO - Saved progress: 424 total records
+[2025-04-18T07:09:30.521+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 424 total records
+[2025-04-18T07:09:30.522+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/chicago-united-states/things-to-do?page=10
+[2025-04-18T07:09:35.354+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:09:35.355+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/chicago-united-states/city-of-chicago-board-of-elections
+[2025-04-18T07:09:39.100+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/chicago-united-states/santa-s-library
+[2025-04-18T07:09:42.796+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/chicago-united-states/galleria-773
+[2025-04-18T07:09:46.470+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/chicago-united-states/city-of-chicago-central-library-main-branch-harold-washington-library-center
+[2025-04-18T07:09:50.119+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/chicago-united-states/chicago-aquarium-consulting
+[2025-04-18T07:09:53.775+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/chicago-united-states/thomas-hughes-children-s-lbrry
+[2025-04-18T07:09:57.438+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/chicago-united-states/appellate-court-library
+[2025-04-18T07:10:01.094+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/chicago-united-states/chicago-blues-museum-gallery
+[2025-04-18T07:10:04.752+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/chicago-united-states/chicago-library-for-the-blind
+[2025-04-18T07:10:08.446+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/chicago-united-states/museum-pointe
+[2025-04-18T07:10:12.191+0000] {attractions_dag.py:359} INFO - Saved progress: 434 total records
+[2025-04-18T07:10:12.191+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/chicago-united-states/chicago-discus
+[2025-04-18T07:10:15.837+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/chicago-united-states/all-moxie
+[2025-04-18T07:10:19.513+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/chicago-united-states/lincoln-park-zoo-west-entrance
+[2025-04-18T07:10:23.351+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/chicago-united-states/snack-naturally
+[2025-04-18T07:10:26.997+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/chicago-united-states/continuing-studies
+[2025-04-18T07:10:30.665+0000] {attractions_dag.py:379} INFO - Saved progress after page 10: 439 total records
+[2025-04-18T07:10:30.687+0000] {attractions_dag.py:385} INFO - Completed scraping Chicago United States, found 145 new attractions
+[2025-04-18T07:10:30.688+0000] {attractions_dag.py:323} INFO - Scraping city 4/6: Las Vegas United States
+[2025-04-18T07:10:30.705+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=1
+[2025-04-18T07:10:36.130+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:10:36.130+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/las-vegas-united-states/fremont-street-experience
+[2025-04-18T07:10:39.847+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/las-vegas-united-states/fountains-of-bellagio
+[2025-04-18T07:10:44.271+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/las-vegas-united-states/fremont-street
+[2025-04-18T07:10:47.938+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/las-vegas-united-states/luxor-hotel-and-casino
+[2025-04-18T07:10:51.587+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/las-vegas-united-states/red-rock-canyon-national-conservation-area
+[2025-04-18T07:10:55.247+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/las-vegas-united-states/encore
+[2025-04-18T07:10:58.865+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/las-vegas-united-states/beatleshow-orchestra
+[2025-04-18T07:11:02.508+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/las-vegas-united-states/the-venetian
+[2025-04-18T07:11:06.149+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/las-vegas-united-states/mount-charleston
+[2025-04-18T07:11:09.770+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/las-vegas-united-states/the-strip
+[2025-04-18T07:11:13.446+0000] {attractions_dag.py:359} INFO - Saved progress: 449 total records
+[2025-04-18T07:11:13.446+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/las-vegas-united-states/atomic-testing-museum
+[2025-04-18T07:11:17.098+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/las-vegas-united-states/golden-nugget
+[2025-04-18T07:11:20.812+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/las-vegas-united-states/circus-circus-las-vegas-hotel-and-casino
+[2025-04-18T07:11:24.478+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/las-vegas-united-states/stratosphere-casino-hotel-and-tower
+[2025-04-18T07:11:28.182+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/las-vegas-united-states/high-roller
+[2025-04-18T07:11:32.025+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 454 total records
+[2025-04-18T07:11:32.026+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=2
+[2025-04-18T07:11:36.640+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:11:36.640+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/las-vegas-united-states/eiffel-tower-experience
+[2025-04-18T07:11:40.269+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/las-vegas-united-states/the-crystals
+[2025-04-18T07:11:43.954+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-premium-outlets-north
+[2025-04-18T07:11:48.162+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/las-vegas-united-states/battlefield-vegas
+[2025-04-18T07:11:51.840+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/las-vegas-united-states/raiding-the-rock-vault
+[2025-04-18T07:11:55.601+0000] {attractions_dag.py:359} INFO - Saved progress: 459 total records
+[2025-04-18T07:11:55.601+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/las-vegas-united-states/gold-and-silver-pawn-shop
+[2025-04-18T07:11:59.306+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/las-vegas-united-states/valley-of-fire-state-park
+[2025-04-18T07:12:02.954+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/las-vegas-united-states/penn-and-teller
+[2025-04-18T07:12:06.663+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/las-vegas-united-states/the-neon-museum
+[2025-04-18T07:12:10.352+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/las-vegas-united-states/shark-reef-at-mandalay-bay
+[2025-04-18T07:12:13.991+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/las-vegas-united-states/chapel-of-the-flowers
+[2025-04-18T07:12:17.679+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/las-vegas-united-states/dig-this-las-vegas
+[2025-04-18T07:12:21.356+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-south-premium-outlets
+[2025-04-18T07:12:25.035+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/las-vegas-united-states/pinball-hall-of-fame
+[2025-04-18T07:12:28.780+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 468 total records
+[2025-04-18T07:12:28.780+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=3
+[2025-04-18T07:12:32.984+0000] {attractions_dag.py:335} INFO - Found 13 attraction links
+[2025-04-18T07:12:32.985+0000] {attractions_dag.py:347} INFO - Scraping place 1/13: https://www.triphobo.com/places/las-vegas-united-states/m-and-m-s-world
+[2025-04-18T07:12:36.684+0000] {attractions_dag.py:359} INFO - Saved progress: 469 total records
+[2025-04-18T07:12:36.684+0000] {attractions_dag.py:347} INFO - Scraping place 2/13: https://www.triphobo.com/places/las-vegas-united-states/paris-las-vegas
+[2025-04-18T07:12:40.341+0000] {attractions_dag.py:347} INFO - Scraping place 3/13: https://www.triphobo.com/places/las-vegas-united-states/caesars-palace
+[2025-04-18T07:12:44.001+0000] {attractions_dag.py:347} INFO - Scraping place 4/13: https://www.triphobo.com/places/las-vegas-united-states/rick-s-restorations
+[2025-04-18T07:12:47.847+0000] {attractions_dag.py:347} INFO - Scraping place 5/13: https://www.triphobo.com/places/las-vegas-united-states/adventuredome
+[2025-04-18T07:12:51.589+0000] {attractions_dag.py:347} INFO - Scraping place 6/13: https://www.triphobo.com/places/las-vegas-united-states/purple-reign-the-prince-tribute-show
+[2025-04-18T07:12:55.325+0000] {attractions_dag.py:347} INFO - Scraping place 7/13: https://www.triphobo.com/places/las-vegas-united-states/marriage-can-be-murder
+[2025-04-18T07:12:59.001+0000] {attractions_dag.py:347} INFO - Scraping place 8/13: https://www.triphobo.com/places/las-vegas-united-states/count-s-kustoms
+[2025-04-18T07:13:03.218+0000] {attractions_dag.py:347} INFO - Scraping place 9/13: https://www.triphobo.com/places/las-vegas-united-states/mgm-grand
+[2025-04-18T07:13:07.056+0000] {attractions_dag.py:347} INFO - Scraping place 10/13: https://www.triphobo.com/places/las-vegas-united-states/marquee-nightclub-and-dayclub
+[2025-04-18T07:13:10.752+0000] {attractions_dag.py:347} INFO - Scraping place 11/13: https://www.triphobo.com/places/las-vegas-united-states/planet-hollywood-resort-and-casino
+[2025-04-18T07:13:14.410+0000] {attractions_dag.py:359} INFO - Saved progress: 479 total records
+[2025-04-18T07:13:14.411+0000] {attractions_dag.py:347} INFO - Scraping place 12/13: https://www.triphobo.com/places/las-vegas-united-states/hypnosis-unleashed-starring-kevin-lepine
+[2025-04-18T07:13:18.156+0000] {attractions_dag.py:347} INFO - Scraping place 13/13: https://www.triphobo.com/places/las-vegas-united-states/sugar-factory
+[2025-04-18T07:13:21.922+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 481 total records
+[2025-04-18T07:13:21.922+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=4
+[2025-04-18T07:13:26.729+0000] {attractions_dag.py:335} INFO - Found 13 attraction links
+[2025-04-18T07:13:26.731+0000] {attractions_dag.py:347} INFO - Scraping place 1/13: https://www.triphobo.com/places/las-vegas-united-states/hershey-s-chocolate-world
+[2025-04-18T07:13:30.649+0000] {attractions_dag.py:347} INFO - Scraping place 2/13: https://www.triphobo.com/places/las-vegas-united-states/the-mirage
+[2025-04-18T07:13:34.580+0000] {attractions_dag.py:347} INFO - Scraping place 3/13: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-motor-speedway
+[2025-04-18T07:13:38.399+0000] {attractions_dag.py:347} INFO - Scraping place 4/13: https://www.triphobo.com/places/las-vegas-united-states/town-square
+[2025-04-18T07:13:42.075+0000] {attractions_dag.py:347} INFO - Scraping place 5/13: https://www.triphobo.com/places/las-vegas-united-states/springs-preserve
+[2025-04-18T07:13:45.724+0000] {attractions_dag.py:347} INFO - Scraping place 6/13: https://www.triphobo.com/place/adda/54730202e70545480b000023
+[2025-04-18T07:13:49.913+0000] {attractions_dag.py:347} INFO - Scraping place 7/13: https://www.triphobo.com/places/las-vegas-united-states/gregory-popovich-s-comedy-pet-theater
+[2025-04-18T07:13:53.584+0000] {attractions_dag.py:347} INFO - Scraping place 8/13: https://www.triphobo.com/places/las-vegas-united-states/peppermill-s-fireside-lounge
+[2025-04-18T07:13:57.286+0000] {attractions_dag.py:359} INFO - Saved progress: 489 total records
+[2025-04-18T07:13:57.286+0000] {attractions_dag.py:347} INFO - Scraping place 9/13: https://www.triphobo.com/places/las-vegas-united-states/veronic-voices
+[2025-04-18T07:14:00.937+0000] {attractions_dag.py:347} INFO - Scraping place 10/13: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-paiute-golf-resort
+[2025-04-18T07:14:04.645+0000] {attractions_dag.py:347} INFO - Scraping place 11/13: https://www.triphobo.com/places/las-vegas-united-states/cbs-television-city-research-centre
+[2025-04-18T07:14:08.328+0000] {attractions_dag.py:347} INFO - Scraping place 12/13: https://www.triphobo.com/places/las-vegas-united-states/discovery-children-s-museum
+[2025-04-18T07:14:12.024+0000] {attractions_dag.py:347} INFO - Scraping place 13/13: https://www.triphobo.com/places/las-vegas-united-states/banger-brewing
+[2025-04-18T07:14:15.739+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 494 total records
+[2025-04-18T07:14:15.739+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=5
+[2025-04-18T07:14:20.166+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:14:20.167+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-natural-history-museum
+[2025-04-18T07:14:23.901+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/las-vegas-united-states/the-aquarium-at-silverton
+[2025-04-18T07:14:27.629+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/las-vegas-united-states/lee-canyon-ski-and-snowboard-resort
+[2025-04-18T07:14:31.275+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/las-vegas-united-states/hollywood-cars-museum
+[2025-04-18T07:14:34.975+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/place/adda/597740285840d43f540014d1
+[2025-04-18T07:14:39.078+0000] {attractions_dag.py:359} INFO - Saved progress: 499 total records
+[2025-04-18T07:14:39.078+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/las-vegas-united-states/jarvis-ritholz-fine-arts
+[2025-04-18T07:14:43.101+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-rail-road-society
+[2025-04-18T07:14:46.768+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/las-vegas-united-states/umc-southern-nevada-med-libr
+[2025-04-18T07:14:50.411+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/las-vegas-united-states/austine-studio
+[2025-04-18T07:14:54.086+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/las-vegas-united-states/seaquest-interactive-aquarium
+[2025-04-18T07:14:57.738+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-clark-county-library
+[2025-04-18T07:15:01.397+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/las-vegas-united-states/harry-mohney-erotica-museum
+[2025-04-18T07:15:05.355+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/las-vegas-united-states/ocean-images
+[2025-04-18T07:15:09.754+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/las-vegas-united-states/mt-charleston-public-library
+[2025-04-18T07:15:13.423+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 508 total records
+[2025-04-18T07:15:13.424+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=6
+[2025-04-18T07:15:17.747+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:15:17.747+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/las-vegas-united-states/the-king-s-ransom-museum
+[2025-04-18T07:15:21.440+0000] {attractions_dag.py:359} INFO - Saved progress: 509 total records
+[2025-04-18T07:15:21.442+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/las-vegas-united-states/madame-tussaud-s-wax-museum
+[2025-04-18T07:15:25.128+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/las-vegas-united-states/gambler-s-museum-shop
+[2025-04-18T07:15:28.768+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/las-vegas-united-states/james-r-dickinson-library
+[2025-04-18T07:15:32.430+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/las-vegas-united-states/metropolitan-museum-of-arts
+[2025-04-18T07:15:36.055+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/las-vegas-united-states/guinness-world-of-records-museum
+[2025-04-18T07:15:39.719+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/las-vegas-united-states/debbie-reynolds-hollywood
+[2025-04-18T07:15:43.424+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/las-vegas-united-states/morrow-s-maintenance-service
+[2025-04-18T07:15:47.089+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/las-vegas-united-states/aquatic-environments
+[2025-04-18T07:15:50.763+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/las-vegas-united-states/discovery-childrens-museum
+[2025-04-18T07:15:54.396+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/las-vegas-united-states/us-law-library
+[2025-04-18T07:15:58.062+0000] {attractions_dag.py:359} INFO - Saved progress: 519 total records
+[2025-04-18T07:15:58.063+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/las-vegas-united-states/white-tiger-habitat-at-the-mirage
+[2025-04-18T07:16:01.752+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/las-vegas-united-states/lik-mandalay
+[2025-04-18T07:16:05.396+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-metropolitan-police-museum
+[2025-04-18T07:16:09.079+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/las-vegas-united-states/regal-aquarium-maintenance
+[2025-04-18T07:16:12.737+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 523 total records
+[2025-04-18T07:16:12.737+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=7
+[2025-04-18T07:16:17.752+0000] {attractions_dag.py:335} INFO - Found 8 attraction links
+[2025-04-18T07:16:17.752+0000] {attractions_dag.py:347} INFO - Scraping place 1/8: https://www.triphobo.com/places/las-vegas-united-states/mona-the-museum-of-natural-art
+[2025-04-18T07:16:21.409+0000] {attractions_dag.py:347} INFO - Scraping place 2/8: https://www.triphobo.com/places/las-vegas-united-states/jim-rogers-sunbelt-auto
+[2025-04-18T07:16:25.069+0000] {attractions_dag.py:347} INFO - Scraping place 3/8: https://www.triphobo.com/places/las-vegas-united-states/a-magic
+[2025-04-18T07:16:28.770+0000] {attractions_dag.py:347} INFO - Scraping place 4/8: https://www.triphobo.com/places/las-vegas-united-states/lake-las-vegas
+[2025-04-18T07:16:32.456+0000] {attractions_dag.py:347} INFO - Scraping place 5/8: https://www.triphobo.com/places/las-vegas-united-states/empire-ballroom
+[2025-04-18T07:16:36.235+0000] {attractions_dag.py:347} INFO - Scraping place 6/8: https://www.triphobo.com/places/las-vegas-united-states/the-steakhouse
+[2025-04-18T07:16:39.885+0000] {attractions_dag.py:359} INFO - Saved progress: 529 total records
+[2025-04-18T07:16:39.886+0000] {attractions_dag.py:347} INFO - Scraping place 7/8: https://www.triphobo.com/places/las-vegas-united-states/mon-ami-gabi
+[2025-04-18T07:16:43.534+0000] {attractions_dag.py:347} INFO - Scraping place 8/8: https://www.triphobo.com/places/las-vegas-united-states/mon-ami-gabi-restaurant
+[2025-04-18T07:16:47.206+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 531 total records
+[2025-04-18T07:16:47.206+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=8
+[2025-04-18T07:16:51.640+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:16:51.640+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/las-vegas-united-states/grand-canyon-national-park
+[2025-04-18T07:16:55.308+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/las-vegas-united-states/fantasy-at-luxor
+[2025-04-18T07:16:58.964+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/las-vegas-united-states/sugar-factory-american-brasserie
+[2025-04-18T07:17:02.612+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/las-vegas-united-states/minus-5-ice-bar
+[2025-04-18T07:17:06.243+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/las-vegas-united-states/sprinkles-cupcakes
+[2025-04-18T07:17:09.884+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/las-vegas-united-states/mandalay-bay
+[2025-04-18T07:17:13.515+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/las-vegas-united-states/border-grill-las-vegas
+[2025-04-18T07:17:17.229+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/las-vegas-united-states/dick-s-last-resort
+[2025-04-18T07:17:20.898+0000] {attractions_dag.py:359} INFO - Saved progress: 539 total records
+[2025-04-18T07:17:20.898+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/las-vegas-united-states/mgm-grand-buffet
+[2025-04-18T07:17:24.572+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/las-vegas-united-states/voodoo-steakhouse
+[2025-04-18T07:17:28.219+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/las-vegas-united-states/house-of-blues
+[2025-04-18T07:17:31.926+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/las-vegas-united-states/park-on-fremont
+[2025-04-18T07:17:35.613+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/las-vegas-united-states/michaels
+[2025-04-18T07:17:39.738+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/las-vegas-united-states/jo-ann-fabric-and-craft-stores
+[2025-04-18T07:17:43.397+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/las-vegas-united-states/voodoo-beach
+[2025-04-18T07:17:47.190+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 546 total records
+[2025-04-18T07:17:47.191+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=9
+[2025-04-18T07:17:51.554+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:17:51.555+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/las-vegas-united-states/bellagio-conservatory-botanical-gardens
+[2025-04-18T07:17:55.293+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/las-vegas-united-states/tous-miracle-mile-shops-at-planet-hollywood-resorts-and-casino
+[2025-04-18T07:17:58.982+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/las-vegas-united-states/gold-silver-pawn-shop
+[2025-04-18T07:18:02.905+0000] {attractions_dag.py:359} INFO - Saved progress: 549 total records
+[2025-04-18T07:18:02.905+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/las-vegas-united-states/ports-o-call-buffet
+[2025-04-18T07:18:06.674+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/las-vegas-united-states/ronald-s-donuts
+[2025-04-18T07:18:10.375+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/las-vegas-united-states/cashman-field
+[2025-04-18T07:18:14.028+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/las-vegas-united-states/the-buffet-bellagio
+[2025-04-18T07:18:17.657+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/las-vegas-united-states/jest-serendipity-improv
+[2025-04-18T07:18:21.351+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/las-vegas-united-states/twin-peaks-las-vegas
+[2025-04-18T07:18:25.042+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/las-vegas-united-states/tahiti-village-resort-and-spa
+[2025-04-18T07:18:28.685+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/las-vegas-united-states/gondola-rides
+[2025-04-18T07:18:32.377+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/las-vegas-united-states/the-linq-las-vegas
+[2025-04-18T07:18:36.083+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/las-vegas-united-states/stratosphere-thrill-rides
+[2025-04-18T07:18:39.768+0000] {attractions_dag.py:359} INFO - Saved progress: 559 total records
+[2025-04-18T07:18:39.768+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/las-vegas-united-states/neon-boneyard
+[2025-04-18T07:18:43.396+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/las-vegas-united-states/everything-coca-cola-las-vegas
+[2025-04-18T07:18:47.049+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 561 total records
+[2025-04-18T07:18:47.049+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/las-vegas-united-states/things-to-do?page=10
+[2025-04-18T07:18:52.008+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:18:52.009+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/las-vegas-united-states/la-creperie
+[2025-04-18T07:18:55.711+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/las-vegas-united-states/hash-house
+[2025-04-18T07:18:59.351+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/las-vegas-united-states/shrine-of-the-most-holy-redeemer
+[2025-04-18T07:19:03.271+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/las-vegas-united-states/lion-habitat
+[2025-04-18T07:19:06.983+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/las-vegas-united-states/dragonridge-country-club
+[2025-04-18T07:19:10.685+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/las-vegas-united-states/las-vegas-ski-snowboard-resort
+[2025-04-18T07:19:14.295+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/las-vegas-united-states/hakkasan-las-vegas-nightclub
+[2025-04-18T07:19:18.184+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/las-vegas-united-states/the-signature-at-mgm-grand-tower-b
+[2025-04-18T07:19:21.911+0000] {attractions_dag.py:359} INFO - Saved progress: 569 total records
+[2025-04-18T07:19:21.911+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/las-vegas-united-states/bodies-the-exhibition
+[2025-04-18T07:19:25.569+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/las-vegas-united-states/hard-rock-cafe-las-vegas
+[2025-04-18T07:19:29.214+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/las-vegas-united-states/tourneau-the-forum-shops-at-caesar-s
+[2025-04-18T07:19:32.857+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/las-vegas-united-states/voodoo-zipline
+[2025-04-18T07:19:36.488+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/las-vegas-united-states/jollibee
+[2025-04-18T07:19:40.229+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/las-vegas-united-states/wicked-spoon
+[2025-04-18T07:19:43.890+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/las-vegas-united-states/red-rock-canyon-visitor-center
+[2025-04-18T07:19:47.563+0000] {attractions_dag.py:379} INFO - Saved progress after page 10: 576 total records
+[2025-04-18T07:19:47.605+0000] {attractions_dag.py:385} INFO - Completed scraping Las Vegas United States, found 137 new attractions
+[2025-04-18T07:19:47.605+0000] {attractions_dag.py:323} INFO - Scraping city 5/6: Los Angeles United States
+[2025-04-18T07:19:47.629+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=1
+[2025-04-18T07:19:53.163+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:19:53.164+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/los-angeles-united-states/universal-studios
+[2025-04-18T07:19:56.796+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/los-angeles-united-states/santa-monica-pier
+[2025-04-18T07:20:00.472+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/los-angeles-united-states/the-griffith-observatory
+[2025-04-18T07:20:04.112+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-bowl
+[2025-04-18T07:20:07.792+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/los-angeles-united-states/the-j-paul-getty-centre
+[2025-04-18T07:20:11.448+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-walk-of-fame
+[2025-04-18T07:20:15.103+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/los-angeles-united-states/the-grammy-museum
+[2025-04-18T07:20:18.976+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/los-angeles-united-states/venice-beach-boardwalk
+[2025-04-18T07:20:22.632+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/los-angeles-united-states/disneyland
+[2025-04-18T07:20:26.289+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/los-angeles-united-states/california-science-center
+[2025-04-18T07:20:29.976+0000] {attractions_dag.py:359} INFO - Saved progress: 586 total records
+[2025-04-18T07:20:29.977+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/los-angeles-united-states/3rd-street-promenade
+[2025-04-18T07:20:33.658+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/los-angeles-united-states/universal-city-walk
+[2025-04-18T07:20:37.334+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-sign
+[2025-04-18T07:20:40.982+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/los-angeles-united-states/santa-monica-bay
+[2025-04-18T07:20:44.717+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 590 total records
+[2025-04-18T07:20:44.718+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=2
+[2025-04-18T07:20:49.341+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:20:49.342+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/los-angeles-united-states/staples-center
+[2025-04-18T07:20:53.005+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/los-angeles-united-states/walt-disney-concert-hall
+[2025-04-18T07:20:57.619+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/los-angeles-united-states/madame-tussauds-hollywood
+[2025-04-18T07:21:01.298+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/los-angeles-united-states/aquarium-of-the-pacific
+[2025-04-18T07:21:04.994+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/los-angeles-united-states/county-museum-of-art
+[2025-04-18T07:21:08.650+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/los-angeles-united-states/cathedral-of-our-lady-of-the-angels
+[2025-04-18T07:21:12.366+0000] {attractions_dag.py:359} INFO - Saved progress: 596 total records
+[2025-04-18T07:21:12.366+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/los-angeles-united-states/beverly-hills
+[2025-04-18T07:21:16.279+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/los-angeles-united-states/venice-beach
+[2025-04-18T07:21:19.943+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/the-grove-los-angeles-united-states
+[2025-04-18T07:21:23.668+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/los-angeles-united-states/rodeo-drive
+[2025-04-18T07:21:27.353+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/los-angeles-united-states/hollywood-blvd
+[2025-04-18T07:21:31.044+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/los-angeles-united-states/philippe-the-original
+[2025-04-18T07:21:34.777+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/los-angeles-united-states/dodger-stadium
+[2025-04-18T07:21:38.531+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/los-angeles-united-states/muscle-beach
+[2025-04-18T07:21:42.236+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/los-angeles-united-states/venice-canals-walkway
+[2025-04-18T07:21:45.920+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 605 total records
+[2025-04-18T07:21:45.921+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=3
+[2025-04-18T07:21:51.105+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:21:51.105+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/los-angeles-united-states/the-griddle-cafe
+[2025-04-18T07:21:54.825+0000] {attractions_dag.py:359} INFO - Saved progress: 606 total records
+[2025-04-18T07:21:54.826+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/los-angeles-united-states/norton-simon-museum
+[2025-04-18T07:21:58.493+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/los-angeles-united-states/citadel-outlets
+[2025-04-18T07:22:02.150+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/los-angeles-united-states/baja-fresh-mexican-grill
+[2025-04-18T07:22:06.608+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/los-angeles-united-states/battleship-uss-iowa-bb-61
+[2025-04-18T07:22:10.274+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/los-angeles-united-states/pantages-theatre
+[2025-04-18T07:22:13.909+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/los-angeles-united-states/olvera-street
+[2025-04-18T07:22:18.028+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/los-angeles-united-states/nethercutt-collection
+[2025-04-18T07:22:21.717+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-wax-museum
+[2025-04-18T07:22:25.430+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/los-angeles-united-states/the-magic-castle
+[2025-04-18T07:22:29.151+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/los-angeles-united-states/chinatown
+[2025-04-18T07:22:32.893+0000] {attractions_dag.py:359} INFO - Saved progress: 616 total records
+[2025-04-18T07:22:32.894+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/los-angeles-united-states/westwood-village-memorial-park-cemetery
+[2025-04-18T07:22:36.583+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-hills
+[2025-04-18T07:22:40.296+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/los-angeles-united-states/tcl-chinese-theatre
+[2025-04-18T07:22:44.254+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 619 total records
+[2025-04-18T07:22:44.255+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=4
+[2025-04-18T07:22:48.989+0000] {attractions_dag.py:335} INFO - Found 11 attraction links
+[2025-04-18T07:22:48.989+0000] {attractions_dag.py:347} INFO - Scraping place 1/11: https://www.triphobo.com/places/los-angeles-united-states/grand-central-market
+[2025-04-18T07:22:52.731+0000] {attractions_dag.py:347} INFO - Scraping place 2/11: https://www.triphobo.com/places/los-angeles-united-states/diddy-riese-cookies
+[2025-04-18T07:22:56.381+0000] {attractions_dag.py:347} INFO - Scraping place 3/11: https://www.triphobo.com/places/los-angeles-united-states/queen-mary
+[2025-04-18T07:23:00.125+0000] {attractions_dag.py:347} INFO - Scraping place 4/11: https://www.triphobo.com/places/los-angeles-united-states/bradbury-building
+[2025-04-18T07:23:03.768+0000] {attractions_dag.py:347} INFO - Scraping place 5/11: https://www.triphobo.com/places/los-angeles-united-states/ripleys-believe-it-or-not-odditorium
+[2025-04-18T07:23:07.438+0000] {attractions_dag.py:347} INFO - Scraping place 6/11: https://www.triphobo.com/places/los-angeles-united-states/naples-island
+[2025-04-18T07:23:11.097+0000] {attractions_dag.py:347} INFO - Scraping place 7/11: https://www.triphobo.com/places/los-angeles-united-states/the-last-bookstore
+[2025-04-18T07:23:14.804+0000] {attractions_dag.py:359} INFO - Saved progress: 626 total records
+[2025-04-18T07:23:14.804+0000] {attractions_dag.py:347} INFO - Scraping place 8/11: https://www.triphobo.com/places/los-angeles-united-states/sunset-boulevard
+[2025-04-18T07:23:18.527+0000] {attractions_dag.py:347} INFO - Scraping place 9/11: https://www.triphobo.com/places/los-angeles-united-states/little-tokyo
+[2025-04-18T07:23:22.171+0000] {attractions_dag.py:347} INFO - Scraping place 10/11: https://www.triphobo.com/places/los-angeles-united-states/japanese-american-national-museum
+[2025-04-18T07:23:26.384+0000] {attractions_dag.py:347} INFO - Scraping place 11/11: https://www.triphobo.com/places/los-angeles-united-states/museum-of-contemporary-art
+[2025-04-18T07:23:30.106+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 630 total records
+[2025-04-18T07:23:30.106+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=5
+[2025-04-18T07:23:35.594+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:23:35.594+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/los-angeles-united-states/los-angeles-zoo
+[2025-04-18T07:23:39.380+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/los-angeles-united-states/angels-flight
+[2025-04-18T07:23:43.150+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-and-highland-center
+[2025-04-18T07:23:46.818+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/los-angeles-united-states/la-fashion-district
+[2025-04-18T07:23:50.540+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/los-angeles-united-states/long-beach
+[2025-04-18T07:23:54.256+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/los-angeles-united-states/los-angeles-city-hall
+[2025-04-18T07:23:57.942+0000] {attractions_dag.py:359} INFO - Saved progress: 636 total records
+[2025-04-18T07:23:57.942+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/los-angeles-united-states/abbot-kinney-boulevard
+[2025-04-18T07:24:01.641+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/los-angeles-united-states/westfield-century-city
+[2025-04-18T07:24:05.285+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/los-angeles-united-states/self-realization-fellowship-lake-shrine
+[2025-04-18T07:24:08.972+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/los-angeles-united-states/long-beach-waterfront
+[2025-04-18T07:24:12.639+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-forever-cemetery
+[2025-04-18T07:24:16.401+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/los-angeles-united-states/beverly-center
+[2025-04-18T07:24:20.098+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/los-angeles-united-states/greystone-mansion-and-gardens
+[2025-04-18T07:24:24.068+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/los-angeles-united-states/the-pike-at-rainbow-harbor
+[2025-04-18T07:24:28.008+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 644 total records
+[2025-04-18T07:24:28.009+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=6
+[2025-04-18T07:24:32.539+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:24:32.540+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/los-angeles-united-states/l-a-live
+[2025-04-18T07:24:36.258+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/los-angeles-united-states/guinness-world-records-museum
+[2025-04-18T07:24:40.006+0000] {attractions_dag.py:359} INFO - Saved progress: 646 total records
+[2025-04-18T07:24:40.009+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/los-angeles-united-states/microsoft-theater
+[2025-04-18T07:24:43.744+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/los-angeles-united-states/hammer-museum
+[2025-04-18T07:24:47.468+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/los-angeles-united-states/museum-of-tolerance
+[2025-04-18T07:24:51.188+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/los-angeles-united-states/travel-town-museum
+[2025-04-18T07:24:54.967+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/los-angeles-united-states/topanga-state-park
+[2025-04-18T07:24:59.206+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/los-angeles-united-states/korean-bell-of-friendship
+[2025-04-18T07:25:02.903+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/los-angeles-united-states/san-gabriel-mountains
+[2025-04-18T07:25:06.562+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/los-angeles-united-states/american-girl-place
+[2025-04-18T07:25:11.017+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/los-angeles-united-states/the-japanese-garden
+[2025-04-18T07:25:14.910+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/los-angeles-united-states/museum-of-latin-american-art
+[2025-04-18T07:25:18.608+0000] {attractions_dag.py:359} INFO - Saved progress: 656 total records
+[2025-04-18T07:25:18.608+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/los-angeles-united-states/the-santee-alley
+[2025-04-18T07:25:22.257+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/los-angeles-united-states/rosies-dog-beach
+[2025-04-18T07:25:25.965+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 658 total records
+[2025-04-18T07:25:25.966+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=7
+[2025-04-18T07:25:30.917+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:25:30.918+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/los-angeles-united-states/exposition-park
+[2025-04-18T07:25:34.631+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/los-angeles-united-states/melrose-avenue
+[2025-04-18T07:25:38.304+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/los-angeles-united-states/koreatown
+[2025-04-18T07:25:42.016+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/los-angeles-united-states/mission-san-fernando-rey-de-espana
+[2025-04-18T07:25:45.674+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/los-angeles-united-states/the-los-angeles-music-center
+[2025-04-18T07:25:49.322+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/los-angeles-united-states/hollywood-farmers-market
+[2025-04-18T07:25:53.038+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/los-angeles-united-states/ahmanson-theatre
+[2025-04-18T07:25:56.764+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/los-angeles-united-states/forest-lawn-memorial-park-hollywood-hills
+[2025-04-18T07:26:00.505+0000] {attractions_dag.py:359} INFO - Saved progress: 666 total records
+[2025-04-18T07:26:00.506+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/los-angeles-united-states/echo-park
+[2025-04-18T07:26:04.530+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/los-angeles-united-states/stahl-house
+[2025-04-18T07:26:08.184+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/los-angeles-united-states/la-opera
+[2025-04-18T07:26:11.827+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/los-angeles-united-states/pershing-square
+[2025-04-18T07:26:15.476+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/los-angeles-united-states/bronson-canyon
+[2025-04-18T07:26:19.201+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/los-angeles-united-states/flight-path-learning-center
+[2025-04-18T07:26:22.934+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 672 total records
+[2025-04-18T07:26:22.935+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=8
+[2025-04-18T07:26:28.164+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:26:28.164+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/los-angeles-united-states/autry-museum-of-the-american-west
+[2025-04-18T07:26:31.812+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/los-angeles-united-states/newport-beach
+[2025-04-18T07:26:35.554+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/los-angeles-united-states/university-of-southern-california
+[2025-04-18T07:26:39.673+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/los-angeles-united-states/university-of-california
+[2025-04-18T07:26:43.342+0000] {attractions_dag.py:359} INFO - Saved progress: 676 total records
+[2025-04-18T07:26:43.344+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/los-angeles-united-states/park-la-brea-apartments
+[2025-04-18T07:26:46.967+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/place/adda/597740285840d43f540014d4
+[2025-04-18T07:26:51.169+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/los-angeles-united-states/los-angeles-nomadic-division
+[2025-04-18T07:26:55.088+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/los-angeles-united-states/l-a-children-s-museum
+[2025-04-18T07:26:58.774+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/los-angeles-united-states/skirball-cultural-center-museum
+[2025-04-18T07:27:02.492+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/los-angeles-united-states/ucla-university-library
+[2025-04-18T07:27:06.284+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/los-angeles-united-states/david-hockney-exhibit-at-lacma
+[2025-04-18T07:27:10.137+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/los-angeles-united-states/music-beyond
+[2025-04-18T07:27:13.807+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/los-angeles-united-states/american-southwestern-railway-association
+[2025-04-18T07:27:17.452+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/los-angeles-united-states/blue-zoo-aquatics-group
+[2025-04-18T07:27:21.168+0000] {attractions_dag.py:359} INFO - Saved progress: 686 total records
+[2025-04-18T07:27:21.169+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/los-angeles-united-states/the-international-vest-museum
+[2025-04-18T07:27:25.219+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 687 total records
+[2025-04-18T07:27:25.219+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=9
+[2025-04-18T07:27:29.876+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:27:29.877+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/los-angeles-united-states/rudolph-east-asian-library
+[2025-04-18T07:27:33.530+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/los-angeles-united-states/fire-department-museum
+[2025-04-18T07:27:37.200+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/los-angeles-united-states/pretty-in-plastic
+[2025-04-18T07:27:40.863+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/los-angeles-united-states/living-art-aquatic-design
+[2025-04-18T07:27:44.594+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/los-angeles-united-states/leigh-h-taylor-law-library
+[2025-04-18T07:27:48.218+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/los-angeles-united-states/neutra-institute-gallery-museum
+[2025-04-18T07:27:51.854+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/los-angeles-united-states/santa-monica-museum-of-arts
+[2025-04-18T07:27:55.506+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/los-angeles-united-states/museum-of-neon-art
+[2025-04-18T07:27:59.391+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/los-angeles-united-states/page-museum-at-the-la-brea-tar-pits
+[2025-04-18T07:28:03.133+0000] {attractions_dag.py:359} INFO - Saved progress: 696 total records
+[2025-04-18T07:28:03.133+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/los-angeles-united-states/braille-institute
+[2025-04-18T07:28:07.010+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/los-angeles-united-states/arts-consulting-group
+[2025-04-18T07:28:10.680+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/los-angeles-united-states/alina-szapocznikow-sculpture-undone-1955-1972
+[2025-04-18T07:28:14.362+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/los-angeles-united-states/ripley-entertainment
+[2025-04-18T07:28:18.027+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/los-angeles-united-states/little-free-library
+[2025-04-18T07:28:21.715+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/los-angeles-united-states/dinosaur-museum
+[2025-04-18T07:28:25.387+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 702 total records
+[2025-04-18T07:28:25.388+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/los-angeles-united-states/things-to-do?page=10
+[2025-04-18T07:28:29.632+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:28:29.633+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/los-angeles-united-states/youngjin-corporation
+[2025-04-18T07:28:33.443+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/los-angeles-united-states/museum-tamal
+[2025-04-18T07:28:37.116+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/los-angeles-united-states/darling-biomedical-library
+[2025-04-18T07:28:40.744+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/los-angeles-united-states/traveling-space-museum
+[2025-04-18T07:28:44.391+0000] {attractions_dag.py:359} INFO - Saved progress: 706 total records
+[2025-04-18T07:28:44.392+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/los-angeles-united-states/william-eggleston-exhibition
+[2025-04-18T07:28:48.501+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/los-angeles-united-states/orchestra-library
+[2025-04-18T07:28:52.183+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/los-angeles-united-states/water-power-library
+[2025-04-18T07:28:55.828+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/los-angeles-united-states/michael-smith-event-music
+[2025-04-18T07:28:59.471+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/los-angeles-united-states/national-film-museum
+[2025-04-18T07:29:03.142+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/los-angeles-united-states/creative-space
+[2025-04-18T07:29:06.848+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/los-angeles-united-states/los-angeles-city-library-brentwood
+[2025-04-18T07:29:10.509+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/los-angeles-united-states/barrister-research-library
+[2025-04-18T07:29:14.210+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/los-angeles-united-states/medical-library
+[2025-04-18T07:29:19.120+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/los-angeles-united-states/mario-the-goose
+[2025-04-18T07:29:23.219+0000] {attractions_dag.py:359} INFO - Saved progress: 716 total records
+[2025-04-18T07:29:23.220+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/los-angeles-united-states/libreria-fuente-de-agua-viva
+[2025-04-18T07:29:26.916+0000] {attractions_dag.py:379} INFO - Saved progress after page 10: 717 total records
+[2025-04-18T07:29:26.937+0000] {attractions_dag.py:385} INFO - Completed scraping Los Angeles United States, found 141 new attractions
+[2025-04-18T07:29:26.937+0000] {attractions_dag.py:323} INFO - Scraping city 6/6: Seattle United States
+[2025-04-18T07:29:26.962+0000] {attractions_dag.py:331} INFO - Scraping page 1/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=1
+[2025-04-18T07:29:32.410+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:29:32.411+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/seattle-united-states/space-needle
+[2025-04-18T07:29:36.174+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/seattle-united-states/pike-place-market
+[2025-04-18T07:29:39.926+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/seattle-united-states/sky-view-observatory
+[2025-04-18T07:29:43.686+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/seattle-united-states/chihuly-garden-and-glass
+[2025-04-18T07:29:47.352+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/seattle-united-states/hiram-m-chittenden-locks
+[2025-04-18T07:29:50.988+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/seattle-united-states/university-of-washington
+[2025-04-18T07:29:54.646+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/seattle-united-states/emp-museum
+[2025-04-18T07:29:58.376+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/seattle-united-states/museum-of-history-and-industry
+[2025-04-18T07:30:02.008+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/seattle-united-states/woodland-park-zoo
+[2025-04-18T07:30:06.239+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/seattle-united-states/seattle-aquarium
+[2025-04-18T07:30:11.198+0000] {attractions_dag.py:359} INFO - Saved progress: 727 total records
+[2025-04-18T07:30:11.198+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/seattle-united-states/the-seattle-waterfront-or-central-waterfront
+[2025-04-18T07:30:15.324+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/seattle-united-states/pacific-science-center
+[2025-04-18T07:30:19.040+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/seattle-united-states/wing-luke-museum
+[2025-04-18T07:30:22.693+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/seattle-united-states/smith-tower
+[2025-04-18T07:30:26.696+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/seattle-united-states/old-stove-brewing-co
+[2025-04-18T07:30:30.422+0000] {attractions_dag.py:379} INFO - Saved progress after page 1: 732 total records
+[2025-04-18T07:30:30.422+0000] {attractions_dag.py:331} INFO - Scraping page 2/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=2
+[2025-04-18T07:30:34.851+0000] {attractions_dag.py:335} INFO - Found 10 attraction links
+[2025-04-18T07:30:34.853+0000] {attractions_dag.py:347} INFO - Scraping place 1/10: https://www.triphobo.com/places/seattle-united-states/statue-of-lenin
+[2025-04-18T07:30:38.565+0000] {attractions_dag.py:347} INFO - Scraping place 2/10: https://www.triphobo.com/places/seattle-united-states/seattle-antiques-market
+[2025-04-18T07:30:42.204+0000] {attractions_dag.py:347} INFO - Scraping place 3/10: https://www.triphobo.com/places/seattle-united-states/university-village
+[2025-04-18T07:30:45.886+0000] {attractions_dag.py:347} INFO - Scraping place 4/10: https://www.triphobo.com/places/seattle-united-states/seattle-art-museum
+[2025-04-18T07:30:49.646+0000] {attractions_dag.py:347} INFO - Scraping place 5/10: https://www.triphobo.com/places/seattle-united-states/seattle-asian-art-museum
+[2025-04-18T07:30:53.372+0000] {attractions_dag.py:359} INFO - Saved progress: 737 total records
+[2025-04-18T07:30:53.373+0000] {attractions_dag.py:347} INFO - Scraping place 6/10: https://www.triphobo.com/places/seattle-united-states/ballard-farmers-market
+[2025-04-18T07:30:57.035+0000] {attractions_dag.py:347} INFO - Scraping place 7/10: https://www.triphobo.com/places/seattle-united-states/westfield-southcentre
+[2025-04-18T07:31:00.691+0000] {attractions_dag.py:347} INFO - Scraping place 8/10: https://www.triphobo.com/places/seattle-united-states/nordic-heritage-museum
+[2025-04-18T07:31:04.393+0000] {attractions_dag.py:347} INFO - Scraping place 9/10: https://www.triphobo.com/places/seattle-united-states/elliott-bay-waterfront
+[2025-04-18T07:31:08.054+0000] {attractions_dag.py:347} INFO - Scraping place 10/10: https://www.triphobo.com/places/seattle-united-states/burke-museum-of-natural-history-and-culture
+[2025-04-18T07:31:11.782+0000] {attractions_dag.py:379} INFO - Saved progress after page 2: 742 total records
+[2025-04-18T07:31:11.790+0000] {attractions_dag.py:331} INFO - Scraping page 3/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=3
+[2025-04-18T07:31:17.415+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:31:17.415+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/seattle-united-states/copperworks-distilling-company
+[2025-04-18T07:31:21.069+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/seattle-united-states/gas-works-park
+[2025-04-18T07:31:24.762+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/seattle-united-states/chinatown-international-district
+[2025-04-18T07:31:28.753+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/seattle-united-states/westlake-center
+[2025-04-18T07:31:32.678+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/seattle-united-states/bill-and-melinda-gates-foundation-visitor-centre
+[2025-04-18T07:31:36.404+0000] {attractions_dag.py:359} INFO - Saved progress: 747 total records
+[2025-04-18T07:31:36.407+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/seattle-united-states/nordstrom-downtown-seattle
+[2025-04-18T07:31:40.223+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/seattle-united-states/safeco-field
+[2025-04-18T07:31:44.246+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/seattle-united-states/century-link-field
+[2025-04-18T07:31:47.925+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/seattle-united-states/green-lake-park
+[2025-04-18T07:31:51.866+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/seattle-united-states/pike-place-fish-market
+[2025-04-18T07:31:55.670+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/seattle-united-states/seattle-waterfall-garden
+[2025-04-18T07:31:59.340+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/seattle-united-states/paramount-theatre
+[2025-04-18T07:32:03.050+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/seattle-united-states/key-arena
+[2025-04-18T07:32:06.721+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/seattle-united-states/the-unity-museum
+[2025-04-18T07:32:10.575+0000] {attractions_dag.py:379} INFO - Saved progress after page 3: 756 total records
+[2025-04-18T07:32:10.576+0000] {attractions_dag.py:331} INFO - Scraping page 4/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=4
+[2025-04-18T07:32:15.602+0000] {attractions_dag.py:335} INFO - Found 14 attraction links
+[2025-04-18T07:32:15.603+0000] {attractions_dag.py:347} INFO - Scraping place 1/14: https://www.triphobo.com/places/seattle-united-states/lake-view-cemetery
+[2025-04-18T07:32:19.299+0000] {attractions_dag.py:359} INFO - Saved progress: 757 total records
+[2025-04-18T07:32:19.299+0000] {attractions_dag.py:347} INFO - Scraping place 2/14: https://www.triphobo.com/places/seattle-united-states/westland-distillery
+[2025-04-18T07:32:23.841+0000] {attractions_dag.py:347} INFO - Scraping place 3/14: https://www.triphobo.com/places/seattle-united-states/occidental-park
+[2025-04-18T07:32:27.866+0000] {attractions_dag.py:347} INFO - Scraping place 4/14: https://www.triphobo.com/places/seattle-united-states/magnuson-park
+[2025-04-18T07:32:31.557+0000] {attractions_dag.py:347} INFO - Scraping place 5/14: https://www.triphobo.com/places/seattle-united-states/edmonds-underwater-park
+[2025-04-18T07:32:35.528+0000] {attractions_dag.py:347} INFO - Scraping place 6/14: https://www.triphobo.com/places/seattle-united-states/fremont-mischief
+[2025-04-18T07:32:39.193+0000] {attractions_dag.py:347} INFO - Scraping place 7/14: https://www.triphobo.com/places/seattle-united-states/milepost-31
+[2025-04-18T07:32:43.153+0000] {attractions_dag.py:347} INFO - Scraping place 8/14: https://www.triphobo.com/places/seattle-united-states/act-theatre
+[2025-04-18T07:32:46.835+0000] {attractions_dag.py:347} INFO - Scraping place 9/14: https://www.triphobo.com/places/seattle-united-states/schooner-exact-brewing-company
+[2025-04-18T07:32:50.484+0000] {attractions_dag.py:347} INFO - Scraping place 10/14: https://www.triphobo.com/places/seattle-united-states/georgetown-steam-plant
+[2025-04-18T07:32:54.156+0000] {attractions_dag.py:347} INFO - Scraping place 11/14: https://www.triphobo.com/places/seattle-united-states/daybreak-star-cultural-center
+[2025-04-18T07:32:57.864+0000] {attractions_dag.py:359} INFO - Saved progress: 767 total records
+[2025-04-18T07:32:57.865+0000] {attractions_dag.py:347} INFO - Scraping place 12/14: https://www.triphobo.com/places/seattle-united-states/madrona-park
+[2025-04-18T07:33:01.509+0000] {attractions_dag.py:347} INFO - Scraping place 13/14: https://www.triphobo.com/places/seattle-united-states/freeway-park
+[2025-04-18T07:33:05.218+0000] {attractions_dag.py:347} INFO - Scraping place 14/14: https://www.triphobo.com/places/seattle-united-states/alki-point-lighthouse
+[2025-04-18T07:33:08.880+0000] {attractions_dag.py:379} INFO - Saved progress after page 4: 770 total records
+[2025-04-18T07:33:08.880+0000] {attractions_dag.py:331} INFO - Scraping page 5/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=5
+[2025-04-18T07:33:13.611+0000] {attractions_dag.py:335} INFO - Found 12 attraction links
+[2025-04-18T07:33:13.612+0000] {attractions_dag.py:347} INFO - Scraping place 1/12: https://www.triphobo.com/places/seattle-united-states/seattle-chinese-garden
+[2025-04-18T07:33:17.277+0000] {attractions_dag.py:347} INFO - Scraping place 2/12: https://www.triphobo.com/places/seattle-united-states/museum-of-communications
+[2025-04-18T07:33:21.019+0000] {attractions_dag.py:347} INFO - Scraping place 3/12: https://www.triphobo.com/places/seattle-united-states/lake-union
+[2025-04-18T07:33:24.681+0000] {attractions_dag.py:347} INFO - Scraping place 4/12: https://www.triphobo.com/places/seattle-united-states/wallingford-center
+[2025-04-18T07:33:28.338+0000] {attractions_dag.py:347} INFO - Scraping place 5/12: https://www.triphobo.com/places/seattle-united-states/holocaust-center-for-humanity
+[2025-04-18T07:33:31.996+0000] {attractions_dag.py:347} INFO - Scraping place 6/12: https://www.triphobo.com/places/seattle-united-states/matthews-beach-park
+[2025-04-18T07:33:35.712+0000] {attractions_dag.py:347} INFO - Scraping place 7/12: https://www.triphobo.com/places/seattle-united-states/maritime-pacific-brewing-company
+[2025-04-18T07:33:39.463+0000] {attractions_dag.py:359} INFO - Saved progress: 777 total records
+[2025-04-18T07:33:39.463+0000] {attractions_dag.py:347} INFO - Scraping place 8/12: https://www.triphobo.com/places/seattle-united-states/cal-anderson-park
+[2025-04-18T07:33:44.181+0000] {attractions_dag.py:347} INFO - Scraping place 9/12: https://www.triphobo.com/places/seattle-united-states/dunn-gardens
+[2025-04-18T07:33:47.847+0000] {attractions_dag.py:347} INFO - Scraping place 10/12: https://www.triphobo.com/places/seattle-united-states/oxbow-park
+[2025-04-18T07:33:51.494+0000] {attractions_dag.py:347} INFO - Scraping place 11/12: https://www.triphobo.com/places/seattle-united-states/ye-olde-curiosity-shop
+[2025-04-18T07:33:55.210+0000] {attractions_dag.py:347} INFO - Scraping place 12/12: https://www.triphobo.com/places/seattle-united-states/full-tilt
+[2025-04-18T07:33:58.974+0000] {attractions_dag.py:379} INFO - Saved progress after page 5: 782 total records
+[2025-04-18T07:33:58.974+0000] {attractions_dag.py:331} INFO - Scraping page 6/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=6
+[2025-04-18T07:34:03.322+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:34:03.324+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/seattle-united-states/seattle-pinball-museum
+[2025-04-18T07:34:07.009+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/seattle-united-states/seattle-ferry
+[2025-04-18T07:34:10.729+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/seattle-united-states/argosy-cruises
+[2025-04-18T07:34:14.437+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/seattle-united-states/boeing-field
+[2025-04-18T07:34:18.162+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/seattle-united-states/kenmore-air-harbor-spb-airport
+[2025-04-18T07:34:21.862+0000] {attractions_dag.py:359} INFO - Saved progress: 787 total records
+[2025-04-18T07:34:21.862+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/place/adda/59773fae5840d43f54000b6a
+[2025-04-18T07:34:26.451+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/seattle-united-states/meerkat-exhibit
+[2025-04-18T07:34:30.175+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/seattle-united-states/historic-carousel
+[2025-04-18T07:34:33.930+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/seattle-united-states/artisan-aquatics
+[2025-04-18T07:34:37.656+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/seattle-united-states/hartford-library
+[2025-04-18T07:34:41.333+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/seattle-united-states/nw-african-american-museum
+[2025-04-18T07:34:45.019+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/seattle-united-states/the-poster-museum
+[2025-04-18T07:34:48.775+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/seattle-united-states/childhaven-lake-city-branch
+[2025-04-18T07:34:52.907+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/seattle-united-states/seattle-city-library
+[2025-04-18T07:34:56.709+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/seattle-united-states/noaa-art-walk
+[2025-04-18T07:35:00.450+0000] {attractions_dag.py:359} INFO - Saved progress: 797 total records
+[2025-04-18T07:35:00.475+0000] {attractions_dag.py:379} INFO - Saved progress after page 6: 797 total records
+[2025-04-18T07:35:00.475+0000] {attractions_dag.py:331} INFO - Scraping page 7/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=7
+[2025-04-18T07:35:04.912+0000] {attractions_dag.py:335} INFO - Found 13 attraction links
+[2025-04-18T07:35:04.912+0000] {attractions_dag.py:347} INFO - Scraping place 1/13: https://www.triphobo.com/places/seattle-united-states/umojafest-heritage-center
+[2025-04-18T07:35:09.119+0000] {attractions_dag.py:347} INFO - Scraping place 2/13: https://www.triphobo.com/places/seattle-united-states/dorothy-stimson-bullitt-library
+[2025-04-18T07:35:12.796+0000] {attractions_dag.py:347} INFO - Scraping place 3/13: https://www.triphobo.com/places/seattle-united-states/save-our-knees-wood-floor-for-nordic-heritage-museum-auditorium
+[2025-04-18T07:35:16.531+0000] {attractions_dag.py:347} INFO - Scraping place 4/13: https://www.triphobo.com/places/seattle-united-states/seattle-aquarium-society
+[2025-04-18T07:35:20.231+0000] {attractions_dag.py:347} INFO - Scraping place 5/13: https://www.triphobo.com/places/seattle-united-states/instructional-resources-center-lb
+[2025-04-18T07:35:23.914+0000] {attractions_dag.py:347} INFO - Scraping place 6/13: https://www.triphobo.com/places/seattle-united-states/seattle-great-wheel
+[2025-04-18T07:35:27.863+0000] {attractions_dag.py:347} INFO - Scraping place 7/13: https://www.triphobo.com/places/seattle-united-states/olympic-sculpture-park
+[2025-04-18T07:35:31.805+0000] {attractions_dag.py:347} INFO - Scraping place 8/13: https://www.triphobo.com/places/seattle-united-states/myrtle-edwards-park
+[2025-04-18T07:35:35.758+0000] {attractions_dag.py:347} INFO - Scraping place 9/13: https://www.triphobo.com/places/seattle-united-states/kerry-park
+[2025-04-18T07:35:39.580+0000] {attractions_dag.py:347} INFO - Scraping place 10/13: https://www.triphobo.com/places/seattle-united-states/discovery-park
+[2025-04-18T07:35:43.432+0000] {attractions_dag.py:359} INFO - Saved progress: 807 total records
+[2025-04-18T07:35:43.433+0000] {attractions_dag.py:347} INFO - Scraping place 11/13: https://www.triphobo.com/places/seattle-united-states/pioneer-square
+[2025-04-18T07:35:47.179+0000] {attractions_dag.py:347} INFO - Scraping place 12/13: https://www.triphobo.com/places/seattle-united-states/starbucks
+[2025-04-18T07:35:51.000+0000] {attractions_dag.py:347} INFO - Scraping place 13/13: https://www.triphobo.com/places/seattle-united-states/pure-food-fish-market
+[2025-04-18T07:35:55.533+0000] {attractions_dag.py:379} INFO - Saved progress after page 7: 810 total records
+[2025-04-18T07:35:55.539+0000] {attractions_dag.py:331} INFO - Scraping page 8/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=8
+[2025-04-18T07:36:00.428+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:36:00.429+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/seattle-united-states/ballard-sunday-farmers-market
+[2025-04-18T07:36:04.114+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/seattle-united-states/bitterroot-bbq
+[2025-04-18T07:36:07.902+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/seattle-united-states/mt-st-helens
+[2025-04-18T07:36:12.011+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/seattle-united-states/portland-rose-gardens
+[2025-04-18T07:36:15.747+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/seattle-united-states/lloyd-center-ice-rink
+[2025-04-18T07:36:19.583+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/seattle-united-states/starbucks-reserve-roastery-tasting-room
+[2025-04-18T07:36:23.345+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/seattle-united-states/bill-speidel-s-underground-tour
+[2025-04-18T07:36:27.433+0000] {attractions_dag.py:359} INFO - Saved progress: 817 total records
+[2025-04-18T07:36:27.433+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/seattle-united-states/crab-pot-restaurant
+[2025-04-18T07:36:31.143+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/seattle-united-states/ballard
+[2025-04-18T07:36:34.872+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/seattle-united-states/bathtub-gin-co
+[2025-04-18T07:36:38.690+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/seattle-united-states/serious-pie-biscuit
+[2025-04-18T07:36:42.361+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/seattle-united-states/the-blarney-stone-pub-and-restaurant
+[2025-04-18T07:36:46.130+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/seattle-united-states/ballard-locks-fish-ladder
+[2025-04-18T07:36:49.798+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/seattle-united-states/brandon-lee-and-bruce-lee-s-grave-site
+[2025-04-18T07:36:53.513+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/seattle-united-states/boeing-everett-factory
+[2025-04-18T07:36:57.260+0000] {attractions_dag.py:379} INFO - Saved progress after page 8: 825 total records
+[2025-04-18T07:36:57.261+0000] {attractions_dag.py:331} INFO - Scraping page 9/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=9
+[2025-04-18T07:37:01.999+0000] {attractions_dag.py:335} INFO - Found 15 attraction links
+[2025-04-18T07:37:02.001+0000] {attractions_dag.py:347} INFO - Scraping place 1/15: https://www.triphobo.com/places/seattle-united-states/red-roof-inn-seattle-airport-seatac
+[2025-04-18T07:37:05.699+0000] {attractions_dag.py:347} INFO - Scraping place 2/15: https://www.triphobo.com/places/seattle-united-states/din-tai-fung
+[2025-04-18T07:37:09.405+0000] {attractions_dag.py:359} INFO - Saved progress: 827 total records
+[2025-04-18T07:37:09.406+0000] {attractions_dag.py:347} INFO - Scraping place 3/15: https://www.triphobo.com/places/seattle-united-states/elysian-capitol-hill-brewery
+[2025-04-18T07:37:13.080+0000] {attractions_dag.py:347} INFO - Scraping place 4/15: https://www.triphobo.com/places/seattle-united-states/green-tortoise-hostel
+[2025-04-18T07:37:16.812+0000] {attractions_dag.py:347} INFO - Scraping place 5/15: https://www.triphobo.com/places/seattle-united-states/experience-music-project
+[2025-04-18T07:37:20.469+0000] {attractions_dag.py:347} INFO - Scraping place 6/15: https://www.triphobo.com/places/seattle-united-states/fremont
+[2025-04-18T07:37:24.142+0000] {attractions_dag.py:347} INFO - Scraping place 7/15: https://www.triphobo.com/places/seattle-united-states/lower-coal-creek-trail-east-trailhead
+[2025-04-18T07:37:27.881+0000] {attractions_dag.py:347} INFO - Scraping place 8/15: https://www.triphobo.com/places/seattle-united-states/new-la-hacienda-motel
+[2025-04-18T07:37:31.522+0000] {attractions_dag.py:347} INFO - Scraping place 9/15: https://www.triphobo.com/places/seattle-united-states/university-district-farmers-market
+[2025-04-18T07:37:35.223+0000] {attractions_dag.py:347} INFO - Scraping place 10/15: https://www.triphobo.com/places/seattle-united-states/crystal-mountain
+[2025-04-18T07:37:38.888+0000] {attractions_dag.py:347} INFO - Scraping place 11/15: https://www.triphobo.com/places/seattle-united-states/university-inn-a-piece-of-pineapple-hospitality
+[2025-04-18T07:37:42.612+0000] {attractions_dag.py:347} INFO - Scraping place 12/15: https://www.triphobo.com/places/seattle-united-states/fishermen-s-terminal
+[2025-04-18T07:37:46.308+0000] {attractions_dag.py:359} INFO - Saved progress: 837 total records
+[2025-04-18T07:37:46.309+0000] {attractions_dag.py:347} INFO - Scraping place 13/15: https://www.triphobo.com/places/seattle-united-states/blewett-pass
+[2025-04-18T07:37:50.229+0000] {attractions_dag.py:347} INFO - Scraping place 14/15: https://www.triphobo.com/places/seattle-united-states/der-ritterhof
+[2025-04-18T07:37:53.886+0000] {attractions_dag.py:347} INFO - Scraping place 15/15: https://www.triphobo.com/places/seattle-united-states/bill-melinda-gates-foundation
+[2025-04-18T07:37:57.560+0000] {attractions_dag.py:379} INFO - Saved progress after page 9: 840 total records
+[2025-04-18T07:37:57.560+0000] {attractions_dag.py:331} INFO - Scraping page 10/10: https://www.triphobo.com/places/seattle-united-states/things-to-do?page=10
+[2025-04-18T07:38:00.629+0000] {attractions_dag.py:335} INFO - Found 0 attraction links
+[2025-04-18T07:38:00.629+0000] {attractions_dag.py:338} INFO - No more links found on page 10, moving to next city
+[2025-04-18T07:38:00.658+0000] {attractions_dag.py:385} INFO - Completed scraping Seattle United States, found 123 new attractions
+[2025-04-18T07:38:00.721+0000] {attractions_dag.py:397} INFO - Completed scraping all cities, total 840 attractions saved
+[2025-04-18T07:38:00.722+0000] {attractions_dag.py:410} INFO - Completed scraping all cities, total attractions: 840
+[2025-04-18T07:38:00.722+0000] {python.py:240} INFO - Done. Returned value was: 840
+[2025-04-18T07:38:00.734+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-18T07:38:00.734+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=triphobo_attractions_pipeline, task_id=scrape_all_cities, run_id=scheduled__2025-04-16T11:30:00+00:00, execution_date=20250416T113000, start_date=20250418T064946, end_date=20250418T073800
+[2025-04-18T07:38:00.782+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-18T07:38:00.802+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-18T07:38:00.802+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

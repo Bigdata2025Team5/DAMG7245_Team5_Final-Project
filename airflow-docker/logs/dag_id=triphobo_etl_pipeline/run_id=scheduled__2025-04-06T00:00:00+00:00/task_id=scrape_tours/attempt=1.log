@@ -1,0 +1,50 @@
+[2025-04-13T20:03:47.832+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-13T20:03:47.840+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.846+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-13T20:03:47.846+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-13T20:03:47.851+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_tours> on 2025-04-06 00:00:00+00:00
+[2025-04-13T20:03:47.855+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=78) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-13T20:03:47.857+0000] {standard_task_runner.py:72} INFO - Started process 80 to run task
+[2025-04-13T20:03:47.855+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_etl_pipeline', 'scrape_tours', 'scheduled__2025-04-06T00:00:00+00:00', '--job-id', '175', '--raw', '--subdir', 'DAGS_FOLDER/trip_dag.py', '--cfg-path', '/tmp/tmpl6s2w5hn']
+[2025-04-13T20:03:47.857+0000] {standard_task_runner.py:105} INFO - Job 175: Subtask scrape_tours
+[2025-04-13T20:03:47.885+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_etl_pipeline.scrape_tours scheduled__2025-04-06T00:00:00+00:00 [running]> on host f5674eb65eee
+[2025-04-13T20:03:47.923+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_etl_pipeline' AIRFLOW_CTX_TASK_ID='scrape_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T00:00:00+00:00'
+[2025-04-13T20:03:47.924+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-13T20:03:48.554+0000] {scrape.py:117} INFO - Scraping city: New York City United States
+[2025-04-13T20:03:48.554+0000] {scrape.py:122} INFO -  Visiting Page 1: https://www.triphobo.com/tours/new-york-city-united-states?page=1
+[2025-04-13T20:03:55.627+0000] {scrape.py:124} INFO -  Found 24 tour links on page 1
+[2025-04-13T20:03:55.627+0000] {scrape.py:133} INFO - Scraping 1/24: https://www.triphobo.com/tours/big-bus-new-york-hop-on-hop-off-tour
+[2025-04-13T20:03:59.166+0000] {scrape.py:133} INFO - Scraping 2/24: https://www.triphobo.com/tours/all-access-9-11-experience-ground-zero-tour-9-11-memorial-and-museum-one-world-observatory
+[2025-04-13T20:04:02.818+0000] {scrape.py:133} INFO - Scraping 3/24: https://www.triphobo.com/tours/statue-of-liberty-and-ellis-island-guided-tour
+[2025-04-13T20:04:06.197+0000] {scrape.py:133} INFO - Scraping 4/24: https://www.triphobo.com/tours/one-world-observatory-admission
+[2025-04-13T20:04:12.491+0000] {scrape.py:133} INFO - Scraping 5/24: https://www.triphobo.com/tours/9-11-memorial-museum-admission
+[2025-04-13T20:04:15.924+0000] {scrape.py:133} INFO - Scraping 6/24: https://www.triphobo.com/tours/niagara-falls-in-one-day-from-new-york-city
+[2025-04-13T20:04:20.764+0000] {scrape.py:133} INFO - Scraping 7/24: https://www.triphobo.com/tours/9-11-memorial-and-ground-zero-walking-tour-with-optional-9-11-museum-upgrade
+[2025-04-13T20:04:24.329+0000] {scrape.py:133} INFO - Scraping 8/24: https://www.triphobo.com/tours/top-of-the-rock-observation-deck-new-york
+[2025-04-13T20:04:27.859+0000] {scrape.py:133} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-tour-of-statue-of-liberty-and-ellis-island
+[2025-04-13T20:04:32.412+0000] {scrape.py:133} INFO - Scraping 10/24: https://www.triphobo.com/tours/intrepid-sea-air-and-space-museum
+[2025-04-13T20:04:38.334+0000] {scrape.py:133} INFO - Scraping 11/24: https://www.triphobo.com/tours/small-group-early-access-statue-of-liberty-tour-and-ellis-island
+[2025-04-13T20:04:41.848+0000] {scrape.py:133} INFO - Scraping 12/24: https://www.triphobo.com/tours/woodbury-common-premium-outlets-shopping-tour
+[2025-04-13T20:04:45.234+0000] {scrape.py:133} INFO - Scraping 13/24: https://www.triphobo.com/tours/circle-line-harbor-lights-night-cruise
+[2025-04-13T20:04:48.748+0000] {scrape.py:133} INFO - Scraping 14/24: https://www.triphobo.com/tours/madame-tussauds-new-york
+[2025-04-13T20:04:52.453+0000] {scrape.py:133} INFO - Scraping 15/24: https://www.triphobo.com/tours/circle-line-complete-manhattan-island-cruise
+[2025-04-13T20:04:55.902+0000] {scrape.py:133} INFO - Scraping 16/24: https://www.triphobo.com/tours/harlem-sunday-morning-gospel-tour
+[2025-04-13T20:04:59.578+0000] {scrape.py:133} INFO - Scraping 17/24: https://www.triphobo.com/tours/american-museum-of-natural-history
+[2025-04-13T20:05:03.287+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-13T20:05:03.292+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-13T20:05:03.295+0000] {process_utils.py:132} INFO - Sending 15 to group 80. PIDs of all processes in the group: [86, 121, 127, 129, 179, 219, 169, 80]
+[2025-04-13T20:05:03.295+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 80
+[2025-04-13T20:05:03.295+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-13T20:05:03.320+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=219, status='terminated', started='20:03:47') (219) terminated with exit code None
+[2025-04-13T20:05:03.321+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=179, status='terminated', started='20:03:47') (179) terminated with exit code None
+[2025-04-13T20:05:03.321+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=121, status='terminated', started='20:03:47') (121) terminated with exit code None
+[2025-04-13T20:05:03.321+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=127, status='terminated', started='20:03:47') (127) terminated with exit code None
+[2025-04-13T20:05:03.460+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=129, status='terminated', started='20:03:47') (129) terminated with exit code None
+[2025-04-13T20:05:03.461+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=86, status='terminated', started='20:03:47') (86) terminated with exit code None
+[2025-04-13T20:05:03.461+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=169, status='terminated', started='20:03:47') (169) terminated with exit code None
+[2025-04-13T20:06:03.305+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=80, name='airflow task ru', status='sleeping', started='20:03:47') did not respond to SIGTERM. Trying SIGKILL
+[2025-04-13T20:06:03.313+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 80
+[2025-04-13T20:06:03.333+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=80, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='20:03:47') (80) terminated with exit code -9
+[2025-04-13T20:06:03.335+0000] {standard_task_runner.py:190} ERROR - ('Job 175 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

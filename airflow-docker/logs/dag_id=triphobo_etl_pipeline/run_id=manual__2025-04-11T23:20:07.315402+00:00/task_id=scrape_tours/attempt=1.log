@@ -1,0 +1,129 @@
+[2025-04-11T23:26:14.511+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-11T23:26:14.523+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-11T23:20:07.315402+00:00 [queued]>
+[2025-04-11T23:26:14.529+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-11T23:20:07.315402+00:00 [queued]>
+[2025-04-11T23:26:14.530+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-11T23:26:14.540+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_tours> on 2025-04-11 23:20:07.315402+00:00
+[2025-04-11T23:26:14.547+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-11T23:26:14.549+0000] {standard_task_runner.py:72} INFO - Started process 83 to run task
+[2025-04-11T23:26:14.549+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_etl_pipeline', 'scrape_tours', 'manual__2025-04-11T23:20:07.315402+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/trip_dag.py', '--cfg-path', '/tmp/tmp5rg3s9pg']
+[2025-04-11T23:26:14.551+0000] {standard_task_runner.py:105} INFO - Job 69: Subtask scrape_tours
+[2025-04-11T23:26:14.590+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-11T23:20:07.315402+00:00 [running]> on host cb9535fdf923
+[2025-04-11T23:26:14.638+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_etl_pipeline' AIRFLOW_CTX_TASK_ID='scrape_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-11T23:20:07.315402+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-11T23:20:07.315402+00:00'
+[2025-04-11T23:26:14.640+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-11T23:26:15.072+0000] {scrape.py:85} INFO - 🌆 Scraping city: San Francisco United States
+[2025-04-11T23:26:15.072+0000] {scrape.py:90} INFO -   🌐 Visiting Page 1: https://www.triphobo.com/tours/san-francisco-united-states?page=1
+[2025-04-11T23:26:20.516+0000] {scrape.py:92} INFO -   🔗 Found 24 tour links on page 1
+[2025-04-11T23:26:20.517+0000] {scrape.py:96} INFO -      🔎 Scraping 1/24: https://www.triphobo.com/tours/big-bus-san-francisco-hop-on-hop-off-tour
+[2025-04-11T23:26:37.563+0000] {scrape.py:96} INFO -      🔎 Scraping 2/24: https://www.triphobo.com/tours/napa-and-sonoma-wine-country-tour
+[2025-04-11T23:26:43.346+0000] {scrape.py:96} INFO -      🔎 Scraping 3/24: https://www.triphobo.com/tours/san-francisco-super-saver-muir-woods-and-wine-country-tour
+[2025-04-11T23:26:48.853+0000] {scrape.py:96} INFO -      🔎 Scraping 4/24: https://www.triphobo.com/tours/muir-woods-giant-redwoods-and-sausalito-half-day-trip
+[2025-04-11T23:27:00.004+0000] {scrape.py:96} INFO -      🔎 Scraping 5/24: https://www.triphobo.com/tours/yosemite-national-park-and-giant-sequoias-trip
+[2025-04-11T23:27:11.299+0000] {scrape.py:96} INFO -      🔎 Scraping 6/24: https://www.triphobo.com/tours/yosemite-national-park-day-trip-from-san-francisco
+[2025-04-11T23:27:15.043+0000] {scrape.py:96} INFO -      🔎 Scraping 7/24: https://www.triphobo.com/tours/monterey-carmel-and-17-mile-drive-day-trip-from-san-francisco
+[2025-04-11T23:27:18.712+0000] {scrape.py:96} INFO -      🔎 Scraping 8/24: https://www.triphobo.com/tours/private-sonoma-and-napa-wine-tour-from-san-francisco
+[2025-04-11T23:27:22.687+0000] {scrape.py:96} INFO -      🔎 Scraping 9/24: https://www.triphobo.com/tours/san-francisco-bay-sunset-cruise
+[2025-04-11T23:27:26.777+0000] {scrape.py:96} INFO -      🔎 Scraping 10/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-plus-bay-cruise
+[2025-04-11T23:27:31.462+0000] {scrape.py:96} INFO -      🔎 Scraping 11/24: https://www.triphobo.com/tours/san-francisco-combo-ferry-building-food-tour-and-alcatraz
+[2025-04-11T23:27:36.694+0000] {scrape.py:96} INFO -      🔎 Scraping 12/24: https://www.triphobo.com/tours/san-francisco-bay-sunset-catamaran-cruise
+[2025-04-11T23:27:46.718+0000] {scrape.py:96} INFO -      🔎 Scraping 13/24: https://www.triphobo.com/tours/haunted-sf-ghosts-in-the-city-after-dark
+[2025-04-11T23:27:54.767+0000] {scrape.py:96} INFO -      🔎 Scraping 14/24: https://www.triphobo.com/tours/little-italy-and-north-beach-walking-tour
+[2025-04-11T23:27:58.981+0000] {scrape.py:96} INFO -      🔎 Scraping 15/24: https://www.triphobo.com/tours/muir-woods-tour-of-california-coastal-redwoods
+[2025-04-11T23:28:03.976+0000] {scrape.py:96} INFO -      🔎 Scraping 16/24: https://www.triphobo.com/tours/alcatraz-tour-plus-muir-woods-giant-redwoods-and-sausalito-day-trip
+[2025-04-11T23:28:20.630+0000] {scrape.py:96} INFO -      🔎 Scraping 17/24: https://www.triphobo.com/tours/3-day-yosemite-camping-adventure-from-san-francisco
+[2025-04-11T23:28:26.041+0000] {scrape.py:96} INFO -      🔎 Scraping 18/24: https://www.triphobo.com/tours/2-day-yosemite-national-park-winter-tour-from-san-francisco
+[2025-04-11T23:28:32.984+0000] {scrape.py:96} INFO -      🔎 Scraping 19/24: https://www.triphobo.com/tours/san-francisco-urban-adventure-and-alcatraz-tour
+[2025-04-11T23:28:43.187+0000] {scrape.py:96} INFO -      🔎 Scraping 20/24: https://www.triphobo.com/tours/san-francisco-chinatown-walking-tour
+[2025-04-11T23:29:01.278+0000] {scrape.py:96} INFO -      🔎 Scraping 21/24: https://www.triphobo.com/tours/chinatown-and-north-beach-night-walking-tour
+[2025-04-11T23:29:05.039+0000] {scrape.py:96} INFO -      🔎 Scraping 22/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-afternoon-tour
+[2025-04-11T23:29:19.710+0000] {scrape.py:96} INFO -      🔎 Scraping 23/24: https://www.triphobo.com/tours/san-francisco-deluxe-half-day-city-tour
+[2025-04-11T23:29:23.515+0000] {scrape.py:96} INFO -      🔎 Scraping 24/24: https://www.triphobo.com/tours/san-francisco-champagne-brunch-cruise
+[2025-04-11T23:29:28.316+0000] {scrape.py:90} INFO -   🌐 Visiting Page 2: https://www.triphobo.com/tours/san-francisco-united-states?page=2
+[2025-04-11T23:29:32.819+0000] {scrape.py:92} INFO -   🔗 Found 24 tour links on page 2
+[2025-04-11T23:29:32.819+0000] {scrape.py:96} INFO -      🔎 Scraping 1/24: https://www.triphobo.com/tours/san-francisco-champagne-brunch-cruise
+[2025-04-11T23:29:36.615+0000] {scrape.py:96} INFO -      🔎 Scraping 2/24: https://www.triphobo.com/tours/big-bus-san-francisco-sightseeing-and-alcatraz-combo
+[2025-04-11T23:29:52.544+0000] {scrape.py:96} INFO -      🔎 Scraping 3/24: https://www.triphobo.com/tours/the-ultimate-wine-experience-day-trip-to-napa-and-sonoma
+[2025-04-11T23:29:57.138+0000] {scrape.py:96} INFO -      🔎 Scraping 4/24: https://www.triphobo.com/tours/alcatraz-and-san-francisco-city-tour
+[2025-04-11T23:30:01.389+0000] {scrape.py:96} INFO -      🔎 Scraping 5/24: https://www.triphobo.com/tours/san-francisco-super-saver-city-tour-plus-muir-woods-and-sausalito-day-trip
+[2025-04-11T23:30:08.252+0000] {scrape.py:96} INFO -      🔎 Scraping 6/24: https://www.triphobo.com/tours/san-francisco-bike-tour-and-alcatraz-admission
+[2025-04-11T23:30:14.917+0000] {scrape.py:96} INFO -      🔎 Scraping 7/24: https://www.triphobo.com/tours/san-francisco-love-tour
+[2025-04-11T23:30:32.793+0000] {scrape.py:96} INFO -      🔎 Scraping 8/24: https://www.triphobo.com/tours/golden-gate-bay-cruise
+[2025-04-11T23:30:36.806+0000] {scrape.py:96} INFO -      🔎 Scraping 9/24: https://www.triphobo.com/tours/2-day-yosemite-national-park-tour-from-san-francisco
+[2025-04-11T23:30:43.220+0000] {scrape.py:96} INFO -      🔎 Scraping 10/24: https://www.triphobo.com/tours/san-francisco-bay-sailing-cruise
+[2025-04-11T23:30:53.146+0000] {scrape.py:96} INFO -      🔎 Scraping 11/24: https://www.triphobo.com/tours/san-francisco-fire-engine-tour
+[2025-04-11T23:31:08.108+0000] {scrape.py:96} INFO -      🔎 Scraping 12/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-tour-by-hop-on-hop-off-bus
+[2025-04-11T23:31:16.475+0000] {scrape.py:96} INFO -      🔎 Scraping 13/24: https://www.triphobo.com/tours/san-francisco-dinner-dance-cruise
+[2025-04-11T23:31:20.188+0000] {scrape.py:96} INFO -      🔎 Scraping 14/24: https://www.triphobo.com/tours/san-francisco-golden-gate-bridge-bike-tour
+[2025-04-11T23:31:24.429+0000] {scrape.py:96} INFO -      🔎 Scraping 15/24: https://www.triphobo.com/tours/yosemite-in-a-day-tour-from-san-francisco
+[2025-04-11T23:32:02.148+0000] {scrape.py:96} INFO -      🔎 Scraping 16/24: https://www.triphobo.com/tours/exploratorium-general-admission
+[2025-04-11T23:32:05.948+0000] {scrape.py:96} INFO -      🔎 Scraping 17/24: https://www.triphobo.com/tours/skip-the-line-california-academy-of-sciences-general-admission-ticket
+[2025-04-11T23:32:11.014+0000] {scrape.py:96} INFO -      🔎 Scraping 18/24: https://www.triphobo.com/tours/san-francisco-bridge-to-bridge-cruise
+[2025-04-11T23:32:17.561+0000] {scrape.py:96} INFO -      🔎 Scraping 19/24: https://www.triphobo.com/tours/san-francisco-golden-gate-seaplane-tour
+[2025-04-11T23:32:23.093+0000] {scrape.py:96} INFO -      🔎 Scraping 20/24: https://www.triphobo.com/tours/san-francisco-escape-from-the-rock-cruise
+[2025-04-11T23:32:27.945+0000] {scrape.py:96} INFO -      🔎 Scraping 21/24: https://www.triphobo.com/tours/san-francisco-lunch-cruise
+[2025-04-11T23:32:41.470+0000] {scrape.py:96} INFO -      🔎 Scraping 22/24: https://www.triphobo.com/tours/semi-private-small-group-wine-country-tour-from-san-francisco
+[2025-04-11T23:32:46.595+0000] {scrape.py:96} INFO -      🔎 Scraping 23/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-morning-tour
+[2025-04-11T23:32:52.093+0000] {scrape.py:96} INFO -      🔎 Scraping 24/24: https://www.triphobo.com/tours/explore-california-s-coastal-redwoods-with-sausalito-ferry-boat-experience
+[2025-04-11T23:32:56.849+0000] {scrape.py:90} INFO -   🌐 Visiting Page 3: https://www.triphobo.com/tours/san-francisco-united-states?page=3
+[2025-04-11T23:33:09.226+0000] {scrape.py:92} INFO -   🔗 Found 24 tour links on page 3
+[2025-04-11T23:33:09.226+0000] {scrape.py:96} INFO -      🔎 Scraping 1/24: https://www.triphobo.com/tours/san-francisco-citypass-5ac65a6c5840d4d89b0000ed
+[2025-04-11T23:33:42.065+0000] {scrape.py:96} INFO -      🔎 Scraping 2/24: https://www.triphobo.com/tours/san-francisco-gocar-tour
+[2025-04-11T23:33:45.752+0000] {scrape.py:96} INFO -      🔎 Scraping 3/24: https://www.triphobo.com/tours/bike-the-golden-gate-bridge-san-francisco-to-sausalito
+[2025-04-11T23:33:52.790+0000] {scrape.py:96} INFO -      🔎 Scraping 4/24: https://www.triphobo.com/tours/san-francisco-and-muir-woods-city-and-nature-tour
+[2025-04-11T23:34:16.451+0000] {scrape.py:96} INFO -      🔎 Scraping 5/24: https://www.triphobo.com/tours/the-castro-historical-walking-tour-of-san-francisco-s-gay-lesbian-district
+[2025-04-11T23:34:29.222+0000] {scrape.py:96} INFO -      🔎 Scraping 6/24: https://www.triphobo.com/tours/san-francisco-bay-cruise-adventure
+[2025-04-11T23:34:40.556+0000] {scrape.py:96} INFO -      🔎 Scraping 7/24: https://www.triphobo.com/tours/san-francisco-sunset-photography-tour
+[2025-04-11T23:34:45.191+0000] {scrape.py:96} INFO -      🔎 Scraping 8/24: https://www.triphobo.com/tours/muir-woods-expedition-tour
+[2025-04-11T23:34:49.877+0000] {scrape.py:96} INFO -      🔎 Scraping 9/24: https://www.triphobo.com/tours/san-francisco-movie-sights-city-tour
+[2025-04-11T23:34:55.120+0000] {scrape.py:96} INFO -      🔎 Scraping 10/24: https://www.triphobo.com/tours/shore-excursion-napa-and-sonoma-ultimate-wine-tasting-experience-full-day-tour
+[2025-04-11T23:35:26.913+0000] {scrape.py:96} INFO -      🔎 Scraping 11/24: https://www.triphobo.com/tours/san-francisco-bay-rib-boat-cruise
+[2025-04-11T23:35:30.808+0000] {scrape.py:96} INFO -      🔎 Scraping 12/24: https://www.triphobo.com/tours/san-francisco-city-tour-5ac4c9645840d452e9000c64
+[2025-04-11T23:35:35.353+0000] {scrape.py:96} INFO -      🔎 Scraping 13/24: https://www.triphobo.com/tours/best-day-in-san-francisco-with-muir-woods
+[2025-04-11T23:35:48.146+0000] {scrape.py:96} INFO -      🔎 Scraping 14/24: https://www.triphobo.com/tours/private-arrival-transfer-san-francisco-international-airport-to-hotel
+[2025-04-11T23:35:53.054+0000] {scrape.py:96} INFO -      🔎 Scraping 15/24: https://www.triphobo.com/tours/city-and-sea-adventure-hop-on-hop-off-tour-package-including-san-francisco-bay-cruise
+[2025-04-11T23:35:58.400+0000] {scrape.py:96} INFO -      🔎 Scraping 16/24: https://www.triphobo.com/tours/small-group-mission-district-food-tour-san-francisco
+[2025-04-11T23:36:04.274+0000] {scrape.py:96} INFO -      🔎 Scraping 17/24: https://www.triphobo.com/tours/private-transfer-round-trip-transfer-from-san-francisco-international-airport
+[2025-04-11T23:36:09.139+0000] {scrape.py:96} INFO -      🔎 Scraping 18/24: https://www.triphobo.com/tours/san-francisco-city-tour-57ace4f68427a56e1d00006f
+[2025-04-11T23:36:35.065+0000] {scrape.py:96} INFO -      🔎 Scraping 19/24: https://www.triphobo.com/tours/combo-tour-muir-woods-and-sausalito-and-wine-country
+[2025-04-11T23:36:38.708+0000] {scrape.py:96} INFO -      🔎 Scraping 20/24: https://www.triphobo.com/tours/half-day-sonoma-wine-tour
+[2025-04-11T23:36:42.771+0000] {scrape.py:96} INFO -      🔎 Scraping 21/24: https://www.triphobo.com/tours/6-hour-private-sonoma-or-napa-wine-tasting-tour-sedan-suv-or-limo
+[2025-04-11T23:36:47.781+0000] {scrape.py:96} INFO -      🔎 Scraping 22/24: https://www.triphobo.com/tours/san-francisco-1-hour-seaplane-tour-with-shuttle-transport
+[2025-04-11T23:37:07.910+0000] {scrape.py:96} INFO -      🔎 Scraping 23/24: https://www.triphobo.com/tours/half-day-wine-country-tour
+[2025-04-11T23:37:12.990+0000] {scrape.py:96} INFO -      🔎 Scraping 24/24: https://www.triphobo.com/tours/big-bus-san-francisco-night-tour
+[2025-04-11T23:37:18.685+0000] {scrape.py:90} INFO -   🌐 Visiting Page 4: https://www.triphobo.com/tours/san-francisco-united-states?page=4
+[2025-04-11T23:37:22.822+0000] {scrape.py:92} INFO -   🔗 Found 24 tour links on page 4
+[2025-04-11T23:37:22.822+0000] {scrape.py:96} INFO -      🔎 Scraping 1/24: https://www.triphobo.com/tours/san-francisco-bay-air-tour
+[2025-04-11T23:37:27.917+0000] {scrape.py:96} INFO -      🔎 Scraping 2/24: https://www.triphobo.com/tours/exploratorium-admission-thursday-evening-happy-hour
+[2025-04-11T23:37:32.890+0000] {scrape.py:96} INFO -      🔎 Scraping 3/24: https://www.triphobo.com/tours/aquarium-of-the-bay-general-admission
+[2025-04-11T23:37:38.618+0000] {scrape.py:96} INFO -      🔎 Scraping 4/24: https://www.triphobo.com/tours/coastal-redwoods-visit-with-san-francisco-hop-on-hop-off-tour
+[2025-04-11T23:37:44.065+0000] {scrape.py:96} INFO -      🔎 Scraping 5/24: https://www.triphobo.com/tours/the-san-francisco-sightseeing-pass-with-3-4-or-5-attractions
+[2025-04-11T23:37:48.237+0000] {scrape.py:96} INFO -      🔎 Scraping 6/24: https://www.triphobo.com/tours/private-departure-transfer-hotel-to-san-francisco-international-airport
+[2025-04-11T23:38:22.764+0000] {scrape.py:96} INFO -      🔎 Scraping 7/24: https://www.triphobo.com/tours/san-francisco-scavenger-hunt-adventure
+[2025-04-11T23:38:36.123+0000] {scrape.py:96} INFO -      🔎 Scraping 8/24: https://www.triphobo.com/tours/san-francisco-explorer-pass-57ac388f8427a54f1a000092
+[2025-04-11T23:38:39.891+0000] {scrape.py:96} INFO -      🔎 Scraping 9/24: https://www.triphobo.com/tours/shore-excursion-coastal-redwoods-of-muir-woods-national-monument-half-day-tour
+[2025-04-11T23:38:43.727+0000] {scrape.py:96} INFO -      🔎 Scraping 10/24: https://www.triphobo.com/tours/private-tour-san-francisco-sightseeing-3-hour
+[2025-04-11T23:38:55.567+0000] {scrape.py:96} INFO -      🔎 Scraping 11/24: https://www.triphobo.com/tours/san-francisco-full-day-hop-on-hop-off-tour
+[2025-04-11T23:38:59.409+0000] {scrape.py:96} INFO -      🔎 Scraping 12/24: https://www.triphobo.com/tours/napa-and-sonoma-wine-tour-from-san-francisco
+[2025-04-11T23:39:03.221+0000] {scrape.py:96} INFO -      🔎 Scraping 13/24: https://www.triphobo.com/tours/8-hour-private-sonoma-or-napa-wine-tasting-tour-sedan-suv-or-limo
+[2025-04-11T23:39:37.824+0000] {scrape.py:96} INFO -      🔎 Scraping 14/24: https://www.triphobo.com/tours/mission-district-food-tasting-and-cultural-walking-tour
+[2025-04-11T23:39:41.923+0000] {scrape.py:96} INFO -      🔎 Scraping 15/24: https://www.triphobo.com/tours/muir-woods-and-sausalito-half-day-tour-5ac547605840d408ea0001aa
+[2025-04-11T23:39:51.348+0000] {scrape.py:96} INFO -      🔎 Scraping 16/24: https://www.triphobo.com/tours/self-guided-bike-rentals-from-san-francisco
+[2025-04-11T23:39:56.335+0000] {scrape.py:96} INFO -      🔎 Scraping 17/24: https://www.triphobo.com/tours/small-group-tour-san-francisco-city-and-muir-woods
+[2025-04-11T23:40:32.217+0000] {scrape.py:96} INFO -      🔎 Scraping 18/24: https://www.triphobo.com/tours/3-day-hop-on-hop-off-pass
+[2025-04-11T23:40:37.225+0000] {scrape.py:96} INFO -      🔎 Scraping 19/24: https://www.triphobo.com/tours/san-francisco-night-tour-by-bus
+[2025-04-11T23:40:42.309+0000] {scrape.py:96} INFO -      🔎 Scraping 20/24: https://www.triphobo.com/tours/2-day-narrated-hop-on-hop-off-tour-in-san-francisco
+[2025-04-11T23:41:02.525+0000] {scrape.py:96} INFO -      🔎 Scraping 21/24: https://www.triphobo.com/tours/silicon-valley-tour-private-day-trip-from-san-francisco
+[2025-04-11T23:41:21.490+0000] {scrape.py:96} INFO -      🔎 Scraping 22/24: https://www.triphobo.com/tours/private-yosemite-national-park-day-trip-from-san-francisco
+[2025-04-11T23:41:26.096+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-11T23:41:26.115+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-11T23:41:26.118+0000] {process_utils.py:132} INFO - Sending 15 to group 83. PIDs of all processes in the group: [89, 131, 139, 141, 197, 251, 189, 83]
+[2025-04-11T23:41:26.119+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 83
+[2025-04-11T23:41:26.120+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-11T23:41:26.151+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=189, status='terminated', started='23:26:14') (189) terminated with exit code None
+[2025-04-11T23:41:26.299+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=141, status='terminated', started='23:26:14') (141) terminated with exit code None
+[2025-04-11T23:41:26.301+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=131, status='terminated', started='23:26:14') (131) terminated with exit code None
+[2025-04-11T23:41:26.301+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=197, status='terminated', started='23:26:14') (197) terminated with exit code None
+[2025-04-11T23:41:26.302+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=251, status='terminated', started='23:26:14') (251) terminated with exit code None
+[2025-04-11T23:41:26.303+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=89, status='terminated', started='23:26:14') (89) terminated with exit code None
+[2025-04-11T23:41:26.304+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=139, status='terminated', started='23:26:14') (139) terminated with exit code None

@@ -1,0 +1,180 @@
+[2025-04-12T07:22:46.821+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-12T07:22:46.827+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T07:22:45.997813+00:00 [queued]>
+[2025-04-12T07:22:46.830+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T07:22:45.997813+00:00 [queued]>
+[2025-04-12T07:22:46.830+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-04-12T07:22:46.836+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_tours> on 2025-04-12 07:22:45.997813+00:00
+[2025-04-12T07:22:46.839+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2372) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-12T07:22:46.841+0000] {standard_task_runner.py:72} INFO - Started process 2374 to run task
+[2025-04-12T07:22:46.841+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'triphobo_etl_pipeline', 'scrape_tours', 'manual__2025-04-12T07:22:45.997813+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/trip_dag.py', '--cfg-path', '/tmp/tmpx_fdjfyh']
+[2025-04-12T07:22:46.842+0000] {standard_task_runner.py:105} INFO - Job 150: Subtask scrape_tours
+[2025-04-12T07:22:46.860+0000] {task_command.py:467} INFO - Running <TaskInstance: triphobo_etl_pipeline.scrape_tours manual__2025-04-12T07:22:45.997813+00:00 [running]> on host 0032dfa832cd
+[2025-04-12T07:22:46.892+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='triphobo_etl_pipeline' AIRFLOW_CTX_TASK_ID='scrape_tours' AIRFLOW_CTX_EXECUTION_DATE='2025-04-12T07:22:45.997813+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-12T07:22:45.997813+00:00'
+[2025-04-12T07:22:46.892+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-12T07:22:47.173+0000] {scrape.py:99} INFO - Scraping city: New York City United States
+[2025-04-12T07:22:47.174+0000] {scrape.py:104} INFO -  Visiting Page 1: https://www.triphobo.com/tours/new-york-city-united-states?page=1
+[2025-04-12T07:22:57.277+0000] {scrape.py:106} INFO -  Found 24 tour links on page 1
+[2025-04-12T07:22:57.277+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/big-bus-new-york-hop-on-hop-off-tour
+[2025-04-12T07:23:00.832+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/all-access-9-11-experience-ground-zero-tour-9-11-memorial-and-museum-one-world-observatory
+[2025-04-12T07:23:04.274+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/statue-of-liberty-and-ellis-island-guided-tour
+[2025-04-12T07:23:07.818+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/one-world-observatory-admission
+[2025-04-12T07:23:12.074+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/9-11-memorial-museum-admission
+[2025-04-12T07:23:15.723+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/niagara-falls-in-one-day-from-new-york-city
+[2025-04-12T07:23:19.171+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/9-11-memorial-and-ground-zero-walking-tour-with-optional-9-11-museum-upgrade
+[2025-04-12T07:23:22.782+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/top-of-the-rock-observation-deck-new-york
+[2025-04-12T07:23:26.255+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-tour-of-statue-of-liberty-and-ellis-island
+[2025-04-12T07:23:30.028+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/intrepid-sea-air-and-space-museum
+[2025-04-12T07:23:33.960+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/small-group-early-access-statue-of-liberty-tour-and-ellis-island
+[2025-04-12T07:23:37.409+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/woodbury-common-premium-outlets-shopping-tour
+[2025-04-12T07:23:40.816+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/circle-line-harbor-lights-night-cruise
+[2025-04-12T07:23:44.180+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/madame-tussauds-new-york
+[2025-04-12T07:23:47.670+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/circle-line-complete-manhattan-island-cruise
+[2025-04-12T07:23:51.102+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/harlem-sunday-morning-gospel-tour
+[2025-04-12T07:23:54.777+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/american-museum-of-natural-history
+[2025-04-12T07:23:58.905+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/viator-exclusive-statue-of-liberty-monument-access-and-9-11-memorial
+[2025-04-12T07:24:02.338+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/lower-east-side-food-and-culture-tour
+[2025-04-12T07:24:05.768+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/hamilton-musical-walking-tour
+[2025-04-12T07:24:09.185+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/the-ride-new-york-city
+[2025-04-12T07:24:12.611+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/one-world-observatory-or-911-museum-with-world-trade-center-area-tour
+[2025-04-12T07:24:16.559+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/9-11-memorial-and-ground-zero-walking-tour-with-optional-one-world-observatory-entrance
+[2025-04-12T07:24:20.058+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/central-park-pedicab-tours
+[2025-04-12T07:24:23.509+0000] {scrape.py:104} INFO -  Visiting Page 2: https://www.triphobo.com/tours/new-york-city-united-states?page=2
+[2025-04-12T07:24:28.034+0000] {scrape.py:106} INFO -  Found 24 tour links on page 2
+[2025-04-12T07:24:28.034+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/new-york-in-one-day-guided-sightseeing-tour
+[2025-04-12T07:24:31.457+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/tour-contrastes-harlem-bronx-queens-coney-island-and-brooklyn
+[2025-04-12T07:24:34.852+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/empire-state-building-tickets-observatory-and-optional-skip-the-line-tickets
+[2025-04-12T07:24:38.206+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/bateaux-new-york-dinner-cruise
+[2025-04-12T07:24:41.610+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/manhattan-sky-tour-new-york-helicopter-flight
+[2025-04-12T07:24:45.052+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/gossip-girl-sites-tour
+[2025-04-12T07:24:48.379+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-museum-of-modern-art-admission-with-skip-the-line-access
+[2025-04-12T07:24:51.780+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/small-group-guided-9-11-memorial-tour-with-museum-tickets
+[2025-04-12T07:24:55.270+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/high-line-park-and-greenwich-village-food-tour
+[2025-04-12T07:25:03.134+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/big-apple-helicopter-tour-of-new-york
+[2025-04-12T07:25:06.593+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/sunset-sail-aboard-the-schooner-adirondack
+[2025-04-12T07:25:10.582+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/small-group-tour-of-catacombs-by-candelight-in-new-york
+[2025-04-12T07:25:13.996+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/new-york-city-tour-by-classic-convertible-5ac65a105840d467a20000a0
+[2025-04-12T07:25:18.510+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/sex-and-the-city-hotspots-tour
+[2025-04-12T07:25:21.907+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/new-york-dinner-cruise-with-buffet
+[2025-04-12T07:25:25.365+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/new-york-manhattan-scenic-helicopter-tour
+[2025-04-12T07:25:33.587+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/new-york-city-guided-sightseeing-tour-by-minibus
+[2025-04-12T07:25:37.072+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/harlem-wednesday-morning-gospel-tour
+[2025-04-12T07:25:40.776+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/best-of-brooklyn-half-day-food-and-culture-tour
+[2025-04-12T07:25:44.315+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/small-group-central-park-bike-tour
+[2025-04-12T07:25:47.743+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/manhattan-to-brooklyn-nyc-walking-tour-brooklyn-bridge-and-dumbo
+[2025-04-12T07:25:51.148+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/new-york-helicopter-tour-ultimate-manhattan-sightseeing
+[2025-04-12T07:25:54.818+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/chinatown-and-little-italy-food-fest
+[2025-04-12T07:25:58.907+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/christmas-lights-in-dyker-heights-brooklyn
+[2025-04-12T07:26:02.361+0000] {scrape.py:104} INFO -  Visiting Page 3: https://www.triphobo.com/tours/new-york-city-united-states?page=3
+[2025-04-12T07:26:07.383+0000] {scrape.py:106} INFO -  Found 24 tour links on page 3
+[2025-04-12T07:26:07.383+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/private-custom-new-york-city-tour-by-suv
+[2025-04-12T07:26:11.991+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/new-york-hip-hop-tour
+[2025-04-12T07:26:15.669+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/full-day-nyc-small-group-tour
+[2025-04-12T07:26:19.044+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/metropolitan-museum-of-art-tour-with-skip-the-line-access
+[2025-04-12T07:26:22.585+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/statue-of-liberty-ellis-island-and-9-11-memorial-walking-tour
+[2025-04-12T07:26:26.045+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/big-bus-new-york-night-tour
+[2025-04-12T07:26:29.398+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/manhattan-evening-jazz-cruise
+[2025-04-12T07:26:36.923+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/new-york-city-explorer-pass-5ac65a5b5840d48aa600008b
+[2025-04-12T07:26:40.366+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/new-york-helicopter-flight-grand-island
+[2025-04-12T07:26:43.803+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/private-new-york-walking-tour-with-a-personal-photographer
+[2025-04-12T07:26:47.963+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/new-york-city-airport-private-arrival-transfer
+[2025-04-12T07:26:53.200+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/circle-line-new-york-landmarks-cruise
+[2025-04-12T07:26:56.600+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/private-suv-tour-best-of-nyc
+[2025-04-12T07:27:02.860+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-city-3-day-hop-on-hop-off-bus-tour-and-attractions-pass
+[2025-04-12T07:27:06.282+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/nyc-at-night-sightseeing-cruise-and-bus-tour
+[2025-04-12T07:27:09.781+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/hell-s-kitchen-food-tour-and-central-park-stroll
+[2025-04-12T07:27:16.881+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/world-trade-center-911-and-ground-zero-walking-tour
+[2025-04-12T07:27:20.564+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/manhattan-architecture-yacht-cruise
+[2025-04-12T07:27:24.385+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-statue-of-liberty-and-ellis-island-tour-includes-pedestal-access
+[2025-04-12T07:27:27.921+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/new-york-citypass-5ac65a875840d44aa10000bd
+[2025-04-12T07:27:35.403+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/new-york-city-wall-street-insider-tour
+[2025-04-12T07:27:38.927+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/shared-departure-transfer-hotel-to-new-york-city-airports
+[2025-04-12T07:27:42.707+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/shared-arrival-transfer-new-york-airports-to-hotel
+[2025-04-12T07:27:46.424+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/new-york-city-buffet-lunch-cruise
+[2025-04-12T07:27:49.838+0000] {scrape.py:104} INFO -  Visiting Page 4: https://www.triphobo.com/tours/new-york-city-united-states?page=4
+[2025-04-12T07:27:57.161+0000] {scrape.py:106} INFO -  Found 24 tour links on page 4
+[2025-04-12T07:27:57.162+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/greenwich-village-walking-tour
+[2025-04-12T07:28:00.603+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/flatiron-food-architecture-and-history-tour
+[2025-04-12T07:28:07.592+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/the-sightseeing-pass-nyc
+[2025-04-12T07:28:11.244+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-city-luxury-boat-tour
+[2025-04-12T07:28:14.952+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-city-twilight-sail
+[2025-04-12T07:28:18.564+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/viator-vip-empire-state-building-sunrise-experience
+[2025-04-12T07:28:21.975+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/the-super-tour-of-nyc-heroes-comics-and-more
+[2025-04-12T07:28:25.398+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/statue-of-liberty-express-cruise
+[2025-04-12T07:28:28.834+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/new-york-city-airport-luxury-arrival-transfer
+[2025-04-12T07:28:37.143+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/the-sopranos-sites-tour
+[2025-04-12T07:28:40.550+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/private-economy-departure-transfer-manhattan-hotels-to-new-york-airports
+[2025-04-12T07:28:45.221+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/new-york-helicopter-tour-manhattan-highlights
+[2025-04-12T07:28:48.660+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/half-day-nyc-small-group-tour
+[2025-04-12T07:28:52.195+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/superheroes-in-new-york-walking-tour
+[2025-04-12T07:28:57.619+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/private-new-york-city-boat-tour
+[2025-04-12T07:29:01.091+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/statue-express-tour-with-statue-of-liberty-pedestal-tickets
+[2025-04-12T07:29:04.529+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/a-slice-of-brooklyn-pizza-tour
+[2025-04-12T07:29:09.048+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/statue-of-liberty-tall-ship-sailing-cruise
+[2025-04-12T07:29:12.529+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/complete-new-york-new-york-helicopter-tour
+[2025-04-12T07:29:16.052+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/new-york-city-original-rock-n-roll-walking-tour
+[2025-04-12T07:29:21.205+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/soho-little-italy-and-chinatown-walking-tour
+[2025-04-12T07:29:24.647+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/hard-rock-cafe-new-york-times-square
+[2025-04-12T07:29:28.105+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/secrets-of-the-statue-of-liberty-and-ellis-island-tour
+[2025-04-12T07:29:31.980+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/metropolitan-museum-of-art-small-group-tour
+[2025-04-12T07:29:35.765+0000] {scrape.py:104} INFO -  Visiting Page 5: https://www.triphobo.com/tours/new-york-city-united-states?page=5
+[2025-04-12T07:29:39.946+0000] {scrape.py:106} INFO -  Found 24 tour links on page 5
+[2025-04-12T07:29:39.947+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/nyc-tv-and-movie-sites-tour
+[2025-04-12T07:29:43.477+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/private-limousine-tour-best-of-nyc
+[2025-04-12T07:29:48.087+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/brooklyn-bridge-bike-tour
+[2025-04-12T07:29:51.879+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/nyc-central-park-bike-rental
+[2025-04-12T07:29:56.923+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/new-york-helicopter-tour-manhattan-brooklyn-and-staten-island
+[2025-04-12T07:30:00.347+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/central-park-bike-tour
+[2025-04-12T07:30:03.766+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/iconic-new-york-photography-tour
+[2025-04-12T07:30:18.084+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/williamsburg-bites-brooklyn-food-tour
+[2025-04-12T07:30:21.497+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/guided-bike-tour-of-central-park
+[2025-04-12T07:30:25.008+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/harlem-gospel-and-brunch-tour
+[2025-04-12T07:30:36.837+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/macdougal-street-new-york-city-walking-tour
+[2025-04-12T07:30:40.311+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/central-park-manhattan-waterfront-bike-tour
+[2025-04-12T07:30:44.171+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/cupcake-walking-tour-in-new-york-city
+[2025-04-12T07:30:47.920+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-city-airport-private-departure-transfer
+[2025-04-12T07:30:51.379+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/central-park-tv-and-movie-sites-walking-tour
+[2025-04-12T07:30:54.891+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/new-york-city-shore-excursion-post-cruise-half-day-private-tour
+[2025-04-12T07:30:58.564+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/tcm-classic-film-tour-of-new-york
+[2025-04-12T07:31:02.601+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/disney-s-aladdin-on-broadway
+[2025-04-12T07:31:06.303+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/statue-of-liberty-lunch-cruise
+[2025-04-12T07:31:10.077+0000] {scrape.py:110} INFO - Scraping 20/24: https://www.triphobo.com/tours/private-economy-new-york-inter-airport-transfer
+[2025-04-12T07:31:16.569+0000] {scrape.py:110} INFO - Scraping 21/24: https://www.triphobo.com/tours/brooklyn-bridge-guided-bike-tour
+[2025-04-12T07:31:20.004+0000] {scrape.py:110} INFO - Scraping 22/24: https://www.triphobo.com/tours/central-park-bike-rental
+[2025-04-12T07:31:23.369+0000] {scrape.py:110} INFO - Scraping 23/24: https://www.triphobo.com/tours/private-new-york-city-sunset-boat-tour
+[2025-04-12T07:31:26.739+0000] {scrape.py:110} INFO - Scraping 24/24: https://www.triphobo.com/tours/panoramic-night-tour-of-new-york-city
+[2025-04-12T07:31:32.169+0000] {scrape.py:104} INFO -  Visiting Page 6: https://www.triphobo.com/tours/new-york-city-united-states?page=6
+[2025-04-12T07:35:36.937+0000] {job.py:229} INFO - Heartbeat recovered after 236.13 seconds
+[2025-04-12T07:35:42.161+0000] {scrape.py:106} INFO -  Found 24 tour links on page 6
+[2025-04-12T07:35:42.163+0000] {scrape.py:110} INFO - Scraping 1/24: https://www.triphobo.com/tours/911-memorial-pools-ground-zero-walking-tour-optional-upgrade-to-911-museum
+[2025-04-12T07:35:49.856+0000] {scrape.py:110} INFO - Scraping 2/24: https://www.triphobo.com/tours/circle-line-nyc-liberty-cruise
+[2025-04-12T07:35:55.178+0000] {scrape.py:110} INFO - Scraping 3/24: https://www.triphobo.com/tours/pizza-walking-tour-of-manhattan
+[2025-04-12T07:35:58.790+0000] {scrape.py:110} INFO - Scraping 4/24: https://www.triphobo.com/tours/new-york-city-sightseeing-tour-by-coach
+[2025-04-12T07:36:02.815+0000] {scrape.py:110} INFO - Scraping 5/24: https://www.triphobo.com/tours/around-manhattan-brunch-cruise
+[2025-04-12T07:36:06.472+0000] {scrape.py:110} INFO - Scraping 6/24: https://www.triphobo.com/tours/statue-of-liberty-tour-with-optional-pedestal-access
+[2025-04-12T07:36:10.236+0000] {scrape.py:110} INFO - Scraping 7/24: https://www.triphobo.com/tours/private-tour-of-the-metropolitan-museum-of-art-in-new-york-city
+[2025-04-12T07:36:14.006+0000] {scrape.py:110} INFO - Scraping 8/24: https://www.triphobo.com/tours/private-arrival-transfer-new-york-airports-to-brooklyn
+[2025-04-12T07:36:17.719+0000] {scrape.py:110} INFO - Scraping 9/24: https://www.triphobo.com/tours/williamsburg-walking-tour-history-culture-and-art-scene
+[2025-04-12T07:36:23.800+0000] {scrape.py:110} INFO - Scraping 10/24: https://www.triphobo.com/tours/central-park-walking-tour-58aed7c68427a5de080005b9
+[2025-04-12T07:36:27.434+0000] {scrape.py:110} INFO - Scraping 11/24: https://www.triphobo.com/tours/nyc-private-tour-with-local-guide-by-suv-or-van
+[2025-04-12T07:36:30.977+0000] {scrape.py:110} INFO - Scraping 12/24: https://www.triphobo.com/tours/ellis-island-statue-of-liberty-pedestal-and-pre-ferry-tour
+[2025-04-12T07:37:25.230+0000] {job.py:229} INFO - Heartbeat recovered after 52.72 seconds
+[2025-04-12T07:37:25.862+0000] {scrape.py:110} INFO - Scraping 13/24: https://www.triphobo.com/tours/soho-chinatown-little-italy-tour
+[2025-04-12T07:37:30.168+0000] {scrape.py:110} INFO - Scraping 14/24: https://www.triphobo.com/tours/new-york-to-washington-dc-day-trip-by-rail
+[2025-04-12T07:37:34.621+0000] {scrape.py:110} INFO - Scraping 15/24: https://www.triphobo.com/tours/central-park-and-metropolitan-museum-of-art-private-nyc-combo-tour
+[2025-04-12T07:37:38.778+0000] {scrape.py:110} INFO - Scraping 16/24: https://www.triphobo.com/tours/the-hamptons-sag-harbor-and-outlet-shopping-day-trip-from-new-york-city
+[2025-04-12T07:37:42.302+0000] {scrape.py:110} INFO - Scraping 17/24: https://www.triphobo.com/tours/the-lion-king-on-broadway-5ac65a735840d4de9b0000db
+[2025-04-12T07:37:45.963+0000] {scrape.py:110} INFO - Scraping 18/24: https://www.triphobo.com/tours/new-york-city-airport-luxury-departure-transfer
+[2025-04-12T07:37:49.464+0000] {scrape.py:110} INFO - Scraping 19/24: https://www.triphobo.com/tours/private-departure-transfer-brooklyn-to-new-york-airports
+[2025-04-12T07:37:50.396+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-12T07:37:50.401+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-12T07:37:50.403+0000] {process_utils.py:132} INFO - Sending 15 to group 2374. PIDs of all processes in the group: [2378, 2401, 2404, 2407, 2440, 2463, 2438, 2374]
+[2025-04-12T07:37:50.404+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 2374
+[2025-04-12T07:37:50.405+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-12T07:37:50.434+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2401, status='terminated', started='07:22:46') (2401) terminated with exit code None
+[2025-04-12T07:37:50.435+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2463, status='terminated', started='07:22:46') (2463) terminated with exit code None
+[2025-04-12T07:37:50.435+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2404, status='terminated', started='07:22:46') (2404) terminated with exit code None
+[2025-04-12T07:37:50.435+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2440, status='terminated', started='07:22:46') (2440) terminated with exit code None
+[2025-04-12T07:37:50.438+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2378, status='terminated', started='07:22:46') (2378) terminated with exit code None
+[2025-04-12T07:37:50.439+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2438, status='terminated', started='07:22:46') (2438) terminated with exit code None
+[2025-04-12T07:37:50.591+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2407, status='terminated', started='07:22:46') (2407) terminated with exit code None

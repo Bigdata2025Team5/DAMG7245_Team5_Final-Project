@@ -11,9 +11,13 @@ The unique characteristic of the system is the orchestration of various technolo
 ## Links 
 Codelabs : https://codelabs-preview.appspot.com/?file_id=1Ivaei3z5WiFeuO5PGgW__qULga5uAJL4WloMry3UyXQ#0
 
-Streamlit + FastApi: 
+Streamlit: https://team5finalproject-ea3y3tk52ebfva8kgb7rxb.streamlit.app/ 
 
- 
+FastApi: https://travel-planner-app-577642034601.us-central1.run.app/docs
+
+Airflow: http://34.132.144.105:8080/home
+
+YouTube Video:
 
 ---
 

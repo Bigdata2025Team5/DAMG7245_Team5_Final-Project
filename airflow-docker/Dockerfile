@@ -33,11 +33,10 @@ RUN mkdir -p /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airfl
     && chown -R airflow:root /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/config \
     && chmod -R 777 /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/config
 
-# Switch to airflow user for pip installations
-USER airflow
-
-# Install Python dependencies
+# Copy requirements file
 COPY requirements.txt /tmp/requirements.txt
+
+# Install Python dependencies as root to avoid permission issues
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Install Playwright browsers
@@ -45,3 +44,10 @@ RUN python -m playwright install chromium
 
 # Download spaCy model
 RUN python -m spacy download en_core_web_sm
+
+# Fix permissions in the Python site-packages directory
+RUN chown -R airflow:root /home/airflow/.local \
+    && chmod -R 777 /home/airflow/.local
+
+# Switch back to airflow user for security
+USER airflow

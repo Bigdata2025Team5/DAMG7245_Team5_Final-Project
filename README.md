@@ -13,7 +13,7 @@ Codelabs : https://codelabs-preview.appspot.com/?file_id=1Ivaei3z5WiFeuO5PGgW__q
 
 Streamlit + FastApi: 
 
-
+video link : 
 
 ---
 

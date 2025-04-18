@@ -42,14 +42,14 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-      gcloud run deploy $SERVICE_NAME \
-        --service-account=deployfinal@finalproject-457119.iam.gserviceaccount.com \
-        --image=gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} \
-        --platform=managed \
-        --region=$REGION \
-        --allow-unauthenticated \
-        --port=8000 \
-        --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}"
-
+        gcloud run deploy $SERVICE_NAME \
+          --service-account=deployfinal@finalproject-457119.iam.gserviceaccount.com \
+          --image gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} \
+          --platform managed \
+          --region $REGION \
+          --allow-unauthenticated \
+          --port 8000 \
+          --set-env-vars="XAI_API_KEY=${{ secrets.XAI_API_KEY }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }},SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }},SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }},SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }},SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }},SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}"
+    
     - name: Show deployed service URL
       run: echo "Service deployed to ${{ steps.deploy.outputs.url }}"

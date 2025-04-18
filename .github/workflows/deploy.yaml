@@ -43,6 +43,9 @@ jobs:
     - name: Deploy to Google Cloud Run
       run: |
         gcloud run deploy $SERVICE_NAME \
+        
+          --service-account=deployfinal@finalproject-457119.iam.gserviceaccount.com
+ 
           --image gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} \
           --platform managed \
           --region $REGION \
